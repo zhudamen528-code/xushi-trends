@@ -703,11 +703,322 @@
 
   </div>
 
+  <!-- ⑦ 笔记策划工具 -->
+  <div class="section-label">
+    <span class="icon">✨</span> 笔记策划工具
+    <span class="tag">输入产品 · 一键生成方案</span>
+  </div>
+
+  <div class="planner-card">
+    <div class="planner-intro">
+      基于本周行业风向，输入你的产品信息，生成可直接发给 AI 的策划提示词
+    </div>
+
+    <div class="planner-form">
+      <div class="form-row">
+        <label class="form-label">产品名称 <span class="required">*</span></label>
+        <input class="form-input" id="product-name" type="text" placeholder="例：手工黑芝麻丸、鲜萃冷泡茶、贵州辣子鸡调料">
+      </div>
+      <div class="form-row">
+        <label class="form-label">核心卖点（选填）</label>
+        <input class="form-input" id="product-feature" type="text" placeholder="例：古法九蒸九晒、0添加、外婆配方、产地直发">
+      </div>
+      <div class="form-row">
+        <label class="form-label">目标人群（选填）</label>
+        <input class="form-input" id="product-audience" type="text" placeholder="例：备孕女性、减脂人群、宝妈、下厨爱好者">
+      </div>
+      <div class="form-row">
+        <label class="form-label">品类</label>
+        <div class="cat-select-group">
+          <label class="cat-radio"><input type="radio" name="cat" value="零食" checked><span>🍿 零食</span></label>
+          <label class="cat-radio"><input type="radio" name="cat" value="速食"><span>🍜 速食</span></label>
+          <label class="cat-radio"><input type="radio" name="cat" value="饮品"><span>🧋 饮品</span></label>
+          <label class="cat-radio"><input type="radio" name="cat" value="酒类"><span>🍷 酒类</span></label>
+          <label class="cat-radio"><input type="radio" name="cat" value="中式滋补"><span>🌿 滋补</span></label>
+        </div>
+      </div>
+    </div>
+
+    <div class="planner-actions">
+      <button class="btn-gen" onclick="openKimi()">✨ 用 Kimi 生成</button>
+      <button class="btn-gen btn-doubao" onclick="openDoubao()">🤖 用豆包生成</button>
+      <button class="btn-copy" onclick="copyPrompt()">📋 复制提示词</button>
+    </div>
+
+    <div class="prompt-preview" id="prompt-preview">
+      <div class="prompt-label">生成的提示词预览</div>
+      <div class="prompt-text" id="prompt-text">填写产品信息后，这里会显示提示词预览…</div>
+    </div>
+  </div>
+
 </div>
 
 <div class="footer">
   小红书电商 · 休食行业五组 · 数据来源：小红书 BI 平台 · 每周一更新
 </div>
+
+<style>
+  /* ── 策划工具 ── */
+  .planner-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    border: 1.5px solid var(--border);
+    overflow: hidden;
+  }
+  .planner-intro {
+    background: linear-gradient(135deg, #fff8f4, #fff0f2);
+    padding: 16px 24px;
+    font-size: 13px;
+    color: #666;
+    border-bottom: 1px solid var(--border);
+  }
+  .planner-form {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .form-row { display: flex; flex-direction: column; gap: 6px; }
+  .form-label { font-size: 13px; font-weight: 600; color: #444; }
+  .required { color: var(--red); }
+  .form-input {
+    padding: 10px 14px;
+    border: 1.5px solid #e8e0d8;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s;
+    background: #fafaf8;
+  }
+  .form-input:focus { border-color: #ff2442; background: #fff; }
+  .cat-select-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .cat-radio { cursor: pointer; }
+  .cat-radio input { display: none; }
+  .cat-radio span {
+    display: inline-block;
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    background: #f5f0eb;
+    color: #666;
+    border: 1.5px solid transparent;
+    transition: all 0.15s;
+    cursor: pointer;
+  }
+  .cat-radio input:checked + span {
+    background: #fff0f2;
+    color: #ff2442;
+    border-color: #ffd0d8;
+  }
+  .planner-actions {
+    padding: 0 24px 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .btn-gen {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #ff2442, #ff6b35);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    transition: opacity 0.15s;
+  }
+  .btn-gen:hover { opacity: 0.88; }
+  .btn-gen.btn-doubao {
+    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+  }
+  .btn-copy {
+    padding: 12px 20px;
+    background: #f5f0eb;
+    color: #555;
+    border: 1.5px solid #e8e0d8;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.15s;
+  }
+  .btn-copy:hover { background: #eee8e0; }
+  .prompt-preview {
+    margin: 0 24px 24px;
+    background: #fafaf8;
+    border: 1.5px solid #e8e0d8;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .prompt-label {
+    padding: 8px 14px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #999;
+    background: #f0ebe4;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .prompt-text {
+    padding: 14px;
+    font-size: 13px;
+    color: #555;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    max-height: 280px;
+    overflow-y: auto;
+  }
+  .copy-success {
+    background: #10b981 !important;
+    color: #fff !important;
+    border-color: #10b981 !important;
+  }
+</style>
+
+<script>
+  // 品类对应的内容风向（与看板保持同步）
+  const CAT_TRENDS = {
+    "零食": {
+      directions: ["主理人爆单故事：真实经历+情绪表达建立信任", "极致性价比：价格锚点+夸张情绪，触发冲动购买", "好吃难以置信：疑问/感叹制造好奇心"],
+      formulas: ["才X元！真的会忍不住回购", "发明这个味道的人是天才", "感谢小红书让我们爆单了🥳"],
+      cover: "主理人出镜+产品特写，色彩鲜艳，情绪感强"
+    },
+    "速食": {
+      directions: ["线下店同款平替：还原知名餐厅口味", "城市/地域特色：带地域标签强化稀缺感", "场景化懒人吃法：宿舍/深夜/办公室场景"],
+      formulas: ["XXX同款！在家也能复刻", "XX地老字号的配方，今天能买了", "深夜一个人，这碗XX治愈了我"],
+      cover: "食物特写近景，热气/拉丝/浇汁画面，视觉冲击强"
+    },
+    "饮品": {
+      directions: ["周期打卡+身体变化：N天后的效果记录", "春日场景情绪：清明/踏青节点种草", "精致咖啡生活方式：打造个人咖啡角"],
+      formulas: ["喝了X天，身体悄悄发生了这些变化", "春日约会，从这杯XX开始🌸", "属于我的小小咖啡角，这杯必不可少"],
+      cover: "饮品入镜+生活场景，自然光打光，氛围感优先"
+    },
+    "酒类": {
+      directions: ["春日/清明聚会场景：户外烧烤/家庭聚餐种草", "主理人手工/小众感：外婆配方、小镇故事", "微醺轻饮概念：低酒精、果味，降低门槛"],
+      formulas: ["清明烧烤必备，一瓶XX让氛围感拉满", "外婆的老配方，我们只做100瓶", "不喝酒的人也爱这杯，微醺刚刚好"],
+      cover: "聚会/户外场景，酒瓶+食物组合，暖色调氛围感"
+    },
+    "中式滋补": {
+      directions: ["身体痛点精准命中：上热下寒/气血/内调描述", "孕/育儿健康场景：孕期营养、宝宝积食", "产地溯源真实感：原产地、无添加、野生采摘"],
+      formulas: ["上热下寒的姐妹，真的可以试试这个", "孕X月开始喝，产后体感变化记录", "我家山里的XX，今年限量开放"],
+      cover: "产品+原料/产地实拍，自然感强，无过度修图"
+    }
+  };
+
+  function getFormData() {
+    const name = document.getElementById('product-name').value.trim();
+    const feature = document.getElementById('product-feature').value.trim();
+    const audience = document.getElementById('product-audience').value.trim();
+    const cat = document.querySelector('input[name="cat"]:checked').value;
+    return { name, feature, audience, cat };
+  }
+
+  function buildPrompt() {
+    const { name, feature, audience, cat } = getFormData();
+    if (!name) return '请先填写产品名称';
+
+    const trend = CAT_TRENDS[cat];
+    const featureText = feature ? `核心卖点：${feature}` : '';
+    const audienceText = audience ? `目标人群：${audience}` : '';
+
+    return `你是一位小红书电商商品笔记策划专家，擅长为${cat}类目商家创作高转化的商品笔记。
+
+【产品信息】
+产品名称：${name}
+品类：${cat}
+${featureText}
+${audienceText}
+
+【本周行业风向（基于真实数据）】
+当前${cat}类目高表现内容方向：
+1. ${trend.directions[0]}
+2. ${trend.directions[1]}
+3. ${trend.directions[2]}
+
+本周高转化标题参考：
+• ${trend.formulas[0]}
+• ${trend.formulas[1]}
+• ${trend.formulas[2]}
+
+封面风格参考：${trend.cover}
+
+【任务】
+请基于以上风向，为"${name}"策划 3 套完整笔记方案，每套包含：
+
+1. 📝 标题（20字以内，含emoji，参考高转化公式）
+2. 🖼️ 封面风格描述（构图、主体、色调、文字建议）
+3. 📄 正文（150-300字，分段，自然口语化，种草感强，结尾引导加购/私信）
+
+要求：
+- 3套方案分别对应3种不同内容方向
+- 标题直接可用，不要模板化占位符
+- 正文不要有"种草""安利"等自我揭示词
+- 符合小红书社区调性，像真实用户分享`;
+  }
+
+  function updatePreview() {
+    document.getElementById('prompt-text').textContent = buildPrompt();
+  }
+
+  // 实时更新预览
+  ['product-name', 'product-feature', 'product-audience'].forEach(id => {
+    document.getElementById(id).addEventListener('input', updatePreview);
+  });
+  document.querySelectorAll('input[name="cat"]').forEach(el => {
+    el.addEventListener('change', updatePreview);
+  });
+
+  function openKimi() {
+    const prompt = buildPrompt();
+    if (prompt === '请先填写产品名称') { alert('请先填写产品名称'); return; }
+    const url = 'https://kimi.moonshot.cn/chat/?' + encodeURIComponent(prompt);
+    // Kimi不支持URL带prompt，改为复制后打开
+    navigator.clipboard.writeText(prompt).then(() => {
+      window.open('https://kimi.moonshot.cn', '_blank');
+      setTimeout(() => alert('✅ 提示词已复制！\n\n请在 Kimi 对话框中粘贴（Ctrl+V / Command+V）'), 300);
+    }).catch(() => {
+      window.open('https://kimi.moonshot.cn', '_blank');
+      alert('请手动复制下方提示词，粘贴到 Kimi 对话框');
+    });
+  }
+
+  function openDoubao() {
+    const prompt = buildPrompt();
+    if (prompt === '请先填写产品名称') { alert('请先填写产品名称'); return; }
+    navigator.clipboard.writeText(prompt).then(() => {
+      window.open('https://www.doubao.com/chat/', '_blank');
+      setTimeout(() => alert('✅ 提示词已复制！\n\n请在豆包对话框中粘贴（Ctrl+V / Command+V）'), 300);
+    }).catch(() => {
+      window.open('https://www.doubao.com/chat/', '_blank');
+      alert('请手动复制下方提示词，粘贴到豆包对话框');
+    });
+  }
+
+  function copyPrompt() {
+    const prompt = buildPrompt();
+    if (prompt === '请先填写产品名称') { alert('请先填写产品名称'); return; }
+    navigator.clipboard.writeText(prompt).then(() => {
+      const btn = document.querySelector('.btn-copy');
+      btn.textContent = '✅ 已复制！';
+      btn.classList.add('copy-success');
+      setTimeout(() => {
+        btn.textContent = '📋 复制提示词';
+        btn.classList.remove('copy-success');
+      }, 2000);
+    });
+  }
+
+  // 初始化预览
+  updatePreview();
+</script>
 
 </body>
 </html>
