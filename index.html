@@ -3,232 +3,256 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>休食行业风向看板</title>
+  <title>休食行业风向看板 · 小红书电商</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
+    :root {
+      --red: #ff2442;
+      --orange: #ff6b35;
+      --warm: #fff8f4;
+      --card-bg: #ffffff;
+      --text: #1a1a1a;
+      --text-sub: #888;
+      --border: #f0ebe4;
+      --tag-snack: #ff6b35;
+      --tag-fast: #f59e0b;
+      --tag-drink: #06b6d4;
+      --tag-liquor: #8b5cf6;
+      --tag-herb: #10b981;
+    }
+
     body {
       font-family: -apple-system, "PingFang SC", "Helvetica Neue", sans-serif;
-      background: #faf9f7;
-      color: #1a1a1a;
-      min-height: 100vh;
+      background: #fff8f4;
+      color: var(--text);
     }
 
     /* ── Header ── */
     .header {
-      background: #fff;
-      border-bottom: 1px solid #f0ede8;
-      padding: 20px 32px;
+      background: linear-gradient(135deg, #ff2442 0%, #ff6b35 100%);
+      padding: 28px 40px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 100;
     }
-    .header-left { display: flex; align-items: center; gap: 12px; }
-    .header-icon { font-size: 24px; }
-    .header-title { font-size: 18px; font-weight: 700; color: #1a1a1a; }
-    .header-sub { font-size: 13px; color: #999; margin-top: 2px; }
-    .header-badge {
-      background: #ff2442;
-      color: #fff;
-      font-size: 12px;
-      font-weight: 600;
-      padding: 3px 10px;
-      border-radius: 20px;
-    }
+    .header-left { display: flex; align-items: center; gap: 14px; }
+    .header-icon { font-size: 36px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
+    .header-title { font-size: 22px; font-weight: 800; color: #fff; letter-spacing: -0.3px; }
+    .header-sub { font-size: 13px; color: rgba(255,255,255,0.75); margin-top: 3px; }
+    .header-right { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+    .header-week { font-size: 28px; font-weight: 800; color: #fff; }
+    .header-date { font-size: 12px; color: rgba(255,255,255,0.7); }
 
-    /* ── Layout ── */
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 32px 24px 60px;
-    }
+    /* ── Container ── */
+    .container { max-width: 1100px; margin: 0 auto; padding: 36px 28px 80px; }
 
-    /* ── Section Title ── */
+    /* ── Section Label ── */
     .section-label {
       display: flex;
       align-items: center;
-      gap: 8px;
-      font-size: 13px;
-      font-weight: 600;
-      color: #999;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 16px;
-      margin-top: 40px;
+      gap: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      margin: 40px 0 16px;
     }
     .section-label:first-child { margin-top: 0; }
-    .section-label .dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: #ff2442;
+    .section-label .icon { font-size: 20px; }
+    .section-label .tag {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--red);
+      background: #fff0f2;
+      padding: 2px 8px;
+      border-radius: 20px;
     }
 
-    /* ── Benchmark Cards (三档对标) ── */
-    .benchmark-grid {
+    /* ── Benchmark ── */
+    .bench-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
+      gap: 16px;
     }
     .bench-card {
-      background: #fff;
+      background: var(--card-bg);
       border-radius: 16px;
-      padding: 20px;
-      border: 1.5px solid #f0ede8;
+      padding: 24px;
+      border: 1.5px solid var(--border);
       position: relative;
       overflow: hidden;
     }
-    .bench-card.top {
-      border-color: #ffd700;
-      background: linear-gradient(135deg, #fffdf0 0%, #fff 100%);
+    .bench-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
     }
-    .bench-card.avg {
-      border-color: #e8f0ff;
-      background: linear-gradient(135deg, #f5f8ff 0%, #fff 100%);
-    }
-    .bench-card.low {
-      border-color: #f0ede8;
-      background: #faf9f7;
-    }
+    .bench-card.top::before { background: linear-gradient(90deg, #ff2442, #ff6b35); }
+    .bench-card.avg::before { background: linear-gradient(90deg, #3b82f6, #06b6d4); }
+    .bench-card.low::before { background: #e5e7eb; }
     .bench-tier {
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 700;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
       display: flex;
       align-items: center;
       gap: 6px;
     }
     .bench-metrics { display: flex; flex-direction: column; gap: 10px; }
-    .bench-metric-row { display: flex; justify-content: space-between; align-items: baseline; }
-    .bench-metric-label { font-size: 12px; color: #888; }
-    .bench-metric-val {
-      font-size: 20px;
-      font-weight: 800;
-      color: #1a1a1a;
-      font-variant-numeric: tabular-nums;
+    .bench-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
     }
-    .bench-metric-val.gold { color: #c9820a; }
-    .bench-metric-val.blue { color: #3366ff; }
-    .bench-metric-unit { font-size: 12px; font-weight: 500; color: #aaa; margin-left: 2px; }
+    .bench-label { font-size: 12px; color: var(--text-sub); }
+    .bench-val { font-size: 22px; font-weight: 800; line-height: 1; }
+    .bench-unit { font-size: 12px; font-weight: 400; margin-left: 2px; color: var(--text-sub); }
+    .bench-card.top .bench-val { color: #ff2442; }
+    .bench-card.avg .bench-val { color: #3b82f6; }
+    .bench-card.low .bench-val { color: #9ca3af; }
     .bench-hint {
-      margin-top: 14px;
       font-size: 11px;
-      color: #bbb;
-      border-top: 1px solid #f0ede8;
-      padding-top: 10px;
+      color: var(--text-sub);
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
     }
 
-    /* ── Trend Cards (内容风向) ── */
+    /* ── 内容风向 ── */
     .trend-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       gap: 12px;
     }
     .trend-card {
-      background: #fff;
-      border-radius: 16px;
-      border: 1.5px solid #f0ede8;
+      background: var(--card-bg);
+      border-radius: 14px;
       overflow: hidden;
+      border: 1.5px solid var(--border);
     }
-    .trend-card-head {
-      padding: 14px 16px 10px;
-      border-bottom: 1px solid #f5f2ee;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .trend-category-tag {
-      font-size: 12px;
+    .trend-head {
+      padding: 12px 14px;
+      font-size: 13px;
       font-weight: 700;
       color: #fff;
-      background: #ff2442;
-      padding: 2px 8px;
-      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
-    .trend-category-tag.snack { background: #ff2442; }
-    .trend-category-tag.fastfood { background: #e07b00; }
-    .trend-category-tag.drink { background: #0066cc; }
-    .trend-category-tag.liquor { background: #7b3fa0; }
-    .trend-category-tag.herbal { background: #2a8a2a; }
-    .trend-card-directions { padding: 12px 16px; display: flex; flex-direction: column; gap: 8px; }
+    .trend-head.snack { background: linear-gradient(135deg, #ff6b35, #ff8f5e); }
+    .trend-head.fast  { background: linear-gradient(135deg, #f59e0b, #fbbf24); }
+    .trend-head.drink { background: linear-gradient(135deg, #06b6d4, #22d3ee); }
+    .trend-head.liquor { background: linear-gradient(135deg, #8b5cf6, #a78bfa); }
+    .trend-head.herb  { background: linear-gradient(135deg, #10b981, #34d399); }
+    .trend-dirs { padding: 12px 14px; display: flex; flex-direction: column; gap: 10px; }
     .trend-dir {
       display: flex;
-      align-items: flex-start;
       gap: 8px;
-      font-size: 13px;
-      color: #333;
+      align-items: flex-start;
+      font-size: 12px;
       line-height: 1.5;
+      color: #333;
     }
-    .trend-dir-num {
+    .trend-num {
       flex-shrink: 0;
-      width: 18px; height: 18px;
+      width: 18px;
+      height: 18px;
       border-radius: 50%;
-      background: #f5f2ee;
+      background: #f5f0eb;
       font-size: 11px;
       font-weight: 700;
-      color: #888;
       display: flex;
       align-items: center;
       justify-content: center;
+      color: #888;
       margin-top: 1px;
     }
-    .placeholder-text { color: #ccc; font-style: italic; }
 
-    /* ── Cover Types (封面类型) ── */
+    /* ── 封面图鉴 ── */
     .cover-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
     }
     .cover-card {
-      background: #fff;
-      border-radius: 16px;
-      border: 1.5px solid #f0ede8;
+      background: var(--card-bg);
+      border-radius: 14px;
       overflow: hidden;
+      border: 1.5px solid var(--border);
+    }
+    .cover-img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      display: block;
+      background: #f5f0eb;
     }
     .cover-img-placeholder {
       width: 100%;
       aspect-ratio: 3/4;
-      background: linear-gradient(135deg, #f5f2ee, #ede8e0);
+      background: linear-gradient(135deg, #fef3ec, #fde8d8);
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      font-size: 28px;
+      gap: 8px;
+      color: #ccc;
+      font-size: 32px;
     }
-    .cover-card-body { padding: 12px; }
-    .cover-type-name { font-size: 13px; font-weight: 700; color: #1a1a1a; margin-bottom: 4px; }
-    .cover-ctr {
+    .cover-img-placeholder span {
       font-size: 12px;
-      color: #ff2442;
-      font-weight: 600;
+      color: #ccc;
     }
-    .cover-desc { font-size: 11px; color: #999; margin-top: 4px; line-height: 1.5; }
+    .cover-body { padding: 12px 14px; }
+    .cover-type { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+    .cover-ctr {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--red);
+      background: #fff0f2;
+      padding: 2px 8px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+    }
+    .cover-desc { font-size: 12px; color: var(--text-sub); line-height: 1.5; }
+    .cover-note-link {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 11px;
+      color: #06b6d4;
+      text-decoration: none;
+    }
+    .cover-note-link:hover { text-decoration: underline; }
 
-    /* ── Title Formula ── */
+    /* ── 标题公式 ── */
     .formula-card {
-      background: #fff;
-      border-radius: 16px;
-      border: 1.5px solid #f0ede8;
-      padding: 20px 24px;
+      background: var(--card-bg);
+      border-radius: 14px;
+      border: 1.5px solid var(--border);
+      overflow: hidden;
     }
     .formula-row {
       display: flex;
       align-items: center;
-      gap: 8px;
-      margin-bottom: 16px;
+      gap: 10px;
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
       flex-wrap: wrap;
     }
-    .formula-row:last-child { margin-bottom: 0; }
+    .formula-row:last-child { border-bottom: none; }
     .formula-rank {
-      font-size: 11px;
-      font-weight: 700;
-      color: #fff;
-      background: #1a1a1a;
-      width: 20px; height: 20px;
+      width: 24px;
+      height: 24px;
       border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
+      background: var(--red);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       flex-shrink: 0;
     }
     .formula-pill {
@@ -236,96 +260,229 @@
       font-weight: 600;
       padding: 5px 12px;
       border-radius: 8px;
-      background: #f5f2ee;
+      background: #fff8f4;
       color: #333;
+      border: 1px solid #f0ebe4;
     }
-    .formula-pill.highlight { background: #fff0f2; color: #ff2442; }
-    .formula-plus { font-size: 14px; color: #ccc; font-weight: 300; }
+    .formula-pill.hot { background: #fff0f2; color: var(--red); border-color: #ffd0d8; }
+    .formula-plus { font-size: 16px; color: #ddd; }
     .formula-example {
-      font-size: 11px;
-      color: #aaa;
       margin-left: auto;
-      max-width: 200px;
+      font-size: 12px;
+      color: var(--text-sub);
+      font-style: italic;
+      max-width: 220px;
       text-align: right;
       line-height: 1.4;
     }
 
-    /* ── Topic Tags ── */
-    .topic-section {
-      background: #fff;
-      border-radius: 16px;
-      border: 1.5px solid #f0ede8;
-      padding: 20px 24px;
+    /* ── 热点话题 ── */
+    .topic-section, .topic-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
     }
-    .topic-group { margin-bottom: 16px; }
-    .topic-group:last-child { margin-bottom: 0; }
-    .topic-group-title {
-      font-size: 12px;
+    .topic-group {
+      background: var(--card-bg);
+      border-radius: 14px;
+      padding: 18px 20px;
+      border: 1.5px solid var(--border);
+    }
+    .topic-group-title, .topic-group-label {
+      font-size: 13px;
       font-weight: 700;
-      color: #888;
-      margin-bottom: 10px;
+      color: var(--text);
+      margin-bottom: 12px;
     }
     .topic-tags { display: flex; flex-wrap: wrap; gap: 8px; }
     .topic-tag {
-      font-size: 13px;
+      font-size: 12px;
+      font-weight: 600;
       padding: 5px 12px;
       border-radius: 20px;
-      background: #f5f2ee;
+      background: #f5f0eb;
       color: #555;
-      font-weight: 500;
     }
     .topic-tag.hot { background: #fff0f2; color: #ff2442; }
-    .topic-tag.rising { background: #f0f5ff; color: #3366ff; }
-    .topic-tag.seasonal { background: #f5fff0; color: #2a8a2a; }
+    .topic-tag.rising { background: #f0fdf4; color: #10b981; }
+    .topic-tag.seasonal { background: #fffbeb; color: #f59e0b; }
 
-    /* ── Category Wind ── */
-    .category-grid {
+    /* ── 品类风向 ── */
+    .cat-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .cat-grid {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       gap: 12px;
+      min-width: 700px;
     }
     .cat-card {
-      background: #fff;
-      border-radius: 16px;
-      border: 1.5px solid #f0ede8;
-      padding: 16px 18px;
+      background: var(--card-bg);
+      border-radius: 14px;
+      padding: 18px 16px;
+      border: 1.5px solid var(--border);
     }
+    .cat-head {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      color: #fff;
+    }
+    .cat-head.snack { background: #ff6b35; }
+    .cat-head.fast  { background: #f59e0b; }
+    .cat-head.drink { background: #06b6d4; }
+    .cat-head.liquor{ background: #8b5cf6; }
+    .cat-head.herb  { background: #10b981; }
     .cat-name {
       font-size: 14px;
       font-weight: 700;
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #f5f0eb;
     }
-    .cat-items { display: flex; flex-direction: column; gap: 6px; }
+    .cat-items { display: flex; flex-direction: column; gap: 8px; }
     .cat-item {
       font-size: 12px;
       color: #555;
-      display: flex;
-      align-items: flex-start;
-      gap: 6px;
       line-height: 1.5;
+      display: flex;
+      gap: 6px;
+      align-items: flex-start;
     }
-    .cat-item::before { content: "→"; color: #ccc; flex-shrink: 0; }
+    .cat-dot { font-weight: 700; font-size: 13px; flex-shrink: 0; margin-top: 1px; }
+    .cat-dot.up   { color: #ff2442; }
+    .cat-dot.down { color: #10b981; }
+    .cat-dot      { color: #999; }
+    .cat-focus {
+      margin-top: 12px;
+      padding: 8px 10px;
+      background: #fff9f5;
+      border-radius: 8px;
+      font-size: 11px;
+      font-weight: 600;
+      color: #ff6b35;
+    }
 
     /* ── Footer ── */
     .footer {
       text-align: center;
-      padding: 24px;
+      padding: 32px;
       font-size: 12px;
-      color: #ccc;
+      color: #bbb;
     }
 
     /* ── Responsive ── */
-    @media (max-width: 720px) {
-      .benchmark-grid { grid-template-columns: 1fr; }
+    @media (max-width: 800px) {
+      .bench-grid { grid-template-columns: 1fr; }
       .trend-grid { grid-template-columns: 1fr; }
       .cover-grid { grid-template-columns: repeat(2, 1fr); }
-      .category-grid { grid-template-columns: repeat(2, 1fr); }
+      .cover-grid .cover-card:last-child { display: none; }
+      .topic-section, .topic-grid { grid-template-columns: 1fr; }
+      .cat-grid { grid-template-columns: repeat(2, 1fr); min-width: unset; }
       .formula-example { display: none; }
     }
-  </style>
+
+    /* ── 手机端适配 ── */
+    @media (max-width: 480px) {
+      /* 容器 */
+      .container { padding: 16px 14px 60px; }
+
+      /* Header */
+      .header { padding: 14px 16px; }
+      .header-title { font-size: 17px; }
+      .week-badge { font-size: 11px; padding: 3px 10px; }
+
+      /* Tab */
+      .tab-btn { font-size: 14px; padding: 10px 18px; }
+
+      /* section-label */
+      .section-label { font-size: 14px; margin-bottom: 12px; }
+      .section-label .tag { display: none; }
+
+      /* 行业基准 - 三栏改单列堆叠 */
+      .bench-grid { grid-template-columns: 1fr; gap: 10px; }
+      .bench-card { padding: 14px 16px; }
+      .bench-title { font-size: 13px; margin-bottom: 10px; }
+      .bench-row { font-size: 12px; }
+      .bench-val { font-size: 18px; }
+
+      /* 内容风向 */
+      .trend-grid { grid-template-columns: 1fr; gap: 10px; }
+      .trend-card { padding: 14px; }
+      .trend-dir { font-size: 12px; }
+
+      /* 封面图 - 单列 */
+      .cover-grid { grid-template-columns: 1fr; gap: 12px; }
+      .cover-grid .cover-card:last-child { display: block; }
+      .cover-img { height: 200px; }
+
+      /* 话题标签 */
+      .topic-section, .topic-grid { grid-template-columns: 1fr; }
+      .topic-tag { font-size: 11px; }
+
+      /* 品类风向 - 横向滚动 */
+      .cat-wrap {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 8px;
+      }
+      .cat-grid {
+        grid-template-columns: repeat(5, 80vw);
+        min-width: unset;
+      }
+      .cat-card {
+        scroll-snap-align: start;
+      }
+
+      /* 标题公式 */
+      .formula-example { display: none; }
+      .formula-row { font-size: 12px; padding: 10px 12px; }
+
+      /* 工具区 */
+      .planner-card { border-radius: 12px; }
+      .planner-form { padding: 16px; }
+      .planner-actions { padding: 0 16px 16px; flex-direction: column; }
+      .btn-gen, .btn-doubao, .btn-copy { width: 100%; text-align: center; }
+      .form-input { font-size: 16px; } /* 防止iOS自动缩放 */
+
+      /* 工具②流程图 */
+      .planner-intro [style*="min-width"] { min-width: 60px !important; font-size: 10px; }
+    }
+  
+  /* ── Tab 导航 ── */
+  .tab-nav {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 28px;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 0;
+  }
+  .tab-btn {
+    padding: 10px 24px;
+    border: none;
+    background: none;
+    font-size: 15px;
+    font-weight: 600;
+    color: #999;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    border-radius: 4px 4px 0 0;
+    transition: all 0.2s;
+    font-family: inherit;
+  }
+  .tab-btn:hover { color: var(--red); }
+  .tab-btn.active {
+    color: var(--red);
+    border-bottom-color: var(--red);
+  }
+  .tab-panel { display: block; }
+  .tab-panel.hidden { display: none; }
+
+</style>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </head>
 <body>
 
@@ -337,29 +494,44 @@
       <div class="header-sub">小红书电商 · 五组出品 · 每周更新</div>
     </div>
   </div>
-  <div class="header-badge">2026 W14</div>
+  <div class="header-right">
+    <div class="header-week">W16</div>
+    <div class="header-date">2026.04.07 — 04.13</div>
+  </div>
 </header>
 
 <div class="container">
 
+  <!-- Tab 导航 -->
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="switchTab('trends')">📊 趋势看板</button>
+    <button class="tab-btn" onclick="switchTab('tools')">🛠️ 实用工具</button>
+  </div>
+
+  <!-- Tab1: 趋势看板 -->
+  <div class="tab-panel" id="tab-trends">
+
   <!-- ① 行业基准 -->
-  <div class="section-label"><span class="dot"></span>行业基准数据（近7天）</div>
-  <div class="benchmark-grid">
+  <div class="section-label">
+    <span class="icon">📊</span> 行业基准数据
+    <span class="tag">近7天 · 动销商家</span>
+  </div>
+  <div class="bench-grid">
 
     <div class="bench-card top">
       <div class="bench-tier">🏆 TOP商家</div>
       <div class="bench-metrics">
-        <div class="bench-metric-row">
-          <span class="bench-metric-label">日均发布</span>
-          <span class="bench-metric-val gold">5+<span class="bench-metric-unit">篇/天</span></span>
+        <div class="bench-row">
+          <span class="bench-label">日均发布</span>
+          <span class="bench-val">5+<span class="bench-unit">篇/天</span></span>
         </div>
-        <div class="bench-metric-row">
-          <span class="bench-metric-label">商笔 CTR</span>
-          <span class="bench-metric-val gold">25+<span class="bench-metric-unit">%</span></span>
+        <div class="bench-row">
+          <span class="bench-label">商笔 CTR</span>
+          <span class="bench-val">25+<span class="bench-unit">%</span></span>
         </div>
-        <div class="bench-metric-row">
-          <span class="bench-metric-label">商品转化率</span>
-          <span class="bench-metric-val gold">12+<span class="bench-metric-unit">%</span></span>
+        <div class="bench-row">
+          <span class="bench-label">商品转化率</span>
+          <span class="bench-val">12+<span class="bench-unit">%</span></span>
         </div>
       </div>
       <div class="bench-hint">发布量前 20% 动销商家参考区间</div>
@@ -368,275 +540,1039 @@
     <div class="bench-card avg">
       <div class="bench-tier">📊 行业均值</div>
       <div class="bench-metrics">
-        <div class="bench-metric-row">
-          <span class="bench-metric-label">日均发布</span>
-          <span class="bench-metric-val blue">1~2<span class="bench-metric-unit">篇/天</span></span>
+        <div class="bench-row">
+          <span class="bench-label">日均发布</span>
+          <span class="bench-val">1~2<span class="bench-unit">篇/天</span></span>
         </div>
-        <div class="bench-metric-row">
-          <span class="bench-metric-label">商笔 CTR</span>
-          <span class="bench-metric-val blue">13<span class="bench-metric-unit">%</span></span>
+        <div class="bench-row">
+          <span class="bench-label">商笔 CTR</span>
+          <span class="bench-val">13<span class="bench-unit">%</span></span>
         </div>
-        <div class="bench-metric-row">
-          <span class="bench-metric-label">商品转化率</span>
-          <span class="bench-metric-val blue">5<span class="bench-metric-unit">%</span></span>
+        <div class="bench-row">
+          <span class="bench-label">商品转化率</span>
+          <span class="bench-val">5<span class="bench-unit">%</span></span>
         </div>
       </div>
-      <div class="bench-hint">休食五组动销商家行业均值</div>
+      <div class="bench-hint">休食五组 1502 家动销商家均值</div>
     </div>
 
     <div class="bench-card low">
       <div class="bench-tier">⚠️ 待提升</div>
       <div class="bench-metrics">
-        <div class="bench-metric-row">
-          <span class="bench-metric-label">日均发布</span>
-          <span class="bench-metric-val"><1<span class="bench-metric-unit">篇/天</span></span>
+        <div class="bench-row">
+          <span class="bench-label">日均发布</span>
+          <span class="bench-val">&lt;1<span class="bench-unit">篇/天</span></span>
         </div>
-        <div class="bench-metric-row">
-          <span class="bench-metric-label">商笔 CTR</span>
-          <span class="bench-metric-val"><7<span class="bench-metric-unit">%</span></span>
+        <div class="bench-row">
+          <span class="bench-label">商笔 CTR</span>
+          <span class="bench-val">&lt;7<span class="bench-unit">%</span></span>
         </div>
-        <div class="bench-metric-row">
-          <span class="bench-metric-label">商品转化率</span>
-          <span class="bench-metric-val"><2<span class="bench-metric-unit">%</span></span>
+        <div class="bench-row">
+          <span class="bench-label">商品转化率</span>
+          <span class="bench-val">&lt;2<span class="bench-unit">%</span></span>
         </div>
       </div>
-      <div class="bench-hint">低于行业均值 30% 以下，需重点关注</div>
+      <div class="bench-hint">低于行业均值 30%，需重点关注</div>
     </div>
 
   </div>
 
-  <!-- ② 本周内容风向 -->
-  <div class="section-label"><span class="dot"></span>本周内容风向</div>
-  <div class="trend-grid" style="grid-template-columns: repeat(5, 1fr);">
+  <!-- ② 内容风向 -->
+  <div class="section-label">
+    <span class="icon">🧭</span> 本周内容风向
+    <span class="tag">基于真实笔记标题分析</span>
+  </div>
+  <div class="trend-grid">
 
     <div class="trend-card">
-      <div class="trend-card-head">
-        <span class="trend-category-tag snack">零食</span>
-      </div>
-      <div class="trend-card-directions">
-        <div class="trend-dir"><span class="trend-dir-num">1</span><span>主理人爆单故事：用真实经历+情绪表达建立信任感（"感谢小红书让我们爆单了🥳"）</span></div>
-        <div class="trend-dir"><span class="trend-dir-num">2</span><span>极致性价比冲击：价格锚点+夸张情绪，触发冲动购买（"才9.9！真的会忍不住回购"）</span></div>
-        <div class="trend-dir"><span class="trend-dir-num">3</span><span>好吃难以置信：用疑问/感叹制造好奇心（"发明这个味道的是人类吗"）</span></div>
+      <div class="trend-head snack">🍿 零食</div>
+      <div class="trend-dirs">
+        <div class="trend-dir"><span class="trend-num">1</span><span>意外新品组合：把不相关的食材塞在一起制造反差（"芋泥怎么会塞到烤肠里！"），惊叫式标题 CTR 高达 37%+</span></div>
+        <div class="trend-dir"><span class="trend-num">2</span><span>特定人群标签精准锁客：孕妇/健身/备考等标签明确，人群精准封面转化高，商卡 CTR 普遍 5~10%</span></div>
+        <div class="trend-dir"><span class="trend-num">3</span><span>优质碳水/减脂碳水：蜜饯枣类以"碳水"重新定义，减脂人群需求强烈，多条曝光 10w+ 同类笔记集中跑量</span></div>
       </div>
     </div>
 
     <div class="trend-card">
-      <div class="trend-card-head">
-        <span class="trend-category-tag fastfood">速食</span>
-      </div>
-      <div class="trend-card-directions">
-        <div class="trend-dir"><span class="trend-dir-num">1</span><span>线下店同款平替：还原知名餐厅/连锁品牌口味，满足在家复刻欲（"日料店平替找到了！"）</span></div>
-        <div class="trend-dir"><span class="trend-dir-num">2</span><span>城市/地域特色食品：带地域标签强化真实感和稀缺感（"新疆炒米粉""南京盐水鸭"）</span></div>
-        <div class="trend-dir"><span class="trend-dir-num">3</span><span>场景化懒人吃法：宿舍/办公室/深夜场景，强调方便、好吃、治愈</span></div>
+      <div class="trend-head fast">🍜 速食</div>
+      <div class="trend-dirs">
+        <div class="trend-dir"><span class="trend-num">1</span><span>沉浸式吃播/深夜场景：不睡觉就来吃面，氛围感内容 CTR 38.7%，宿舍党覆盖效率最高</span></div>
+        <div class="trend-dir"><span class="trend-num">2</span><span>商家感恩+订单破局：主理人视角真实爆单故事（感谢小红书卖了1000单），信任建立快，商卡转化 12%+</span></div>
+        <div class="trend-dir"><span class="trend-num">3</span><span>学生/宿舍认可背书："这商家是真把宿舍党当人啊！"——替用户说出判断，曝光 94万，商卡转化 18.5%</span></div>
       </div>
     </div>
 
     <div class="trend-card">
-      <div class="trend-card-head">
-        <span class="trend-category-tag drink">饮品</span>
-      </div>
-      <div class="trend-card-directions">
-        <div class="trend-dir"><span class="trend-dir-num">1</span><span>周期打卡+身体变化：记录喝了N天后的效果，真实感强（"喝了14天…嗓子居然舒服了"）</span></div>
-        <div class="trend-dir"><span class="trend-dir-num">2</span><span>春日场景情绪：与朋友/恋人的约会仪式感，清明/踏青节点（"春日约会，从这杯五红茶开始🍰"）</span></div>
-        <div class="trend-dir"><span class="trend-dir-num">3</span><span>精致咖啡生活方式：打造个人咖啡角，展示品味与讲究（"属于我的小小咖啡角☕️"）</span></div>
+      <div class="trend-head drink">🧋 饮品</div>
+      <div class="trend-dirs">
+        <div class="trend-dir"><span class="trend-num">1</span><span>多味茶配方跑量：十三味茶/多味养生茶组合系列强势，"成分数字+升级版"封面 CTR 39%+，是本周饮品最高点</span></div>
+        <div class="trend-dir"><span class="trend-num">2</span><span>周期打卡转化：连续 N 天打卡记录（28天抹茶粉/薄荷油柑2000ml），商卡CTR 13%+，过程感种草转化强</span></div>
+        <div class="trend-dir"><span class="trend-num">3</span><span>联名限定引爆：SNOOPY×三顿半联名商卡CTR 高达 66%（本周最高），联名包装即购买理由，无需过多文案</span></div>
       </div>
     </div>
 
     <div class="trend-card">
-      <div class="trend-card-head">
-        <span class="trend-category-tag liquor">酒类</span>
-      </div>
-      <div class="trend-card-directions">
-        <div class="trend-dir"><span class="trend-dir-num">1</span><span>春日/清明聚会场景：户外、烧烤、家庭聚餐场景种草，突出氛围感</span></div>
-        <div class="trend-dir"><span class="trend-dir-num">2</span><span>主理人手工/小众感：外婆配方、小镇摆摊故事，用人情味区别大品牌（"我把外婆的醪糟带到小红书"）</span></div>
-        <div class="trend-dir"><span class="trend-dir-num">3</span><span>微醺轻饮概念：低酒精、果味、适合不喝酒人群，降低购买门槛</span></div>
+      <div class="trend-head liquor">🍷 酒类</div>
+      <div class="trend-dirs">
+        <div class="trend-dir"><span class="trend-num">1</span><span>明星/名人同款背书：范明老师爱喝小酒，借名人日常种草，信任传递效率高，封面 CTR 29.9%</span></div>
+        <div class="trend-dir"><span class="trend-num">2</span><span>普洱/茶类酒跨界：说脏话奶茶/普洱跨界卖点制造话题，曝光 48万，商卡CTR 8.6%，猎奇驱动转化</span></div>
+        <div class="trend-dir"><span class="trend-num">3</span><span>五一聚会场景延续：好友聚会/小酌场景内容持续跑量，饮酒轻松氛围搭配节气节点效果好</span></div>
       </div>
     </div>
 
     <div class="trend-card">
-      <div class="trend-card-head">
-        <span class="trend-category-tag herbal">中式滋补</span>
-      </div>
-      <div class="trend-card-directions">
-        <div class="trend-dir"><span class="trend-dir-num">1</span><span>身体痛点精准命中：上热下寒/气血/内调等症状描述直接切入，触发精准人群（"上热下寒的姐妹，试试这个！"）</span></div>
-        <div class="trend-dir"><span class="trend-dir-num">2</span><span>孕/育儿健康场景：孕期营养、孩子内热/积食，妈妈群体高转化（"孕酮足才是孕期稳的㊙️诀"）</span></div>
-        <div class="trend-dir"><span class="trend-dir-num">3</span><span>产地溯源真实感：强调原产地、无添加、野生采摘，建立信任背书（"山区野生蒲公英根茶 无硫0添加"）</span></div>
+      <div class="trend-head herb">🌿 中式滋补</div>
+      <div class="trend-dirs">
+        <div class="trend-dir"><span class="trend-num">1</span><span>野生产地故事：黄精/药食同源品，从"爸妈山里遇到陌生人"等故事切入，曝光 78万+，稀缺感+真实感双驱动</span></div>
+        <div class="trend-dir"><span class="trend-num">2</span><span>原料/工艺极致标准：反向教育（"原料不行，再好的工艺也救不了"），主动说出挑剔标准，建立品质信任</span></div>
+        <div class="trend-dir"><span class="trend-num">3</span><span>焦虑型健康痛点：年轻人身体垮/孩子出汗多/月经问题，精准痛点命中，商卡 CTR 1~5%，以量取胜</span></div>
       </div>
     </div>
 
   </div>
 
-  <!-- ③ 封面类型图鉴 -->
-  <div class="section-label"><span class="dot"></span>高 CTR 封面类型</div>
+  <!-- ③ 封面图鉴 -->
+  <div class="section-label">
+    <span class="icon">🖼️</span> 本周高表现笔记封面
+    <span class="tag">真实数据 · W16 精选</span>
+  </div>
   <div class="cover-grid">
 
     <div class="cover-card">
-      <div class="cover-img-placeholder">📸</div>
-      <div class="cover-card-body">
-        <div class="cover-type-name">类型 A：手持场景</div>
-        <div class="cover-ctr">CTR 待填写</div>
-        <div class="cover-desc">手持商品 + 自然光背景，无贴文字</div>
+      <a href="https://www.xiaohongshu.com/explore/69d8cb160000000022024c90" target="_blank">
+        <img class="cover-img" src="https://cdn.jsdelivr.net/gh/zhudamen528-code/xushi-trends@main/images/cover1.jpg" alt="粉红波旁 一场美丽的误会" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="cover-img-placeholder" style="display:none">📸</div>
+      </a>
+      <div class="cover-body">
+        <div class="cover-type">咖啡</div>
+        <span class="cover-ctr">商卡转化 4.2%</span>
+        <div class="cover-desc">粉红波旁 一场美丽的误会</div>
+        <a class="cover-note-link" href="https://www.xiaohongshu.com/explore/69d8cb160000000022024c90" target="_blank">曝光 34,836 → 查看笔记 ↗</a>
       </div>
     </div>
 
     <div class="cover-card">
-      <div class="cover-img-placeholder">🖼️</div>
-      <div class="cover-card-body">
-        <div class="cover-type-name">类型 B：氛围摆拍</div>
-        <div class="cover-ctr">CTR 待填写</div>
-        <div class="cover-desc">道具感布景，俯拍或斜45°，强视觉</div>
+      <a href="https://www.xiaohongshu.com/explore/69d8598300000000230215cc" target="_blank">
+        <img class="cover-img" src="https://cdn.jsdelivr.net/gh/zhudamen528-code/xushi-trends@main/images/cover2.jpg" alt="SNOOPY × 三顿半联名系列" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="cover-img-placeholder" style="display:none">📸</div>
+      </a>
+      <div class="cover-body">
+        <div class="cover-type">咖啡</div>
+        <span class="cover-ctr">商卡转化 66.3%</span>
+        <div class="cover-desc">SNOOPY × 三顿半联名系列 DREAM TO SHINE</div>
+        <a class="cover-note-link" href="https://www.xiaohongshu.com/explore/69d8598300000000230215cc" target="_blank">曝光 13,926 → 查看笔记 ↗</a>
       </div>
     </div>
 
     <div class="cover-card">
-      <div class="cover-img-placeholder">⚖️</div>
-      <div class="cover-card-body">
-        <div class="cover-type-name">类型 C：对比图</div>
-        <div class="cover-ctr">CTR 待填写</div>
-        <div class="cover-desc">前后对比 / 多品对比，信息密度高</div>
+      <a href="https://www.xiaohongshu.com/explore/69d4f42f000000001f002935" target="_blank">
+        <img class="cover-img" src="https://cdn.jsdelivr.net/gh/zhudamen528-code/xushi-trends@main/images/cover3.jpg" alt="海河这脑洞真是服了" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="cover-img-placeholder" style="display:none">📸</div>
+      </a>
+      <div class="cover-body">
+        <div class="cover-type">液态奶/常温乳制品</div>
+        <span class="cover-ctr">封面CTR 28.4%</span>
+        <div class="cover-desc">海河这脑洞真是服了</div>
+        <a class="cover-note-link" href="https://www.xiaohongshu.com/explore/69d4f42f000000001f002935" target="_blank">曝光 7,561 → 查看笔记 ↗</a>
       </div>
     </div>
 
     <div class="cover-card">
-      <div class="cover-img-placeholder">➕</div>
-      <div class="cover-card-body">
-        <div class="cover-type-name">类型 D：待定</div>
-        <div class="cover-ctr">CTR 待填写</div>
-        <div class="cover-desc">根据你肉眼确认结果填入</div>
+      <a href="https://www.xiaohongshu.com/explore/69d1d179000000002202aac5" target="_blank">
+        <img class="cover-img" src="https://cdn.jsdelivr.net/gh/zhudamen528-code/xushi-trends@main/images/cover4.jpg" alt="果味干噎+黑皮Kitty酸奶脆" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="cover-img-placeholder" style="display:none">📸</div>
+      </a>
+      <div class="cover-body">
+        <div class="cover-type">其它</div>
+        <span class="cover-ctr">商卡转化 20.7%</span>
+        <div class="cover-desc">果味干噎+黑皮Kitty酸奶脆</div>
+        <a class="cover-note-link" href="https://www.xiaohongshu.com/explore/69d1d179000000002202aac5" target="_blank">曝光 15,085 → 查看笔记 ↗</a>
+      </div>
+    </div>
+
+    <div class="cover-card">
+      <a href="https://www.xiaohongshu.com/explore/69d05196000000001a02d888" target="_blank">
+        <img class="cover-img" src="https://cdn.jsdelivr.net/gh/zhudamen528-code/xushi-trends@main/images/cover5.jpg" alt="喝抹茶到底要不要打发？" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="cover-img-placeholder" style="display:none">📸</div>
+      </a>
+      <div class="cover-body">
+        <div class="cover-type">冲饮品/食补粉粉</div>
+        <span class="cover-ctr">封面CTR 23.1%</span>
+        <div class="cover-desc">喝抹茶到底要不要打发？</div>
+        <a class="cover-note-link" href="https://www.xiaohongshu.com/explore/69d05196000000001a02d888" target="_blank">曝光 7,603 → 查看笔记 ↗</a>
+      </div>
+    </div>
+
+    <div class="cover-card">
+      <a href="https://www.xiaohongshu.com/explore/69d4e0f2000000002200ed00" target="_blank">
+        <img class="cover-img" src="https://cdn.jsdelivr.net/gh/zhudamen528-code/xushi-trends@main/images/cover6.jpg" alt="加浓版薄荷小方" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="cover-img-placeholder" style="display:none">📸</div>
+      </a>
+      <div class="cover-body">
+        <div class="cover-type">糕点/点心</div>
+        <span class="cover-ctr">商卡转化 9.4%</span>
+        <div class="cover-desc">加浓版薄荷小方甜度更低哦</div>
+        <a class="cover-note-link" href="https://www.xiaohongshu.com/explore/69d4e0f2000000002200ed00" target="_blank">曝光 14,017 → 查看笔记 ↗</a>
       </div>
     </div>
 
   </div>
 
   <!-- ④ 标题公式 -->
-  <div class="section-label"><span class="dot"></span>本周标题公式</div>
+  <div class="section-label">
+    <span class="icon">✍️</span> 本周标题公式
+    <span class="tag">高 CTR 笔记结构提炼</span>
+  </div>
   <div class="formula-card">
-
     <div class="formula-row">
-      <span class="formula-rank">1</span>
-      <span class="formula-pill highlight">时间/周期</span>
-      <span class="formula-plus">+</span>
-      <span class="formula-pill highlight">产品动作</span>
-      <span class="formula-plus">+</span>
-      <span class="formula-pill">意外效果</span>
-      <span class="formula-example">"喝了14天薄荷油柑茶💦被惊喜到了"</span>
+      <span class="formula-rank">01</span>
+      <div class="formula-pills">
+        <span class="formula-pill hot">惊叫反应词</span>
+        <span class="formula-plus">+</span>
+        <span class="formula-pill">意外组合</span>
+        <span class="formula-plus">+</span>
+        <span class="formula-pill">感叹号</span>
+      </div>
+      <div class="formula-example">「芋泥怎么会塞到烤肠里！」「黑皮Kitty酸奶脆，这组合是谁发明的！」</div>
     </div>
-
     <div class="formula-row">
-      <span class="formula-rank">2</span>
-      <span class="formula-pill highlight">价格锚点</span>
-      <span class="formula-plus">+</span>
-      <span class="formula-pill">情绪反应</span>
-      <span class="formula-plus">+</span>
-      <span class="formula-pill highlight">回购动作</span>
-      <span class="formula-example">"才9.88 真的会忍不住再回购"</span>
+      <span class="formula-rank">02</span>
+      <div class="formula-pills">
+        <span class="formula-pill">商家认可句</span>
+        <span class="formula-plus">+</span>
+        <span class="formula-pill hot">人群标签</span>
+        <span class="formula-plus">+</span>
+        <span class="formula-pill">感叹</span>
+      </div>
+      <div class="formula-example">「这商家是真把宿舍党当人啊！」「感谢小红书，我的辣条卖了1000单」</div>
     </div>
-
     <div class="formula-row">
-      <span class="formula-rank">3</span>
-      <span class="formula-pill highlight">人群身份/痛点</span>
-      <span class="formula-plus">+</span>
-      <span class="formula-pill">解决方案</span>
-      <span class="formula-example">"上热下寒的姐妹，真的可以试试！"</span>
+      <span class="formula-rank">03</span>
+      <div class="formula-pills">
+        <span class="formula-pill">品牌A</span>
+        <span class="formula-plus">×</span>
+        <span class="formula-pill hot">联名/跨界</span>
+        <span class="formula-plus">+</span>
+        <span class="formula-pill">系列名</span>
+      </div>
+      <div class="formula-example">「SNOOPY × 三顿半联名系列 DREAM TO SHINE」「说脏话奶茶 × 普洱跨界」</div>
     </div>
-
   </div>
 
-  <!-- ⑤ 本周热点话题 -->
-  <div class="section-label"><span class="dot"></span>本周热点话题 / 节点</div>
-  <div class="topic-section">
-
+  <!-- ⑤ 热点话题 -->
+  <div class="section-label">
+    <span class="icon">🔥</span> 本周热点话题 / 节点
+    <span class="tag">W16 · 04.07—04.13</span>
+  </div>
+  <div class="topic-grid">
     <div class="topic-group">
-      <div class="topic-group-title">🔥 本周高频词（笔记标题高频出现）</div>
+      <div class="topic-group-label">高频标题词</div>
       <div class="topic-tags">
-        <span class="topic-tag hot">内调</span>
-        <span class="topic-tag hot">爆单</span>
-        <span class="topic-tag hot">回购</span>
-        <span class="topic-tag hot">0添加</span>
-        <span class="topic-tag hot">手工</span>
-        <span class="topic-tag hot">无硫</span>
+        <span class="topic-tag hot">#宿舍速食</span>
+        <span class="topic-tag hot">#联名限定</span>
+        <span class="topic-tag hot">#意外组合</span>
+        <span class="topic-tag">#野生产地</span>
+        <span class="topic-tag">#多味茶</span>
       </div>
     </div>
-
     <div class="topic-group">
-      <div class="topic-group-title">📈 上升场景词</div>
+      <div class="topic-group-label">上升场景词</div>
       <div class="topic-tags">
-        <span class="topic-tag rising">春日约会</span>
-        <span class="topic-tag rising">开工回魂</span>
-        <span class="topic-tag rising">宿舍吃播</span>
-        <span class="topic-tag rising">超模咖啡</span>
-        <span class="topic-tag rising">孕期营养</span>
+        <span class="topic-tag hot">#五一聚会</span>
+        <span class="topic-tag hot">#深夜食堂</span>
+        <span class="topic-tag">#学生党必备</span>
+        <span class="topic-tag">#打工人养生</span>
+        <span class="topic-tag">#减脂期</span>
       </div>
     </div>
-
     <div class="topic-group">
-      <div class="topic-group-title">🌿 本周节点</div>
+      <div class="topic-group-label">本周节点</div>
       <div class="topic-tags">
-        <span class="topic-tag seasonal">清明 4/4-4/6</span>
-        <span class="topic-tag seasonal">踏青野餐</span>
-        <span class="topic-tag seasonal">春日轻食</span>
-        <span class="topic-tag seasonal">青团季</span>
+        <span class="topic-tag hot">#五一假期</span>
+        <span class="topic-tag">#谷雨</span>
+        <span class="topic-tag">#春日养生</span>
       </div>
     </div>
-
   </div>
 
   <!-- ⑥ 品类风向 -->
-  <div class="section-label"><span class="dot"></span>品类风向</div>
-  <div class="category-grid">
-
-    <div class="cat-card">
-      <div class="cat-name">🍿 零食</div>
-      <div class="cat-items">
-        <div class="cat-item">糕点/点心发布量最大，主理人手工感内容跑量明显</div>
-        <div class="cat-item">卤味/牛肉干靠"南京/潮汕"等地域标签制造稀缺感</div>
-        <div class="cat-item">饼干/膨化以"价格冲击+口感夸张"驱动冲动消费</div>
-      </div>
-    </div>
-
-    <div class="cat-card">
-      <div class="cat-name">🍜 速食</div>
-      <div class="cat-items">
-        <div class="cat-item">方便面/米线：知名餐厅同款平替是当前最强内容方向</div>
-        <div class="cat-item">调味品：场景化菜谱（许府牛蘸料/咖喱虾仁盖饭）带货效率高</div>
-        <div class="cat-item">干货类：溯源产地+无添加背书是核心信任建立方式</div>
-      </div>
-    </div>
-
-    <div class="cat-card">
-      <div class="cat-name">🧋 饮品</div>
-      <div class="cat-items">
-        <div class="cat-item">养生茶发布量大，口臭/火气/内调等痛点场景转化率高</div>
-        <div class="cat-item">花草茶/代用茶：春日节点驱动，"约会仪式感"内容在增长</div>
-        <div class="cat-item">咖啡：精致生活方式内容为主，冷萃/冰饮场景受欢迎</div>
-      </div>
-    </div>
-
-    <div class="cat-card">
-      <div class="cat-name">🍷 酒类</div>
-      <div class="cat-items">
-        <div class="cat-item">葡萄酒发布量最大，清明前后聚会/礼品场景是主要方向</div>
-        <div class="cat-item">露酒/果酒：主理人自制故事内容差异化明显，竞争较小</div>
-        <div class="cat-item">啤酒：冰镇夏日场景开始启动，氛围感内容为主</div>
-      </div>
-    </div>
-
-    <div class="cat-card">
-      <div class="cat-name">🌿 中式滋补</div>
-      <div class="cat-items">
-        <div class="cat-item">养生茶/药食同源：症状描述精准，转化率高于其他品类</div>
-        <div class="cat-item">滋补原料：枸杞/黄精/陈皮，产地+手作内容建立溢价空间</div>
-        <div class="cat-item">食疗营养：孕育人群是核心买家，内容要强调安全与专业</div>
-      </div>
-    </div>
-
+  <div class="section-label">
+    <span class="icon">📦</span> 品类风向
+    <span class="tag">W16 各品类重点动向</span>
   </div>
+  <div class="cat-wrap">
+    <div class="cat-grid">
+
+      <div class="cat-card">
+        <div class="cat-head snack">🍿 零食</div>
+        <div class="cat-items">
+          <div class="cat-item"><span class="cat-dot up">↑</span><span>意外组合零食持续跑量，反差感封面 CTR 37%+</span></div>
+          <div class="cat-item"><span class="cat-dot up">↑</span><span>孕妇/健身/备考人群标签封面商卡转化 5~10%</span></div>
+          <div class="cat-item"><span class="cat-dot">→</span><span>蜜饯枣类以"优质碳水"重新定义，减脂人群需求强</span></div>
+        </div>
+        <div class="cat-focus">重点关注：意外组合 + 人群标签</div>
+      </div>
+
+      <div class="cat-card">
+        <div class="cat-head fast">🍜 速食</div>
+        <div class="cat-items">
+          <div class="cat-item"><span class="cat-dot up">↑</span><span>宿舍/深夜场景内容 CTR 38.7%，转化 18.5%</span></div>
+          <div class="cat-item"><span class="cat-dot up">↑</span><span>主理人真实爆单故事，商卡转化 12%+</span></div>
+          <div class="cat-item"><span class="cat-dot">→</span><span>邪修吃法（奶油火鸡面等）猎奇驱动点击</span></div>
+        </div>
+        <div class="cat-focus">重点关注：宿舍场景 + 主理人视角</div>
+      </div>
+
+      <div class="cat-card">
+        <div class="cat-head drink">🧋 饮品</div>
+        <div class="cat-items">
+          <div class="cat-item"><span class="cat-dot up">↑</span><span>联名限定引爆，SNOOPY×三顿半商卡 CTR 66%</span></div>
+          <div class="cat-item"><span class="cat-dot up">↑</span><span>多味养生茶组合，"成分数字"封面 CTR 39%+</span></div>
+          <div class="cat-item"><span class="cat-dot">→</span><span>周期打卡内容商卡 CTR 13%+，过程感转化强</span></div>
+        </div>
+        <div class="cat-focus">重点关注：联名限定 + 成分数字封面</div>
+      </div>
+
+      <div class="cat-card">
+        <div class="cat-head liquor">🍷 酒类</div>
+        <div class="cat-items">
+          <div class="cat-item"><span class="cat-dot up">↑</span><span>五一聚会场景内容持续跑量，节点借势明显</span></div>
+          <div class="cat-item"><span class="cat-dot">→</span><span>名人同款背书封面 CTR 29.9%，信任传递效率高</span></div>
+          <div class="cat-item"><span class="cat-dot">→</span><span>普洱/茶类跨界猎奇，曝光 48 万</span></div>
+        </div>
+        <div class="cat-focus">重点关注：五一聚会场景借势</div>
+      </div>
+
+      <div class="cat-card">
+        <div class="cat-head herb">🌿 中式滋补</div>
+        <div class="cat-items">
+          <div class="cat-item"><span class="cat-dot up">↑</span><span>野生产地故事曝光 78 万+，稀缺感+真实感双驱动</span></div>
+          <div class="cat-item"><span class="cat-dot">→</span><span>反向教育内容（"原料不行工艺也救不了"）建立品质信任</span></div>
+          <div class="cat-item"><span class="cat-dot down">↓</span><span>功效宣称类笔记处罚案例增多，需注意合规</span></div>
+        </div>
+        <div class="cat-focus">重点关注：产地故事 + 合规表达</div>
+      </div>
+
+    </div>
+  </div>
+
+  </div><!-- /tab-trends -->
+
+
+  <!-- Tab2: 实用工具 -->
+  <div class="tab-panel hidden" id="tab-tools">
+
+  <!-- 工具①: 笔记策划 -->
+  <div class="section-label">
+    <span class="icon">✨</span> 笔记策划工具
+    <span class="tag">输入产品 · 一键生成方案</span>
+  </div>
+
+  <div class="planner-card">
+    <div class="planner-intro">
+      基于本周行业风向，输入你的产品信息，生成可直接发给 AI 的策划提示词
+    </div>
+
+    <div class="planner-form">
+      <div class="form-row">
+        <label class="form-label">产品名称 <span class="required">*</span></label>
+        <input class="form-input" id="product-name" type="text" placeholder="例：手工黑芝麻丸、鲜萃冷泡茶、贵州辣子鸡调料">
+      </div>
+      <div class="form-row">
+        <label class="form-label">核心卖点（选填）</label>
+        <input class="form-input" id="product-feature" type="text" placeholder="例：古法九蒸九晒、0添加、外婆配方、产地直发">
+      </div>
+      <div class="form-row">
+        <label class="form-label">目标人群（选填）</label>
+        <input class="form-input" id="product-audience" type="text" placeholder="例：备孕女性、减脂人群、宝妈、下厨爱好者">
+      </div>
+      <div class="form-row">
+        <label class="form-label">品类</label>
+        <div class="cat-select-group">
+          <label class="cat-radio"><input type="radio" name="cat" value="零食" checked><span>🍿 零食</span></label>
+          <label class="cat-radio"><input type="radio" name="cat" value="速食"><span>🍜 速食</span></label>
+          <label class="cat-radio"><input type="radio" name="cat" value="饮品"><span>🧋 饮品</span></label>
+          <label class="cat-radio"><input type="radio" name="cat" value="酒类"><span>🍷 酒类</span></label>
+          <label class="cat-radio"><input type="radio" name="cat" value="中式滋补"><span>🌿 滋补</span></label>
+        </div>
+      </div>
+    </div>
+
+    <div class="planner-actions">
+      <button class="btn-gen" onclick="openKimi()">✨ 用 Kimi 生成</button>
+      <button class="btn-gen btn-doubao" onclick="openDoubao()">🤖 用豆包生成</button>
+      <button class="btn-copy" onclick="copyPrompt()">📋 复制提示词</button>
+    </div>
+
+    <div class="prompt-preview" id="prompt-preview">
+      <div class="prompt-label">生成的提示词预览</div>
+      <div class="prompt-text" id="prompt-text">填写产品信息后，这里会显示提示词预览…</div>
+    </div>
+  </div>
+
+  <!-- 工具②: 封面示意图生成 -->
+  <div class="section-label" style="margin-top:32px">
+    <span class="icon">🖼️</span> 封面示意图生成
+    <span class="tag">输入卖点 · 生成图片Prompt</span>
+  </div>
+  <div class="planner-card">
+    <div class="planner-intro" style="padding:0">
+      <div style="padding:14px 20px 10px;font-size:13px;color:#666;border-bottom:1px solid #f0ebe4">
+        输入产品信息 → 豆包生成6个封面方向 + 即梦Prompt → 选一个去即梦生图参考
+      </div>
+      <div style="display:flex;align-items:center;gap:0;padding:12px 20px;background:#fffaf7;overflow-x:auto">
+        <div style="text-align:center;min-width:80px">
+          <div style="font-size:22px">📝</div>
+          <div style="font-size:11px;font-weight:700;color:#333;margin-top:4px">填写产品信息</div>
+          <div style="font-size:10px;color:#999;margin-top:2px">名称/卖点/人群</div>
+        </div>
+        <div style="color:#ccc;font-size:18px;padding:0 6px;flex-shrink:0">→</div>
+        <div style="text-align:center;min-width:80px">
+          <div style="font-size:22px">📋</div>
+          <div style="font-size:11px;font-weight:700;color:#333;margin-top:4px">复制提示词</div>
+          <div style="font-size:10px;color:#999;margin-top:2px">点击按钮自动复制</div>
+        </div>
+        <div style="color:#ccc;font-size:18px;padding:0 6px;flex-shrink:0">→</div>
+        <div style="text-align:center;min-width:90px">
+          <div style="font-size:22px">🤖</div>
+          <div style="font-size:11px;font-weight:700;color:#333;margin-top:4px">粘贴到豆包</div>
+          <div style="font-size:10px;color:#999;margin-top:2px">获取6个方向策划</div>
+        </div>
+        <div style="color:#ccc;font-size:18px;padding:0 6px;flex-shrink:0">→</div>
+        <div style="text-align:center;min-width:100px">
+          <div style="font-size:22px">✅</div>
+          <div style="font-size:11px;font-weight:700;color:#333;margin-top:4px">选中意的方向</div>
+          <div style="font-size:10px;color:#999;margin-top:2px">告诉豆包生成方向X</div>
+        </div>
+        <div style="color:#ccc;font-size:18px;padding:0 6px;flex-shrink:0">→</div>
+        <div style="text-align:center;min-width:80px">
+          <div style="font-size:22px">🎨</div>
+          <div style="font-size:11px;font-weight:700;color:#333;margin-top:4px">豆包直接生图</div>
+          <div style="font-size:10px;color:#999;margin-top:2px">无需跳转其他平台</div>
+        </div>
+      </div>
+    </div>
+    <div class="planner-form">
+      <div class="form-row">
+        <label class="form-label">产品名称 <span class="required">*</span></label>
+        <input class="form-input" id="cover-name" type="text" placeholder="例：手工黑芝麻丸、鲜萃冷泡茶、贵州蘸水">
+      </div>
+      <div class="form-row">
+        <label class="form-label">核心卖点（选填）</label>
+        <input class="form-input" id="cover-feature" type="text" placeholder="例：古法九蒸九晒、0添加、外婆配方、产地直发">
+      </div>
+      <div class="form-row">
+        <label class="form-label">目标人群（选填）</label>
+        <input class="form-input" id="cover-audience" type="text" placeholder="例：备考学生、减脂女生、宝妈、下厨爱好者">
+      </div>
+    </div>
+    <div class="planner-actions">
+      <button class="btn-gen btn-doubao" onclick="openCoverDoubao()">🤖 跳转豆包获取封面策划+生图</button>
+      <button class="btn-copy" onclick="copyCoverPrompt()">📋 复制提示词</button>
+    </div>
+    <div class="prompt-preview" id="cover-prompt-preview">
+      <div class="prompt-label">封面策划提示词预览（复制后粘贴到豆包）</div>
+      <div class="prompt-text" id="cover-prompt-text">填写产品信息后，这里会显示封面策划提示词…</div>
+    </div>
+  </div>
+
+  <!-- 工具③: 标题正文违规预审 -->
+  <div class="section-label" style="margin-top:32px">
+    <span class="icon">🔍</span> 标题正文违规预审
+    <span class="tag">贴入文案 · AI逐条核查</span>
+  </div>
+  <div class="planner-card">
+    <div class="planner-intro">
+      贴入你的笔记标题或正文，AI 自动逐条核查违规风险并给出修改建议（结果直接显示，无需跳转）
+    </div>
+    <div class="planner-form">
+      <div class="form-row">
+        <label class="form-label">笔记标题（选填）</label>
+        <input class="form-input" id="audit-title" type="text" placeholder="例：7天瘦10斤！这个方法太有效了">
+      </div>
+      <div class="form-row">
+        <label class="form-label">笔记正文 <span class="required">*</span></label>
+        <textarea class="form-input" id="audit-body" rows="5" placeholder="把你的笔记正文粘贴到这里…" style="resize:vertical;line-height:1.6"></textarea>
+      </div>
+    </div>
+    <div class="planner-actions">
+      <button class="btn-gen" id="audit-btn" onclick="runAudit()">🔍 开始审核</button>
+    </div>
+    <div id="audit-result-area" style="display:none;padding:20px 24px;border-top:1px solid #f0ebe4">
+      <div style="font-size:12px;font-weight:700;color:#999;margin-bottom:10px;text-transform:uppercase;letter-spacing:1px">审核结果</div>
+      <div id="audit-result-content" style="font-size:13px;line-height:1.8;color:#333;white-space:pre-wrap"></div>
+    </div>
+  </div>
+
+  </div><!-- /tab-tools -->
 
 </div>
 
 <div class="footer">
   小红书电商 · 休食行业五组 · 数据来源：小红书 BI 平台 · 每周一更新
+  <div style="margin-top:8px;font-size:12px;color:#888">
+    📬 合作/交流：zhujincheng1031@164.com
+  </div>
+  <div style="margin-top:8px;font-size:11px;opacity:0.6">
+    本站累计访问 <span id="busuanzi_value_site_pv">--</span> 次 · 
+    访客数 <span id="busuanzi_value_site_uv">--</span> 人
+  </div>
 </div>
+
+<style>
+  /* ── 策划工具 ── */
+  .planner-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    border: 1.5px solid var(--border);
+    overflow: hidden;
+  }
+  .planner-intro {
+    background: linear-gradient(135deg, #fff8f4, #fff0f2);
+    padding: 16px 24px;
+    font-size: 13px;
+    color: #666;
+    border-bottom: 1px solid var(--border);
+  }
+  .planner-form {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .form-row { display: flex; flex-direction: column; gap: 6px; }
+  .form-label { font-size: 13px; font-weight: 600; color: #444; }
+  .required { color: var(--red); }
+  .form-input {
+    padding: 10px 14px;
+    border: 1.5px solid #e8e0d8;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s;
+    background: #fafaf8;
+  }
+  .form-input:focus { border-color: #ff2442; background: #fff; }
+  .cat-select-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .cat-radio { cursor: pointer; }
+  .cat-radio input { display: none; }
+  .cat-radio span {
+    display: inline-block;
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    background: #f5f0eb;
+    color: #666;
+    border: 1.5px solid transparent;
+    transition: all 0.15s;
+    cursor: pointer;
+  }
+  .cat-radio input:checked + span {
+    background: #fff0f2;
+    color: #ff2442;
+    border-color: #ffd0d8;
+  }
+  .planner-actions {
+    padding: 0 24px 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .btn-gen {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #ff2442, #ff6b35);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    transition: opacity 0.15s;
+  }
+  .btn-gen:hover { opacity: 0.88; }
+  .btn-gen.btn-doubao {
+    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+  }
+  .btn-copy {
+    padding: 12px 20px;
+    background: #f5f0eb;
+    color: #555;
+    border: 1.5px solid #e8e0d8;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.15s;
+  }
+  .btn-copy:hover { background: #eee8e0; }
+  .prompt-preview {
+    margin: 0 24px 24px;
+    background: #fafaf8;
+    border: 1.5px solid #e8e0d8;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .prompt-label {
+    padding: 8px 14px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #999;
+    background: #f0ebe4;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .prompt-text {
+    padding: 14px;
+    font-size: 13px;
+    color: #555;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    max-height: 280px;
+    overflow-y: auto;
+  }
+  .copy-success {
+    background: #10b981 !important;
+    color: #fff !important;
+    border-color: #10b981 !important;
+  }
+</style>
+
+<script>
+  // 品类对应的内容风向（与看板保持同步）
+  const CAT_TRENDS = {
+    "零食": {
+      directions: ["意外口味组合：把不相关食材组合在一起，惊叫反应式标题 CTR 37%+", "人群标签精准锁客：备考/健身/减脂人群标签明确，商卡CTR 5~10%", "优质碳水重新定位：蜜饯/果干以「减脂碳水」切入，多条曝光10万+"],
+      formulas: ["XX怎么会塞到XX里！", "高X最爱！！没有之一！！", "其实减脂期总饿的人都有一个明显共性..."],
+      cover: "产品特写近景，意外感/冲突感构图，情绪化标题配场景图"
+    },
+    "速食": {
+      directions: ["宿舍认可体：替用户说出判断，「这商家是真把宿舍党当人啊」商卡18.5%", "主理人感恩爆单：真实订单数字+情绪（感谢小红书卖了1000单），信任感极强", "沉浸式吃播：深夜/宿舍场景+「还没睡的来」，轻松氛围 CTR 38.7%"],
+      formulas: ["这商家是真把XX当人啊！", "感谢小红书，我的XX卖了N单", "还没睡的不用睡了🤣来一碗XX"],
+      cover: "食物特写热气/浇汁画面，或主理人出镜情绪感，暖色调"
+    },
+    "饮品": {
+      directions: ["多味茶配方数字：十三味/成分数量直给，升级版话术 CTR 高达 39%", "周期打卡记录：连续N天+明显感受，商卡CTR 13%+，过程感种草转化强", "联名限定引爆：SNOOPY×三顿半等联名款商卡CTR 66%，颜值即购买理由"],
+      formulas: ["连续喝了X天XX后，我有话说......", "升级版XX，喝XX就泡这个更香", "XX×XX联名系列｜每天都舍不得喝"],
+      cover: "饮品竖构图，联名包装/配方成分明显露出，干净背景"
+    },
+    "酒类": {
+      directions: ["名人日常背书：借明星/名人日常爱好种草，轻内容高信任，CTR 29.9%", "普洱/茶类跨界猎奇：说脏话奶茶等命名制造话题，曝光48万，CTR 29.1%", "五一聚会备货预热：小包装/礼盒/套装场景，五一前2周是最佳发布窗口"],
+      formulas: ["原来XX老师，平时也爱XX！", "说XX的XX！（猎奇命名）", "五一聚会必备，一瓶XX让氛围感拉满"],
+      cover: "酒瓶+生活场景，名人/氛围感组合，暖色调"
+    },
+    "中式滋补": {
+      directions: ["野生产地家人故事：爸妈山里/村里等真实场景，曝光78万+，稀缺感+真实感双驱动", "反向质量教育：主动说出原料门槛（「原料不行，再好工艺也救不了」），建立专业信任", "焦虑健康痛点矩阵：年轻人身体垮/孩子出汗/月经问题，痛点越具体 CTR 越高，适合铺量"],
+      formulas: ["感谢小红书，今年村里XX被我家包圆啦", "原料不行，再好的工艺也救不了‼️", "X岁的年轻人，身体竟然已经..."],
+      cover: "产地实景+产品原料，自然光，无过度修图，真实感第一"
+    }
+  };
+
+  // 8种标题写法（基于500条真实高CTR标题提炼）
+  const TITLE_FORMULAS = `
+【本周真实高CTR标题规律——8种写法，请分散使用，3套方案各用不同类型】
+
+① 价格冲击型（重复价格+夸张句式）
+· 一箱！8r一箱！8r一箱！重要的事情说三遍
+· 国外几十，我们就7R一个！客户祝我永远不死  
+· 善良使我定价9.9
+写法：直接喊价格，反复强调，让人感受到"超便宜"的冲击
+
+② 亲情主理人故事型（家人视角+真实情节）
+· 爸妈激动坏了😂，今天又打包了100斤以上🍡
+· 我爸天天催我发小红书卖牛胸口脆
+· 和老爸商量后，推出专为独居人做的小包装
+· 爷爷种的青苹果9r发一大箱，清脆爽口
+写法：借家人视角说话，增加真实感和温度感
+
+③ 时间打卡+身体变化型
+· 菠萝高钾水四周…马甲线自己回来了
+· 喝了14天，93岁老先生推荐的，真的厉害👍
+· 坚持喝了一个月，素颜都敢原相机直出了
+· 连续吃了一周，吃的干净真的会…
+写法：具体时间+意想不到的结果，制造"想知道结果"的冲动
+
+④ 人群痛点精准型（直接点名目标人群）
+· 管理期换个思路，掉秤就像呼吸一样简单
+· 出汗也不臭！一杯去湿浊，自带淡淡茉莉香
+· 气血不足的女生，这杯茶坚持喝上三周！
+· 请全国孕妇放心吃，我家不打药的
+写法：点名人群+解决什么问题，精准吸引对的人
+
+⑤ 悬念/反常识型（制造好奇和意外感）
+· 被资本操控最严重的东西！！！
+· 说一个撑死人但热量很低的东西
+· 这到底是谁发明的，真的绝了！
+· 救命！芋泥怎么会塞到烤肠里！
+· 总有人说：现在谁还用柴火啊？你就是傻
+写法：违背常识或制造疑问，让人忍不住点进去
+
+⑥ 产地/限定稀缺型（时间或数量紧迫感）
+· 唯一缺点：3月限定，每年只能吃一次
+· 海南温度已经30+了！再卖不出去要坏地里了
+· 被催很久的马兰头和黑芝麻，短暂开放
+· 果期20天！只有这个季节才能吃到的美味
+写法：强调稀缺/限时，触发"现在不买就没了"的紧迫感
+
+⑦ 感谢/爆单真实反馈型
+· 感谢小红书🙏已售10W单，大家真的信任我们
+· 感谢315，让我家虾仁卖了14W单🙏
+· 看到这个订单真的破防了…心都感动哭了✨
+· 谢谢小红书，让小众香椿腐乳能被大家看见
+写法：真实订单数字+感恩情绪，建立信任
+
+⑧ 极致夸赞/自封型（带点幽默自信）
+· 世界上最善良的迪拜软曲奇（本人自封）
+· 个人认为目前最好吃的优质碳水（没有之一）
+· 不用推荐了😂，已经买到"天花板"！！
+· 全世界最好吃的黑巧！！（本人自封）
+写法：主动夸到极致，带括号注释增加幽默感和真实感`;
+
+
+  function getFormData() {
+    const name = document.getElementById('product-name').value.trim();
+    const feature = document.getElementById('product-feature').value.trim();
+    const audience = document.getElementById('product-audience').value.trim();
+    const cat = document.querySelector('input[name="cat"]:checked').value;
+    return { name, feature, audience, cat };
+  }
+
+  function buildPrompt() {
+    const { name, feature, audience, cat } = getFormData();
+    if (!name) return '请先填写产品名称';
+
+    const trend = CAT_TRENDS[cat];
+
+    // 从卖点拆解三个维度
+    const featureBlock = feature ? `
+【卖点深度拆解】
+原始卖点：「${feature}」
+请你在写作前，先在脑子里把这个卖点拆成三个维度：
+- 功能点：这个卖点解决了什么具体问题？（不是"好吃"而是"辣到停不下来但又不哑巴"）
+- 情绪点：用户用这个产品时会有什么感受/情绪变化？（爽感/满足感/治愈感/成就感）
+- 社交货币：用户会因为这个产品说什么/晒什么？别人看到会怎么反应？
+写作时三个维度至少用到两个，不要停留在表面卖点。` : '';
+
+    // 人群分析
+    const audienceBlock = audience ? `
+【目标人群真实画像】
+人群描述：「${audience}」
+写作前先代入这个人群的真实状态：
+- 他们在什么场景下会需要/想到这个产品？（具体时间地点，不是泛泛的"日常生活"）
+- 他们最近在为什么事焦虑或开心？
+- 他们在小红书上喜欢看什么风格的内容？会因为什么标题点进去？
+每套方案必须从这个人群的真实视角出发，笔记是「我在用这个产品」不是「我在推荐这个产品」。` : '';
+
+    // 随机种子让每次生成有差异
+    const seed = Date.now() % 1000;
+
+    return `你是一个真实的小红书用户，同时懂得什么样的内容在平台上跑量。你不是营销专家，你是一个会写笔记的普通人。
+
+【这次你要写的产品】
+产品名称：${name}
+品类：${cat}
+${feature ? `核心卖点：${feature}` : ''}
+${audience ? `目标人群：${audience}` : ''}
+${featureBlock}
+${audienceBlock}
+
+【本周${cat}类目真实跑量内容风向（仅方案一参考）】
+1. ${trend.directions[0]}
+2. ${trend.directions[1]}
+3. ${trend.directions[2]}
+封面风格参考：${trend.cover}
+
+【违规红线（写作前必读，三套均不得触碰）】
+❌ 绝对不用：最好/第一/唯一/极致/史上最强/天花板（极值词）
+❌ 绝对不用：减肥/瘦身/燃脂/美白/助消化/排毒（功效词，普通食品禁用）
+❌ 绝对不用：临床验证/医学证明/X天瘦X斤（虚假承诺）
+❌ 绝对不用：加微信/私信我/点关注抽奖（诱导行为）
+✅ 可以用：真实感受描写、具体使用场景、吃法/用法细节、诚实的个人体验
+
+${TITLE_FORMULAS}
+
+【标题禁用句式黑名单（月搜索量100w+的同质化句式，禁止照搬）】
+禁止用以下表达开头或结尾：「比想象中好吃」「没想到」「一定要试试」「爱了爱了」「一口就上头」「真的绝了」「冲冲冲」「不会有人不知道吧」「姐妹们冲」「救命！」（单独感叹）「ww」
+
+【你的任务】
+用随机种子 #${seed} 生成 3 套差异化笔记方案：
+
+▌方案一（追本周趋势）
+必须结合上方本周跑量风向中的某一条，开头标注「用了第X条趋势」，从这个趋势角度出发写。
+
+▌方案二（挖产品本质）
+完全不看趋势，从产品某个具体细节或使用体验出发，找一个趋势里没有的切入角。
+
+▌方案三（随机视角 #${seed}）
+用随机种子决定切入角：可以是反常识吃法、意外使用场景、被忽略的产品细节、或跨品类对比——只要和方案一二明显不同就行。
+
+每套包含：
+1. 📝 标题：20字以内含emoji，输出前逐字数，超字数重写
+2. 🖼️ 封面建议：一句话说清「画面里有什么+色调+有没有人」
+3. 📄 正文：150-250字，像发朋友圈一样写，有具体细节，有真实情绪；结尾是一个具体动作（如「链接在主页」「评论区告诉我你辣度几颗星」「先囤两包试试」），禁止用「心动就下单」「冲冲冲」
+4. ⚠️ 违规自查：逐条检查，有风险词标出并给替换方案
+5. 🏷️ 话题：5-8个，#话题名，禁止含极值含义的话题（如#速食天花板）
+
+硬性规定：
+- 三套正文开头第一句必须完全不同，读一句就知道是不同人写的
+- 禁止出现「种草」「安利」「分享给大家」「真的绝了」「yyds」「ww」
+- 全程第一人称，禁止「这款产品」「该产品」第三方视角
+- 三套风格差异明显，不能换汤不换药`;
+  }
+
+  function updatePreview() {
+    document.getElementById('prompt-text').textContent = buildPrompt();
+  }
+
+  // 实时更新预览
+  ['product-name', 'product-feature', 'product-audience'].forEach(id => {
+    document.getElementById(id).addEventListener('input', updatePreview);
+  });
+  document.querySelectorAll('input[name="cat"]').forEach(el => {
+    el.addEventListener('change', updatePreview);
+  });
+
+  function openKimi() {
+    const prompt = buildPrompt();
+    if (prompt === '请先填写产品名称') { alert('请先填写产品名称'); return; }
+    const url = 'https://www.doubao.com/chat/?from=tool&input=' + encodeURIComponent(prompt);
+    // 豆包支持URL预填，直接跳转
+    navigator.clipboard.writeText(prompt).then(() => {
+      window.open('https://kimi.moonshot.cn', '_blank');
+      setTimeout(() => alert('✅ 提示词已复制！\n\n请在 Kimi 对话框中粘贴（Ctrl+V / Command+V）'), 300);
+    }).catch(() => {
+      window.open('https://kimi.moonshot.cn', '_blank');
+      alert('请手动复制下方提示词，粘贴到 Kimi 对话框');
+    });
+  }
+
+  function openDoubao() {
+    const prompt = buildPrompt();
+    if (prompt === '请先填写产品名称') { alert('请先填写产品名称'); return; }
+    navigator.clipboard.writeText(prompt).then(() => {
+      window.open('https://www.doubao.com/chat/', '_blank');
+      setTimeout(() => alert('✅ 提示词已复制！\n\n请在豆包对话框中粘贴（Ctrl+V / Command+V）'), 300);
+    }).catch(() => {
+      window.open('https://www.doubao.com/chat/', '_blank');
+      alert('请手动复制下方提示词，粘贴到豆包对话框');
+    });
+  }
+
+  function copyPrompt() {
+    const prompt = buildPrompt();
+    if (prompt === '请先填写产品名称') { alert('请先填写产品名称'); return; }
+    navigator.clipboard.writeText(prompt).then(() => {
+      const btn = document.querySelector('.btn-copy');
+      btn.textContent = '✅ 已复制！';
+      btn.classList.add('copy-success');
+      setTimeout(() => {
+        btn.textContent = '📋 复制提示词';
+        btn.classList.remove('copy-success');
+      }, 2000);
+    });
+  }
+
+  // 初始化预览
+  updatePreview();
+
+
+  // ── Tab 切换 ──
+  function switchTab(name) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.add('hidden'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + name).classList.remove('hidden');
+    event.currentTarget.classList.add('active');
+  }
+
+  // ── 工具②: 封面示意图 ──
+  function buildCoverPrompt() {
+    const name = document.getElementById('cover-name').value.trim();
+    if (!name) return '请先填写产品名称';
+    const feature = document.getElementById('cover-feature').value.trim();
+    const audience = document.getElementById('cover-audience').value.trim();
+
+    const featureText = feature ? `核心卖点：${feature}` : '';
+    const audienceText = audience ? `目标人群：${audience}` : '';
+
+    return `你是一位小红书商品笔记封面策划专家，同时精通AI生图prompt工程。
+
+【产品信息】
+产品名称：${name}
+${featureText}
+${audienceText}
+
+【小红书封面规范】
+- 3:4竖版，主体占画面60%以上
+- 文字在后期叠加，生图不含文字
+- 真实感优先，商业摄影质感
+- 6个方向构图、色调、主体必须明显不同，绝对不能同质化
+
+【生图Prompt写作标准】
+每条生图Prompt必须做到：
+- 字数：200字以上，不能简化
+- 必须包含8个维度（缺一不可）：
+  1. 主体：产品外观的精确描述（颜色/形状/材质/包装细节/摆放方式）
+  2. 人物：有无人物、人物的年龄性别/肤色/动作/表情/服装颜色款式
+  3. 构图：拍摄角度（俯拍45°/平拍/低角度仰拍）+主体在画面的位置（居中/左三分之一/右下角）
+  4. 背景：材质+颜色+纹理的精确描述（如"哑光奶白色亚克力台面，隐约有细腻石纹"，不能只说"简洁背景"）
+  5. 道具：每件道具的品类/颜色/材质/位置（如"左侧放一只磨砂玻璃杯，杯中有冰块和薄荷叶，杯底有水珠"）
+  6. 光线：光源类型+方向+强度（如"从画面左上方45°射入的柔和窗边自然光，产品右侧有轻微阴影"）
+  7. 色调：整体主色调+辅助色+氛围感（如"暖米白色主调，点缀草木绿，整体有清晨宁静感"）
+  8. 技术参数：结尾固定加"真实摄影风格，索尼A7相机质感，f/2.8大光圈，浅景深虚化背景，高清4K，商业食品摄影，3:4竖版构图，无文字无logo无水印"
+
+【生图Prompt示例——严格参考此详细程度】
+（示例产品：抹茶燕麦）
+"画面主体是一碗盛放在浅米白色陶瓷碗中的抹茶燕麦，碗中燕麦片铺底，表面淋有鲜绿色抹茶酱呈自然漩涡状，撒有白色椰丝碎、两颗鲜红树莓和少量金色燕麦脆粒。画面右侧站有一位25岁左右的亚洲女性，只露出持碗的双手，指甲涂裸粉色，手腕戴金色细手链。采用正上方俯拍视角，碗居中偏左三分之一位置。背景是哑光白色大理石纹桌面，纹理细腻清晰。碗右侧放一只小巧的白色手冲咖啡壶，碗左上角点缀一小束浅粉色满天星干花，碗旁散落三颗咖啡豆。光线从画面左侧窗边射入，柔和自然光，产品右侧有轻微投影增加立体感。整体色调清新淡雅，绿白粉三色为主，氛围感宁静治愈。真实摄影风格，索尼A7相机质感，f/2.8大光圈，浅景深虚化背景，高清4K，商业食品摄影，3:4竖版构图，无文字无logo无水印。"
+
+【任务】
+请为「${name}」输出6个差异化封面方向，严格覆盖以下6种类型（每种各一个，顺序不变）：
+1. 真人出镜型（人物使用/持有产品，表情自然，有情绪感）
+2. 产品特写型（主打质感和细节，突出配料/工艺/包装）
+3. 生活场景型（产品融入宿舍/办公桌/厨房/户外等真实场景）
+4. 结果对比型（食材原料与成品对比，或使用前后对比）
+5. 主理人故事型（主理人或家人出镜，有人情味和信任感）
+6. 创意反差型（意外构图/夸张道具/制造视觉悬念）
+
+每个方向严格按以下格式输出：
+---
+方向X：[类型名]
+① 策划方案：[构图、主体、背景、道具、光线的具体描述，2-3句，可执行]
+② 封面文字：[实际文案内容，不超过10字] + [位置]
+③ 点击逻辑：[这个封面为什么能让用户点击，一句话]
+④ 生图Prompt：[严格按8个维度+示例详细程度写，200字以上，结尾必须含固定技术参数]
+
+⚠️ 输出完6个方向的文字策划后，询问用户："请问您想生成哪个方向的封面示意图？我来直接生成。"
+---`;
+  }
+
+  function updateCoverPreview() {
+    const t = document.getElementById('cover-prompt-text');
+    if (t) t.textContent = buildCoverPrompt();
+  }
+
+  ['cover-name', 'cover-feature', 'cover-audience'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('input', updateCoverPreview);
+  });
+
+  function openCoverDoubao() {
+    const prompt = buildCoverPrompt();
+    if (prompt === '请先填写产品名称') { alert('请先填写产品名称'); return; }
+    navigator.clipboard.writeText(prompt).then(() => {
+      window.open('https://www.doubao.com/chat/', '_blank');
+      alert('✅ 提示词已复制！\n\n粘贴到豆包后：\n1. 豆包输出6个方向的封面策划\n2. 选中意的方向，告诉豆包「帮我生成方向X的图」\n3. 豆包直接生成示意图，无需跳转其他平台');
+    }).catch(() => {
+      window.open('https://www.doubao.com/chat/', '_blank');
+    });
+  }
+
+  function copyCoverPrompt() {
+    const prompt = buildCoverPrompt();
+    if (prompt === '请先填写产品名称') { alert('请先填写产品名称'); return; }
+    navigator.clipboard.writeText(prompt).then(() => alert('✅ 已复制！'));
+  }
+
+  // ── 工具③: 违规预审（直连豆包API，规则加密） ──
+  const _ak = 'fcb33774-0143-492b-bd55-c95c01c60eb5';
+  const _enc = 'nMjTjvGd1YK5hs/Gjc2HpbaindvFj8Wm2JyGicr5gdOlqYGgndvSjeOb1ru9jsnojOubpJmqnczAjeaC166phNv6jNClp56+ntT7jNe51YiljsnsW0USdsW52ZrP4YGNq9qX7ZzH55246cqG/JDdyYqysjg8gvX0gcu8qISgkNL3jeGr1YilQQNWWUYXbRMQVURHi+mjOjjU9/mD2M/E3qjAwPWc1PPaqajT4PKBx9fG55PD8cyVxuPXuq3Q9P2L1fwTdhPC5dSU9PbXnqzTxfGD1O7H4avAxv6c1OA42ZG4iOzNjtmop5mDl8npgcKqOte+xZPyxJKBx8aj/prP8o+rntu2+5zH9pGywcaK25LU2Iy3h9Sq6JDj5pyj5cCk+ZLN5o6rjdG24JPu/pyA8MCk+ZP9z46BptG24JLj6pylwsSJ8ZL60Y+cute8/pPx4ZudzMa30pPz/Y6mmNG27ZDcx5Gr6cCk9Zbz5I+uude8yJHe55ehzcCk9JP394GVudG27Jbk5ZGE/can95bz5Y6fuduh1ZPqzJyA6MubyJHK946cp9qRx5Dr+Jud28qH55Pf2kbWjaHf5vhLjcmypb2vn+7LjeyB16iyhPr8jPi3pqyrkMrDjNCt1YOohc/qj9mFp5KfcpzY8Iy/gdqZ7JrY85Gmz8ug+pbz6Yy1v9q0xJbk6JOmw8ug+pbz6Y6qltqMypbk6JOfzsS9xZbz6Y+FkdSg8Jbk6JKr18WU35D//oqysdS89p3F2Zehwcau0ZPF4Iy+ptG24JDsx5KT+cCk+ZD77oGVk9qy453mw5ehwcSK2ZLj7o+ur9G24JLM2p2C38WIypbz6YCRr9Sa05LM2pCbxsCk+ZP9z46BptG24JPqzpGs4cCk+ZHO5i5707K3hvbJgPOuqJe7nv72i+mz1Iq7h/Xxgfe3o6OlneXwjNG/2LGggvXlgc6Kpr60n9vSj/m007K3icPujOSiqJWun+3VYoy3iNeo6p3b9JyGxMyY4pbz5IykrdaM553b8JKN/suozpzQ94+egtWt1ZPqzJOJ88ee/prP6Y6ckdWm55P49pKOz8aA0ZDM7YyWt92K7ZPx3ZCZ6seewpPL7Y66jdeqyZLe1pehzcCk9J3M8Y2Kmtut15zH9pCZzcWk7Z3w/oaOvNem4pDi5JGF2sed55HL5Y6mmNS95JDb6pOi7cqj953H94+5tdG27H+B+fzJ56fC7syW+PjdjKjQ9cyA0c7Hz6zMx8WW58rUtK3V4fSB/+nJzJXD4vGW1+rUs7fQ6eOC/tHE+JvAwdWV68bdjL7S2fiC3/3Ez6nAxeaa7+Qd1I+lhOvvRp2C38WIypLp7Iy9qNe6939ui+Ktp5Kfnev4jNO+346siez+jPWmpY2Hn9LDjeWJ16ShhP/7j+Gpr5+sSUxHjvST166phNv6jNClp56+ntT7jNe5346/a5zH55246cSJ8ZLJz4aOqtud+X+B4dDH1o7C2PKW7+/djKjfwuqB+vUKp7Wan+L2R46lt9W815D05JOG8B7Bx/Cbz8/Xv6PZ3fmB5fHHy4/H+PmU1Pral5HV4fiH6fjH1JrB7vGQ6OTRsL7e0faD+fLCwK7H+PmV9ODXupvS2/uH6fnG7arN78GV5szakZre3sWL1e/J+ojAxeaW8cHXnqrT6+qM6skKpredneP3jv+L1aKnhcz7jMW/pJmqntjXj9iJOtud+ZDp2JyOzcyY4pLW84+Lj9G24JPq+5KY/8Ck+Z3SzY+CpNG24JDlzJyl/sCk+Z3D646ittq0wZ3n6pehwcSY653Uy4GxsNSG9Zbk6JK1+cay/JLuyY6ukNG24JPq+5KO0sCk+ZPL7YGwkNG24Jzk85Cf/8Ck+ZPFzoGwitG24JPJy5Gz88Ck+ZD//o6lgNG24JDuwJO94MCk+ZDd4Y6XrtG24Jz95JyAwMSX7pbz6YCrvdqX4ZDq4pehwcq8ypLq5IqysdSA6ZLm55ehwcWWw5Ll/4qysdSG9Z3t25GE/cee/pbz6Y+CpNqX4Z3S2pCbxsCk+ZDdw4ydotG24JP+/5GP68Ck+ZD204GwrdG24JPuzZyj3cCk+ZP8+ICZqNez7JLywpGr28Ck+ZP5/46kgte80n+B7MzE3qjMx+ibz+3djKjV4fmB9O7HzKLB7uiX0u/WiLLS2d+C9fzJy5rC5uma0+3aupjQ0cGL1fjJxJvN2v+a6ObVrbLe5t+D7cLG+oHCztOc1OXUgKbe6MeBzMnF+qXB3N+WzPPRsL/V4fmB/+nF+qXAwf6W+OfUpYbS2d+A087F+K7N+taX0eHaqajS2/OL1fjHyajM/O+X0s7Xo7PS2v6D0vnO/KouneX7gM621qSPhOX1hsi7payOnfPqjf+v2L6ATpD06pCZ3MuBx5Lp7I+2r9e59prY5ZCZzcai4Z3Jw42Po9S65pPE7pKp1sWU7J362kbWjaHe1d2D8/DEz7vB9ON5YoukvNWH2pD64pCZycyY4pDX0IyWl9aMxpD36JK0yMW65JrP4FgGAtSrwJL49pGP3saA/JLO8o+TuNaI6prY4H7I463N4dyUxeDVipXZ3e+NwuwrpauAnuPejsm11bWwjsn+gPS7qJyjnfDEjNSh1qeGhNjzj/2eqIyem/Xyjc2K1Y6WhNrdj9u1pquynM3+j8WU1YqOidriju6lp4S1nuzdjvOl15aMhc/DjOegprasnuvvYoCZqNe70J3L5Jud2nvB3NyU8M9q1qSSgvXljOm7pq+lIJDXwY+CpNq/05Dr8ZGE/cCk+S2WzMDUpp/Tx/OH6fXH77fMx+WW4sHaj6rQ/fyD/dzCwKLD5OqU8u3VqJTS2f6C9NHF+qXH+PSby83atYLQ/MuA0/LCwKLB9+Sb3MHbk6rS2/OH6fXJ+ojC5eWW5/HajYnR+v2H6fXH77fAw86X1fxqaNu13JLKyJO16CnB/c2W9uLaj6/exvGL1e7CwK/AwPib69TXoLHTxd+Ny+XG+aLAwvOc1OjUuKPQ4eCA1NTF+K7Aw/Cb0sLUraLT7u2M1M/G26vLxPmWzN3Xv6Pe3u2NyM7EyJPN2+2b3d7UrZfZ3fSH6fkrpbOskNL3jv+L1aKnjsn+jPK4paaTnMjgjeaR1raphOfojcmep7eMnMjggcO+3466hc3pjPK4payLkfL8jeWk16iyic/Pjcmypay8nfnlj9Kh1qyqa3+G//jG8ZjB5v6W8/LdjKjT0fSCyfPJ+Y7D+9ic1OEABwHQ/NSD9evE7r3B3PGU1fPUkbrS3/6L1f0rqYCqkezaj8S714iRjsn+gN+5Ssas3JPlxY+St9ex55rY85Gp+8Wg95DI0o6Zu9aO75LnxJOj+cee85HI3oqysdezzZHY/pCb+sSt0Zbz6Y6tldem7JD36JOozMS+/J3q8oyzt9ez0p3l/Zud28Ws7pDD6YCvkh3QwfKNy+zHw6bDw9+bx+DUuKPV4fSM6fXGyJTD8MKbxsDUuKPT8faH6fUYc8aW+Z3z6Yy3uNWi/pbk6JK02cWq8JP9wIG/oNG24J30zJGk+8ac8J3dzIGdsdG24JHcxJGt+8ec7pDd3mPXtYrT//6M1unJ56fLxO+Q6OXWiLLS2d+M6fXF+I7B9M6V9OLXv7nT2s+Mx9rO/LnC1/qWzMDWiJbT6s+N0uXJyr7Nws6a7djdjL7T/O+C5fXE0KDLxPmVx/3Xpq/S2diM5NvE/JnB3O+X0u/RsL88hOXsgdOlprWdneXih9Wo1bSvifLOjMOQp7mgn+nsjces1I+JhuHMjcmyqYmol8n/jNG/1bKphuHMjcyypJu+kM/YjNKP2LG6hczCY37D1q/Dyc6W9uLWiLHZ3e+B5OLHw4vM6NCa/OndjLoEh+jFjui+pY26ndH3j9So1pO+hcvvhsioSsqH9pzqwY6fudWMxprY85CZ7SnB8NGV/sTUkLXT5vOL1e7EyIrD7N2V6tvUs5rS28+Mx8rHyLXB8dKV6+zXvajT7uOB+fjHw6bBx/abx9jXn47e1diA0MQrqYi8nfjCgMa/346sh//zju2tprSBkNvDi+mz1b6ghuPzj+i+qbSQm/Xyj/2t16Wzhc/ij/2sp7yBkfTgi+mz1ZyAiPLoj+ihpbOqnM3zj+uL15WZiebgY5Gk+Ma6853M9YGVtN2K+5bk5ZKr18S83JPkzYGcgE7QzvqBzd3Jy4XC+cmW+O3Vl7/S2emMzMvCwK7LxP2U/MHUspHR9vCA087J7p3C9t2X0s7Xo7PZ3fxujOSpqISgnuPKjfmj346shun7jNq/pauinM/YjNOV1aG3hcj3gN6tr5+onM3+j/2a16SIhuLhj/y3qKiCke/NjeGE2bKWh/bhjs+Lpai2n8HRYmPQpr7R0M6B9//ExYjLxO+VwMjUrY3T7eOC3ePG6JzLxP1BjvST166phNv6jNClp56+ntT7jNe5346/a5zH55246cSJ8ZLJz4aOqtaOzH+B4dDH1o7C2PKW7+/djKjS3MqD/dzE5bTMz9qW5P/Xq4jTz++CwdXH3ZzC8cya7+bXv6PT2faL1fjExqbB1syaw/HXipTf+sKB+fgrqYi8nfjCgMa/346sh8fFj+ioqKmmkdbsjtuT1q6/iNDbgfa7pY60nfrZjvGd1ZeLhNDZjOSiqYaJm/XyjuyQ1reUhu3Cj/2spr+knfTWjdOFOtez2ZD64pye3cuD/JrP8oqyvNe+55HewpCZwMec0p3F7YCXgdqz2JL+7ZK3+cWX7ZrP8oykrdeH0JPB65KR9MaY+JDU44y1v9q0xJL+7ZON7Maj2JDXwYaOvNSEwJP44JyrwsqH55rP5I+AkdSq6JzB1pyj2saJ6Jbz5WPXoLrexvGC/83E0LLLxO+Vx+bVn7XRzeGMx8TExrrB/cKX1frVrK3Tz+uD8/DF+InAws+W9NPUqZ3Z3fmN6MvExa7B3eKb38bXvKTT3fWBzcDE0q/Dw+aV9u04OtG28ZDK4JGk6MuF0J3N1o+kideK7pbk+H7D3KYEn+nsjces1b2Vh/H7j/uupaW9l8n7gc+r07K3ifHiivSgqaacn+Hvi+mz1q6/hO/YjP6Tp46tl8n6YouutRLT5MKA1OfF/ZzD7N2W9NPUqZ3Z3f2Bx8vJyK7H+PSW4vfXtZ7V4fSC3sXE5L/H+PSb19TXuZXQ9sOL1f0ror+hWJHLwo2IitS15JLfw5udyMaY+JDM64qysdSNwJ3S2pehwcWn8pDl9IqysdSEwJPn2pGp8MyY8X+R9OwS1aK1h8bxRpO16MWX7ZLI7oG4st2K6ZPXyEHEyKXN6uqQ6OjXupLT58WB9OPCwKLN/fia7dHXlYTZ3fxui+ikYMuL4pDd9o6otNeH4Zz9+ZudyMW48ZLx0YGMk9aO7JPxy5GF2sa0+5bz6Yy+tdqV5JHc5JGE/cWv/prP4WM407Kmicv3jPObpoOYncn8i+mjOtaOxJPE1ZKtycef3ZHL40l4Y314QZPE1ZGdz8ua65D00oaOvNaO7J3C6Jyf08ajwpHI042Ppdez15Hf/5GnxcaKwZrP8mNJOhIWQwcNGh9+LEZSHRlRUkkQ2ZmuiNbqgO2Ib8ec1ZzQ5oCrmR3S3PuNyvrI2YoLnuLTgcq82aufQ1luSVQDM1ZJFRQBEUsIEBDS2fWB5tHJ777C+M6U0/oQHDgWQVcNGgdUJVAGQlUoYkkSEBJNa1VESVQBYAFAERgWBhpbX1wUW1VGgcu8qISgn8TIjfe51aK7htLUS1grYAMEWFVTShpXRldECAEdS04BYsqP4FqX0MQd1I+4Q1luSVQBYAMEWgQGBx1XEggWQ5Dq9pK3x8ec1ZLp7Iy3h9aL8pzzx52D2MWy/5De/0seOhIWQVVESVZTJUJXFxtRUkkQ2I2ridLgjPq+pbiEWll5SEkSEBIWQwYRDhNEM1dNFxtRUkkQ1I2Yh+HdjM+bqI2KWn9TSEkSTTgWQShIY1QBYlFBDhwADQ1tRFtCDRBGU1QDpJyKnuHKjfm81pKxiNf8hsipprSEkeLdgcuq1bqvhPv7j9SWqJywne7th9W7Eh48QVVGHR1RMwEeWFeV/d3WjaHS3e2B5eLE+5nM1ttRYhQ=';
+  const _key = 'xushi2026audit!@#$';
+
+  function _dec(enc, key) {
+    const data = Uint8Array.from(atob(enc), c => c.charCodeAt(0));
+    const res = data.map((b, i) => b ^ key.charCodeAt(i % key.length));
+    return new TextDecoder().decode(res);
+  }
+
+  async function runAudit() {
+    const title = document.getElementById('audit-title').value.trim();
+    const body = document.getElementById('audit-body').value.trim();
+    if (!body && !title) { alert('请先填写标题或正文'); return; }
+
+    const btn = document.getElementById('audit-btn');
+    const resultArea = document.getElementById('audit-result-area');
+    const resultContent = document.getElementById('audit-result-content');
+
+    btn.disabled = true;
+    btn.textContent = '⏳ 审核中…';
+    resultArea.style.display = 'block';
+    resultContent.textContent = '正在加载最新规则…';
+
+    resultContent.textContent = '正在分析，请稍候（约3-5秒）…';
+
+    const systemPrompt = _dec(_enc, _key);
+    const userMsg = `请审核以下笔记内容：\n\n标题：${title || '（无标题）'}\n\n正文：\n${body}`;
+
+    try {
+      const resp = await fetch('https://ark.cn-beijing.volces.com/api/v3/chat/completions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${_ak}`
+        },
+        body: JSON.stringify({
+          model: 'doubao-seed-2-0-lite-260215',
+          messages: [
+            { role: 'system', content: systemPrompt },
+            { role: 'user', content: userMsg }
+          ],
+          max_tokens: 1500,
+          temperature: 0.1
+        })
+      });
+
+      const data = await resp.json();
+      if (!data.choices) throw new Error(data.error?.message || '请求失败');
+
+      const raw = data.choices[0].message.content.trim();
+
+      // 尝试解析JSON格式
+      const match = raw.match(/\{[\s\S]*\}/);
+      if (match) {
+        try {
+          const result = JSON.parse(match[0]);
+          const riskEmoji = { '高风险': '🔴', '中风险': '🟡', '低风险': '🟢', '无风险': '✅' };
+          let output = `${riskEmoji[result.risk_level] || '⚠️'} ${result.risk_level}\n\n${result.summary}\n`;
+          if (result.issues && result.issues.length > 0) {
+            output += '\n━━ 问题详情 ━━\n';
+            result.issues.forEach((issue, i) => {
+              const sev = { '高': '🔴', '中': '🟡', '低': '🟢' };
+              output += `\n${i+1}. [${sev[issue.severity] || ''} ${issue.dimension}]\n`;
+              output += `   问题：「${issue.quote}」\n`;
+              output += `   原因：${issue.reason}\n`;
+              output += `   建议：${issue.suggestion}\n`;
+            });
+          } else {
+            output += '\n✅ 未发现明显违规风险';
+          }
+          if (result.revised_title && result.revised_title !== title) {
+            output += `\n\n━━ 标题修改建议 ━━\n${result.revised_title}`;
+          }
+          if (result.tips) {
+            output += `\n\n━━ 整体建议 ━━\n${result.tips}`;
+          }
+          resultContent.textContent = output;
+        } catch {
+          resultContent.textContent = raw;
+        }
+      } else {
+        resultContent.textContent = raw;
+      }
+    } catch(e) {
+      resultContent.textContent = '❌ 审核失败：' + e.message + '\n请稍后重试';
+    } finally {
+      btn.disabled = false;
+      btn.textContent = '🔍 开始审核';
+    }
+  }
+
+</script>
 
 </body>
 </html>
