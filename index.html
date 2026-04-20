@@ -1631,23 +1631,68 @@ function diagnoseMerchant(m) {
   const issues = [];
   const daily = m.pub7d / 7;
 
-  // 链路：频次 → CTR → 转化
-  if (daily < 1) {
-    issues.push({ level: 'high', dim: '发布频次', text: `日均仅 ${daily.toFixed(1)} 篇，低于行业均值 1-2 篇/天，流量基础不足`, action: '先把发布频次提到每天至少 1 篇' });
+  // 维度1：发布频次（流量基础）
+  if (m.pub7d === 0) {
+    issues.push({ level: 'high', dim: '① 发布频次', text: `近7天零发布，账号已停更，平台不会主动分发流量`, action: '立刻恢复发布，哪怕先从每天1篇开始，保持账号活跃' });
+  } else if (daily < 1) {
+    issues.push({ level: 'high', dim: '① 发布频次', text: `日均仅 ${daily.toFixed(1)} 篇，低于行业均值 1-2 篇/天，流量池见底`, action: '先把发布频次提到每天至少 1 篇，稳住基础流量盘' });
   } else if (daily < 2) {
-    issues.push({ level: 'mid', dim: '发布频次', text: `日均 ${daily.toFixed(1)} 篇，有提升空间`, action: '尝试提高到每天 2 篇以上' });
+    issues.push({ level: 'mid', dim: '① 发布频次', text: `日均 ${daily.toFixed(1)} 篇，勉强达标但有提升空间`, action: '尝试提高到每天 2 篇以上，获得更多推荐流量' });
   }
 
+  // 维度2：笔记曝光（流量规模）
+  if (m.pv < 10000) {
+    issues.push({ level: 'high', dim: '② 笔记曝光', text: `近7天曝光仅 ${m.pv.toLocaleString()}，几乎没有流量入口，商品根本没人看到`, action: '先解决内容质量问题，用高 CTR 封面+标题带动初始分发' });
+  } else if (m.pv < 50000) {
+    issues.push({ level: 'mid', dim: '② 笔记曝光', text: `近7天曝光 ${m.pv.toLocaleString()}，流量体量偏小，转化天花板低`, action: '跑量阶段优先追求曝光，可配合投流放大单篇爆款' });
+  }
+
+  // 维度3：商卡CTR（封面/标题吸引力）
   if (m.cardCtr < 7) {
-    issues.push({ level: 'high', dim: '商卡CTR', text: `商卡 CTR ${m.cardCtr}%，低于行业均值 13%，封面/标题吸引力严重不足`, action: '优先优化封面（用本周高表现封面参考），标题加入惊叫词或人群标签' });
+    issues.push({ level: 'high', dim: '③ 商卡CTR', text: `商卡 CTR ${m.cardCtr}%，远低于行业均值 13%，封面/标题几乎无法吸引点击`, action: '封面换成3:4竖版场景图，标题套用"惊叫词+意外组合+感叹号"公式（可用实用工具生成）' });
   } else if (m.cardCtr < 13) {
-    issues.push({ level: 'mid', dim: '商卡CTR', text: `商卡 CTR ${m.cardCtr}%，低于行业均值 13%`, action: '参考本周标题公式，测试不同封面风格' });
+    issues.push({ level: 'mid', dim: '③ 商卡CTR', text: `商卡 CTR ${m.cardCtr}%，低于行业均值 13%，还有优化空间`, action: '参考本周高表现封面，测试不同标题公式，A/B 对比找最优版本' });
   }
 
+  // 维度4：笔记CTR（内容留存能力）
+  if (m.noteCtr !== null && m.noteCtr !== undefined) {
+    if (m.noteCtr < 5) {
+      issues.push({ level: 'high', dim: '④ 笔记CTR', text: `笔记 CTR ${m.noteCtr}%，用户进来后快速离开，内容没有留住人`, action: '前3秒必须直接切入痛点，正文分段加短句，减少大段文字' });
+    } else if (m.noteCtr < 10) {
+      issues.push({ level: 'mid', dim: '④ 笔记CTR', text: `笔记 CTR ${m.noteCtr}%，内容留存能力中等`, action: '在正文中加入"使用场景+真实感受"，提升用户代入感' });
+    }
+  }
+
+  // 维度5：购买转化率（内容与商品匹配度）
   if (m.buyRate < 2) {
-    issues.push({ level: 'high', dim: '购买转化率', text: `购买转化率 ${m.buyRate}%，极低，内容与商品匹配度差，或选品有问题`, action: '检查笔记内容是否和挂载商品一致，考虑更换主推 SKU' });
+    issues.push({ level: 'high', dim: '⑤ 购买转化率', text: `购买转化率仅 ${m.buyRate}%，内容与商品严重脱节，或选品本身有问题`, action: '检查笔记内容是否和挂载商品一致，图文同款；或考虑更换主推 SKU' });
   } else if (m.buyRate < 5) {
-    issues.push({ level: 'mid', dim: '购买转化率', text: `购买转化率 ${m.buyRate}%，低于行业均值 5%`, action: '正文加强商品核心卖点，突出优惠信息' });
+    issues.push({ level: 'mid', dim: '⑤ 购买转化率', text: `购买转化率 ${m.buyRate}%，低于行业均值 5%`, action: '正文加强核心卖点（用数字/对比/场景），突出活动优惠信息' });
+  }
+
+  // 维度6：GMV规模（商业产出）
+  if (m.dgmv === 0 && m.pub7d > 0) {
+    issues.push({ level: 'high', dim: '⑥ GMV 产出', text: `有笔记发布但近期 GMV 为零，流量没有转化成交易`, action: '检查商品是否正常上架、价格是否有竞争力，同时优化购买转化率' });
+  } else if (m.dgmv > 0 && m.dgmv < 1000) {
+    issues.push({ level: 'mid', dim: '⑥ GMV 产出', text: `近期 GMV ${m.dgmv.toFixed(0)} 元，体量偏小`, action: '找到已有的爆款笔记，加大投流放量，把单篇价值最大化' });
+  }
+
+  // 维度7：曝光环比趋势（增长/衰退信号）
+  if (m.pvChg !== null && m.pvChg !== undefined) {
+    if (m.pvChg < -30) {
+      issues.push({ level: 'high', dim: '⑦ 曝光趋势', text: `曝光环比下降 ${Math.abs(m.pvChg).toFixed(0)}%，流量在快速萎缩`, action: '立刻检查是否有笔记违规/限流，同时补充新内容重新获取推荐' });
+    } else if (m.pvChg < -10) {
+      issues.push({ level: 'mid', dim: '⑦ 曝光趋势', text: `曝光环比下降 ${Math.abs(m.pvChg).toFixed(0)}%，流量有下滑趋势`, action: '尝试新选题方向或新封面风格，给算法更多测试素材' });
+    }
+  }
+
+  // 维度8：商卡CTR环比（封面优化成效）
+  if (m.cardCtrChg !== null && m.cardCtrChg !== undefined) {
+    if (m.cardCtrChg < -20) {
+      issues.push({ level: 'high', dim: '⑧ 商卡CTR趋势', text: `商卡 CTR 环比下降 ${Math.abs(m.cardCtrChg).toFixed(0)}%，封面/标题吸引力在快速下降`, action: '立刻更换新封面，避免素材疲劳，参考本周高表现封面类型' });
+    } else if (m.cardCtrChg < -10) {
+      issues.push({ level: 'mid', dim: '⑧ 商卡CTR趋势', text: `商卡 CTR 环比下降 ${Math.abs(m.cardCtrChg).toFixed(0)}%，封面开始出现疲劳`, action: '测试 1-2 个新封面风格，与现有封面做 A/B 对比' });
+    }
   }
 
   // 整体判断
@@ -1716,7 +1761,7 @@ function searchMerchant(keyword) {
 
     const daily = (m.pub7d / 14).toFixed(1);
 
-    // 环比标签渲染
+        // 环比标签：显示具体数字和方向
     function chgBadge(chg) {
       if (chg === null || chg === undefined) return '';
       const abs = Math.abs(chg).toFixed(0);
@@ -1725,37 +1770,16 @@ function searchMerchant(keyword) {
       return `<span style="font-size:10px;color:#999;margin-left:4px">持平</span>`;
     }
 
-    // 分位标签：不暴露真实数值，只显示档位
-    function pctLabel(val, threshHigh, threshMid) {
-      if (val === null || val === undefined) return { text: '暂无数据', color: '#999' };
-      if (val >= threshHigh) return { text: 'TOP 20%', color: '#10b981' };
-      if (val >= threshMid)  return { text: '行业均值', color: '#f59e0b' };
-      return { text: '待提升', color: '#ff2442' };
+    // 数据卡：真实数值展示
+    function dataCard(label, value, unit, chg) {
+      const displayVal = (value === null || value === undefined) ? '—' : (Number.isInteger(value) ? value.toLocaleString() : value.toFixed(1));
+      return `
+        <div style="background:#fff;border-radius:10px;padding:11px 10px;border:1.5px solid #f0ebe4;text-align:center">
+          <div style="font-size:10px;color:#999;margin-bottom:3px">${label}</div>
+          <div style="font-size:15px;font-weight:800;color:#1a1a1a">${displayVal}<span style="font-size:10px;font-weight:400;color:#aaa">${unit}</span></div>
+          <div style="font-size:10px;margin-top:2px">${chgBadge(chg)}</div>
+        </div>`;
     }
-
-    // 环比档位：只显示趋势方向，不显示具体数字
-    function chgBadge(chg) {
-      if (chg === null || chg === undefined) return '';
-      if (chg > 5) return `<span style="font-size:10px;color:#10b981;margin-left:4px">▲ 上升</span>`;
-      if (chg < -5) return `<span style="font-size:10px;color:#ff2442;margin-left:4px">▼ 下降</span>`;
-      return `<span style="font-size:10px;color:#999;margin-left:4px">— 持平</span>`;
-    }
-
-    // 日均发布档位
-    function pubLabel(d) {
-      const v = parseFloat(d);
-      if (v >= 2) return { text: '勤奋发布', color: '#10b981' };
-      if (v >= 1) return { text: '基本达标', color: '#f59e0b' };
-      if (v > 0)  return { text: '发布偏少', color: '#ff2442' };
-      return { text: '近期未发布', color: '#999' };
-    }
-
-    const pubL   = pubLabel(daily);
-    const cardL  = pctLabel(m.cardCtr,  20, 13);
-    const buyL   = pctLabel(m.buyRate,   8,  5);
-    const noteL  = pctLabel(m.noteCtr,  15, 10);
-    const pvL    = pctLabel(m.pv,    500000, 100000);
-    const gmvL   = pctLabel(m.dgmv,  30000,  5000);
 
     resultEl.innerHTML = `
       <div style="background:${gc.bg};border-radius:12px;padding:16px 18px;margin-bottom:16px;border:1.5px solid ${gc.color}33">
@@ -1769,34 +1793,42 @@ function searchMerchant(keyword) {
         <div style="font-size:13px;color:#555">${diag.summary}</div>
       </div>
 
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:10px">
-        ${[
-          ['日均发布', pubL.text,  pubL.color,  m.pubChg],
-          ['商卡 CTR', cardL.text, cardL.color, m.cardCtrChg],
-          ['购买转化率', buyL.text, buyL.color, m.buyRateChg],
-        ].map(([label, val, color, chg]) => `
-          <div style="background:#fff;border-radius:10px;padding:12px;border:1.5px solid #f0ebe4;text-align:center">
-            <div style="font-size:11px;color:#999;margin-bottom:4px">${label}</div>
-            <div style="font-size:17px;font-weight:800;color:${color}">${val}</div>
-            <div style="font-size:10px;margin-top:2px">${chgBadge(chg)}</div>
-          </div>`).join('')}
+      <div style="font-size:11px;color:#999;margin-bottom:8px;font-weight:600">📊 核心指标（近7天真实数据）</div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:8px">
+        ${dataCard('日均发布', daily, '篇/天', m.pubChg)}
+        ${dataCard('商卡 CTR', m.cardCtr, '%', m.cardCtrChg)}
+        ${dataCard('笔记 CTR', m.noteCtr, '%', m.noteCtrChg)}
+        ${dataCard('购买转化率', m.buyRate, '%', m.buyRateChg)}
       </div>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px">
-        ${[
-          ['笔记CTR',  noteL.text, noteL.color, m.noteCtrChg],
-          ['14天GMV',  gmvL.text,  gmvL.color,  m.dgmvChg],
-          ['笔记曝光', pvL.text,   pvL.color,   m.pvChg],
-        ].map(([label, val, color, chg]) => `
-          <div style="background:#fff;border-radius:10px;padding:12px;border:1.5px solid #f0ebe4;text-align:center">
-            <div style="font-size:11px;color:#999;margin-bottom:4px">${label}</div>
-            <div style="font-size:17px;font-weight:800;color:${color}">${val}</div>
-            <div style="font-size:10px;margin-top:2px">${chgBadge(chg)}</div>
-          </div>`).join('')}
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:18px">
+        ${dataCard('笔记曝光', m.pv, '', m.pvChg)}
+        ${dataCard('近期 GMV', m.dgmv, '元', m.dgmvChg)}
+        ${dataCard('7天发布量', m.pub7d, '篇', m.pubChg)}
+        ${dataCard('曝光环比', m.pvChg, '%', null)}
       </div>
 
-      ${issueHTML || '<div style="font-size:13px;color:#10b981;padding:8px 0">👍 各项指标均高于行业均值，继续保持！</div>'}
+      <div style="font-size:11px;color:#999;margin-bottom:10px;font-weight:600">🔍 诊断建议（8个维度）</div>
+      ${issueHTML || '<div style="font-size:13px;color:#10b981;padding:10px 14px;background:#f0fdf4;border-radius:10px;border:1.5px solid #10b98133">👍 8个维度全部达标，各项指标高于行业均值，继续保持！</div>'}
 
-      <div style="font-size:11px;color:#bbb;margin-top:8px">数据来源：小红书 BI · 近14天（2026.04.01—04.14）· 环比对比上个14天 · 如数据有误请联系大门</div>
+      <div style="margin-top:16px;padding-top:14px;border-top:1px solid #f0ebe4">
+        <div style="font-size:11px;color:#999;margin-bottom:10px">🛠️ 根据诊断结果，可以用以下工具快速生成优化方案：</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button onclick="switchTab('tools');document.getElementById('tools-section').scrollIntoView({behavior:'smooth'})"
+            style="background:#ff2442;color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:12px;font-weight:700;cursor:pointer">
+            ✍️ 笔记文案生成
+          </button>
+          <button onclick="switchTab('tools');setTimeout(()=>document.querySelector('.tool-card:nth-child(2)').scrollIntoView({behavior:'smooth'}),200)"
+            style="background:#f0fdf4;color:#10b981;border:1.5px solid #10b981;border-radius:8px;padding:8px 14px;font-size:12px;font-weight:700;cursor:pointer">
+            🖼️ 封面描述生成
+          </button>
+          <button onclick="switchTab('tools');setTimeout(()=>document.querySelector('.tool-card:nth-child(3)').scrollIntoView({behavior:'smooth'}),200)"
+            style="background:#eff6ff;color:#3b82f6;border:1.5px solid #3b82f6;border-radius:8px;padding:8px 14px;font-size:12px;font-weight:700;cursor:pointer">
+            📋 标题公式生成
+          </button>
+        </div>
+      </div>
+
+      <div style="font-size:10px;color:#ccc;margin-top:12px">数据来源：小红书 BI · 近7天 · 如数据有误请联系大门</div>
     `;
   }
 
