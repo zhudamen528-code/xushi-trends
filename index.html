@@ -1772,7 +1772,9 @@ function searchMerchant(keyword) {
 
     // 数据卡：真实数值展示
     function dataCard(label, value, unit, chg) {
-      const displayVal = (value === null || value === undefined) ? '—' : (Number.isInteger(value) ? value.toLocaleString() : value.toFixed(1));
+      const n = parseFloat(value);
+      const displayVal = (value === null || value === undefined || isNaN(n)) ? '—'
+        : (Number.isInteger(n) ? n.toLocaleString() : n.toFixed(1));
       return `
         <div style="background:#fff;border-radius:10px;padding:11px 10px;border:1.5px solid #f0ebe4;text-align:center">
           <div style="font-size:10px;color:#999;margin-bottom:3px">${label}</div>
