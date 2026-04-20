@@ -16,13 +16,13 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --red: #ff2442;
-      --orange: #ff6b35;
-      --warm: #fff8f4;
+      --red: #6d28d9;
+      --orange: #7c3aed;
+      --warm: #f5f3ff;
       --card-bg: #ffffff;
       --text: #1a1a1a;
       --text-sub: #888;
-      --border: #f0ebe4;
+      --border: #e5e0f5;
       --tag-snack: #ff6b35;
       --tag-fast: #f59e0b;
       --tag-drink: #06b6d4;
@@ -32,13 +32,13 @@
 
     body {
       font-family: -apple-system, "PingFang SC", "Helvetica Neue", sans-serif;
-      background: #fff8f4;
+      background: #f5f3ff;
       color: var(--text);
     }
 
     /* ── Header ── */
     .header {
-      background: linear-gradient(135deg, #ff2442 0%, #ff6b35 100%);
+      background: linear-gradient(135deg, #4c1d95 0%, #6d28d9 60%, #7c3aed 100%);
       padding: 28px 40px;
       display: flex;
       align-items: center;
@@ -70,8 +70,8 @@
     .section-label .tag {
       font-size: 11px;
       font-weight: 600;
-      color: var(--red);
-      background: #fff0f2;
+      color: #6d28d9;
+      background: #ede9fe;
       padding: 2px 8px;
       border-radius: 20px;
     }
@@ -96,7 +96,7 @@
       top: 0; left: 0; right: 0;
       height: 4px;
     }
-    .bench-card.top::before { background: linear-gradient(90deg, #ff2442, #ff6b35); }
+    .bench-card.top::before { background: linear-gradient(90deg, #6d28d9, #7c3aed); }
     .bench-card.avg::before { background: linear-gradient(90deg, #3b82f6, #06b6d4); }
     .bench-card.low::before { background: #e5e7eb; }
     .bench-tier {
@@ -116,7 +116,7 @@
     .bench-label { font-size: 12px; color: var(--text-sub); }
     .bench-val { font-size: 22px; font-weight: 800; line-height: 1; }
     .bench-unit { font-size: 12px; font-weight: 400; margin-left: 2px; color: var(--text-sub); }
-    .bench-card.top .bench-val { color: #ff2442; }
+    .bench-card.top .bench-val { color: #6d28d9; }
     .bench-card.avg .bench-val { color: #3b82f6; }
     .bench-card.low .bench-val { color: #9ca3af; }
     .bench-hint {
@@ -167,7 +167,7 @@
       width: 18px;
       height: 18px;
       border-radius: 50%;
-      background: #f5f0eb;
+      background: #f0ebff;
       font-size: 11px;
       font-weight: 700;
       display: flex;
@@ -194,12 +194,12 @@
       aspect-ratio: 3/4;
       object-fit: cover;
       display: block;
-      background: #f5f0eb;
+      background: #f0ebff;
     }
     .cover-img-placeholder {
       width: 100%;
       aspect-ratio: 3/4;
-      background: linear-gradient(135deg, #fef3ec, #fde8d8);
+      background: linear-gradient(135deg, #ede9fe, #ddd6fe);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -218,8 +218,8 @@
       display: inline-block;
       font-size: 11px;
       font-weight: 700;
-      color: var(--red);
-      background: #fff0f2;
+      color: #6d28d9;
+      background: #ede9fe;
       padding: 2px 8px;
       border-radius: 20px;
       margin-bottom: 8px;
@@ -268,11 +268,11 @@
       font-weight: 600;
       padding: 5px 12px;
       border-radius: 8px;
-      background: #fff8f4;
+      background: #f5f3ff;
       color: #333;
       border: 1px solid #f0ebe4;
     }
-    .formula-pill.hot { background: #fff0f2; color: var(--red); border-color: #ffd0d8; }
+    .formula-pill.hot { background: #ede9fe; color: #6d28d9; border-color: #d8b4fe; }
     .formula-plus { font-size: 16px; color: #ddd; }
     .formula-example {
       margin-left: auto;
@@ -308,10 +308,10 @@
       font-weight: 600;
       padding: 5px 12px;
       border-radius: 20px;
-      background: #f5f0eb;
+      background: #f0ebff;
       color: #555;
     }
-    .topic-tag.hot { background: #fff0f2; color: #ff2442; }
+    .topic-tag.hot { background: #ede9fe; color: #6d28d9; }
     .topic-tag.rising { background: #f0fdf4; color: #10b981; }
     .topic-tag.seasonal { background: #fffbeb; color: #f59e0b; }
 
@@ -359,13 +359,13 @@
       align-items: flex-start;
     }
     .cat-dot { font-weight: 700; font-size: 13px; flex-shrink: 0; margin-top: 1px; }
-    .cat-dot.up   { color: #ff2442; }
+    .cat-dot.up   { color: #6d28d9; }
     .cat-dot.down { color: #10b981; }
     .cat-dot      { color: #999; }
     .cat-focus {
       margin-top: 12px;
       padding: 8px 10px;
-      background: #fff9f5;
+      background: #f8f6ff;
       border-radius: 8px;
       font-size: 11px;
       font-weight: 600;
@@ -481,10 +481,10 @@
     transition: all 0.2s;
     font-family: inherit;
   }
-  .tab-btn:hover { color: var(--red); }
+  .tab-btn:hover { color: #6d28d9; }
   .tab-btn.active {
-    color: var(--red);
-    border-bottom-color: var(--red);
+    color: #6d28d9;
+    border-bottom-color: #6d28d9;
   }
   .tab-panel { display: block; }
   .tab-panel.hidden { display: none; }
@@ -503,8 +503,8 @@
     </div>
   </div>
   <div class="header-right">
-    <div class="header-week">W16</div>
-    <div class="header-date">2026.04.07 — 04.13</div>
+    <div class="header-week">W17</div>
+    <div class="header-date">2026.04.14 — 04.20</div>
   </div>
 </header>
 
@@ -596,45 +596,45 @@
     <div class="trend-card">
       <div class="trend-head snack">🍿 零食</div>
       <div class="trend-dirs">
-        <div class="trend-dir"><span class="trend-num">1</span><span>意外新品组合：把不相关的食材塞在一起制造反差（"芋泥怎么会塞到烤肠里！"），惊叫式标题 CTR 高达 37%+</span></div>
-        <div class="trend-dir"><span class="trend-num">2</span><span>特定人群标签精准锁客：孕妇/健身/备考等标签明确，人群精准封面转化高，商卡 CTR 普遍 5~10%</span></div>
-        <div class="trend-dir"><span class="trend-num">3</span><span>优质碳水/减脂碳水：蜜饯枣类以"碳水"重新定义，减脂人群需求强烈，多条曝光 10w+ 同类笔记集中跑量</span></div>
+        <div class="trend-dir"><span class="trend-num">1</span><span>猎奇口感制造话题："duangduangduang的口感为什么不火"，用夸张口感描述引发好奇，曝光 27万+，高封面 CTR 35.8%</span></div>
+        <div class="trend-dir"><span class="trend-num">2</span><span>减脂口粮场景跑量：蜜饯果干以"减脂期共性"切入，多条同类标题集中 CTR 26~31%，精准锁减脂人群</span></div>
+        <div class="trend-dir"><span class="trend-num">3</span><span>生意惨淡反向吸睛："这就是生意惨淡的原因💔"系列在饼干膨化品类批量跑量，CTR 18~23%，曝光最高 66万</span></div>
       </div>
     </div>
 
     <div class="trend-card">
       <div class="trend-head fast">🍜 速食</div>
       <div class="trend-dirs">
-        <div class="trend-dir"><span class="trend-num">1</span><span>沉浸式吃播/深夜场景：不睡觉就来吃面，氛围感内容 CTR 38.7%，宿舍党覆盖效率最高</span></div>
-        <div class="trend-dir"><span class="trend-num">2</span><span>商家感恩+订单破局：主理人视角真实爆单故事（感谢小红书卖了1000单），信任建立快，商卡转化 12%+</span></div>
-        <div class="trend-dir"><span class="trend-num">3</span><span>学生/宿舍认可背书："这商家是真把宿舍党当人啊！"——替用户说出判断，曝光 94万，商卡转化 18.5%</span></div>
+        <div class="trend-dir"><span class="trend-num">1</span><span>宿舍党/学生场景：「这商家是真把宿舍党当人啊！」曝光 16万+，商卡转化 17.3%，场景精准人群认同感强</span></div>
+        <div class="trend-dir"><span class="trend-num">2</span><span>地方特色口味出圈：南昌拌粉/螺蛳粉沉浸式吃播，地域归属感+猎奇共存，带动商笔曝光 10万+</span></div>
+        <div class="trend-dir"><span class="trend-num">3</span><span>明星联名借势：三养火鸡面 BOYNEXTDOOR 代言官宣，商卡CTR 25.6%，联名内容即购买信号</span></div>
       </div>
     </div>
 
     <div class="trend-card">
       <div class="trend-head drink">🧋 饮品</div>
       <div class="trend-dirs">
-        <div class="trend-dir"><span class="trend-num">1</span><span>多味茶配方跑量：十三味茶/多味养生茶组合系列强势，"成分数字+升级版"封面 CTR 39%+，是本周饮品最高点</span></div>
-        <div class="trend-dir"><span class="trend-num">2</span><span>周期打卡转化：连续 N 天打卡记录（28天抹茶粉/薄荷油柑2000ml），商卡CTR 13%+，过程感种草转化强</span></div>
-        <div class="trend-dir"><span class="trend-num">3</span><span>联名限定引爆：SNOOPY×三顿半联名商卡CTR 高达 66%（本周最高），联名包装即购买理由，无需过多文案</span></div>
+        <div class="trend-dir"><span class="trend-num">1</span><span>减脂代茶场景领跑：花草茶/代用茶"管不住嘴懒得动的姐妹"定向种草，封面 CTR 高达 36.7%，商卡转化 14.3%</span></div>
+        <div class="trend-dir"><span class="trend-num">2</span><span>情绪化/猎奇奶茶：「说脏话奶茶」「普洱猫盒5.0」等猎奇概念，封面 CTR 34~35%，话题性带动传播</span></div>
+        <div class="trend-dir"><span class="trend-num">3</span><span>品牌代言人联动：咖啡品牌线上周边代言攻略，商卡CTR 28~32%，粉丝经济转化效率高</span></div>
       </div>
     </div>
 
     <div class="trend-card">
       <div class="trend-head liquor">🍷 酒类</div>
       <div class="trend-dirs">
-        <div class="trend-dir"><span class="trend-num">1</span><span>明星/名人同款背书：范明老师爱喝小酒，借名人日常种草，信任传递效率高，封面 CTR 29.9%</span></div>
-        <div class="trend-dir"><span class="trend-num">2</span><span>普洱/茶类酒跨界：说脏话奶茶/普洱跨界卖点制造话题，曝光 48万，商卡CTR 8.6%，猎奇驱动转化</span></div>
-        <div class="trend-dir"><span class="trend-num">3</span><span>五一聚会场景延续：好友聚会/小酌场景内容持续跑量，饮酒轻松氛围搭配节气节点效果好</span></div>
+        <div class="trend-dir"><span class="trend-num">1</span><span>人生节点仪式感：白酒「1st人生初年」，首次饮酒仪式感包装，情感共鸣驱动封面 CTR 22.4%</span></div>
+        <div class="trend-dir"><span class="trend-num">2</span><span>线下节日活动引流：精酿节/快闪活动笔记，本地化内容小众圈层覆盖，封面 CTR 19%</span></div>
+        <div class="trend-dir"><span class="trend-num">3</span><span>品类差异化讲故事：普洱×猫咪等跨界组合，制造内容爆点，高封面 CTR 但需精准匹配商卡</span></div>
       </div>
     </div>
 
     <div class="trend-card">
       <div class="trend-head herb">🌿 中式滋补</div>
       <div class="trend-dirs">
-        <div class="trend-dir"><span class="trend-num">1</span><span>野生产地故事：黄精/药食同源品，从"爸妈山里遇到陌生人"等故事切入，曝光 78万+，稀缺感+真实感双驱动</span></div>
-        <div class="trend-dir"><span class="trend-num">2</span><span>原料/工艺极致标准：反向教育（"原料不行，再好的工艺也救不了"），主动说出挑剔标准，建立品质信任</span></div>
-        <div class="trend-dir"><span class="trend-num">3</span><span>焦虑型健康痛点：年轻人身体垮/孩子出汗多/月经问题，精准痛点命中，商卡 CTR 1~5%，以量取胜</span></div>
+        <div class="trend-dir"><span class="trend-num">1</span><span>场景化滋补种草：新手妈妈/孩子出汗/备孕等精准场景，代入感强，曝光 3~4万，商卡CTR 5~10%</span></div>
+        <div class="trend-dir"><span class="trend-num">2</span><span>科普解答型：「莫氏鸡煲为什么放黄豆」用问题句式引发好奇，封面 CTR 25.1%，商卡转化 10.6%</span></div>
+        <div class="trend-dir"><span class="trend-num">3</span><span>阿胶/滋补大单品：用真实感谢反馈种草，曝光 33万+，商卡CTR 10.9%，情感背书拉动转化</span></div>
       </div>
     </div>
 
@@ -643,85 +643,85 @@
   <!-- ③ 封面图鉴 -->
   <div class="section-label">
     <span class="icon">🖼️</span> 本周高表现笔记封面
-    <span class="tag">真实数据 · W16 精选</span>
+    <span class="tag">真实数据 · W17 精选</span>
   </div>
   <div class="cover-grid">
 
     <div class="cover-card">
-      <a href="https://www.xiaohongshu.com/explore/69d8cb160000000022024c90" target="_blank" onclick="gtag('event','cover_click',{note_id:'69d8cb16',note_type:'咖啡'})">
-        <img class="cover-img" src="https://cdn.jsdelivr.net/gh/zhudamen528-code/xushi-trends@main/images/cover1.jpg" alt="粉红波旁 一场美丽的误会" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <a href="https://www.xiaohongshu.com/explore/69e0ee240000000021005da6" target="_blank" onclick="gtag('event','cover_click',{note_id:'69e0ee24',note_type:'冲饮谷物'})">
+        <img class="cover-img" src="https://cdn.jsdelivr.net/gh/zhudamen528-code/xushi-trends@main/images/cover1.jpg" alt="靠黑巧苦苦撑着的店" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="cover-img-placeholder" style="display:none">📸</div>
       </a>
       <div class="cover-body">
-        <div class="cover-type">咖啡</div>
-        <span class="cover-ctr">商卡转化 4.2%</span>
-        <div class="cover-desc">粉红波旁 一场美丽的误会</div>
-        <a class="cover-note-link" href="https://www.xiaohongshu.com/explore/69d8cb160000000022024c90" target="_blank">曝光 34,836 → 查看笔记 ↗</a>
+        <div class="cover-type">冲饮谷物/麦片</div>
+        <span class="cover-ctr">商卡转化 30.7%</span>
+        <div class="cover-desc">靠黑巧苦苦撑着的店🤣是有什么魔法吗</div>
+        <a class="cover-note-link" href="https://www.xiaohongshu.com/explore/69e0ee240000000021005da6" target="_blank">封面CTR 32.1% → 查看笔记 ↗</a>
       </div>
     </div>
 
     <div class="cover-card">
-      <a href="https://www.xiaohongshu.com/explore/69d8598300000000230215cc" target="_blank" onclick="gtag('event','cover_click',{note_id:'69d85983',note_type:'咖啡联名'})">
-        <img class="cover-img" src="https://cdn.jsdelivr.net/gh/zhudamen528-code/xushi-trends@main/images/cover2.jpg" alt="SNOOPY × 三顿半联名系列" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="cover-img-placeholder" style="display:none">📸</div>
-      </a>
-      <div class="cover-body">
-        <div class="cover-type">咖啡</div>
-        <span class="cover-ctr">商卡转化 66.3%</span>
-        <div class="cover-desc">SNOOPY × 三顿半联名系列 DREAM TO SHINE</div>
-        <a class="cover-note-link" href="https://www.xiaohongshu.com/explore/69d8598300000000230215cc" target="_blank">曝光 13,926 → 查看笔记 ↗</a>
-      </div>
-    </div>
-
-    <div class="cover-card">
-      <a href="https://www.xiaohongshu.com/explore/69d4f42f000000001f002935" target="_blank" onclick="gtag('event','cover_click',{note_id:'69d4f42f',note_type:'乳制品'})">
-        <img class="cover-img" src="https://cdn.jsdelivr.net/gh/zhudamen528-code/xushi-trends@main/images/cover3.jpg" alt="海河这脑洞真是服了" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="cover-img-placeholder" style="display:none">📸</div>
-      </a>
-      <div class="cover-body">
-        <div class="cover-type">液态奶/常温乳制品</div>
-        <span class="cover-ctr">封面CTR 28.4%</span>
-        <div class="cover-desc">海河这脑洞真是服了</div>
-        <a class="cover-note-link" href="https://www.xiaohongshu.com/explore/69d4f42f000000001f002935" target="_blank">曝光 7,561 → 查看笔记 ↗</a>
-      </div>
-    </div>
-
-    <div class="cover-card">
-      <a href="https://www.xiaohongshu.com/explore/69d1d179000000002202aac5" target="_blank" onclick="gtag('event','cover_click',{note_id:'69d1d179',note_type:'其它零食'})">
-        <img class="cover-img" src="https://cdn.jsdelivr.net/gh/zhudamen528-code/xushi-trends@main/images/cover4.jpg" alt="果味干噎+黑皮Kitty酸奶脆" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="cover-img-placeholder" style="display:none">📸</div>
-      </a>
-      <div class="cover-body">
-        <div class="cover-type">其它</div>
-        <span class="cover-ctr">商卡转化 20.7%</span>
-        <div class="cover-desc">果味干噎+黑皮Kitty酸奶脆</div>
-        <a class="cover-note-link" href="https://www.xiaohongshu.com/explore/69d1d179000000002202aac5" target="_blank">曝光 15,085 → 查看笔记 ↗</a>
-      </div>
-    </div>
-
-    <div class="cover-card">
-      <a href="https://www.xiaohongshu.com/explore/69d05196000000001a02d888" target="_blank" onclick="gtag('event','cover_click',{note_id:'69d05196',note_type:'冲饮'})">
-        <img class="cover-img" src="https://cdn.jsdelivr.net/gh/zhudamen528-code/xushi-trends@main/images/cover5.jpg" alt="喝抹茶到底要不要打发？" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="cover-img-placeholder" style="display:none">📸</div>
-      </a>
-      <div class="cover-body">
-        <div class="cover-type">冲饮品/食补粉粉</div>
-        <span class="cover-ctr">封面CTR 23.1%</span>
-        <div class="cover-desc">喝抹茶到底要不要打发？</div>
-        <a class="cover-note-link" href="https://www.xiaohongshu.com/explore/69d05196000000001a02d888" target="_blank">曝光 7,603 → 查看笔记 ↗</a>
-      </div>
-    </div>
-
-    <div class="cover-card">
-      <a href="https://www.xiaohongshu.com/explore/69d4e0f2000000002200ed00" target="_blank" onclick="gtag('event','cover_click',{note_id:'69d4e0f2',note_type:'糕点'})">
-        <img class="cover-img" src="https://cdn.jsdelivr.net/gh/zhudamen528-code/xushi-trends@main/images/cover6.jpg" alt="加浓版薄荷小方" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <a href="https://www.xiaohongshu.com/explore/69e06535000000001a025151" target="_blank" onclick="gtag('event','cover_click',{note_id:'69e06535',note_type:'糕点'})">
+        <img class="cover-img" src="https://cdn.jsdelivr.net/gh/zhudamen528-code/xushi-trends@main/images/cover2.jpg" alt="FarmLetter抹茶节出摊" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="cover-img-placeholder" style="display:none">📸</div>
       </a>
       <div class="cover-body">
         <div class="cover-type">糕点/点心</div>
-        <span class="cover-ctr">商卡转化 9.4%</span>
-        <div class="cover-desc">加浓版薄荷小方甜度更低哦</div>
-        <a class="cover-note-link" href="https://www.xiaohongshu.com/explore/69d4e0f2000000002200ed00" target="_blank">曝光 14,017 → 查看笔记 ↗</a>
+        <span class="cover-ctr">商卡转化 9.7%</span>
+        <div class="cover-desc">4.16～4.19嘉兴八佰伴抹茶节FarmLetter出摊</div>
+        <a class="cover-note-link" href="https://www.xiaohongshu.com/explore/69e06535000000001a025151" target="_blank">封面CTR 24.4% → 查看笔记 ↗</a>
+      </div>
+    </div>
+
+    <div class="cover-card">
+      <a href="https://www.xiaohongshu.com/explore/69d8eee7000000001b0008b8" target="_blank" onclick="gtag('event','cover_click',{note_id:'69d8eee7',note_type:'蜜饯'})">
+        <img class="cover-img" src="https://cdn.jsdelivr.net/gh/zhudamen528-code/xushi-trends@main/images/cover3.jpg" alt="山姆红瑶蜜薯干" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="cover-img-placeholder" style="display:none">📸</div>
+      </a>
+      <div class="cover-body">
+        <div class="cover-type">蜜饯/枣类/梅/果干</div>
+        <span class="cover-ctr">商卡转化 6.6%</span>
+        <div class="cover-desc">【新品分装单包可买！】山姆的红瑶蜜薯干</div>
+        <a class="cover-note-link" href="https://www.xiaohongshu.com/explore/69d8eee7000000001b0008b8" target="_blank">封面CTR 23.0% → 查看笔记 ↗</a>
+      </div>
+    </div>
+
+    <div class="cover-card">
+      <a href="https://www.xiaohongshu.com/explore/69d8c28b000000001d01c126" target="_blank" onclick="gtag('event','cover_click',{note_id:'69d8c28b',note_type:'南北干货'})">
+        <img class="cover-img" src="https://cdn.jsdelivr.net/gh/zhudamen528-code/xushi-trends@main/images/cover4.jpg" alt="婆婆妈给留的饭菜" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="cover-img-placeholder" style="display:none">📸</div>
+      </a>
+      <div class="cover-body">
+        <div class="cover-type">南北干货/肉类干货</div>
+        <span class="cover-ctr">商卡转化 4.6%</span>
+        <div class="cover-desc">婆婆妈给留的饭菜</div>
+        <a class="cover-note-link" href="https://www.xiaohongshu.com/explore/69d8c28b000000001d01c126" target="_blank">封面CTR 22.4% → 查看笔记 ↗</a>
+      </div>
+    </div>
+
+    <div class="cover-card">
+      <a href="https://www.xiaohongshu.com/explore/69df6e2f000000001d019eef" target="_blank" onclick="gtag('event','cover_click',{note_id:'69df6e2f',note_type:'调味品'})">
+        <img class="cover-img" src="https://cdn.jsdelivr.net/gh/zhudamen528-code/xushi-trends@main/images/cover5.jpg" alt="水煮菜可以退休了" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="cover-img-placeholder" style="display:none">📸</div>
+      </a>
+      <div class="cover-body">
+        <div class="cover-type">调味品/沙拉/干副食</div>
+        <span class="cover-ctr">商卡转化 12.0%</span>
+        <div class="cover-desc">水煮菜可以退休了</div>
+        <a class="cover-note-link" href="https://www.xiaohongshu.com/explore/69df6e2f000000001d019eef" target="_blank">封面CTR 22.2% → 查看笔记 ↗</a>
+      </div>
+    </div>
+
+    <div class="cover-card">
+      <a href="https://www.xiaohongshu.com/explore/69df4b93000000001f007b68" target="_blank" onclick="gtag('event','cover_click',{note_id:'69df4b93',note_type:'糕点'})">
+        <img class="cover-img" src="https://cdn.jsdelivr.net/gh/zhudamen528-code/xushi-trends@main/images/cover6.jpg" alt="小红书周建生会员日" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="cover-img-placeholder" style="display:none">📸</div>
+      </a>
+      <div class="cover-body">
+        <div class="cover-type">糕点/点心</div>
+        <span class="cover-ctr">商卡转化 21.6%</span>
+        <div class="cover-desc">小红书周建生4️⃣月会员专享日来袭❗</div>
+        <a class="cover-note-link" href="https://www.xiaohongshu.com/explore/69df4b93000000001f007b68" target="_blank">封面CTR 20.3% → 查看笔记 ↗</a>
       </div>
     </div>
 
@@ -736,70 +736,70 @@
     <div class="formula-row">
       <span class="formula-rank">01</span>
       <div class="formula-pills">
-        <span class="formula-pill hot">惊叫反应词</span>
+        <span class="formula-pill hot">减脂人群标签</span>
         <span class="formula-plus">+</span>
-        <span class="formula-pill">意外组合</span>
+        <span class="formula-pill">共性痛点</span>
         <span class="formula-plus">+</span>
-        <span class="formula-pill">感叹号</span>
+        <span class="formula-pill">省略号</span>
       </div>
-      <div class="formula-example">「芋泥怎么会塞到烤肠里！」「黑皮Kitty酸奶脆，这组合是谁发明的！」</div>
+      <div class="formula-example">「减脂期总饿的人都有一个共性。。。」「管不住嘴又懒得动的姐妹强推」</div>
     </div>
     <div class="formula-row">
       <span class="formula-rank">02</span>
       <div class="formula-pills">
-        <span class="formula-pill">商家认可句</span>
+        <span class="formula-pill">反向情绪词</span>
         <span class="formula-plus">+</span>
-        <span class="formula-pill hot">人群标签</span>
+        <span class="formula-pill hot">生意场景</span>
         <span class="formula-plus">+</span>
-        <span class="formula-pill">感叹</span>
+        <span class="formula-pill">💔表情</span>
       </div>
-      <div class="formula-example">「这商家是真把宿舍党当人啊！」「感谢小红书，我的辣条卖了1000单」</div>
+      <div class="formula-example">「这就是生意惨淡的原因💔💔💔」「被投诉了……」「水煮菜可以退休了」</div>
     </div>
     <div class="formula-row">
       <span class="formula-rank">03</span>
       <div class="formula-pills">
-        <span class="formula-pill">品牌A</span>
-        <span class="formula-plus">×</span>
-        <span class="formula-pill hot">联名/跨界</span>
+        <span class="formula-pill">场景人群</span>
         <span class="formula-plus">+</span>
-        <span class="formula-pill">系列名</span>
+        <span class="formula-pill hot">认可背书句</span>
+        <span class="formula-plus">+</span>
+        <span class="formula-pill">感叹</span>
       </div>
-      <div class="formula-example">「SNOOPY × 三顿半联名系列 DREAM TO SHINE」「说脏话奶茶 × 普洱跨界」</div>
+      <div class="formula-example">「这商家是真把宿舍党当人啊！」「婆婆妈给留的饭菜」「大学生在宿舍真的很想囤😭」</div>
     </div>
   </div>
 
   <!-- ⑤ 热点话题 -->
   <div class="section-label">
     <span class="icon">🔥</span> 本周热点话题 / 节点
-    <span class="tag">W16 · 04.07—04.13</span>
+    <span class="tag">W17 · 04.14—04.20</span>
   </div>
   <div class="topic-grid">
     <div class="topic-group">
       <div class="topic-group-label">高频标题词</div>
       <div class="topic-tags">
-        <span class="topic-tag hot">#宿舍速食</span>
-        <span class="topic-tag hot">#联名限定</span>
-        <span class="topic-tag hot">#意外组合</span>
-        <span class="topic-tag">#野生产地</span>
-        <span class="topic-tag">#多味茶</span>
+        <span class="topic-tag hot">#减脂口粮</span>
+        <span class="topic-tag hot">#生意惨淡</span>
+        <span class="topic-tag hot">#宿舍党</span>
+        <span class="topic-tag">#地方特色</span>
+        <span class="topic-tag">#猎奇口感</span>
       </div>
     </div>
     <div class="topic-group">
       <div class="topic-group-label">上升场景词</div>
       <div class="topic-tags">
-        <span class="topic-tag hot">#五一聚会</span>
-        <span class="topic-tag hot">#深夜食堂</span>
-        <span class="topic-tag">#学生党必备</span>
-        <span class="topic-tag">#打工人养生</span>
-        <span class="topic-tag">#减脂期</span>
+        <span class="topic-tag hot">#减脂期</span>
+        <span class="topic-tag hot">#南昌拌粉</span>
+        <span class="topic-tag">#学生囤货</span>
+        <span class="topic-tag">#新手妈妈</span>
+        <span class="topic-tag">#场景化滋补</span>
       </div>
     </div>
     <div class="topic-group">
       <div class="topic-group-label">本周节点</div>
       <div class="topic-tags">
-        <span class="topic-tag hot">#五一假期</span>
-        <span class="topic-tag">#谷雨</span>
-        <span class="topic-tag">#春日养生</span>
+        <span class="topic-tag hot">#五一备货</span>
+        <span class="topic-tag">#谷雨养生</span>
+        <span class="topic-tag">#抹茶季</span>
       </div>
     </div>
   </div>
@@ -807,7 +807,7 @@
   <!-- ⑥ 品类风向 -->
   <div class="section-label">
     <span class="icon">📦</span> 品类风向
-    <span class="tag">W16 各品类重点动向</span>
+    <span class="tag">W17 各品类重点动向</span>
   </div>
   <div class="cat-wrap">
     <div class="cat-grid">
@@ -815,51 +815,51 @@
       <div class="cat-card">
         <div class="cat-head snack">🍿 零食</div>
         <div class="cat-items">
-          <div class="cat-item"><span class="cat-dot up">↑</span><span>意外组合零食持续跑量，反差感封面 CTR 37%+</span></div>
-          <div class="cat-item"><span class="cat-dot up">↑</span><span>孕妇/健身/备考人群标签封面商卡转化 5~10%</span></div>
-          <div class="cat-item"><span class="cat-dot">→</span><span>蜜饯枣类以"优质碳水"重新定义，减脂人群需求强</span></div>
+          <div class="cat-item"><span class="cat-dot up">↑</span><span>减脂场景蜜饯果干集中跑量，CTR 26~31%，同题材多条同时爆</span></div>
+          <div class="cat-item"><span class="cat-dot up">↑</span><span>「生意惨淡」反向吸睛系列，饼干膨化最高曝光 66万</span></div>
+          <div class="cat-item"><span class="cat-dot">→</span><span>猎奇口感描述（duangduang）制造好奇，CTR 35.8%</span></div>
         </div>
-        <div class="cat-focus">重点关注：意外组合 + 人群标签</div>
+        <div class="cat-focus">重点关注：减脂场景 + 反向情绪标题</div>
       </div>
 
       <div class="cat-card">
         <div class="cat-head fast">🍜 速食</div>
         <div class="cat-items">
-          <div class="cat-item"><span class="cat-dot up">↑</span><span>宿舍/深夜场景内容 CTR 38.7%，转化 18.5%</span></div>
-          <div class="cat-item"><span class="cat-dot up">↑</span><span>主理人真实爆单故事，商卡转化 12%+</span></div>
-          <div class="cat-item"><span class="cat-dot">→</span><span>邪修吃法（奶油火鸡面等）猎奇驱动点击</span></div>
+          <div class="cat-item"><span class="cat-dot up">↑</span><span>宿舍党/学生场景，曝光 16万+，商卡转化 17.3%</span></div>
+          <div class="cat-item"><span class="cat-dot up">↑</span><span>南昌拌粉/螺蛳粉地域特色种草，曝光 10万+</span></div>
+          <div class="cat-item"><span class="cat-dot">→</span><span>明星联名借势，火鸡面 CTR 24.7%，商卡转化 25.6%</span></div>
         </div>
-        <div class="cat-focus">重点关注：宿舍场景 + 主理人视角</div>
+        <div class="cat-focus">重点关注：宿舍场景 + 地域特色</div>
       </div>
 
       <div class="cat-card">
         <div class="cat-head drink">🧋 饮品</div>
         <div class="cat-items">
-          <div class="cat-item"><span class="cat-dot up">↑</span><span>联名限定引爆，SNOOPY×三顿半商卡 CTR 66%</span></div>
-          <div class="cat-item"><span class="cat-dot up">↑</span><span>多味养生茶组合，"成分数字"封面 CTR 39%+</span></div>
-          <div class="cat-item"><span class="cat-dot">→</span><span>周期打卡内容商卡 CTR 13%+，过程感转化强</span></div>
+          <div class="cat-item"><span class="cat-dot up">↑</span><span>代用茶/减脂茶场景领跑，封面 CTR 36.7%，商卡转化 14.3%</span></div>
+          <div class="cat-item"><span class="cat-dot up">↑</span><span>咖啡代言人联动，商卡CTR 28~32%，粉丝经济强转化</span></div>
+          <div class="cat-item"><span class="cat-dot">→</span><span>猎奇概念茶（说脏话奶茶/猫盒普洱）封面 CTR 34~35%</span></div>
         </div>
-        <div class="cat-focus">重点关注：联名限定 + 成分数字封面</div>
+        <div class="cat-focus">重点关注：减脂代茶场景 + 代言人联动</div>
       </div>
 
       <div class="cat-card">
         <div class="cat-head liquor">🍷 酒类</div>
         <div class="cat-items">
-          <div class="cat-item"><span class="cat-dot up">↑</span><span>五一聚会场景内容持续跑量，节点借势明显</span></div>
-          <div class="cat-item"><span class="cat-dot">→</span><span>名人同款背书封面 CTR 29.9%，信任传递效率高</span></div>
-          <div class="cat-item"><span class="cat-dot">→</span><span>普洱/茶类跨界猎奇，曝光 48 万</span></div>
+          <div class="cat-item"><span class="cat-dot up">↑</span><span>人生节点仪式感包装，「人生初年」情感共鸣驱动转化</span></div>
+          <div class="cat-item"><span class="cat-dot">→</span><span>线下精酿节/快闪本地化内容，覆盖小众圈层</span></div>
+          <div class="cat-item"><span class="cat-dot">→</span><span>品类差异化跨界（普洱×猫咪），高封面 CTR 但商卡需匹配</span></div>
         </div>
-        <div class="cat-focus">重点关注：五一聚会场景借势</div>
+        <div class="cat-focus">重点关注：仪式感场景 + 五一备货节点</div>
       </div>
 
       <div class="cat-card">
         <div class="cat-head herb">🌿 中式滋补</div>
         <div class="cat-items">
-          <div class="cat-item"><span class="cat-dot up">↑</span><span>野生产地故事曝光 78 万+，稀缺感+真实感双驱动</span></div>
-          <div class="cat-item"><span class="cat-dot">→</span><span>反向教育内容（"原料不行工艺也救不了"）建立品质信任</span></div>
-          <div class="cat-item"><span class="cat-dot down">↓</span><span>功效宣称类笔记处罚案例增多，需注意合规</span></div>
+          <div class="cat-item"><span class="cat-dot up">↑</span><span>科普问答型，「为什么放黄豆」CTR 25.1%，商卡转化 10.6%</span></div>
+          <div class="cat-item"><span class="cat-dot up">↑</span><span>场景化滋补（新手妈妈/孩子体质），精准人群商卡 CTR 5~10%</span></div>
+          <div class="cat-item"><span class="cat-dot">→</span><span>阿胶大单品真实反馈种草，曝光 33万+，商卡转化 10.9%</span></div>
         </div>
-        <div class="cat-focus">重点关注：产地故事 + 合规表达</div>
+        <div class="cat-focus">重点关注：科普问答 + 场景化精准人群</div>
       </div>
 
     </div>
@@ -929,7 +929,7 @@
       <div style="padding:14px 20px 10px;font-size:13px;color:#666;border-bottom:1px solid #f0ebe4">
         输入产品信息 → 豆包生成6个封面方向 + 即梦Prompt → 选一个去即梦生图参考
       </div>
-      <div style="display:flex;align-items:center;gap:0;padding:12px 20px;background:#fffaf7;overflow-x:auto">
+      <div style="display:flex;align-items:center;gap:0;padding:12px 20px;background:#f8f6ff;overflow-x:auto">
         <div style="text-align:center;min-width:80px">
           <div style="font-size:22px">📝</div>
           <div style="font-size:11px;font-weight:700;color:#333;margin-top:4px">填写产品信息</div>
@@ -1063,7 +1063,7 @@
     overflow: hidden;
   }
   .planner-intro {
-    background: linear-gradient(135deg, #fff8f4, #fff0f2);
+    background: linear-gradient(135deg, #fff8f4, #ede9fe);
     padding: 16px 24px;
     font-size: 13px;
     color: #666;
@@ -1077,7 +1077,7 @@
   }
   .form-row { display: flex; flex-direction: column; gap: 6px; }
   .form-label { font-size: 13px; font-weight: 600; color: #444; }
-  .required { color: var(--red); }
+  .required { color: #6d28d9; }
   .form-input {
     padding: 10px 14px;
     border: 1.5px solid #e8e0d8;
@@ -1088,7 +1088,7 @@
     transition: border-color 0.2s;
     background: #fafaf8;
   }
-  .form-input:focus { border-color: #ff2442; background: #fff; }
+  .form-input:focus { border-color: #6d28d9; background: #fff; }
   .cat-select-group {
     display: flex;
     flex-wrap: wrap;
@@ -1102,16 +1102,16 @@
     border-radius: 20px;
     font-size: 13px;
     font-weight: 600;
-    background: #f5f0eb;
+    background: #f0ebff;
     color: #666;
     border: 1.5px solid transparent;
     transition: all 0.15s;
     cursor: pointer;
   }
   .cat-radio input:checked + span {
-    background: #fff0f2;
-    color: #ff2442;
-    border-color: #ffd0d8;
+    background: #ede9fe;
+    color: #6d28d9;
+    border-color: #d8b4fe;
   }
   .planner-actions {
     padding: 0 24px 20px;
@@ -1137,7 +1137,7 @@
   }
   .btn-copy {
     padding: 12px 20px;
-    background: #f5f0eb;
+    background: #f0ebff;
     color: #555;
     border: 1.5px solid #e8e0d8;
     border-radius: 10px;
@@ -1744,7 +1744,7 @@ function searchMerchant(keyword) {
       good:     { color: '#10b981', bg: '#f0fdf4', emoji: '✅', label: '健康' },
       ok:       { color: '#3b82f6', bg: '#eff6ff', emoji: '📊', label: '良好' },
       warning:  { color: '#f59e0b', bg: '#fffbeb', emoji: '⚠️', label: '待优化' },
-      urgent:   { color: '#ff2442', bg: '#fff0f2', emoji: '🔴', label: '需重点关注' },
+      urgent:   { color: '#ff2442', bg: '#ede9fe', emoji: '🔴', label: '需重点关注' },
       inactive: { color: '#9ca3af', bg: '#f9fafb', emoji: '💤', label: '近期未发布' },
     };
     const gc = gradeConfig[diag.grade];
