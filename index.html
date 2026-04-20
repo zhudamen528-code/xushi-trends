@@ -1642,9 +1642,9 @@ function diagnoseMerchant(m) {
 
   // 维度2：笔记曝光（流量规模）
   if (m.pv < 10000) {
-    issues.push({ level: 'high', dim: '② 笔记曝光', text: `近7天曝光仅 ${m.pv.toLocaleString()}，几乎没有流量入口，商品根本没人看到`, action: '先解决内容质量问题，用高 CTR 封面+标题带动初始分发' });
+    issues.push({ level: 'high', dim: '② 笔记曝光', text: `近7天曝光量极低（待提升档），几乎没有流量入口，商品根本没人看到`, action: '先解决内容质量问题，用高 CTR 封面+标题带动初始分发' });
   } else if (m.pv < 50000) {
-    issues.push({ level: 'mid', dim: '② 笔记曝光', text: `近7天曝光 ${m.pv.toLocaleString()}，流量体量偏小，转化天花板低`, action: '跑量阶段优先追求曝光，可配合投流放大单篇爆款' });
+    issues.push({ level: 'mid', dim: '② 笔记曝光', text: `近7天曝光量偏小（行业均值档以下），流量体量偏小，转化天花板低`, action: '跑量阶段优先追求曝光，可配合投流放大单篇爆款' });
   }
 
   // 维度3：商卡CTR（封面/标题吸引力）
@@ -1674,7 +1674,7 @@ function diagnoseMerchant(m) {
   if (m.dgmv === 0 && m.pub7d > 0) {
     issues.push({ level: 'high', dim: '⑥ GMV 产出', text: `有笔记发布但近期 GMV 为零，流量没有转化成交易`, action: '检查商品是否正常上架、价格是否有竞争力，同时优化购买转化率' });
   } else if (m.dgmv > 0 && m.dgmv < 1000) {
-    issues.push({ level: 'mid', dim: '⑥ GMV 产出', text: `近期 GMV ${m.dgmv.toFixed(0)} 元，体量偏小`, action: '找到已有的爆款笔记，加大投流放量，把单篇价值最大化' });
+    issues.push({ level: 'mid', dim: '⑥ GMV 产出', text: `近期 GMV 体量偏小（待提升档），转化产出有限`, action: '找到已有的爆款笔记，加大投流放量，把单篇价值最大化' });
   }
 
   // 维度7：曝光环比趋势（增长/衰退信号）
@@ -1770,7 +1770,7 @@ function searchMerchant(keyword) {
       return `<span style="font-size:10px;color:#999;margin-left:4px">持平</span>`;
     }
 
-    // 数据卡：真实数值展示
+    // 数据卡：显示真实数值（CTR/转化率类）
     function dataCard(label, value, unit, chg) {
       const n = parseFloat(value);
       const displayVal = (value === null || value === undefined || isNaN(n)) ? '—'
@@ -1779,6 +1779,21 @@ function searchMerchant(keyword) {
         <div style="background:#fff;border-radius:10px;padding:11px 10px;border:1.5px solid #f0ebe4;text-align:center">
           <div style="font-size:10px;color:#999;margin-bottom:3px">${label}</div>
           <div style="font-size:15px;font-weight:800;color:#1a1a1a">${displayVal}<span style="font-size:10px;font-weight:400;color:#aaa">${unit}</span></div>
+          <div style="font-size:10px;margin-top:2px">${chgBadge(chg)}</div>
+        </div>`;
+    }
+
+    // 脱敏卡：GMV/曝光等敏感数值只显示分位档位
+    function maskedCard(label, val, threshHigh, threshMid, chg) {
+      let text, color;
+      if (val === null || val === undefined) { text = '暂无数据'; color = '#999'; }
+      else if (val >= threshHigh) { text = 'TOP 20%'; color = '#10b981'; }
+      else if (val >= threshMid)  { text = '行业均值'; color = '#f59e0b'; }
+      else                        { text = '待提升';   color = '#ff2442'; }
+      return `
+        <div style="background:#fff;border-radius:10px;padding:11px 10px;border:1.5px solid #f0ebe4;text-align:center">
+          <div style="font-size:10px;color:#999;margin-bottom:3px">${label}</div>
+          <div style="font-size:15px;font-weight:800;color:${color}">${text}</div>
           <div style="font-size:10px;margin-top:2px">${chgBadge(chg)}</div>
         </div>`;
     }
@@ -1795,7 +1810,7 @@ function searchMerchant(keyword) {
         <div style="font-size:13px;color:#555">${diag.summary}</div>
       </div>
 
-      <div style="font-size:11px;color:#999;margin-bottom:8px;font-weight:600">📊 核心指标（近7天真实数据）</div>
+      <div style="font-size:11px;color:#999;margin-bottom:8px;font-weight:600">📊 核心指标（近7天数据）</div>
       <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:8px">
         ${dataCard('日均发布', daily, '篇/天', m.pubChg)}
         ${dataCard('商卡 CTR', m.cardCtr, '%', m.cardCtrChg)}
@@ -1803,8 +1818,8 @@ function searchMerchant(keyword) {
         ${dataCard('购买转化率', m.buyRate, '%', m.buyRateChg)}
       </div>
       <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:18px">
-        ${dataCard('笔记曝光', m.pv, '', m.pvChg)}
-        ${dataCard('近期 GMV', m.dgmv, '元', m.dgmvChg)}
+        ${maskedCard('笔记曝光', m.pv,   500000, 100000, m.pvChg)}
+        ${maskedCard('近期 GMV', m.dgmv,  30000,   5000, m.dgmvChg)}
         ${dataCard('7天发布量', m.pub7d, '篇', m.pubChg)}
         ${dataCard('曝光环比', m.pvChg, '%', null)}
       </div>
