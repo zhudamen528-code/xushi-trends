@@ -513,8 +513,8 @@
   <!-- Tab 导航 -->
   <div class="tab-nav">
     <button class="tab-btn active" onclick="switchTab('trends')">📊 趋势看板</button>
-    <button class="tab-btn" onclick="switchTab('tools')">🛠️ 实用工具</button>
     <button class="tab-btn" onclick="switchTab('diag')">🔍 账号诊断</button>
+    <button class="tab-btn" onclick="switchTab('tools')">🛠️ 实用工具</button>
   </div>
 
   <!-- Tab1: 趋势看板 -->
@@ -1725,19 +1725,37 @@ function searchMerchant(keyword) {
       return `<span style="font-size:10px;color:#999;margin-left:4px">持平</span>`;
     }
 
-    // 曝光格式化
-    function fmtPv(pv) {
-      if (!pv) return '—';
-      if (pv >= 10000) return (pv/10000).toFixed(1) + '万';
-      return pv.toString();
+    // 分位标签：不暴露真实数值，只显示档位
+    function pctLabel(val, threshHigh, threshMid) {
+      if (val === null || val === undefined) return { text: '暂无数据', color: '#999' };
+      if (val >= threshHigh) return { text: 'TOP 20%', color: '#10b981' };
+      if (val >= threshMid)  return { text: '行业均值', color: '#f59e0b' };
+      return { text: '待提升', color: '#ff2442' };
     }
 
-    // DGMV 格式化
-    function fmtGmv(v) {
-      if (v === null || v === undefined || v === 0) return '—';
-      if (v >= 10000) return (v/10000).toFixed(1) + '万';
-      return v + '元';
+    // 环比档位：只显示趋势方向，不显示具体数字
+    function chgBadge(chg) {
+      if (chg === null || chg === undefined) return '';
+      if (chg > 5) return `<span style="font-size:10px;color:#10b981;margin-left:4px">▲ 上升</span>`;
+      if (chg < -5) return `<span style="font-size:10px;color:#ff2442;margin-left:4px">▼ 下降</span>`;
+      return `<span style="font-size:10px;color:#999;margin-left:4px">— 持平</span>`;
     }
+
+    // 日均发布档位
+    function pubLabel(d) {
+      const v = parseFloat(d);
+      if (v >= 2) return { text: '勤奋发布', color: '#10b981' };
+      if (v >= 1) return { text: '基本达标', color: '#f59e0b' };
+      if (v > 0)  return { text: '发布偏少', color: '#ff2442' };
+      return { text: '近期未发布', color: '#999' };
+    }
+
+    const pubL   = pubLabel(daily);
+    const cardL  = pctLabel(m.cardCtr,  20, 13);
+    const buyL   = pctLabel(m.buyRate,   8,  5);
+    const noteL  = pctLabel(m.noteCtr,  15, 10);
+    const pvL    = pctLabel(m.pv,    500000, 100000);
+    const gmvL   = pctLabel(m.dgmv,  30000,  5000);
 
     resultEl.innerHTML = `
       <div style="background:${gc.bg};border-radius:12px;padding:16px 18px;margin-bottom:16px;border:1.5px solid ${gc.color}33">
@@ -1753,25 +1771,25 @@ function searchMerchant(keyword) {
 
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:10px">
         ${[
-          ['日均发布', daily + ' 篇', parseFloat(daily) >= 2 ? '#10b981' : parseFloat(daily) >= 1 ? '#f59e0b' : '#ff2442', m.pubChg],
-          ['商卡 CTR', (m.cardCtr ?? '—') + (m.cardCtr !== null ? '%' : ''), m.cardCtr >= 13 ? '#10b981' : m.cardCtr >= 7 ? '#f59e0b' : '#ff2442', m.cardCtrChg],
-          ['购买转化率', (m.buyRate ?? '—') + (m.buyRate !== null ? '%' : ''), m.buyRate >= 5 ? '#10b981' : m.buyRate >= 2 ? '#f59e0b' : '#ff2442', m.buyRateChg],
+          ['日均发布', pubL.text,  pubL.color,  m.pubChg],
+          ['商卡 CTR', cardL.text, cardL.color, m.cardCtrChg],
+          ['购买转化率', buyL.text, buyL.color, m.buyRateChg],
         ].map(([label, val, color, chg]) => `
           <div style="background:#fff;border-radius:10px;padding:12px;border:1.5px solid #f0ebe4;text-align:center">
             <div style="font-size:11px;color:#999;margin-bottom:4px">${label}</div>
-            <div style="font-size:20px;font-weight:800;color:${color}">${val}</div>
+            <div style="font-size:17px;font-weight:800;color:${color}">${val}</div>
             <div style="font-size:10px;margin-top:2px">${chgBadge(chg)}</div>
           </div>`).join('')}
       </div>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px">
         ${[
-          ['笔记CTR', (m.noteCtr ?? '—') + (m.noteCtr !== null ? '%' : ''), '#6366f1', m.noteCtrChg],
-          ['14天DGMV', fmtGmv(m.dgmv), '#3b82f6', m.dgmvChg],
-          ['笔记曝光PV', fmtPv(m.pv), '#8b5cf6', m.pvChg],
+          ['笔记CTR',  noteL.text, noteL.color, m.noteCtrChg],
+          ['14天GMV',  gmvL.text,  gmvL.color,  m.dgmvChg],
+          ['笔记曝光', pvL.text,   pvL.color,   m.pvChg],
         ].map(([label, val, color, chg]) => `
           <div style="background:#fff;border-radius:10px;padding:12px;border:1.5px solid #f0ebe4;text-align:center">
             <div style="font-size:11px;color:#999;margin-bottom:4px">${label}</div>
-            <div style="font-size:20px;font-weight:800;color:${color}">${val}</div>
+            <div style="font-size:17px;font-weight:800;color:${color}">${val}</div>
             <div style="font-size:10px;margin-top:2px">${chgBadge(chg)}</div>
           </div>`).join('')}
       </div>
