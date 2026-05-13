@@ -235,6 +235,82 @@
     .cover-note-link:hover { text-decoration: underline; }
 
     /* ── 标题公式 ── */
+    /* ── TOP 笔记列表 ── */
+    .top-notes-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .top-note-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--card-bg);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 16px;
+      text-decoration: none;
+      color: inherit;
+      transition: box-shadow 0.15s, border-color 0.15s;
+    }
+    .top-note-row:hover {
+      border-color: #16a34a;
+      box-shadow: 0 2px 12px rgba(22,163,74,0.1);
+    }
+    .top-note-rank {
+      flex-shrink: 0;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #f0fdf4;
+      border: 1.5px solid #bbf7d0;
+      font-size: 12px;
+      font-weight: 800;
+      color: #16a34a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .top-note-rank.gold { background: #fef9c3; border-color: #fde047; color: #854d0e; }
+    .top-note-rank.silver { background: #f1f5f9; border-color: #cbd5e1; color: #475569; }
+    .top-note-rank.bronze { background: #fff7ed; border-color: #fed7aa; color: #9a3412; }
+    .top-note-title {
+      flex: 1;
+      font-size: 13px;
+      font-weight: 600;
+      color: #1a1a1a;
+      line-height: 1.4;
+    }
+    .top-note-cat {
+      flex-shrink: 0;
+      font-size: 11px;
+      color: #16a34a;
+      background: #dcfce7;
+      padding: 2px 8px;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+    .top-note-metrics {
+      flex-shrink: 0;
+      display: flex;
+      gap: 12px;
+      font-size: 11px;
+      color: #888;
+    }
+    .top-note-metric span {
+      font-weight: 700;
+      color: #333;
+    }
+    .top-note-arrow {
+      flex-shrink: 0;
+      color: #bbf7d0;
+      font-size: 14px;
+    }
+    @media (max-width: 768px) {
+      .top-note-metrics { display: none; }
+      .top-note-cat { display: none; }
+    }
+
     .formula-card {
       background: var(--card-bg);
       border-radius: 14px;
@@ -859,6 +935,13 @@
     </div>
   </div>
 
+  <!-- ⑦ 本周 TOP 笔记 -->
+  <div class="section-label">
+    <span class="icon">🏆</span> 本周新发高表现笔记
+    <span class="tag">W20 · 封面CTR × 商卡CTR 综合排名 TOP20</span>
+  </div>
+  <div class="top-notes-grid" id="topNotesGrid"></div>
+
   </div><!-- /tab-trends -->
 
 
@@ -1175,6 +1258,50 @@
 </style>
 
 <script>
+  // ── TOP 笔记数据 ──
+  const TOP_NOTES = [
+    {title: "上架｜常吃常新豆蔻卷卷", cat: "糕点", ctr: 23.0, tagCtr: 54.5, imp: 31369, url: "https://www.xiaohongshu.com/explore/69fff7f30000000008030165"},
+    {title: "千呼万唤！Apple大礼包来啦！", cat: "果干", ctr: 21.4, tagCtr: 47.4, imp: 97893, url: "https://www.xiaohongshu.com/explore/69fb452e000000001f001220"},
+    {title: "6.0猫盒预告 仲夏夜之猫", cat: "普洱", ctr: 24.7, tagCtr: 29.8, imp: 5064, url: "https://www.xiaohongshu.com/explore/69fbfdb1000000003600024d"},
+    {title: "我真被问麻了……", cat: "糕点", ctr: 20.1, tagCtr: 28.3, imp: 25235, url: "https://www.xiaohongshu.com/explore/69fc4587000000003503a590"},
+    {title: "几万人等的新口味来了！真的来了！", cat: "卤味零食", ctr: 25.6, tagCtr: 18.6, imp: 44162, url: "https://www.xiaohongshu.com/explore/69f9fa440000000035020351"},
+    {title: "叮咚！黄豆店长曼谷营业啦！", cat: "果干", ctr: 21.7, tagCtr: 18.7, imp: 52827, url: "https://www.xiaohongshu.com/explore/69fec7090000000022027865"},
+    {title: "刚到的面包咬了一口发现里面是这样的", cat: "糕点", ctr: 20.3, tagCtr: 21.5, imp: 20469, url: "https://www.xiaohongshu.com/explore/69fbeab5000000003601c236"},
+    {title: "生意惨淡的真相居然是这个… 💔", cat: "速食", ctr: 26.1, tagCtr: 17.3, imp: 12409, url: "https://www.xiaohongshu.com/explore/69fae44400000000350256ff"},
+    {title: "30r够吃两周，终结外卖焦虑！", cat: "综合", ctr: 20.3, tagCtr: 15.7, imp: 209055, url: "https://www.xiaohongshu.com/explore/6a016d9f000000000702fb43"},
+    {title: "昨天我说酱里没有油，好多人不信。。。", cat: "糕点", ctr: 24.6, tagCtr: 13.9, imp: 75472, url: "https://www.xiaohongshu.com/explore/6a0283e40000000008032141"},
+    {title: "在巴黎吃了7百多的过桥米线", cat: "速食", ctr: 22.2, tagCtr: 17.0, imp: 13390, url: "https://www.xiaohongshu.com/explore/6a01630300000000350260df"},
+    {title: "看到这个订单 我实在绷不住了……😭", cat: "卤味零食", ctr: 22.7, tagCtr: 11.4, imp: 834267, url: "https://www.xiaohongshu.com/explore/69f70dc5000000001a02de12"},
+    {title: "分享一个能撑死人，但热量很低的东西！！", cat: "糕点", ctr: 22.3, tagCtr: 16.5, imp: 11482, url: "https://www.xiaohongshu.com/explore/69faa912000000002003b74b"},
+    {title: "我妈说我吃轻食餐太费钱，明明半个月才30r！", cat: "果干", ctr: 23.6, tagCtr: 15.2, imp: 9307, url: "https://www.xiaohongshu.com/explore/6a01ecc40000000038022ce6"},
+    {title: "请问这杯是神吗？？？！", cat: "花草茶", ctr: 26.4, tagCtr: 10.9, imp: 74558, url: "https://www.xiaohongshu.com/explore/69fe8a53000000001a02de70"},
+    {title: "原来这才是生意惨淡的真相…", cat: "速食", ctr: 23.0, tagCtr: 15.2, imp: 7615, url: "https://www.xiaohongshu.com/explore/6a009f88000000003502ff73"},
+    {title: "这大概率是世界上最好吃的土豆泥", cat: "糕点", ctr: 21.4, tagCtr: 14.1, imp: 9193, url: "https://www.xiaohongshu.com/explore/69fec8bd000000002301d62a"},
+    {title: "这种肚子的姐妹要注意，再节食也没用", cat: "养生茶", ctr: 23.9, tagCtr: 10.5, imp: 55423, url: "https://www.xiaohongshu.com/explore/69fe929f000000002003b3d9"},
+    {title: "健身教练推荐了我！", cat: "调味品", ctr: 26.0, tagCtr: 11.5, imp: 7665, url: "https://www.xiaohongshu.com/explore/69fdb03d0000000035038cea"},
+    {title: "挖到宝了！", cat: "饼干/膨化", ctr: 21.8, tagCtr: 14.1, imp: 5321, url: "https://www.xiaohongshu.com/explore/69fd9e1e000000003700e9e9"},
+  ];
+
+  function renderTopNotes() {
+    const grid = document.getElementById('topNotesGrid');
+    if (!grid) return;
+    const rankClass = (i) => i === 0 ? 'gold' : i === 1 ? 'silver' : i === 2 ? 'bronze' : '';
+    grid.innerHTML = TOP_NOTES.map((n, i) => `
+      <a class="top-note-row" href="${n.url}" target="_blank" rel="noopener">
+        <div class="top-note-rank ${rankClass(i)}">${i + 1}</div>
+        <div class="top-note-title">${n.title}</div>
+        <div class="top-note-cat">${n.cat}</div>
+        <div class="top-note-metrics">
+          <div class="top-note-metric">封面CTR <span>${n.ctr}%</span></div>
+          <div class="top-note-metric">商卡CTR <span>${n.tagCtr}%</span></div>
+          <div class="top-note-metric">曝光 <span>${n.imp >= 10000 ? (n.imp/10000).toFixed(1)+'万' : n.imp.toLocaleString()}</span></div>
+        </div>
+        <div class="top-note-arrow">→</div>
+      </a>
+    `).join('');
+  }
+  renderTopNotes();
+
   // 品类对应的内容风向（与看板保持同步）
   const CAT_TRENDS = {
     "零食": {
