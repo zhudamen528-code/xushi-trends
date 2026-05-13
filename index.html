@@ -16,29 +16,29 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --red: #6d28d9;
-      --orange: #7c3aed;
-      --warm: #f5f3ff;
+      --red: #16a34a;
+      --orange: #22c55e;
+      --warm: #f0fdf4;
       --card-bg: #ffffff;
       --text: #1a1a1a;
       --text-sub: #888;
-      --border: #e5e0f5;
+      --border: #bbf7d0;
       --tag-snack: #ff6b35;
       --tag-fast: #f59e0b;
       --tag-drink: #06b6d4;
-      --tag-liquor: #8b5cf6;
+      --tag-liquor: #0d9488;
       --tag-herb: #10b981;
     }
 
     body {
       font-family: -apple-system, "PingFang SC", "Helvetica Neue", sans-serif;
-      background: #f5f3ff;
+      background: #f0fdf4;
       color: var(--text);
     }
 
     /* ── Header ── */
     .header {
-      background: linear-gradient(135deg, #4c1d95 0%, #6d28d9 60%, #7c3aed 100%);
+      background: linear-gradient(135deg, #14532d 0%, #16a34a 60%, #22c55e 100%);
       padding: 28px 40px;
       display: flex;
       align-items: center;
@@ -70,8 +70,8 @@
     .section-label .tag {
       font-size: 11px;
       font-weight: 600;
-      color: #6d28d9;
-      background: #ede9fe;
+      color: #16a34a;
+      background: #dcfce7;
       padding: 2px 8px;
       border-radius: 20px;
     }
@@ -96,7 +96,7 @@
       top: 0; left: 0; right: 0;
       height: 4px;
     }
-    .bench-card.top::before { background: linear-gradient(90deg, #6d28d9, #7c3aed); }
+    .bench-card.top::before { background: linear-gradient(90deg, #16a34a, #22c55e); }
     .bench-card.avg::before { background: linear-gradient(90deg, #3b82f6, #06b6d4); }
     .bench-card.low::before { background: #e5e7eb; }
     .bench-tier {
@@ -116,7 +116,7 @@
     .bench-label { font-size: 12px; color: var(--text-sub); }
     .bench-val { font-size: 22px; font-weight: 800; line-height: 1; }
     .bench-unit { font-size: 12px; font-weight: 400; margin-left: 2px; color: var(--text-sub); }
-    .bench-card.top .bench-val { color: #6d28d9; }
+    .bench-card.top .bench-val { color: #16a34a; }
     .bench-card.avg .bench-val { color: #3b82f6; }
     .bench-card.low .bench-val { color: #9ca3af; }
     .bench-hint {
@@ -151,7 +151,7 @@
     .trend-head.snack { background: linear-gradient(135deg, #ff6b35, #ff8f5e); }
     .trend-head.fast  { background: linear-gradient(135deg, #f59e0b, #fbbf24); }
     .trend-head.drink { background: linear-gradient(135deg, #06b6d4, #22d3ee); }
-    .trend-head.liquor { background: linear-gradient(135deg, #8b5cf6, #a78bfa); }
+    .trend-head.liquor { background: linear-gradient(135deg, #0d9488, #14b8a6); }
     .trend-head.herb  { background: linear-gradient(135deg, #10b981, #34d399); }
     .trend-dirs { padding: 12px 14px; display: flex; flex-direction: column; gap: 10px; }
     .trend-dir {
@@ -167,7 +167,7 @@
       width: 18px;
       height: 18px;
       border-radius: 50%;
-      background: #f0ebff;
+      background: #f0fdf4;
       font-size: 11px;
       font-weight: 700;
       display: flex;
@@ -194,12 +194,12 @@
       aspect-ratio: 3/4;
       object-fit: cover;
       display: block;
-      background: #f0ebff;
+      background: #f0fdf4;
     }
     .cover-img-placeholder {
       width: 100%;
       aspect-ratio: 3/4;
-      background: linear-gradient(135deg, #ede9fe, #ddd6fe);
+      background: linear-gradient(135deg, #dcfce7, #ddd6fe);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -218,8 +218,8 @@
       display: inline-block;
       font-size: 11px;
       font-weight: 700;
-      color: #6d28d9;
-      background: #ede9fe;
+      color: #16a34a;
+      background: #dcfce7;
       padding: 2px 8px;
       border-radius: 20px;
       margin-bottom: 8px;
@@ -268,11 +268,11 @@
       font-weight: 600;
       padding: 5px 12px;
       border-radius: 8px;
-      background: #f5f3ff;
+      background: #f0fdf4;
       color: #333;
       border: 1px solid #f0ebe4;
     }
-    .formula-pill.hot { background: #ede9fe; color: #6d28d9; border-color: #d8b4fe; }
+    .formula-pill.hot { background: #dcfce7; color: #16a34a; border-color: #86efac; }
     .formula-plus { font-size: 16px; color: #ddd; }
     .formula-example {
       margin-left: auto;
@@ -308,10 +308,10 @@
       font-weight: 600;
       padding: 5px 12px;
       border-radius: 20px;
-      background: #f0ebff;
+      background: #f0fdf4;
       color: #555;
     }
-    .topic-tag.hot { background: #ede9fe; color: #6d28d9; }
+    .topic-tag.hot { background: #dcfce7; color: #16a34a; }
     .topic-tag.rising { background: #f0fdf4; color: #10b981; }
     .topic-tag.seasonal { background: #fffbeb; color: #f59e0b; }
 
@@ -340,7 +340,7 @@
     .cat-head.snack { background: #ff6b35; }
     .cat-head.fast  { background: #f59e0b; }
     .cat-head.drink { background: #06b6d4; }
-    .cat-head.liquor{ background: #8b5cf6; }
+    .cat-head.liquor{ background: #0d9488; }
     .cat-head.herb  { background: #10b981; }
     .cat-name {
       font-size: 14px;
@@ -359,7 +359,7 @@
       align-items: flex-start;
     }
     .cat-dot { font-weight: 700; font-size: 13px; flex-shrink: 0; margin-top: 1px; }
-    .cat-dot.up   { color: #6d28d9; }
+    .cat-dot.up   { color: #16a34a; }
     .cat-dot.down { color: #10b981; }
     .cat-dot      { color: #999; }
     .cat-focus {
@@ -481,10 +481,10 @@
     transition: all 0.2s;
     font-family: inherit;
   }
-  .tab-btn:hover { color: #6d28d9; }
+  .tab-btn:hover { color: #16a34a; }
   .tab-btn.active {
-    color: #6d28d9;
-    border-bottom-color: #6d28d9;
+    color: #16a34a;
+    border-bottom-color: #16a34a;
   }
   .tab-panel { display: block; }
   .tab-panel.hidden { display: none; }
@@ -1057,7 +1057,7 @@
     overflow: hidden;
   }
   .planner-intro {
-    background: linear-gradient(135deg, #fff8f4, #ede9fe);
+    background: linear-gradient(135deg, #fff8f4, #dcfce7);
     padding: 16px 24px;
     font-size: 13px;
     color: #666;
@@ -1071,7 +1071,7 @@
   }
   .form-row { display: flex; flex-direction: column; gap: 6px; }
   .form-label { font-size: 13px; font-weight: 600; color: #444; }
-  .required { color: #6d28d9; }
+  .required { color: #16a34a; }
   .form-input {
     padding: 10px 14px;
     border: 1.5px solid #e8e0d8;
@@ -1082,7 +1082,7 @@
     transition: border-color 0.2s;
     background: #fafaf8;
   }
-  .form-input:focus { border-color: #6d28d9; background: #fff; }
+  .form-input:focus { border-color: #16a34a; background: #fff; }
   .cat-select-group {
     display: flex;
     flex-wrap: wrap;
@@ -1096,16 +1096,16 @@
     border-radius: 20px;
     font-size: 13px;
     font-weight: 600;
-    background: #f0ebff;
+    background: #f0fdf4;
     color: #666;
     border: 1.5px solid transparent;
     transition: all 0.15s;
     cursor: pointer;
   }
   .cat-radio input:checked + span {
-    background: #ede9fe;
-    color: #6d28d9;
-    border-color: #d8b4fe;
+    background: #dcfce7;
+    color: #16a34a;
+    border-color: #86efac;
   }
   .planner-actions {
     padding: 0 24px 20px;
@@ -1131,7 +1131,7 @@
   }
   .btn-copy {
     padding: 12px 20px;
-    background: #f0ebff;
+    background: #f0fdf4;
     color: #555;
     border: 1.5px solid #e8e0d8;
     border-radius: 10px;
@@ -1738,7 +1738,7 @@ function searchMerchant(keyword) {
       good:     { color: '#10b981', bg: '#f0fdf4', emoji: '✅', label: '健康' },
       ok:       { color: '#3b82f6', bg: '#eff6ff', emoji: '📊', label: '良好' },
       warning:  { color: '#f59e0b', bg: '#fffbeb', emoji: '⚠️', label: '待优化' },
-      urgent:   { color: '#ff2442', bg: '#ede9fe', emoji: '🔴', label: '需重点关注' },
+      urgent:   { color: '#ff2442', bg: '#dcfce7', emoji: '🔴', label: '需重点关注' },
       inactive: { color: '#9ca3af', bg: '#f9fafb', emoji: '💤', label: '近期未发布' },
     };
     const gc = gradeConfig[diag.grade];
