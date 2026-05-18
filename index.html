@@ -16,29 +16,35 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --red: #16a34a;
-      --orange: #22c55e;
-      --warm: #f0fdf4;
-      --card-bg: #ffffff;
-      --text: #1a1a1a;
-      --text-sub: #888;
-      --border: #bbf7d0;
-      --tag-snack: #ff6b35;
-      --tag-fast: #f59e0b;
+      --red: #00d4ff;
+      --orange: #6366f1;
+      --warm: #0d1117;
+      --card-bg: #111827;
+      --text: #e2e8f0;
+      --text-sub: #64748b;
+      --border: #1e293b;
+      --tag-snack: #f97316;
+      --tag-fast: #eab308;
       --tag-drink: #06b6d4;
-      --tag-liquor: #0d9488;
+      --tag-liquor: #8b5cf6;
       --tag-herb: #10b981;
+      --neon: #00d4ff;
+      --neon-purple: #6366f1;
+      --glow: rgba(0,212,255,0.15);
+      --glow-border: rgba(0,212,255,0.3);
     }
 
     body {
       font-family: -apple-system, "PingFang SC", "Helvetica Neue", sans-serif;
-      background: #f0fdf4;
+      background: #0a0f1e;
+      background-image: radial-gradient(ellipse at 20% 20%, rgba(99,102,241,0.08) 0%, transparent 50%),
+                        radial-gradient(ellipse at 80% 80%, rgba(0,212,255,0.06) 0%, transparent 50%);
       color: var(--text);
     }
 
     /* ── Header ── */
     .header {
-      background: linear-gradient(135deg, #14532d 0%, #16a34a 60%, #22c55e 100%);
+      background: linear-gradient(135deg, #0a0f1e 0%, #0d1f3c 50%, #0f172a 100%); border-bottom: 1px solid rgba(0,212,255,0.2);
       padding: 28px 40px;
       display: flex;
       align-items: center;
@@ -47,7 +53,7 @@
     .header-left { display: flex; align-items: center; gap: 14px; }
     .header-icon { font-size: 36px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
     .header-title { font-size: 22px; font-weight: 800; color: #fff; letter-spacing: -0.3px; }
-    .header-sub { font-size: 13px; color: rgba(255,255,255,0.75); margin-top: 3px; }
+    .header-sub { font-size: 13px; color: rgba(0,212,255,0.6); margin-top: 3px; }
     .header-right { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
     .header-week { font-size: 28px; font-weight: 800; color: #fff; }
     .header-date { font-size: 12px; color: rgba(255,255,255,0.7); }
@@ -70,8 +76,8 @@
     .section-label .tag {
       font-size: 11px;
       font-weight: 600;
-      color: #16a34a;
-      background: #dcfce7;
+      color: #00d4ff;
+      background: rgba(0,212,255,0.1);
       padding: 2px 8px;
       border-radius: 20px;
     }
@@ -86,9 +92,14 @@
       background: var(--card-bg);
       border-radius: 16px;
       padding: 24px;
-      border: 1.5px solid var(--border);
+      border: 1px solid var(--border);
       position: relative;
       overflow: hidden;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .bench-card:hover {
+      border-color: rgba(0,212,255,0.3);
+      box-shadow: 0 0 20px rgba(0,212,255,0.08);
     }
     .bench-card::before {
       content: '';
@@ -96,7 +107,7 @@
       top: 0; left: 0; right: 0;
       height: 4px;
     }
-    .bench-card.top::before { background: linear-gradient(90deg, #16a34a, #22c55e); }
+    .bench-card.top::before { background: linear-gradient(90deg, #00d4ff, #6366f1); }
     .bench-card.avg::before { background: linear-gradient(90deg, #3b82f6, #06b6d4); }
     .bench-card.low::before { background: #e5e7eb; }
     .bench-tier {
@@ -116,8 +127,8 @@
     .bench-label { font-size: 12px; color: var(--text-sub); }
     .bench-val { font-size: 22px; font-weight: 800; line-height: 1; }
     .bench-unit { font-size: 12px; font-weight: 400; margin-left: 2px; color: var(--text-sub); }
-    .bench-card.top .bench-val { color: #16a34a; }
-    .bench-card.avg .bench-val { color: #3b82f6; }
+    .bench-card.top .bench-val { color: #00d4ff; text-shadow: 0 0 10px rgba(0,212,255,0.4); }
+    .bench-card.avg .bench-val { color: #6366f1; text-shadow: 0 0 10px rgba(99,102,241,0.4); }
     .bench-card.low .bench-val { color: #9ca3af; }
     .bench-hint {
       font-size: 11px;
@@ -137,7 +148,12 @@
       background: var(--card-bg);
       border-radius: 14px;
       overflow: hidden;
-      border: 1.5px solid var(--border);
+      border: 1px solid var(--border);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .trend-card:hover {
+      border-color: rgba(0,212,255,0.3);
+      box-shadow: 0 4px 20px rgba(0,212,255,0.08);
     }
     .trend-head {
       padding: 12px 14px;
@@ -160,20 +176,21 @@
       align-items: flex-start;
       font-size: 12px;
       line-height: 1.5;
-      color: #333;
+      color: #94a3b8;
     }
     .trend-num {
       flex-shrink: 0;
       width: 18px;
       height: 18px;
       border-radius: 50%;
-      background: #f0fdf4;
+      background: rgba(0,212,255,0.1);
+      border: 1px solid rgba(0,212,255,0.2);
       font-size: 11px;
       font-weight: 700;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #888;
+      color: #00d4ff;
       margin-top: 1px;
     }
 
@@ -187,7 +204,12 @@
       background: var(--card-bg);
       border-radius: 14px;
       overflow: hidden;
-      border: 1.5px solid var(--border);
+      border: 1px solid var(--border);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .cover-card:hover {
+      border-color: rgba(0,212,255,0.3);
+      box-shadow: 0 4px 20px rgba(0,212,255,0.08);
     }
     .cover-img {
       width: 100%;
@@ -199,7 +221,7 @@
     .cover-img-placeholder {
       width: 100%;
       aspect-ratio: 3/4;
-      background: linear-gradient(135deg, #dcfce7, #ddd6fe);
+      background: linear-gradient(135deg, rgba(0,212,255,0.1), rgba(99,102,241,0.15));
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -218,8 +240,9 @@
       display: inline-block;
       font-size: 11px;
       font-weight: 700;
-      color: #16a34a;
-      background: #dcfce7;
+      color: #00d4ff;
+      background: rgba(0,212,255,0.12);
+      border: 1px solid rgba(0,212,255,0.25);
       padding: 2px 8px;
       border-radius: 20px;
       margin-bottom: 8px;
@@ -246,7 +269,7 @@
       align-items: center;
       gap: 12px;
       background: var(--card-bg);
-      border: 1.5px solid var(--border);
+      border: 1px solid var(--border);
       border-radius: 12px;
       padding: 12px 16px;
       text-decoration: none;
@@ -254,26 +277,26 @@
       transition: box-shadow 0.15s, border-color 0.15s;
     }
     .top-note-row:hover {
-      border-color: #16a34a;
-      box-shadow: 0 2px 12px rgba(22,163,74,0.1);
+      border-color: rgba(0,212,255,0.4);
+      box-shadow: 0 2px 16px rgba(0,212,255,0.1);
     }
     .top-note-rank {
       flex-shrink: 0;
       width: 26px;
       height: 26px;
       border-radius: 50%;
-      background: #f0fdf4;
-      border: 1.5px solid #bbf7d0;
+      background: rgba(0,212,255,0.08);
+      border: 1px solid rgba(0,212,255,0.25);
       font-size: 12px;
       font-weight: 800;
-      color: #16a34a;
+      color: #00d4ff;
       display: flex;
       align-items: center;
       justify-content: center;
     }
-    .top-note-rank.gold { background: #fef9c3; border-color: #fde047; color: #854d0e; }
-    .top-note-rank.silver { background: #f1f5f9; border-color: #cbd5e1; color: #475569; }
-    .top-note-rank.bronze { background: #fff7ed; border-color: #fed7aa; color: #9a3412; }
+    .top-note-rank.gold { background: rgba(251,191,36,0.15); border-color: rgba(251,191,36,0.4); color: #fbbf24; text-shadow: 0 0 8px rgba(251,191,36,0.4); }
+    .top-note-rank.silver { background: rgba(148,163,184,0.12); border-color: rgba(148,163,184,0.3); color: #94a3b8; }
+    .top-note-rank.bronze { background: rgba(251,146,60,0.12); border-color: rgba(251,146,60,0.3); color: #fb923c; }
     .top-note-title {
       flex: 1;
       font-size: 13px;
@@ -284,8 +307,9 @@
     .top-note-cat {
       flex-shrink: 0;
       font-size: 11px;
-      color: #16a34a;
-      background: #dcfce7;
+      color: #6366f1;
+      background: rgba(99,102,241,0.12);
+      border: 1px solid rgba(99,102,241,0.25);
       padding: 2px 8px;
       border-radius: 20px;
       font-weight: 600;
@@ -303,7 +327,7 @@
     }
     .top-note-arrow {
       flex-shrink: 0;
-      color: #bbf7d0;
+      color: #1e293b;
       font-size: 14px;
     }
     @media (max-width: 768px) {
@@ -314,7 +338,7 @@
     .formula-card {
       background: var(--card-bg);
       border-radius: 14px;
-      border: 1.5px solid var(--border);
+      border: 1px solid var(--border);
       overflow: hidden;
     }
     .formula-row {
@@ -330,7 +354,7 @@
       width: 24px;
       height: 24px;
       border-radius: 50%;
-      background: var(--red);
+      background: linear-gradient(135deg, #00d4ff, #6366f1);
       color: #fff;
       font-size: 12px;
       font-weight: 800;
@@ -338,17 +362,18 @@
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
+      box-shadow: 0 0 10px rgba(0,212,255,0.3);
     }
     .formula-pill {
       font-size: 13px;
       font-weight: 600;
       padding: 5px 12px;
       border-radius: 8px;
-      background: #f0fdf4;
-      color: #333;
-      border: 1px solid #f0ebe4;
+      background: rgba(255,255,255,0.05);
+      color: #94a3b8;
+      border: 1px solid rgba(255,255,255,0.08);
     }
-    .formula-pill.hot { background: #dcfce7; color: #16a34a; border-color: #86efac; }
+    .formula-pill.hot { background: rgba(0,212,255,0.12); color: #00d4ff; border-color: rgba(0,212,255,0.3); }
     .formula-plus { font-size: 16px; color: #ddd; }
     .formula-example {
       margin-left: auto;
@@ -370,7 +395,7 @@
       background: var(--card-bg);
       border-radius: 14px;
       padding: 18px 20px;
-      border: 1.5px solid var(--border);
+      border: 1px solid var(--border);
     }
     .topic-group-title, .topic-group-label {
       font-size: 13px;
@@ -384,12 +409,13 @@
       font-weight: 600;
       padding: 5px 12px;
       border-radius: 20px;
-      background: #f0fdf4;
-      color: #555;
+      background: rgba(255,255,255,0.05);
+      color: #64748b;
+      border: 1px solid rgba(255,255,255,0.08);
     }
-    .topic-tag.hot { background: #dcfce7; color: #16a34a; }
-    .topic-tag.rising { background: #f0fdf4; color: #10b981; }
-    .topic-tag.seasonal { background: #fffbeb; color: #f59e0b; }
+    .topic-tag.hot { background: rgba(0,212,255,0.1); color: #00d4ff; border-color: rgba(0,212,255,0.25); }
+    .topic-tag.rising { background: rgba(16,185,129,0.1); color: #10b981; border-color: rgba(16,185,129,0.25); }
+    .topic-tag.seasonal { background: rgba(234,179,8,0.1); color: #eab308; border-color: rgba(234,179,8,0.25); }
 
     /* ── 品类风向 ── */
     .cat-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
@@ -403,8 +429,10 @@
       background: var(--card-bg);
       border-radius: 14px;
       padding: 18px 16px;
-      border: 1.5px solid var(--border);
+      border: 1px solid var(--border);
+      transition: border-color 0.2s;
     }
+    .cat-card:hover { border-color: rgba(0,212,255,0.3); }
     .cat-head {
       font-size: 14px;
       font-weight: 700;
@@ -441,11 +469,12 @@
     .cat-focus {
       margin-top: 12px;
       padding: 8px 10px;
-      background: #f8f6ff;
+      background: rgba(99,102,241,0.08);
+      border: 1px solid rgba(99,102,241,0.2);
       border-radius: 8px;
       font-size: 11px;
       font-weight: 600;
-      color: #ff6b35;
+      color: #818cf8;
     }
 
     /* ── Footer ── */
@@ -540,7 +569,7 @@
     display: flex;
     gap: 8px;
     margin-bottom: 28px;
-    border-bottom: 2px solid var(--border);
+    border-bottom: 1px solid rgba(0,212,255,0.15);
     padding-bottom: 0;
   }
   .tab-btn {
@@ -557,10 +586,11 @@
     transition: all 0.2s;
     font-family: inherit;
   }
-  .tab-btn:hover { color: #16a34a; }
+  .tab-btn:hover { color: #00d4ff; }
   .tab-btn.active {
-    color: #16a34a;
-    border-bottom-color: #16a34a;
+    color: #00d4ff;
+    border-bottom-color: #00d4ff;
+    text-shadow: 0 0 10px rgba(0,212,255,0.3);
   }
   .tab-panel { display: block; }
   .tab-panel.hidden { display: none; }
@@ -579,8 +609,8 @@
     </div>
   </div>
   <div class="header-right">
-    <div class="header-week">W20</div>
-    <div class="header-date">2026.05.06 — 05.12</div>
+    <div class="header-week" style="color:#00d4ff;text-shadow:0 0 15px rgba(0,212,255,0.5)">W20</div>
+    <div class="header-date" style="color:rgba(0,212,255,0.5)">2026.05.12 — 05.18</div>
   </div>
 </header>
 
@@ -672,45 +702,45 @@
     <div class="trend-card">
       <div class="trend-head snack">🍿 零食</div>
       <div class="trend-dirs">
-        <div class="trend-dir"><span class="trend-num">1</span><span>「裸寄」系列批量跑量仍是本周最强公式：卤味/糖果/果干/饼干品类多条同题笔记 CTR 20~32%，曝光最高 83万+，用负面事件逆向制造点击冲动</span></div>
-        <div class="trend-dir"><span class="trend-num">2</span><span>仅退款情绪持续发酵：「什么都仅退款只会害了你」系列 CTR 20~25%，曝光 6~70万，商家视角引发强共鸣，商卡转化 5~18%</span></div>
-        <div class="trend-dir"><span class="trend-num">3</span><span>新口味/节日礼盒冲量：「几万人等的新口味来了！」CTR 25.6%，商卡转化 18.6%；迪拜软曲奇/Apple礼包 CTR 20~21%，节日礼品场景持续引流</span></div>
+        <div class="trend-dir"><span class="trend-num">1</span><span>「裸寄」系列仍是本周最强流量公式：卤味/饼干/糖果/果干多条同题 CTR 20~29%，最高曝光 93万+，负面事件制造点击冲动，商卡转化 7~15%</span></div>
+        <div class="trend-dir"><span class="trend-num">2</span><span>六一礼品/新口味节点冲量：「几万人等的新口味」CTR 20%，商卡转化 24.3%；糖果/巧克力六一礼盒 CTR 19~22%，节日场景叠加情感价值</span></div>
+        <div class="trend-dir"><span class="trend-num">3</span><span>价格性价比冲击：「6元而已……却被误以为是很贵的零食」饼干 CTR 19.7%，曝光 20万，商卡转化 14.2%；「29r拿下七盒自热小火锅」CTR 19.8%，数字+反差是稳定公式</span></div>
       </div>
     </div>
 
     <div class="trend-card">
       <div class="trend-head fast">🍜 速食</div>
       <div class="trend-dirs">
-        <div class="trend-dir"><span class="trend-num">1</span><span>商家被抄/破防叙事高位稳定：「刚毕业还没靠冷面赚钱就被抄」「刚创业还没靠过桥米线赚钱就被抄袭」CTR 18~23%，曝光 16~23万，商家委屈感与同理心驱动高点击</span></div>
-        <div class="trend-dir"><span class="trend-num">2</span><span>价格/性价比反差：「30r够吃两周，终结外卖焦虑」CTR 20.3%，曝光 20万+，商卡转化 15.7%；「在巴黎吃了7百的过桥米线」CTR 22.2%，商卡转化 17%，价格落差制造记忆点</span></div>
-        <div class="trend-dir"><span class="trend-num">3</span><span>减脂/低卡场景持续跑量：「分享一个能撑死人但热量很低的东西」CTR 22.3%，商卡转化 16.5%；糕点+减脂标签组合是稳定流量公式</span></div>
+        <div class="trend-dir"><span class="trend-num">1</span><span>商家情绪/品质破防叙事：「第一次觉得：人心比把控品质还难😭」米线 CTR 19.6%；「公司倒闭了…剩下的货一折出了」拉面 CTR 19.5%，曝光 10万+，商卡转化 11.9%，真实委屈感引爆共鸣</span></div>
+        <div class="trend-dir"><span class="trend-num">2</span><span>山姆新品测评高表现：「山姆新品｜羽衣甘蓝冷面‼️」双账号 CTR 均 24~25%，新品+知名商超组合稳定跑量；「被山姆新品硬控！茶萃冻干苹果圈」CTR 34%，曝光 8.4万</span></div>
+        <div class="trend-dir"><span class="trend-num">3</span><span>香肠品类集中爆发：「8:2香肠，左划帮你蒸熟」CTR 36.3%（本周最高），「水晶腊肠有谁懂啊😅」CTR 26.7%，商卡转化 13%，操作教程+卖点展示双驱动</span></div>
       </div>
     </div>
 
     <div class="trend-card">
       <div class="trend-head drink">🧋 饮品</div>
       <div class="trend-dirs">
-        <div class="trend-dir"><span class="trend-num">1</span><span>体型焦虑+功效承诺精准人群：「如果你的肚子也是这样，再节食也没用」系列养生茶 CTR 19~25%，曝光 5~55万，商卡转化 8~11%，体感痛点触达精准人群即转化</span></div>
-        <div class="trend-dir"><span class="trend-num">2</span><span>好奇疑问句引爆点击：「请问这杯是神吗？？？！」CTR 26.4%，曝光 7.4万，商卡转化 10.9%；「这玩意到底谁研究的？吃一口脖子抻二里地」CTR 21.2%，制造阅读悬念效果显著</span></div>
-        <div class="trend-dir"><span class="trend-num">3</span><span>生活场景轻松调性走量：「一个人出门兜里太轻了，请带上猫吧」普洱 CTR 23.6%，曝光 4.5万；「干噎酸奶一口下去嚼了10分钟」乳品 CTR 18~19%，商卡转化 5~7%，日常趣味感带动种草</span></div>
+        <div class="trend-dir"><span class="trend-num">1</span><span>护士节营销场景爆发：「护士节快乐！请喝名单请查收！」CTR 27.1%，商卡转化 17.1%；「吨吨听劝！护士节加赠5120个水獭小绿杯！」CTR 25.4%，商卡转化 18.9%，节日限时机制强驱动</span></div>
+        <div class="trend-dir"><span class="trend-num">2</span><span>演唱会跨界联名：「看看是谁拿到了我们的演唱会大礼包！！！」饮料 CTR 23.1%，曝光 5.9万，商卡转化 18.7%；娱乐场景+礼包仪式感大幅提升点击与转化</span></div>
+        <div class="trend-dir"><span class="trend-num">3</span><span>夏季囤货/新品试喝：「盒马吨吨系列全4款✨夏日续命水闭眼囤」CTR 26%，商卡转化 8.2%；「9款喜茶瓶装茶哪个好喝呢」CTR 24.9%，对比测评+夏日场景是饮品稳定公式</span></div>
       </div>
     </div>
 
     <div class="trend-card">
       <div class="trend-head liquor">🍷 酒类</div>
       <div class="trend-dirs">
-        <div class="trend-dir"><span class="trend-num">1</span><span>减脂/健身身份认同场景领跑：「剪脂期不挨饿的好东西」CTR 26.1%，曝光 11.3万；「健身教练推荐了我！」CTR 26%，「健身的人应该来吃咖喱」CTR 22.7%，精准圈定运动人群，商卡转化 8~11%</span></div>
-        <div class="trend-dir"><span class="trend-num">2</span><span>节气/季节性食材内容：「立夏这15天，需要一直吃的固元」CTR 22.5%；「一年一季的腌糖蒜」CTR 20.1%，曝光 5.3万，商卡转化 4.2%，季节稀缺感驱动囤货</span></div>
-        <div class="trend-dir"><span class="trend-num">3</span><span>真实日常生活流带货：「水煮菜可以下岗了」CTR 22.4%，「日本人不爱重油重盐原来是有道理的」CTR 19.5%，知识+场景替换感种草力强</span></div>
+        <div class="trend-dir"><span class="trend-num">1</span><span>酒类账号数少，本周仅 3 条达标笔记，CTR 区间 19~19.5%，整体表现偏弱</span></div>
+        <div class="trend-dir"><span class="trend-num">2</span><span>当前高点击内容以调味品/蜂蜜为主，健康功效场景：「感谢网友推荐...已经三个礼拜没点外卖了」调味品 CTR 24.3%，商卡转化 17.2%</span></div>
+        <div class="trend-dir"><span class="trend-num">3</span><span>建议：酒类/调味品可借鉴「健身减脂场景」切入，「从五月开始减🥩配这个调味品」类笔记 CTR 23.2%，曝光 11.8万，转化率 2.7%，有较大提升空间</span></div>
       </div>
     </div>
 
     <div class="trend-card">
       <div class="trend-head herb">🌿 中式滋补</div>
       <div class="trend-dirs">
-        <div class="trend-dir"><span class="trend-num">1</span><span>长辈/专家权威背书：「93岁老先生推荐！坚持吃了一个月好舒服」CTR 23.8%，商卡转化 8.3%；「健身教练推荐了我！」CTR 26%，权威人物出镜或背书是滋补品最稳定的信任公式</span></div>
-        <div class="trend-dir"><span class="trend-num">2</span><span>亚健康摆脱功效承诺：「黄精吃吧！成功让我摆脱了班味」CTR 24.7%，曝光 2.9万，商卡转化 5.2%；「如果你的肚子也是这样，再节食也没用」养生茶系列 CTR 19~25%，精准触达疲态/体型焦虑人群</span></div>
-        <div class="trend-dir"><span class="trend-num">3</span><span>母亲节礼品场景：「马上母亲节，50+的妈妈想要什么礼物」阿胶膏方 CTR 22.6%，商卡转化 3.1%；节日礼赠场景+中老年人群锁定，是滋补品5月主力内容方向</span></div>
+        <div class="trend-dir"><span class="trend-num">1</span><span>体型焦虑+养生茶精准人群爆量：「这种肚子的姐妹注意了，再节食也没用！！」CTR 18~24%，曝光最高 41.8万，商卡转化 7~13%，同题笔记贡献本周最高流量池</span></div>
+        <div class="trend-dir"><span class="trend-num">2</span><span>儿童健康/亲子育儿场景：「孩子睡觉爱出汗不一定是怕热哦」养生茶 CTR 19.6%，曝光 9.4万，商卡转化 6.2%；「孩子舌头红、有突起的小红点，多补津液」CTR 24%，精准圈定宝妈人群</span></div>
+        <div class="trend-dir"><span class="trend-num">3</span><span>黄精/药食同源摆脱班味：「黄精你就吃吧！成功让我摆脱了'班味'」CTR 27.5%，「月子里不去喝五红汤，我真的会急」CTR 19.6%，商卡转化 12%，功效+人生阶段锁定效果强</span></div>
       </div>
     </div>
 
@@ -725,64 +755,65 @@
     <div class="formula-row">
       <span class="formula-rank">01</span>
       <div class="formula-pills">
-        <span class="formula-pill hot">负面事件描述</span>
+        <span class="formula-pill hot">产品/操作说明</span>
         <span class="formula-plus">+</span>
-        <span class="formula-pill">情绪词/省略号</span>
+        <span class="formula-pill">滑动引导 + 夸张表情</span>
       </div>
-      <div class="formula-example">「遇到裸寄了……😭」「什么都仅退款只会害了你‼️」「生意惨淡的真相居然是这个」</div>
+      <div class="formula-example">「8:2香肠，左划帮你蒸熟😅」「水晶腊肠有谁懂啊😅」CTR 26~36%，教程感+好奇感双驱动</div>
     </div>
     <div class="formula-row">
       <span class="formula-rank">02</span>
       <div class="formula-pills">
-        <span class="formula-pill hot">精准人群/身体状态</span>
+        <span class="formula-pill hot">节点事件</span>
         <span class="formula-plus">+</span>
-        <span class="formula-pill">反转结论</span>
+        <span class="formula-pill">专属福利/限时机制</span>
       </div>
-      <div class="formula-example">「如果你的肚子也是这样，再节食也没用」「剪脂期不挨饿的好东西」「撸铁一个月，感受到蛋白质充足的威力」</div>
+      <div class="formula-example">「护士节快乐！请喝名单请查收！」「演唱会大礼包！！！」商卡转化 17~18.9%，节点×限时机制最强转化公式</div>
     </div>
     <div class="formula-row">
       <span class="formula-rank">03</span>
       <div class="formula-pills">
-        <span class="formula-pill hot">价格数字</span>
+        <span class="formula-pill hot">精准人群/症状描述</span>
         <span class="formula-plus">+</span>
-        <span class="formula-pill">场景解决方案</span>
+        <span class="formula-pill">再XX也没用（反转）</span>
       </div>
-      <div class="formula-example">「30r够吃两周，终结外卖焦虑！」「明明半个月才30r！」「自热火锅7盒装 比泡面还合适！」</div>
+      <div class="formula-example">「这种肚子的姐妹注意了，再节食也没用！」「孩子睡觉爱出汗不一定是怕热哦」精准人群即转化，CTR 19~24%</div>
     </div>
   </div>
 
   <!-- ⑤ 热点话题 -->
   <div class="section-label">
     <span class="icon">🔥</span> 本周热点话题 / 节点
-    <span class="tag">W20 · 05.06—05.12</span>
+    <span class="tag">W20 · 05.12—05.18</span>
   </div>
   <div class="topic-grid">
     <div class="topic-group">
       <div class="topic-group-label">高频标题词</div>
       <div class="topic-tags">
         <span class="topic-tag hot">#裸寄</span>
-        <span class="topic-tag hot">#仅退款</span>
-        <span class="topic-tag hot">#被抄袭</span>
-        <span class="topic-tag">#减脂期</span>
-        <span class="topic-tag">#生意惨淡</span>
+        <span class="topic-tag hot">#山姆新品</span>
+        <span class="topic-tag hot">#这种肚子</span>
+        <span class="topic-tag">#香肠</span>
+        <span class="topic-tag">#公司倒闭</span>
       </div>
     </div>
     <div class="topic-group">
       <div class="topic-group-label">上升场景词</div>
       <div class="topic-tags">
-        <span class="topic-tag hot">#健身人群</span>
-        <span class="topic-tag hot">#母亲节礼品</span>
-        <span class="topic-tag">#外卖替代</span>
-        <span class="topic-tag">#腌制食材</span>
-        <span class="topic-tag">#孕妈私藏</span>
+        <span class="topic-tag hot">#护士节专属</span>
+        <span class="topic-tag hot">#演唱会大礼包</span>
+        <span class="topic-tag hot">#宝妈育儿健康</span>
+        <span class="topic-tag">#夏日续命水</span>
+        <span class="topic-tag">#黄精班味</span>
       </div>
     </div>
     <div class="topic-group">
       <div class="topic-group-label">本周节点</div>
       <div class="topic-tags">
-        <span class="topic-tag hot">#母亲节（5.11）</span>
-        <span class="topic-tag hot">#立夏（5.6）</span>
-        <span class="topic-tag">#618备货季</span>
+        <span class="topic-tag hot">#护士节（5.12）</span>
+        <span class="topic-tag hot">#六一儿童节备货</span>
+        <span class="topic-tag hot">#端午粽子季</span>
+        <span class="topic-tag seasonal">#618大促预热</span>
       </div>
     </div>
   </div>
@@ -790,7 +821,7 @@
   <!-- ⑥ 品类风向 -->
   <div class="section-label">
     <span class="icon">📦</span> 品类风向
-    <span class="tag">W20 各品类重点动向</span>
+    <span class="tag">W20 各品类重点动向 · 05.12—05.18</span>
   </div>
   <div class="cat-wrap">
     <div class="cat-grid">
@@ -851,7 +882,7 @@
   <!-- ⑦ 本周 TOP 笔记 -->
   <div class="section-label">
     <span class="icon">🏆</span> 本周新发高表现笔记
-    <span class="tag">W20 · 封面CTR × 商卡CTR 综合排名 TOP20</span>
+    <span class="tag">W20 · 05.12—05.18 · 封面CTR × 商卡CTR 综合排名 TOP20</span>
   </div>
   <div class="top-notes-grid" id="topNotesGrid"></div>
 
@@ -1049,14 +1080,14 @@
   .planner-card {
     background: var(--card-bg);
     border-radius: 16px;
-    border: 1.5px solid var(--border);
+    border: 1px solid rgba(0,212,255,0.15);
     overflow: hidden;
   }
   .planner-intro {
-    background: linear-gradient(135deg, #fff8f4, #dcfce7);
+    background: linear-gradient(135deg, rgba(0,212,255,0.05), rgba(99,102,241,0.05));
     padding: 16px 24px;
     font-size: 13px;
-    color: #666;
+    color: #64748b;
     border-bottom: 1px solid var(--border);
   }
   .planner-form {
@@ -1070,15 +1101,17 @@
   .required { color: #16a34a; }
   .form-input {
     padding: 10px 14px;
-    border: 1.5px solid #e8e0d8;
+    border: 1px solid rgba(255,255,255,0.1);
     border-radius: 10px;
     font-size: 14px;
     font-family: inherit;
     outline: none;
-    transition: border-color 0.2s;
-    background: #fafaf8;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background: rgba(255,255,255,0.04);
+    color: var(--text);
   }
-  .form-input:focus { border-color: #16a34a; background: #fff; }
+  .form-input:focus { border-color: rgba(0,212,255,0.4); background: rgba(0,212,255,0.02); box-shadow: 0 0 0 3px rgba(0,212,255,0.08); }
+  .form-input::placeholder { color: #475569; }
   .cat-select-group {
     display: flex;
     flex-wrap: wrap;
@@ -1092,16 +1125,16 @@
     border-radius: 20px;
     font-size: 13px;
     font-weight: 600;
-    background: #f0fdf4;
-    color: #666;
-    border: 1.5px solid transparent;
+    background: rgba(255,255,255,0.04);
+    color: #64748b;
+    border: 1px solid rgba(255,255,255,0.08);
     transition: all 0.15s;
     cursor: pointer;
   }
   .cat-radio input:checked + span {
-    background: #dcfce7;
-    color: #16a34a;
-    border-color: #86efac;
+    background: rgba(0,212,255,0.12);
+    color: #00d4ff;
+    border-color: rgba(0,212,255,0.35);
   }
   .planner-actions {
     padding: 0 24px 20px;
@@ -1111,7 +1144,7 @@
   }
   .btn-gen {
     padding: 12px 24px;
-    background: linear-gradient(135deg, #ff2442, #ff6b35);
+    background: linear-gradient(135deg, #00d4ff, #6366f1);
     color: #fff;
     border: none;
     border-radius: 10px;
@@ -1119,17 +1152,19 @@
     font-weight: 700;
     cursor: pointer;
     font-family: inherit;
-    transition: opacity 0.15s;
+    transition: opacity 0.15s, box-shadow 0.15s;
+    box-shadow: 0 0 20px rgba(0,212,255,0.2);
   }
-  .btn-gen:hover { opacity: 0.88; }
+  .btn-gen:hover { opacity: 0.88; box-shadow: 0 0 30px rgba(0,212,255,0.35); }
   .btn-gen.btn-doubao {
-    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    box-shadow: 0 0 20px rgba(99,102,241,0.2);
   }
   .btn-copy {
     padding: 12px 20px;
-    background: #f0fdf4;
-    color: #555;
-    border: 1.5px solid #e8e0d8;
+    background: rgba(255,255,255,0.06);
+    color: #94a3b8;
+    border: 1px solid rgba(255,255,255,0.1);
     border-radius: 10px;
     font-size: 14px;
     font-weight: 600;
@@ -1137,11 +1172,11 @@
     font-family: inherit;
     transition: all 0.15s;
   }
-  .btn-copy:hover { background: #eee8e0; }
+  .btn-copy:hover { background: rgba(255,255,255,0.1); color: #e2e8f0; }
   .prompt-preview {
     margin: 0 24px 24px;
-    background: #fafaf8;
-    border: 1.5px solid #e8e0d8;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgba(0,212,255,0.15);
     border-radius: 12px;
     overflow: hidden;
   }
@@ -1149,24 +1184,25 @@
     padding: 8px 14px;
     font-size: 11px;
     font-weight: 700;
-    color: #999;
-    background: #f0ebe4;
+    color: #64748b;
+    background: rgba(0,212,255,0.05);
     text-transform: uppercase;
     letter-spacing: 0.5px;
   }
   .prompt-text {
     padding: 14px;
     font-size: 13px;
-    color: #555;
+    color: #64748b;
     line-height: 1.7;
     white-space: pre-wrap;
     max-height: 280px;
     overflow-y: auto;
   }
   .copy-success {
-    background: #10b981 !important;
-    color: #fff !important;
-    border-color: #10b981 !important;
+    background: rgba(0,212,255,0.2) !important;
+    color: #00d4ff !important;
+    border-color: rgba(0,212,255,0.4) !important;
+    box-shadow: 0 0 12px rgba(0,212,255,0.2) !important;
   }
 </style>
 
