@@ -16,27 +16,27 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --red: #00d4ff;
+      --red: #6366f1;
       --orange: #6366f1;
-      --warm: #0d1117;
-      --card-bg: #111827;
-      --text: #e2e8f0;
+      --warm: #fafbfc;
+      --card-bg: #ffffff;
+      --text: #1e293b;
       --text-sub: #64748b;
-      --border: #1e293b;
+      --border: #e5e7eb;
       --tag-snack: #f97316;
       --tag-fast: #eab308;
       --tag-drink: #06b6d4;
       --tag-liquor: #8b5cf6;
       --tag-herb: #10b981;
-      --neon: #00d4ff;
+      --neon: #6366f1;
       --neon-purple: #6366f1;
-      --glow: rgba(0,212,255,0.15);
-      --glow-border: rgba(0,212,255,0.3);
+      --glow: rgba(99,102,241,0.08);
+      --glow-border: rgba(99,102,241,0.25);
     }
 
     body {
       font-family: -apple-system, "PingFang SC", "Helvetica Neue", sans-serif;
-      background: #0a0f1e;
+      background: #fafbfc;
       background-image: radial-gradient(ellipse at 20% 20%, rgba(99,102,241,0.08) 0%, transparent 50%),
                         radial-gradient(ellipse at 80% 80%, rgba(0,212,255,0.06) 0%, transparent 50%);
       color: var(--text);
@@ -44,14 +44,14 @@
 
     /* ── Header ── */
     .header {
-      background: linear-gradient(135deg, #0a0f1e 0%, #0d1f3c 50%, #0f172a 100%); border-bottom: 1px solid rgba(0,212,255,0.2);
+      background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%); border-bottom: 1px solid #e5e7eb;
       padding: 28px 40px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
     .header-left { display: flex; align-items: center; gap: 14px; }
-    .header-icon { font-size: 36px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
+    .header-icon { font-size: 36px; filter: drop-shadow(0 2px 4px rgba(99,102,241,0.04)); }
     .header-title { font-size: 22px; font-weight: 800; color: #fff; letter-spacing: -0.3px; }
     .header-sub { font-size: 13px; color: rgba(0,212,255,0.6); margin-top: 3px; }
     .header-right { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
@@ -76,7 +76,7 @@
     .section-label .tag {
       font-size: 11px;
       font-weight: 600;
-      color: #00d4ff;
+      color: #6366f1;
       background: rgba(0,212,255,0.1);
       padding: 2px 8px;
       border-radius: 20px;
@@ -107,7 +107,7 @@
       top: 0; left: 0; right: 0;
       height: 4px;
     }
-    .bench-card.top::before { background: linear-gradient(90deg, #00d4ff, #6366f1); }
+    .bench-card.top::before { background: linear-gradient(90deg, #6366f1, #6366f1); }
     .bench-card.avg::before { background: linear-gradient(90deg, #3b82f6, #06b6d4); }
     .bench-card.low::before { background: #e5e7eb; }
     .bench-tier {
@@ -128,7 +128,7 @@
     .bench-label { font-size: 12px; color: #94a3b8; }
     .bench-val { font-size: 22px; font-weight: 800; line-height: 1; }
     .bench-unit { font-size: 12px; font-weight: 400; margin-left: 2px; color: var(--text-sub); }
-    .bench-card.top .bench-val { color: #00d4ff; text-shadow: 0 0 10px rgba(0,212,255,0.4); }
+    .bench-card.top .bench-val { color: #6366f1; text-shadow: 0 0 10px rgba(0,212,255,0.4); }
     .bench-card.avg .bench-val { color: #6366f1; text-shadow: 0 0 10px rgba(99,102,241,0.4); }
     .bench-card.low .bench-val { color: #64748b; }
     .bench-hint {
@@ -191,7 +191,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #00d4ff;
+      color: #6366f1;
       margin-top: 1px;
     }
 
@@ -241,7 +241,7 @@
       display: inline-block;
       font-size: 11px;
       font-weight: 700;
-      color: #00d4ff;
+      color: #6366f1;
       background: rgba(0,212,255,0.12);
       border: 1px solid rgba(0,212,255,0.25);
       padding: 2px 8px;
@@ -290,7 +290,7 @@
       border: 1px solid rgba(0,212,255,0.25);
       font-size: 12px;
       font-weight: 800;
-      color: #00d4ff;
+      color: #6366f1;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -356,7 +356,7 @@
       width: 24px;
       height: 24px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #00d4ff, #6366f1);
+      background: linear-gradient(135deg, #6366f1, #6366f1);
       color: #fff;
       font-size: 12px;
       font-weight: 800;
@@ -373,9 +373,9 @@
       border-radius: 8px;
       background: rgba(255,255,255,0.05);
       color: #94a3b8;
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid rgba(0,0,0,0.06);
     }
-    .formula-pill.hot { background: rgba(0,212,255,0.12); color: #00d4ff; border-color: rgba(0,212,255,0.3); }
+    .formula-pill.hot { background: rgba(0,212,255,0.12); color: #6366f1; border-color: rgba(0,212,255,0.3); }
     .formula-plus { font-size: 16px; color: #ddd; }
     .formula-example {
       margin-left: auto;
@@ -413,9 +413,9 @@
       border-radius: 20px;
       background: rgba(255,255,255,0.05);
       color: #64748b;
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid rgba(0,0,0,0.06);
     }
-    .topic-tag.hot { background: rgba(0,212,255,0.1); color: #00d4ff; border-color: rgba(0,212,255,0.25); }
+    .topic-tag.hot { background: rgba(0,212,255,0.1); color: #6366f1; border-color: rgba(0,212,255,0.25); }
     .topic-tag.rising { background: rgba(16,185,129,0.1); color: #10b981; border-color: rgba(16,185,129,0.25); }
     .topic-tag.seasonal { background: rgba(234,179,8,0.1); color: #eab308; border-color: rgba(234,179,8,0.25); }
 
@@ -588,10 +588,10 @@
     transition: all 0.2s;
     font-family: inherit;
   }
-  .tab-btn:hover { color: #00d4ff; }
+  .tab-btn:hover { color: #6366f1; }
   .tab-btn.active {
-    color: #00d4ff;
-    border-bottom-color: #00d4ff;
+    color: #6366f1;
+    border-bottom-color: #6366f1;
     text-shadow: 0 0 10px rgba(0,212,255,0.3);
   }
   .tab-panel { display: block; }
@@ -600,10 +600,10 @@
 
     /* ── V2 新增样式 ── */
     /* Tab 导航（5 个 Tab） */
-    .tab-nav { display: flex; gap: 6px; margin-bottom: 28px; padding: 4px; background: rgba(0,0,0,0.2); border-radius: 12px; flex-wrap: wrap; }
+    .tab-nav { display: flex; gap: 6px; margin-bottom: 28px; padding: 4px; background: rgba(99,102,241,0.04); border-radius: 12px; flex-wrap: wrap; }
     .tab-btn { font-size: 13px; padding: 9px 16px; border-radius: 8px; border: none; background: transparent; color: var(--text-sub); cursor: pointer; font-weight: 600; transition: all 0.2s; white-space: nowrap; }
-    .tab-btn:hover { color: #00d4ff; background: rgba(0,212,255,0.05); }
-    .tab-btn.active { color: #00d4ff; background: rgba(0,212,255,0.12); box-shadow: 0 0 12px rgba(0,212,255,0.15); }
+    .tab-btn:hover { color: #6366f1; background: rgba(0,212,255,0.05); }
+    .tab-btn.active { color: #6366f1; background: rgba(0,212,255,0.12); box-shadow: 0 0 12px rgba(0,212,255,0.15); }
     .tab-panel.hidden { display: none !important; }
 
     /* ── 方法论 Tab ── */
@@ -612,7 +612,7 @@
     .method-card:hover { border-color: rgba(0,212,255,0.3); }
     .method-card.open { border-color: rgba(0,212,255,0.4); }
     .method-head { display: flex; align-items: center; gap: 12px; padding: 18px 20px; }
-    .method-num { width: 28px; height: 28px; border-radius: 50%; background: rgba(0,212,255,0.15); color: #00d4ff; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .method-num { width: 28px; height: 28px; border-radius: 50%; background: rgba(0,212,255,0.15); color: #6366f1; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
     .method-title { font-size: 15px; font-weight: 700; color: var(--text); flex: 1; }
     .method-badge { font-size: 11px; color: rgba(0,212,255,0.6); background: rgba(0,212,255,0.08); padding: 2px 8px; border-radius: 20px; }
     .method-arrow { color: var(--text-sub); font-size: 14px; transition: transform 0.2s; }
@@ -645,22 +645,22 @@
     .cat-l1-grid { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
     .cat-l1-btn { padding: 10px 18px; border-radius: 10px; border: 1px solid var(--border); background: var(--card-bg); color: var(--text-sub); cursor: pointer; font-size: 14px; font-weight: 600; transition: all 0.2s; }
     .cat-l1-btn:hover { border-color: rgba(0,212,255,0.3); color: var(--text); }
-    .cat-l1-btn.active { border-color: rgba(0,212,255,0.5); color: #00d4ff; background: rgba(0,212,255,0.1); }
+    .cat-l1-btn.active { border-color: rgba(0,212,255,0.5); color: #6366f1; background: rgba(0,212,255,0.1); }
     .cat-l2-area { display: none; margin-bottom: 20px; }
     .cat-l2-area.show { display: block; }
     .cat-l2-grid { display: flex; gap: 8px; flex-wrap: wrap; }
     .cat-l2-btn { padding: 7px 14px; border-radius: 20px; border: 1px solid var(--border); background: transparent; color: var(--text-sub); cursor: pointer; font-size: 13px; transition: all 0.2s; }
     .cat-l2-btn:hover { border-color: rgba(0,212,255,0.3); color: var(--text); }
-    .cat-l2-btn.active { border-color: rgba(0,212,255,0.5); color: #00d4ff; background: rgba(0,212,255,0.1); }
+    .cat-l2-btn.active { border-color: rgba(0,212,255,0.5); color: #6366f1; background: rgba(0,212,255,0.1); }
     .cat-l2-btn.disabled { opacity: 0.4; cursor: not-allowed; }
     .ref-form { background: var(--card-bg); border-radius: 14px; border: 1px solid var(--border); padding: 20px; margin-bottom: 20px; }
     .price-btns { display: flex; gap: 8px; flex-wrap: wrap; }
     .price-btn { padding: 7px 14px; border-radius: 20px; border: 1px solid var(--border); background: transparent; color: var(--text-sub); cursor: pointer; font-size: 13px; transition: all 0.2s; }
-    .price-btn.active { border-color: rgba(0,212,255,0.5); color: #00d4ff; background: rgba(0,212,255,0.1); }
+    .price-btn.active { border-color: rgba(0,212,255,0.5); color: #6366f1; background: rgba(0,212,255,0.1); }
     .audience-grid { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
     .aud-btn { padding: 6px 12px; border-radius: 16px; border: 1px solid var(--border); background: transparent; color: var(--text-sub); cursor: pointer; font-size: 12px; transition: all 0.2s; }
     .aud-btn.active { border-color: rgba(99,102,241,0.5); color: #6366f1; background: rgba(99,102,241,0.1); }
-    .btn-gen-main { background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%); color: #fff; border: none; border-radius: 10px; padding: 12px 28px; font-size: 14px; font-weight: 700; cursor: pointer; width: 100%; margin-top: 16px; letter-spacing: 0.5px; }
+    .btn-gen-main { background: linear-gradient(135deg, #6366f1 0%, #6366f1 100%); color: #fff; border: none; border-radius: 10px; padding: 12px 28px; font-size: 14px; font-weight: 700; cursor: pointer; width: 100%; margin-top: 16px; letter-spacing: 0.5px; }
     .btn-gen-main:hover { opacity: 0.9; }
     .btn-gen-main:disabled { opacity: 0.5; cursor: not-allowed; }
     .ref-result { display: none; }
@@ -670,8 +670,8 @@
     .ref-card { background: var(--card-bg); border-radius: 12px; border: 1px solid var(--border); padding: 16px; }
     .ref-card-title { font-size: 12px; font-weight: 700; color: var(--text-sub); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; gap: 6px; }
     .ref-card-title .icon { font-size: 16px; }
-    .ref-tag { display: inline-block; margin: 3px; padding: 4px 10px; background: rgba(0,212,255,0.08); border: 1px solid rgba(0,212,255,0.15); border-radius: 14px; font-size: 12px; color: #00d4ff; }
-    .ref-template { background: rgba(0,0,0,0.2); border-radius: 8px; padding: 10px 12px; margin: 6px 0; font-size: 12px; color: var(--text); line-height: 1.6; }
+    .ref-tag { display: inline-block; margin: 3px; padding: 4px 10px; background: rgba(0,212,255,0.08); border: 1px solid rgba(0,212,255,0.15); border-radius: 14px; font-size: 12px; color: #6366f1; }
+    .ref-template { background: rgba(99,102,241,0.04); border-radius: 8px; padding: 10px 12px; margin: 6px 0; font-size: 12px; color: var(--text); line-height: 1.6; }
     .ref-template .example { color: var(--text-sub); font-size: 11px; margin-top: 4px; }
     .ref-case { border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; margin: 6px 0; }
     .ref-case-title { font-size: 12px; color: var(--text); font-weight: 600; margin-bottom: 4px; }
@@ -680,7 +680,7 @@
     .ref-actions { display: flex; gap: 8px; margin-top: 16px; }
     .btn-refresh { flex: 1; background: transparent; border: 1px solid var(--border); color: var(--text-sub); border-radius: 8px; padding: 10px; font-size: 13px; cursor: pointer; }
     .btn-refresh:hover { border-color: rgba(0,212,255,0.3); color: var(--text); }
-    .btn-copy-all { flex: 1; background: rgba(0,212,255,0.1); border: 1px solid rgba(0,212,255,0.2); color: #00d4ff; border-radius: 8px; padding: 10px; font-size: 13px; cursor: pointer; }
+    .btn-copy-all { flex: 1; background: rgba(0,212,255,0.1); border: 1px solid rgba(0,212,255,0.2); color: #6366f1; border-radius: 8px; padding: 10px; font-size: 13px; cursor: pointer; }
     .btn-copy-all:hover { background: rgba(0,212,255,0.15); }
     .no-data-tip { text-align: center; padding: 40px 20px; color: var(--text-sub); font-size: 14px; line-height: 1.8; }
 
@@ -690,16 +690,16 @@
     .check-result.show { display: block; }
     .check-module { background: var(--card-bg); border-radius: 12px; border: 1px solid var(--border); padding: 18px; margin-bottom: 14px; }
     .check-module-title { font-size: 13px; font-weight: 700; color: var(--text-sub); margin-bottom: 14px; text-transform: uppercase; letter-spacing: 1px; }
-    .check-item { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+    .check-item { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.04); }
     .check-item:last-child { border-bottom: none; }
     .check-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
     .check-label { font-size: 13px; font-weight: 600; color: var(--text); flex: 0 0 110px; }
     .check-comment { font-size: 13px; color: var(--text-sub); flex: 1; line-height: 1.5; }
     .check-score { text-align: center; padding: 16px; background: rgba(0,212,255,0.05); border-radius: 10px; margin-bottom: 12px; }
-    .check-score-num { font-size: 36px; font-weight: 800; color: #00d4ff; }
+    .check-score-num { font-size: 36px; font-weight: 800; color: #6366f1; }
     .check-score-label { font-size: 12px; color: var(--text-sub); margin-top: 4px; }
     .check-top-tip { background: rgba(99,102,241,0.08); border: 1px solid rgba(99,102,241,0.2); border-radius: 8px; padding: 10px 14px; font-size: 13px; color: #a5b4fc; line-height: 1.6; margin-top: 10px; }
-    .bench-row-small { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+    .bench-row-small { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px solid rgba(0,0,0,0.04); }
     .bench-row-small:last-child { border-bottom: none; }
     .bench-label-sm { font-size: 12px; color: var(--text-sub); }
     .bench-vals { display: flex; gap: 20px; }
@@ -712,7 +712,7 @@
     .tool-result-area { display: none; margin-top: 14px; background: rgba(0,212,255,0.04); border-radius: 10px; border: 1px solid rgba(0,212,255,0.1); padding: 14px; }
     .tool-result-area.show { display: block; }
     .tool-result-text { font-size: 13px; color: var(--text); line-height: 1.8; white-space: pre-wrap; }
-    .title-item { background: rgba(0,0,0,0.2); border-radius: 8px; padding: 10px 14px; margin: 6px 0; cursor: pointer; transition: background 0.2s; }
+    .title-item { background: rgba(99,102,241,0.04); border-radius: 8px; padding: 10px 14px; margin: 6px 0; cursor: pointer; transition: background 0.2s; }
     .title-item:hover { background: rgba(0,212,255,0.06); }
     .title-item-text { font-size: 13px; color: var(--text); }
     .title-item-method { font-size: 11px; color: rgba(0,212,255,0.5); margin-top: 4px; }
@@ -763,7 +763,7 @@
     font-family: inherit;
     outline: none;
     transition: border-color 0.2s, box-shadow 0.2s;
-    background: rgba(255,255,255,0.04);
+    background: rgba(0,0,0,0.04);
     color: var(--text);
   }
   .form-input:focus { border-color: rgba(0,212,255,0.4); background: rgba(0,212,255,0.02); box-shadow: 0 0 0 3px rgba(0,212,255,0.08); }
@@ -781,15 +781,15 @@
     border-radius: 20px;
     font-size: 13px;
     font-weight: 600;
-    background: rgba(255,255,255,0.04);
+    background: rgba(0,0,0,0.04);
     color: #64748b;
-    border: 1px solid rgba(255,255,255,0.08);
+    border: 1px solid rgba(0,0,0,0.06);
     transition: all 0.15s;
     cursor: pointer;
   }
   .cat-radio input:checked + span {
     background: rgba(0,212,255,0.12);
-    color: #00d4ff;
+    color: #6366f1;
     border-color: rgba(0,212,255,0.35);
   }
   .planner-actions {
@@ -800,7 +800,7 @@
   }
   .btn-gen {
     padding: 12px 24px;
-    background: linear-gradient(135deg, #00d4ff, #6366f1);
+    background: linear-gradient(135deg, #6366f1, #6366f1);
     color: #fff;
     border: none;
     border-radius: 10px;
@@ -818,7 +818,7 @@
   }
   .btn-copy {
     padding: 12px 20px;
-    background: rgba(255,255,255,0.06);
+    background: rgba(0,0,0,0.06);
     color: #94a3b8;
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 10px;
@@ -831,7 +831,7 @@
   .btn-copy:hover { background: rgba(255,255,255,0.1); color: #e2e8f0; }
   .prompt-preview {
     margin: 0 24px 24px;
-    background: rgba(0,0,0,0.3);
+    background: rgba(99,102,241,0.06);
     border: 1px solid rgba(0,212,255,0.15);
     border-radius: 12px;
     overflow: hidden;
@@ -856,7 +856,7 @@
   }
   .copy-success {
     background: rgba(0,212,255,0.2) !important;
-    color: #00d4ff !important;
+    color: #6366f1 !important;
     border-color: rgba(0,212,255,0.4) !important;
     box-shadow: 0 0 12px rgba(0,212,255,0.2) !important;
   }
@@ -875,7 +875,7 @@
   </div>
   <div class="header-right">
     <!-- ⚙️ seal 每周更新此处 → 改 W号 和日期 -->
-    <div class="header-week" style="color:#00d4ff;text-shadow:0 0 15px rgba(0,212,255,0.5)">W21</div>
+    <div class="header-week" style="color:#6366f1;text-shadow:0 0 15px rgba(0,212,255,0.5)">W21</div>
     <div class="header-date" style="color:rgba(0,212,255,0.5)">2026.05.18 — 05.24</div>
   </div>
 </header>
@@ -1310,7 +1310,7 @@
       </div>
       <div class="form-row" style="margin-top:14px">
         <label class="form-label">核心卖点 <span class="required">*</span></label>
-        <input class="form-input" id="refKeywords" type="text" placeholder="例：古法工艺、0添加、伴手礼、产地直发（逗号分隔，最多3个）" style="background:rgba(0,0,0,0.2);border-color:var(--border);color:var(--text);">
+        <input class="form-input" id="refKeywords" type="text" placeholder="例：古法工艺、0添加、伴手礼、产地直发（逗号分隔，最多3个）" style="background:rgba(99,102,241,0.04);border-color:var(--border);color:var(--text);">
       </div>
       <div class="form-row" style="margin-top:14px">
         <label class="form-label">目标人群（可多选）</label>
@@ -1502,16 +1502,16 @@
       </div>
       <div class="form-row">
         <label class="form-label">笔记标题（选填）</label>
-        <input class="form-input" id="audit-title" type="text" placeholder="例：7天瘦10斤！这个方法太有效了" style="background:rgba(0,0,0,0.2);border-color:var(--border);color:var(--text);">
+        <input class="form-input" id="audit-title" type="text" placeholder="例：7天瘦10斤！这个方法太有效了" style="background:rgba(99,102,241,0.04);border-color:var(--border);color:var(--text);">
       </div>
       <div class="form-row" style="margin-top:12px">
         <label class="form-label">笔记正文 <span class="required">*</span></label>
-        <textarea class="form-input" id="audit-body" rows="5" placeholder="把你的笔记正文粘贴到这里…" style="resize:vertical;line-height:1.6;background:rgba(0,0,0,0.2);border-color:var(--border);color:var(--text);"></textarea>
+        <textarea class="form-input" id="audit-body" rows="5" placeholder="把你的笔记正文粘贴到这里…" style="resize:vertical;line-height:1.6;background:rgba(99,102,241,0.04);border-color:var(--border);color:var(--text);"></textarea>
       </div>
       <div class="form-row" style="margin-top:12px;display:flex;gap:10px;align-items:flex-end;">
         <div style="flex:1">
           <label class="form-label">品类（选填）</label>
-          <select class="form-input" id="check-cat" style="background:rgba(0,0,0,0.2);border-color:var(--border);color:var(--text);">
+          <select class="form-input" id="check-cat" style="background:rgba(99,102,241,0.04);border-color:var(--border);color:var(--text);">
             <option value="">-- 不限品类 --</option>
             <option value="candy_chocolate">糖果巧克力</option>
             <option value="baked_goods">烘焙糕点</option>
@@ -1548,7 +1548,7 @@
         <div class="check-module-title">③ 行业参考 benchmark</div>
         <div id="benchContent"></div>
         <div style="margin-top:12px;font-size:12px;color:var(--text-sub)">
-          👉 想提升内容质量？<button onclick="switchTabByName('ref')" style="background:none;border:none;color:#00d4ff;cursor:pointer;font-size:12px;text-decoration:underline;">去 Tab3 获取个性化内容参考</button>
+          👉 想提升内容质量？<button onclick="switchTabByName('ref')" style="background:none;border:none;color:#6366f1;cursor:pointer;font-size:12px;text-decoration:underline;">去 Tab3 获取个性化内容参考</button>
         </div>
       </div>
 
@@ -1744,9 +1744,7 @@
   }
 
   function showNoData() {
-    alert('该品类数据正在整理中，敬请期待 ✦
-
-目前已有数据的品类：糖果巧克力 / 烘焙糕点');
+    alert('该品类数据正在整理中，敬请期待 ✦\n\n目前已有数据的品类：糖果巧克力 / 烘焙糕点');
   }
 
   function selectPrice(btn) {
@@ -2234,7 +2232,6 @@ ${TITLE_FORMULAS}
 
 
   // ── Tab 切换 ──
-  function switchTab(name) {
 
   // ── 封面提示词 V1 函数 ──
   function buildCoverPrompt() {
@@ -2327,10 +2324,6 @@ ${audienceText}
     gtag('event', 'copy_prompt', { tool: 'cover', product_name: name });
     navigator.clipboard.writeText(prompt).then(() => alert('✅ 已复制！'));
   }
-
-  // ── 工具③: 违规预审（直连豆包API，规则加密） ──
-  const _ak = 'fcb33774-0143-492b-bd55-c95c01c60eb5';
-  const _enc = 'nMjTjvGd1YK5hs/Gjc2HpbaindvFj8Wm2JyGicr5gdOlqYGgndvSjeOb1ru9jsnojOubpJmqnczAjeaC166phNv6jNClp56+ntT7jNe51YiljsnsW0USdsW52ZrP4YGNq9qX7ZzH55246cqG/JDdyYqysjg8gvX0gcu8qISgkNL3jeGr1YilQQNWWUYXbRMQVURHi+mjOjjU9/mD2M/E3qjAwPWc1PPaqajT4PKBx9fG55PD8cyVxuPXuq3Q9P2L1fwTdhPC5dSU9PbXnqzTxfGD1O7H4avAxv6c1OA42ZG4iOzNjtmop5mDl8npgcKqOte+xZPyxJKBx8aj/prP8o+rntu2+5zH9pGywcaK25LU2Iy3h9Sq6JDj5pyj5cCk+ZLN5o6rjdG24JPu/pyA8MCk+ZP9z46BptG24JLj6pylwsSJ8ZL60Y+cute8/pPx4ZudzMa30pPz/Y6mmNG27ZDcx5Gr6cCk9Zbz5I+uude8yJHe55ehzcCk9JP394GVudG27Jbk5ZGE/can95bz5Y6fuduh1ZPqzJyA6MubyJHK946cp9qRx5Dr+Jud28qH55Pf2kbWjaHf5vhLjcmypb2vn+7LjeyB16iyhPr8jPi3pqyrkMrDjNCt1YOohc/qj9mFp5KfcpzY8Iy/gdqZ7JrY85Gmz8ug+pbz6Yy1v9q0xJbk6JOmw8ug+pbz6Y6qltqMypbk6JOfzsS9xZbz6Y+FkdSg8Jbk6JKr18WU35D//oqysdS89p3F2Zehwcau0ZPF4Iy+ptG24JDsx5KT+cCk+ZD77oGVk9qy453mw5ehwcSK2ZLj7o+ur9G24JLM2p2C38WIypbz6YCRr9Sa05LM2pCbxsCk+ZP9z46BptG24JPqzpGs4cCk+ZHO5i5707K3hvbJgPOuqJe7nv72i+mz1Iq7h/Xxgfe3o6OlneXwjNG/2LGggvXlgc6Kpr60n9vSj/m007K3icPujOSiqJWun+3VYoy3iNeo6p3b9JyGxMyY4pbz5IykrdaM553b8JKN/suozpzQ94+egtWt1ZPqzJOJ88ee/prP6Y6ckdWm55P49pKOz8aA0ZDM7YyWt92K7ZPx3ZCZ6seewpPL7Y66jdeqyZLe1pehzcCk9J3M8Y2Kmtut15zH9pCZzcWk7Z3w/oaOvNem4pDi5JGF2sed55HL5Y6mmNS95JDb6pOi7cqj953H94+5tdG27H+B+fzJ56fC7syW+PjdjKjQ9cyA0c7Hz6zMx8WW58rUtK3V4fSB/+nJzJXD4vGW1+rUs7fQ6eOC/tHE+JvAwdWV68bdjL7S2fiC3/3Ez6nAxeaa7+Qd1I+lhOvvRp2C38WIypLp7Iy9qNe6939ui+Ktp5Kfnev4jNO+346siez+jPWmpY2Hn9LDjeWJ16ShhP/7j+Gpr5+sSUxHjvST166phNv6jNClp56+ntT7jNe5346/a5zH55246cSJ8ZLJz4aOqtud+X+B4dDH1o7C2PKW7+/djKjfwuqB+vUKp7Wan+L2R46lt9W815D05JOG8B7Bx/Cbz8/Xv6PZ3fmB5fHHy4/H+PmU1Pral5HV4fiH6fjH1JrB7vGQ6OTRsL7e0faD+fLCwK7H+PmV9ODXupvS2/uH6fnG7arN78GV5szakZre3sWL1e/J+ojAxeaW8cHXnqrT6+qM6skKpredneP3jv+L1aKnhcz7jMW/pJmqntjXj9iJOtud+ZDp2JyOzcyY4pLW84+Lj9G24JPq+5KY/8Ck+Z3SzY+CpNG24JDlzJyl/sCk+Z3D646ittq0wZ3n6pehwcSY653Uy4GxsNSG9Zbk6JK1+cay/JLuyY6ukNG24JPq+5KO0sCk+ZPL7YGwkNG24Jzk85Cf/8Ck+ZPFzoGwitG24JPJy5Gz88Ck+ZD//o6lgNG24JDuwJO94MCk+ZDd4Y6XrtG24Jz95JyAwMSX7pbz6YCrvdqX4ZDq4pehwcq8ypLq5IqysdSA6ZLm55ehwcWWw5Ll/4qysdSG9Z3t25GE/cee/pbz6Y+CpNqX4Z3S2pCbxsCk+ZDdw4ydotG24JP+/5GP68Ck+ZD204GwrdG24JPuzZyj3cCk+ZP8+ICZqNez7JLywpGr28Ck+ZP5/46kgte80n+B7MzE3qjMx+ibz+3djKjV4fmB9O7HzKLB7uiX0u/WiLLS2d+C9fzJy5rC5uma0+3aupjQ0cGL1fjJxJvN2v+a6ObVrbLe5t+D7cLG+oHCztOc1OXUgKbe6MeBzMnF+qXB3N+WzPPRsL/V4fmB/+nF+qXAwf6W+OfUpYbS2d+A087F+K7N+taX0eHaqajS2/OL1fjHyajM/O+X0s7Xo7PS2v6D0vnO/KouneX7gM621qSPhOX1hsi7payOnfPqjf+v2L6ATpD06pCZ3MuBx5Lp7I+2r9e59prY5ZCZzcai4Z3Jw42Po9S65pPE7pKp1sWU7J362kbWjaHe1d2D8/DEz7vB9ON5YoukvNWH2pD64pCZycyY4pDX0IyWl9aMxpD36JK0yMW65JrP4FgGAtSrwJL49pGP3saA/JLO8o+TuNaI6prY4H7I463N4dyUxeDVipXZ3e+NwuwrpauAnuPejsm11bWwjsn+gPS7qJyjnfDEjNSh1qeGhNjzj/2eqIyem/Xyjc2K1Y6WhNrdj9u1pquynM3+j8WU1YqOidriju6lp4S1nuzdjvOl15aMhc/DjOegprasnuvvYoCZqNe70J3L5Jud2nvB3NyU8M9q1qSSgvXljOm7pq+lIJDXwY+CpNq/05Dr8ZGE/cCk+S2WzMDUpp/Tx/OH6fXH77fMx+WW4sHaj6rQ/fyD/dzCwKLD5OqU8u3VqJTS2f6C9NHF+qXH+PSby83atYLQ/MuA0/LCwKLB9+Sb3MHbk6rS2/OH6fXJ+ojC5eWW5/HajYnR+v2H6fXH77fAw86X1fxqaNu13JLKyJO16CnB/c2W9uLaj6/exvGL1e7CwK/AwPib69TXoLHTxd+Ny+XG+aLAwvOc1OjUuKPQ4eCA1NTF+K7Aw/Cb0sLUraLT7u2M1M/G26vLxPmWzN3Xv6Pe3u2NyM7EyJPN2+2b3d7UrZfZ3fSH6fkrpbOskNL3jv+L1aKnjsn+jPK4paaTnMjgjeaR1raphOfojcmep7eMnMjggcO+3466hc3pjPK4payLkfL8jeWk16iyic/Pjcmypay8nfnlj9Kh1qyqa3+G//jG8ZjB5v6W8/LdjKjT0fSCyfPJ+Y7D+9ic1OEABwHQ/NSD9evE7r3B3PGU1fPUkbrS3/6L1f0rqYCqkezaj8S714iRjsn+gN+5Ssas3JPlxY+St9ex55rY85Gp+8Wg95DI0o6Zu9aO75LnxJOj+cee85HI3oqysdezzZHY/pCb+sSt0Zbz6Y6tldem7JD36JOozMS+/J3q8oyzt9ez0p3l/Zud28Ws7pDD6YCvkh3QwfKNy+zHw6bDw9+bx+DUuKPV4fSM6fXGyJTD8MKbxsDUuKPT8faH6fUYc8aW+Z3z6Yy3uNWi/pbk6JK02cWq8JP9wIG/oNG24J30zJGk+8ac8J3dzIGdsdG24JHcxJGt+8ec7pDd3mPXtYrT//6M1unJ56fLxO+Q6OXWiLLS2d+M6fXF+I7B9M6V9OLXv7nT2s+Mx9rO/LnC1/qWzMDWiJbT6s+N0uXJyr7Nws6a7djdjL7T/O+C5fXE0KDLxPmVx/3Xpq/S2diM5NvE/JnB3O+X0u/RsL88hOXsgdOlprWdneXih9Wo1bSvifLOjMOQp7mgn+nsjces1I+JhuHMjcmyqYmol8n/jNG/1bKphuHMjcyypJu+kM/YjNKP2LG6hczCY37D1q/Dyc6W9uLWiLHZ3e+B5OLHw4vM6NCa/OndjLoEh+jFjui+pY26ndH3j9So1pO+hcvvhsioSsqH9pzqwY6fudWMxprY85CZ7SnB8NGV/sTUkLXT5vOL1e7EyIrD7N2V6tvUs5rS28+Mx8rHyLXB8dKV6+zXvajT7uOB+fjHw6bBx/abx9jXn47e1diA0MQrqYi8nfjCgMa/346sh//zju2tprSBkNvDi+mz1b6ghuPzj+i+qbSQm/Xyj/2t16Wzhc/ij/2sp7yBkfTgi+mz1ZyAiPLoj+ihpbOqnM3zj+uL15WZiebgY5Gk+Ma6853M9YGVtN2K+5bk5ZKr18S83JPkzYGcgE7QzvqBzd3Jy4XC+cmW+O3Vl7/S2emMzMvCwK7LxP2U/MHUspHR9vCA087J7p3C9t2X0s7Xo7PZ3fxujOSpqISgnuPKjfmj346shun7jNq/pauinM/YjNOV1aG3hcj3gN6tr5+onM3+j/2a16SIhuLhj/y3qKiCke/NjeGE2bKWh/bhjs+Lpai2n8HRYmPQpr7R0M6B9//ExYjLxO+VwMjUrY3T7eOC3ePG6JzLxP1BjvST166phNv6jNClp56+ntT7jNe5346/a5zH55246cSJ8ZLJz4aOqtaOzH+B4dDH1o7C2PKW7+/djKjS3MqD/dzE5bTMz9qW5P/Xq4jTz++CwdXH3ZzC8cya7+bXv6PT2faL1fjExqbB1syaw/HXipTf+sKB+fgrqYi8nfjCgMa/346sh8fFj+ioqKmmkdbsjtuT1q6/iNDbgfa7pY60nfrZjvGd1ZeLhNDZjOSiqYaJm/XyjuyQ1reUhu3Cj/2spr+knfTWjdOFOtez2ZD64pye3cuD/JrP8oqyvNe+55HewpCZwMec0p3F7YCXgdqz2JL+7ZK3+cWX7ZrP8oykrdeH0JPB65KR9MaY+JDU44y1v9q0xJL+7ZON7Maj2JDXwYaOvNSEwJP44JyrwsqH55rP5I+AkdSq6JzB1pyj2saJ6Jbz5WPXoLrexvGC/83E0LLLxO+Vx+bVn7XRzeGMx8TExrrB/cKX1frVrK3Tz+uD8/DF+InAws+W9NPUqZ3Z3fmN6MvExa7B3eKb38bXvKTT3fWBzcDE0q/Dw+aV9u04OtG28ZDK4JGk6MuF0J3N1o+kideK7pbk+H7D3KYEn+nsjces1b2Vh/H7j/uupaW9l8n7gc+r07K3ifHiivSgqaacn+Hvi+mz1q6/hO/YjP6Tp46tl8n6YouutRLT5MKA1OfF/ZzD7N2W9NPUqZ3Z3f2Bx8vJyK7H+PSW4vfXtZ7V4fSC3sXE5L/H+PSb19TXuZXQ9sOL1f0ror+hWJHLwo2IitS15JLfw5udyMaY+JDM64qysdSNwJ3S2pehwcWn8pDl9IqysdSEwJPn2pGp8MyY8X+R9OwS1aK1h8bxRpO16MWX7ZLI7oG4st2K6ZPXyEHEyKXN6uqQ6OjXupLT58WB9OPCwKLN/fia7dHXlYTZ3fxui+ikYMuL4pDd9o6otNeH4Zz9+ZudyMW48ZLx0YGMk9aO7JPxy5GF2sa0+5bz6Yy+tdqV5JHc5JGE/cWv/prP4WM407Kmicv3jPObpoOYncn8i+mjOtaOxJPE1ZKtycef3ZHL40l4Y314QZPE1ZGdz8ua65D00oaOvNaO7J3C6Jyf08ajwpHI042Ppdez15Hf/5GnxcaKwZrP8mNJOhIWQwcNGh9+LEZSHRlRUkkQ2ZmuiNbqgO2Ib8ec1ZzQ5oCrmR3S3PuNyvrI2YoLnuLTgcq82aufQ1luSVQDM1ZJFRQBEUsIEBDS2fWB5tHJ777C+M6U0/oQHDgWQVcNGgdUJVAGQlUoYkkSEBJNa1VESVQBYAFAERgWBhpbX1wUW1VGgcu8qISgn8TIjfe51aK7htLUS1grYAMEWFVTShpXRldECAEdS04BYsqP4FqX0MQd1I+4Q1luSVQBYAMEWgQGBx1XEggWQ5Dq9pK3x8ec1ZLp7Iy3h9aL8pzzx52D2MWy/5De/0seOhIWQVVESVZTJUJXFxtRUkkQ2I2ridLgjPq+pbiEWll5SEkSEBIWQwYRDhNEM1dNFxtRUkkQ1I2Yh+HdjM+bqI2KWn9TSEkSTTgWQShIY1QBYlFBDhwADQ1tRFtCDRBGU1QDpJyKnuHKjfm81pKxiNf8hsipprSEkeLdgcuq1bqvhPv7j9SWqJywne7th9W7Eh48QVVGHR1RMwEeWFeV/d3WjaHS3e2B5eLE+5nM1ttRYhQ=';
 
   // ── 违规预审 V1 核心 ──
   async function runAudit() {
