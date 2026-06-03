@@ -153,6 +153,52 @@ LIGHT_CSS = """
   .lingxi-card:hover { border-color: rgba(37,99,235,.3); }
   .lingxi-info .name { color: var(--text); }
   .lingxi-info .desc { color: var(--text-sub); }
+
+  /* ── PC 端布局优化 ── */
+  .container { max-width: 1280px !important; padding: 28px 32px 80px !important; }
+
+  /* 方法论：PC 端 2 列 */
+  @media (min-width: 900px) {
+    .method-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  }
+
+  /* Tab3 卡片：PC 端 3 列（人群/买点单列，标题/案例横跨） */
+  @media (min-width: 900px) {
+    .ref-cards { grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+    .ref-cards .ref-card:nth-child(3),
+    .ref-cards .ref-card:nth-child(4) { grid-column: 1 / -1; }
+  }
+
+  /* 灵犀：PC 端 4 列 */
+  @media (min-width: 768px) {
+    .lingxi-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  /* Tab5 体检模块：PC 端 2 列 */
+  @media (min-width: 900px) {
+    .check-result {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+    .check-result .check-module:first-child { grid-column: 1 / -1; }
+  }
+
+  /* Tab4 创作工具：PC 端 2 列布局 */
+  @media (min-width: 900px) {
+    #tab-tools .planner-card { max-width: 100%; }
+    #tab-tools .section-label { margin-top: 24px; }
+  }
+
+  /* Tab nav PC 端 */
+  @media (min-width: 768px) {
+    .tab-nav { max-width: fit-content; }
+    .tab-btn { font-size: 14px; padding: 10px 20px; }
+  }
+
+  /* 风向卡更通透 */
+  .trend-item { padding: 10px 12px; line-height: 1.55; }
 """
 
 # ── V2 新增组件 CSS ──
