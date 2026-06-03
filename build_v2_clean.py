@@ -9,8 +9,8 @@ def get(s, e):  # 1-indexed, inclusive
 
 css1        = get(16, 599)    # 主 CSS（不含 </style>）
 css2        = get(1080, 1209) # tools CSS（含 <style>...</style> 包装）
-trends_body = get(698, 893)   # 风向卡片~TOP笔记格
-tools_html  = get(895, 1039)  # 创作工具 HTML
+trends_body = get(698, 884)   # 风向卡片~TOP笔记格
+tools_html  = get(897, 1037)  # 创作工具 HTML
 top_notes   = get(1213, 1235) # TOP_NOTES 数组定义
 build_prompt= get(1354, 1435) # buildPrompt()
 update_prev = get(1437, 1497) # updatePreview + 事件绑定（不含 switchTab）
