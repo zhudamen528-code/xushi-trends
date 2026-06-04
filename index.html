@@ -135,6 +135,11 @@ body {
   align-items: center;
   gap: 8px;
   margin-bottom: 16px;
+  margin-top: 40px;
+}
+.tab-panel > .section-label:first-child,
+.section-label:first-child {
+  margin-top: 0;
 }
 .section-label::after {
   content: '';
@@ -155,7 +160,7 @@ body {
 }
 
 /* ── GRID ── */
-.trend-grid   { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+.trend-grid   { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
 .top-grid     { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 .bench-grid   { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 .method-grid  { display: grid; gap: 12px; }
@@ -1227,7 +1232,7 @@ body {
   </div>
 
   <!-- 工具②: 封面示意图生成 -->
-  <div class="section-label" style="margin-top:32px">
+  <div class="section-label">
     <span class="icon">🖼️</span> 封面示意图生成
     <span class="tag">输入卖点 · 生成图片Prompt</span>
   </div>
@@ -1293,7 +1298,7 @@ body {
   </div>
 
   <!-- 工具③: 标题正文违规预审 -->
-  <div class="section-label" style="margin-top:32px">
+  <div class="section-label">
     <span class="icon">🔍</span> 标题正文违规预审
     <span class="tag">贴入文案 · AI逐条核查</span>
   </div>
@@ -1323,7 +1328,7 @@ body {
       <div class="tool-result-area" id="titleResultArea"></div>
     </div>
 
-    <div class="section-label" style="margin-top:4px"><span class="icon">💬</span> 评论区话术 <span class="tag">对应方法论第4条 · 直接生成</span></div>
+    <div class="section-label"><span class="icon">💬</span> 评论区话术 <span class="tag">对应方法论第4条 · 直接生成</span></div>
     <div class="planner-card tool-section">
       <div class="planner-intro">生成置顶评论 + 互动引导话术，评论区做好转化率能额外提升 30%+</div>
       <div class="planner-form">
@@ -1347,7 +1352,7 @@ body {
       <div class="tool-result-area" id="commentResultArea"></div>
     </div>
 
-    <div class="section-label" style="margin-top:4px"><span class="icon">🖼️</span> 封面策划助手 <span class="tag">输入卖点 · 直接生成3个封面方向</span></div>
+    <div class="section-label"><span class="icon">🖼️</span> 封面策划助手 <span class="tag">输入卖点 · 直接生成3个封面方向</span></div>
     <div class="planner-card tool-section">
       <div class="planner-form">
         <div class="form-row"><label class="form-label">产品名称 <span class="required">*</span></label><input class="form-input" id="cover-name" type="text" placeholder="例：手工黑芝麻丸、鲜萃冷泡茶"></div>
@@ -1362,7 +1367,7 @@ body {
       <div class="prompt-preview" id="cover-prompt-preview"><div class="prompt-label">封面策划提示词预览</div><div class="prompt-text" id="cover-prompt-text">填写产品信息后，这里会显示封面策划提示词…</div></div>
     </div>
 
-    <div class="section-label" style="margin-top:4px"><span class="icon">🔗</span> 灵犀工具 <span class="tag">小红书商家后台 · 数据化选词/选品/选人群</span></div>
+    <div class="section-label"><span class="icon">🔗</span> 灵犀工具 <span class="tag">小红书商家后台 · 数据化选词/选品/选人群</span></div>
     <div class="lingxi-grid">
       <div class="lingxi-card" onclick="showLingxiTip()"><div class="lingxi-icon">🔍</div><div class="lingxi-info"><div class="name">灵犀选词</div><div class="desc">找高 CTR 标题关键词</div></div></div>
       <div class="lingxi-card" onclick="showLingxiTip()"><div class="lingxi-icon">📦</div><div class="lingxi-info"><div class="name">灵犀选品</div><div class="desc">发现行业热销 SPU</div></div></div>
