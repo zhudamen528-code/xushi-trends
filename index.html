@@ -11,6 +11,8 @@
     gtag('js', new Date());
     gtag('config', 'G-VJ5TN7HBY1');
   </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -597,28 +599,61 @@
   .tab-panel.hidden { display: none; }
 
 
+  /* ── V3 Design Token (Uno-inspired) ── */
   :root {
-    --bg:        #f8f9fa;
-    --card-bg:   #ffffff;
-    --border:    #e5e7eb;
-    --text:      #111827;
-    --text-sub:  #6b7280;
-    --primary:   #e63950;
-    --accent:    #f97316;
-    --green:     #059669;
+    --bg:        #F2F2F7;
+    --card-bg:   #FFFFFF;
+    --border:    #E8E8ED;
+    --text:      #1C1C1E;
+    --text-sub:  #8E8E93;
+    --text-ter:  #AEAEB2;
+    --primary:   #FF3B4E;
+    --accent:    #FF9500;
+    --green:     #34C759;
+    --blue:      #007AFF;
+    --purple:    #AF52DE;
+    --r8:        8px;
+    --r12:       12px;
+    --r16:       16px;
+    --r20:       20px;
   }
-  body { background: #f8f9fa; color: #111827; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'PingFang SC', sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
 
   /* 覆盖 V1 深色 token */
-  .header        { background: #fff; border-bottom: 1px solid #e5e7eb; box-shadow: 0 1px 3px rgba(0,0,0,.04); }
+  .header {
+    background: #FFFFFF;
+    border-bottom: 1px solid var(--border);
+    position: sticky; top: 0; z-index: 100;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  .header-left { display: flex; align-items: center; gap: 14px; }
+  .header-icon { font-size: 28px; line-height: 1; }
+  .header-title { font-size: 17px; font-weight: 800; color: var(--text); letter-spacing: -0.4px; }
+  .header-sub { font-size: 12px; color: var(--text-sub); font-weight: 400; margin-top: 1px; }
+  .header-week { font-size: 22px; font-weight: 900; letter-spacing: -1px; }
+  .header-date { font-size: 11px; font-weight: 500; margin-top: 1px; }
   .header-title  { color: var(--text); }
   .header-sub    { color: var(--text-sub); }
   .header-week   { color: var(--primary) !important; text-shadow: none !important; }
   .header-date   { color: var(--text-sub) !important; }
   .container     { background: var(--bg); }
-  .card          { background: #fff; border-color: var(--border); box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--r16);
+    box-shadow: 0 1px 3px rgba(0,0,0,.04);
+  }
   .section-label { color: var(--text); border-color: var(--border); padding-bottom: 10px; margin-bottom: 16px; }
-  .tag           { background: #f3f4f6; color: #6b7280; border: none; }
+  .tag           { background: rgba(0,0,0,.05); color: var(--text-sub); border-radius: 20px; padding: 2px 10px; font-size: 11px; font-weight: 600; }
   .trend-item    { background: #fff; border-color: var(--border); }
   .trend-num     { background: rgba(255,36,66,.1); color: var(--primary); }
   .hot-tag       { background: rgba(255,36,66,.07); color: var(--primary); border-color: rgba(255,36,66,.12); }
@@ -633,7 +668,7 @@
   .form-input:focus { border-color: var(--primary); outline: none; box-shadow: 0 0 0 3px rgba(255,36,66,.1); }
   .cat-radio span { color: var(--text-sub); }
   .cat-radio input:checked + span { color: var(--primary); }
-  .btn-gen       { background: #e63950; }
+  .btn-gen { padding:12px 22px; background:var(--primary); color:#fff; border:none; border-radius:var(--r12); font-size:14px; font-weight:700; cursor:pointer; font-family:inherit; transition:opacity .15s; }
   .btn-doubao    { background: linear-gradient(135deg, #7c3aed 0%, #db2777 100%); }
   .btn-copy      { background: #f1f5f9; color: var(--text-sub); border-color: var(--border); }
   .btn-copy:hover{ background: #e2e8f0; }
@@ -643,18 +678,40 @@
   .audit-result  { background: #f8f9fc; border-color: var(--border); }
 
   /* Tab nav */
-  .tab-nav  { background: #f3f4f6; border-radius: 10px; }
-  .tab-btn  { color: #6b7280; background: transparent; }
-  .tab-btn:hover  { color: #e63950; background: rgba(230,57,80,.06); }
+  .tab-nav {
+    background: transparent;
+    display: flex; gap: 4px;
+    padding: 0;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 28px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .tab-nav::-webkit-scrollbar { display: none; }
+  .tab-btn {
+    padding: 10px 16px;
+    border: none;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+    background: transparent;
+    color: var(--text-sub);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: color .15s, border-color .15s;
+    margin-bottom: -1px;
+  }
+  .tab-btn:hover  { color: var(--text); background: transparent; }
   .tab-btn.active { color: var(--primary); background: #fff;
                     box-shadow: 0 1px 6px rgba(255,36,66,.12); }
 
   /* 方法论 */
-  .method-card  { background: #fff; border-color: var(--border); }
+  .method-card  { background: #FFFFFF; border-color: var(--border); border-radius: var(--r16) !important; transition: box-shadow .2s, transform .2s; }
   .method-card:hover { border-color: rgba(255,36,66,.25); }
   .method-card.open  { border-color: rgba(255,36,66,.35); }
   .method-num   { background: rgba(255,36,66,.1); color: var(--primary); }
-  .method-title { color: var(--text); }
+  .method-title { color: var(--text); font-size: 15px; font-weight: 700; letter-spacing: -0.2px; }
   .method-badge { background: rgba(255,36,66,.07); color: var(--primary); }
   .method-arrow { color: var(--text-sub); }
   .method-body  { border-color: var(--border); }
@@ -662,12 +719,12 @@
                      color: var(--text-sub); }
   .method-how-list li { color: var(--text-sub); }
   .method-how-list li::before { color: var(--accent); }
-  .method-case  { background: #f8f9fc; border-color: var(--border); }
+  .method-case  { background: #F2F2F7; border-color: transparent; border-radius:var(--r8) !important; }
   .method-case-label { color: var(--text-sub); }
-  .method-case-text  { color: var(--text); }
+  .method-case-text  { color: var(--text); font-size:13px; line-height:1.7; }
 
   /* 三感六度 */
-  .sgld-card  { background: #fff; border-color: var(--border); }
+  .sgld-card  { background: #FFFFFF; border: 1px solid var(--border); border-radius: var(--r20); padding: 24px; margin-top: 20px; }
   .sgld-title { color: var(--text); }
   .sgld-desc  { color: var(--text-sub); }
   .sgld-dim   { background: rgba(5,150,105,.07); color: var(--green);
@@ -680,16 +737,16 @@
                 color: var(--text-sub); }
   .cat-l1-btn { background: #fff; border-color: var(--border); color: var(--text-sub); }
   .cat-l1-btn.active { border-color: rgba(255,36,66,.35); color: var(--primary); background: rgba(255,36,66,.07); }
-  .cat-l2-btn { border-color: var(--border); color: var(--text-sub); }
+  .cat-l2-btn { padding:7px 14px; border-radius:20px; border:1.5px solid var(--border); cursor:pointer; font-size:13px; color:var(--text-sub); background:#fff; font-weight:500; transition:all .15s; }
   .cat-l2-btn.active { border-color: rgba(255,36,66,.35); color: var(--primary); background: rgba(255,36,66,.07); }
-  .ref-form   { background: #fff; border-color: var(--border); }
-  .price-btn  { border-color: var(--border); color: var(--text-sub); }
+  .ref-form   { background: #FFFFFF; border: 1px solid var(--border); border-radius: var(--r20); padding: 22px; margin-bottom: 20px; }
+  .price-btn  { padding:8px 16px; border-radius:20px; border:1.5px solid var(--border); cursor:pointer; font-size:13px; color:var(--text-sub); background:#fff; font-weight:500; transition:all .15s; }
   .price-btn.active { border-color: rgba(255,36,66,.35); color: var(--primary); background: rgba(255,36,66,.07); }
-  .aud-btn    { border-color: var(--border); color: var(--text-sub); }
+  .aud-btn    { padding:6px 13px; border-radius:20px; border:1.5px solid var(--border); cursor:pointer; font-size:12px; color:var(--text-sub); background:#fff; font-weight:500; transition:all .15s; }
   .aud-btn.active { border-color: rgba(255,107,53,.35); color: var(--accent); background: rgba(255,107,53,.07); }
-  .btn-gen-main { background: #e63950; }
-  .ref-card   { background: #fff; border-color: var(--border); }
-  .ref-card-title { color: var(--text-sub); }
+  .btn-gen-main { background: var(--primary); color:#fff; border:none; border-radius:var(--r12); padding:14px 28px; font-size:15px; font-weight:700; cursor:pointer; width:100%; margin-top:18px; letter-spacing:-0.2px; transition: opacity .15s, transform .1s; }
+  .ref-card   { background: #FFFFFF; border:1px solid var(--border); border-radius:var(--r16); padding:18px; }
+  .ref-card-title { color: var(--text-sub); font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:12px; }
   .ref-tag    { background: rgba(255,36,66,.07); border-color: rgba(255,36,66,.12); color: var(--primary); }
   .ref-template { background: #f8f9fc; color: var(--text); }
   .ref-template .example { color: var(--text-sub); }
@@ -725,7 +782,7 @@
   .lingxi-info .desc { color: var(--text-sub); }
 
   /* ── PC 端布局优化 ── */
-  .container { max-width: 1100px !important; padding: 28px 28px 80px !important; }
+  .container { max-width: 1080px !important; padding: 24px 24px 80px !important; }
 
   /* 方法论：PC 端 保持单列，加宽显示 */
   @media (min-width: 900px) {
@@ -769,7 +826,7 @@
   }
 
   /* 风向卡更通透 */
-  .trend-item { padding: 10px 12px; line-height: 1.55; }
+  .trend-item { padding: 11px 16px; line-height: 1.6; }
 
   .tab-nav { display:flex; gap:6px; margin-bottom:28px; padding:4px; border-radius:12px; flex-wrap:wrap; }
   .tab-btn { font-size:13px; padding:9px 16px; border-radius:8px; border:none; cursor:pointer; font-weight:600; transition:all .2s; white-space:nowrap; }
@@ -790,7 +847,7 @@
   .method-why-label,.method-how-label { font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; margin-bottom:6px; }
   .method-why-label { color:rgba(255,36,66,.4); }
   .method-how-label { color:rgba(255,107,53,.6); }
-  .method-why-text { font-size:13px; line-height:1.6; padding:10px 14px; border-radius:8px; border-left:3px solid rgba(255,36,66,.35); background:rgba(255,36,66,.03); }
+  .method-why-text { font-size:13px; line-height:1.7; padding:12px 14px; border-radius:var(--r8); border-left:3px solid var(--primary); background:rgba(255,59,78,.04); color:var(--text); }
   .method-how { margin-top:14px; }
   .method-how-list { list-style:none; padding:0; }
   .method-how-list li { font-size:13px; padding:4px 0 4px 16px; position:relative; }
@@ -808,7 +865,7 @@
 
   .ref-intro  { font-size:14px; line-height:1.7; margin-bottom:24px; padding:14px 18px; border-radius:10px; border-left:3px solid; }
   .cat-l1-grid { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:20px; }
-  .cat-l1-btn { padding:10px 18px; border-radius:10px; border:1px solid; cursor:pointer; font-size:14px; font-weight:600; transition:all .2s; }
+  .cat-l1-btn { padding:10px 18px; border-radius:var(--r12); border:1.5px solid var(--border); cursor:pointer; font-size:14px; font-weight:600; transition:all .15s; background:#fff; color:var(--text); }
   .cat-l2-area { display:none; margin-bottom:20px; }
   .cat-l2-area.show { display:block; }
   .cat-l2-grid { display:flex; gap:8px; flex-wrap:wrap; }
@@ -828,30 +885,30 @@
   .ref-card   { border-radius:12px; border:1px solid; padding:16px; }
   .ref-card-title { font-size:12px; font-weight:700; margin-bottom:10px; text-transform:uppercase; letter-spacing:1px; display:flex; align-items:center; gap:6px; }
   .ref-tag    { display:inline-block; margin:3px; padding:4px 10px; border-radius:14px; border:1px solid; font-size:12px; }
-  .ref-template { border-radius:8px; padding:10px 12px; margin:6px 0; font-size:12px; line-height:1.6; }
-  .ref-template .example { font-size:11px; margin-top:4px; }
-  .ref-case   { border:1px solid; border-radius:8px; padding:10px 12px; margin:6px 0; }
+  .ref-template { border-radius:var(--r8); padding:12px 14px; margin:6px 0; font-size:13px; line-height:1.6; background:#F2F2F7; color:var(--text); }
+  .ref-template .example { font-size:12px; margin-top:6px; color:var(--text-sub); }
+  .ref-case   { border:1px solid var(--border); border-radius:var(--r12); padding:12px 14px; margin:6px 0; }
   .ref-case-title { font-size:12px; font-weight:600; margin-bottom:4px; }
   .ref-case-meta  { font-size:11px; }
   .ref-case-note  { font-size:11px; margin-top:4px; }
   .ref-actions { display:flex; gap:8px; margin-top:16px; }
-  .btn-refresh  { flex:1; border-radius:8px; padding:10px; font-size:13px; cursor:pointer; }
-  .btn-copy-all { flex:1; border-radius:8px; padding:10px; font-size:13px; cursor:pointer; }
+  .btn-refresh  { flex:1; border-radius:var(--r12); padding:11px; font-size:13px; cursor:pointer; background:#F2F2F7; border:none; color:var(--text-sub); font-weight:600; }
+  .btn-copy-all { flex:1; border-radius:var(--r12); padding:11px; font-size:13px; cursor:pointer; background:rgba(255,59,78,.08); border:none; color:var(--primary); font-weight:700; }
 
-  .check-form   { border-radius:14px; border:1px solid; padding:20px; margin-bottom:20px; }
+  .check-form   { border-radius:var(--r20); border:1px solid var(--border); padding:22px; margin-bottom:20px; background:#fff; }
   .check-result { display:none; }
   .check-result.show { display:block; }
-  .check-module { border-radius:12px; border:1px solid; padding:18px; margin-bottom:14px; }
+  .check-module { border-radius:var(--r16); border:1px solid var(--border); padding:20px; margin-bottom:14px; background:#fff; }
   .check-module-title { font-size:12px; font-weight:700; margin-bottom:14px; text-transform:uppercase; letter-spacing:1.5px; color:#6b7280; }
   .check-item   { display:flex; align-items:flex-start; gap:10px; padding:8px 0; border-bottom:1px solid rgba(0,0,0,.05); }
   .check-item:last-child { border-bottom:none; }
   .check-icon   { font-size:16px; flex-shrink:0; margin-top:1px; }
   .check-label  { font-size:13px; font-weight:600; flex:0 0 110px; }
   .check-comment { font-size:13px; flex:1; line-height:1.5; }
-  .check-score  { text-align:center; padding:16px; border-radius:10px; margin-bottom:12px; background:rgba(255,36,66,.04); }
+  .check-score  { text-align:center; padding:20px; border-radius:var(--r12); margin-bottom:12px; background:#F2F2F7; }
   .check-score-num   { font-size:36px; font-weight:800; }
   .check-score-label { font-size:12px; margin-top:4px; }
-  .check-top-tip { border:1px solid; border-radius:8px; padding:10px 14px; font-size:13px; line-height:1.6; margin-top:10px; }
+  .check-top-tip { border:none; border-radius:var(--r12); padding:12px 16px; font-size:13px; line-height:1.6; margin-top:12px; background:rgba(255,149,0,.1); color:var(--accent); font-weight:500; }
   .bench-row-small { display:flex; justify-content:space-between; align-items:center; padding:6px 0; border-bottom:1px solid rgba(0,0,0,.05); }
   .bench-row-small:last-child { border-bottom:none; }
   .bench-vals  { display:flex; gap:20px; }
@@ -867,10 +924,10 @@
   .title-item-method { font-size:11px; margin-top:4px; }
   .lingxi-grid  { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
   @media(max-width:500px){ .lingxi-grid { grid-template-columns:1fr; } }
-  .lingxi-card  { border-radius:10px; border:1px solid; padding:14px; display:flex; align-items:center; gap:10px; cursor:pointer; transition:border-color .2s; }
+  .lingxi-card  { border-radius:var(--r16); border:1.5px solid var(--border); padding:16px; display:flex; align-items:center; gap:12px; cursor:pointer; transition:all .2s; background:#fff; }
   .lingxi-icon  { font-size:22px; }
-  .lingxi-info .name { font-size:13px; font-weight:600; }
-  .lingxi-info .desc { font-size:12px; margin-top:2px; }
+  .lingxi-info .name { font-size:14px; font-weight:700; color:var(--text); }
+  .lingxi-info .desc { font-size:12px; margin-top:3px; color:var(--text-sub); }
 
   @media(max-width:600px){
     .tab-btn { font-size:12px; padding:8px 10px; }
@@ -1020,8 +1077,8 @@
     </div>
   </div>
   <div class="header-right">
-    <div class="header-week" style="color:#e63950">W21</div>
-    <div class="header-date" style="color:#6b7280">2026.05.18 — 05.24</div>
+    <div class="header-week" style="color:var(--primary)">W21</div>
+    <div class="header-date" style="color:var(--text-sub)">2026.05.18 — 05.24</div>
   </div>
 </header>
 
