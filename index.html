@@ -15,13 +15,13 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --red: #00d4ff;
-      --orange: #6366f1;
-      --warm: #0d1117;
-      --card-bg: #111827;
-      --text: #e2e8f0;
-      --text-sub: #64748b;
-      --border: #1e293b;
+      --red: #e63950;
+      --orange: #f97316;
+      --warm: #f8f9fa;
+      --card-bg: #ffffff;
+      --text: #111827;
+      --text-sub: #6b7280;
+      --border: #e5e7eb;
       --tag-snack: #f97316;
       --tag-fast: #eab308;
       --tag-drink: #06b6d4;
@@ -58,7 +58,7 @@
     .header-date { font-size: 12px; color: rgba(255,255,255,0.7); }
 
     /* ── Container ── */
-    .container { max-width: 1100px; margin: 0 auto; padding: 36px 28px 80px; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 28px 28px 80px; }
 
     /* ── Section Label ── */
     .section-label {
@@ -598,19 +598,19 @@
 
 
   :root {
-    --bg:        #fff7f8;
+    --bg:        #f8f9fa;
     --card-bg:   #ffffff;
-    --border:    #fde0e4;
-    --text:      #1a1010;
-    --text-sub:  #78716c;
-    --primary:   #ff2442;
-    --accent:    #ff6b35;
+    --border:    #e5e7eb;
+    --text:      #111827;
+    --text-sub:  #6b7280;
+    --primary:   #e63950;
+    --accent:    #f97316;
     --green:     #059669;
   }
-  body { background: var(--bg); color: var(--text); }
+  body { background: #f8f9fa; color: #111827; }
 
   /* 覆盖 V1 深色 token */
-  .header        { background: linear-gradient(135deg, #fff5f6 0%, #fff 60%); border-bottom: 1px solid #fde0e4; box-shadow: 0 1px 8px rgba(255,36,66,.06); }
+  .header        { background: #fff; border-bottom: 1px solid #e5e7eb; box-shadow: 0 1px 3px rgba(0,0,0,.04); }
   .header-title  { color: var(--text); }
   .header-sub    { color: var(--text-sub); }
   .header-week   { color: var(--primary) !important; text-shadow: none !important; }
@@ -618,7 +618,7 @@
   .container     { background: var(--bg); }
   .card          { background: #fff; border-color: var(--border); box-shadow: 0 1px 4px rgba(0,0,0,.06); }
   .section-label { color: var(--text); border-color: var(--border); padding-bottom: 10px; margin-bottom: 16px; }
-  .tag           { background: rgba(255,36,66,.07); color: var(--primary); }
+  .tag           { background: #f3f4f6; color: #6b7280; border: none; }
   .trend-item    { background: #fff; border-color: var(--border); }
   .trend-num     { background: rgba(255,36,66,.1); color: var(--primary); }
   .hot-tag       { background: rgba(255,36,66,.07); color: var(--primary); border-color: rgba(255,36,66,.12); }
@@ -633,7 +633,7 @@
   .form-input:focus { border-color: var(--primary); outline: none; box-shadow: 0 0 0 3px rgba(255,36,66,.1); }
   .cat-radio span { color: var(--text-sub); }
   .cat-radio input:checked + span { color: var(--primary); }
-  .btn-gen       { background: linear-gradient(135deg, #ff2442 0%, #ff6b35 100%); }
+  .btn-gen       { background: #e63950; }
   .btn-doubao    { background: linear-gradient(135deg, #7c3aed 0%, #db2777 100%); }
   .btn-copy      { background: #f1f5f9; color: var(--text-sub); border-color: var(--border); }
   .btn-copy:hover{ background: #e2e8f0; }
@@ -643,9 +643,9 @@
   .audit-result  { background: #f8f9fc; border-color: var(--border); }
 
   /* Tab nav */
-  .tab-nav  { background: #fff0f2; }
-  .tab-btn  { color: var(--text-sub); }
-  .tab-btn:hover  { color: var(--primary); background: rgba(255,36,66,.06); }
+  .tab-nav  { background: #f3f4f6; border-radius: 10px; }
+  .tab-btn  { color: #6b7280; background: transparent; }
+  .tab-btn:hover  { color: #e63950; background: rgba(230,57,80,.06); }
   .tab-btn.active { color: var(--primary); background: #fff;
                     box-shadow: 0 1px 6px rgba(255,36,66,.12); }
 
@@ -687,7 +687,7 @@
   .price-btn.active { border-color: rgba(255,36,66,.35); color: var(--primary); background: rgba(255,36,66,.07); }
   .aud-btn    { border-color: var(--border); color: var(--text-sub); }
   .aud-btn.active { border-color: rgba(255,107,53,.35); color: var(--accent); background: rgba(255,107,53,.07); }
-  .btn-gen-main { background: linear-gradient(135deg, #ff2442 0%, #ff6b35 100%); }
+  .btn-gen-main { background: #e63950; }
   .ref-card   { background: #fff; border-color: var(--border); }
   .ref-card-title { color: var(--text-sub); }
   .ref-tag    { background: rgba(255,36,66,.07); border-color: rgba(255,36,66,.12); color: var(--primary); }
@@ -913,7 +913,7 @@
     color: var(--text);
   }
   .form-input:focus { border-color: rgba(0,212,255,0.4); background: rgba(0,212,255,0.02); box-shadow: 0 0 0 3px rgba(0,212,255,0.08); }
-  .form-input::placeholder { color: #475569; }
+  .form-input::placeholder { color: #9ca3af; }
   .cat-select-group {
     display: flex;
     flex-wrap: wrap;
@@ -957,7 +957,7 @@
     transition: opacity 0.15s, box-shadow 0.15s;
     box-shadow: 0 0 20px rgba(0,212,255,0.2);
   }
-  .btn-gen:hover { opacity: 0.88; box-shadow: 0 0 30px rgba(0,212,255,0.35); }
+  .btn-gen:hover { opacity: .88; }
   .btn-gen.btn-doubao {
     background: linear-gradient(135deg, #6366f1, #8b5cf6);
     box-shadow: 0 0 20px rgba(99,102,241,0.2);
@@ -974,7 +974,7 @@
     font-family: inherit;
     transition: all 0.15s;
   }
-  .btn-copy:hover { background: rgba(255,255,255,0.1); color: #e2e8f0; }
+  .btn-copy:hover { background: #f3f4f6; }
   .prompt-preview {
     margin: 0 24px 24px;
     background: rgba(0,0,0,0.3);
@@ -1020,7 +1020,7 @@
     </div>
   </div>
   <div class="header-right">
-    <div class="header-week" style="color:#ff2442">W21</div>
+    <div class="header-week" style="color:#e63950">W21</div>
     <div class="header-date" style="color:#6b7280">2026.05.18 — 05.24</div>
   </div>
 </header>
