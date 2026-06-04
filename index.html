@@ -1548,13 +1548,13 @@
     <div class="section-label"><span class="icon">🔍</span> 笔记体检 <span class="tag">贴入文案 · AI 自动体检 + 行业对标</span></div>
     <div class="check-form">
       <div class="planner-intro" style="padding:0;margin-bottom:16px;font-size:13px;line-height:1.6">粘贴你的笔记，一键体检：① 违规风险 ② 5条方法论核查 ③ 行业 benchmark 对标</div>
-      <div class="form-row"><label class="form-label">笔记标题（选填）</label><input class="form-input" id="audit-title" type="text" placeholder="例：7天瘦10斤！这个方法太有效了"></div>
-      <div class="form-row" style="margin-top:12px"><label class="form-label">笔记正文 <span class="required">*</span></label><textarea class="form-input" id="audit-body" rows="5" placeholder="把你的笔记正文粘贴到这里…" style="resize:vertical;line-height:1.6"></textarea></div>
+      <div class="form-row"><label class="form-label">笔记标题（选填）</label><input class="form-input" id="audit-title-v2" type="text" placeholder="例：7天瘦10斤！这个方法太有效了"></div>
+      <div class="form-row" style="margin-top:12px"><label class="form-label">笔记正文 <span class="required">*</span></label><textarea class="form-input" id="audit-body-v2" rows="5" placeholder="把你的笔记正文粘贴到这里…" style="resize:vertical;line-height:1.6"></textarea></div>
       <div class="form-row" style="margin-top:12px">
         <label class="form-label">品类（选填）</label>
         <select class="form-input" id="check-cat"><option value="">-- 不限品类 --</option><option value="candy_chocolate">糖果巧克力</option><option value="baked_goods">烘焙糕点</option><option value="other">其他休食品类</option></select>
       </div>
-      <div class="planner-actions" style="margin-top:14px"><button class="btn-gen" id="audit-btn" onclick="runAuditV2()">🔍 开始体检</button></div>
+      <div class="planner-actions" style="margin-top:14px"><button class="btn-gen" id="audit-btn-v2" onclick="runAuditV2()">🔍 开始体检</button></div>
     </div>
     <div class="check-result" id="checkResult">
       <div class="check-module"><div class="check-module-title">① 违规风险预审</div><div id="auditResultContent" style="font-size:13px;white-space:pre-wrap;line-height:1.8"></div></div>
@@ -1879,11 +1879,11 @@
 
   // ── Tab 5 笔记体检 ──
   async function runAuditV2() {
-    const title = document.getElementById('audit-title').value.trim();
-    const body  = document.getElementById('audit-body').value.trim();
+    const title = document.getElementById('audit-title-v2').value.trim();
+    const body  = document.getElementById('audit-body-v2').value.trim();
     if (!body && !title) { alert('请先填写标题或正文'); return; }
     gtag('event','check_note');
-    const btn = document.getElementById('audit-btn');
+    const btn = document.getElementById('audit-btn-v2');
     btn.disabled = true; btn.textContent = '⏳ 体检中…';
     document.getElementById('checkResult').classList.add('show');
     document.getElementById('auditResultContent').textContent = '正在分析违规风险…';
@@ -1982,7 +1982,7 @@
       '<div class="bench-row-small"><span class="bench-label-sm">商品转化率（商卡→支付）</span><div class="bench-vals"><div class="bench-val-sm"><div class="num">' + bench.cvr + '%</div><div class="lab">行业区间</div></div><div class="bench-val-sm"><div class="num">' + bench.topCvr + '</div><div class="lab">TOP20%</div></div></div></div>' +
       '<div style="margin-top:8px;font-size:12px">达到行业均值即为合格，进入 TOP20% 区间说明内容创作已较为高效</div>';
 
-    btn.disabled = false; btn.textContent = '🔍 开始体检';
+    btn.disabled = false; btn.textContent = '🔍 开始体检'; 
   }
 
   // ── 方法论卡片折叠 ──
