@@ -1135,18 +1135,19 @@ body {
 
   <!-- Tab 3: 我的内容参考 -->
   <div class="tab-panel hidden" id="tab-ref">
-    <div class="section-label"><span class="icon">🎯</span> 我的内容参考 <span class="tag">本周行业数据 × 你的产品 → 个性化笔记策略</span></div>
+    <div class="section-label"><span class="icon">🎯</span> 我的内容参考 <span class="tag">描述你的产品 → AI 帮你找卖点 → 出笔记策略</span></div>
 
     <div class="ref-intro">
-      <strong>这里不是模板库。</strong>每次生成都会读取本周真实跑量风向，结合你的产品卖点，推导出对你最有价值的内容打法。<br>
-      <span style="font-size:12px;color:var(--text2)">填得越具体，输出越精准。卖点不要写「好吃」，要写「冻干不结块/猪油渣手打」这类可感知的细节。</span>
+      <strong>不需要你先知道卖点是什么。</strong>只需要告诉我产品的客观事实——原料、工艺、价格、买家反馈——AI 会帮你推导出最适合的内容打法。<br>
+      <span style="font-size:12px;color:var(--text2)">填得越具体，输出越精准。「猪筒骨慢炖、炸响铃、9级辣」比「好吃、有特色」有用 10 倍。</span>
     </div>
 
     <div class="ref-form">
-      <div class="ref-form-title">告诉我你的产品</div>
+      <div class="ref-form-title">描述你的产品（不需要提炼，说事实就行）</div>
 
+      <!-- ① 品类 -->
       <div class="form-row">
-        <label class="form-label">品类 <span class="required">*</span></label>
+        <label class="form-label">① 品类 <span class="required">*</span></label>
         <div style="display:flex;flex-wrap:wrap;gap:8px" id="ref-catL1Grid">
           <button class="cat-l1-btn" data-cat="snack"   onclick="refSelectL1(this)">🍿 零食</button>
           <button class="cat-l1-btn" data-cat="instant" onclick="refSelectL1(this)">🍜 速食</button>
@@ -1156,73 +1157,88 @@ body {
         </div>
       </div>
 
-      <div class="form-row" style="margin-top:14px">
-        <label class="form-label">产品名称 <span style="font-size:11px;color:var(--text2)">（SPU 名或自定义，可不填）</span></label>
-        <input class="form-input" id="ref-spu" type="text" placeholder="例：XX 牌古法红糖 / 自家炒的辣条">
-      </div>
-
-      <div class="form-row" style="margin-top:14px">
-        <label class="form-label">核心卖点 <span class="required">*</span></label>
-        <input class="form-input" id="ref-selling" type="text" placeholder="例：猪油渣手打 / 0添加防腐剂 / 古法熬制48小时 / 产地直发">
-        <div style="margin-top:6px;font-size:11px;color:var(--text2)">填 2-4 个，逗号分隔。✅「冻干不结块、汤底分离」&nbsp;&nbsp;❌「好喝、高质量」</div>
-      </div>
-
-      <div class="form-row" style="margin-top:14px">
-        <label class="form-label">价格带 <span class="required">*</span></label>
-        <div style="display:flex;flex-wrap:wrap;gap:8px" id="ref-priceBtns">
-          <button class="price-btn" data-price="9.9以下"  onclick="refSelectPrice(this)">¥9.9 以下</button>
-          <button class="price-btn" data-price="9.9-29"   onclick="refSelectPrice(this)">¥9.9–29</button>
-          <button class="price-btn" data-price="29-59"    onclick="refSelectPrice(this)">¥29–59</button>
-          <button class="price-btn" data-price="59-99"    onclick="refSelectPrice(this)">¥59–99</button>
-          <button class="price-btn" data-price="99-199"   onclick="refSelectPrice(this)">¥99–199</button>
-          <button class="price-btn" data-price="199以上"  onclick="refSelectPrice(this)">¥199+</button>
+      <!-- ② 产品名 + 价格 -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px">
+        <div class="form-row">
+          <label class="form-label">② 产品叫什么</label>
+          <input class="form-input" id="ref-spu" type="text" placeholder="例：满小饱肥汁米线 / 古法红糖姜茶">
+        </div>
+        <div class="form-row">
+          <label class="form-label">③ 售价（单包/单件）<span class="required">*</span></label>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:4px" id="ref-priceBtns">
+            <button class="price-btn" data-price="9.9以下"  onclick="refSelectPrice(this)">¥9.9-</button>
+            <button class="price-btn" data-price="10-29元"  onclick="refSelectPrice(this)">¥10-29</button>
+            <button class="price-btn" data-price="30-59元"  onclick="refSelectPrice(this)">¥30-59</button>
+            <button class="price-btn" data-price="60-99元"  onclick="refSelectPrice(this)">¥60-99</button>
+            <button class="price-btn" data-price="100-199元" onclick="refSelectPrice(this)">¥100-199</button>
+            <button class="price-btn" data-price="200元以上" onclick="refSelectPrice(this)">¥200+</button>
+          </div>
         </div>
       </div>
 
+      <!-- ③ 原料/工艺 -->
       <div class="form-row" style="margin-top:14px">
-        <label class="form-label">目标人群 <span class="required">*</span> <span style="font-size:11px;color:var(--text2)">可多选</span></label>
+        <label class="form-label">④ 原料或工艺是什么 <span class="required">*</span></label>
+        <input class="form-input" id="ref-ingredient" type="text" placeholder="例：猪筒骨慢炖肥汁、炸响铃、9级魔鬼椒 / 古法石磨 / 产地直发不过中间商 / 0添加防腐剂">
+        <div style="margin-top:5px;font-size:11px;color:var(--text2)">写具体的原料名、工艺名、认证/奖项，不要写「精选原料」「传统工艺」这类模糊词</div>
+      </div>
+
+      <!-- ④ 买家场合 -->
+      <div class="form-row" style="margin-top:14px">
+        <label class="form-label">⑤ 买家通常在什么场合买你的产品 <span class="required">*</span> <span style="font-size:11px;color:var(--text2)">可多选</span></label>
         <div style="display:flex;flex-wrap:wrap;gap:8px" id="ref-audBtns">
-          <button class="aud-btn" data-aud="gift"     onclick="refToggleAud(this)">🎁 送礼/伴手礼</button>
-          <button class="aud-btn" data-aud="daily"    onclick="refToggleAud(this)">🧸 自己吃/日常</button>
-          <button class="aud-btn" data-aud="kids"     onclick="refToggleAud(this)">👶 宝妈/给孩子</button>
-          <button class="aud-btn" data-aud="office"   onclick="refToggleAud(this)">💼 办公室/下午茶</button>
-          <button class="aud-btn" data-aud="diet"     onclick="refToggleAud(this)">🏋️ 减脂/健身</button>
-          <button class="aud-btn" data-aud="elder"    onclick="refToggleAud(this)">🌸 送长辈/孝心</button>
-          <button class="aud-btn" data-aud="student"  onclick="refToggleAud(this)">📚 学生/宿舍</button>
-          <button class="aud-btn" data-aud="midnight" onclick="refToggleAud(this)">🌙 深夜/加班</button>
+          <button class="aud-btn" data-aud="gift"     onclick="refToggleAud(this)">🎁 送礼/节日伴手礼</button>
+          <button class="aud-btn" data-aud="daily"    onclick="refToggleAud(this)">🧸 自己吃/日常囤货</button>
+          <button class="aud-btn" data-aud="kids"     onclick="refToggleAud(this)">👶 给孩子/宝妈选购</button>
+          <button class="aud-btn" data-aud="office"   onclick="refToggleAud(this)">💼 办公室茶歇/下午茶</button>
+          <button class="aud-btn" data-aud="diet"     onclick="refToggleAud(this)">🏋️ 减脂期/健身补充</button>
+          <button class="aud-btn" data-aud="elder"    onclick="refToggleAud(this)">🌸 送长辈/孝心礼</button>
+          <button class="aud-btn" data-aud="student"  onclick="refToggleAud(this)">📚 学生党/宿舍夜宵</button>
+          <button class="aud-btn" data-aud="midnight" onclick="refToggleAud(this)">🌙 深夜加班/追剧</button>
+          <button class="aud-btn" data-aud="outdoor"  onclick="refToggleAud(this)">🏕️ 户外/露营/运动</button>
         </div>
       </div>
 
+      <!-- ⑤ 买家评论 -->
       <div class="form-row" style="margin-top:14px">
-        <label class="form-label">主要竞争压力 <span style="font-size:11px;color:var(--text2)">（可不填）</span></label>
-        <input class="form-input" id="ref-competitor" type="text" placeholder="例：同价位类似产品太多 / 大牌在抢流量 / 同质化严重">
+        <label class="form-label">⑥ 买家最常说的话是什么 <span style="font-size:11px;color:var(--text2)">（直接粘贴 1-3 条真实评论，越真实越好）</span></label>
+        <textarea class="form-input" id="ref-review" rows="3" style="resize:vertical" placeholder="例：&#10;「这个汤底真的太香了，比外卖强多了」&#10;「每次焦虑的时候都会煮一碗，好治愈」&#10;「包装也太精致了，送朋友很有面子」"></textarea>
+        <div style="margin-top:5px;font-size:11px;color:var(--text2)">💡 这个字段最有价值——买家评论里直接藏着你的核心卖点和人群画像</div>
       </div>
 
-      <div class="form-row" style="margin-top:14px">
-        <label class="form-label">这次内容主要解决什么 <span style="font-size:11px;color:var(--text2)">（可多选）</span></label>
-        <div style="display:flex;flex-wrap:wrap;gap:8px">
-          <button class="cat-l2-btn" data-goal="ctr"   onclick="refToggleGoal(this)">📈 提升封面点击率</button>
-          <button class="cat-l2-btn" data-goal="cvr"   onclick="refToggleGoal(this)">🛒 提升商卡转化</button>
-          <button class="cat-l2-btn" data-goal="brand" onclick="refToggleGoal(this)">🏷️ 建立品牌认知</button>
-          <button class="cat-l2-btn" data-goal="new"   onclick="refToggleGoal(this)">✨ 新品破冷启动</button>
-          <button class="cat-l2-btn" data-goal="node"  onclick="refToggleGoal(this)">🗓️ 节点/大促借势</button>
+      <!-- ⑥ 竞争和目标（可选） -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px">
+        <div class="form-row">
+          <label class="form-label">⑦ 你觉得和同类产品最不一样的一点 <span style="font-size:11px;color:var(--text2)">（可不填，说不清楚也没关系）</span></label>
+          <input class="form-input" id="ref-diff" type="text" placeholder="例：我们家是手打的 / 配料比别人多 3 包 / 是同类里最辣的">
+        </div>
+        <div class="form-row">
+          <label class="form-label">⑧ 这次内容主要想解决什么</label>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:4px">
+            <button class="cat-l2-btn" data-goal="ctr"   onclick="refToggleGoal(this)">📈 提升点击率</button>
+            <button class="cat-l2-btn" data-goal="cvr"   onclick="refToggleGoal(this)">🛒 提升转化</button>
+            <button class="cat-l2-btn" data-goal="brand" onclick="refToggleGoal(this)">🏷️ 建立认知</button>
+            <button class="cat-l2-btn" data-goal="new"   onclick="refToggleGoal(this)">✨ 新品冷启动</button>
+            <button class="cat-l2-btn" data-goal="node"  onclick="refToggleGoal(this)">🗓️ 节点借势</button>
+          </div>
         </div>
       </div>
 
       <button class="btn-gen-main" onclick="generateRefV2()" id="genRefBtn">
-        🤖 生成我的内容策略（AI 分析）
+        🤖 AI 分析：找到我的卖点 + 出笔记策略
       </button>
     </div>
 
+    <!-- 结果区 -->
     <div id="ref-result-area" style="display:none;margin-top:24px">
       <div class="section-label"><span class="icon">✨</span> AI 分析结果 <span class="tag" id="ref-result-meta"></span></div>
       <div id="ref-result-loading" style="text-align:center;padding:40px;font-size:14px;color:var(--text2)">
         <div style="font-size:28px;margin-bottom:12px">🤖</div>
-        正在读取本周行业数据 + 分析你的产品定位…<br>
-        <span style="font-size:12px;color:var(--text3)">大约需要 15-20 秒</span>
+        正在读取本周行业数据 + 推导你的产品卖点和人群…<br>
+        <span style="font-size:12px;color:var(--text3)">大约需要 15-25 秒</span>
       </div>
       <div id="ref-result-content" style="display:none"></div>
-      <div style="display:none;flex;gap:10px;margin-top:20px" id="ref-result-actions">
+      <div style="display:none;gap:10px;margin-top:20px" id="ref-result-actions">
         <button class="btn-refresh" onclick="generateRefV2()">↻ 重新生成</button>
         <button class="btn-copy-all" onclick="copyRefResult()">📋 复制全部策略</button>
       </div>
@@ -1668,65 +1684,91 @@ body {
   }
 
   function buildRefPrompt(params) {
-    const { catId, catName, spuName, selling, price, audiences, competitor, goals } = params;
+    const { catId, catName, spuName, price, ingredient, occasions, review, diff, goals } = params;
     const directions = getTab1TrendData(catId) || ['（本周数据未加载）'];
     const topNotes   = getTab1TopNotes(catId);
     const formulas   = getTab1Formulas();
     const topics     = getTab1Topics();
+
     const topNoteText = topNotes.length
       ? topNotes.map(n => '「' + n.title + '」 CTR ' + n.ctr + '%' + (n.tagCtr ? '，商卡转化 ' + n.tagCtr + '%' : '')).join('\n')
       : '（本周数据未加载，请刷新后重试）';
     const formulaText = formulas.length ? formulas.join('\n') : '（公式数据未加载）';
     const topicsText  = topics.length ? topics.join(' ') : '（话题数据未加载）';
     const dirText     = directions.map((d, i) => (i+1) + '. ' + d).join('\n');
-    const goalText    = goals.length ? '核心目标：' + goals.join('、') : '';
-    const compText    = competitor ? '竞争压力：' + competitor : '';
+    const goalText    = goals.length ? '商家本次目标：' + goals.join('、') : '';
 
-    return '你是一位深耕小红书休食行业的资深内容策划，手上有本周平台真实跑量数据。\n\n' +
-      '商家产品信息：\n' +
+    return '你是一位深耕小红书休食行业的资深内容策划，同时擅长从产品事实中挖掘真正的卖点和人群洞察。\n\n' +
+
+      '═══ 第一步：推导这个产品的核心卖点和人群（必须先做这一步）═══\n\n' +
+      '商家提供的产品事实如下：\n' +
       '【品类】' + catName + '\n' +
-      '【产品名/SPU】' + (spuName || '（未填）') + '\n' +
-      '【核心卖点】' + selling + '\n' +
-      '【价格带】' + price + '\n' +
-      '【目标人群】' + (audiences.length ? audiences.join('、') : '未指定') + '\n' +
-      (goalText ? goalText + '\n' : '') +
-      (compText ? compText + '\n' : '') +
-      '\n━━ 本周' + catName + '类目真实跑量风向（深度用好这些数据）━━\n' + dirText +
-      '\n\n━━ 本周同类目高CTR笔记标题（学习语言节奏）━━\n' + topNoteText +
-      '\n\n━━ 本周全行业高CTR标题结构公式━━\n' + formulaText +
-      '\n\n━━ 本周热门话题池（选5-8个打进内容）━━\n' + topicsText +
-      '\n\n━━ 休食内容创作5条核心方法论（评估每套命中哪些）━━\n' +
-      'D2 卖点前置：标题/封面前8字必须出现最核心的可感知卖点，绝不用模糊词开头\n' +
-      'D5 人群×场景：必须锁定「谁+在什么场景下」，越具体越好（不是"学生党"而是"备考期间宿舍深夜饿了"）\n' +
-      'D8 使用场景具体：不说功效，说使用体验的细节——味道/口感/动作/情绪反应，让用户产生"我就是这样"的共鸣\n' +
-      'D4 评论引导：正文结尾必须有让用户想回复的具体问题或行动钩子（不是"快来购买"，是"你平时什么时候最需要它"）\n' +
-      'D9 内容饱满：图文200字以上，有真实使用画面，不能是纯文字+产品白图\n' +
-      '\n━━ 三感六度评估框架 ━━\n' +
-      '三感：视觉感（封面是否抓眼）、味觉感（味道描述是否可感知）、情绪感（读者是否有感触）\n' +
-      '六度：真实度/场景度/细节度/卖点度/传播度/转化度\n' +
-      '\n━━ 违规红线（三套方案均不得出现）━━\n' +
-      '❌ 极值词：最好/第一/唯一/极致/史上/天花板/NO.1\n' +
-      '❌ 功效词（普通食品）：减肥/瘦身/燃脂/美白/助消化/排毒/降血糖\n' +
-      '❌ 虚假承诺：X天瘦X斤/临床验证/医学证明\n' +
-      '❌ 诱导行为：加微信/私信我/点关注抽奖\n' +
-      '\n━━ 你的任务 ━━\n' +
-      '请输出S/A/B三个等级的笔记策略方向，每级1套（共3套）。\n\n' +
-      '【S级——借势本周最强风向，潜力最高】\n必须深度结合上方「本周跑量风向」某一条，注明用了第几条。真正复刻这条风向的逻辑，把产品嫁接进去。\n\n' +
-      '【A级——挖产品本质细节，差异化竞争】\n完全不看行业趋势，从产品某个具体细节/工艺/使用体验出发，找竞品不会写的切入角。\n\n' +
-      '【B级——人群精准锁定，转化优先】\n从目标人群的真实生活场景出发，用D5+D8为核心，专注把商卡转化率拉上去。\n\n' +
-      '━━ 每套方案输出格式（严格执行）━━\n\n' +
-      '▌S/A/B级 · [用一句话概括这套方案的核心思路]\n\n' +
-      '📌 方法论命中：[列出命中的D维编号]\n' +
-      '🎯 三感六度亮点：[说出这套方案最强的2个维度]\n\n' +
-      '📝 标题方向（给3条候选，每条≤20字含emoji）\n1.\n2.\n3.\n说明：[为什么这3条标题能跑量]\n\n' +
-      '🖼️ 封面策划\n画面：[描述封面里有什么，构图，颜色，有没有人]\n主文案：[≤8字，覆盖在封面上的文字]\n点击逻辑：[为什么用户会点]\n\n' +
-      '📄 正文框架（写出开头2句+结构提示）\n开头：[前2句，第一人称，有具体场景或细节]\n结构：[正文应该怎么展开]\n结尾钩子：[一个能让人回复评论的具体问题]\n\n' +
-      '🏷️ 推荐话题（5-8个，从本周热门话题池中选+补充）\n\n' +
-      '⚠️ 违规自查：[逐条检查，有风险词标出并给替换词，全部通过则写"✅ 无违规风险"]\n\n' +
-      '---\n\n' +
-      '最后单独输出【本周最值得蹭的1个话题】：\n> 说明为什么这个话题和这个产品最契合，给出一条专门为这个话题量身设计的标题。';
-  }
+      '【产品名】' + (spuName || '（未填，用品类代称）') + '\n' +
+      '【售价】' + price + '\n' +
+      '【原料/工艺】' + ingredient + '\n' +
+      '【买家购买场合】' + (occasions.length ? occasions.join('、') : '（未选择）') + '\n' +
+      '【买家真实评论】\n' + (review ? review : '（未填写）') + '\n' +
+      '【与同类最不同的一点】' + (diff || '（商家未填，请从原料/工艺中推断）') + '\n' +
+      (goalText ? goalText + '\n' : '') + '\n' +
 
+      '请你基于以上事实，先完成以下推导（用"【AI推导】"标注，让商家看到你的分析过程）：\n\n' +
+      '【AI推导】你的核心卖点可能是：\n' +
+      '（从原料/工艺/价格/评论里找 2-3 个最有差异化的点，用一句话说清楚为什么这是卖点，不要说废话）\n\n' +
+      '【AI推导】你最可能的核心人群是：\n' +
+      '（不要只写"年轻人"，要写出具体画像：什么年龄/生活状态/在什么场景下会需要这个产品/他们的真实痛点是什么）\n\n' +
+      '【AI推导】你的产品最强的情绪价值是：\n' +
+      '（买家用了这个产品后会有什么感受/情绪变化，这是内容能打的核心）\n\n' +
+      '【AI推导】你的竞争壁垒在哪：\n' +
+      '（同价位产品为什么选你，一句话说清楚）\n\n' +
+
+      '═══ 第二步：结合本周行业数据，输出 S/A/B 三套笔记策略 ═══\n\n' +
+      '━━ 本周' + catName + '类目真实跑量风向 ━━\n' + dirText + '\n\n' +
+      '━━ 本周同类目高CTR笔记标题（学习语言节奏和切入角）━━\n' + topNoteText + '\n\n' +
+      '━━ 本周全行业高CTR标题结构公式 ━━\n' + formulaText + '\n\n' +
+      '━━ 本周热门话题池（选5-8个打进内容）━━\n' + topicsText + '\n\n' +
+
+      '━━ 休食内容创作核心方法论 ━━\n' +
+      'D2 卖点前置：标题/封面前8字必须出现最核心的可感知卖点（"猪筒骨慢炖"比"汤底浓郁"强10倍）\n' +
+      'D5 人群×场景精准锁定：必须指定"谁在什么具体时间地点"（"宿舍备考夜里饿了"比"学生党"强10倍）\n' +
+      'D8 使用体验具体化：不说功效，说感受——味道/口感/做法/情绪反应，让用户读完觉得"我就是这样"\n' +
+      'D4 评论钩子设计：正文结尾设计一个让人想回复的具体问题（不是"赶紧下单"，是"你一般几点吃夜宵"）\n' +
+      'D9 内容饱满有料：图文200字以上，视频有实际使用画面，不能是产品白图+几行字\n\n' +
+
+      '━━ 违规红线（三套均不得触碰）━━\n' +
+      '❌ 极值词：最好/第一/唯一/极致/史上/天花板/NO.1/超越\n' +
+      '❌ 功效词（普通食品）：减肥/瘦身/燃脂/美白/助消化/排毒/降血糖/治疗\n' +
+      '❌ 虚假承诺：X天瘦X斤/临床验证/医学证明/100%有效\n' +
+      '❌ 诱导行为：加微信/私信我/点关注抽奖/加群\n\n' +
+
+      '━━ 输出格式要求 ━━\n\n' +
+      '先输出【AI推导】部分（4段），然后用"---"分隔，再输出三套策略。\n\n' +
+      '三套策略各自对应不同逻辑：\n\n' +
+      '▌S级——借势本周最强风向\n' +
+      '必须深度结合上方「本周跑量风向」某一条（注明"用了第X条风向"），复刻该风向的底层逻辑，把这个产品的核心卖点嫁接进去。不是简单提一句，而是真正用这个产品演示这条风向。\n\n' +
+      '▌A级——挖产品本质，找竞品不会写的角度\n' +
+      '完全不看行业趋势，从产品的某个具体原料细节/工艺/使用体验出发，找一个同品类竞品不会也不能写的内容切入角。\n\n' +
+      '▌B级——人群场景精准，专注提升商卡转化\n' +
+      '从【AI推导】里识别出的核心人群的真实生活场景出发，用D5+D8为核心，正文重点描写使用体验，设计一个强转化的评论钩子。\n\n' +
+      '每套格式：\n\n' +
+      '▌X级 · [一句话说清楚这套方案的核心切入逻辑]\n\n' +
+      '📌 命中方法论：D? D?\n' +
+      '🎯 主打情绪/卖点：[这套方案主打哪个维度]\n\n' +
+      '📝 标题候选（3条，每条≤20字含emoji，字数不够重写）\n' +
+      '1. \n2. \n3. \n' +
+      '说明：[为什么这3条能跑量，用了什么标题结构公式]\n\n' +
+      '🖼️ 封面策划\n' +
+      '画面：[有什么/怎么构图/什么色调/有没有人]\n' +
+      '封面文案：[≤8字，直接覆盖在封面上的文字]\n' +
+      '点击逻辑：[用户为什么会点这个封面]\n\n' +
+      '📄 正文开头（写出前3句话，第一人称，有具体场景或细节）\n\n' +
+      '结尾钩子：[一个让人想回复评论的具体问题]\n\n' +
+      '🏷️ 推荐话题（5-8个，优先从本周热门话题池里选）\n\n' +
+      '⚠️ 违规自查：[逐项检查，有风险词标出并给替换方案，全通过写"✅ 无违规风险"]\n\n' +
+      '---\n\n' +
+      '最后输出：\n' +
+      '💡【本周最值得蹭的话题 × 这个产品】\n' +
+      '> 说明这个话题和这个产品为什么天然契合，给出一条专门为这个话题量身设计的标题（≤20字）';
+  }
   function renderRefAIResult(text) {
     const lines = text.split('\n');
     let html = '<div style="font-size:14px;line-height:1.8;color:var(--text)">';
@@ -1759,18 +1801,22 @@ body {
 
   async function generateRefV2() {
     if (!refCatId) { alert('请先选择品类'); return; }
-    if (!refPrice) { alert('请选择价格带'); return; }
-    const selling = document.getElementById('ref-selling').value.trim();
-    if (!selling) { alert('请填写核心卖点（例：猪油渣手打/0添加防腐剂）'); return; }
-    if (refAudiences.length === 0) { alert('请至少选择一个目标人群'); return; }
+    if (!refPrice) { alert('请选择价格带（售价）'); return; }
+    const ingredient = document.getElementById('ref-ingredient').value.trim();
+    if (!ingredient) { alert('请填写原料或工艺（第④项）'); return; }
+    if (refAudiences.length === 0) { alert('请至少选择一个买家购买场合（第⑤项）'); return; }
 
     const catNameMap = { snack:'零食', instant:'速食', drink:'饮品', liquor:'酒类', herb:'中式滋补' };
     const params = {
-      catId: refCatId, catName: catNameMap[refCatId] || refCatId,
-      spuName: document.getElementById('ref-spu').value.trim(),
-      selling: selling, price: refPrice, audiences: refAudiences,
-      competitor: document.getElementById('ref-competitor').value.trim(),
-      goals: refGoals
+      catId:      refCatId,
+      catName:    catNameMap[refCatId] || refCatId,
+      spuName:    document.getElementById('ref-spu').value.trim(),
+      price:      refPrice,
+      ingredient: ingredient,
+      occasions:  refAudiences,
+      review:     document.getElementById('ref-review').value.trim(),
+      diff:       document.getElementById('ref-diff').value.trim(),
+      goals:      refGoals
     };
 
     const area    = document.getElementById('ref-result-area');
@@ -1786,7 +1832,7 @@ body {
 
     const btn = document.getElementById('genRefBtn');
     btn.disabled = true;
-    btn.textContent = '⏳ AI 分析中（约15秒）…';
+    btn.textContent = '⏳ AI 分析中（约20秒）…';
     window.scrollTo({ top: area.offsetTop - 80, behavior: 'smooth' });
 
     try {
@@ -1797,10 +1843,11 @@ body {
         body: JSON.stringify({
           model: 'doubao-seed-2-0-lite-260215',
           messages: [
-            { role: 'system', content: '你是专业的小红书休食行业内容策划专家，精通平台算法和行业数据。请按用户要求的格式严格输出，不要添加额外开场白或结束语。' },
+            { role: 'system', content: '你是专业的小红书休食行业内容策划专家，擅长从产品事实中挖掘真正的差异化卖点和人群洞察，并结合平台真实数据制定内容策略。请按用户要求的格式严格输出，不要加额外开场白。' },
             { role: 'user',   content: prompt }
           ],
-          max_tokens: 3000, temperature: 0.75
+          max_tokens: 3500,
+          temperature: 0.72
         })
       });
       const data = await resp.json();
@@ -1809,7 +1856,7 @@ body {
       loading.style.display = 'none';
       content.innerHTML = renderRefAIResult(result);
       content.style.display = 'block';
-      if (actions) actions.style.display = 'flex';
+      if (actions) { actions.style.display = 'flex'; }
       meta.textContent = params.catName + ' · ' + params.price + ' · 本周数据驱动';
       window._lastRefResult = result;
       gtag('event', 'ref_generated_v2', { cat: refCatId, price: refPrice });
@@ -1819,10 +1866,9 @@ body {
       content.style.display = 'block';
     } finally {
       btn.disabled = false;
-      btn.textContent = '🤖 重新生成';
+      btn.textContent = '🤖 重新分析';
     }
   }
-
   function copyRefResult() {
     const text = window._lastRefResult || document.getElementById('ref-result-content').innerText;
     navigator.clipboard.writeText(text).then(function() {
