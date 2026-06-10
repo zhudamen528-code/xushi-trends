@@ -1002,80 +1002,161 @@ body {
 }
 
 
-/* === V8d 品类风向 === */
-.cat-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-.cat-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 12px;
-      min-width: 700px;
-    }
-.cat-card {
-      background: var(--card-bg);
-      border-radius: 14px;
-      padding: 18px 16px;
-      border: 1px solid var(--border);
-      transition: border-color 0.2s;
-    }
-.cat-head {
-      font-size: 14px;
-      font-weight: 700;
-      margin-bottom: 12px;
-      padding: 8px 12px;
-      border-radius: 8px;
-      color: #fff;
-    }
-.cat-name {
-      font-size: 14px;
-      font-weight: 700;
-      margin-bottom: 12px;
-      padding-bottom: 10px;
-      border-bottom: 2px solid #f5f0eb;
-    }
-.cat-items { display: flex; flex-direction: column; gap: 8px; }
-.cat-item {
-      font-size: 12px;
-      color: #94a3b8;
-      line-height: 1.5;
-      display: flex;
-      gap: 6px;
-      align-items: flex-start;
-    }
-.cat-dot { font-weight: 700; font-size: 13px; flex-shrink: 0; margin-top: 1px; }
-.cat-dot      { color: #999; }
-.cat-focus {
-      margin-top: 12px;
-      padding: 8px 10px;
-      background: rgba(99,102,241,0.08);
-      border: 1px solid rgba(99,102,241,0.2);
-      border-radius: 8px;
-      font-size: 11px;
-      font-weight: 600;
-      color: #818cf8;
-    }
-.cat-grid { grid-template-columns: repeat(2, 1fr); min-width: unset; }
-.cat-wrap {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scroll-snap-type: x mandatory;
-        padding-bottom: 8px;
-      }
-.cat-grid {
-        grid-template-columns: repeat(5, 80vw);
-        min-width: unset;
-      }
-.cat-card {
-        scroll-snap-align: start;
-      }
-.cat-select-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-.cat-radio { cursor: pointer; }
-.hero-cat { background: linear-gradient(135deg,#e8f5e9,#f1f8e9); }
-.hero-cat h2 { color: #2e7d32; }
-
+/* === V8e 卖点助手 CSS ===*/
+.ref-grid     { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.ref-intro {
+  background: var(--bg2);
+  border-radius: var(--r14);
+  padding: 16px 20px;
+  font-size: 14px;
+  color: var(--text2);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+.ref-form {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--r18);
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-sm);
+}
+.ref-form-title { font-size: 16px; font-weight: 800; color: var(--text); margin-bottom: 20px; letter-spacing: -.3px; }
+.ref-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--r18);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+}
+.ref-card-title { font-size: 11px; font-weight: 700; color: var(--text3); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 14px; }
+.ref-tag {
+  display: inline-block;
+  margin: 3px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  background: rgba(255,59,48,.08);
+  color: var(--red);
+}
+.ref-template {
+  border-radius: var(--r10);
+  padding: 12px 16px;
+  margin: 8px 0;
+  font-size: 13px;
+  line-height: 1.65;
+  background: var(--bg2);
+  color: var(--text);
+  border-left: 3px solid var(--text);
+}
+.ref-case {
+  border: 1px solid var(--border);
+  border-radius: var(--r10);
+  padding: 12px 16px;
+  margin: 8px 0;
+  background: var(--bg2);
+}
+.ref-actions { display: flex; gap: 10px; margin-top: 16px; }
+.ref-grid    { grid-template-columns: 1fr; }
+.price-btn.active {
+  background: var(--text);
+  color: #fff;
+  border-color: var(--text);
+}
+.aud-btn {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1.5px solid var(--border);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  background: var(--bg);
+  color: var(--text2);
+  transition: all .15s;
+}
+.aud-btn.active {
+  background: var(--purple);
+  color: #fff;
+  border-color: var(--purple);
+}
+.form-row   { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+.form-label { font-size: 13px; font-weight: 600; color: var(--text2); }
+.form-input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--r10);
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  background: var(--bg);
+  color: var(--text);
+  transition: border-color .15s, box-shadow .15s;
+}
+.required   { color: var(--red); }
+.btn-gen-main {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  padding: 16px;
+  background: var(--text);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  font-size: 15px;
+  font-weight: 800;
+  font-family: inherit;
+  cursor: pointer;
+  letter-spacing: -.3px;
+  transition: opacity .15s, transform .1s;
+}
+.btn-gen-main:hover { opacity: .88; }
+.btn-gen-main:active { transform: scale(.99); }
+.btn-gen-main:disabled { opacity: .4; cursor: not-allowed; }
+.btn-refresh {
+  flex: 1;
+  border-radius: var(--r10);
+  padding: 11px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  background: var(--bg2);
+  border: 1.5px solid var(--border);
+  color: var(--text2);
+  transition: background .15s;
+}
+.btn-copy-all {
+  flex: 1;
+  border-radius: var(--r10);
+  padding: 11px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  background: var(--text);
+  border: none;
+  color: #fff;
+  transition: opacity .15s;
+}
+.cat-l1-btn,.cat-l2-btn,.price-btn,.aud-btn{padding:6px 12px;border-radius:6px;border:1px solid #e0e0e0;background:#fafafa;color:#555;font-size:12px;cursor:pointer;transition:all .15s}
+.cat-l1-btn:hover,.cat-l2-btn:hover,.price-btn:hover,.aud-btn:hover{border-color:#ff2442;color:#ff2442}
+.cat-l1-btn.active,.cat-l2-btn.active,.price-btn.active,.aud-btn.active{background:#ff2442;color:white;border-color:#ff2442}
+.ref-intro{padding:14px;background:#fff9f5;border-left:3px solid #ff6b35;border-radius:6px;margin-bottom:16px;font-size:13px;color:#555;line-height:1.6}
+.ref-form{background:white;border:1px solid #eee;border-radius:10px;padding:18px}
+.ref-form-title{font-size:14px;font-weight:600;color:#333;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid #f0f0f0}
+.form-row{display:flex;flex-direction:column}
+.form-label{font-size:13px;color:#444;margin-bottom:6px;font-weight:500}
+.form-input{padding:8px 12px;border:1px solid #ddd;border-radius:6px;font-size:13px;font-family:inherit}
+.form-input:focus{outline:none;border-color:#ff2442}
+.required{color:#ff2442}
+.btn-gen-main{width:100%;margin-top:18px;padding:12px;background:linear-gradient(90deg,#ff2442,#ff6b35);color:white;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:opacity .15s}
+.btn-gen-main:hover{opacity:0.9}
+.btn-gen-main:disabled{opacity:0.5;cursor:not-allowed}
+.btn-refresh,.btn-copy-all{padding:8px 16px;border-radius:6px;border:1px solid #ff2442;background:white;color:#ff2442;cursor:pointer;font-size:13px}
+.btn-refresh:hover,.btn-copy-all:hover{background:#fff0f0}
 /* V8d cat-grid 覆盖：响应式纵向布局 */
 #tab-cat .cat-wrap { overflow: visible !important; }
 #tab-cat .cat-grid { 
@@ -1455,7 +1536,7 @@ body {
     <button class="tab-btn" onclick="switchTab(event,'ctr2')">🔗 CTR2 商品卡</button>
     <button class="tab-btn" onclick="switchTab(event,'cvr')">💵 CVR 转化</button>
     <button class="tab-btn" onclick="switchTab(event,'price')">💎 件单价</button>
-    <button class="tab-btn" onclick="switchTab(event,'cat')">📦 品类风向</button>
+    <button class="tab-btn" onclick="switchTab(event,'cat')">🎁 卖点&策划助手</button>
     <button class="tab-btn" onclick="switchTab(event,'audit')">🚦 违规预审</button>
     <button class="tab-btn" onclick="switchTab(event,'tools')">🛠️ 我的参考</button>
   </div>
@@ -1501,7 +1582,7 @@ body {
       <div class="formula-line"><strong>笔记 GMV = GPM × 曝光（PV） ÷ 1000</strong></div>
       <div class="formula-line"><strong>GPM = CTR1 × CTR2 × CVR × 件单价 × 1000</strong></div>
       <div class="formula-flow">笔记曝光 → <span class="step ctr1">👆 封面点击</span> → <span class="step ctr2">🔗 商品卡点击</span> → <span class="step cvr">💵 下单</span> → <span class="step price">💎 客单价</span></div>
-      <div class="formula-tip">📍 <strong>GPM 是你笔记生意提升的核心</strong>：曝光（PV）取决于平台分发，但 GPM 是商家自己 100% 可控的——只要 GPM 提升，每一份曝光能赚到的钱就更多。</div>
+      <div class="formula-tip">📍 <strong>GPM 是你笔记生意提升的核心</strong>：GPM 是商家自己 100% 可控的。GPM 提升不仅让每一份曝光能赚到的钱更多，平台也会把流量倾斜给 GPM 高的笔记——所以提升 GPM 是「单价 × 流量」双重增长。</div>
     </div>
   </div>
 
@@ -1695,73 +1776,114 @@ body {
   </div>
 </div>
 <div class="tab-panel hidden" id="tab-cat">
-  <div class="hero hero-sub hero-cat">
-    <h2>📦 品类风向 · 5 大子品类内容方向</h2>
-    <p class="meta">休食 5 大子品类（零食 / 速食 / 饮品 / 茶酒 / 中式滋补）的内容方向参考，结合本周大盘趋势</p>
-  </div>
-  <div class="section-label">
-    <span class="icon">📦</span> 品类风向
-    <span class="tag">休食5大品类内容方向（参考，下版本会按周更新）</span>
-  </div>
-  <div class="cat-wrap">
-    <div class="cat-grid">
+    <div class="section-label"><span class="icon">🎁</span> 卖点 & 内容策划助手 <span class="tag">填表格 → 一键生成完整 AI prompt → 复制到你的 AI 用</span></div>
 
-      <div class="cat-card">
-        <div class="cat-head snack">🍿 零食</div>
-        <div class="cat-items">
-          <div class="cat-item"><span class="cat-dot up">↑</span><span>「裸寄」反向吸睛持续爆量：卤味/糖果/果干多条同题 CTR 20~32%，最高曝光 83万+</span></div>
-          <div class="cat-item"><span class="cat-dot up">↑</span><span>仅退款情绪共鸣：商家视角「什么都仅退款只会害了你」CTR 20~25%，曝光 6~70万</span></div>
-          <div class="cat-item"><span class="cat-dot">→</span><span>节日礼品/新口味冲量：迪拜曲奇/Apple礼包 CTR 20~25%，商卡转化 4~18%</span></div>
-        </div>
-        <div class="cat-focus">重点关注：裸寄/仅退款情绪共鸣 + 节日礼品场景</div>
-      </div>
-
-      <div class="cat-card">
-        <div class="cat-head fast">🍜 速食</div>
-        <div class="cat-items">
-          <div class="cat-item"><span class="cat-dot up">↑</span><span>商家被抄/破防情绪：「刚创业还没靠XX赚钱就被抄袭」CTR 18~23%，曝光 16~23万</span></div>
-          <div class="cat-item"><span class="cat-dot up">↑</span><span>价格性价比反差：「30r够吃两周，终结外卖焦虑」CTR 20%，商卡转化 15.7%</span></div>
-          <div class="cat-item"><span class="cat-dot">→</span><span>减脂低卡场景稳定：「能撑死人但热量很低」CTR 22.3%，商卡转化 16.5%</span></div>
-        </div>
-        <div class="cat-focus">重点关注：商家情绪叙事 + 外卖替代/性价比场景</div>
-      </div>
-
-      <div class="cat-card">
-        <div class="cat-head drink">🧋 饮品</div>
-        <div class="cat-items">
-          <div class="cat-item"><span class="cat-dot up">↑</span><span>体型焦虑精准人群：「肚子这样再节食也没用」养生茶系列 CTR 19~25%，曝光 5~55万</span></div>
-          <div class="cat-item"><span class="cat-dot up">↑</span><span>好奇疑问句高点击：「请问这杯是神吗？？？！」CTR 26.4%，曝光 7.4万，商卡 10.9%</span></div>
-          <div class="cat-item"><span class="cat-dot">→</span><span>生活场景轻松调性：普洱/乳制品日常趣味感 CTR 18~23%，商卡 5~8%</span></div>
-        </div>
-        <div class="cat-focus">重点关注：体型焦虑功效承诺 + 好奇疑问句式</div>
-      </div>
-
-      <div class="cat-card">
-        <div class="cat-head liquor">🍵 茶/酒</div>
-        <div class="cat-items">
-          <div class="cat-item"><span class="cat-dot up">↑</span><span>好奇疑问句引爆点击：「请问这杯是神吗？？？！」花草茶 CTR 26.4%，曝光 7.4万，商卡 10.9%，悬念感极强</span></div>
-          <div class="cat-item"><span class="cat-dot up">↑</span><span>普洱×生活轻松场景：「一个人出门兜里太轻了，请带上猫」CTR 23.6%，「6.0猫盒预告 仲夏夜之猫」CTR 24.7%，IP调性带动购买</span></div>
-          <div class="cat-item"><span class="cat-dot">→</span><span>体型焦虑+养生茶精准人群：「肚子这样再节食也没用」系列 CTR 19~25%，曝光 5~55万，精准人群即转化</span></div>
-        </div>
-        <div class="cat-focus">重点关注：好奇疑问句式 + 体型焦虑功效场景</div>
-      </div>
-
-      <div class="cat-card">
-        <div class="cat-head herb">🌿 中式滋补</div>
-        <div class="cat-items">
-          <div class="cat-item"><span class="cat-dot up">↑</span><span>长辈/专家权威背书：「93岁老先生推荐！坚持吃了一个月好舒服」CTR 23.8%，权威人物背书是最稳定信任公式</span></div>
-          <div class="cat-item"><span class="cat-dot up">↑</span><span>亚健康摆脱功效：「黄精吃吧！成功摆脱了班味」CTR 24.7%；「如果你的肚子也是这样，再节食也没用」CTR 19~25%，痛点精准触达</span></div>
-          <div class="cat-item"><span class="cat-dot">→</span><span>母亲节礼品场景：「50+的妈妈想要什么礼物」阿胶膏方 CTR 22.6%，节日礼赠+中老年人群，是5月主力内容方向</span></div>
-        </div>
-        <div class="cat-focus">重点关注：长辈背书信任 + 母亲节礼品场景</div>
-      </div>
-
+    <div class="ref-intro">
+      <strong>不需要你先想清楚卖点。</strong>填一下产品事实——原料、工艺、价格、买家说啥——一键生成 prompt，复制粘贴到豆包/Kimi/DeepSeek/ChatGPT 任一 AI 都能跑，AI 会推导你的核心卖点 + 出 S/A/B 三档笔记策略。<br>
+      <span style="font-size:12px;color:var(--text2)">填得越具体，输出越精准。「猪筒骨慢炖、炸响铃、9级辣」比「好吃、有特色」有用 10 倍。</span>
     </div>
-  </div>
-  <div class="tips-box" style="margin-top:20px">
-    <strong>💡 怎么用：</strong> 找到你的产品所在品类，看本周该品类的"重点关注"方向，参考 ↑ 上升趋势的内容形式仿写。
-  </div>
-</div>
+
+    <div class="ref-form">
+      <div class="ref-form-title">描述你的产品（不需要提炼，说事实就行）</div>
+
+      <!-- ① 品类 -->
+      <div class="form-row">
+        <label class="form-label">① 品类 <span class="required">*</span></label>
+        <div style="display:flex;flex-wrap:wrap;gap:8px" id="ref-catL1Grid">
+          <button class="cat-l1-btn" data-cat="snack"   onclick="refSelectL1(this)">🍿 零食</button>
+          <button class="cat-l1-btn" data-cat="instant" onclick="refSelectL1(this)">🍜 速食</button>
+          <button class="cat-l1-btn" data-cat="drink"   onclick="refSelectL1(this)">🧋 饮品</button>
+          <button class="cat-l1-btn" data-cat="liquor"  onclick="refSelectL1(this)">🍷 酒类</button>
+          <button class="cat-l1-btn" data-cat="herb"    onclick="refSelectL1(this)">🌿 中式滋补</button>
+        </div>
+      </div>
+
+      <!-- ② 产品名 + 价格 -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px">
+        <div class="form-row">
+          <label class="form-label">② 产品叫什么</label>
+          <input class="form-input" id="ref-spu" type="text" placeholder="例：满小饱肥汁米线 / 古法红糖姜茶">
+        </div>
+        <div class="form-row">
+          <label class="form-label">③ 售价（单包/单件）<span class="required">*</span></label>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:4px" id="ref-priceBtns">
+            <button class="price-btn" data-price="9.9以下"  onclick="refSelectPrice(this)">¥9.9-</button>
+            <button class="price-btn" data-price="10-29元"  onclick="refSelectPrice(this)">¥10-29</button>
+            <button class="price-btn" data-price="30-59元"  onclick="refSelectPrice(this)">¥30-59</button>
+            <button class="price-btn" data-price="60-99元"  onclick="refSelectPrice(this)">¥60-99</button>
+            <button class="price-btn" data-price="100-199元" onclick="refSelectPrice(this)">¥100-199</button>
+            <button class="price-btn" data-price="200元以上" onclick="refSelectPrice(this)">¥200+</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ③ 原料/工艺 -->
+      <div class="form-row" style="margin-top:14px">
+        <label class="form-label">④ 原料或工艺是什么 <span class="required">*</span></label>
+        <input class="form-input" id="ref-ingredient" type="text" placeholder="例：猪筒骨慢炖肥汁、炸响铃、9级魔鬼椒 / 古法石磨 / 产地直发不过中间商 / 0添加防腐剂">
+        <div style="margin-top:5px;font-size:11px;color:var(--text2)">写具体的原料名、工艺名、认证/奖项，不要写「精选原料」「传统工艺」这类模糊词</div>
+      </div>
+
+      <!-- ④ 买家场合 -->
+      <div class="form-row" style="margin-top:14px">
+        <label class="form-label">⑤ 买家通常在什么场合买你的产品 <span class="required">*</span> <span style="font-size:11px;color:var(--text2)">可多选</span></label>
+        <div style="display:flex;flex-wrap:wrap;gap:8px" id="ref-audBtns">
+          <button class="aud-btn" data-aud="gift"     onclick="refToggleAud(this)">🎁 送礼/节日伴手礼</button>
+          <button class="aud-btn" data-aud="daily"    onclick="refToggleAud(this)">🧸 自己吃/日常囤货</button>
+          <button class="aud-btn" data-aud="kids"     onclick="refToggleAud(this)">👶 给孩子/宝妈选购</button>
+          <button class="aud-btn" data-aud="office"   onclick="refToggleAud(this)">💼 办公室茶歇/下午茶</button>
+          <button class="aud-btn" data-aud="diet"     onclick="refToggleAud(this)">🏋️ 减脂期/健身补充</button>
+          <button class="aud-btn" data-aud="elder"    onclick="refToggleAud(this)">🌸 送长辈/孝心礼</button>
+          <button class="aud-btn" data-aud="student"  onclick="refToggleAud(this)">📚 学生党/宿舍夜宵</button>
+          <button class="aud-btn" data-aud="midnight" onclick="refToggleAud(this)">🌙 深夜加班/追剧</button>
+          <button class="aud-btn" data-aud="outdoor"  onclick="refToggleAud(this)">🏕️ 户外/露营/运动</button>
+        </div>
+      </div>
+
+      <!-- ⑤ 买家评论 -->
+      <div class="form-row" style="margin-top:14px">
+        <label class="form-label">⑥ 买家最常说的话是什么 <span style="font-size:11px;color:var(--text2)">（直接粘贴 1-3 条真实评论，越真实越好）</span></label>
+        <textarea class="form-input" id="ref-review" rows="3" style="resize:vertical" placeholder="例：&#10;「这个汤底真的太香了，比外卖强多了」&#10;「每次焦虑的时候都会煮一碗，好治愈」&#10;「包装也太精致了，送朋友很有面子」"></textarea>
+        <div style="margin-top:5px;font-size:11px;color:var(--text2)">💡 这个字段最有价值——买家评论里直接藏着你的核心卖点和人群画像</div>
+      </div>
+
+      <!-- ⑥ 竞争和目标（可选） -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px">
+        <div class="form-row">
+          <label class="form-label">⑦ 你觉得和同类产品最不一样的一点 <span style="font-size:11px;color:var(--text2)">（可不填，说不清楚也没关系）</span></label>
+          <input class="form-input" id="ref-diff" type="text" placeholder="例：我们家是手打的 / 配料比别人多 3 包 / 是同类里最辣的">
+        </div>
+        <div class="form-row">
+          <label class="form-label">⑧ 这次内容主要想解决什么</label>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:4px">
+            <button class="cat-l2-btn" data-goal="ctr"   onclick="refToggleGoal(this)">📈 提升点击率</button>
+            <button class="cat-l2-btn" data-goal="cvr"   onclick="refToggleGoal(this)">🛒 提升转化</button>
+            <button class="cat-l2-btn" data-goal="brand" onclick="refToggleGoal(this)">🏷️ 建立认知</button>
+            <button class="cat-l2-btn" data-goal="new"   onclick="refToggleGoal(this)">✨ 新品冷启动</button>
+            <button class="cat-l2-btn" data-goal="node"  onclick="refToggleGoal(this)">🗓️ 节点借势</button>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn-gen-main" onclick="generateRefPrompt()" id="genRefBtn">
+        📋 生成 prompt 并自动复制到剪贴板
+      </button>
+    </div>
+
+    <!-- 结果区 -->
+    <div id="ref-result-area" style="display:none;margin-top:24px">
+      <div class="section-label"><span class="icon">✨</span> 生成的 prompt <span class="tag" id="ref-result-meta"></span></div>
+      <div id="ref-result-loading" style="text-align:center;padding:40px;font-size:14px;color:var(--text2)">
+        <div style="font-size:28px;margin-bottom:12px">🤖</div>
+        生成 prompt 中…<br>
+        <span style="font-size:12px;color:var(--text3)">不到 1 秒</span>
+      </div>
+      <div id="ref-result-content" style="display:none"></div>
+      <div style="display:none;gap:10px;margin-top:20px" id="ref-result-actions">
+        <button class="btn-refresh" onclick="generateRefPrompt()">↻ 重新生成</button>
+        <button class="btn-copy-all" onclick="copyRefResult()">📋 再次复制 prompt</button>
+      </div>
+    </div>
 <div class="tab-panel hidden" id="tab-audit">
     <div class="section-label"><span class="icon">🔍</span> 笔记体检 <span class="tag">贴入文案 · AI 自动体检 + 行业对标</span></div>
     <div class="check-form">
@@ -2904,6 +3026,139 @@ function filterCat(cat, btn) {
     }
   });
 }
+</script>
+<script>
+// V8e Tab 卖点&内容策划助手 - 生成 prompt 模式（不调 AI API）
+// 用 window.* 命名空间避免和已有 window.v8e.cat 等冲突
+window.v8e = window.v8e || { cat: null, price: null, aud: [], goal: [] };
+
+function refSelectL1(btn) {
+  document.querySelectorAll('#ref-catL1Grid .cat-l1-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  window.v8e.cat = btn.dataset.cat;
+}
+
+function refSelectPrice(btn) {
+  document.querySelectorAll('#ref-priceBtns .price-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  window.v8e.price = btn.dataset.price;
+}
+
+function refToggleAud(btn) {
+  btn.classList.toggle('active');
+  window.v8e.aud = Array.from(document.querySelectorAll('#ref-audBtns .aud-btn.active')).map(b => b.dataset.aud);
+}
+
+function refToggleGoal(btn) {
+  btn.classList.toggle('active');
+  window.v8e.goal = Array.from(document.querySelectorAll('#tab-cat .cat-l2-btn.active')).map(b => b.dataset.goal);
+}
+
+function buildRefPromptText(p) {
+  const catName = { snack: '零食', instant: '速食', drink: '饮品', liquor: '酒类', herb: '中式滋补' }[p.cat] || p.cat;
+  const audMap = { gift: '送礼/节日伴手礼', daily: '自己吃/日常囤货', kids: '给孩子/宝妈选购', office: '办公室茶歇/下午茶', diet: '减脂期/健身补充', elder: '送长辈/孝心礼', student: '学生党/宿舍夜宵', midnight: '深夜加班/追剧', outdoor: '户外/露营/运动' };
+  const goalMap = { ctr: '提升点击率', cvr: '提升转化率', brand: '建立认知', new: '新品冷启动', node: '节点借势' };
+  const audText = p.aud.map(a => audMap[a] || a).join('、') || '未指定';
+  const goalText = p.goal.map(g => goalMap[g] || g).join('、') || '未指定';
+
+  return `# 任务：基于以下产品事实，帮我推导核心卖点 + 制定 S/A/B 三档小红书笔记策略
+
+## 产品信息
+- 品类：${catName}
+- 产品名：${p.spu || '（未填，按品类通用打）'}
+- 售价：${p.price}
+- 原料/工艺：${p.ingredient}
+- 主要购买场合：${audText}
+- 买家真实评论：${p.review || '（暂无）'}
+- 与同类差异点：${p.diff || '（未填）'}
+- 本次内容目标：${goalText}
+
+## 你的输出要求（请严格按此结构）
+
+### 一、卖点拆解（先帮我想清楚）
+基于「原料/工艺」「买家评论」「差异点」三个维度，告诉我：
+1. **真正的核心卖点**是什么？（不要重复产品描述，要挖出"为什么用户会买"的本质原因）
+2. **最精准的人群画像**是谁？（不要只说"年轻女性"，要说出具体场景+情绪）
+3. **可挑战的痛点**有哪些？（用户痛在哪里 → 我的产品如何解决）
+
+### 二、S/A/B 三档笔记策略
+基于上面的卖点+人群洞察，输出三档可直接执行的笔记策划：
+
+**S 档（重点笔记，押宝爆款）**
+- 标题（3 候选，每个 ≤22 字，必带 emoji）
+- 封面建议（主体+场景+反差点）
+- 正文结构（开头钩子 / 中段证据 / 结尾 CTA）
+- 商品卡文案（突出价格 + 核心卖点）
+- 预估表现：CTR1 / CTR2 / CVR 各档参考
+
+**A 档（日常铺量，跑稳量）**
+- 同上结构，更日常化
+
+**B 档（测试款，跑差异方向）**
+- 同上结构，刻意做反差/小众路径
+
+### 三、本周内容方向建议
+结合本周休食大盘趋势（数据由"GMV 总览" Tab 提供：图文 CTR1 优秀线 10.1% / CTR2 35.6% / CVR 6.2% / 件单价 ¥46；视频 CTR1 7.7% / CTR2 8.9% / CVR 7.7% / 件单价 ¥41），告诉我：
+- 这周哪种类型的笔记最容易跑出来？
+- 我的产品该重点做哪个漏斗环节？
+
+—— 请直接开始输出，不要复述上面的指令。`;
+}
+
+async function generateRefPrompt() {
+  if (!window.v8e.cat) { alert('请选品类'); return; }
+  if (!window.v8e.price) { alert('请选价格区间'); return; }
+  const ingredient = (document.getElementById('ref-ingredient').value || '').trim();
+  if (!ingredient) { alert('请填原料或工艺'); return; }
+  if (window.v8e.aud.length === 0) { alert('至少选 1 个购买场合'); return; }
+
+  const params = {
+    cat: window.v8e.cat,
+    price: window.v8e.price,
+    spu: (document.getElementById('ref-spu').value || '').trim(),
+    ingredient: ingredient,
+    aud: window.v8e.aud,
+    review: (document.getElementById('ref-review').value || '').trim(),
+    diff: (document.getElementById('ref-diff').value || '').trim(),
+    goal: window.v8e.goal
+  };
+
+  const prompt = buildRefPromptText(params);
+  window._lastRefResult = prompt;
+
+  const area = document.getElementById('ref-result-area');
+  const loading = document.getElementById('ref-result-loading');
+  const content = document.getElementById('ref-result-content');
+  const actions = document.getElementById('ref-result-actions');
+  area.style.display = 'block';
+  loading.style.display = 'none';
+  content.style.display = 'block';
+  content.innerHTML = `
+    <div style="background:#fff9e0;border:1px solid #ffe9b3;border-radius:8px;padding:12px;margin-bottom:14px;font-size:13px;color:#5d4a1f">
+      ✅ Prompt 已自动复制到剪贴板。粘到豆包/Kimi/DeepSeek/ChatGPT 任一 AI 都能跑，约 20 秒出结果。
+    </div>
+    <pre style="background:#f8f9fa;border:1px solid #e0e0e0;border-radius:8px;padding:16px;font-size:12px;line-height:1.65;white-space:pre-wrap;word-wrap:break-word;max-height:600px;overflow:auto;color:#333">${prompt.replace(/</g,'&lt;')}</pre>
+  `;
+  if (actions) actions.style.display = 'flex';
+  area.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+  // 自动复制
+  try {
+    await navigator.clipboard.writeText(prompt);
+  } catch(e) {
+    console.warn('clipboard failed', e);
+  }
+}
+
+function copyRefResult() {
+  if (!window._lastRefResult) return;
+  navigator.clipboard.writeText(window._lastRefResult).then(() => {
+    alert('✅ 已复制到剪贴板');
+  }).catch(() => {
+    alert('复制失败，请手动选中文本复制');
+  });
+}
+
 </script>
 </body>
 </html>
