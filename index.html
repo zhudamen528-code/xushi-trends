@@ -1097,6 +1097,118 @@ body {
   .acc-summary { display: none; }
 }
 
+
+/* ── SIDEBAR LAYOUT ── */
+.main-layout {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+  margin-top: 24px;
+}
+.sidebar {
+  width: 200px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.main-content { flex: 1; min-width: 0; }
+
+.sidebar-section {}
+.sidebar-label {
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+.sidebar-cats {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.sidebar-cat {
+  display: flex;
+  align-items: center;
+  padding: 9px 12px;
+  border-radius: var(--r10);
+  border: 1.5px solid var(--border);
+  background: var(--card);
+  color: var(--text2);
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  text-align: left;
+  transition: all .15s;
+  gap: 6px;
+}
+.sidebar-cat:hover { background: var(--red-soft); color: var(--red); border-color: var(--red-mid); }
+.sidebar-cat.active { background: var(--red); color: #fff; border-color: var(--red); }
+
+.sidebar-navs {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.sidebar-nav {
+  display: block;
+  padding: 8px 10px;
+  border-radius: var(--r6);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text2);
+  text-decoration: none;
+  transition: background .12s, color .12s;
+}
+.sidebar-nav:hover { background: var(--bg); color: var(--red); }
+
+.sidebar-kpi { display: flex; flex-direction: column; gap: 6px; }
+.sidebar-kpi-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 10px;
+  border-radius: var(--r6);
+  background: var(--bg);
+  font-size: 12px;
+}
+.sidebar-kpi-row span { color: var(--text2); }
+.sidebar-kpi-row strong { color: var(--red); font-weight: 800; font-size: 13px; }
+
+/* ── trend-card 精简版 ── */
+.trend-dirs { display: flex; flex-direction: column; }
+.trend-dir {
+  display: flex;
+  gap: 8px;
+  padding: 9px 14px;
+  border-bottom: 1px solid var(--border2);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text);
+  align-items: flex-start;
+}
+.trend-dir:last-child { border-bottom: none; }
+.trend-dir .trend-num { flex-shrink: 0; }
+.trend-dir > span:last-child { flex: 1; }
+
+/* section anchors */
+#sec-trends, #sec-formula, #sec-topics, #sec-cats, #sec-top {
+  scroll-margin-top: 120px;
+}
+
+/* mobile: 隐藏 sidebar */
+@media (max-width: 900px) {
+  .main-layout { flex-direction: column; }
+  .sidebar { width: 100%; position: static; flex-direction: row; flex-wrap: wrap; gap: 10px; }
+  .sidebar-section { flex: 1; min-width: 140px; }
+  .sidebar-cats { flex-direction: row; flex-wrap: wrap; }
+  .sidebar-cat { padding: 7px 10px; font-size: 12px; }
+}
+
 </style>
 
 </head>
@@ -1155,10 +1267,42 @@ body {
     <button class="tab-btn" onclick="switchTab(event,'check')">🔍 笔记体检</button>
   </div>
 
-  <!-- Tab 1: 行业趋势 -->
-  <div class="tab-panel" id="tab-trends">
+  <div class="main-layout">
+    <div class="sidebar">
+  <div class="sidebar-section">
+    <div class="sidebar-label">品类筛选</div>
+    <div class="sidebar-cats">
+      <button class="sidebar-cat active" onclick="filterCat('all',this)">🍱 全部</button>
+      <button class="sidebar-cat" onclick="filterCat('snack',this)">🍿 零食</button>
+      <button class="sidebar-cat" onclick="filterCat('fast',this)">🍜 速食</button>
+      <button class="sidebar-cat" onclick="filterCat('drink',this)">🧋 饮品</button>
+      <button class="sidebar-cat" onclick="filterCat('liquor',this)">🍵 茶/酒</button>
+      <button class="sidebar-cat" onclick="filterCat('herb',this)">🌿 滋补</button>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-label">快速跳转</div>
+    <div class="sidebar-navs">
+      <a class="sidebar-nav" href="#sec-trends">🧭 本周风向</a>
+      <a class="sidebar-nav" href="#sec-formula">✍️ 标题公式</a>
+      <a class="sidebar-nav" href="#sec-topics">🔥 热点话题</a>
+      <a class="sidebar-nav" href="#sec-cats">📦 品类动向</a>
+      <a class="sidebar-nav" href="#sec-top">🏆 TOP 笔记</a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-label">本周数据</div>
+    <div class="sidebar-kpi">
+      <div class="sidebar-kpi-row"><span>最高封面CTR</span><strong>39%</strong></div>
+      <div class="sidebar-kpi-row"><span>最高商卡CTR</span><strong>88.6%</strong></div>
+      <div class="sidebar-kpi-row"><span>最高单篇曝光</span><strong>83万+</strong></div>
+    </div>
+  </div>
+</div>
+    <div class="main-content">
+      <div class="tab-panel" id="tab-trends">
   <div class="section-label">
-    <span class="icon">🧭</span> 本周内容风向
+    <span class="icon">🧭</span> <span id="sec-trends">本周内容风向</span>
     <span class="tag">基于真实笔记标题分析</span>
   </div>
   <div class="trend-grid">
@@ -1212,7 +1356,7 @@ body {
 
     <!-- ④ 标题公式 -->
   <div class="section-label">
-    <span class="icon">✍️</span> 本周标题公式
+    <span class="icon">✍️</span> <span id="sec-formula">本周标题公式</span>
     <span class="tag">高 CTR 笔记结构提炼</span>
   </div>
   <div class="formula-card">
@@ -1247,7 +1391,7 @@ body {
 
   <!-- ⑤ 热点话题 -->
   <div class="section-label">
-    <span class="icon">🔥</span> 本周热点话题 / 节点
+    <span class="icon">🔥</span> <span id="sec-topics">本周热点话题</span> / 节点
     <span class="tag">W21 · 05.18—05.24</span>
   </div>
   <div class="topic-grid">
@@ -1284,7 +1428,7 @@ body {
 
   <!-- ⑥ 品类风向 -->
   <div class="section-label">
-    <span class="icon">📦</span> 品类重点动向
+    <span class="icon">📦</span> <span id="sec-cats">品类重点动向</span>
     <span class="tag">W21 · 05.18—05.24</span>
   </div>
   <div class="accordion-wrap">
@@ -1369,7 +1513,7 @@ body {
   <!-- ⑦ 本周 TOP 笔记 -->
 
     <div class="section-label">
-      <span class="icon">🏆</span> 本周新发高表现笔记
+      <span class="icon">🏆</span> <span id="sec-top">本周新发高表现笔记</span>
       <span class="tag">W21 · 05.18—05.24 · 封面CTR × 商卡CTR 综合排名 TOP20</span>
     </div>
     <div class="top-notes-grid" id="topNotesGrid"></div>
@@ -1765,6 +1909,10 @@ body {
   </div>
 
 </div>
+
+
+    </div>
+  </div>
 
 <div style="text-align:center;padding:20px;font-size:12px;color:#9ca3af">
   <div>数据来源：小红书 BI · 休食五组 · 近7天</div>
@@ -2651,6 +2799,36 @@ function toggleAcc(el) {
   var isOpen = el.classList.contains('open');
   document.querySelectorAll('.acc-item').forEach(function(a){ a.classList.remove('open'); });
   if (!isOpen) el.classList.add('open');
+}
+
+function filterCat(cat, btn) {
+  document.querySelectorAll('.sidebar-cat').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+  var cards = document.querySelectorAll('.trend-card');
+  cards.forEach(function(card) {
+    var head = card.querySelector('.trend-head');
+    if (cat === 'all') {
+      card.style.opacity = '1';
+      card.style.transform = 'none';
+    } else if (head && head.classList.contains(cat)) {
+      card.style.opacity = '1';
+      card.style.transform = 'none';
+    } else {
+      card.style.opacity = '0.25';
+      card.style.transform = 'scale(0.97)';
+    }
+  });
+  var accItems = document.querySelectorAll('.acc-item');
+  accItems.forEach(function(item) {
+    var badge = item.querySelector('.acc-badge');
+    if (cat === 'all') {
+      item.style.opacity = '1';
+    } else if (badge && badge.classList.contains(cat)) {
+      item.style.opacity = '1';
+    } else {
+      item.style.opacity = '0.3';
+    }
+  });
 }
 </script>
 </body>
