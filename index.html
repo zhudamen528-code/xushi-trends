@@ -916,6 +916,19 @@ body {
 .ref-result.show { display: block; }
 .show            { display: block !important; }
 
+
+/* === V8b 内联方法论+案例 === */
+.method-card-v2 { background:white; border:1px solid #eee; border-left:3px solid #ff2442; border-radius:8px; padding:14px; }
+.method-card-v2 .method-title { font-weight:600; color:#333; font-size:14px; margin-bottom:4px; }
+.method-card-v2 .method-desc { font-size:13px; color:#555; line-height:1.5; margin-bottom:10px; }
+.method-card-v2 .method-cases { display:flex; flex-direction:column; gap:6px; margin-bottom:8px; }
+.method-card-v2 .method-source { font-size:11px; color:#bbb; margin-top:4px; }
+.inline-case { display:flex; flex-direction:column; background:#fafafa; border-radius:6px; padding:8px 10px; text-decoration:none; border:1px solid #f0f0f0; transition:background .15s; }
+.inline-case:hover { background:#fff0f0; border-color:#ffcdd2; }
+.ic-metric { display:inline-block; background:#ff2442; color:white; padding:1px 6px; border-radius:3px; font-size:11px; font-weight:600; margin-bottom:3px; width:fit-content; }
+.ic-title { font-size:12px; color:#333; font-weight:500; margin-bottom:2px; }
+.ic-hl { font-size:11px; color:#888; line-height:1.4; }
+
 /* === V8 隐藏 V7 残留 === */
 .hero-section, .sidebar { display: none !important; }
 .main-layout { display: block !important; flex-direction: column !important; }
@@ -1367,27 +1380,27 @@ body {
   <div class="kpi-grid">
     <div class="kpi-card">
       <div class="kpi-title">CTR1 封面点击率</div>
-      <div class="kpi-value">10.1%</div>
-      <div class="kpi-sub">优秀线 P75 · 中位 P50 6.8%</div>
-      <div class="kpi-ka">KA 大盘 P75：10.4%</div>
+      <div class="kpi-value" style="color:#ff2442">高</div>
+      <div class="kpi-sub">优秀笔记水平 · 行业中位 中等</div>
+      <div class="kpi-ka">与大盘持平</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-title">CTR2 商品卡点击率</div>
-      <div class="kpi-value">35.6%</div>
-      <div class="kpi-sub">优秀线 P75 · 中位 P50 —</div>
-      <div class="kpi-ka">KA 大盘 P75：34.4%</div>
+      <div class="kpi-value" style="color:#ff2442">高</div>
+      <div class="kpi-sub">优秀笔记水平 · 行业中位 —</div>
+      <div class="kpi-ka">优于大盘</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-title">CVR 转化率</div>
-      <div class="kpi-value">6.2%</div>
-      <div class="kpi-sub">优秀线 P75 · 中位 P50 0.0%</div>
-      <div class="kpi-ka">KA 大盘 P75：6.2%</div>
+      <div class="kpi-value" style="color:#ff7043">中等</div>
+      <div class="kpi-sub">优秀笔记水平 · 行业中位 一般</div>
+      <div class="kpi-ka">与大盘持平</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-title">件单价</div>
-      <div class="kpi-value">¥46</div>
-      <div class="kpi-sub">优秀线 P75 · 中位 P50 ¥25</div>
-      <div class="kpi-ka">KA 大盘 P75：¥53</div>
+      <div class="kpi-value" style="color:#ff7043">中等</div>
+      <div class="kpi-sub">优秀笔记水平 · 行业中位 一般</div>
+      <div class="kpi-ka">略低大盘</div>
     </div>
   </div>
 
@@ -1395,27 +1408,27 @@ body {
   <div class="kpi-grid">
     <div class="kpi-card">
       <div class="kpi-title">CTR1 封面点击率</div>
-      <div class="kpi-value">7.7%</div>
-      <div class="kpi-sub">优秀线 P75 · 中位 P50 4.7%</div>
-      <div class="kpi-ka">KA 大盘 P75：7.7%</div>
+      <div class="kpi-value" style="color:#ff7043">中等</div>
+      <div class="kpi-sub">优秀笔记水平 · 行业中位 一般</div>
+      <div class="kpi-ka">与大盘持平</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-title">CTR2 商品卡点击率</div>
-      <div class="kpi-value">8.9%</div>
-      <div class="kpi-sub">优秀线 P75 · 中位 P50 2.9%</div>
-      <div class="kpi-ka">KA 大盘 P75：10.3%</div>
+      <div class="kpi-value" style="color:#ff7043">中等</div>
+      <div class="kpi-sub">优秀笔记水平 · 行业中位 一般</div>
+      <div class="kpi-ka">略低大盘</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-title">CVR 转化率</div>
-      <div class="kpi-value">7.7%</div>
-      <div class="kpi-sub">优秀线 P75 · 中位 P50 0.0%</div>
-      <div class="kpi-ka">KA 大盘 P75：6.5%</div>
+      <div class="kpi-value" style="color:#ff7043">中等</div>
+      <div class="kpi-sub">优秀笔记水平 · 行业中位 一般</div>
+      <div class="kpi-ka">优于大盘</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-title">件单价</div>
-      <div class="kpi-value">¥41</div>
-      <div class="kpi-sub">优秀线 P75 · 中位 P50 ¥24</div>
-      <div class="kpi-ka">KA 大盘 P75：¥56</div>
+      <div class="kpi-value" style="color:#ff7043">中等</div>
+      <div class="kpi-sub">优秀笔记水平 · 行业中位 一般</div>
+      <div class="kpi-ka">略低大盘</div>
     </div>
   </div>
 
@@ -1427,1190 +1440,649 @@ body {
 <div class="tab-panel hidden" id="tab-ctr1">
   <div class="hero hero-sub hero-ctr1">
     <h2>👆 提升 CTR1：封面+标题钩子</h2>
-    <p class="meta">休食本周 · 优秀线 P75 + 本周 TOP 案例 + 多路径方法论</p>
+    <p class="meta">方法论 + 本周休食案例（数据驱动，非唯一答案）</p>
   </div>
 
-  <div class="section-label">🎯 本周大盘优秀线</div>
+  <div class="section-label">🎯 本周休食优秀笔记水平</div>
   <div class="kpi-grid kpi-grid-2col">
     <div class="kpi-card">
       <div class="kpi-title">📈 图文</div>
-      <div class="kpi-value">10.1%</div>
-      <div class="kpi-sub">P75 优秀 · 中位 6.8%</div>
-      <div class="kpi-ka">KA 大盘 P75：10.4%</div>
+      <div class="kpi-value" style="color:#ff2442">高</div>
+      <div class="kpi-sub">优秀笔记水平</div>
+      <div class="kpi-ka">与大盘持平</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-title">🎬 视频</div>
-      <div class="kpi-value">7.7%</div>
-      <div class="kpi-sub">P75 优秀 · 中位 4.7%</div>
-      <div class="kpi-ka">KA 大盘 P75：7.7%</div>
+      <div class="kpi-value" style="color:#ff2442">中等</div>
+      <div class="kpi-sub">优秀笔记水平</div>
+      <div class="kpi-ka">与大盘持平</div>
     </div>
   </div>
 
-  <div class="section-label">📚 多路径方法论（不是唯一答案）</div>
-  <div class="methods-grid">
-    <div class="method-card">
+  <div class="section-label">📚 图文路径 · 多样化参考（非唯一答案）</div>
+  <div class="methods-grid"><div class="method-card-v2">
       <div class="method-title">📸 单主体+特写</div>
-      <div class="method-desc">封面只放一个主体（产品/手部动作），剔除杂乱背景，CTR1 平均提升 30%</div>
-      <div class="method-source">来源：诺亚漏斗洞察 insight-v20</div>
-    </div><div class="method-card">
+      <div class="method-desc">封面只放一个主体（产品/手部动作），剔除杂乱背景</div>
+      <div class="method-cases"><a class="inline-case" href="https://www.xiaohongshu.com/explore/6a250f1f00000000360001a9" target="_blank">
+      <span class="ic-metric">57.1%</span>
+      <span class="ic-title">白茶草庐 | 橱窗非我意，但愿草庐宁</span>
+      <span class="ic-hl">反消费宣言+诗意短句，戳中反内卷情绪</span>
+    </a><a class="inline-case" href="https://www.xiaohongshu.com/explore/6a007953000000003503bdd1" target="_blank">
+      <span class="ic-metric">43.5%</span>
+      <span class="ic-title">遇到裸寄了。。。。</span>
+      <span class="ic-hl">&quot;裸寄&quot;悬念词，制造拆包翻车好奇</span>
+    </a></div>
+      <div class="method-source">来源：诺亚 insight-v20</div>
+    </div><div class="method-card-v2">
       <div class="method-title">🔥 数字+反差词</div>
-      <div class="method-desc">标题用"3个月"/"99%人都不知道"/"踩雷"等强钩子词，吸引点击</div>
+      <div class="method-desc">标题用数字钩子或反差词（如「100卡」「裸寄」「自黑」），吊起好奇</div>
+      <div class="method-cases"><a class="inline-case" href="https://www.xiaohongshu.com/explore/6a007953000000003503bdd1" target="_blank">
+      <span class="ic-metric">43.5%</span>
+      <span class="ic-title">遇到裸寄了。。。。</span>
+      <span class="ic-hl">&quot;裸寄&quot;悬念词，制造拆包翻车好奇</span>
+    </a><a class="inline-case" href="https://www.xiaohongshu.com/explore/6916959000000000070095be" target="_blank">
+      <span class="ic-metric">36.1%</span>
+      <span class="ic-title">这张首图，丑是真的丑啊</span>
+      <span class="ic-hl">自黑&quot;丑首图&quot;反向引流，反差吸睛</span>
+    </a></div>
       <div class="method-source">来源：creation-guide-v9 D2</div>
-    </div><div class="method-card">
-      <div class="method-title">✋ 手部动作+使用场景</div>
-      <div class="method-desc">封面有人手在拿/用产品，比纯产品图 CTR 高 2x（适合食品/护肤）</div>
-      <div class="method-source">来源：诺亚漏斗洞察 insight-v20</div>
-    </div><div class="method-card">
-      <div class="method-title">💬 痛点共鸣开头</div>
-      <div class="method-desc">"打工人续命水" / "懒人福音" 类标题，精准触达需求</div>
+    </div><div class="method-card-v2">
+      <div class="method-title">💬 情绪共鸣开头</div>
+      <div class="method-desc">「打工人续命」「自律必吃」等第一人称场景，精准锁人群</div>
+      <div class="method-cases"><a class="inline-case" href="https://www.xiaohongshu.com/explore/69a13cd3000000002801fb30" target="_blank">
+      <span class="ic-metric">34.9%</span>
+      <span class="ic-title">我一自律期就吃这个</span>
+      <span class="ic-hl">第一人称自律场景，精准锁瘦身人群</span>
+    </a><a class="inline-case" href="https://www.xiaohongshu.com/explore/6a250f1f00000000360001a9" target="_blank">
+      <span class="ic-metric">57.1%</span>
+      <span class="ic-title">白茶草庐 | 橱窗非我意，但愿草庐宁</span>
+      <span class="ic-hl">反消费宣言+诗意短句，戳中反内卷情绪</span>
+    </a></div>
       <div class="method-source">来源：creation-guide-v9 D5</div>
-    </div><div class="method-card">
-      <div class="method-title">👀 信息量大的封面</div>
-      <div class="method-desc">封面贴文字标签（价格/卖点/对比），用户秒懂内容价值</div>
-      <div class="method-source">来源：诺亚漏斗洞察 insight-v20</div>
-    </div>
-  </div>
-
-  <div class="section-label">🔥 本周休食 TOP 10 · 图文</div>
-  <div class="case-grid"><div class="case-card">
-      <div class="case-rank">#1</div>
-      <div class="case-body">
-        <div class="case-title">白茶草庐 | 橱窗非我意，但愿草庐宁</div>
-        <div class="case-meta">
-          <span class="case-metric">57.1%</span>
-          <span class="case-seller">白茶宏投观 | MacroVest Insigh的店</span>
-        </div>
-        <div class="case-stats">曝光 4,375 · 点击 2,497 · 下单 239 · GMV ¥6142</div>
-        <div class="case-highlight">💡 反消费宣言+诗意短句，戳中反内卷情绪</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/6a250f1f00000000360001a9" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#2</div>
-      <div class="case-body">
-        <div class="case-title">遇到裸寄了。。。。</div>
-        <div class="case-meta">
-          <span class="case-metric">43.5%</span>
-          <span class="case-seller">舟禾零食的店</span>
-        </div>
-        <div class="case-stats">曝光 98,523 · 点击 42,838 · 下单 85 · GMV ¥1350</div>
-        <div class="case-highlight">💡 &quot;裸寄&quot;悬念词，制造拆包翻车好奇</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/6a007953000000003503bdd1" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#3</div>
-      <div class="case-body">
-        <div class="case-title">分享一个热量低饱腹感强的食物！</div>
-        <div class="case-meta">
-          <span class="case-metric">38.8%</span>
-          <span class="case-seller">馒有料的店</span>
-        </div>
-        <div class="case-stats">曝光 15,641 · 点击 6,070 · 下单 6 · GMV ¥129</div>
-        <div class="case-highlight">💡 低卡+饱腹双痛点，瘦身人群必点</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/696f7081000000001a037584" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#4</div>
-      <div class="case-body">
-        <div class="case-title">诡秘，这次的贝果真的不一样…</div>
-        <div class="case-meta">
-          <span class="case-metric">36.8%</span>
-          <span class="case-seller">小新的吃包日记的店</span>
-        </div>
-        <div class="case-stats">曝光 31,327 · 点击 11,530 · 下单 16 · GMV ¥576</div>
-        <div class="case-highlight">💡 &quot;诡秘&quot;反常表达，激发产品好奇</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/69b94e7a0000000023014659" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#5</div>
-      <div class="case-body">
-        <div class="case-title">这张首图，丑是真的丑啊</div>
-        <div class="case-meta">
-          <span class="case-metric">36.1%</span>
-          <span class="case-seller">叁南面包社的店</span>
-        </div>
-        <div class="case-stats">曝光 13,203 · 点击 4,763 · 下单 13 · GMV ¥84</div>
-        <div class="case-highlight">💡 自黑&quot;丑首图&quot;反向引流，反差吸睛</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/6916959000000000070095be" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#6</div>
-      <div class="case-body">
-        <div class="case-title">这个duangduangduang的口感为什么不火啊！！</div>
-        <div class="case-meta">
-          <span class="case-metric">34.9%</span>
-          <span class="case-seller">兴胜新农人的店</span>
-        </div>
-        <div class="case-stats">曝光 18,893 · 点击 6,594 · 下单 6 · GMV ¥232</div>
-        <div class="case-highlight">💡 拟声词duang+不火质疑，强情绪钩子</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/69db9a8a000000001b021deb" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#7</div>
-      <div class="case-body">
-        <div class="case-title">我一自律期就吃这个</div>
-        <div class="case-meta">
-          <span class="case-metric">34.9%</span>
-          <span class="case-seller">咖皇旗舰店</span>
-        </div>
-        <div class="case-stats">曝光 20,145 · 点击 7,027 · 下单 14 · GMV ¥277</div>
-        <div class="case-highlight">💡 第一人称自律场景，精准锁瘦身人群</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/69a13cd3000000002801fb30" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#8</div>
-      <div class="case-body">
-        <div class="case-title">(无标题)</div>
-        <div class="case-meta">
-          <span class="case-metric">34.7%</span>
-          <span class="case-seller">朝食暮饮的店</span>
-        </div>
-        <div class="case-stats">曝光 4,410 · 点击 1,529 · 下单 5 · GMV ¥164</div>
-        <div class="case-highlight">💡 无标题反靠封面留白，神秘感引点击</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/69eb11820000000022025f46" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#9</div>
-      <div class="case-body">
-        <div class="case-title">100卡以下+热量表</div>
-        <div class="case-meta">
-          <span class="case-metric">34.5%</span>
-          <span class="case-seller">幸屿Umi的店</span>
-        </div>
-        <div class="case-stats">曝光 9,202 · 点击 3,177 · 下单 11 · GMV ¥201</div>
-        <div class="case-highlight">💡 数字&quot;100卡以下&quot;+图表诱饵，强工具感</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/69d79ba2000000002102c8b7" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#10</div>
-      <div class="case-body">
-        <div class="case-title">现在才顿悟！哄男人还得用跳跳糖…</div>
-        <div class="case-meta">
-          <span class="case-metric">34.5%</span>
-          <span class="case-seller">明日东方养颜阁的店</span>
-        </div>
-        <div class="case-stats">曝光 70,464 · 点击 24,302 · 下单 49 · GMV ¥991</div>
-        <div class="case-highlight">💡 情趣联想+跳跳糖反差，话题感拉满</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/68d0afd6000000001201e46c" target="_blank">→ 看原文</a>
-      </div>
+    </div><div class="method-card-v2">
+      <div class="method-title">🎭 拟声/趣味词</div>
+      <div class="method-desc">「duangduang」「裸寄了」等趣味表达，内容味极强</div>
+      <div class="method-cases"><a class="inline-case" href="https://www.xiaohongshu.com/explore/68d0afd6000000001201e46c" target="_blank">
+      <span class="ic-metric">34.5%</span>
+      <span class="ic-title">现在才顿悟！哄男人还得用跳跳糖…</span>
+      <span class="ic-hl">情趣联想+跳跳糖反差，话题感拉满</span>
+    </a><a class="inline-case" href="https://www.xiaohongshu.com/explore/6916959000000000070095be" target="_blank">
+      <span class="ic-metric">36.1%</span>
+      <span class="ic-title">这张首图，丑是真的丑啊</span>
+      <span class="ic-hl">自黑&quot;丑首图&quot;反向引流，反差吸睛</span>
+    </a></div>
+      <div class="method-source">来源：三感六度</div>
+    </div><div class="method-card-v2">
+      <div class="method-title">👀 反向/制造悬念</div>
+      <div class="method-desc">自黑标题、神秘感留白、意外反转，用户不点不甘心</div>
+      <div class="method-cases"><a class="inline-case" href="https://www.xiaohongshu.com/explore/6a007953000000003503bdd1" target="_blank">
+      <span class="ic-metric">43.5%</span>
+      <span class="ic-title">遇到裸寄了。。。。</span>
+      <span class="ic-hl">&quot;裸寄&quot;悬念词，制造拆包翻车好奇</span>
+    </a><a class="inline-case" href="https://www.xiaohongshu.com/explore/69eb11820000000022025f46" target="_blank">
+      <span class="ic-metric">34.7%</span>
+      <span class="ic-title">(无标题)</span>
+      <span class="ic-hl">无标题反靠封面留白，神秘感引点击</span>
+    </a></div>
+      <div class="method-source">来源：诺亚 insight-v20</div>
     </div></div>
 
-  <div class="section-label">🎥 本周休食 TOP 10 · 视频</div>
-  <div class="case-grid"><div class="case-card">
-      <div class="case-rank">#1</div>
-      <div class="case-body">
-        <div class="case-title">不愧是老师傅推荐用的小炒酱，吃完还想吃</div>
-        <div class="case-meta">
-          <span class="case-metric">44.2%</span>
-          <span class="case-seller">翟师傅家常菜的店</span>
-        </div>
-        <div class="case-stats">曝光 2,001 · 点击 885 · 下单 57 · GMV ¥1115</div>
-        <div class="case-highlight">💡 &quot;老师傅推荐&quot;权威背书+复购暗示</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/69dc53dd0000000021007b99" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#2</div>
-      <div class="case-body">
-        <div class="case-title">🍖香贡贡肉松！厦门老味道真香！</div>
-        <div class="case-meta">
-          <span class="case-metric">40.8%</span>
-          <span class="case-seller">小红薯2uf的店</span>
-        </div>
-        <div class="case-stats">曝光 1,088 · 点击 444 · 下单 15 · GMV ¥1186</div>
-        <div class="case-highlight">💡 emoji+地域味道&quot;厦门老味道&quot;，唤起共鸣</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/69c877d40000000022028c9f" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#3</div>
-      <div class="case-body">
-        <div class="case-title">视频同款“膳食五白”👇️👇️下方购买</div>
-        <div class="case-meta">
-          <span class="case-metric">36.1%</span>
-          <span class="case-seller">优优生活好物的店</span>
-        </div>
-        <div class="case-stats">曝光 1,395 · 点击 503 · 下单 15 · GMV ¥1041</div>
-        <div class="case-highlight">💡 视频同款+引导下方购买，强行动召唤</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/69c7d4e4000000001a029d83" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#4</div>
-      <div class="case-body">
-        <div class="case-title">(无标题)</div>
-        <div class="case-meta">
-          <span class="case-metric">34.0%</span>
-          <span class="case-seller">一等锦鲤🎏的店</span>
-        </div>
-        <div class="case-stats">曝光 1,545 · 点击 526 · 下单 8 · GMV ¥629</div>
-        <div class="case-highlight">💡 无标题制造神秘，靠首帧悬念吸点击</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/69d9d5e9000000001a02b60d" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#5</div>
-      <div class="case-body">
-        <div class="case-title">浙江小孩🧒的噩梦已经开始</div>
-        <div class="case-meta">
-          <span class="case-metric">33.9%</span>
-          <span class="case-seller">糯叽叽大王乡野味道的店</span>
-        </div>
-        <div class="case-stats">曝光 28,006 · 点击 9,493 · 下单 7 · GMV ¥82</div>
-        <div class="case-highlight">💡 &quot;浙江小孩噩梦&quot;地域梗，制造好奇</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/69255cb0000000001e00158a" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#6</div>
-      <div class="case-body">
-        <div class="case-title">我妈尝了一口，给我整盒拿走。。。</div>
-        <div class="case-meta">
-          <span class="case-metric">33.8%</span>
-          <span class="case-seller">言秋日a的店</span>
-        </div>
-        <div class="case-stats">曝光 10,081 · 点击 3,405 · 下单 6 · GMV ¥75</div>
-        <div class="case-highlight">💡 家人偷吃故事，真实场景增信任</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/69d716e5000000001d01b5f7" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#7</div>
-      <div class="case-body">
-        <div class="case-title">童年回忆杀✨甘草金桔一口回到小时候</div>
-        <div class="case-meta">
-          <span class="case-metric">33.6%</span>
-          <span class="case-seller">味多多零食的店</span>
-        </div>
-        <div class="case-stats">曝光 79,867 · 点击 26,811 · 下单 13 · GMV ¥982</div>
-        <div class="case-highlight">💡 童年回忆杀+味觉穿越，情怀触达</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/6983195a00000000220207b3" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#8</div>
-      <div class="case-body">
-        <div class="case-title">这做法谁发明的啊……真的巨好吃！！</div>
-        <div class="case-meta">
-          <span class="case-metric">30.5%</span>
-          <span class="case-seller">屋上食美味的店</span>
-        </div>
-        <div class="case-stats">曝光 32,033 · 点击 9,784 · 下单 9 · GMV ¥223</div>
-        <div class="case-highlight">💡 夸张感叹+做法之谜，引发探究欲</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/69f19e7f000000003601a03d" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#9</div>
-      <div class="case-body">
-        <div class="case-title">同居必入💖 嘴里香香自带buff </div>
-        <div class="case-meta">
-          <span class="case-metric">30.2%</span>
-          <span class="case-seller">筷小喵食品旗舰店</span>
-        </div>
-        <div class="case-stats">曝光 1,881 · 点击 569 · 下单 7 · GMV ¥309</div>
-        <div class="case-highlight">💡 同居场景+香味buff，情侣人群精准戳</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/69d0859c000000002301428c" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#10</div>
-      <div class="case-body">
-        <div class="case-title">天热晚餐就吃它！状态拉回来</div>
-        <div class="case-meta">
-          <span class="case-metric">29.5%</span>
-          <span class="case-seller">屋上食品旗舰店</span>
-        </div>
-        <div class="case-stats">曝光 67,447 · 点击 19,877 · 下单 131 · GMV ¥3139</div>
-        <div class="case-highlight">💡 天热场景痛点+状态修复承诺</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/6a0c0e27000000000803d38c" target="_blank">→ 看原文</a>
-      </div>
+  <div class="section-label">🎬 视频路径 · 多样化参考</div>
+  <div class="methods-grid"><div class="method-card-v2">
+      <div class="method-title">📸 单主体+特写</div>
+      <div class="method-desc">封面只放一个主体（产品/手部动作），剔除杂乱背景</div>
+      <div class="method-cases"><a class="inline-case" href="https://www.xiaohongshu.com/explore/69dc53dd0000000021007b99" target="_blank">
+      <span class="ic-metric">44.2%</span>
+      <span class="ic-title">不愧是老师傅推荐用的小炒酱，吃完还想吃</span>
+      <span class="ic-hl">&quot;老师傅推荐&quot;权威背书+复购暗示</span>
+    </a><a class="inline-case" href="https://www.xiaohongshu.com/explore/69c877d40000000022028c9f" target="_blank">
+      <span class="ic-metric">40.8%</span>
+      <span class="ic-title">🍖香贡贡肉松！厦门老味道真香！</span>
+      <span class="ic-hl">emoji+地域味道&quot;厦门老味道&quot;，唤起共鸣</span>
+    </a></div>
+      <div class="method-source">来源：诺亚 insight-v20</div>
+    </div><div class="method-card-v2">
+      <div class="method-title">🔥 数字+反差词</div>
+      <div class="method-desc">标题用数字钩子或反差词</div>
+      <div class="method-cases"><a class="inline-case" href="https://www.xiaohongshu.com/explore/69d9d5e9000000001a02b60d" target="_blank">
+      <span class="ic-metric">34.0%</span>
+      <span class="ic-title">(无标题)</span>
+      <span class="ic-hl">无标题制造神秘，靠首帧悬念吸点击</span>
+    </a><a class="inline-case" href="https://www.xiaohongshu.com/explore/69dc53dd0000000021007b99" target="_blank">
+      <span class="ic-metric">44.2%</span>
+      <span class="ic-title">不愧是老师傅推荐用的小炒酱，吃完还想吃</span>
+      <span class="ic-hl">&quot;老师傅推荐&quot;权威背书+复购暗示</span>
+    </a></div>
+      <div class="method-source">来源：creation-guide-v9 D2</div>
+    </div><div class="method-card-v2">
+      <div class="method-title">💬 情绪共鸣开头</div>
+      <div class="method-desc">第一人称场景，精准锁人群</div>
+      <div class="method-cases"><a class="inline-case" href="https://www.xiaohongshu.com/explore/69dc53dd0000000021007b99" target="_blank">
+      <span class="ic-metric">44.2%</span>
+      <span class="ic-title">不愧是老师傅推荐用的小炒酱，吃完还想吃</span>
+      <span class="ic-hl">&quot;老师傅推荐&quot;权威背书+复购暗示</span>
+    </a><a class="inline-case" href="https://www.xiaohongshu.com/explore/69c877d40000000022028c9f" target="_blank">
+      <span class="ic-metric">40.8%</span>
+      <span class="ic-title">🍖香贡贡肉松！厦门老味道真香！</span>
+      <span class="ic-hl">emoji+地域味道&quot;厦门老味道&quot;，唤起共鸣</span>
+    </a></div>
+      <div class="method-source">来源：creation-guide-v9 D5</div>
+    </div><div class="method-card-v2">
+      <div class="method-title">🎬 视频口播钩子</div>
+      <div class="method-desc">开头3秒悬念/反问/报价，让用户继续看</div>
+      <div class="method-cases"><a class="inline-case" href="https://www.xiaohongshu.com/explore/69c7d4e4000000001a029d83" target="_blank">
+      <span class="ic-metric">36.1%</span>
+      <span class="ic-title">视频同款“膳食五白”👇️👇️下方购买</span>
+      <span class="ic-hl">视频同款+引导下方购买，强行动召唤</span>
+    </a><a class="inline-case" href="https://www.xiaohongshu.com/explore/69dc53dd0000000021007b99" target="_blank">
+      <span class="ic-metric">44.2%</span>
+      <span class="ic-title">不愧是老师傅推荐用的小炒酱，吃完还想吃</span>
+      <span class="ic-hl">&quot;老师傅推荐&quot;权威背书+复购暗示</span>
+    </a></div>
+      <div class="method-source">来源：creation-guide-v9 D9</div>
+    </div><div class="method-card-v2">
+      <div class="method-title">🌍 地域/产地背书</div>
+      <div class="method-desc">「厦门老味道」「厂家直发」等产地词，增加真实感</div>
+      <div class="method-cases"><a class="inline-case" href="https://www.xiaohongshu.com/explore/69c877d40000000022028c9f" target="_blank">
+      <span class="ic-metric">40.8%</span>
+      <span class="ic-title">🍖香贡贡肉松！厦门老味道真香！</span>
+      <span class="ic-hl">emoji+地域味道&quot;厦门老味道&quot;，唤起共鸣</span>
+    </a><a class="inline-case" href="https://www.xiaohongshu.com/explore/69255cb0000000001e00158a" target="_blank">
+      <span class="ic-metric">33.9%</span>
+      <span class="ic-title">浙江小孩🧒的噩梦已经开始</span>
+      <span class="ic-hl">&quot;浙江小孩噩梦&quot;地域梗，制造好奇</span>
+    </a></div>
+      <div class="method-source">来源：诺亚 insight-v20</div>
     </div></div>
 
   <div class="tips-box">
-    <strong>💡 怎么用：</strong> 看 TOP 案例的标题套路 + AI 亮点解析 → 找到适合你品类的 2-3 条路径 → 自己仿写。每周一更新 TOP 案例，多积累灵感库。
+    <strong>💡 怎么用：</strong> 每条方法下有 2 个本周真实案例。找到适合你品类的方向，仿写标题或封面策略。方法没有优先级，哪个适合你的产品就用哪个。
   </div>
 </div>
 <div class="tab-panel hidden" id="tab-ctr2">
   <div class="hero hero-sub hero-ctr2">
     <h2>🔗 提升 CTR2：商品卡点击</h2>
-    <p class="meta">休食本周 · 优秀线 P75 + 本周 TOP 案例 + 多路径方法论</p>
+    <p class="meta">方法论 + 本周休食案例（数据驱动，非唯一答案）</p>
   </div>
 
-  <div class="section-label">🎯 本周大盘优秀线</div>
+  <div class="section-label">🎯 本周休食优秀笔记水平</div>
   <div class="kpi-grid kpi-grid-2col">
     <div class="kpi-card">
       <div class="kpi-title">📈 图文</div>
-      <div class="kpi-value">35.6%</div>
-      <div class="kpi-sub">P75 优秀 · 中位 —</div>
-      <div class="kpi-ka">KA 大盘 P75：34.4%</div>
+      <div class="kpi-value" style="color:#ff2442">高</div>
+      <div class="kpi-sub">优秀笔记水平</div>
+      <div class="kpi-ka">优于大盘</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-title">🎬 视频</div>
-      <div class="kpi-value">8.9%</div>
-      <div class="kpi-sub">P75 优秀 · 中位 2.9%</div>
-      <div class="kpi-ka">KA 大盘 P75：10.3%</div>
+      <div class="kpi-value" style="color:#ff2442">一般</div>
+      <div class="kpi-sub">优秀笔记水平</div>
+      <div class="kpi-ka">略低大盘</div>
     </div>
   </div>
 
-  <div class="section-label">📚 多路径方法论（不是唯一答案）</div>
-  <div class="methods-grid">
-    <div class="method-card">
-      <div class="method-title">🏷️ 商品卡价格诱惑</div>
-      <div class="method-desc">挂车价格<心理预期价位 → CTR2 显著高（如标"9.9 包邮"）</div>
+  <div class="section-label">📚 图文路径 · 多样化参考（非唯一答案）</div>
+  <div class="methods-grid"><div class="method-card-v2">
+      <div class="method-title">🏷️ 价格直给</div>
+      <div class="method-desc">标题/封面露价格（9.9、6.6折、开业特惠），降低决策门槛</div>
+      <div class="method-cases"><a class="inline-case" href="https://www.xiaohongshu.com/explore/67d533d9000000001b03db5d" target="_blank">
+      <span class="ic-metric">200.0%</span>
+      <span class="ic-title">这价格还要什么自行车！！</span>
+      <span class="ic-hl">&quot;还要什么自行车&quot;价格爆款梗，直击便宜</span>
+    </a><a class="inline-case" href="https://www.xiaohongshu.com/explore/6a0936fb000000003502e04d" target="_blank">
+      <span class="ic-metric">93.9%</span>
+      <span class="ic-title">6.6折抹茶千层10只</span>
+      <span class="ic-hl">6.6折+具体数量10只，折扣强吸引</span>
+    </a></div>
       <div class="method-source">来源：creation-guide-v9 D8</div>
-    </div><div class="method-card">
-      <div class="method-title">⏰ 限时限量氛围</div>
-      <div class="method-desc">正文/评论区强调限时、库存紧张，激发紧迫感</div>
-      <div class="method-source">来源：诺亚漏斗洞察 insight-v20</div>
-    </div><div class="method-card">
-      <div class="method-title">📊 评测对比</div>
-      <div class="method-desc">"vs 某大牌" 对比类内容，商品卡点击率高（用户已被种草）</div>
-      <div class="method-source">来源：三感六度</div>
-    </div><div class="method-card">
-      <div class="method-title">👥 KOL/达人背书</div>
-      <div class="method-desc">标题/正文带「XX 同款」/「测评推荐」，商品卡承接好</div>
-      <div class="method-source">来源：creation-guide-v9 D4</div>
-    </div><div class="method-card">
-      <div class="method-title">🎁 套装/赠品</div>
-      <div class="method-desc">"买一送一" / "套装更划算" 提高商品卡点击意愿</div>
+    </div><div class="method-card-v2">
+      <div class="method-title">⏰ 节日/限时氛围</div>
+      <div class="method-desc">节气、节假日、开业活动，制造时限紧迫感</div>
+      <div class="method-cases"><a class="inline-case" href="https://www.xiaohongshu.com/explore/6a22ed3a000000002100809a" target="_blank">
+      <span class="ic-metric">91.7%</span>
+      <span class="ic-title">芒种后湿热睡不醒，每天一杯薏米茶伏湿</span>
+      <span class="ic-hl">节气+症状+解决方案，精准对症种草</span>
+    </a><a class="inline-case" href="https://www.xiaohongshu.com/explore/6a129a7800000000350235bf" target="_blank">
+      <span class="ic-metric">88.6%</span>
+      <span class="ic-title">618狂欢，6.18抢好物抢不到别怪我!</span>
+      <span class="ic-hl">618谐音梗+怕抢不到，限时紧迫</span>
+    </a></div>
+      <div class="method-source">来源：诺亚 insight-v20</div>
+    </div><div class="method-card-v2">
+      <div class="method-title">📊 参数堆叠</div>
+      <div class="method-desc">低卡+无面粉+高蛋白等多卖点参数化，商品卡信息密度高</div>
+      <div class="method-cases"><a class="inline-case" href="https://www.xiaohongshu.com/explore/69e30880000000001a036594" target="_blank">
+      <span class="ic-metric">86.0%</span>
+      <span class="ic-title">几十大卡+高含水量+无面粉｜蛋白三角太懂事！</span>
+      <span class="ic-hl">低卡+无面粉+三角形参数，强卖点堆叠</span>
+    </a><a class="inline-case" href="https://www.xiaohongshu.com/explore/67d533d9000000001b03db5d" target="_blank">
+      <span class="ic-metric">200.0%</span>
+      <span class="ic-title">这价格还要什么自行车！！</span>
+      <span class="ic-hl">&quot;还要什么自行车&quot;价格爆款梗，直击便宜</span>
+    </a></div>
       <div class="method-source">来源：creation-guide-v9 D9</div>
-    </div>
-  </div>
-
-  <div class="section-label">🔥 本周休食 TOP 10 · 图文</div>
-  <div class="case-grid"><div class="case-card">
-      <div class="case-rank">#1</div>
-      <div class="case-body">
-        <div class="case-title">这价格还要什么自行车！！</div>
-        <div class="case-meta">
-          <span class="case-metric">200.0%</span>
-          <span class="case-seller">光和手感的店</span>
-        </div>
-        <div class="case-stats">曝光 2,257 · 点击 1 · 下单 14 · GMV ¥54</div>
-        <div class="case-highlight">💡 &quot;还要什么自行车&quot;价格爆款梗，直击便宜</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/67d533d9000000001b03db5d" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#2</div>
-      <div class="case-body">
-        <div class="case-title">本面包脑袋狂炫不停🙉</div>
-        <div class="case-meta">
-          <span class="case-metric">100.0%</span>
-          <span class="case-seller">光和手感的店</span>
-        </div>
-        <div class="case-stats">曝光 2,256 · 点击 77 · 下单 18 · GMV ¥148</div>
-        <div class="case-highlight">💡 &quot;面包脑袋狂炫&quot;暗示重度爱好者必入</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/69a3e4ca000000001502298c" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#3</div>
-      <div class="case-body">
-        <div class="case-title">6.6折抹茶千层10只</div>
-        <div class="case-meta">
-          <span class="case-metric">93.9%</span>
-          <span class="case-seller">久抹的店</span>
-        </div>
-        <div class="case-stats">曝光 6,061 · 点击 817 · 下单 33 · GMV ¥2839</div>
-        <div class="case-highlight">💡 6.6折+具体数量10只，折扣强吸引</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/6a0936fb000000003502e04d" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#4</div>
-      <div class="case-body">
-        <div class="case-title">9.9就能实现卤味自由👑也太棒了吧！</div>
-        <div class="case-meta">
-          <span class="case-metric">91.7%</span>
-          <span class="case-seller">小石头旗舰店</span>
-        </div>
-        <div class="case-stats">曝光 1,570 · 点击 45 · 下单 5 · GMV ¥60</div>
-        <div class="case-highlight">💡 9.9元+&quot;卤味自由&quot;完美匹配下单冲动</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/6a0ab3450000000006030d73" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#5</div>
-      <div class="case-body">
-        <div class="case-title">警告！买过的顾客都在催：“商家别涨价！！”🤣</div>
-        <div class="case-meta">
-          <span class="case-metric">91.7%</span>
-          <span class="case-seller">麦果烘焙坊的店</span>
-        </div>
-        <div class="case-stats">曝光 1,213 · 点击 37 · 下单 7 · GMV ¥29</div>
-        <div class="case-highlight">💡 顾客催更涨价，制造稀缺紧迫感</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/6a0526bd00000000350265b8" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#6</div>
-      <div class="case-body">
-        <div class="case-title">芒种后湿热睡不醒，每天一杯薏米茶伏湿</div>
-        <div class="case-meta">
-          <span class="case-metric">91.7%</span>
-          <span class="case-seller">阿桂爷爷草本茶的店</span>
-        </div>
-        <div class="case-stats">曝光 1,726 · 点击 34 · 下单 6 · GMV ¥242</div>
-        <div class="case-highlight">💡 节气+症状+解决方案，精准对症种草</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/6a22ed3a000000002100809a" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#7</div>
-      <div class="case-body">
-        <div class="case-title">开业活动19.9套餐，三个欧包+一个米面包！</div>
-        <div class="case-meta">
-          <span class="case-metric">90.4%</span>
-          <span class="case-seller">光和手感轻食旗舰店</span>
-        </div>
-        <div class="case-stats">曝光 6,030 · 点击 237 · 下单 8 · GMV ¥156</div>
-        <div class="case-highlight">💡 开业19.9套餐+具体配置，超值清晰</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/69fb03a0000000001e00ebf8" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#8</div>
-      <div class="case-body">
-        <div class="case-title">618狂欢，6.18抢好物抢不到别怪我!</div>
-        <div class="case-meta">
-          <span class="case-metric">88.6%</span>
-          <span class="case-seller">酱酱家潮汕特产的店</span>
-        </div>
-        <div class="case-stats">曝光 1,680 · 点击 50 · 下单 5 · GMV ¥31</div>
-        <div class="case-highlight">💡 618谐音梗+怕抢不到，限时紧迫</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/6a129a7800000000350235bf" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#9</div>
-      <div class="case-body">
-        <div class="case-title">儿童节限定｜孩子王的儿童三色积木巧克力</div>
-        <div class="case-meta">
-          <span class="case-metric">87.7%</span>
-          <span class="case-seller">NIBBO巧克力旗舰店</span>
-        </div>
-        <div class="case-stats">曝光 9,760 · 点击 1,312 · 下单 75 · GMV ¥5389</div>
-        <div class="case-highlight">💡 儿童节限定+三色积木，节日礼盒诱惑</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/6a1721760000000008027e1b" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#10</div>
-      <div class="case-body">
-        <div class="case-title">几十大卡+高含水量+无面粉｜蛋白三角太懂事！</div>
-        <div class="case-meta">
-          <span class="case-metric">86.0%</span>
-          <span class="case-seller">QSSD烘焙的店</span>
-        </div>
-        <div class="case-stats">曝光 1,468 · 点击 86 · 下单 9 · GMV ¥266</div>
-        <div class="case-highlight">💡 低卡+无面粉+三角形参数，强卖点堆叠</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/69e30880000000001a036594" target="_blank">→ 看原文</a>
-      </div>
+    </div><div class="method-card-v2">
+      <div class="method-title">🏆 稀缺/催促</div>
+      <div class="method-desc">「别停产」「顾客催涨价」等稀缺感，触发囤货行为</div>
+      <div class="method-cases"><a class="inline-case" href="https://www.xiaohongshu.com/explore/6a0526bd00000000350265b8" target="_blank">
+      <span class="ic-metric">91.7%</span>
+      <span class="ic-title">警告！买过的顾客都在催：“商家别涨价！！”🤣</span>
+      <span class="ic-hl">顾客催更涨价，制造稀缺紧迫感</span>
+    </a><a class="inline-case" href="https://www.xiaohongshu.com/explore/6a129a7800000000350235bf" target="_blank">
+      <span class="ic-metric">88.6%</span>
+      <span class="ic-title">618狂欢，6.18抢好物抢不到别怪我!</span>
+      <span class="ic-hl">618谐音梗+怕抢不到，限时紧迫</span>
+    </a></div>
+      <div class="method-source">来源：三感六度</div>
+    </div><div class="method-card-v2">
+      <div class="method-title">💊 对症解决方案</div>
+      <div class="method-desc">节气症状+产品=精准解决方案，商品卡承接感强</div>
+      <div class="method-cases"><a class="inline-case" href="https://www.xiaohongshu.com/explore/6a22ed3a000000002100809a" target="_blank">
+      <span class="ic-metric">91.7%</span>
+      <span class="ic-title">芒种后湿热睡不醒，每天一杯薏米茶伏湿</span>
+      <span class="ic-hl">节气+症状+解决方案，精准对症种草</span>
+    </a><a class="inline-case" href="https://www.xiaohongshu.com/explore/67d533d9000000001b03db5d" target="_blank">
+      <span class="ic-metric">200.0%</span>
+      <span class="ic-title">这价格还要什么自行车！！</span>
+      <span class="ic-hl">&quot;还要什么自行车&quot;价格爆款梗，直击便宜</span>
+    </a></div>
+      <div class="method-source">来源：creation-guide-v9 D5</div>
     </div></div>
 
-  <div class="section-label">🎥 本周休食 TOP 10 · 视频</div>
-  <div class="case-grid"><div class="case-card">
-      <div class="case-rank">#1</div>
-      <div class="case-body">
-        <div class="case-title">又是每月一号福利，晚上八点直接左下方拍</div>
-        <div class="case-meta">
-          <span class="case-metric">74.9%</span>
-          <span class="case-seller">小影的店</span>
-        </div>
-        <div class="case-stats">曝光 9,181 · 点击 1,269 · 下单 32 · GMV ¥629</div>
-        <div class="case-highlight">💡 每月1号福利+八点开抢，定期蹲点心智</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/6a1d331b0000000035039d06" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#2</div>
-      <div class="case-body">
-        <div class="case-title">高原出行怕高反？试试这个用过的都说好</div>
-        <div class="case-meta">
-          <span class="case-metric">67.6%</span>
-          <span class="case-seller">正北食品旗舰店</span>
-        </div>
-        <div class="case-stats">曝光 1,559 · 点击 67 · 下单 5 · GMV ¥145</div>
-        <div class="case-highlight">💡 高原痛点+老用户口碑，刚需场景转化</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/69ec5f85000000001a036ba2" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#3</div>
-      <div class="case-body">
-        <div class="case-title">剥皮软糖➕爆汁软糖！</div>
-        <div class="case-meta">
-          <span class="case-metric">66.7%</span>
-          <span class="case-seller">白白家糖果的店</span>
-        </div>
-        <div class="case-stats">曝光 7,272 · 点击 594 · 下单 5 · GMV ¥158</div>
-        <div class="case-highlight">💡 剥皮+爆汁双口感卖点，产品力直给</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/6a2528d6000000001702c42e" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#4</div>
-      <div class="case-body">
-        <div class="case-title">🍖香贡贡肉松！厦门老味道真香！</div>
-        <div class="case-meta">
-          <span class="case-metric">66.0%</span>
-          <span class="case-seller">小红薯2uf的店</span>
-        </div>
-        <div class="case-stats">曝光 1,088 · 点击 444 · 下单 15 · GMV ¥1186</div>
-        <div class="case-highlight">💡 地域味道+老味道情怀，唤起复购</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/69c877d40000000022028c9f" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#5</div>
-      <div class="case-body">
-        <div class="case-title">老爹：9.9🍞咱就赚个手工费 不贪心💰</div>
-        <div class="case-meta">
-          <span class="case-metric">63.5%</span>
-          <span class="case-seller">番茄炒蛋（内蒙奶食）的店</span>
-        </div>
-        <div class="case-stats">曝光 3,468 · 点击 128 · 下单 9 · GMV ¥40</div>
-        <div class="case-highlight">💡 老爹人设+9.9只赚手工费，朴实真诚</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/6a1ea02100000000380214b2" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#6</div>
-      <div class="case-body">
-        <div class="case-title">宝集来川麦冬</div>
-        <div class="case-meta">
-          <span class="case-metric">63.2%</span>
-          <span class="case-seller">宝集来正宗绵阳川麦冬的店</span>
-        </div>
-        <div class="case-stats">曝光 1,870 · 点击 120 · 下单 11 · GMV ¥477</div>
-        <div class="case-highlight">💡 原产地+品类名直说，垂类人群精准</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/690933590000000007020316" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#7</div>
-      <div class="case-body">
-        <div class="case-title">芜湖～均价2r的牛乳来咯🤩</div>
-        <div class="case-meta">
-          <span class="case-metric">60.4%</span>
-          <span class="case-seller">弗里生乳牛旗舰店</span>
-        </div>
-        <div class="case-stats">曝光 2,724 · 点击 97 · 下单 5 · GMV ¥50</div>
-        <div class="case-highlight">💡 均价2元牛乳，超低价格震撼</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/6a0fff4400000000350333ca" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#8</div>
-      <div class="case-body">
-        <div class="case-title">看看大家都选的什么糖👀</div>
-        <div class="case-meta">
-          <span class="case-metric">60.1%</span>
-          <span class="case-seller">白白家糖果的店</span>
-        </div>
-        <div class="case-stats">曝光 4,311 · 点击 304 · 下单 9 · GMV ¥225</div>
-        <div class="case-highlight">💡 从众心理&quot;大家都选&quot;，激发跟买</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/69ba1dd8000000002102ffb4" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#9</div>
-      <div class="case-body">
-        <div class="case-title">性价比王者对半建宁白莲✅50斤感谢姐妹们😊</div>
-        <div class="case-meta">
-          <span class="case-metric">59.2%</span>
-          <span class="case-seller">福建晓慧特产的店</span>
-        </div>
-        <div class="case-stats">曝光 36,790 · 点击 1,373 · 下单 58 · GMV ¥2331</div>
-        <div class="case-highlight">💡 性价比王者+50斤数字，量大实惠</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/6a12fa960000000006021ca0" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#10</div>
-      <div class="case-body">
-        <div class="case-title">邪修芝士抢先试❗️懒人就不要总是灵机一动了</div>
-        <div class="case-meta">
-          <span class="case-metric">59.1%</span>
-          <span class="case-seller">奶酪猴子Cheese Monkey的店</span>
-        </div>
-        <div class="case-stats">曝光 2,164 · 点击 81 · 下单 18 · GMV ¥353</div>
-        <div class="case-highlight">💡 &quot;邪修+懒人&quot;梗，新奇玩法戳尝鲜党</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/68aae187000000001d018587" target="_blank">→ 看原文</a>
-      </div>
+  <div class="section-label">🎬 视频路径 · 多样化参考</div>
+  <div class="methods-grid"><div class="method-card-v2">
+      <div class="method-title">🏷️ 价格直给</div>
+      <div class="method-desc">视频口播强调价格/活动，卡片价格曝光</div>
+      <div class="method-cases"><a class="inline-case" href="https://www.xiaohongshu.com/explore/6a1d331b0000000035039d06" target="_blank">
+      <span class="ic-metric">74.9%</span>
+      <span class="ic-title">又是每月一号福利，晚上八点直接左下方拍</span>
+      <span class="ic-hl">每月1号福利+八点开抢，定期蹲点心智</span>
+    </a><a class="inline-case" href="https://www.xiaohongshu.com/explore/6a0fff4400000000350333ca" target="_blank">
+      <span class="ic-metric">60.4%</span>
+      <span class="ic-title">芜湖～均价2r的牛乳来咯🤩</span>
+      <span class="ic-hl">均价2元牛乳，超低价格震撼</span>
+    </a></div>
+      <div class="method-source">来源：creation-guide-v9 D8</div>
+    </div><div class="method-card-v2">
+      <div class="method-title">👥 用户口碑/复购</div>
+      <div class="method-desc">老用户回购、真实好评、每月福利，建立信任</div>
+      <div class="method-cases"><a class="inline-case" href="https://www.xiaohongshu.com/explore/6a1d331b0000000035039d06" target="_blank">
+      <span class="ic-metric">74.9%</span>
+      <span class="ic-title">又是每月一号福利，晚上八点直接左下方拍</span>
+      <span class="ic-hl">每月1号福利+八点开抢，定期蹲点心智</span>
+    </a><a class="inline-case" href="https://www.xiaohongshu.com/explore/69ec5f85000000001a036ba2" target="_blank">
+      <span class="ic-metric">67.6%</span>
+      <span class="ic-title">高原出行怕高反？试试这个用过的都说好</span>
+      <span class="ic-hl">高原痛点+老用户口碑，刚需场景转化</span>
+    </a></div>
+      <div class="method-source">来源：creation-guide-v9 D4</div>
+    </div><div class="method-card-v2">
+      <div class="method-title">🎭 拟声/口感描述</div>
+      <div class="method-desc">「剥皮+爆汁」「沉浸式打包」等感官卖点，视频场景还原</div>
+      <div class="method-cases"><a class="inline-case" href="https://www.xiaohongshu.com/explore/6a2528d6000000001702c42e" target="_blank">
+      <span class="ic-metric">66.7%</span>
+      <span class="ic-title">剥皮软糖➕爆汁软糖！</span>
+      <span class="ic-hl">剥皮+爆汁双口感卖点，产品力直给</span>
+    </a><a class="inline-case" href="https://www.xiaohongshu.com/explore/6a1d331b0000000035039d06" target="_blank">
+      <span class="ic-metric">74.9%</span>
+      <span class="ic-title">又是每月一号福利，晚上八点直接左下方拍</span>
+      <span class="ic-hl">每月1号福利+八点开抢，定期蹲点心智</span>
+    </a></div>
+      <div class="method-source">来源：三感六度</div>
+    </div><div class="method-card-v2">
+      <div class="method-title">📦 具体配置/参数</div>
+      <div class="method-desc">告诉用户买到什么（几个/几折/有什么），减少决策摩擦</div>
+      <div class="method-cases"><a class="inline-case" href="https://www.xiaohongshu.com/explore/6a1ea02100000000380214b2" target="_blank">
+      <span class="ic-metric">63.5%</span>
+      <span class="ic-title">老爹：9.9🍞咱就赚个手工费 不贪心💰</span>
+      <span class="ic-hl">老爹人设+9.9只赚手工费，朴实真诚</span>
+    </a><a class="inline-case" href="https://www.xiaohongshu.com/explore/69ec5f85000000001a036ba2" target="_blank">
+      <span class="ic-metric">67.6%</span>
+      <span class="ic-title">高原出行怕高反？试试这个用过的都说好</span>
+      <span class="ic-hl">高原痛点+老用户口碑，刚需场景转化</span>
+    </a></div>
+      <div class="method-source">来源：creation-guide-v9 D9</div>
+    </div><div class="method-card-v2">
+      <div class="method-title">🌍 场景代入</div>
+      <div class="method-desc">高原/出行/特定人群精准场景，用户代入感强</div>
+      <div class="method-cases"><a class="inline-case" href="https://www.xiaohongshu.com/explore/69ec5f85000000001a036ba2" target="_blank">
+      <span class="ic-metric">67.6%</span>
+      <span class="ic-title">高原出行怕高反？试试这个用过的都说好</span>
+      <span class="ic-hl">高原痛点+老用户口碑，刚需场景转化</span>
+    </a><a class="inline-case" href="https://www.xiaohongshu.com/explore/690933590000000007020316" target="_blank">
+      <span class="ic-metric">63.2%</span>
+      <span class="ic-title">宝集来川麦冬</span>
+      <span class="ic-hl">原产地+品类名直说，垂类人群精准</span>
+    </a></div>
+      <div class="method-source">来源：诺亚 insight-v20</div>
     </div></div>
 
   <div class="tips-box">
-    <strong>💡 怎么用：</strong> 看 TOP 案例的标题套路 + AI 亮点解析 → 找到适合你品类的 2-3 条路径 → 自己仿写。每周一更新 TOP 案例，多积累灵感库。
+    <strong>💡 怎么用：</strong> 每条方法下有 2 个本周真实案例。找到适合你品类的方向，仿写标题或封面策略。方法没有优先级，哪个适合你的产品就用哪个。
   </div>
 </div>
 <div class="tab-panel hidden" id="tab-cvr">
   <div class="hero hero-sub hero-cvr">
     <h2>💰 提升 CVR：转化下单</h2>
-    <p class="meta">休食本周 · 优秀线 P75 + 本周 TOP 案例 + 多路径方法论</p>
+    <p class="meta">方法论 + 本周休食案例（数据驱动，非唯一答案）</p>
   </div>
 
-  <div class="section-label">🎯 本周大盘优秀线</div>
+  <div class="section-label">🎯 本周休食优秀笔记水平</div>
   <div class="kpi-grid kpi-grid-2col">
     <div class="kpi-card">
       <div class="kpi-title">📈 图文</div>
-      <div class="kpi-value">6.2%</div>
-      <div class="kpi-sub">P75 优秀 · 中位 0.0%</div>
-      <div class="kpi-ka">KA 大盘 P75：6.2%</div>
+      <div class="kpi-value" style="color:#ff2442">高</div>
+      <div class="kpi-sub">优秀笔记水平</div>
+      <div class="kpi-ka">与大盘持平</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-title">🎬 视频</div>
-      <div class="kpi-value">7.7%</div>
-      <div class="kpi-sub">P75 优秀 · 中位 0.0%</div>
-      <div class="kpi-ka">KA 大盘 P75：6.5%</div>
+      <div class="kpi-value" style="color:#ff2442">高</div>
+      <div class="kpi-sub">优秀笔记水平</div>
+      <div class="kpi-ka">优于大盘</div>
     </div>
   </div>
 
-  <div class="section-label">📚 多路径方法论（不是唯一答案）</div>
-  <div class="methods-grid">
-    <div class="method-card">
-      <div class="method-title">🎯 精准人群定位</div>
-      <div class="method-desc">标题里直接写人群（如「备孕」「减脂」「小学生」），过滤无效流量，转化更高</div>
+  <div class="section-label">📚 图文路径 · 多样化参考（非唯一答案）</div>
+  <div class="methods-grid"><div class="method-card-v2">
+      <div class="method-title">🎯 精准人群锁定</div>
+      <div class="method-desc">标题含具体人群词（备孕/减脂/宝妈），过滤无效流量</div>
+      <div class="method-cases"><a class="inline-case" href="https://www.xiaohongshu.com/explore/69f015770000000035025097" target="_blank">
+      <span class="ic-metric">600.0%</span>
+      <span class="ic-title">干饭人的种草风！！！</span>
+      <span class="ic-hl">&quot;干饭人&quot;标签+种草直说，精准人群</span>
+    </a><a class="inline-case" href="https://www.xiaohongshu.com/explore/683feb6d0000000021002105" target="_blank">
+      <span class="ic-metric">1250.0%</span>
+      <span class="ic-title">山姆这些巨巨巨好吃的😋，你都尝遍了吗</span>
+      <span class="ic-hl">山姆代购心智+经典选品，目标人群明确</span>
+    </a></div>
       <div class="method-source">来源：creation-guide-v9 D5</div>
-    </div><div class="method-card">
-      <div class="method-title">✅ 解决方案明确</div>
-      <div class="method-desc">笔记给出明确「解决什么问题 → 产品就是答案」路径，CVR 翻倍</div>
-      <div class="method-source">来源：诺亚漏斗洞察</div>
-    </div><div class="method-card">
-      <div class="method-title">💬 评论区氛围</div>
-      <div class="method-desc">"求链接""我也买了" 评论增强信任，置顶好评</div>
+    </div><div class="method-card-v2">
+      <div class="method-title">💬 停产/求回购焦虑</div>
+      <div class="method-desc">「求别停产」「回购第N次」营造缺失焦虑，老粉情感强转化</div>
+      <div class="method-cases"><a class="inline-case" href="https://www.xiaohongshu.com/explore/69cb2e6d0000000022028511" target="_blank">
+      <span class="ic-metric">900.0%</span>
+      <span class="ic-title">😭求求别停产…太好吃了！！给我狠狠的火🥹</span>
+      <span class="ic-hl">停产焦虑+求火，老粉情感强转化</span>
+    </a><a class="inline-case" href="https://www.xiaohongshu.com/explore/676aad0800000000140251c9" target="_blank">
+      <span class="ic-metric">600.0%</span>
+      <span class="ic-title">三拼布列塔尼酥饼 | 感谢季每天做不完</span>
+      <span class="ic-hl">&quot;做不完&quot;暗示热销，限量焦虑促单</span>
+    </a></div>
       <div class="method-source">来源：creation-guide-v9 D4</div>
-    </div><div class="method-card">
-      <div class="method-title">🎬 视频强口播</div>
-      <div class="method-desc">视频结尾明确说「链接在评论区/购物车」，引导下单</div>
+    </div><div class="method-card-v2">
+      <div class="method-title">🏢 品牌/渠道背书</div>
+      <div class="method-desc">山姆/奥莱/直营等强渠道信任背书，降低决策门槛</div>
+      <div class="method-cases"><a class="inline-case" href="https://www.xiaohongshu.com/explore/683feb6d0000000021002105" target="_blank">
+      <span class="ic-metric">1250.0%</span>
+      <span class="ic-title">山姆这些巨巨巨好吃的😋，你都尝遍了吗</span>
+      <span class="ic-hl">山姆代购心智+经典选品，目标人群明确</span>
+    </a><a class="inline-case" href="https://www.xiaohongshu.com/explore/69cb2e6d0000000022028511" target="_blank">
+      <span class="ic-metric">900.0%</span>
+      <span class="ic-title">😭求求别停产…太好吃了！！给我狠狠的火🥹</span>
+      <span class="ic-hl">停产焦虑+求火，老粉情感强转化</span>
+    </a></div>
+      <div class="method-source">来源：诺亚 insight-v20</div>
+    </div><div class="method-card-v2">
+      <div class="method-title">📦 打包/组合拼单</div>
+      <div class="method-desc">「一筐零食」「组合套装」降低单次决策成本，拼单场景</div>
+      <div class="method-cases"><a class="inline-case" href="https://www.xiaohongshu.com/explore/6a0e750b000000003502098e" target="_blank">
+      <span class="ic-metric">900.0%</span>
+      <span class="ic-title">这一筐零食的快乐是谁的呀🎊</span>
+      <span class="ic-hl">&quot;一筐零食&quot;打包心智，拼单刚需直击</span>
+    </a><a class="inline-case" href="https://www.xiaohongshu.com/explore/683feb6d0000000021002105" target="_blank">
+      <span class="ic-metric">1250.0%</span>
+      <span class="ic-title">山姆这些巨巨巨好吃的😋，你都尝遍了吗</span>
+      <span class="ic-hl">山姆代购心智+经典选品，目标人群明确</span>
+    </a></div>
       <div class="method-source">来源：creation-guide-v9 D9</div>
-    </div><div class="method-card">
-      <div class="method-title">🏆 复购/老客背书</div>
-      <div class="method-desc">"回购第N次" 类标题/正文，建立长期价值预期</div>
-      <div class="method-source">来源：三感六度</div>
-    </div>
-  </div>
-
-  <div class="section-label">🔥 本周休食 TOP 10 · 图文</div>
-  <div class="case-grid"><div class="case-card">
-      <div class="case-rank">#1</div>
-      <div class="case-body">
-        <div class="case-title">山姆这些巨巨巨好吃的😋，你都尝遍了吗</div>
-        <div class="case-meta">
-          <span class="case-metric">1250.0%</span>
-          <span class="case-seller">小乐家零食的店</span>
-        </div>
-        <div class="case-stats">曝光 1,503 · 点击 263 · 下单 25 · GMV ¥140</div>
-        <div class="case-highlight">💡 山姆代购心智+经典选品，目标人群明确</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/683feb6d0000000021002105" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#2</div>
-      <div class="case-body">
-        <div class="case-title">😭求求别停产…太好吃了！！给我狠狠的火🥹</div>
-        <div class="case-meta">
-          <span class="case-metric">900.0%</span>
-          <span class="case-seller">夏麦手作的店</span>
-        </div>
-        <div class="case-stats">曝光 1,139 · 点击 43 · 下单 9 · GMV ¥69</div>
-        <div class="case-highlight">💡 停产焦虑+求火，老粉情感强转化</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/69cb2e6d0000000022028511" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#3</div>
-      <div class="case-body">
-        <div class="case-title">这一筐零食的快乐是谁的呀🎊</div>
-        <div class="case-meta">
-          <span class="case-metric">900.0%</span>
-          <span class="case-seller">豆沙包零食分装的店</span>
-        </div>
-        <div class="case-stats">曝光 2,056 · 点击 141 · 下单 9 · GMV ¥34</div>
-        <div class="case-highlight">💡 &quot;一筐零食&quot;打包心智，拼单刚需直击</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/6a0e750b000000003502098e" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#4</div>
-      <div class="case-body">
-        <div class="case-title">这价格还要什么自行车！！</div>
-        <div class="case-meta">
-          <span class="case-metric">700.0%</span>
-          <span class="case-seller">光和手感的店</span>
-        </div>
-        <div class="case-stats">曝光 2,257 · 点击 1 · 下单 14 · GMV ¥54</div>
-        <div class="case-highlight">💡 价格炸裂叠加爆款语，决策成本接近零</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/67d533d9000000001b03db5d" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#5</div>
-      <div class="case-body">
-        <div class="case-title">现烤的桂花栗子酥，一口就爱上</div>
-        <div class="case-meta">
-          <span class="case-metric">666.7%</span>
-          <span class="case-seller">嘉华鲜花饼旗舰店</span>
-        </div>
-        <div class="case-stats">曝光 159,342 · 点击 3,763 · 下单 20 · GMV ¥704</div>
-        <div class="case-highlight">💡 &quot;现烤&quot;鲜度+经典产品，伴手礼直转化</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/66b9e2f2000000001e01b492" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#6</div>
-      <div class="case-body">
-        <div class="case-title">我妈：7r一袋！我爸：7r一袋包邮！我：好嘞！！</div>
-        <div class="case-meta">
-          <span class="case-metric">650.0%</span>
-          <span class="case-seller">茉朵儿零食的店</span>
-        </div>
-        <div class="case-stats">曝光 3,188 · 点击 47 · 下单 13 · GMV ¥230</div>
-        <div class="case-highlight">💡 父母对话场景+包邮信号，性价比直给</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/69c76cbc00000000220038e6" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#7</div>
-      <div class="case-body">
-        <div class="case-title">三拼布列塔尼酥饼 | 感谢季每天做不完</div>
-        <div class="case-meta">
-          <span class="case-metric">600.0%</span>
-          <span class="case-seller">白房子咖啡的店</span>
-        </div>
-        <div class="case-stats">曝光 1,269 · 点击 6 · 下单 6 · GMV ¥230</div>
-        <div class="case-highlight">💡 &quot;做不完&quot;暗示热销，限量焦虑促单</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/676aad0800000000140251c9" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#8</div>
-      <div class="case-body">
-        <div class="case-title">干饭人的种草风！！！</div>
-        <div class="case-meta">
-          <span class="case-metric">600.0%</span>
-          <span class="case-seller">豆沙包零食分装的店</span>
-        </div>
-        <div class="case-stats">曝光 1,587 · 点击 64 · 下单 6 · GMV ¥21</div>
-        <div class="case-highlight">💡 &quot;干饭人&quot;标签+种草直说，精准人群</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/69f015770000000035025097" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#9</div>
-      <div class="case-body">
-        <div class="case-title">本来随便买的…结果被香疯了</div>
-        <div class="case-meta">
-          <span class="case-metric">600.0%</span>
-          <span class="case-seller">书音离火烘焙工坊的店</span>
-        </div>
-        <div class="case-stats">曝光 1,203 · 点击 125 · 下单 6 · GMV ¥29</div>
-        <div class="case-highlight">💡 &quot;随便买被香疯&quot;反差，无脑闭眼入</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/6a0b08060000000038020e40" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#10</div>
-      <div class="case-body">
-        <div class="case-title">25年嘉华云腿月饼大合集来啦！！</div>
-        <div class="case-meta">
-          <span class="case-metric">500.0%</span>
-          <span class="case-seller">嘉华鲜花饼旗舰店</span>
-        </div>
-        <div class="case-stats">曝光 32,279 · 点击 1,472 · 下单 5 · GMV ¥131</div>
-        <div class="case-highlight">💡 云腿月饼合集，节令场景一站式选购</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/6895c0e1000000002500c9a6" target="_blank">→ 看原文</a>
-      </div>
+    </div><div class="method-card-v2">
+      <div class="method-title">📊 具体解决方案</div>
+      <div class="method-desc">明确说「怎么用/效果是什么」，降低用户不确定性</div>
+      <div class="method-cases"><a class="inline-case" href="https://www.xiaohongshu.com/explore/683feb6d0000000021002105" target="_blank">
+      <span class="ic-metric">1250.0%</span>
+      <span class="ic-title">山姆这些巨巨巨好吃的😋，你都尝遍了吗</span>
+      <span class="ic-hl">山姆代购心智+经典选品，目标人群明确</span>
+    </a><a class="inline-case" href="https://www.xiaohongshu.com/explore/69cb2e6d0000000022028511" target="_blank">
+      <span class="ic-metric">900.0%</span>
+      <span class="ic-title">😭求求别停产…太好吃了！！给我狠狠的火🥹</span>
+      <span class="ic-hl">停产焦虑+求火，老粉情感强转化</span>
+    </a></div>
+      <div class="method-source">来源：creation-guide-v9 D2</div>
     </div></div>
 
-  <div class="section-label">🎥 本周休食 TOP 10 · 视频</div>
-  <div class="case-grid"><div class="case-card">
-      <div class="case-rank">#1</div>
-      <div class="case-body">
-        <div class="case-title">好吃到双眼迷离❗️明星同款泡面居然这个味道</div>
-        <div class="case-meta">
-          <span class="case-metric">8700.0%</span>
-          <span class="case-seller">鑫鑫零食屋的店</span>
-        </div>
-        <div class="case-stats">曝光 3,488 · 点击 23 · 下单 87 · GMV ¥2106</div>
-        <div class="case-highlight">💡 明星同款+泡面品类，强冲动+低决策</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/69d9de7400000000230223e8" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#2</div>
-      <div class="case-body">
-        <div class="case-title">超解压‼️治愈满分💯！沉浸式打包果茶</div>
-        <div class="case-meta">
-          <span class="case-metric">1066.7%</span>
-          <span class="case-seller">茶玺娘娘的店</span>
-        </div>
-        <div class="case-stats">曝光 2,365 · 点击 89 · 下单 32 · GMV ¥213</div>
-        <div class="case-highlight">💡 解压沉浸感+果茶品类，疗愈刚需</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/69be74f8000000001d0181d2" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#3</div>
-      <div class="case-body">
-        <div class="case-title">不是‼️现在每日杂粮都受高人指点了吗！</div>
-        <div class="case-meta">
-          <span class="case-metric">1000.0%</span>
-          <span class="case-seller">圆湘琴的气泡水的店</span>
-        </div>
-        <div class="case-stats">曝光 8,486 · 点击 35 · 下单 10 · GMV ¥214</div>
-        <div class="case-highlight">💡 &quot;高人指点&quot;调侃+杂粮赛道，强种草感</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/69f01f2e0000000035020c8f" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#4</div>
-      <div class="case-body">
-        <div class="case-title">胡萝卜搭配苹果做无添加雪糕，孩子超爱吃！</div>
-        <div class="case-meta">
-          <span class="case-metric">900.0%</span>
-          <span class="case-seller">金鸡报喜的店</span>
-        </div>
-        <div class="case-stats">曝光 1,297 · 点击 42 · 下单 54 · GMV ¥827</div>
-        <div class="case-highlight">💡 无添加+孩子超爱，宝妈精准转化</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/6a06816100000000070269f2" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#5</div>
-      <div class="case-body">
-        <div class="case-title">分享一个热量低，但撑4️⃣人的东西</div>
-        <div class="case-meta">
-          <span class="case-metric">700.0%</span>
-          <span class="case-seller">圆湘琴的气泡水的店</span>
-        </div>
-        <div class="case-stats">曝光 7,510 · 点击 41 · 下单 7 · GMV ¥138</div>
-        <div class="case-highlight">💡 低卡+撑4人，家庭聚餐场景需求</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/69f703f3000000003502aa56" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#6</div>
-      <div class="case-body">
-        <div class="case-title">一代人有一代人的棒棒糖</div>
-        <div class="case-meta">
-          <span class="case-metric">625.0%</span>
-          <span class="case-seller">哒富优选的店</span>
-        </div>
-        <div class="case-stats">曝光 1,434 · 点击 27 · 下单 25 · GMV ¥280</div>
-        <div class="case-highlight">💡 &quot;一代人棒棒糖&quot;情怀，怀旧人群秒下单</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/69d38284000000002200d8ef" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#7</div>
-      <div class="case-body">
-        <div class="case-title">刷头翻过来那一刻，我决定每天扫床</div>
-        <div class="case-meta">
-          <span class="case-metric">588.9%</span>
-          <span class="case-seller">小柚之精选的店</span>
-        </div>
-        <div class="case-stats">曝光 2,654 · 点击 26 · 下单 53 · GMV ¥1168</div>
-        <div class="case-highlight">💡 场景痛点+扫床承诺，工具刚需转化</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/69a249a7000000002603f9e4" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#8</div>
-      <div class="case-body">
-        <div class="case-title">薏米水太快了...我妈以为我又没好好吃饭🤣</div>
-        <div class="case-meta">
-          <span class="case-metric">433.3%</span>
-          <span class="case-seller">零先生优选的店</span>
-        </div>
-        <div class="case-stats">曝光 4,050 · 点击 30 · 下单 26 · GMV ¥455</div>
-        <div class="case-highlight">💡 妈妈反应场景，养生口粮人群精准</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/6a1584ae0000000006031839" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#9</div>
-      <div class="case-body">
-        <div class="case-title">在外地的陕西老乡不知道馋什么样啦🥹🥹🥹</div>
-        <div class="case-meta">
-          <span class="case-metric">400.0%</span>
-          <span class="case-seller">西安虎哥麻辣米线的店</span>
-        </div>
-        <div class="case-stats">曝光 2,952 · 点击 255 · 下单 108 · GMV ¥515</div>
-        <div class="case-highlight">💡 陕西老乡地域定位，思乡刚需直转化</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/6a1bc5220000000007026144" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#10</div>
-      <div class="case-body">
-        <div class="case-title">王木牛奶雪糕，你一定要试试这个新吃法！</div>
-        <div class="case-meta">
-          <span class="case-metric">400.0%</span>
-          <span class="case-seller">金鸡报喜的店</span>
-        </div>
-        <div class="case-stats">曝光 3,003 · 点击 175 · 下单 56 · GMV ¥833</div>
-        <div class="case-highlight">💡 新吃法+品牌雪糕，老粉尝鲜冲动</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/6a103cf70000000035021be9" target="_blank">→ 看原文</a>
-      </div>
+  <div class="section-label">🎬 视频路径 · 多样化参考</div>
+  <div class="methods-grid"><div class="method-card-v2">
+      <div class="method-title">🎯 精准人群锁定</div>
+      <div class="method-desc">视频明确目标人群，精准触达</div>
+      <div class="method-cases"><a class="inline-case" href="https://www.xiaohongshu.com/explore/6a1584ae0000000006031839" target="_blank">
+      <span class="ic-metric">433.3%</span>
+      <span class="ic-title">薏米水太快了...我妈以为我又没好好吃饭🤣</span>
+      <span class="ic-hl">妈妈反应场景，养生口粮人群精准</span>
+    </a><a class="inline-case" href="https://www.xiaohongshu.com/explore/6a06816100000000070269f2" target="_blank">
+      <span class="ic-metric">900.0%</span>
+      <span class="ic-title">胡萝卜搭配苹果做无添加雪糕，孩子超爱吃！</span>
+      <span class="ic-hl">无添加+孩子超爱，宝妈精准转化</span>
+    </a></div>
+      <div class="method-source">来源：creation-guide-v9 D5</div>
+    </div><div class="method-card-v2">
+      <div class="method-title">⭐ 明星/达人同款</div>
+      <div class="method-desc">明星同款+低价品类，强冲动+低决策成本</div>
+      <div class="method-cases"><a class="inline-case" href="https://www.xiaohongshu.com/explore/69d9de7400000000230223e8" target="_blank">
+      <span class="ic-metric">8700.0%</span>
+      <span class="ic-title">好吃到双眼迷离❗️明星同款泡面居然这个味道</span>
+      <span class="ic-hl">明星同款+泡面品类，强冲动+低决策</span>
+    </a><a class="inline-case" href="https://www.xiaohongshu.com/explore/69be74f8000000001d0181d2" target="_blank">
+      <span class="ic-metric">1066.7%</span>
+      <span class="ic-title">超解压‼️治愈满分💯！沉浸式打包果茶</span>
+      <span class="ic-hl">解压沉浸感+果茶品类，疗愈刚需</span>
+    </a></div>
+      <div class="method-source">来源：creation-guide-v9 D4</div>
+    </div><div class="method-card-v2">
+      <div class="method-title">🎭 解压/治愈场景</div>
+      <div class="method-desc">解压/沉浸打包等情绪价值场景，疗愈刚需</div>
+      <div class="method-cases"><a class="inline-case" href="https://www.xiaohongshu.com/explore/69be74f8000000001d0181d2" target="_blank">
+      <span class="ic-metric">1066.7%</span>
+      <span class="ic-title">超解压‼️治愈满分💯！沉浸式打包果茶</span>
+      <span class="ic-hl">解压沉浸感+果茶品类，疗愈刚需</span>
+    </a><a class="inline-case" href="https://www.xiaohongshu.com/explore/69d9de7400000000230223e8" target="_blank">
+      <span class="ic-metric">8700.0%</span>
+      <span class="ic-title">好吃到双眼迷离❗️明星同款泡面居然这个味道</span>
+      <span class="ic-hl">明星同款+泡面品类，强冲动+低决策</span>
+    </a></div>
+      <div class="method-source">来源：三感六度</div>
+    </div><div class="method-card-v2">
+      <div class="method-title">🏅 夸张赞美+信任</div>
+      <div class="method-desc">「好吃到双眼迷离」「不愧是高人指点」夸张表达种草</div>
+      <div class="method-cases"><a class="inline-case" href="https://www.xiaohongshu.com/explore/69d9de7400000000230223e8" target="_blank">
+      <span class="ic-metric">8700.0%</span>
+      <span class="ic-title">好吃到双眼迷离❗️明星同款泡面居然这个味道</span>
+      <span class="ic-hl">明星同款+泡面品类，强冲动+低决策</span>
+    </a><a class="inline-case" href="https://www.xiaohongshu.com/explore/69f01f2e0000000035020c8f" target="_blank">
+      <span class="ic-metric">1000.0%</span>
+      <span class="ic-title">不是‼️现在每日杂粮都受高人指点了吗！</span>
+      <span class="ic-hl">&quot;高人指点&quot;调侃+杂粮赛道，强种草感</span>
+    </a></div>
+      <div class="method-source">来源：诺亚 insight-v20</div>
+    </div><div class="method-card-v2">
+      <div class="method-title">📦 购物车/行动召唤</div>
+      <div class="method-desc">视频末尾「点购物车/评论区链接」明确行动指令</div>
+      <div class="method-cases"><a class="inline-case" href="https://www.xiaohongshu.com/explore/69d9de7400000000230223e8" target="_blank">
+      <span class="ic-metric">8700.0%</span>
+      <span class="ic-title">好吃到双眼迷离❗️明星同款泡面居然这个味道</span>
+      <span class="ic-hl">明星同款+泡面品类，强冲动+低决策</span>
+    </a><a class="inline-case" href="https://www.xiaohongshu.com/explore/69be74f8000000001d0181d2" target="_blank">
+      <span class="ic-metric">1066.7%</span>
+      <span class="ic-title">超解压‼️治愈满分💯！沉浸式打包果茶</span>
+      <span class="ic-hl">解压沉浸感+果茶品类，疗愈刚需</span>
+    </a></div>
+      <div class="method-source">来源：creation-guide-v9 D9</div>
     </div></div>
 
   <div class="tips-box">
-    <strong>💡 怎么用：</strong> 看 TOP 案例的标题套路 + AI 亮点解析 → 找到适合你品类的 2-3 条路径 → 自己仿写。每周一更新 TOP 案例，多积累灵感库。
+    <strong>💡 怎么用：</strong> 每条方法下有 2 个本周真实案例。找到适合你品类的方向，仿写标题或封面策略。方法没有优先级，哪个适合你的产品就用哪个。
   </div>
 </div>
 <div class="tab-panel hidden" id="tab-price">
   <div class="hero hero-sub hero-price">
     <h2>💎 提升件单价：客单优化</h2>
-    <p class="meta">休食本周 · 优秀线 P75 + 本周 TOP 案例 + 多路径方法论</p>
+    <p class="meta">方法论 + 本周休食案例（数据驱动，非唯一答案）</p>
   </div>
 
-  <div class="section-label">🎯 本周大盘优秀线</div>
+  <div class="section-label">🎯 本周休食优秀笔记水平</div>
   <div class="kpi-grid kpi-grid-2col">
     <div class="kpi-card">
       <div class="kpi-title">📈 图文</div>
-      <div class="kpi-value">¥46</div>
-      <div class="kpi-sub">P75 优秀 · 中位 ¥25</div>
-      <div class="kpi-ka">KA 大盘 P75：¥53</div>
+      <div class="kpi-value" style="color:#ff2442">中等</div>
+      <div class="kpi-sub">优秀笔记水平</div>
+      <div class="kpi-ka">略低大盘</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-title">🎬 视频</div>
-      <div class="kpi-value">¥41</div>
-      <div class="kpi-sub">P75 优秀 · 中位 ¥24</div>
-      <div class="kpi-ka">KA 大盘 P75：¥56</div>
+      <div class="kpi-value" style="color:#ff2442">中等</div>
+      <div class="kpi-sub">优秀笔记水平</div>
+      <div class="kpi-ka">略低大盘</div>
     </div>
   </div>
 
-  <div class="section-label">📚 多路径方法论（不是唯一答案）</div>
-  <div class="methods-grid">
-    <div class="method-card">
-      <div class="method-title">🎁 礼盒/套装</div>
-      <div class="method-desc">"过节送礼" / "情人节套装" 等场景拉高客单</div>
+  <div class="section-label">📚 图文路径 · 多样化参考（非唯一答案）</div>
+  <div class="methods-grid"><div class="method-card-v2">
+      <div class="method-title">🎁 礼盒/送礼场景</div>
+      <div class="method-desc">送礼/孝心/节日场景标题，客单价天然高</div>
+      <div class="method-cases"><a class="inline-case" href="https://www.xiaohongshu.com/explore/69be470600000000220243a1" target="_blank">
+      <span class="ic-metric">¥1054</span>
+      <span class="ic-title">上海国际饭店蝴蝶酥伴手礼免排队顺丰到家啦</span>
+      <span class="ic-hl">上海地标伴手礼+免排队顺丰，高端礼赠</span>
+    </a><a class="inline-case" href="https://www.xiaohongshu.com/explore/6a12979f000000003601875e" target="_blank">
+      <span class="ic-metric">¥3651</span>
+      <span class="ic-title">低于均价1000+喝一级园标杆蜜蜂园！</span>
+      <span class="ic-hl">勃艮第一级园+低于均价1000，专业藏家锁单</span>
+    </a></div>
       <div class="method-source">来源：creation-guide-v9 D8</div>
-    </div><div class="method-card">
-      <div class="method-title">🍷 高端品类发力</div>
-      <div class="method-desc">酒水/茶叶/滋补品本身高客单，匹配的标题强调品质/产地/年份</div>
-      <div class="method-source">来源：诺亚漏斗洞察</div>
-    </div><div class="method-card">
-      <div class="method-title">📦 大份装/家庭装</div>
-      <div class="method-desc">"全家装" / "囤货价" 推高单笔购买量</div>
-      <div class="method-source">来源：creation-guide-v9 D9</div>
-    </div><div class="method-card">
-      <div class="method-title">💎 稀缺/限量</div>
-      <div class="method-desc">限定款、联名款、年份产品 → 用户愿意为稀缺付溢价</div>
+    </div><div class="method-card-v2">
+      <div class="method-title">🍷 专业术语/藏家黑话</div>
+      <div class="method-desc">一级园/老藤/年份/配额等专业词，高客单品类自带高价</div>
+      <div class="method-cases"><a class="inline-case" href="https://www.xiaohongshu.com/explore/6a12979f000000003601875e" target="_blank">
+      <span class="ic-metric">¥3651</span>
+      <span class="ic-title">低于均价1000+喝一级园标杆蜜蜂园！</span>
+      <span class="ic-hl">勃艮第一级园+低于均价1000，专业藏家锁单</span>
+    </a><a class="inline-case" href="https://www.xiaohongshu.com/explore/6a16f83b0000000006022ef1" target="_blank">
+      <span class="ic-metric">¥2073</span>
+      <span class="ic-title">菜刀酒庄 皮耶侯奇酒庄夜圣乔治老藤一级园</span>
+      <span class="ic-hl">酒庄+一级园+老藤全要素，硬通货标的</span>
+    </a></div>
+      <div class="method-source">来源：诺亚 insight-v20</div>
+    </div><div class="method-card-v2">
+      <div class="method-title">🏆 产地/限量</div>
+      <div class="method-desc">产地直发、限量款、联名款等稀缺属性拉价</div>
+      <div class="method-cases"><a class="inline-case" href="https://www.xiaohongshu.com/explore/69fdaeca000000003502dceb" target="_blank">
+      <span class="ic-metric">¥1861</span>
+      <span class="ic-title">酩一配额上新｜天时地利人和的大年佳酿</span>
+      <span class="ic-hl">配额限量+大年表述，行家追捧高客单</span>
+    </a><a class="inline-case" href="https://www.xiaohongshu.com/explore/6a12979f000000003601875e" target="_blank">
+      <span class="ic-metric">¥3651</span>
+      <span class="ic-title">低于均价1000+喝一级园标杆蜜蜂园！</span>
+      <span class="ic-hl">勃艮第一级园+低于均价1000，专业藏家锁单</span>
+    </a></div>
       <div class="method-source">来源：三感六度</div>
-    </div><div class="method-card">
-      <div class="method-title">👨‍👩‍👧 送礼/孝心场景</div>
-      <div class="method-desc">"送爸妈" / "送领导" 场景默认接受高客单价</div>
+    </div><div class="method-card-v2">
+      <div class="method-title">📦 大份装/家庭装</div>
+      <div class="method-desc">全家装/囤货价/大份量，推高单笔购买量</div>
+      <div class="method-cases"><a class="inline-case" href="https://www.xiaohongshu.com/explore/6a12979f000000003601875e" target="_blank">
+      <span class="ic-metric">¥3651</span>
+      <span class="ic-title">低于均价1000+喝一级园标杆蜜蜂园！</span>
+      <span class="ic-hl">勃艮第一级园+低于均价1000，专业藏家锁单</span>
+    </a><a class="inline-case" href="https://www.xiaohongshu.com/explore/6a16f83b0000000006022ef1" target="_blank">
+      <span class="ic-metric">¥2073</span>
+      <span class="ic-title">菜刀酒庄 皮耶侯奇酒庄夜圣乔治老藤一级园</span>
+      <span class="ic-hl">酒庄+一级园+老藤全要素，硬通货标的</span>
+    </a></div>
+      <div class="method-source">来源：creation-guide-v9 D9</div>
+    </div><div class="method-card-v2">
+      <div class="method-title">💎 高端/品质定位</div>
+      <div class="method-desc">强调品质/工艺/产地溯源，主动建立高价值感</div>
+      <div class="method-cases"><a class="inline-case" href="https://www.xiaohongshu.com/explore/6a12979f000000003601875e" target="_blank">
+      <span class="ic-metric">¥3651</span>
+      <span class="ic-title">低于均价1000+喝一级园标杆蜜蜂园！</span>
+      <span class="ic-hl">勃艮第一级园+低于均价1000，专业藏家锁单</span>
+    </a><a class="inline-case" href="https://www.xiaohongshu.com/explore/69d4cc68000000002102e6d7" target="_blank">
+      <span class="ic-metric">¥1231</span>
+      <span class="ic-title">周董同款酒庄平替！400+喝一级园！</span>
+      <span class="ic-hl">明星同款酒庄平替，高端心智借势</span>
+    </a></div>
       <div class="method-source">来源：creation-guide-v9 D5</div>
-    </div>
-  </div>
-
-  <div class="section-label">🔥 本周休食 TOP 10 · 图文</div>
-  <div class="case-grid"><div class="case-card">
-      <div class="case-rank">#1</div>
-      <div class="case-body">
-        <div class="case-title">低于均价1000+喝一级园标杆蜜蜂园！</div>
-        <div class="case-meta">
-          <span class="case-metric">¥3651</span>
-          <span class="case-seller">Caillie凯莉的小酒馆的店</span>
-        </div>
-        <div class="case-stats">曝光 3,952 · 点击 290 · 下单 9 · GMV ¥32861</div>
-        <div class="case-highlight">💡 勃艮第一级园+低于均价1000，专业藏家锁单</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/6a12979f000000003601875e" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#2</div>
-      <div class="case-body">
-        <div class="case-title">菜刀酒庄 皮耶侯奇酒庄夜圣乔治老藤一级园</div>
-        <div class="case-meta">
-          <span class="case-metric">¥2073</span>
-          <span class="case-seller">LEWO 乐沃葡萄酒的店</span>
-        </div>
-        <div class="case-stats">曝光 1,338 · 点击 113 · 下单 5 · GMV ¥10365</div>
-        <div class="case-highlight">💡 酒庄+一级园+老藤全要素，硬通货标的</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/6a16f83b0000000006022ef1" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#3</div>
-      <div class="case-body">
-        <div class="case-title">酩一配额上新｜天时地利人和的大年佳酿</div>
-        <div class="case-meta">
-          <span class="case-metric">¥1861</span>
-          <span class="case-seller">疆进酒少庄主精选葡萄酒的店</span>
-        </div>
-        <div class="case-stats">曝光 11,075 · 点击 759 · 下单 6 · GMV ¥11165</div>
-        <div class="case-highlight">💡 配额限量+大年表述，行家追捧高客单</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/69fdaeca000000003502dceb" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#4</div>
-      <div class="case-body">
-        <div class="case-title">仅758r骑士庄正牌【马年·徐悲鸿奔马】特别版</div>
-        <div class="case-meta">
-          <span class="case-metric">¥1408</span>
-          <span class="case-seller">微醺后花园的店</span>
-        </div>
-        <div class="case-stats">曝光 15,991 · 点击 910 · 下单 6 · GMV ¥8445</div>
-        <div class="case-highlight">💡 骑士庄正牌+艺术家特别版，收藏溢价</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/6a1282cf0000000008025f5f" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#5</div>
-      <div class="case-body">
-        <div class="case-title">周董同款酒庄平替！400+喝一级园！</div>
-        <div class="case-meta">
-          <span class="case-metric">¥1231</span>
-          <span class="case-seller">HolidayWine假日酒馆的店</span>
-        </div>
-        <div class="case-stats">曝光 3,524 · 点击 187 · 下单 5 · GMV ¥6154</div>
-        <div class="case-highlight">💡 明星同款酒庄平替，高端心智借势</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/69d4cc68000000002102e6d7" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#6</div>
-      <div class="case-body">
-        <div class="case-title">选了半天最终还是选了Fourrier的Le Preau</div>
-        <div class="case-meta">
-          <span class="case-metric">¥1184</span>
-          <span class="case-seller">JoshyWine的店</span>
-        </div>
-        <div class="case-stats">曝光 2,093 · 点击 209 · 下单 8 · GMV ¥9471</div>
-        <div class="case-highlight">💡 指定酒庄指定酒款，精准买家秒认</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/69f7285a000000003700c113" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#7</div>
-      <div class="case-body">
-        <div class="case-title">勒桦慕西尼太遥远，勒桦山丘干红就在眼前</div>
-        <div class="case-meta">
-          <span class="case-metric">¥1136</span>
-          <span class="case-seller">唯美酒肆的店</span>
-        </div>
-        <div class="case-stats">曝光 6,259 · 点击 343 · 下单 5 · GMV ¥5680</div>
-        <div class="case-highlight">💡 &quot;勒桦&quot;顶奢平替表述，名庄客单</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/6a0eeffa00000000080276a7" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#8</div>
-      <div class="case-body">
-        <div class="case-title">店铺上新：勒桦（Leroy)勃艮第山丘干白</div>
-        <div class="case-meta">
-          <span class="case-metric">¥1121</span>
-          <span class="case-seller">唯美酒肆的店</span>
-        </div>
-        <div class="case-stats">曝光 61,421 · 点击 3,613 · 下单 18 · GMV ¥20180</div>
-        <div class="case-highlight">💡 勒桦山丘干白名酒上新，藏家直击</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/6a0ae05100000000070114aa" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#9</div>
-      <div class="case-body">
-        <div class="case-title">上海国际饭店蝴蝶酥伴手礼免排队顺丰到家啦</div>
-        <div class="case-meta">
-          <span class="case-metric">¥1054</span>
-          <span class="case-seller">国际饭店蝴蝶酥PARK HOTEL的店</span>
-        </div>
-        <div class="case-stats">曝光 4,326 · 点击 532 · 下单 6 · GMV ¥6326</div>
-        <div class="case-highlight">💡 上海地标伴手礼+免排队顺丰，高端礼赠</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/69be470600000000220243a1" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#10</div>
-      <div class="case-body">
-        <div class="case-title">品鉴茅台1935，酱香韵味直击人心
-</div>
-        <div class="case-meta">
-          <span class="case-metric">¥1014</span>
-          <span class="case-seller">茅酒业贰店的店</span>
-        </div>
-        <div class="case-stats">曝光 48,472 · 点击 1,433 · 下单 6 · GMV ¥6085</div>
-        <div class="case-highlight">💡 茅台1935品鉴关键词，酱酒高净值人群</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/6a11af8700000000350203dd" target="_blank">→ 看原文</a>
-      </div>
     </div></div>
 
-  <div class="section-label">🎥 本周休食 TOP 10 · 视频</div>
-  <div class="case-grid"><div class="case-card">
-      <div class="case-rank">#1</div>
-      <div class="case-body">
-        <div class="case-title">默尔索扫地僧传人，百年老藤仙泉园！</div>
-        <div class="case-meta">
-          <span class="case-metric">¥2430</span>
-          <span class="case-seller">兔吉酒太甜的店</span>
-        </div>
-        <div class="case-stats">曝光 3,978 · 点击 180 · 下单 5 · GMV ¥12151</div>
-        <div class="case-highlight">💡 默尔索扫地僧+百年老藤，行家黑话精准</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/6a0410c00000000007011964" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#2</div>
-      <div class="case-body">
-        <div class="case-title">拿了100多瓶25周年黑金LLM光明僧侣，开一箱</div>
-        <div class="case-meta">
-          <span class="case-metric">¥1484</span>
-          <span class="case-seller">WineNot酒否的店</span>
-        </div>
-        <div class="case-stats">曝光 8,731 · 点击 562 · 下单 6 · GMV ¥8901</div>
-        <div class="case-highlight">💡 黑金LLM25周年+开箱实拍，稀缺名酒</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/6a042d5f00000000080241a9" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#3</div>
-      <div class="case-body">
-        <div class="case-title">鸿运熟茶已上车。开05版博友301批次七级砖</div>
-        <div class="case-meta">
-          <span class="case-metric">¥1228</span>
-          <span class="case-seller">利佰年老茶馆的店</span>
-        </div>
-        <div class="case-stats">曝光 20,879 · 点击 3,163 · 下单 18 · GMV ¥22097</div>
-        <div class="case-highlight">💡 05版博友+七级砖，老茶藏家术语</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/6a224d0e0000000008002b04" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#4</div>
-      <div class="case-body">
-        <div class="case-title">一个月连喝1箱半，新手的第一瓶好雷司令</div>
-        <div class="case-meta">
-          <span class="case-metric">¥1084</span>
-          <span class="case-seller">酒零后根据地的店</span>
-        </div>
-        <div class="case-stats">曝光 6,294 · 点击 236 · 下单 6 · GMV ¥6505</div>
-        <div class="case-highlight">💡 新手第一瓶雷司令，入门高客单引导</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/69f01065000000001a037d30" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#5</div>
-      <div class="case-body">
-        <div class="case-title">去澳洲喝几百款酒，我强推它！不好喝来找我</div>
-        <div class="case-meta">
-          <span class="case-metric">¥991</span>
-          <span class="case-seller">酒零后根据地的店</span>
-        </div>
-        <div class="case-stats">曝光 7,354 · 点击 334 · 下单 5 · GMV ¥4953</div>
-        <div class="case-highlight">💡 澳洲百款实测+强推背书，专业筛选感</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/6a19314b0000000006037a60" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#6</div>
-      <div class="case-body">
-        <div class="case-title">邓时海先生06版福禄圆茶，微涩高香。</div>
-        <div class="case-meta">
-          <span class="case-metric">¥957</span>
-          <span class="case-seller">利佰年老茶馆的店</span>
-        </div>
-        <div class="case-stats">曝光 11,342 · 点击 832 · 下单 12 · GMV ¥11489</div>
-        <div class="case-highlight">💡 邓时海+06版福禄圆茶，普洱名家信仰</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/6a1511930000000007020694" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#7</div>
-      <div class="case-body">
-        <div class="case-title">古树茶生，精品螃蟹脚</div>
-        <div class="case-meta">
-          <span class="case-metric">¥909</span>
-          <span class="case-seller">利佰年老茶馆的店</span>
-        </div>
-        <div class="case-stats">曝光 12,440 · 点击 1,041 · 下单 13 · GMV ¥11816</div>
-        <div class="case-highlight">💡 古树生茶+螃蟹脚，稀缺品类高溢价</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/6a13be3c000000000803ce1f" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#8</div>
-      <div class="case-body">
-        <div class="case-title">【测评】宋观十年，无过滤黄酒又出爆品了！</div>
-        <div class="case-meta">
-          <span class="case-metric">¥843</span>
-          <span class="case-seller">塔牌旗舰店</span>
-        </div>
-        <div class="case-stats">曝光 17,750 · 点击 729 · 下单 9 · GMV ¥7586</div>
-        <div class="case-highlight">💡 宋观十年无过滤黄酒，新爆品高端测评</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/689ab7060000000023027bec" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#9</div>
-      <div class="case-body">
-        <div class="case-title">极简茶具5月新品～铸</div>
-        <div class="case-meta">
-          <span class="case-metric">¥802</span>
-          <span class="case-seller">三时久茶空间的店</span>
-        </div>
-        <div class="case-stats">曝光 3,849 · 点击 470 · 下单 5 · GMV ¥4010</div>
-        <div class="case-highlight">💡 极简茶具5月新品铸铁，茶艺玩家高单</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/6a104c97000000003701f8ad" target="_blank">→ 看原文</a>
-      </div>
-    </div><div class="case-card">
-      <div class="case-rank">#10</div>
-      <div class="case-body">
-        <div class="case-title">618九白饮，这么拍，太值了！</div>
-        <div class="case-meta">
-          <span class="case-metric">¥780</span>
-          <span class="case-seller">九窝颜食社旗舰店</span>
-        </div>
-        <div class="case-stats">曝光 12,267 · 点击 419 · 下单 9 · GMV ¥7017</div>
-        <div class="case-highlight">💡 618九白饮组合，高客单仪式感套装</div>
-        <a class="case-link" href="https://www.xiaohongshu.com/explore/6a124cf700000000360027bb" target="_blank">→ 看原文</a>
-      </div>
+  <div class="section-label">🎬 视频路径 · 多样化参考</div>
+  <div class="methods-grid"><div class="method-card-v2">
+      <div class="method-title">🍷 专业术语/藏家黑话</div>
+      <div class="method-desc">老茶/扫地僧传人/百年老藤等专业黑话，圈层高客单</div>
+      <div class="method-cases"><a class="inline-case" href="https://www.xiaohongshu.com/explore/6a0410c00000000007011964" target="_blank">
+      <span class="ic-metric">¥2430</span>
+      <span class="ic-title">默尔索扫地僧传人，百年老藤仙泉园！</span>
+      <span class="ic-hl">默尔索扫地僧+百年老藤，行家黑话精准</span>
+    </a><a class="inline-case" href="https://www.xiaohongshu.com/explore/6a224d0e0000000008002b04" target="_blank">
+      <span class="ic-metric">¥1228</span>
+      <span class="ic-title">鸿运熟茶已上车。开05版博友301批次七级砖</span>
+      <span class="ic-hl">05版博友+七级砖，老茶藏家术语</span>
+    </a></div>
+      <div class="method-source">来源：诺亚 insight-v20</div>
+    </div><div class="method-card-v2">
+      <div class="method-title">🏆 名酒/稀缺开箱</div>
+      <div class="method-desc">100瓶黑金LLM/25周年等名酒开箱，实拍强背书</div>
+      <div class="method-cases"><a class="inline-case" href="https://www.xiaohongshu.com/explore/6a042d5f00000000080241a9" target="_blank">
+      <span class="ic-metric">¥1484</span>
+      <span class="ic-title">拿了100多瓶25周年黑金LLM光明僧侣，开一箱</span>
+      <span class="ic-hl">黑金LLM25周年+开箱实拍，稀缺名酒</span>
+    </a><a class="inline-case" href="https://www.xiaohongshu.com/explore/6a224d0e0000000008002b04" target="_blank">
+      <span class="ic-metric">¥1228</span>
+      <span class="ic-title">鸿运熟茶已上车。开05版博友301批次七级砖</span>
+      <span class="ic-hl">05版博友+七级砖，老茶藏家术语</span>
+    </a></div>
+      <div class="method-source">来源：三感六度</div>
+    </div><div class="method-card-v2">
+      <div class="method-title">🎁 高价值场景叙事</div>
+      <div class="method-desc">婚庆/高端宴席/馈赠等场景，高价格有叙事撑腰</div>
+      <div class="method-cases"><a class="inline-case" href="https://www.xiaohongshu.com/explore/689ab7060000000023027bec" target="_blank">
+      <span class="ic-metric">¥843</span>
+      <span class="ic-title">【测评】宋观十年，无过滤黄酒又出爆品了！</span>
+      <span class="ic-hl">宋观十年无过滤黄酒，新爆品高端测评</span>
+    </a><a class="inline-case" href="https://www.xiaohongshu.com/explore/6a0410c00000000007011964" target="_blank">
+      <span class="ic-metric">¥2430</span>
+      <span class="ic-title">默尔索扫地僧传人，百年老藤仙泉园！</span>
+      <span class="ic-hl">默尔索扫地僧+百年老藤，行家黑话精准</span>
+    </a></div>
+      <div class="method-source">来源：creation-guide-v9 D8</div>
+    </div><div class="method-card-v2">
+      <div class="method-title">📊 价值数字化</div>
+      <div class="method-desc">均价超1000/一瓶抵多瓶等量化价值，建立高客单认知</div>
+      <div class="method-cases"><a class="inline-case" href="https://www.xiaohongshu.com/explore/6a0410c00000000007011964" target="_blank">
+      <span class="ic-metric">¥2430</span>
+      <span class="ic-title">默尔索扫地僧传人，百年老藤仙泉园！</span>
+      <span class="ic-hl">默尔索扫地僧+百年老藤，行家黑话精准</span>
+    </a><a class="inline-case" href="https://www.xiaohongshu.com/explore/6a042d5f00000000080241a9" target="_blank">
+      <span class="ic-metric">¥1484</span>
+      <span class="ic-title">拿了100多瓶25周年黑金LLM光明僧侣，开一箱</span>
+      <span class="ic-hl">黑金LLM25周年+开箱实拍，稀缺名酒</span>
+    </a></div>
+      <div class="method-source">来源：creation-guide-v9 D2</div>
+    </div><div class="method-card-v2">
+      <div class="method-title">🌍 产地/年份溯源</div>
+      <div class="method-desc">特定产区+年份，老茶/名庄等直接定价锚点</div>
+      <div class="method-cases"><a class="inline-case" href="https://www.xiaohongshu.com/explore/6a224d0e0000000008002b04" target="_blank">
+      <span class="ic-metric">¥1228</span>
+      <span class="ic-title">鸿运熟茶已上车。开05版博友301批次七级砖</span>
+      <span class="ic-hl">05版博友+七级砖，老茶藏家术语</span>
+    </a><a class="inline-case" href="https://www.xiaohongshu.com/explore/6a0410c00000000007011964" target="_blank">
+      <span class="ic-metric">¥2430</span>
+      <span class="ic-title">默尔索扫地僧传人，百年老藤仙泉园！</span>
+      <span class="ic-hl">默尔索扫地僧+百年老藤，行家黑话精准</span>
+    </a></div>
+      <div class="method-source">来源：诺亚 insight-v20</div>
     </div></div>
 
   <div class="tips-box">
-    <strong>💡 怎么用：</strong> 看 TOP 案例的标题套路 + AI 亮点解析 → 找到适合你品类的 2-3 条路径 → 自己仿写。每周一更新 TOP 案例，多积累灵感库。
+    <strong>💡 怎么用：</strong> 每条方法下有 2 个本周真实案例。找到适合你品类的方向，仿写标题或封面策略。方法没有优先级，哪个适合你的产品就用哪个。
   </div>
 </div>
 <div class="tab-panel hidden" id="tab-audit">

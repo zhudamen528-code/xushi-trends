@@ -6,3 +6,10 @@ index.html written: 187,801 bytes
 tab-panel 数量：7（预期 7）
 panel ids: ['gpm', 'ctr1', 'ctr2', 'cvr', 'price', 'audit', 'tools']
 [3] git push
+[main 6c9e43b] auto: weekly refresh 2026-06-10
+ 2 files changed, 37 insertions(+)
+ create mode 100644 refresh_v8_20260610.log
+ create mode 100755 weekly_refresh.sh
+To github.com:zhudamen528-code/xushi-trends.git
+   84b11f6..6c9e43b  main -> main
+===== 完成 2026年 06月 10日 星期三 17:26:20 CST =====
