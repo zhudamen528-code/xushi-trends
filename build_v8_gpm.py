@@ -46,37 +46,13 @@ NEW_NAV = '''<div class="tab-nav">
 
 # ============ KPI 卡片 ============
 def kpi_card(title, p50, p75, ka_p75=None, pct=True):
-    """Tab1 脱敏版：只展示方向感，不暴露绝对值"""
-    def level(v, is_pct):
-        if v is None: return '—'
-        if is_pct:
-            # CTR1: 图文>10%=高, 7-10%=中, <7%=低
-            # CTR2: 图文>30%=高; CVR>6%=高
-            if v >= 0.10: return '高'
-            if v >= 0.06: return '中等'
-            return '一般'
-        else:
-            if v >= 60: return '高'
-            if v >= 30: return '中等'
-            return '一般'
-    p75_label = level(p75, pct)
-    p50_label = level(p50, pct)
-    color = '#ff2442' if p75_label == '高' else ('#ff7043' if p75_label == '中等' else '#888')
-    ka_cmp = ''
-    if ka_p75 is not None and p75 is not None:
-        diff = p75 - ka_p75
-        if abs(diff) < 0.005 if pct else abs(diff) < 3:
-            ka_cmp = '与大盘持平'
-        elif diff > 0:
-            ka_cmp = '优于大盘'
-        else:
-            ka_cmp = '略低大盘'
-    ka_html = f'<div class="kpi-ka">{ka_cmp}</div>' if ka_cmp else ''
+    """Tab1: 给行业参考值（优秀线/中位）+ 商家可对照自己后台"""
+    fmt = fmt_pct if pct else fmt_money
     return f'''<div class="kpi-card">
       <div class="kpi-title">{title}</div>
-      <div class="kpi-value" style="color:{color}">{p75_label}</div>
-      <div class="kpi-sub">优秀笔记水平 · 行业中位 {p50_label}</div>
-      {ka_html}
+      <div class="kpi-value">{fmt(p75)}</div>
+      <div class="kpi-sub">行业优秀线（参考）</div>
+      <div class="kpi-ka">行业中位：{fmt(p50)}</div>
     </div>'''
 
 # ============ Tab1 GPM 总览 ============
@@ -107,8 +83,8 @@ TAB1 = f'''<div class="tab-panel" id="tab-gpm">
   </div>
 
   <div class="tips-box">
-    <strong>💡 怎么看：</strong> P50 = 行业中位（一半笔记达到），P75 = 优秀线（前 25% 笔记）。比对自己笔记的数据，<strong>落后哪一环就先优化哪一环</strong>。点击上方 Tab 看每环节方法论 + 本周休食 TOP 案例。<br><br>
-    <strong>KA 快消大盘</strong>包括：休食 + 大健康 + 生鲜 + 亲子生活 + 宠物 + 家用 共 6 个一级品类。
+    <strong>💡 怎么看：</strong> 把行业优秀线 / 中位作为参考，对照你后台笔记的封面点击率、商品卡点击率、转化率、客单价数据。<strong>哪一环明显落后行业，就优先优化哪一环</strong>。点击上方 Tab 看对应环节的方法路径 + 本周休食优秀案例。<br><br>
+    数据基于近 4 周休食类目所有商品笔记的统计结果，每周一更新。
   </div>
 </div>'''
 
@@ -142,22 +118,9 @@ def funnel_tab(tab_id, icon, title, metric_key, methods_t, methods_v, is_price=F
     ka_p75_t = ka_t.get(f'{metric_key}_p75')
     ka_p75_v = ka_v.get(f'{metric_key}_p75')
 
-    def level(v):
-        if v is None: return '—'
-        if pct:
-            if metric_key == 'ctr1': return '高' if v>=0.10 else ('中等' if v>=0.07 else '一般')
-            if metric_key == 'ctr2': return '高' if v>=0.25 else ('中等' if v>=0.10 else '一般')
-            if metric_key == 'cvr':  return '高' if v>=0.06 else ('中等' if v>=0.02 else '一般')
-        else:
-            return '高' if v>=60 else ('中等' if v>=30 else '一般')
-        return '中等'
-
-    def ka_cmp(x_p75, k_p75):
-        if x_p75 is None or k_p75 is None: return ''
-        diff = x_p75 - k_p75
-        threshold = 0.01 if pct else 5
-        if abs(diff) < threshold: return '与大盘持平'
-        return '优于大盘' if diff > 0 else '略低大盘'
+    xushi_p50_t = xushi_t.get(f'{metric_key}_p50')
+    xushi_p50_v = xushi_v.get(f'{metric_key}_p50')
+    fmt = fmt_pct if pct else fmt_money
 
     return f'''<div class="tab-panel hidden" id="tab-{tab_id}">
   <div class="hero hero-sub hero-{tab_id}">
@@ -165,19 +128,19 @@ def funnel_tab(tab_id, icon, title, metric_key, methods_t, methods_v, is_price=F
     <p class="meta">方法论 + 本周休食案例（数据驱动，非唯一答案）</p>
   </div>
 
-  <div class="section-label">🎯 本周休食优秀笔记水平</div>
+  <div class="section-label">🎯 行业参考值（对照你的笔记后台数据）</div>
   <div class="kpi-grid kpi-grid-2col">
     <div class="kpi-card">
       <div class="kpi-title">📈 图文</div>
-      <div class="kpi-value" style="color:#ff2442">{level(xushi_p75_t)}</div>
-      <div class="kpi-sub">优秀笔记水平</div>
-      <div class="kpi-ka">{ka_cmp(xushi_p75_t, ka_p75_t)}</div>
+      <div class="kpi-value">{fmt(xushi_p75_t)}</div>
+      <div class="kpi-sub">行业优秀线（参考）</div>
+      <div class="kpi-ka">行业中位：{fmt(xushi_p50_t)}</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-title">🎬 视频</div>
-      <div class="kpi-value" style="color:#ff2442">{level(xushi_p75_v)}</div>
-      <div class="kpi-sub">优秀笔记水平</div>
-      <div class="kpi-ka">{ka_cmp(xushi_p75_v, ka_p75_v)}</div>
+      <div class="kpi-value">{fmt(xushi_p75_v)}</div>
+      <div class="kpi-sub">行业优秀线（参考）</div>
+      <div class="kpi-ka">行业中位：{fmt(xushi_p50_v)}</div>
     </div>
   </div>
 
