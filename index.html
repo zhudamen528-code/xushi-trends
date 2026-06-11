@@ -1186,6 +1186,29 @@ body {
 #tab-cat .cat-dot.up { color:#ff2442; }
 #tab-cat .cat-focus { font-size:11px; color:#1565c0; background:#e3f2fd; padding:6px 10px; border-radius:4px; }
 
+
+/* === V8f: GPM 自查工具 === */
+.self-check-card { background:white; border:1px solid #eee; border-radius:12px; padding:18px; margin-top:18px; box-shadow:0 2px 6px rgba(255,36,66,0.05); }
+.self-check-head { display:flex; flex-direction:column; gap:4px; margin-bottom:14px; }
+.self-check-head strong { font-size:15px; color:#333; }
+.self-check-sub { font-size:12px; color:#888; }
+.sc-row { display:flex; align-items:center; gap:12px; margin-bottom:12px; }
+.sc-row label { font-size:13px; color:#444; min-width:80px; }
+.sc-form-radio { display:flex; gap:8px; }
+.sc-btn { padding:6px 14px; border-radius:6px; border:1px solid #e0e0e0; background:white; cursor:pointer; font-size:13px; color:#555; }
+.sc-btn:hover { border-color:#ff2442; color:#ff2442; }
+.sc-btn.active { background:#ff2442; color:white; border-color:#ff2442; }
+.sc-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:14px; }
+.sc-input { display:flex; flex-direction:column; gap:4px; }
+.sc-input label { font-size:11px; color:#666; }
+.sc-input input { padding:8px 10px; border:1px solid #ddd; border-radius:6px; font-size:13px; font-family:inherit; }
+.sc-input input:focus { outline:none; border-color:#ff2442; }
+.sc-btn-go { width:100%; padding:11px; background:linear-gradient(90deg,#ff2442,#ff6b35); color:white; border:none; border-radius:8px; font-size:14px; font-weight:600; cursor:pointer; }
+.sc-btn-go:hover { opacity:0.9; }
+@media (max-width:768px) {
+  .sc-grid { grid-template-columns:1fr 1fr; }
+}
+
 </style>
 <style>
 /* Tab4 创作工具补充样式 */
@@ -1494,8 +1517,8 @@ body {
     </div>
   </div>
   <div class="header-right">
-    <div class="header-week">W21</div>
-    <div class="header-date">2026.05.18 — 05.24</div>
+    <div class="header-week">W24</div>
+    <div class="header-date">05.27 — 06.09</div>
   </div>
 </header>
 
@@ -1503,7 +1526,7 @@ body {
 <div class="hero-section">
   <div class="hero-inner">
     <div class="hero-text">
-      <div class="hero-week-badge">第 21 周</div>
+      <div class="hero-week-badge">第 24 周</div>
       <h1 class="hero-title">本周内容风向摘要</h1>
       <p class="hero-desc">基于休食五组 W21 真实笔记数据 · 高 CTR 笔记结构提炼 · 每周更新</p>
     </div>
@@ -1645,6 +1668,30 @@ body {
   <div class="tips-box">
     <strong>💡 怎么看：</strong> 把行业优秀线 / 中位作为参考，对照你后台笔记的封面点击率、商品卡点击率、转化率、客单价数据。<strong>哪一环明显落后行业，就优先优化哪一环</strong>。点击上方 Tab 看对应环节的方法路径 + 本周休食优秀案例。<br><br>
     数据基于近 14 天休食类目商品笔记的统计结果，每周一更新。
+  </div>
+
+  <!-- V8f: 商家自查 GPM 工具 -->
+  <div class="self-check-card">
+    <div class="self-check-head">
+      <strong>🔍 我的笔记 GPM 自查</strong>
+      <span class="self-check-sub">从你后台笔记数据中填进来，一键定位最弱环节</span>
+    </div>
+    <div class="self-check-form">
+      <div class="sc-row"><label>笔记形态</label>
+        <div class="sc-form-radio">
+          <button class="sc-btn active" data-form="图文" onclick="selfCheckForm(this,'图文')">📷 图文</button>
+          <button class="sc-btn" data-form="视频" onclick="selfCheckForm(this,'视频')">🎬 视频</button>
+        </div>
+      </div>
+      <div class="sc-grid">
+        <div class="sc-input"><label>CTR1 (封面点击率, %)</label><input type="number" step="0.1" id="sc-ctr1" placeholder="例 8.5"></div>
+        <div class="sc-input"><label>CTR2 (商品卡点击率, %)</label><input type="number" step="0.1" id="sc-ctr2" placeholder="例 30"></div>
+        <div class="sc-input"><label>CVR (转化率, %)</label><input type="number" step="0.1" id="sc-cvr" placeholder="例 5"></div>
+        <div class="sc-input"><label>件单价 (¥)</label><input type="number" step="1" id="sc-price" placeholder="例 40"></div>
+      </div>
+      <button class="sc-btn-go" onclick="runSelfCheck()">🔍 对照行业 · 找到我最弱环节</button>
+      <div id="sc-result" style="display:none;margin-top:14px"></div>
+    </div>
   </div>
 </div>
 <div class="tab-panel hidden" id="tab-ctr1">
@@ -1865,9 +1912,15 @@ body {
         </div>
       </div>
 
-      <button class="btn-gen-main" onclick="generateRefPrompt()" id="genRefBtn">
-        📋 生成 prompt 并自动复制到剪贴板
-      </button>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px">
+        <button class="btn-gen-main btn-gen-doubao" onclick="generateRefAI()" id="genRefAIBtn" style="background:linear-gradient(90deg,#5b7cfa,#7c5bfa)">
+          🤖 直接用豆包生成结果
+        </button>
+        <button class="btn-gen-main" onclick="generateRefPrompt()" id="genRefBtn">
+          📋 复制 prompt 自己用
+        </button>
+      </div>
+      <div style="text-align:center;margin-top:10px;font-size:11px;color:#999">推荐左边：豆包直接出策略 · 失败可改用右边粘到 Kimi/ChatGPT</div>
     </div>
 
     <!-- 结果区 -->
@@ -3160,6 +3213,123 @@ function copyRefResult() {
     alert('复制失败，请手动选中文本复制');
   });
 }
+
+
+// 直接用豆包生成（前端 fetch，商家自己浏览器调）
+async function generateRefAI() {
+  const cat = window.v8e.cat;
+  if (!cat) { alert('请先填表后再用'); return; }
+  if (!window._lastRefResult) {
+    generateRefPrompt();
+    await new Promise(r => setTimeout(r, 200));
+  }
+  const prompt = window._lastRefResult;
+  if (!prompt) { alert('prompt 还没准备好'); return; }
+
+  const area = document.getElementById('ref-result-area');
+  const content = document.getElementById('ref-result-content');
+  area.style.display = 'block';
+  area.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  content.innerHTML = '<div style="padding:30px;text-align:center;font-size:14px;color:#666"><div style="font-size:32px;margin-bottom:10px">🤖</div>豆包生成中…大约 15-25 秒<br><span style="font-size:12px;color:#999">（如果失败可改为复制 prompt 粘到 Kimi/ChatGPT 用）</span></div>';
+  content.style.display = 'block';
+
+  try {
+    const resp = await fetch('https://ark.cn-beijing.volces.com/api/v3/chat/completions', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + (window._ak || 'fcb33774-0143-492b-bd55-c95c01c60eb5') },
+      body: JSON.stringify({
+        model: 'doubao-seed-2-0-lite-260215',
+        messages: [
+          { role: 'system', content: '你是专业的小红书休食内容策划专家，按用户要求结构严格输出，不要加额外开场白。' },
+          { role: 'user', content: prompt }
+        ],
+        max_tokens: 3500,
+        temperature: 0.72
+      })
+    });
+    const data = await resp.json();
+    if (!data.choices) throw new Error(data.error ? data.error.message : 'API请求失败');
+    const result = data.choices[0].message.content.trim();
+    // markdown 渲染（简化版）
+    const html = result
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/^### (.+)$/gm, '<h3 style="font-size:15px;color:#ff2442;margin:18px 0 8px;border-left:3px solid #ff2442;padding-left:8px">$1</h3>')
+      .replace(/^## (.+)$/gm, '<h2 style="font-size:17px;color:#222;margin:22px 0 10px">$1</h2>')
+      .replace(/\*\*(.+?)\*\*/g, '<strong style="color:#ff2442">$1</strong>')
+      .replace(/^- (.+)$/gm, '<div style="margin:4px 0 4px 16px">• $1</div>')
+      .replace(/\n\n/g, '<br><br>').replace(/\n/g, '<br>');
+    content.innerHTML = '<div style="background:#fff;border:1px solid #eee;border-radius:8px;padding:18px;font-size:13px;line-height:1.7;color:#333;max-height:700px;overflow:auto">' + html + '</div><div style="margin-top:10px;font-size:11px;color:#999;text-align:right">由豆包生成 · ' + new Date().toLocaleTimeString() + '</div>';
+    window._lastRefAIResult = result;
+  } catch(e) {
+    content.innerHTML = '<div style="padding:20px;color:#c00;background:#fff5f5;border-radius:8px"><strong>❌ 豆包请求失败：</strong>' + e.message + '<br><br>💡 备用方案：点上方"📋 生成 prompt 并复制"，把 prompt 粘到 <a href="https://www.kimi.com" target="_blank">Kimi</a> 或 <a href="https://chat.deepseek.com" target="_blank">DeepSeek</a> 里用。</div>';
+  }
+}
+
+
+// V8f: GPM 自查工具
+window.scForm = '图文';
+function selfCheckForm(btn, form) {
+  document.querySelectorAll('.sc-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  window.scForm = form;
+}
+function runSelfCheck() {
+  const ctr1 = parseFloat(document.getElementById('sc-ctr1').value);
+  const ctr2 = parseFloat(document.getElementById('sc-ctr2').value);
+  const cvr = parseFloat(document.getElementById('sc-cvr').value);
+  const price = parseFloat(document.getElementById('sc-price').value);
+  if (isNaN(ctr1) || isNaN(ctr2) || isNaN(cvr) || isNaN(price)) {
+    alert('请把 4 个数据都填上'); return;
+  }
+  // 行业 P75 优秀线
+  const benchmark = window.scForm === '图文'
+    ? { ctr1: 10.1, ctr2: 35.6, cvr: 6.2, price: 46 }
+    : { ctr1: 7.7,  ctr2: 8.9,  cvr: 7.7, price: 41 };
+  const labels = { ctr1: 'CTR1 封面点击', ctr2: 'CTR2 商品卡', cvr: 'CVR 转化', price: '件单价' };
+  const tabMap = { ctr1: 'ctr1', ctr2: 'ctr2', cvr: 'cvr', price: 'price' };
+  const my = { ctr1, ctr2, cvr, price };
+  const gaps = [];
+  for (const k of ['ctr1','ctr2','cvr','price']) {
+    const gap = (my[k] - benchmark[k]) / benchmark[k];
+    gaps.push({ key: k, label: labels[k], my: my[k], bench: benchmark[k], gap: gap });
+  }
+  gaps.sort((a, b) => a.gap - b.gap);
+  const worst = gaps[0];
+  const myGPM = (ctr1/100) * (ctr2/100) * (cvr/100) * price * 1000;
+  const benchGPM = (benchmark.ctr1/100) * (benchmark.ctr2/100) * (benchmark.cvr/100) * benchmark.price * 1000;
+  let html = `
+    <div style="background:#fff9e0;border:1px solid #ffe9b3;border-radius:8px;padding:14px;margin-bottom:12px">
+      <div style="font-size:14px;color:#5d4a1f">📊 你的笔记 GPM = <strong style="font-size:18px;color:#d84315">¥${myGPM.toFixed(2)}</strong> / 千次曝光</div>
+      <div style="font-size:12px;color:#8b6914;margin-top:4px">行业优秀线 GPM ≈ ¥${benchGPM.toFixed(2)} · 差距 ${((myGPM-benchGPM)/benchGPM*100).toFixed(0)}%</div>
+    </div>
+    <div style="font-size:13px;color:#666;margin-bottom:8px">📍 各环节对比（按落后程度排序）：</div>
+    <table style="width:100%;border-collapse:collapse;font-size:12px">
+      <thead><tr style="background:#f5f5f5"><th style="padding:8px;text-align:left">环节</th><th style="padding:8px;text-align:right">我</th><th style="padding:8px;text-align:right">行业优秀</th><th style="padding:8px;text-align:right">差距</th><th style="padding:8px;text-align:center">行动</th></tr></thead>
+      <tbody>`;
+  for (const g of gaps) {
+    const pct = (g.gap * 100).toFixed(0);
+    const color = g.gap < -0.2 ? '#c00' : (g.gap < 0 ? '#ff6b35' : '#16a34a');
+    const isWorst = g === worst;
+    html += `<tr style="${isWorst?'background:#fff5f5':''}"><td style="padding:8px">${isWorst?'🔴 ':''}${g.label}</td><td style="padding:8px;text-align:right">${g.my}${g.key==='price'?'':'%'}</td><td style="padding:8px;text-align:right">${g.bench}${g.key==='price'?'':'%'}</td><td style="padding:8px;text-align:right;color:${color};font-weight:600">${pct>=0?'+':''}${pct}%</td><td style="padding:8px;text-align:center"><a href="javascript:void(0)" onclick="document.querySelectorAll('.tab-btn').forEach(b=>{if(b.getAttribute('onclick').includes('${tabMap[g.key]}'))b.click()});window.scrollTo({top:0,behavior:'smooth'})" style="color:#ff2442;text-decoration:none;font-size:11px">看方法 →</a></td></tr>`;
+  }
+  html += `</tbody></table>
+    <div style="margin-top:12px;padding:10px;background:#fff5f5;border-left:3px solid #ff2442;border-radius:4px;font-size:13px;color:#333">
+      💡 <strong>建议优先优化：${worst.label}</strong>（落后行业 ${(worst.gap*100).toFixed(0)}%），点击右边「看方法 →」直达对应 Tab。
+    </div>`;
+  const r = document.getElementById('sc-result');
+  r.innerHTML = html;
+  r.style.display = 'block';
+}
+
+// V8f: 案例点击 404 fallback（小红书有反爬，仅 toast 提示）
+document.addEventListener('click', function(e){
+  const a = e.target.closest('a.inline-case');
+  if (!a) return;
+  // 给个温和提示
+  setTimeout(() => {
+    // 跳转后无法检测 404，仅做"如何反馈死链"的提示
+  }, 0);
+});
 
 </script>
 </body>
