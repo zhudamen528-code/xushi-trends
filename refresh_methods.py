@@ -75,21 +75,19 @@ def render_case(c, metric_key='ctr1'):
     title = c.get('title') or NA
     if title == NA or not str(title).strip():
         title = '(无标题)'
-    title_disp = title[:26] + ('…' if len(title) > 26 else '')
+    # V8g: 横向单行布局 + 隐藏 GMV
+    title_disp = title[:36] + ('…' if len(title) > 36 else '')
     hl = c.get('highlight') or NA
     url = c.get('note_url') or '#'
     seller = c.get('seller_name') or NA
-    # 副指标小字（曝光/下单 让数据有支撑感）
     imp = fmt_int(c.get('imp'))
     buy = fmt_int(c.get('buy'))
-    gmv = fmt_money(c.get('dgmv'))
     return (
-        f'<a class="inline-case" href="{url}" target="_blank">'
-        f'<div class="ic-head"><span class="ic-metric">{val}</span>'
-        f'<span class="ic-seller">{esc(seller)[:15]}</span></div>'
-        f'<div class="ic-title">{esc(title_disp)}</div>'
-        f'<div class="ic-hl">{esc(hl)}</div>'
-        f'<div class="ic-meta">曝光 {imp} · 下单 {buy} · 成交 {gmv}</div>'
+        f'<a class="inline-case inline-case-row" href="{url}" target="_blank">'
+        f'<span class="ic-metric">{val}</span>'
+        f'<span class="ic-title">{esc(title_disp)}</span>'
+        f'<span class="ic-hl">{esc(hl)}</span>'
+        f'<span class="ic-meta-row">{esc(seller)[:12]} · 曝光 {imp} · 下单 {buy}</span>'
         f'</a>'
     )
 
