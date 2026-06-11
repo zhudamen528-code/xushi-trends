@@ -87,7 +87,7 @@ def render_case(c, metric_key='ctr1'):
         f'<span class="ic-metric">{val}</span>'
         f'<span class="ic-title">{esc(title_disp)}</span>'
         f'<span class="ic-hl">{esc(hl)}</span>'
-        f'<span class="ic-meta-row">{esc(seller)[:12]} · 曝光 {imp} · 下单 {buy}</span>'
+        f'<span class="ic-meta-row">{esc(seller)[:12]} · 曝光 {imp}</span>'
         f'</a>'
     )
 
