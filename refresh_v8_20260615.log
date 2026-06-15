@@ -1,0 +1,12 @@
+===== 开始 2026年 06月 15日 星期一 09:00:04 CST =====
+[1] 当前 MVP：复用 data.json（下版本接全自动化）
+[2] build HTML
+index.html written: 198,131 bytes
+<style> 平衡：2/2
+tab-panel 数量：8（预期 8）
+panel ids: ['gpm', 'ctr1', 'ctr2', 'cvr', 'price', 'cat', 'audit', 'tools']
+[V8e] 注入卖点助手 JS
+[V8e] JS injected, new size: 178090
+[V8f] header 时间窗动态化
+[V8f] header → W24 · 05.27 - 06.09
+[3] git push
