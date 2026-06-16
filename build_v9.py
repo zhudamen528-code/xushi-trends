@@ -337,7 +337,7 @@ def render_two_weapons_for_tab(tab_key, pic_pool, vid_pool):
 
     total_methods = len(clusters.get(pic_pool, {}).get('methods', [])) + len(clusters.get(vid_pool, {}).get('methods', []))
     return f'''<div class="two-weapons-banner">
-  <div class="tw-title">🎯 {escape(metric_label)} 的两套打法（基于本池 {total_methods} 个方法的内容质量分类）</div>
+  <div class="tw-title">🎯 {escape(metric_label)} 表现好的笔记里，有 2 种不同算法画像（共 {total_methods} 个方法）</div>
   <div class="tw-grid">
     <div class="tw-card tw-long">
       <div class="tw-head">🏛️ 可持续打法</div>
@@ -432,6 +432,34 @@ new_hero_block_template = '''  __V9_TWO_WEAPONS_PLACEHOLDER__
 
 # 简单做法：直接 patch funnel_tab 函数体
 src = src.replace(old_hero_block, new_hero_block_template)
+
+# === P0：话术降级 - 把"提升 X" 改成"X 表现好的笔记长什么样" + 加诚实标注 ===
+tab_title_rewrites = [
+    ("funnel_tab('ctr1', '👆', '提升 CTR1：封面+标题钩子'",
+     "funnel_tab('ctr1', '📈', 'CTR1（封面+标题点击）表现好的笔记长什么样'"),
+    ("funnel_tab('ctr2', '🔗', '提升 CTR2：商品卡点击'",
+     "funnel_tab('ctr2', '📈', 'CTR2（商品卡点击）表现好的笔记长什么样'"),
+    ("funnel_tab('cvr',  '💰', '提升 CVR：转化下单'",
+     "funnel_tab('cvr',  '📈', 'CVR（下单转化）表现好的笔记长什么样'"),
+    ("funnel_tab('price','💎', '提升件单价：客单优化'",
+     "funnel_tab('price','📈', '件单价表现好的笔记长什么样'"),
+]
+for old, new in tab_title_rewrites:
+    if old in src:
+        src = src.replace(old, new)
+        print(f'✅ 重写 Tab 标题: {old[18:40]}...')
+    else:
+        print(f'⚠️ 未命中标题改写：{old[:30]}')
+
+# 把副标题"方法论 + 本周休食案例（数据驱动，非唯一答案）" 改诚实
+old_meta = '<p class="meta">方法论 + 本周休食案例（数据驱动，非唯一答案）</p>'
+new_meta = '<p class="meta">⚠️ 这是从高 GMV 笔记里聚类出的相关性画像，不是因果证明。仅作为内容方向参考，不保证按此改一定提升该指标</p>'
+src = src.replace(old_meta, new_meta)
+
+# 把 tips-box 那句"找到适合你品类的方向，仿写标题或封面策略"也降级
+old_tips = '<strong>💡 怎么用：</strong> 每条方法下有 2 个本周真实案例。找到适合你品类的方向，仿写标题或封面策略。方法没有优先级，哪个适合你的产品就用哪个。'
+new_tips = '<strong>💡 怎么用：</strong> 每条方法下有 2 个本周真实案例，是该指标表现好的笔记里聚类出的写法规律。<b>注意</b>：这是相关性，不是因果——同一批笔记同时高 GMV、高 CTR/CVR，方法论可能跨指标重叠。建议优先看你品类的案例，不要硬抄跨品类。'
+src = src.replace(old_tips, new_tips)
 
 # 写一个临时 build 脚本，先 import 改后的 v8 模块；用 exec 避免重复 IO
 TMP_BUILD = os.path.join(WORKDIR, '_build_v8_patched_tmp.py')
