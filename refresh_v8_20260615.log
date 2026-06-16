@@ -10,3 +10,55 @@ panel ids: ['gpm', 'ctr1', 'ctr2', 'cvr', 'price', 'cat', 'audit', 'tools']
 [V8f] header 时间窗动态化
 [V8f] header → W24 · 05.27 - 06.09
 [3] git push
+[main ba5aae5] auto: weekly refresh 2026-06-15
+ 47 files changed, 25996 insertions(+)
+ create mode 100644 ALGO_DOSSIER.md
+ create mode 100644 ALGO_DOSSIER.redoc.md
+ create mode 100644 DEEP_DATA_REPORT.md
+ create mode 100644 DEEP_DATA_REPORT.redoc.md
+ create mode 100644 SINGLE_NOTE_DOSSIER.md
+ create mode 100644 SINGLE_NOTE_DOSSIER.redoc.md
+ create mode 100644 V9_DATA_LINEAGE.md
+ create mode 100644 V9_DATA_LINEAGE.redoc.md
+ create mode 100644 V9_DATA_LINEAGE_V2.md
+ create mode 100644 V9_DATA_LINEAGE_V2.redoc.md
+ create mode 100644 cluster_prompt_tpl.py
+ create mode 100644 data/sql/pool_ctr1.sql
+ create mode 100644 data/sql/pool_ctr2.sql
+ create mode 100644 data/sql/pool_cvr.sql
+ create mode 100644 data/sql/pool_price.sql
+ create mode 100644 data/v9_clusters/ctr1_pic.cluster.json
+ create mode 100644 data/v9_clusters/ctr1_pic.prompt.md
+ create mode 100644 data/v9_clusters/ctr1_vid.cluster.json
+ create mode 100644 data/v9_clusters/ctr1_vid.prompt.md
+ create mode 100644 data/v9_clusters/ctr2_pic.cluster.json
+ create mode 100644 data/v9_clusters/ctr2_pic.prompt.md
+ create mode 100644 data/v9_clusters/ctr2_vid.cluster.json
+ create mode 100644 data/v9_clusters/ctr2_vid.prompt.md
+ create mode 100644 data/v9_clusters/cvr_pic.cluster.json
+ create mode 100644 data/v9_clusters/cvr_pic.prompt.md
+ create mode 100644 data/v9_clusters/cvr_vid.cluster.json
+ create mode 100644 data/v9_clusters/cvr_vid.prompt.md
+ create mode 100644 data/v9_clusters/price_pic.cluster.json
+ create mode 100644 data/v9_clusters/price_pic.prompt.md
+ create mode 100644 data/v9_clusters/price_vid.cluster.json
+ create mode 100644 data/v9_clusters/price_vid.prompt.md
+ create mode 100644 data/v9_pool_master.csv
+ create mode 100644 data/v9_pools/ctr1_pic.json
+ create mode 100644 data/v9_pools/ctr1_vid.json
+ create mode 100644 data/v9_pools/ctr2_pic.json
+ create mode 100644 data/v9_pools/ctr2_vid.json
+ create mode 100644 data/v9_pools/cvr_pic.json
+ create mode 100644 data/v9_pools/cvr_vid.json
+ create mode 100644 data/v9_pools/price_pic.json
+ create mode 100644 data/v9_pools/price_vid.json
+ create mode 100644 gen_algo_dossier.py
+ create mode 100644 gen_lineage.py
+ create mode 100644 gen_lineage_v2.py
+ create mode 100644 gen_single_note_dossier.py
+ create mode 100644 refresh_v8_20260615.log
+ create mode 100644 single_note_dump.sql
+ create mode 100644 v9_pool_master.sql
+To github.com:zhudamen528-code/xushi-trends.git
+   e5fe807..ba5aae5  main -> main
+===== 完成 2026年 06月 15日 星期一 09:00:10 CST =====

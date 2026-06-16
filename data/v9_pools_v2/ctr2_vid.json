@@ -1,0 +1,14 @@
+{
+ "pool_name": "ctr2_vid",
+ "metric": "ctr2",
+ "form": "vid",
+ "count": 0,
+ "algo_profile": {
+  "avg_sincerity": 0,
+  "avg_low_bad_market": 0,
+  "avg_good_click": 0,
+  "creation_level_dist": {}
+ },
+ "top5_categories": [],
+ "notes": []
+}

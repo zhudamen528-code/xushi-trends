@@ -1,0 +1,2410 @@
+{
+  "dataList": [
+    {
+      "note_id": "69c11307000000001b0019a5",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": null,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "6a05514e0000000038034f06",
+      "taxonomy1": "职场",
+      "taxonomy2": "职场其他",
+      "taxonomy3": null,
+      "duration": 140.0,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "6a252871000000001702c1dd",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "饮品测评",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69dcb98d000000001a026a02",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 49.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a0197dd0000000006035412",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "饮品测评",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a2258c500000000080329b4",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食教程",
+      "taxonomy3": "饮品教程",
+      "duration": 67.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a11579b00000000350337c7",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": null,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "69f5c501000000001a035568",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 51.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "68b1a87f000000001b01ef38",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "67c86a030000000029032613",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "食材展示",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a0e83b80000000035021c4c",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": 187.0,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "69c388a40000000023011a83",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食教程",
+      "taxonomy3": "烘焙&甜品教程",
+      "duration": 103.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a12d7f40000000006022480",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": null,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "6a0d655b0000000036001613",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "681c9518000000000303f494",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 134.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69e189b2000000002301374d",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "医疗药品",
+      "taxonomy3": null,
+      "duration": 176.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69eb107c0000000013030805",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "食材展示",
+      "duration": 132.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a0c1931000000003503ad29",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "饮品测评",
+      "duration": 83.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a0d6eb300000000070259d8",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "饮品测评",
+      "duration": 41.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a0eb627000000000702d1a9",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "饮品测评",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a190e4a0000000007022072",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "饮品测评",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "68b55cf4000000001b034a22",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食其他",
+      "taxonomy3": null,
+      "duration": 125.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a0c33aa000000000702b46a",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "饮品测评",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "697c0c92000000000a0299da",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a21000f000000003601eaf7",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "饮品测评",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "68ff3bb2000000000303a41c",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69e03bd20000000020038282",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食教程",
+      "taxonomy3": "菜品教程",
+      "duration": 107.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a07b8f30000000006037c6c",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食教程",
+      "taxonomy3": "菜品教程",
+      "duration": 78.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6854d4e9000000001c036f58",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食教程",
+      "taxonomy3": "菜品教程",
+      "duration": 269.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69f88807000000002301654e",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "饮品测评",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69e61d6e0000000023007097",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 68.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a0aa7bd0000000038020f3d",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "零食测评",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a269b830000000008000bca",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "食材展示",
+      "duration": 113.0,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "6808e11c000000000e00690c",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69f9f6f700000000220288d4",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "零食测评",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a0718e0000000003701e2f0",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "零食测评",
+      "duration": 162.0,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "69eb7db70000000038036112",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "零食测评",
+      "duration": 85.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69d9040f0000000022003d82",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "零食测评",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69ecaf00000000003701c399",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "零食测评",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69d10f2e0000000022002669",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "零食测评",
+      "duration": 137.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a0448590000000038034cce",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "零食测评",
+      "duration": 171.0,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "6a1d8ba9000000003601fc6b",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "零食测评",
+      "duration": 91.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69fdbe760000000037034b54",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "零食测评",
+      "duration": 31.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69d25626000000001f0049fd",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "食材展示",
+      "duration": 36.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69b7d421000000001e00fdd2",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": null,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "6a0aed8b0000000038022f9a",
+      "taxonomy1": "社科",
+      "taxonomy2": "科学科普",
+      "taxonomy3": "生活科普",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a0309710000000036033086",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": 138.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a0fcc1c00000000380203a7",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a0d8048000000003701dcd3",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "食材测评",
+      "duration": 96.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a0868b6000000003700e0b9",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "686601be0000000011003f53",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "零食测评",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a073e1e000000003503392f",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a1ba293000000003502a3b1",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": null,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "6a29f5e8000000003501f5f4",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": null,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "6a1ed0a0000000002202b0a4",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": null,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "69fbcf5f0000000035033020",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a0d0e0d000000003701d095",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 215.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69fda3630000000035027fda",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 271.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69f70b370000000036031947",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 270.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a1a9a5b000000003503a45e",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": 105.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a06d8d60000000036003afd",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "零食测评",
+      "duration": 72.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a03d3fa0000000006037597",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a044aa6000000000602074f",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": null,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "6a01a7130000000038021b68",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": null,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "6a058f70000000003701d048",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": null,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "6a17be4b0000000038035bf4",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": null,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "6a1fba51000000003701ebb3",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "零食测评",
+      "duration": 125.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69f1d76e0000000038037981",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": 95.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a11783300000000380237a3",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "零食测评",
+      "duration": 156.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69f6f6720000000038022d5a",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a0e6bac0000000036001136",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 67.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a22836b0000000006036185",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": null,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "68b903b1000000001c00a66f",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "680373d6000000001c02d32f",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 76.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69ef4595000000003700efd7",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食教程",
+      "taxonomy3": "饮品教程",
+      "duration": 59.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a166f1e000000003502e052",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a08893a000000000803132c",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食教程",
+      "taxonomy3": "烘焙&甜品教程",
+      "duration": 68.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a2a9049000000002202f840",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": 117.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a0012eb000000003502cc58",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食其他",
+      "taxonomy3": null,
+      "duration": 29.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a0585380000000035028dc5",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "速食测评",
+      "duration": 33.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69ebb3f800000000360018bc",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a0dc700000000003503067f",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69f08a3e0000000036032749",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 39.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69f440a5000000001a0345a4",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a0d1f3a0000000038037714",
+      "taxonomy1": "美妆",
+      "taxonomy2": "个人护理",
+      "taxonomy3": "眼部护理",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69fabbe1000000003601d548",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "零食测评",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69fd84090000000036018cb8",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": null,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "69fca98b0000000035023f3a",
+      "taxonomy1": "家居家装",
+      "taxonomy2": "家居用品",
+      "taxonomy3": "餐厨具",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69c539f70000000023005187",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "食材展示",
+      "duration": 35.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a1bce23000000000702a15d",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "饮品测评",
+      "duration": 110.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69e090ea0000000021039a00",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 38.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69ab9b9e000000002801f2b5",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "零食测评",
+      "duration": 85.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a0ed81000000000060350bc",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "零食测评",
+      "duration": null,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "69e2e1f70000000022026d95",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "零食测评",
+      "duration": null,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "69fcb252000000003701f411",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 102.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69cf8c49000000002102e810",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食教程",
+      "taxonomy3": "菜品教程",
+      "duration": 62.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a0410c00000000007011964",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "饮品测评",
+      "duration": 102.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69edb027000000003503858a",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": 143.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a030e18000000003502e120",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食教程",
+      "taxonomy3": "饮品教程",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6927924b000000001e003b7e",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "食材展示",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69e761ef0000000023011c50",
+      "taxonomy1": "家居家装",
+      "taxonomy2": "家居装饰",
+      "taxonomy3": "家纺",
+      "duration": 64.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "688347aa00000000170351eb",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": 140.0,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "68c7767c000000001d02e638",
+      "taxonomy1": "娱乐",
+      "taxonomy2": "娱乐其他",
+      "taxonomy3": null,
+      "duration": 132.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a15636c000000003701e929",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食教程",
+      "taxonomy3": "菜品教程",
+      "duration": 36.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a117acd000000003503199b",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 340.0,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "6a0ae053000000003502a327",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69709105000000002103f890",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食教程",
+      "taxonomy3": "饮品教程",
+      "duration": 84.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a0c23c200000000060223bb",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "饮品测评",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "686bd853000000000d026c7c",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "零食测评",
+      "duration": null,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "69ddf82d0000000021006269",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食教程",
+      "taxonomy3": "饮品教程",
+      "duration": 67.0,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "6a1fd6a8000000000803dd6f",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "饮品测评",
+      "duration": 67.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69f71f7e0000000035020287",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "零食测评",
+      "duration": 160.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69eb090f0000000011023001",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "零食测评",
+      "duration": 91.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a02b882000000003503a996",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "零食测评",
+      "duration": 145.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a264ac7000000001503d39e",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "饮品测评",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "689dadef000000001c0130b5",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 78.0,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "69b921310000000021038df5",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "饮品测评",
+      "duration": 166.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69cf2a2f00000000230233f0",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 37.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69819ecc000000001a032ba9",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 28.0,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "69f88e14000000003701ecf4",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": null,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "6a16fedd000000003701fb35",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "食材展示",
+      "duration": 228.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69f183be0000000037036d60",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": 134.0,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "6a057a210000000037037b8f",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "食材展示",
+      "duration": 220.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a0958200000000006020cd1",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "饮品测评",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a0c41c5000000003700d55d",
+      "taxonomy1": "家居家装",
+      "taxonomy2": "家居装饰",
+      "taxonomy3": "家纺",
+      "duration": 184.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a1948210000000036018b80",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食教程",
+      "taxonomy3": "面食教程",
+      "duration": 150.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69d8e78d000000001a023f8b",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": 115.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a0a97590000000038023e11",
+      "taxonomy1": "潮流",
+      "taxonomy2": "穿搭ootd",
+      "taxonomy3": "穿搭造型",
+      "duration": null,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "6a1e3fde000000003601c38b",
+      "taxonomy1": "潮流",
+      "taxonomy2": "穿搭ootd",
+      "taxonomy3": "穿搭造型",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a18ee0700000000080261f0",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食教程",
+      "taxonomy3": "面食教程",
+      "duration": 180.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "68a970a9000000001c00b246",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69bd0f180000000023026fdf",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食教程",
+      "taxonomy3": "饮品教程",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a0d1dc2000000003601ce62",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": null,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "698d9b9a000000002802231f",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "食材展示",
+      "duration": 179.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a092f0a0000000007025b2b",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食教程",
+      "taxonomy3": "菜品教程",
+      "duration": 100.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "67cee0c1000000000703726a",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a1e79b3000000002103c344",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "保健品",
+      "taxonomy3": null,
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69e8887a000000001b001b98",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食教程",
+      "taxonomy3": "饮品教程",
+      "duration": null,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "69b10a7c0000000022023e5b",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "饮品测评",
+      "duration": 53.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69e3291c000000001d01869f",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a1178e60000000038023c67",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "零食测评",
+      "duration": 41.0,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "6a03f608000000003701f080",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": 41.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "678b707a0000000021002fb4",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食教程",
+      "taxonomy3": "菜品教程",
+      "duration": 30.0,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "6930fb7e000000001e005ad3",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食教程",
+      "taxonomy3": "菜品教程",
+      "duration": 33.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "690223640000000007023c84",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食教程",
+      "taxonomy3": "减肥餐教程",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a018ece000000003502469c",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": 142.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a12bbca0000000036031e23",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69c1189200000000210073d9",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 167.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69e9ef350000000020007004",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": null,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "69de34c9000000001a026be6",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": 27.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a0d746d000000003701ce99",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 48.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a0169310000000035027e64",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69ef5a2c000000003803642c",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": 40.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "66e0f057000000001e01830f",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "食材展示",
+      "duration": 60.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a1021c800000000070222c8",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 68.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "697c8862000000001a028332",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "零食测评",
+      "duration": 87.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a044c1d0000000007021bd2",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69bff8f7000000001a022069",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "零食测评",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69e15ef4000000001a028d71",
+      "taxonomy1": "职场",
+      "taxonomy2": "职场其他",
+      "taxonomy3": null,
+      "duration": 83.0,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "668b7a7b000000000a006748",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食其他",
+      "taxonomy3": null,
+      "duration": null,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "6a190271000000000803298a",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食其他",
+      "taxonomy3": null,
+      "duration": 66.0,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "6960e3d1000000001a0276e9",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "食材展示",
+      "duration": 74.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "67a339b90000000018011e90",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": 76.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "67c6b942000000001201cc3e",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "饮品测评",
+      "duration": 69.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a1e60330000000022009537",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "饮品测评",
+      "duration": 125.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "68e5d4da0000000003011785",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "食材展示",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69e77a86000000001a0275c1",
+      "taxonomy1": "母婴",
+      "taxonomy2": "婴童食品",
+      "taxonomy3": null,
+      "duration": null,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "692be813000000001e0277c1",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食其他",
+      "taxonomy3": null,
+      "duration": 97.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a2216370000000035030a94",
+      "taxonomy1": "家居家装",
+      "taxonomy2": "家居用品",
+      "taxonomy3": "餐厨具",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69fea19f000000003603005e",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 31.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69f2c899000000003701f0b0",
+      "taxonomy1": "家居家装",
+      "taxonomy2": "家居用品",
+      "taxonomy3": "家居用品其他",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69e341b000000000230251a6",
+      "taxonomy1": "家居家装",
+      "taxonomy2": "居家兴趣",
+      "taxonomy3": "家居DIY",
+      "duration": 35.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69d1ba03000000001a024c2a",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "零食测评",
+      "duration": 217.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a08360e000000003700e31a",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "零食测评",
+      "duration": 126.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a0db3970000000008031200",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a19075e000000003502c8d6",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "66fcfb20000000002c015127",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": 107.0,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "692d5b93000000000d00ed90",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "688b6d11000000000403d1b4",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a029dfa0000000036003842",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": 96.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a0edda3000000000603160b",
+      "taxonomy1": "家居家装",
+      "taxonomy2": "家居用品",
+      "taxonomy3": "家居用品其他",
+      "duration": 163.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a102aa400000000350257f6",
+      "taxonomy1": "人文",
+      "taxonomy2": "文化",
+      "taxonomy3": "中式工艺和生活",
+      "duration": 112.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a1908d700000000380363b1",
+      "taxonomy1": "人文",
+      "taxonomy2": "文化",
+      "taxonomy3": "中式工艺和生活",
+      "duration": 143.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69f498630000000020038bcb",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "饮品测评",
+      "duration": 105.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6819c2d4000000002101864d",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "零食测评",
+      "duration": 56.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69427849000000001d03981a",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69fafa460000000036018c53",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "零食测评",
+      "duration": 122.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a00c8d7000000000702b2ed",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 91.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69f1676e000000001f003440",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "保健品",
+      "taxonomy3": null,
+      "duration": 157.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69dc964800000000200389f1",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食教程",
+      "taxonomy3": "饮品教程",
+      "duration": 226.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69d7c2ea000000001f00741a",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "零食测评",
+      "duration": 134.0,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "69fbf4d30000000020039c7f",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "饮品测评",
+      "duration": 85.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a1b83e5000000003700d14e",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 118.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "695e052f000000002203206e",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": null,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "691ad4d5000000001b021b5d",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食教程",
+      "taxonomy3": "烘焙&甜品教程",
+      "duration": 105.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6962385d000000000a02a7eb",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "饮品测评",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a22acec000000003502ff39",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "饮品测评",
+      "duration": 121.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "67cbfff8000000001201e527",
+      "taxonomy1": "健身减肥",
+      "taxonomy2": "健身饮食",
+      "taxonomy3": "减脂饮食",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "68a2e404000000001d02420d",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": null,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "6a12979f000000003601875e",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "饮品测评",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69eb6e45000000003700ca78",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "饮品测评",
+      "duration": 158.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69feef0f0000000036019980",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "饮品测评",
+      "duration": 50.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69e1f687000000001b0002ea",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": null,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "6a12ba4b000000000602043f",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 109.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69f17a0a000000003700e862",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 95.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "67f0d073000000000f031c05",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 47.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a06d7ab0000000008025586",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食教程",
+      "taxonomy3": "饮品教程",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "683580b5000000002001d140",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "饮品测评",
+      "duration": 19.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69511a710000000021033987",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": 73.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a14297c0000000006032362",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "饮品测评",
+      "duration": 95.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a15297a0000000035026c6d",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69ce3c29000000002102c7bb",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 78.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6915a86b0000000004007304",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 92.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "699c49f8000000001b0163b2",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 55.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69b7dfa70000000021013d89",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食教程",
+      "taxonomy3": "饮品教程",
+      "duration": 47.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "699c3e3c000000001b01e59e",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食教程",
+      "taxonomy3": "饮品教程",
+      "duration": 61.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69fc9ffd0000000037034add",
+      "taxonomy1": "健身减肥",
+      "taxonomy2": "健身饮食",
+      "taxonomy3": "减脂饮食",
+      "duration": 49.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69ff3e970000000037035d05",
+      "taxonomy1": "健身减肥",
+      "taxonomy2": "健身饮食",
+      "taxonomy3": "减脂饮食",
+      "duration": 75.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a0d79870000000035028c2f",
+      "taxonomy1": "社科",
+      "taxonomy2": "科学科普",
+      "taxonomy3": "生活科普",
+      "duration": null,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "6a2255ae000000003601b0c2",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69da2ef5000000001a021df3",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "零食测评",
+      "duration": 52.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "68a7cb0d000000001b0348cb",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6842a03c000000002002aa51",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "饮品测评",
+      "duration": 14.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a141dcf000000003502b6c1",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": 202.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69f5c2e8000000003601b2f1",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "零食测评",
+      "duration": 168.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a0338ab000000003503184e",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "饮品测评",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a13b0a3000000003701c4d9",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "零食测评",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "68bcf8f6000000001d0115f6",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a0b0bde00000000070211b6",
+      "taxonomy1": "社科",
+      "taxonomy2": "科学科普",
+      "taxonomy3": "植物科普",
+      "duration": 103.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69a2b6b3000000002801f951",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "医疗药品",
+      "taxonomy3": null,
+      "duration": 121.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "693beda0000000001e035f2c",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 490.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69b3b8b0000000001e00dc4c",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 115.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a059b46000000003802170a",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "零食测评",
+      "duration": null,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "6a0073510000000008027c2a",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 93.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69e6fd480000000023021c2a",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": null,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "6a1aa7eb000000003701eaf7",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "饮品测评",
+      "duration": 1016.0,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "6a221fa4000000002201647e",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食教程",
+      "taxonomy3": "菜品教程",
+      "duration": 67.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69e9eb4c000000002301edf9",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "食材展示",
+      "duration": 27.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a0420ee000000000803fd87",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食教程",
+      "taxonomy3": "烘焙&甜品教程",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69842dcd000000000b00a23d",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "694e4fda000000001e00322c",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "零食测评",
+      "duration": 100.0,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "677768650000000013018247",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "饮品测评",
+      "duration": 127.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69fec64d000000001b021360",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 84.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69f84e5c000000001f003e8f",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食教程",
+      "taxonomy3": "饮品教程",
+      "duration": 60.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a1fb6ab00000000060361c2",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 64.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69e98784000000002301f6d7",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 58.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69e2da5a00000000220251a2",
+      "taxonomy1": "母婴",
+      "taxonomy2": "妈妈经验",
+      "taxonomy3": null,
+      "duration": 95.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a16a1a300000000360316f5",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 45.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a0ec72e0000000008025599",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 58.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a0d452e0000000007029b61",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 57.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a0d26e900000000070289b8",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 70.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a06abe7000000000602164e",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 58.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69f304670000000023017fcb",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 60.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a0e7434000000000702d4be",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食教程",
+      "taxonomy3": "饮品教程",
+      "duration": 53.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a0d7be2000000000602069a",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食教程",
+      "taxonomy3": "菜品教程",
+      "duration": 55.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69f17521000000001a03723e",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 38.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69e59e4a000000001f0075e8",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 64.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69a2797c000000001a030636",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食教程",
+      "taxonomy3": "饮品教程",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "684cd625000000000303ee81",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a0db0e4000000003701c97c",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": 186.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a0d15ac000000000803de6e",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "零食测评",
+      "duration": 23.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69b7fa1d00000000230142be",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69fef5820000000036001d45",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "饮品测评",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6974283b0000000028022c33",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": null,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "69ca89b5000000002202b61a",
+      "taxonomy1": "家居家装",
+      "taxonomy2": "家居用品",
+      "taxonomy3": "餐厨具",
+      "duration": null,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "69b1440c0000000022038f44",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 162.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a2002e20000000021019444",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69fd6a150000000036031cda",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "饮品测评",
+      "duration": 78.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a0d7edc000000003501ee4e",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "零食测评",
+      "duration": 109.0,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "67fcaaea000000001d0028f7",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 63.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69ef30ef000000003700f1d2",
+      "taxonomy1": "情感",
+      "taxonomy2": "情感日常",
+      "taxonomy3": "爱情日常",
+      "duration": 67.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69fb50030000000035038419",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 73.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a0fd67e00000000060356d6",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 134.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "68ef38a30000000005013a60",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "零食测评",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "686e1e68000000000b02f0f0",
+      "taxonomy1": "娱乐",
+      "taxonomy2": "明星娱乐资讯",
+      "taxonomy3": null,
+      "duration": 25.0,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "6a0bd8220000000006037a02",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "饮品测评",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69fc498700000000230069bf",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "饮品测评",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a07fca500000000080304f0",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "饮品测评",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a19359d000000000702ba94",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "饮品测评",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69ebae20000000001f0018fb",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "饮品测评",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a095990000000000803f4dc",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "饮品测评",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "68679712000000002203d5a2",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "647d86100000000027000062",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": null,
+      "is_multi_goods_note": 1
+    },
+    {
+      "note_id": "6a09a5730000000035027c88",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食教程",
+      "taxonomy3": "饮品教程",
+      "duration": 237.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69df65a200000000230070bc",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "678100b6000000001800cb2a",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 179.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "67de7603000000001b03935a",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "零食测评",
+      "duration": 84.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "678f1cec000000001902cd2b",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "零食测评",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69e9d223000000001a0349d0",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 72.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69c22487000000002302278d",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 60.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69fd7fff0000000037034eeb",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 42.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69fee529000000003700e3fc",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": 53.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69ae3377000000002202e8e2",
+      "taxonomy1": "母婴",
+      "taxonomy2": "婴童食品",
+      "taxonomy3": null,
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a05864b00000000380214e3",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69f73702000000003501c78e",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食教程",
+      "taxonomy3": "菜品教程",
+      "duration": 34.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69785dab000000001a025256",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "690c02a500000000040127ac",
+      "taxonomy1": "医疗健康",
+      "taxonomy2": "养生食疗",
+      "taxonomy3": null,
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a0dd1c10000000035033f6b",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食展示",
+      "taxonomy3": "普通美食展示",
+      "duration": null,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "69ccaa94000000002301cf4d",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食教程",
+      "taxonomy3": "面食教程",
+      "duration": 99.0,
+      "is_multi_goods_note": 0
+    },
+    {
+      "note_id": "6a10402000000000060342a3",
+      "taxonomy1": "美食",
+      "taxonomy2": "美食测评",
+      "taxonomy3": "饮品测评",
+      "duration": 103.0,
+      "is_multi_goods_note": 0
+    }
+  ],
+  "errorMsg": null,
+  "hasNext": false,
+  "outputName": null,
+  "success": true,
+  "tempTable": null,
+  "totalSize": 300
+}

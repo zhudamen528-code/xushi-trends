@@ -1,0 +1,6268 @@
+{
+  "dataList": [
+    {
+      "goods_id": "68c134b3721a4700010b4721",
+      "goods_name": "塔伦家 日落橘子海 爆汁橘子起泡酒  整颗橘子鲜榨~莫斯卡托 西班牙进口 1瓶",
+      "goods_price": 151.0,
+      "brand_name": "塔伦家",
+      "goods_cat3": "露酒/果酒"
+    },
+    {
+      "goods_id": "68a6e09a2eb6de00017fd76a",
+      "goods_name": "2018年 | 易武古树生茶 （银易武 ） 357克茶饼 生茶（银易武）357克【1饼】（不带茶样） 48小时发货",
+      "goods_price": 655.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其他"
+    },
+    {
+      "goods_id": "6888d302e019f200013a8819",
+      "goods_name": "荔枝味冷泡茶红茶荔枝红茶花果香味茶冷泡办公自饮花茶花香茶 50g*1罐【荔枝红茶】",
+      "goods_price": 39.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "红茶"
+    },
+    {
+      "goods_id": "6a0aa77add034c000126a0bd",
+      "goods_name": "Vinehoo 有沉淀，所以超便宜！单一园高分 瓦伦蒂诺巴罗洛干红葡萄酒 2007 瓦伦蒂诺巴罗洛 2007年",
+      "goods_price": 249.0,
+      "brand_name": "Vinehoo",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "688749ede58d070001331092",
+      "goods_name": "others 半甜入门白葡萄酒·甜美朝阳乐塞之地高度微醺小甜酒女生好喝推荐 【博主推荐 橘子冰菠萝】乐塞之地",
+      "goods_price": 98.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "683bf59ff9ad0500012c8bf1",
+      "goods_name": "others 柑橘海盐芝士奶盖 勃艮第默尔索名家Remi Jobard金丘老藤霞多丽白 2022年份",
+      "goods_price": 599.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "67b98865f6588900010b5e4f",
+      "goods_name": "妈妈很忙 真·三蒸三晒红枣350g 若羌灰枣 不燥热 三蒸三晒红枣350g*1罐（此选项拍三发四）",
+      "goods_price": 68.0,
+      "brand_name": "妈妈很忙",
+      "goods_cat3": "蜜饯/枣类/梅/果干/冻干"
+    },
+    {
+      "goods_id": "61ff60e86182690001eef747",
+      "goods_name": "老谷头 夏季养生酸枣仁茯苓百合茶枸杞桑椹茶养生茶五味子莲子山药 30罐（品鉴装）",
+      "goods_price": 198.0,
+      "brand_name": "老谷头",
+      "goods_cat3": "代用/花草/水果/再加工茶"
+    },
+    {
+      "goods_id": "6504861948ea990001b962eb",
+      "goods_name": "2012年孫義順·毛尖安茶 老六安祁门高山安茶黑茶老茶叶 50g单罐装（无竹篓）",
+      "goods_price": 99.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "黑茶"
+    },
+    {
+      "goods_id": "67a6f647b23f7c0001ca4694",
+      "goods_name": "失重森林 和牛脆片牛肉脆片牛脆脆风干牛肉干和牛薄切 原味108g*1桶（拆封不退）",
+      "goods_price": 79.0,
+      "brand_name": "失重森林",
+      "goods_cat3": "肉干/肉脯/卤味零食"
+    },
+    {
+      "goods_id": "690ed90b2ffb610001e54915",
+      "goods_name": "雪片鸭屎香 凤凰单丛 冬茶 高香 250克每罐 250g*1罐",
+      "goods_price": 199.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "乌龙茶"
+    },
+    {
+      "goods_id": "68eb39c6ce94ee0001460021",
+      "goods_name": "【玫瑰香】肉超厚葡萄干｜糯叽叽 400g/罐",
+      "goods_price": 66.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "蜜饯/枣类/梅/果干/冻干"
+    },
+    {
+      "goods_id": "66ae522cf483ac0001c98630",
+      "goods_name": "（静萱茶事）龙嘘2018年白毫银针十年之约10g 10g*1盒",
+      "goods_price": 88.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "白茶"
+    },
+    {
+      "goods_id": "688dcf9279bc4700012285e5",
+      "goods_name": "心雅燕 精品中肉条原装进口溯源码燕窝燕条营养滋补品燕条孕妇燕窝 20克 尝新装",
+      "goods_price": 700.0,
+      "brand_name": "心雅燕",
+      "goods_cat3": "燕窝滋补品"
+    },
+    {
+      "goods_id": "69b385254cdf2e0001fc860a",
+      "goods_name": "玉堂春 奶酥椰蓉酥斑斓酥红茶椰蓉酥陈皮豆沙酥 斑斓椰蓉酥240g1盒（6只） 48小时发货",
+      "goods_price": 88.0,
+      "brand_name": "玉堂春",
+      "goods_cat3": "糕点/点心"
+    },
+    {
+      "goods_id": "6692b31873156500012685b8",
+      "goods_name": "others 新西兰代表作！Dog Point狗点马尔堡94章长相思干白 2021年份",
+      "goods_price": 480.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "692bacd8350109000121a7d1",
+      "goods_name": "村驴家 东北烧烤料原味香辣 原味250g*1＋香辣250g*1",
+      "goods_price": 29.9,
+      "brand_name": "村驴家",
+      "goods_cat3": "调味品/果酱/沙拉"
+    },
+    {
+      "goods_id": "69e5e20a21dc630001004fb6",
+      "goods_name": "Vinehoo 酒庄直出满血好状态！纷赋金标大年赤霞珠 2018 六支装",
+      "goods_price": 328.0,
+      "brand_name": "Vinehoo",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "65b38e496591d600018b97e2",
+      "goods_name": "2022年政和白茶冰冰眉寿眉1000g桶装政和白茶 冰冰眉1000g箱装",
+      "goods_price": 278.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "白茶"
+    },
+    {
+      "goods_id": "69ddba7c5ec088000116bd2a",
+      "goods_name": "食葡 【爆汁菠萝奶昔】意大利小香槟！贝壳白中白起泡葡萄酒节日送礼 贝壳白中白起泡葡萄酒 750ml 48小时发货",
+      "goods_price": 200.0,
+      "brand_name": "食葡",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "69b3cc421b6b3f0001d33d07",
+      "goods_name": "九窝颜食社 九白饮5.0杏仁七白饮松露银耳玉竹葛根黄精直接饮用款 太空菌版月享装（2盒共30条）",
+      "goods_price": 288.0,
+      "brand_name": "九窝颜食社",
+      "goods_cat3": "其他"
+    },
+    {
+      "goods_id": "6386c3b1f7c6ac000144301d",
+      "goods_name": "六妙白茶·【历久弥香】2018年一级老树贡眉饼300克收藏装福鼎白茶 单饼300克",
+      "goods_price": 280.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "白茶"
+    },
+    {
+      "goods_id": "69eda657c4fc820001a17831",
+      "goods_name": "【十支装】觅可可草莓柠檬芒果蜜瓜生椰拿铁味冰淇淋组合家庭装 组合家庭装65g*10支（口味随机，保证6口味）",
+      "goods_price": 88.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "冰淇淋/冻品"
+    },
+    {
+      "goods_id": "677e676977d41e00017f92f2",
+      "goods_name": "Joshy's wine 「勃艮第宝藏」嘉宝勃艮第金丘老藤 白葡萄酒2022/23 Remi Jobord 2022",
+      "goods_price": 538.0,
+      "brand_name": "Joshy's wine",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "64671a16db9efc00011142c7",
+      "goods_name": "长白山灵芝孢子粉，今年新粉，农户种植，原产地灵芝种植基地发货 一斤两瓶500g + 试吃装20g",
+      "goods_price": 298.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "灵芝（新）"
+    },
+    {
+      "goods_id": "67c324813298ba000159fcd9",
+      "goods_name": "试吃装125克云南黑蜂蜜含野生米团花黑蜜含土蜂蜜蜂巢蜜压榨原蜜 125克试吃装（1小罐）米团花含量很高，最后两个了😂",
+      "goods_price": 28.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "蜂产品"
+    },
+    {
+      "goods_id": "68285b8d82d86e0001719429",
+      "goods_name": "【送手提袋】上海国际饭店蝴蝶酥礼盒伴手礼饼干特产铁盒小蝴蝶酥 蝴蝶酥铁盒（24片）",
+      "goods_price": 258.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "糕点/点心"
+    },
+    {
+      "goods_id": "6570b9b0ded0e90001e09dc3",
+      "goods_name": "五花肉粽260g*10个（招牌）",
+      "goods_price": 130.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "方便速食/速冻食品"
+    },
+    {
+      "goods_id": "658932b718def20001dd1578",
+      "goods_name": "有悦 桃红四物汤 经期大姨妈，养出红润好气色 经典古方四物汤免煮即饮 1盒（半周期基础调理，尝鲜）",
+      "goods_price": 248.75,
+      "brand_name": "有悦",
+      "goods_cat3": "其它传统滋补品"
+    },
+    {
+      "goods_id": "66cae1b04e4f280001f6e09e",
+      "goods_name": "others 【花香炸裂 米其林餐厅爆款】查法蒂酒庄爱法蒂／布乐天诺干白 【茉莉栀子花香】爱法蒂干白 2024 750ml",
+      "goods_price": 258.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6a216dc4071fea00011b6d45",
+      "goods_name": "紫云祥 2026年镇号之宝头春头采镇山海大古树生茶 7.5克玲珑饼",
+      "goods_price": 79.0,
+      "brand_name": "紫云祥",
+      "goods_cat3": "其它茶叶"
+    },
+    {
+      "goods_id": "64a8ce1d3f699600017158f5",
+      "goods_name": "黑珍粉 满满黑精华 很重磅 多做点养根的事 儿童 孕期也可以喝 1罐（500克）",
+      "goods_price": 135.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "62b536ce6ab36e0001a792c3",
+      "goods_name": "林间盏 玉清膏丨夏前温养丨温润好状态丨清清楚楚丨简简单单 【1瓶】1月量 | 基础养",
+      "goods_price": 188.0,
+      "brand_name": "林间盏",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "69e1ff8757d5bd00011fc0b1",
+      "goods_name": "初荐 【康帝大佬怒买100瓶】斯洛文尼亚马奥长相思干白 2022年*1瓶+顺丰包邮",
+      "goods_price": 398.0,
+      "brand_name": "初荐",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "69a6bf600635fd0001d1508a",
+      "goods_name": "others 索德拉卡瑟巴斯酒庄（大龙)意大利托斯卡纳桑娇维塞干红葡萄酒",
+      "goods_price": 6599.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "68986734e08d4d00014112d2",
+      "goods_name": "以味坊 【顺丰发货】高活性菌种发酵国产纳豆高品质益生菌纳豆激酶 黄豆3盒+黑豆3盒+1支蜂蜜+1包泡菜",
+      "goods_price": 53.9,
+      "brand_name": "以味坊",
+      "goods_cat3": "UNKNOWN"
+    },
+    {
+      "goods_id": "6722cc1953432500018676fb",
+      "goods_name": "东北纯野生山猴头菇非人工种植养胃野生菌自然晾晒营养品可打粉 野生猴头菇250克（可代打粉）",
+      "goods_price": 165.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "干货/土特产"
+    },
+    {
+      "goods_id": "642a83bda857ae000166becf",
+      "goods_name": "雪八两 茉莉小香针 鲜灵香润 小嫩芽嫩叶 滋味适中 口粮茶 茉莉花茶 250 半斤250g袋装",
+      "goods_price": 100.0,
+      "brand_name": "雪八两",
+      "goods_cat3": "其他"
+    },
+    {
+      "goods_id": "66c1a6d2acee800001002968",
+      "goods_name": "【黄芪蜜】新疆蜜｜黑蜂采｜不添加喂糖 黄芪500g（贵在运费，不推荐）",
+      "goods_price": 79.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "蜂产品"
+    },
+    {
+      "goods_id": "69eb3a023a4daf00017e3634",
+      "goods_name": "新会陈皮2021年新会天马大红皮 2016年东甲陈皮 干仓自然陈化 断皮 2016 东甲陈皮 100g",
+      "goods_price": 88.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其它传统滋补品"
+    },
+    {
+      "goods_id": "6957f40dc43df90001cdc472",
+      "goods_name": "OTHER 施普乐德国莫泽尔甜白起泡酒葡萄酒晚安酒女士酒荔枝山竹烤面包香 【荔枝控组合】施普乐+海斯特+弗拉尼黄-送1酒塞",
+      "goods_price": 780.0,
+      "brand_name": "OTHER",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "69a3a27ff94fab00017b6896",
+      "goods_name": "野生三年艾叶药粉艾柱（拍2组送灸盒） 4板（送随机灸器）",
+      "goods_price": 138.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "代用/花草/水果/再加工茶"
+    },
+    {
+      "goods_id": "655474db1996a5000102d287",
+      "goods_name": "东甲2015原枝冬后大红断片，（有虫蛀口介意慎拍） 东甲2015原枝冬后大红断片 50g密封袋发货",
+      "goods_price": 98.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "66d4066a45cb94000126788d",
+      "goods_name": "others 香气炸裂！勃艮第小天使酒庄J.M Guillon马桑内村级独占园干红 马桑内独占园干红 2023年份",
+      "goods_price": 799.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6a1810ac6bc69c0001ea39bc",
+      "goods_name": "小婷婷·端午礼盒送长辈客户见家长商务送礼节日伴手礼实用高档礼 五拼（端午限定版） 当天发货·可私人定制",
+      "goods_price": 316.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其它传统滋补品"
+    },
+    {
+      "goods_id": "624d05170afc93000147179a",
+      "goods_name": "清蒸肉饼500g*2包 潮墨丸500g*1包 肉饼3斤",
+      "goods_price": 118.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "方便速食/速冻食品"
+    },
+    {
+      "goods_id": "67580749ada65900011a9a29",
+      "goods_name": "others 智利高端波混！十八罗汉干露酒庄魔爵赤霞珠红葡萄酒2020 单支（2020年）",
+      "goods_price": 815.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6895de2502d7b000016abe1c",
+      "goods_name": "【明星推荐】晚安石斛/拒绝emo/女生天然快乐水/石斛花红茶 棉纸包装（16片） 48小时发货",
+      "goods_price": 98.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "红茶"
+    },
+    {
+      "goods_id": "6a055a61721fd3000175b4b0",
+      "goods_name": "【保罗厨房】新鲜厚奶皮子咸奶茶白脱奶油盒子法国发酵黄油包顺丰 【奶皮子咸奶茶味】x1盒 【奶皮子咸奶茶味】x1盒",
+      "goods_price": 118.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "低温糕点"
+    },
+    {
+      "goods_id": "683e548953e72e000155f88d",
+      "goods_name": "胡子叔的餐盘 酸奶发酵菌粉丨干酪乳酪杆菌Zhang 开菲尔 自制酸奶 干酪乳酪杆菌Zhang2包+开菲尔发酵剂2盒+酸奶机（带分杯）",
+      "goods_price": 238.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "乳制品"
+    },
+    {
+      "goods_id": "65e97f18506b4000018a4b9d",
+      "goods_name": "林间盏 铁棍山药雪花片丨纯山药早餐【小土罐】 100克小罐装丨温县垆土 【1罐】基础养丨尝鲜（10天量）",
+      "goods_price": 59.0,
+      "brand_name": "林间盏",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "69726bc48a6b8a000105f5b4",
+      "goods_name": "旬山 姨妈茶 例假期必备 桂圆+枸杞+红枣+大块盒装红糖",
+      "goods_price": 243.0,
+      "brand_name": "旬山",
+      "goods_cat3": "代用/花草/水果/再加工茶"
+    },
+    {
+      "goods_id": "68ba417f8f53130001a0ccd5",
+      "goods_name": "巫小蛮 【3种袋装】肥瘦胸口脆  解馋6袋 平均1袋不到54元！ 肥瘦胸口脆90g* 6袋",
+      "goods_price": 319.0,
+      "brand_name": "巫小蛮",
+      "goods_cat3": "肉干/肉脯/卤味零食"
+    },
+    {
+      "goods_id": "69ea034139916f0001fe5835",
+      "goods_name": "【上新·小怪兽柠檬红茶】鲜柠檬配妃子笑红茶 冷热泡皆可 必入款 1袋100克（8粒）",
+      "goods_price": 105.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "杯子/水杯/水壶"
+    },
+    {
+      "goods_id": "65b75621f8a5d50001508e7b",
+      "goods_name": "新会陈皮2013城南冬后圈枝狗腩皮，巨丑，但巨好喝 20克断片体验装",
+      "goods_price": 48.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "代用/花草/水果/再加工茶"
+    },
+    {
+      "goods_id": "69c9e593fcd43f0001911745",
+      "goods_name": "锋味派 虾饼虾仁空气炸锅食材早餐半成品果蔬虾肉制品 【新口味】藜麦二盒装",
+      "goods_price": 109.0,
+      "brand_name": "锋味派",
+      "goods_cat3": "UNKNOWN"
+    },
+    {
+      "goods_id": "69846de5a5576f00011966f2",
+      "goods_name": "Joshy's wine Fourrier傅立叶夜丘老藤 佩鲁园 Le preau 单一园干红葡萄酒 2023 2023",
+      "goods_price": 828.0,
+      "brand_name": "Joshy's wine",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "684d4221c200860001c39a3b",
+      "goods_name": "食葡 【米其林餐厅同款】西班牙进口伊比利亚黑猪火腿切片40G黑标白标 「线下商超同款白标40g*2包」精选伊比利亚黑猪后腿",
+      "goods_price": 205.0,
+      "brand_name": "食葡",
+      "goods_cat3": "熏腊/香肠/火腿制品"
+    },
+    {
+      "goods_id": "68172af19d91940001f2f1ca",
+      "goods_name": "Italo Cescon Vivino4.2！果香炸裂！意大利凯斯顿小树枝灰皮诺干白/黑皮诺干红 【白桃柑橘冻梨汁】灰皮诺干白（蜡封版）2024年份",
+      "goods_price": 269.0,
+      "brand_name": "Italo Cescon",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "68be87e2a50cd90001653726",
+      "goods_name": "Mamiya 【无抗】鸡肉里脊肉串奥尔良风味低脂零食早餐笔记 【贵在运费】奥尔良里脊肉1袋（8串）",
+      "goods_price": 69.9,
+      "brand_name": "Mamiya",
+      "goods_cat3": "方便速食/速冻食品"
+    },
+    {
+      "goods_id": "6a0d6c141123b900018ff883",
+      "goods_name": "口粮无敌 磐火老酒调和澎魄 性感小烟熏+性感花香果香 双支1200ml",
+      "goods_price": 598.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "洋酒"
+    },
+    {
+      "goods_id": "67dfc7076147ac0001346fe6",
+      "goods_name": "others 全球排名前1%！必喝罗纳河谷名家 浓郁奶油感高登城堡金绿伞干红 圆润丝滑奶油感！金绿伞干红 2022年份",
+      "goods_price": 399.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "69ce372ca219810001ebf95a",
+      "goods_name": "2006年金奖云南普洱茶景谷古树青饼357g 50g茶样",
+      "goods_price": 123.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其他"
+    },
+    {
+      "goods_id": "6961f0bd5739d500013817b4",
+      "goods_name": "【新品】闲吉祝荣抹茶粉国产高端茶道级点茶冲饮抹茶粉杭州径山 【高端熟成】祝荣抹茶30g/罐 赠茶勺*1",
+      "goods_price": 168.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "食补粉粉"
+    },
+    {
+      "goods_id": "66f65a47eb6ef200010b402e",
+      "goods_name": "糙能农场 【铁棍山药】九谷猴菇山药面60g/袋 营养均衡好吸收 非油炸早餐面 【爆款热卖】九谷猴菇山药面60g*8袋（单面饼）",
+      "goods_price": 39.9,
+      "brand_name": "糙能农场",
+      "goods_cat3": "方便速食/速冻食品"
+    },
+    {
+      "goods_id": "64b1320e23c3740001f45d5a",
+      "goods_name": "豆蛋家 【组合装】无添加吐司牛角小餐包组合宝宝能吃不添加糖盐 1袋吐司12片+1袋奶香小餐包6个",
+      "goods_price": 82.0,
+      "brand_name": "豆蛋家",
+      "goods_cat3": "面包"
+    },
+    {
+      "goods_id": "693012b8a4503a000100bc4b",
+      "goods_name": "【九蒸九晒深山黄精】多花黄精／黄精果/整根/辟谷养生代餐即食 【初体验100克】睡觉，厕所 48小时发货",
+      "goods_price": 70.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "69df01e35f699000018f0cf3",
+      "goods_name": "花姐食养 花姐八珍饮12瓶装猴头菇山药茯苓莲子芡实八珍饮养生早餐代餐 【尝鲜装】花姐八珍饮*1箱（200ml*12）",
+      "goods_price": 70.47,
+      "brand_name": "花姐食养",
+      "goods_cat3": "藕粉/麦片/冲饮品"
+    },
+    {
+      "goods_id": "6760f5ecfaaaf30001892e13",
+      "goods_name": "菜菜羊小叮叮糖，柴火手工发酵糖，麦芽糖，150克，约25颗/瓶 麦香原味叮叮糖1瓶（全家都喜欢）",
+      "goods_price": 37.65,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "调味品/果酱/沙拉"
+    },
+    {
+      "goods_id": "675a7518eb35d70001ea4e33",
+      "goods_name": "others 送酒刀！世界Top 1餐厅Noma同款！奥地利之光·安多芬小花安娜绿 「覆盆子草莓石榴花」玛丽粉桃红🌸 送酒刀*1",
+      "goods_price": 449.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "68956e64eab7930001be4fc5",
+      "goods_name": "charoro 茶洛洛葡萄风味抹茶玉露冷泡茶0糖袋泡茶包果茶恩施玉露节日送礼 葡萄风味抹茶玉露 1盒20g（2g*10包）",
+      "goods_price": 79.0,
+      "brand_name": "charoro",
+      "goods_cat3": "代用/花草/水果/再加工茶"
+    },
+    {
+      "goods_id": "69d8df4dab6f940001f5ed50",
+      "goods_name": "觉尘 高端口粮酒52度600ml浓香型白酒单瓶（拍5发6） 单瓶600ml",
+      "goods_price": 89.0,
+      "brand_name": "觉尘",
+      "goods_cat3": "白酒"
+    },
+    {
+      "goods_id": "664741df533bfa0001796469",
+      "goods_name": "So Acai 【隔夜燕麦套组】超模营养健康早餐即食代餐饱腹麦片懒人隔夜 【赠燕麦杯】20天套组-扁桃仁酱口味",
+      "goods_price": 219.9,
+      "brand_name": "So Acai",
+      "goods_cat3": "藕粉/麦片/冲饮品"
+    },
+    {
+      "goods_id": "685e4cbd47fd8b000127f157",
+      "goods_name": "皮皮滴 果敢秘境山菠萝森林白茶/异域迷香醇厚香甜 6块/盒 单盒（尝鲜）",
+      "goods_price": 128.0,
+      "brand_name": "皮皮滴",
+      "goods_cat3": "白茶"
+    },
+    {
+      "goods_id": "69e5d217933b030001d83305",
+      "goods_name": "企鹅吃喝 Lazy song慵懒之歌 托卡伊 半贵腐萨摩罗德尼甜白葡萄酒 单支装·500ml",
+      "goods_price": 128.0,
+      "brand_name": "企鹅吃喝",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "691d811396bec90001b5ffc8",
+      "goods_name": "咖啡会有的【智慧】Totumas Gesha 50g",
+      "goods_price": 288.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "速溶咖啡/咖啡豆/粉"
+    },
+    {
+      "goods_id": "6913f8551b78790001e6e941",
+      "goods_name": "NATURECARE.LIFE NC小红条超级食物水果冻干粉天然类黄酮维C花青素0添加 3g*30袋/盒",
+      "goods_price": 299.0,
+      "brand_name": "NATURECARE.LIFE",
+      "goods_cat3": "食补粉粉"
+    },
+    {
+      "goods_id": "6875c5e43f6e4500018bee84",
+      "goods_name": "沙棘红参元气饮品 100ml*5瓶/盒 尝鲜装：1盒（5瓶）（高端沙棘认准译梵）",
+      "goods_price": 158.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "鲜炖滋补品"
+    },
+    {
+      "goods_id": "6a003719721fd30001fbc8e2",
+      "goods_name": "Daily Seeds&Co烘焙燕麦片·多口味【顺丰发货】 经典枫糖烘焙燕麦片258g",
+      "goods_price": 68.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "藕粉/麦片/冲饮品"
+    },
+    {
+      "goods_id": "6645cd4354f4dc0001b4bc02",
+      "goods_name": "潮味说 新款梅露全新包装梅子露配料升级古法手作夏日调饮无酒精冰爽冲调 原味",
+      "goods_price": 54.8,
+      "brand_name": "潮味说",
+      "goods_cat3": "蜜饯/枣类/梅/果干/冻干"
+    },
+    {
+      "goods_id": "6752e48bada6590001f3f172",
+      "goods_name": "每日乔安 【618大促】有机九蒸九晒黄精 九华山九制黄精0添加即食黄精12+年 1盒=260克（尝鲜）",
+      "goods_price": 187.0,
+      "brand_name": "每日乔安",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "655448f71996a50001194d6f",
+      "goods_name": "HARNEY & SONS 活力血橙果茶 苹果血橙玫瑰果 无咖啡因进口水果茶",
+      "goods_price": 159.0,
+      "brand_name": "HARNEY & SONS",
+      "goods_cat3": "代用/花草/水果/再加工茶"
+    },
+    {
+      "goods_id": "6980feb7ab9b88000133d56e",
+      "goods_name": "others 年度精品葡萄酒单！入门进阶甘甘精选合集！一套打包带走！ 储存须知❗️葡萄酒易受室温影响，需冷藏保存❗️",
+      "goods_price": 1399.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6194c17141b62900010cb431",
+      "goods_name": "玉脂膏 女子以肝为先天 皮肤 情绪 姨妈 经络 都跟肝息息相关 一罐（270克）",
+      "goods_price": 225.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "6711d47f56c6a60001c93d89",
+      "goods_name": "养瑞和 松子核桃姜茶老姜汤花生核桃腰果健康营养坚果冲饮姜母茶250g 1罐体验装经典版（立减10元）",
+      "goods_price": 79.0,
+      "brand_name": "养瑞和",
+      "goods_cat3": "代用/花草/水果/再加工茶"
+    },
+    {
+      "goods_id": "6a0ec2d80012710001899fed",
+      "goods_name": "OTHER 香槟北境之王・Chartogne-Taillet Les Barres Extra Brut 2016 2016年",
+      "goods_price": 1700.0,
+      "brand_name": "OTHER",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "674413b9ea1070000181ee58",
+      "goods_name": "巫小蛮 雪花牛排脆   油边 比牛肉干更好吃还解馋！干净零食吃的放心！ 【酥脆香！】🔥 雪花牛排脆*1大袋（内3小包）",
+      "goods_price": 64.0,
+      "brand_name": "巫小蛮",
+      "goods_cat3": "肉干/肉脯/卤味零食"
+    },
+    {
+      "goods_id": "69e815ece4ac61000148cab7",
+      "goods_name": "闪光少女 纯脂巧克力生巧慕斯条雪茄造型动物奶油0蔗糖低卡甜品礼盒零食 生巧慕斯条(双拼口味) 320g*1盒",
+      "goods_price": 79.9,
+      "brand_name": "闪光少女",
+      "goods_cat3": "巧克力"
+    },
+    {
+      "goods_id": "648820bcdb9efc0001677ac5",
+      "goods_name": "淼护士 小建中汤膏/小建中膏/睥胃|守卫食欲|拍3发4 【小建中膏滋】1瓶装*300克/优惠3元",
+      "goods_price": 98.0,
+      "brand_name": "淼护士",
+      "goods_cat3": "其它传统滋补品"
+    },
+    {
+      "goods_id": "69e0cc17933b0300014a2a2c",
+      "goods_name": "Joshy's wine 老牌名家 夏桐酒庄 上伯恩丘老藤白葡萄酒 Jean Chartron VV2024 2024",
+      "goods_price": 438.0,
+      "brand_name": "Joshy's wine",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "69fbcd7f213e270001fb1c1a",
+      "goods_name": "竹编礼盒 | 福禄安康礼",
+      "goods_price": 268.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "方便速食/速冻食品"
+    },
+    {
+      "goods_id": "683e3484b68cf8000188d032",
+      "goods_name": "可以放心吃的好海参 西海深海散养野生（约60只一斤大小任选） 100克（新客体验）",
+      "goods_price": 548.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "海产滋补品（新）"
+    },
+    {
+      "goods_id": "68d78a4ec67e4700011d6dbd",
+      "goods_name": "【野糯米】茶人老郑2016年荒野贡眉小圆饼老白茶冰糖甜枣甜 盒 50克（3.5克＊15片）",
+      "goods_price": 75.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "白茶"
+    },
+    {
+      "goods_id": "69c5128587c1860015fb66cc",
+      "goods_name": "约瑟夫杜鲁安 约瑟夫·杜鲁安酒庄勃艮第大区干白葡萄酒进口酒水 1瓶",
+      "goods_price": 299.0,
+      "brand_name": "约瑟夫杜鲁安",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "63f70d65f0913a000189ab18",
+      "goods_name": "妈妈很忙 八珍粉250g 早餐代餐 八珍粉一盒（此选项买3盒送1盒）",
+      "goods_price": 75.0,
+      "brand_name": "妈妈很忙",
+      "goods_cat3": "藕粉/麦片/冲饮品"
+    },
+    {
+      "goods_id": "685abc54e0232100158af3e2",
+      "goods_name": "2022年善源白·针仙水仙白毫银针50g罐装#政和白茶 50g*1罐 22年罐装白毫银针散茶，不支持试喝",
+      "goods_price": 299.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "白茶"
+    },
+    {
+      "goods_id": "668e4aec42add60001c6ebe4",
+      "goods_name": "SIS SCIENCE IN SPORT 英国SiS浓缩酸樱桃汁 马拉松比赛越野游泳铁三运动后缓解肌肉酸痛 樱桃汁30ml*6支",
+      "goods_price": 119.4,
+      "brand_name": "SIS SCIENCE IN SPORT",
+      "goods_cat3": "饮料"
+    },
+    {
+      "goods_id": "6596c27e4cbf000001e30a37",
+      "goods_name": "无麸质生日蛋糕半成品不含牛奶鸡蛋小麦过敏宝宝专享 无蛋奶小麦版",
+      "goods_price": 308.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "低温糕点"
+    },
+    {
+      "goods_id": "69c9eeb9d4e1ce00012ee92f",
+      "goods_name": "Glenfarclas 格兰花格15年苏格兰单一麦芽威士忌洋酒 格兰花格15年200ml",
+      "goods_price": 385.0,
+      "brand_name": "Glenfarclas",
+      "goods_cat3": "洋酒"
+    },
+    {
+      "goods_id": "6a26190749caaf00012b8a2e",
+      "goods_name": "海河 花色牛奶 西瓜牛奶220ml*10 西瓜牛奶*10",
+      "goods_price": 29.9,
+      "brand_name": "海河",
+      "goods_cat3": "乳制品"
+    },
+    {
+      "goods_id": "640eadfd5039f70001963742",
+      "goods_name": "优你咖啡 新产季牙买加咖啡豆蓝山一号水洗新鲜中烘焙香醇黑咖啡 100g",
+      "goods_price": 152.99,
+      "brand_name": "优你咖啡",
+      "goods_cat3": "速溶咖啡/咖啡豆/粉"
+    },
+    {
+      "goods_id": "658b760f18def200014a6083",
+      "goods_name": "茯苓王子家无硫四神汤茯苓莲子怀山药芡实汤净含量240g 一盒装四神汤240g",
+      "goods_price": 88.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其它传统滋补品"
+    },
+    {
+      "goods_id": "63ff136b2455820001bff73b",
+      "goods_name": "初荐 意大利卢奇亚诺绅洛酒庄2014/2020年艾洛特巴罗洛内比奥罗干红 2020年艾洛斯特巴罗洛干红*1瓶+顺丰包邮",
+      "goods_price": 1399.0,
+      "brand_name": "初荐",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "67b2d3799716990001e2beeb",
+      "goods_name": "纯干仓自然生晒2019年2021年新会陈皮大红皮丨正宗新会陈皮真年份 2019天马大红皮【口感推荐】 100克【袋装】",
+      "goods_price": 188.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "蜜饯/枣类/梅/果干/冻干"
+    },
+    {
+      "goods_id": "6875f8773f6e4500019179c5",
+      "goods_name": "（静萱茶事）2010年七星茶王六堡茶200g/500g/2500g 200g*1罐（赠送样泡，正装不支持拆封）",
+      "goods_price": 399.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "黑茶"
+    },
+    {
+      "goods_id": "6630d3a65b71d30001f4e641",
+      "goods_name": "鸡泡胶 48头 35头大公司精选货 灯泡肌 饱气厚肉轻内膜鱼胶 花胶 鸡泡胶 70头 100克 约14个",
+      "goods_price": 208.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "海鲜/水产品/制品"
+    },
+    {
+      "goods_id": "6842eec72dd29c00017d65b6",
+      "goods_name": "旬山 老红参 特大片 玻璃罐装 老红参250克 玻璃罐装",
+      "goods_price": 339.0,
+      "brand_name": "旬山",
+      "goods_cat3": "代用/花草/水果/再加工茶"
+    },
+    {
+      "goods_id": "6a126dda61fef90001b7c31e",
+      "goods_name": "新鲜冬虫夏草需冷冻（看完详情再下单） 干刷1.0克/根   50根",
+      "goods_price": 2450.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其它传统滋补品"
+    },
+    {
+      "goods_id": "6a240979fad5a4000161c113",
+      "goods_name": "Joshy's wine PYCM「白葡世家」 皮埃尔伊夫 Bourgogne 勃艮第大区白葡萄酒2022",
+      "goods_price": 858.0,
+      "brand_name": "Joshy's wine",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "669a4910d50cd40001e0eeed",
+      "goods_name": "苏农科JAAS 农科院的酸甜金杏干 孕妇零食杏脯果干果脯 1包 农科院的酸甜金杏干200g",
+      "goods_price": 49.5,
+      "brand_name": "苏农科JAAS",
+      "goods_cat3": "蜜饯/枣类/梅/果干/冻干"
+    },
+    {
+      "goods_id": "69152e8b58a96d0001e6e88b",
+      "goods_name": "【迪克醉爱】Domaine Tempier Bandol Rouge 小瓶/多年份 【适饮女庄主纪念版】2017年750ml 1瓶",
+      "goods_price": 460.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "662c99d51d6fd40001a51ec2",
+      "goods_name": "others 性价比绝了！PVG堂哥 勃艮第Justin Girardin酒庄大区霞多丽干白 2023年份",
+      "goods_price": 395.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6561ad981996a5000130ec51",
+      "goods_name": "长白山野生玉竹｜无熏硫需冷藏｜生玉竹原支｜非切片｜正品玉竹 玉竹：500克/袋",
+      "goods_price": 59.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其它传统滋补品"
+    },
+    {
+      "goods_id": "667a38ff5edb1d000164eafe",
+      "goods_name": "麦卡伦 18年 雪莉桶老版本单一麦芽苏格兰威士忌 麦卡伦18年双桶单支老版本",
+      "goods_price": 2650.0,
+      "brand_name": "麦卡伦",
+      "goods_cat3": "洋酒"
+    },
+    {
+      "goods_id": "69e478344dd26e0001cc7e7d",
+      "goods_name": "长白山灵芝孢子粉，今年新粉，农户种植，原产地灵芝种植基地发货 一瓶半斤250g  不送试吃装",
+      "goods_price": 158.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "灵芝（新）"
+    },
+    {
+      "goods_id": "6307629bbec183000175c52a",
+      "goods_name": "妈妈很忙 手切纯藕粉250g（配料表只有藕粉） 藕粉250g一罐",
+      "goods_price": 46.8,
+      "brand_name": "妈妈很忙",
+      "goods_cat3": "藕粉/麦片/冲饮品"
+    },
+    {
+      "goods_id": "680b279a11afa10001b0834c",
+      "goods_name": "全食物日记 有机紫苏籽油omega3欧米伽3低温冷榨紫苏油口服食用油250ml 10ml*10条*1盒【便携出行✈️ 随时滋养】",
+      "goods_price": 79.0,
+      "brand_name": "全食物日记",
+      "goods_cat3": "食用油/调味油"
+    },
+    {
+      "goods_id": "67c7ab914a59360001a912e7",
+      "goods_name": "加点滋味 【早餐松饼粉】儿童高钙捏捏松饼预拌粉铜锣烧华夫5分钟早餐家用 松饼粉100g*9袋（送煎饼粉*2+五彩果蔬粉*1+金片*1）",
+      "goods_price": 99.0,
+      "brand_name": "加点滋味",
+      "goods_cat3": "烘焙原料/辅料/半成品/食品添加剂"
+    },
+    {
+      "goods_id": "69cccccb9b23c90001c397dc",
+      "goods_name": "约瑟夫杜鲁安 马朗日 一级田·干红葡萄酒",
+      "goods_price": 428.0,
+      "brand_name": "约瑟夫杜鲁安",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "665839e8a29a700001a3ec7c",
+      "goods_name": "极盏 陈皮枇杷炖梨 当季鲜炖小吊梨汤不上火清润不甜腻不干燥热润喉肺 【顺时养生】新会陈皮枇杷炖梨252g*6碗",
+      "goods_price": 123.0,
+      "brand_name": "极盏",
+      "goods_cat3": "方便速食/速冻食品"
+    },
+    {
+      "goods_id": "6a152890e6d02a0001b4b092",
+      "goods_name": "端午粽子点心福袋",
+      "goods_price": 158.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "糕点/点心"
+    },
+    {
+      "goods_id": "66dee783f63d3900013b7837",
+      "goods_name": "2026年新现烤不加盐原味大腰果仁 300克",
+      "goods_price": 45.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "山核桃/坚果/炒货"
+    },
+    {
+      "goods_id": "67ee5478ab6a3e0001aaaa9a",
+      "goods_name": "bruto Shunminowa忘川水/穿越苍穹橘酒 欧洲佛系当红辣子鸡 穿越苍穹橘酒2023",
+      "goods_price": 610.0,
+      "brand_name": "bruto",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "675bec1fbee2b60001a74bc1",
+      "goods_name": "卢卡布 痩龙生酮牛肉薄脆牛肉片香脆牛肉 100g/罐 解馋零食 即食原味 牛肉薄脆 100g*1盒",
+      "goods_price": 79.0,
+      "brand_name": "卢卡布",
+      "goods_cat3": "肉干/肉脯/卤味零食"
+    },
+    {
+      "goods_id": "64d9d148ce5dbd0001bda60e",
+      "goods_name": "OTHER 西班牙雪莉酒 | PX雪莉酒GonzalezByass冈萨比亚斯Fino加强酒雪利 CROFT 珂珞芙浅色加甜雪利酒",
+      "goods_price": 195.0,
+      "brand_name": "OTHER",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6662b5c4f7984c0001e1877f",
+      "goods_name": "均衡小站 无花果黑豆浆 营养早餐豆浆粉5种营养搭配健康养泡泡养雌20g*15袋 无花果黑豆浆1盒：20g*15袋",
+      "goods_price": 49.9,
+      "brand_name": "均衡小站",
+      "goods_cat3": "藕粉/麦片/冲饮品"
+    },
+    {
+      "goods_id": "68a089cca1d30c0001efc167",
+      "goods_name": "大展宏图 |茶叶礼盒送长辈送爸爸2026新茶父亲节端午节送客户礼物 大展宏图-六大茗茶 礼盒装",
+      "goods_price": 280.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "乌龙茶"
+    },
+    {
+      "goods_id": "65fe8d6396b9a1000133f760",
+      "goods_name": "精品黑咖啡系列  挂耳/咖啡豆 新鲜烘焙 保留原香 挂耳咖啡组合（10g*7包，7款产区）",
+      "goods_price": 98.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "速溶咖啡/咖啡豆/粉"
+    },
+    {
+      "goods_id": "68ee7fddd3eed20001630190",
+      "goods_name": "others 限时送周边！第一口清甜雷司令！绿狮子·德国摩泽尔迪哈德半甜白 「单支尝鲜」年轻人的第一口清甜雷司令🥂",
+      "goods_price": 158.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "698177dc1b20000001edd4e6",
+      "goods_name": "苏农科JAAS 【农科院的碧根果仁】超大颗饱满无壳果仁 健康零食坚果 梅干菜味",
+      "goods_price": 56.0,
+      "brand_name": "苏农科JAAS",
+      "goods_cat3": "山核桃/坚果/炒货"
+    },
+    {
+      "goods_id": "6745dab6996a2c0001931d05",
+      "goods_name": "玫熙漫 大马士革玫瑰精油鲜花液 紧致、抗皱、保湿、舒缓  300ml 1瓶精油鲜花液（赠送花瓣面膜2片，花粉2份）",
+      "goods_price": 88.0,
+      "brand_name": "玫熙漫",
+      "goods_cat3": "化妆水/爽肤水"
+    },
+    {
+      "goods_id": "6a26e7af242ad60001b27f9d",
+      "goods_name": "乐做 丨河南特产山药茯苓鸡内金焦饼无麸质黄小米薄饼健康零食 【黄小米无麸质款】黄小米90%鸡内金6% 【咸香含芝麻】（1包）230克/约15片",
+      "goods_price": 28.8,
+      "brand_name": "乐做",
+      "goods_cat3": "糕点/点心"
+    },
+    {
+      "goods_id": "692c0d21b644e40001b9e2ee",
+      "goods_name": "others 勃艮第超级名家大金杯！丰腴丝滑天鹅绒！上夜丘/修士之路黑皮诺 【大金杯经典款】上夜丘干红2023年份",
+      "goods_price": 698.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "69fd460098ac430001056722",
+      "goods_name": "云南新鲜黑莓 肉厚酸甜适中 莓果香气馥郁 花青素浆果 现摘现发 大果51枚（约450g）",
+      "goods_price": 158.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "新鲜水果/水果制品"
+    },
+    {
+      "goods_id": "6835c0b2f078780001c807b4",
+      "goods_name": "others 烟熏奶油烤米的香 凯尔梅白石园雷司令干白葡萄酒 2022",
+      "goods_price": 1480.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "64ee90b7fa32860001e87ef1",
+      "goods_name": "稻廷斋 粽子肉粽鲜肉大粽五花肉蛋黄粽子手工新鲜肉粽子嘉兴即食早餐 【五花肉粽半斤粽4只】1000g*1件",
+      "goods_price": 35.0,
+      "brand_name": "稻廷斋",
+      "goods_cat3": "方便速食/速冻食品"
+    },
+    {
+      "goods_id": "650aa34e67de920001e18850",
+      "goods_name": "若耶溪 会稽山绍兴酒·2008年冬酿米酒黄酒1.79L 富贵稳中求（1.79L）",
+      "goods_price": 880.0,
+      "brand_name": "若耶溪",
+      "goods_cat3": "其他酒"
+    },
+    {
+      "goods_id": "64ff29843998d50001b2d1bf",
+      "goods_name": "28天高端小月子水｜小月子茶饮茶包汤水粥｜人流药流清宫小产胎停 28天小月子水＋28天月子粥＋2盒泡脚包（加强款）",
+      "goods_price": 608.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其它传统滋补品"
+    },
+    {
+      "goods_id": "6a04339c213e2700013596f3",
+      "goods_name": "九峰牧场 全家福组合 5.0浓牛乳+0乳糖牛乳+香芋奶+A2版5.0浓牛乳+抹茶奶 【全家福尝鲜装】5.0、A2版5.0、香芋、有糖抹茶、0乳糖/各1瓶",
+      "goods_price": 49.8,
+      "brand_name": "九峰牧场",
+      "goods_cat3": "乳制品"
+    },
+    {
+      "goods_id": "69d30ced069e7b0001e5deff",
+      "goods_name": "三兔船长 季节限定｜舟山小馄饨·荠菜鲜肉·新鲜现做早餐，皮薄肉鲜卖到6月 荠菜1盒+鲜肉1盒（共80只）",
+      "goods_price": 69.9,
+      "brand_name": "三兔船长",
+      "goods_cat3": "方便速食/速冻食品"
+    },
+    {
+      "goods_id": "6a1e7875cd75c3000180548b",
+      "goods_name": "肉肉贴，超大量一盒40贴，儿童单拍肚脐贴。成人请搭配使用。 肉肉贴。肚子肉多。40贴。用10次",
+      "goods_price": 69.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "身体护理"
+    },
+    {
+      "goods_id": "69b4f5731b6b3f0001f85c60",
+      "goods_name": "杏仁玫瑰八白饮（除了不好喝没别的问题！） 250g/罐",
+      "goods_price": 68.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "茶粉/茶膏/茶精/茶液/茶蜜"
+    },
+    {
+      "goods_id": "6852871cf89aa5000174dac6",
+      "goods_name": "千层夹心酥饼干办公室零食配料干净孕妇小朋友可食用宿舍追剧夹心 奶香原味1袋（190g）",
+      "goods_price": 23.8,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "饼干/膨化"
+    },
+    {
+      "goods_id": "65814dafebf1fc0001a28a15",
+      "goods_name": "旬山 26年【头茬花】墨红玫瑰花茶 冻干玫瑰花茶花茶礼物 标准装 (大花，110克)塑料罐",
+      "goods_price": 138.0,
+      "brand_name": "旬山",
+      "goods_cat3": "代用/花草/水果/再加工茶"
+    },
+    {
+      "goods_id": "69a923c5970f0000017e626d",
+      "goods_name": "沃集鲜 4.0纯牛奶 1L 4.0g乳蛋白/100mL 小绿瓶",
+      "goods_price": 9.99,
+      "brand_name": "沃集鲜",
+      "goods_cat3": "乳制品"
+    },
+    {
+      "goods_id": "68ad7a8562c1ee00014e85d0",
+      "goods_name": "企鹅市集 长崎县杵之川酒造 弯尾猫纯米吟酿清酒 手工小产量 活泼果香",
+      "goods_price": 280.0,
+      "brand_name": "企鹅市集",
+      "goods_cat3": "清酒/烧酒"
+    },
+    {
+      "goods_id": "69fd7fb73599c000012782e0",
+      "goods_name": "宜谷磨方 [八珍原浆] 9味道地食材 一口喝到真八珍 1盒10袋体验装（新人体验）",
+      "goods_price": 118.0,
+      "brand_name": "宜谷磨方",
+      "goods_cat3": "其他糖果零食/果冻/软糖"
+    },
+    {
+      "goods_id": "66630d71f5415a0001048ea3",
+      "goods_name": "90年代紫天饼配方8592普洱熟茶茶饼357g 10g茶样",
+      "goods_price": 68.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "普洱"
+    },
+    {
+      "goods_id": "6842a6c357fa1600017d3735",
+      "goods_name": "一间万象 达克歌德12年桶强/12年纯麦/12年单一麦芽威士忌西班牙雪莉桶 达克歌德12年纯麦",
+      "goods_price": 699.0,
+      "brand_name": "一间万象",
+      "goods_cat3": "洋酒"
+    },
+    {
+      "goods_id": "65f40de85c4d1000017182fc",
+      "goods_name": "月子茶水 28天4阶段42天6阶段产后术后煮水材料 五红水7包",
+      "goods_price": 59.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "代用/花草/水果/再加工茶"
+    },
+    {
+      "goods_id": "69f0aec70511b50001aa5568",
+      "goods_name": "蓝靛莓果蜜｜泡水喝、空口吃、拌酸奶、加牛奶｜7酸3甜 116克蓝靛莓果蜜 结晶山花蜜泡的",
+      "goods_price": 38.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "蜂产品"
+    },
+    {
+      "goods_id": "6a0c62df88ed2e00013ee990",
+      "goods_name": "斑马与巧 一片芒果巧克力 鲜芒果芯 纯脂榛子巧克力",
+      "goods_price": 59.0,
+      "brand_name": "斑马与巧",
+      "goods_cat3": "巧克力"
+    },
+    {
+      "goods_id": "68c80ad3e8b4ad00015a1db6",
+      "goods_name": "植与山山 松子核桃姜茶 “夏吃姜赛参汤” | 减燥不上火 | 气色足 寒气跑 1瓶（尝鲜装 250g/瓶）",
+      "goods_price": 89.0,
+      "brand_name": "植与山山",
+      "goods_cat3": "鲜炖滋补品"
+    },
+    {
+      "goods_id": "66d41f78e6fff40001f85101",
+      "goods_name": "Lecire Chocolatier 开心果酥脆夹心72%黑巧克力 198克",
+      "goods_price": 168.0,
+      "brand_name": "Lecire Chocolatier",
+      "goods_cat3": "巧克力"
+    },
+    {
+      "goods_id": "69f72adf81bc0100010e2ff3",
+      "goods_name": "南三府 粽子礼盒装团购定制嘉兴蛋黄大肉粽蜜枣甜粽子端午节礼物礼品送礼 龙粽登场双开门粽子礼盒",
+      "goods_price": 129.0,
+      "brand_name": "南三府",
+      "goods_cat3": "方便速食/速冻食品"
+    },
+    {
+      "goods_id": "69a259c5b90bc50001b695f4",
+      "goods_name": "So Acai 浓浓巴西莓饮桑葚黑枸杞不老莓混合饮料花青素巴西莓粉果泥shot 【赠粉色摇摇杯】浓浓巴西莓饮300ml*2盒+浓浓姜黄饮300ml*2盒",
+      "goods_price": 399.6,
+      "brand_name": "So Acai",
+      "goods_cat3": "藕粉/麦片/冲饮品"
+    },
+    {
+      "goods_id": "68551364b93d4100019ff031",
+      "goods_name": "侍酒猫 超值性价比勃艮第！科迪亚父子酒庄干白葡萄酒/比克西干白葡萄酒 【预计7月中下旬补货】比克西勃艮第蒙塔尼一级园\"荆 \"干白葡萄酒",
+      "goods_price": 298.0,
+      "brand_name": "侍酒猫",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "693e7ba08b11d10001a53850",
+      "goods_name": "老红糖大雪山老茶头 甜度巨高9年醇2017年熟普洱散茶焖茶煮茶绝配 【老红糖】大雪山老茶头150克/罐",
+      "goods_price": 128.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "普洱"
+    },
+    {
+      "goods_id": "6673a4502fbb5400018af79c",
+      "goods_name": "王妈手撕烤兔 手撕烤兔香辣/五香/孜然特产300g/750g顺丰包邮（撕好拌好含调料 1选项 香辣（微辣）",
+      "goods_price": 99.8,
+      "brand_name": "王妈手撕烤兔",
+      "goods_cat3": "熟食/凉菜/私房菜"
+    },
+    {
+      "goods_id": "6a2cf794963cbb0001669843",
+      "goods_name": "OTHER 摩泽尔月光诗人・利瑟酒庄赫尔登园逐串精选金帽雷司令2015 2015年375ml",
+      "goods_price": 650.0,
+      "brand_name": "OTHER",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6960600b9d8afd0001900a0e",
+      "goods_name": "米惦 爆款尝鲜组合手撕牛轧饼&奶奶小馒头&吐司 点心营养早餐面包牛轧 3袋",
+      "goods_price": 40.7,
+      "brand_name": "米惦",
+      "goods_cat3": "糕点/点心"
+    },
+    {
+      "goods_id": "68cbf0b9e8b4ad0001748e30",
+      "goods_name": "TOMIC·<保温杯>特美刻 认准授权 陶瓷内胆 纯钛茶隔 杯茶组合:胭脂粉陶瓷涂层560ml+￥78稻花香+￥98如意小萌饼送背带",
+      "goods_price": 359.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "杯子/水杯/水壶"
+    },
+    {
+      "goods_id": "68a08d9e16b0c8000172584e",
+      "goods_name": "【顺丰】牛胸口脆！酥脆爆香！累计已售20万盒！全部升级新包装 1盒原味",
+      "goods_price": 68.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "肉干/肉脯/卤味零食"
+    },
+    {
+      "goods_id": "69eb4b1043360b000123e18f",
+      "goods_name": "永璞 可折叠收纳篮多功能桌面收纳零食 玩具 护肤品 薄荷色折叠篮3.2L*1 可折叠多功能收纳",
+      "goods_price": 39.9,
+      "brand_name": "永璞",
+      "goods_cat3": "速溶咖啡/咖啡豆/粉"
+    },
+    {
+      "goods_id": "690add3984cf4200018b9011",
+      "goods_name": "合为养 肉苁蓉 五年生九制荒漠肉苁蓉 内蒙古阿拉善盟巴丹吉林沙漠 1盒/10包*10g",
+      "goods_price": 360.0,
+      "brand_name": "合为养",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "677f9c4671bc78000127eaf9",
+      "goods_name": "【黄精五黑粉】制黄精黑芝麻粉 纯手工/当天先做真材实料无添加 330克/一罐",
+      "goods_price": 65.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "藕粉/麦片/冲饮品"
+    },
+    {
+      "goods_id": "67b57f8229b9f70001ec4e9a",
+      "goods_name": "『五黑粉』现磨即食代餐五谷粉 黑芝麻 黑米 黑豆 黑枸杞 黑桑葚 五黑核桃粉120g*1『试吃装』",
+      "goods_price": 15.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "食补粉粉"
+    },
+    {
+      "goods_id": "664dff0ac0d64400011ee4d1",
+      "goods_name": "【顺丰】衢州正宗衢州名特产汤汁鸭头香辣卤味网红小吃 5个，1袋",
+      "goods_price": 40.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "肉干/肉脯/卤味零食"
+    },
+    {
+      "goods_id": "6a152acae6d02a0001b51250",
+      "goods_name": "云南野生红茶 ｜百年野生古树红茶 野生红茶250克【1袋】 48小时发货",
+      "goods_price": 185.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "红茶"
+    },
+    {
+      "goods_id": "68f43d744272610001fdf256",
+      "goods_name": "New 全国套餐｜斯佩尔特藿香乡村1+红咖喱碱2+抹茶奇亚籽1+肉桂2",
+      "goods_price": 159.8,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "糕点/点心"
+    },
+    {
+      "goods_id": "672cc4b94a9865000160fbd3",
+      "goods_name": "五红粥一人份（一份出两碗）",
+      "goods_price": 169.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "食疗滋补营养"
+    },
+    {
+      "goods_id": "69f35f450511b500012dcb48",
+      "goods_name": "【方寸山】传统足火焙安化工夫红茶",
+      "goods_price": 329.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "红茶"
+    },
+    {
+      "goods_id": "6977689c65a1a100011191b4",
+      "goods_name": "others LLM索玛夫妇芝麻香炸裂干白Chateauneuf Du Pape Magis 2023年",
+      "goods_price": 1299.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "68d80225d3eed20001e2374a",
+      "goods_name": "早農合川 可可碎低温烘焙厄瓜多尔可可豆未碱化即食可可豆瓣Cacao nibs 厄瓜多尔可可碎*1盒（赠冷萃瓶）",
+      "goods_price": 58.0,
+      "brand_name": "早農合川",
+      "goods_cat3": "巧克力"
+    },
+    {
+      "goods_id": "69b8f56a180bf400017efca3",
+      "goods_name": "Vinehoo 莱茵黑森名家，18个月桶陈 托乐酒庄黑皮诺红葡萄酒 2019 单支",
+      "goods_price": 118.0,
+      "brand_name": "Vinehoo",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "693599fd02483f000117fe8b",
+      "goods_name": "白美术馆×白房子联名 | 香薰蜡烛",
+      "goods_price": 129.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "香薰蜡烛"
+    },
+    {
+      "goods_id": "667e3426a283ac0001754d57",
+      "goods_name": "初荐 法国勃艮第2018年亚伯必修弗兰缇酒庄沃恩罗曼尼玛康索一级园干红 1瓶+顺丰包邮",
+      "goods_price": 2198.0,
+      "brand_name": "初荐",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6973e57943eb760001d10c80",
+      "goods_name": "others 老饕闭眼入！难得一见的老年份！勃艮第乌苏拉玻玛维诺园干红 玻玛村维诺园 1998年（老酒都会有沉淀哦）",
+      "goods_price": 560.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "69b274c9ca64b30001aeeca0",
+      "goods_name": "侍酒猫 超值百元雷司令合集！德国雷司令km501 绿狮子半甜/甜型白葡萄酒 【3瓶都要❗️单瓶99.6元❗️】马库斯半甜+KM501+绿狮子半甜",
+      "goods_price": 358.0,
+      "brand_name": "侍酒猫",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "68ce5627f9d82900011b0bf5",
+      "goods_name": "特级铁皮石斛·口干皮肤干救星（阴虚火旺体质必喝）精选5年生石斛 【五年】特级铁皮石斛 1罐/50g（体验装) 打粉（选对再下单）",
+      "goods_price": 180.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "石斛/枫斗"
+    },
+    {
+      "goods_id": "6771f80d5848cb0001b8e678",
+      "goods_name": "【白诗南入门】Domaine des Baumard Savennieres St Yves 2020",
+      "goods_price": 340.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "66cf0b43912c5400015b5eab",
+      "goods_name": "周三的情书 天气：小雨 手工厚切吐司黄油面包奶香手撕营养早餐健康糕点代餐零食品整箱 原味厚切吐司1箱（5包）",
+      "goods_price": 16.9,
+      "brand_name": "周三的情书 天气：小雨",
+      "goods_cat3": "全麦面包"
+    },
+    {
+      "goods_id": "66c20f1481699f000111ffc8",
+      "goods_name": "祖祖珍巧 zuzu祖祖巧克力豆可可脂综合口味巧克力豆坚果水果冻干罐装送礼 小罐（150g）",
+      "goods_price": 40.9,
+      "brand_name": "祖祖珍巧",
+      "goods_cat3": "巧克力"
+    },
+    {
+      "goods_id": "68a177071745f60001faeefc",
+      "goods_name": "詹岭记 2015年老仙翁/年份单丛茶/年绳系列老单丛 50克",
+      "goods_price": 168.0,
+      "brand_name": "詹岭记",
+      "goods_cat3": "乌龙茶"
+    },
+    {
+      "goods_id": "6a06e79b32834800015acb35",
+      "goods_name": "芹芹酒铺 店主力荐果味原子弹！新西兰马尔堡微风海湾长相思干白葡萄酒2025",
+      "goods_price": 88.0,
+      "brand_name": "芹芹酒铺",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6973b0ca1cd3a60001e9b146",
+      "goods_name": "【小乔爱吃】重磅升级重口版东北老式黏糊大碗麻辣烫 2袋正装麻辣烫",
+      "goods_price": 29.8,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其他"
+    },
+    {
+      "goods_id": "69a431495be6c10001df3a20",
+      "goods_name": "缓解眼部疲劳（拆封不退换） 兔子款",
+      "goods_price": 89.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "防护用品"
+    },
+    {
+      "goods_id": "69ec6d9021e087000118218b",
+      "goods_name": "2003年闪电纹红大yi普洱生茶7542配方七子饼茶357g 10g茶样",
+      "goods_price": 140.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "普洱"
+    },
+    {
+      "goods_id": "67a2e03e75ca3a0001606ec8",
+      "goods_name": "燕鸣春 中科溯源码印尼燕窝 干挑中小盏100克  （98干净度 不用挑毛） 土豪VIP干挑中小盏100克",
+      "goods_price": 1763.0,
+      "brand_name": "燕鸣春",
+      "goods_cat3": "燕窝滋补品"
+    },
+    {
+      "goods_id": "65ea8ab4f86a630001430fb6",
+      "goods_name": "茯苓硕士茯苓丁生切无硫新鲜无添加保真养生四神汤八珍粉 茯苓丁一斤（能吃一个月）",
+      "goods_price": 36.8,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "65ec6d92e29bfe000185e135",
+      "goods_name": "古篱古锡壶承干泡蓄水茶盘全手工复古 古锡壶承寿山石（17cmX11cmX4.5cm）长宽高",
+      "goods_price": 298.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "茶具"
+    },
+    {
+      "goods_id": "6826d147a6875600013e1753",
+      "goods_name": "卡通巧克力蛋糕配件，马卡龙色系甜筒， 混拼4款各4套 节日产品，不退不换，拦截拒收不退款，谨慎下单",
+      "goods_price": 124.8,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "巧克力"
+    },
+    {
+      "goods_id": "6a0a796fa0ff6f0001715423",
+      "goods_name": "Daily Seeds&Co烘焙燕麦片·多口味【顺丰发货】 夏日限定·「柠檬香草巴斯克」烘焙燕麦片",
+      "goods_price": 78.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "藕粉/麦片/冲饮品"
+    },
+    {
+      "goods_id": "6a0da5f6891c6a0015104dc8",
+      "goods_name": "2014年大与茶号·十方相与白牡丹500g盒装#政和白茶 500g*1盒 搭品鉴10g一泡",
+      "goods_price": 980.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "白茶"
+    },
+    {
+      "goods_id": "6979b38bf5bc340001b11b19",
+      "goods_name": "玉珍【酸笋】酸汤组合",
+      "goods_price": 48.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "调味品/果酱/沙拉"
+    },
+    {
+      "goods_id": "68c69c58bf5d360001d20fa7",
+      "goods_name": "others 超性价比村级老藤！高分收割机！蓝海酒庄玻玛村级石头园老藤干红 2020年份单瓶装",
+      "goods_price": 599.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "64d3bc8e8044400001e78b99",
+      "goods_name": "黄花胶 18头 35头 42头 60头 花胶入门 鱼胶花胶 厚肉q弹不腥 48头 100g（体验装）",
+      "goods_price": 258.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其它传统滋补品"
+    },
+    {
+      "goods_id": "694e5f3e110a7f0001fa28c5",
+      "goods_name": "台湾十大凤梨酥品牌大集盒 佳德小潘微热山丘旧振南郭元益日出 凤梨酥组合1盒",
+      "goods_price": 155.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "糕点/点心"
+    },
+    {
+      "goods_id": "6982eee58c608e0001d315ff",
+      "goods_name": "Demeter 【喝酒也能做好事 公益】巴巴鲁白桃茉莉黑樱桃·礼物聚会自喝送人 【盐渍柠檬 金银花】玛尔维萨起泡",
+      "goods_price": 398.0,
+      "brand_name": "Demeter",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "64d094e720e9ff0001b0cf69",
+      "goods_name": "V&C 卷云+Dog Point狗点/新西兰马尔堡长相思双杰酒庄组合 卷云+狗点",
+      "goods_price": 428.0,
+      "brand_name": "V&C",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6901de44c6a9770001a46743",
+      "goods_name": "Joshy's wine 大金杯 潜力葡萄园 修士之路Chemin des Moines de Vergy 2023 2023",
+      "goods_price": 960.0,
+      "brand_name": "Joshy's wine",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "66dac2fb6837ef0001593c33",
+      "goods_name": "蒲昌酒庄 “赤霞珠”干红葡萄酒 赤霞珠+莎布拉维",
+      "goods_price": 440.0,
+      "brand_name": "蒲昌酒庄",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "69c6369415bd740001490411",
+      "goods_name": "三兔船长 季节限定｜舟山小馄饨·荠菜鲜肉·新鲜现做早餐，皮薄肉鲜卖到6月 春日限定·荠菜鲜肉2盒80只",
+      "goods_price": 69.9,
+      "brand_name": "三兔船长",
+      "goods_cat3": "方便速食/速冻食品"
+    },
+    {
+      "goods_id": "69d7809901e193000197fc5a",
+      "goods_name": "千岛湖｜Salon与Leflaive双鸡特级园邂逅卡露伽鱼子酱之旅 一位",
+      "goods_price": 28800.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "66d16cc50eae590001dee319",
+      "goods_name": "舟山弄堂薄皮小馄饨手工现做，薄如蝉翼，只用本地猪，新鲜早餐 推荐·经典鲜肉80只·4份2盒（1盒2层）",
+      "goods_price": 69.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "方便速食/速冻食品"
+    },
+    {
+      "goods_id": "6a02eea5dd034c000170037d",
+      "goods_name": "others 限时送周边！第一口清甜雷司令！绿狮子·德国摩泽尔迪哈德半甜白 「单支尝鲜」年轻人的第一口清甜雷司令🥂",
+      "goods_price": 158.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "673afb86ef36300001d7db5f",
+      "goods_name": "【不洗水的枣】若羌灰枣｜挑了三遍｜不掺垃圾枣｜没皮皮货 无洗水的灰枣（特级手挑过） 5斤（没吃过拍这个）",
+      "goods_price": 62.5,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "670f57ccc42e3d0001f4541e",
+      "goods_name": "燕鸣春 中科溯源码燕窝 土豪VIP干挑中大条 100克 500克98干净度不用挑毛 土豪VIP干挑中大条100克（10克一袋）",
+      "goods_price": 1518.0,
+      "brand_name": "燕鸣春",
+      "goods_cat3": "燕窝滋补品"
+    },
+    {
+      "goods_id": "65f406201f3db0000150bbcb",
+      "goods_name": "老谷头 夏季湿湿茶熟茶赤小豆薏米芡实茯苓茶黑苦荞薏苡仁鸡头米养生湿茶 赤小豆薏米熟茶1盒装",
+      "goods_price": 79.0,
+      "brand_name": "老谷头",
+      "goods_cat3": "代用/花草/水果/再加工茶"
+    },
+    {
+      "goods_id": "638ede1c3dd2ad00013c043e",
+      "goods_name": "bruto 拍二发三 橘浪 芳香四溢的地中海暖阳 Orange Waves 意大利橘酒 Orange Waves",
+      "goods_price": 239.0,
+      "brand_name": "bruto",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "68f34d48becfcc0001f5fdfd",
+      "goods_name": "others 蜂蜜黄油桃子苹果柠檬蛋糕 若曼酒庄少女园一级园 2023年份 48小时发货",
+      "goods_price": 1980.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "67e53974502017000174fc9c",
+      "goods_name": "Joshy's wine 加菲猫 木尼艾酒庄 招牌超一级园 爱侣园 Les Amoureuses 2022",
+      "goods_price": 20680.0,
+      "brand_name": "Joshy's wine",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "68ec9a4bd3eed20001535827",
+      "goods_name": "【红花蜜】一年只采了9桶｜售罄就下架了 500g（手脚热乎）",
+      "goods_price": 99.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "蜂产品"
+    },
+    {
+      "goods_id": "68d9f974702da100015353d5",
+      "goods_name": "others 聚会必备微醺福袋三支装 匹诺曹半甜红+小教堂雷司令+稍喜柚子酒 白标半甜组合（送酒刀*1 杯*2）",
+      "goods_price": 538.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "690169d1cdf9d600017059db",
+      "goods_name": "可梵茶事｜2009年古醇·苍茸老生普松茸汤喉韵绵长 150克（碎茶压制需配合茶包）",
+      "goods_price": 1194.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其它茶叶"
+    },
+    {
+      "goods_id": "694b933a1f22d20001363862",
+      "goods_name": "【合集】加拿大进口KASAMA精品巧克力草莓白巧 秋之梦呓枫糖榛子50%黑巧克力",
+      "goods_price": 148.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "巧克力"
+    },
+    {
+      "goods_id": "6787bfdd5e64d800019c4ffa",
+      "goods_name": "九窝颜食社 九白饮5.0杏仁七白饮松露银耳玉竹葛根黄精直接饮用款 1盒（15条）",
+      "goods_price": 168.0,
+      "brand_name": "九窝颜食社",
+      "goods_cat3": "其他"
+    },
+    {
+      "goods_id": "6539ca901d812900019ece98",
+      "goods_name": "五和医养堂 术后五红汤210g  滋养调含枸杞气血人参红菇硒蛋白无红糖五红粉 【体验】术后方1盒装 210g（30g*7袋）",
+      "goods_price": 158.0,
+      "brand_name": "五和医养堂",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "681db43180956a00014bb9b7",
+      "goods_name": "others 吉恭达斯领头羊！法国Santa Duc圣杜卡酒庄单一园红葡萄酒 Clos Derriere Vieille（2015）",
+      "goods_price": 449.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6a06c387273c7d00016ded16",
+      "goods_name": "OTHER 【Sy・香气放大器】Sydonios Decanter Decanter l'Universel",
+      "goods_price": 799.0,
+      "brand_name": "OTHER",
+      "goods_cat3": "酒壶/酒杯/酒具"
+    },
+    {
+      "goods_id": "6402a1d39c748400013e4d2f",
+      "goods_name": "正宗怀山药片干（生片）无硫熏无漂白河南焦作温县垆土铁棍山药片 1斤怀山药干片（尝鲜装）",
+      "goods_price": 69.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "山药制品"
+    },
+    {
+      "goods_id": "642a33ba4b147c00011897e0",
+      "goods_name": "混合坚果 按营养排行榜科学配比 多款坚果低温烘焙 香脆不腻 家庭装500g（6种坚果，送封口夹）",
+      "goods_price": 119.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "山核桃/坚果/炒货"
+    },
+    {
+      "goods_id": "6a0f3502fd49560001f81a60",
+      "goods_name": "红黄相间砭石梳（都是特色稀有呀）",
+      "goods_price": 169.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "个人洗护清洁用具"
+    },
+    {
+      "goods_id": "67cebadc9648450001ad2ecc",
+      "goods_name": "初荐 【年度回购榜】德国2022/2023年漫翠园雅思堡特级园雷司令干白 2022年雅思堡GG*1瓶+顺丰包邮",
+      "goods_price": 729.0,
+      "brand_name": "初荐",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "66c8a128b1e57600018a39c5",
+      "goods_name": "高端小月子调理套餐｜小月子水｜小月子粥小月子汤艾灸泡脚全配齐 小月子全套养生方案",
+      "goods_price": 1468.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其它传统滋补品"
+    },
+    {
+      "goods_id": "66b830e710abf700016d968f",
+      "goods_name": "必乐betale 增重大师｜增肥增胖饮品瘦人长胖瘦子增重食品蛋白质长肉男生女生 30瓶赠2瓶【轻度瘦弱】增重2-5斤 红豆/香蕉味各半",
+      "goods_price": 558.0,
+      "brand_name": "必乐betale",
+      "goods_cat3": "藕粉/麦片/冲饮品"
+    },
+    {
+      "goods_id": "67ff7fe5abbc830001b721f3",
+      "goods_name": "【少量现货】西秦刺绣蝴蝶手工挂件居家布艺挂串装饰品高端礼物 破茧成蝶挂件（小）",
+      "goods_price": 229.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "织绣/刺绣"
+    },
+    {
+      "goods_id": "68fb1766ae1c170001e94890",
+      "goods_name": "尚恰 炭烤腰果新货A170大颗粒带皮紫衣盐焗腰果休闲坚果干果零食 【A170特大颗粒】罐装净重500g*1罐(咸香酥脆/颗粒饱满)",
+      "goods_price": 59.9,
+      "brand_name": "尚恰",
+      "goods_cat3": "山核桃/坚果/炒货"
+    },
+    {
+      "goods_id": "67aacb49f4fe14000189fb86",
+      "goods_name": "纯干仓自然生晒2019年2021年新会陈皮大红皮丨正宗新会陈皮真年份 2021七堡大红皮【性价比高】 100克【袋装】",
+      "goods_price": 142.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "蜜饯/枣类/梅/果干/冻干"
+    },
+    {
+      "goods_id": "66649442646d150001d49122",
+      "goods_name": "冷泡甜·2023普洱生茶·散茶60g·梅子箐产区·鑫源 【散茶】冷泡甜60g",
+      "goods_price": 49.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "普洱"
+    },
+    {
+      "goods_id": "68832a80ebefca0001076da0",
+      "goods_name": "米其林爆款小黄瓶！意大利斯巴琳娜加维干白/巴贝拉干红葡萄酒 打包！！（查法蒂、斯巴琳娜、库舒曼诺）",
+      "goods_price": 458.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "666d04af98e3350001c18e6e",
+      "goods_name": "医线明医 南师膏艾绒花椒桂圆艾脐贴脾胃艾草艾灸贴原方丸南怀瑾肚脐贴 【原方南师膏】50g/罐",
+      "goods_price": 85.0,
+      "brand_name": "医线明医",
+      "goods_cat3": "艾灸/艾草/艾条/艾制品"
+    },
+    {
+      "goods_id": "6784a30bf825240001512a2a",
+      "goods_name": "初荐 2012/2013年西班牙贝加西西里亚尤尼科干红 2013年*1瓶+顺丰包邮",
+      "goods_price": 3399.0,
+      "brand_name": "初荐",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "69b3bf8708e3690001a765a0",
+      "goods_name": "一萄 侍美气调保鲜取酒器P1套装",
+      "goods_price": 899.0,
+      "brand_name": "一萄",
+      "goods_cat3": "酒壶/酒杯/酒具"
+    },
+    {
+      "goods_id": "6914010dedfc710001e43528",
+      "goods_name": "内蒙古河套平原非转基因丑糯玉米2.5kg/包 1袋*1.9kg【甜度好，黏糯Q弹】",
+      "goods_price": 49.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "米/面粉/杂粮"
+    },
+    {
+      "goods_id": "67d298e20144270001b3ca77",
+      "goods_name": "【26新货高配米团花黑蜜】云南稀有黑蜂蜜｜漂亮抗焱蜜｜花青素爆 一斤（环保玻璃瓶装）",
+      "goods_price": 210.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "蜂产品"
+    },
+    {
+      "goods_id": "670e2858f20012000138337b",
+      "goods_name": "燕窝 |大盏小盏燕条 纯肉燕条100克（性价比拉丝王）半干挑",
+      "goods_price": 1099.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "燕窝滋补品"
+    },
+    {
+      "goods_id": "6933f228127fb60001ed65d3",
+      "goods_name": "东北蓝靛果原浆 收到放冰箱！！冷藏 1盒3包×90ml（总270ml）",
+      "goods_price": 39.99,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "蜜饯/枣类/梅/果干/冻干"
+    },
+    {
+      "goods_id": "69f71d44a5715f000195169f",
+      "goods_name": "妈妈很忙 有机黄精桑葚醪糟500g 自然发酵 0蔗糖 正宗醪糟 有机黄精桑葚醪糟*2瓶",
+      "goods_price": 75.0,
+      "brand_name": "妈妈很忙",
+      "goods_cat3": "UNKNOWN"
+    },
+    {
+      "goods_id": "6738ec7f6602d70001769969",
+      "goods_name": "OTHER LLM教皇新堡力作・索玛夫妻酒庄教皇新堡咏叹调红葡萄酒2020 2020年",
+      "goods_price": 1550.0,
+      "brand_name": "OTHER",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6551a17bd03d240001bebf23",
+      "goods_name": "AvoPCOS 爱沃健康可可黑豆粉早餐代餐粉高纤饱腹黑豆浆可可粉液断早餐 1盒装（每盒12条）",
+      "goods_price": 64.0,
+      "brand_name": "AvoPCOS",
+      "goods_cat3": "食补粉粉"
+    },
+    {
+      "goods_id": "6329d73e1cea92000129dc13",
+      "goods_name": "Qantu 【全合集】AOC金奖加拿大进口70%莫罗蓬春丘黑巧克力牛奶 金豆奖⭐Morropon莫罗蓬70%黑",
+      "goods_price": 125.0,
+      "brand_name": "Qantu",
+      "goods_cat3": "巧克力"
+    },
+    {
+      "goods_id": "69e59735ca7f7f0001e1c6a2",
+      "goods_name": "冷水河高杆 2026年春 品鉴 （不支持试喝）",
+      "goods_price": 289.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其他"
+    },
+    {
+      "goods_id": "68357c279e365d0001823628",
+      "goods_name": "湘野红姐 香苏茶紫苏饮纯紫苏茶苏子叶冲泡茶自有品种香苏2号 香苏茶25g*1罐",
+      "goods_price": 39.9,
+      "brand_name": "湘野红姐",
+      "goods_cat3": "代用/花草/水果/再加工茶"
+    },
+    {
+      "goods_id": "684a459093d0780001aea215",
+      "goods_name": "桂青 2003年桂香茶膏60g广西梧州特产黑茶六堡茶 60g",
+      "goods_price": 1167.0,
+      "brand_name": "桂青",
+      "goods_cat3": "黑茶"
+    },
+    {
+      "goods_id": "697e0a0be047060001153db0",
+      "goods_name": "宁波红膏蟹糊 新鲜腌制鲜中带甜 即食腌制野生梭子蟹 0防腐少盐 【红膏蟹糊300g】*1盒",
+      "goods_price": 150.3,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "海鲜/水产品/制品"
+    },
+    {
+      "goods_id": "68fb4ba4c192ac0001b8085c",
+      "goods_name": "韩要强 巴西松子(手剥松子)阿富汗松子250g 250g",
+      "goods_price": 95.0,
+      "brand_name": "韩要强",
+      "goods_cat3": "山核桃/坚果/炒货"
+    },
+    {
+      "goods_id": "669b6398d50cd40001e6ac5b",
+      "goods_name": "林间盏 紫苏桃子姜茶 |夏吃姜 | 紫苏暖饮  姜茶清香丨去年错过 今年尝尝 【1盒】10包丨基础养",
+      "goods_price": 56.0,
+      "brand_name": "林间盏",
+      "goods_cat3": "其它传统滋补品"
+    },
+    {
+      "goods_id": "67e4e63760845d0001b568e0",
+      "goods_name": "新会陈皮多个款式可选（具体以直播间为准） 2019天马大红500克（618升级高透密封箱）",
+      "goods_price": 580.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "6673d82ca9c8b7000150c523",
+      "goods_name": "蛋糕定制｜具体款式请与客服沟通｜仅支持广州同城配送",
+      "goods_price": 10.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "低温糕点"
+    },
+    {
+      "goods_id": "69e71fd252316e0001120cca",
+      "goods_name": "食葡 法国原瓶进口伯希尔庄园凯约特长相思干白葡萄酒750ml马恩燧石 伯希尔庄园燧石干白葡萄酒（750ml）",
+      "goods_price": 368.0,
+      "brand_name": "食葡",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "67ad722c7b3de40001b5bea2",
+      "goods_name": "麦卡伦 新版本15年蓝钻双桶苏格兰威士忌洋酒 麦卡伦新版本15年蓝钻双桶（单支）",
+      "goods_price": 2350.0,
+      "brand_name": "麦卡伦",
+      "goods_cat3": "洋酒"
+    },
+    {
+      "goods_id": "64927143ad82c1000171e01f",
+      "goods_name": "达埔李和元 正宗永春非遗冲泡脾粉胃散闽南特产成人脾胃健康儿童食养脾胃散 4岁-成人透明款尝鲜装150克【10克*15包】+送一包10克试用装",
+      "goods_price": 70.0,
+      "brand_name": "达埔李和元",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "64029bff2aaa800001391a1d",
+      "goods_name": "河南焦作温县垆土铁棍山药怀山药，到货去掉所有外包装 长度35公分左右5斤（活动：发45公分左右5斤）",
+      "goods_price": 59.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "新鲜蔬菜/蔬菜制品"
+    },
+    {
+      "goods_id": "61af250897acd70001504578",
+      "goods_name": "左中塞外牧场 超干牛肉干 一斤链接 原味一斤 g",
+      "goods_price": 188.0,
+      "brand_name": "左中塞外牧场",
+      "goods_cat3": "肉干/肉脯/卤味零食"
+    },
+    {
+      "goods_id": "67d1a0d15fc3f70001eb33c2",
+      "goods_name": "【上新·暖暖红糖香2.0】2014年广西六堡茶 红糖香 新手必拍 红糖香200克 | 送同款试喝装1泡",
+      "goods_price": 165.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "黑茶"
+    },
+    {
+      "goods_id": "67b960c497592600017f735f",
+      "goods_name": "CoffeeBuff 瑰夏自由6.0Geisha伯爵红茶柑橘花香风味浅度意式浓缩拼配咖啡豆 E04 瑰夏自由 250g",
+      "goods_price": 106.0,
+      "brand_name": "CoffeeBuff",
+      "goods_cat3": "速溶咖啡/咖啡豆/粉"
+    },
+    {
+      "goods_id": "687f564f9e83740001cd7b8e",
+      "goods_name": "70%梅斯卡尔增味巧克力 48小时发货",
+      "goods_price": 92.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "巧克力"
+    },
+    {
+      "goods_id": "69f4953d0283e20001805ea1",
+      "goods_name": "合为养 【姜姜·好】2026姜枣茶 夏天三伏【4包自动送】新款650毫升吨吨杯 【预售，7天内发货】1袋/48g*7包（拍4袋送吨吨杯）",
+      "goods_price": 79.0,
+      "brand_name": "合为养",
+      "goods_cat3": "代用/花草/水果/再加工茶"
+    },
+    {
+      "goods_id": "6822f42280956a00016932ec",
+      "goods_name": "每日乔安 【618大促】养雌粉种子循环天然黄体酮农科院亚麻籽无花果粉0添加 1盒/270g（18g*15）（多盒更优惠推荐买多盒）",
+      "goods_price": 88.0,
+      "brand_name": "每日乔安",
+      "goods_cat3": "藕粉/麦片/冲饮品"
+    },
+    {
+      "goods_id": "663ae8e4b96ee100018ba822",
+      "goods_name": "即食高压海参 海域加工双有机刺参深海底播 肉厚劲道带鲜味 中海参1斤（约30-34根）送2根",
+      "goods_price": 2300.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "海鲜/水产品/制品"
+    },
+    {
+      "goods_id": "67f4e5f604afe30001db45c0",
+      "goods_name": "禹鸿物予 端午节礼品「端阳志」2026端阳送领导嘉宾客户长辈节日答谢伴手礼 筝争日上 Z2S（含龙舟）",
+      "goods_price": 388.0,
+      "brand_name": "禹鸿物予",
+      "goods_cat3": "节日/派对庆典用品"
+    },
+    {
+      "goods_id": "697865bba1496d0001e469e0",
+      "goods_name": "桑葚玫瑰蜜漂亮蜜｜花青素、维C、｜开封不退换，介意勿拍哟 116g桑葚玫瑰果蜜试吃 洋槐蜜泡的哦",
+      "goods_price": 25.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "蜂产品"
+    },
+    {
+      "goods_id": "69464ed5d96c450001588eb5",
+      "goods_name": "古法柴火玉灵膏 |代参膏柴火竹笼不加糖蒸制80小时产后女性补 一罐",
+      "goods_price": 218.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其它传统滋补品"
+    },
+    {
+      "goods_id": "69316ead99c0b80001110f5c",
+      "goods_name": "植与山山 黄精芝麻拌拌粉熬夜党 |发际线退步 |大口吃的能量粉粉 1盒（尝鲜 250g/瓶）",
+      "goods_price": 89.0,
+      "brand_name": "植与山山",
+      "goods_cat3": "鲜炖滋补品"
+    },
+    {
+      "goods_id": "66743f3b7d94b2000111c776",
+      "goods_name": "真方心【港太推荐】孩子水三步曲（无花果升级） 组合：每款各2包，共6包",
+      "goods_price": 282.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "食疗滋补营养"
+    },
+    {
+      "goods_id": "69883ab71b200000019b05fc",
+      "goods_name": "可梵茶事｜2023年嘉月云南古树月光白茶清冽花香 50克散茶",
+      "goods_price": 680.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "白茶"
+    },
+    {
+      "goods_id": "69eb30b767d4b20001eddca9",
+      "goods_name": "中意必诺 【618限时购】微醺酒季 意大利原瓶进口红酒 微醺佳酿 01心动微醺组合",
+      "goods_price": 199.0,
+      "brand_name": "中意必诺",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "64f1ab143e164700010b4364",
+      "goods_name": "九蒸九晒黄精九制黄精15年以上-500克~ 整块装1罐500g【滋补体验装】",
+      "goods_price": 188.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "650bb80948c79b0001ceed27",
+      "goods_name": "阿尔帝 即食烘烤虾干开背凤尾虾耐嚼解馋海味小零食追剧零食 【原味】烘烤虾干100g*2",
+      "goods_price": 107.9,
+      "brand_name": "阿尔帝",
+      "goods_cat3": "鱿鱼丝/鱼干/海味即食"
+    },
+    {
+      "goods_id": "68cebc6655f59b000132d0e7",
+      "goods_name": "百元王炸绿狮子雷司令！德国莫泽尔迪哈德米歇尔堡半甜白葡萄酒 单支尝鲜（送酒刀）",
+      "goods_price": 158.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "69a3e46b85eac80001e11d75",
+      "goods_name": "bruto 帕提园干白 双鸡酒庄隔壁的地块 内行人的宝藏酒Les Parties 2021",
+      "goods_price": 449.0,
+      "brand_name": "bruto",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "664b390ae26fdb0001089c35",
+      "goods_name": "参之味六堡 中茶433008，豆沙包六堡茶，大蒌茶分装 豆沙包（100克）",
+      "goods_price": 118.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "黑茶"
+    },
+    {
+      "goods_id": "66a70b128c56b40001693e1f",
+      "goods_name": "知食大爆炸 海盐香葱咸味苏打饼干薄脆单独小包装解馋好吃网红办公室小零食 香葱味苏打5包（约130片）",
+      "goods_price": 9.9,
+      "brand_name": "知食大爆炸",
+      "goods_cat3": "饼干/膨化"
+    },
+    {
+      "goods_id": "6604daf37d1da00001053f75",
+      "goods_name": "2026年新茶D款明前龙井43号龙井春茶3月27日 礼盒装（装半斤茶）",
+      "goods_price": 208.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "绿茶"
+    },
+    {
+      "goods_id": "632330ac6ebb770001ed84f7",
+      "goods_name": "燕鸣春 中科溯源码印尼半干挑大燕条 燕窝 （干净度98  不用挑毛） 特级大燕条100克（10克一袋）",
+      "goods_price": 1500.0,
+      "brand_name": "燕鸣春",
+      "goods_cat3": "燕窝滋补品"
+    },
+    {
+      "goods_id": "69e8ebca21e0870001bdeb72",
+      "goods_name": "【26年新货】稀有红色悬崖蜜/红崖/悬崖红蜜 药蜜 岩蜂蜜/数量少 稀有红崖蜜一斤",
+      "goods_price": 210.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "蜂产品"
+    },
+    {
+      "goods_id": "67b2d3799716990001e2bee5",
+      "goods_name": "纯干仓自然生晒2019年2021年新会陈皮大红皮丨正宗新会陈皮真年份 2019天马大红皮【口感推荐】 500克【袋装】",
+      "goods_price": 798.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "蜜饯/枣类/梅/果干/冻干"
+    },
+    {
+      "goods_id": "6979e0f239c80000017e3a33",
+      "goods_name": "【九蒸九晒黄精】九华黄精  210g（10g*21袋）/盒  （即食） [元气初养】210g*1盒",
+      "goods_price": 238.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "代用/花草/水果/再加工茶"
+    },
+    {
+      "goods_id": "66f52a9a5b73330001371fa3",
+      "goods_name": "雪八两 远芳如芯 头采福鼎大毫 10窨 纯净高洁 茉莉花茶 48g起 48g/盒（4g*12袋泡）",
+      "goods_price": 208.0,
+      "brand_name": "雪八两",
+      "goods_cat3": "其他"
+    },
+    {
+      "goods_id": "6a041d0a0283e20001c463b3",
+      "goods_name": "黑白配组 内蒙新鲜厚奶皮咸奶茶白脱+酒渍樱桃黑森林奶油蛋糕盒子 1盒【奶皮子咸奶茶白脱】 1盒【奶皮子咸奶茶白脱】",
+      "goods_price": 118.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "低温糕点"
+    },
+    {
+      "goods_id": "68b553affba5440001ec1d11",
+      "goods_name": "混合坚果 按营养排行榜科学配比 多款坚果低温烘焙 香脆不腻 便携装750g（25g*30袋，7种坚果）",
+      "goods_price": 198.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "山核桃/坚果/炒货"
+    },
+    {
+      "goods_id": "68286dca8ee7ed0001993a1b",
+      "goods_name": "云南高山有机核桃仁原味500g孕妇推荐 1袋*500克",
+      "goods_price": 45.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "山核桃/坚果/炒货"
+    },
+    {
+      "goods_id": "6801a3628d1e0200019d37c5",
+      "goods_name": "【小众中的小众】南法生物动力Domaine Terrebrune 适饮年份 2015年红375ml小瓶 2瓶装",
+      "goods_price": 420.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "687cca43e58d0700016ab9ec",
+      "goods_name": "杏南堂•四物膏--姨妈少淤 体验装1瓶",
+      "goods_price": 199.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其他"
+    },
+    {
+      "goods_id": "67627d9acfd9800001d73f40",
+      "goods_name": "others 绝美花瓶酒！国民黄胖子！意大利·Villa Sparina斯巴琳娜酒庄 「黄桃菠萝桂花蜜🍍」黄胖子干白",
+      "goods_price": 258.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "68e71c577d3b3f0001fc09ea",
+      "goods_name": "任选八枚【29.9/8包邮】手作碱水面包碱水棒套餐健身代餐早餐 任选8个加入购物车自动改价29.9（这是提示语，可看详情第一张）",
+      "goods_price": 20.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "面包"
+    },
+    {
+      "goods_id": "69297b2301312b00017871b6",
+      "goods_name": "others 勃艮第传奇大酒商之一，约瑟夫杜鲁安 （直播专用） 勃艮第黑皮诺 Bourgogne Pinot Noir",
+      "goods_price": 218.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "69532857dd18440001255ae9",
+      "goods_name": "TABB 【爱尔兰鹿角兔金酒】鹿角兔 无花果限定款！蜜桃成精！可选礼盒 【少量！】爱尔兰火耀金酒鹿角兔5款全家福",
+      "goods_price": 1995.0,
+      "brand_name": "TABB",
+      "goods_cat3": "洋酒"
+    },
+    {
+      "goods_id": "67eb7cf9d25300000127cfa5",
+      "goods_name": "others 白菜价老年份Barolo！意大利宝乐山S. Stefano园巴罗洛红葡萄酒 单支（2007）",
+      "goods_price": 249.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "64890a78f835e70001909d35",
+      "goods_name": "天晒 2023高级白牡丹散茶500克正宗福鼎白茶一品一码花香清甜收藏木盒 500克/箱(搭配同款品鉴装)",
+      "goods_price": 880.0,
+      "brand_name": "天晒",
+      "goods_cat3": "白茶"
+    },
+    {
+      "goods_id": "685449c41520c30001a78517",
+      "goods_name": "必吃榜!【周年庆活动】鲜吊龙原切猪肉脯潮汕办公室追剧零食 轻蜜汁原切吊龙猪肉脯 48g【必吃榜试吃活动~】",
+      "goods_price": 20.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "肉干/肉脯/卤味零食"
+    },
+    {
+      "goods_id": "69d219949fe19c000139dbce",
+      "goods_name": "others 烤芝麻坚果焦糖香！超油润质感！雷布雄欧克芬山羊园GG雷司令干白 2017年份",
+      "goods_price": 438.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6742b6fdec68d70001983bd5",
+      "goods_name": "补津ye/东北野生玉竹/无硫磺/无农残/更温和/整条原支煲汤煮水 小号玉竹一斤500克",
+      "goods_price": 38.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其它传统滋补品"
+    },
+    {
+      "goods_id": "68e0d90d0f0ca400151a959f",
+      "goods_name": "2025年三窨茉莉六堡100g罐装#茉莉花六堡茶 100g*1罐 正装支持试喝7g1泡",
+      "goods_price": 92.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "黑茶"
+    },
+    {
+      "goods_id": "682415e43aa6a60015d755df",
+      "goods_name": "2026年春茶 口粮鸭屎香 500g 翔说茶 香气高扬 口感清爽 袋装一斤（1袋，无礼袋）",
+      "goods_price": 235.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "乌龙茶"
+    },
+    {
+      "goods_id": "692c3327137a3b0001593f71",
+      "goods_name": "咖啡曲奇 | 全家福 纸盒装",
+      "goods_price": 139.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "饼干/膨化"
+    },
+    {
+      "goods_id": "654a5be68c0244000193a010",
+      "goods_name": "意式马卡龙（8颗/盒，口味可自选）（外壳略带嚼劲轻微黏牙） 1盒 【口味自选，备注序号或联系客服】",
+      "goods_price": 218.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "低温糕点"
+    },
+    {
+      "goods_id": "69369ec251b8c00001f8e757",
+      "goods_name": "Joshy's wine 「双鸡同门」奥利弗勒夫莱默尔索夏姆一级园MeursaultCharmes2023",
+      "goods_price": 1788.0,
+      "brand_name": "Joshy's wine",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "69402ca55e8e270015b5b752",
+      "goods_name": "2009年暖（广西梧州六堡茶）500g罐装#黑茶 500g*1罐 搭品鉴,支持试喝品鉴7g一泡",
+      "goods_price": 450.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "黑茶"
+    },
+    {
+      "goods_id": "66c8920bb1e576000189b95f",
+      "goods_name": "铁皮石斛决明子茶（学生党 用眼多）",
+      "goods_price": 69.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "代用/花草/水果/再加工茶"
+    },
+    {
+      "goods_id": "6a1eca0e421f8e00015839d8",
+      "goods_name": "紫云祥 2024年镇号之宝麒麟单株级古树生茶 8克品鉴包",
+      "goods_price": 59.0,
+      "brand_name": "紫云祥",
+      "goods_cat3": "其它茶叶"
+    },
+    {
+      "goods_id": "68184fe946684b000194a8f1",
+      "goods_name": "生五指毛桃 道地高品质经方经典优质正宗原产地直邮新鲜 五指毛桃250g*1袋",
+      "goods_price": 36.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其他"
+    },
+    {
+      "goods_id": "69c8b6e3d95b5a00014fa766",
+      "goods_name": "OTHER 勃艮第名门之后・卡莲隆普里尼蒙哈榭村白葡萄酒2022（375ml） 2022年 375ml",
+      "goods_price": 515.0,
+      "brand_name": "OTHER",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6a2bbb07cf6c7d0001d2f632",
+      "goods_name": "初荐 法国2022年弗朗索佳里浓酒庄普里尼蒙哈榭村级干白（375ml） 1瓶+顺丰包邮",
+      "goods_price": 549.0,
+      "brand_name": "初荐",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6925a09847579d0001262adb",
+      "goods_name": "慕酪思特 牛乳+抹茶生布丁奶香浓郁下午茶甜品健康解馋顺丰包邮120g*6 生布丁牛乳*3+抹茶*3",
+      "goods_price": 89.9,
+      "brand_name": "慕酪思特",
+      "goods_cat3": "乳制品"
+    },
+    {
+      "goods_id": "69858c89b6ceb40001696141",
+      "goods_name": "正宗新西兰野生深海鱼胶lingfish原色全公胶干货无添加15片规格 230克（7片）",
+      "goods_price": 685.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其它传统滋补品"
+    },
+    {
+      "goods_id": "68e403e99176f5000113b4be",
+      "goods_name": "others 勃艮第当红炸子鸡 PVG          「直播」 钙石光辉Eclat de Calcaire 2023",
+      "goods_price": 449.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "68beb01424d64a0001cb2d89",
+      "goods_name": "九蒸九晒有机黄精  双有机认证  九华山多花黄精 林下种植 黄精果 净重250克/体验装（送1个试吃，送发财杯）",
+      "goods_price": 156.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "67ca862275422f0001e8cbb3",
+      "goods_name": "2016年 | 古树熟普 | 古树普洱熟茶 | 357克茶饼 2016年古树熟普357克【1片】 48小时发货",
+      "goods_price": 275.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其他"
+    },
+    {
+      "goods_id": "63fea599ad1d00000106dcbf",
+      "goods_name": "无麸质全谷物馒头 3种口感杂粮粗粮馒头 速食早餐 无麸质全谷物馒头100克/个*12个",
+      "goods_price": 89.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "方便速食/速冻食品"
+    },
+    {
+      "goods_id": "69e83f069dea2d0001371b6a",
+      "goods_name": "酒梦富 【小茉莉】低度微醺漂亮酒丨啵啵茉莉花莫斯卡托酒 甜白葡萄酒 茉莉单支 750ml*1 48小时发货",
+      "goods_price": 139.0,
+      "brand_name": "酒梦富",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6a159dcaae460400010ecf6f",
+      "goods_name": "80年代普洱生茶雪印7532七子饼茶云南省公司生普357g 10g茶样",
+      "goods_price": 550.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "普洱"
+    },
+    {
+      "goods_id": "64fff55813d99800015c5b26",
+      "goods_name": "秋极晟 2025年袋装新米上市正宗五常原粮稻花香二号大米 五常大米袋装 五常大米袋装10斤",
+      "goods_price": 85.9,
+      "brand_name": "秋极晟",
+      "goods_cat3": "米/面粉/杂粮"
+    },
+    {
+      "goods_id": "625e52c61607b600012b8986",
+      "goods_name": "龙府井 2026新茶头采特级明前龙井43送长辈送领导绿茶叶礼盒（一揽春巅） 明前龙井半斤礼盒装（顺丰）",
+      "goods_price": 549.0,
+      "brand_name": "龙府井",
+      "goods_cat3": "绿茶"
+    },
+    {
+      "goods_id": "6285bf991b35a60001c29de7",
+      "goods_name": "Patchi 芭驰爆款进口纯可可脂巧克力 <金山银山·榛子扁桃仁>坚果夹心礼盒 金山银山双口味巧克力礼盒165g（新旧礼盒混发） 165g/盒",
+      "goods_price": 205.0,
+      "brand_name": "Patchi",
+      "goods_cat3": "巧克力"
+    },
+    {
+      "goods_id": "687f6349417c3f0001f1eac8",
+      "goods_name": "侍酒猫 米其林同款！意大利查法蒂酒庄干白/干红葡萄酒 「水仙花蜜白桃荔枝」爱法蒂干白 750ml",
+      "goods_price": 238.0,
+      "brand_name": "侍酒猫",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "66596ac2c417b300019c2057",
+      "goods_name": "长白山非种植【山榛子】个别会苦介意勿拍.小红书 【2斤，带工具】 普通袋装",
+      "goods_price": 58.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "山核桃/坚果/炒货"
+    },
+    {
+      "goods_id": "67b2e64b97592600019ac5ea",
+      "goods_name": "Glenfarclas 格兰花格大师精选雪莉桶700ml 格兰花格大师精选单支",
+      "goods_price": 599.0,
+      "brand_name": "Glenfarclas",
+      "goods_cat3": "洋酒"
+    },
+    {
+      "goods_id": "69b26d5f7c9c8f0001419dcc",
+      "goods_name": "米其林同款！尼诺弗朗科首席Primo Franco/Zago酒庄古法Prosecco Primo Franco首席起泡酒（限量200瓶）",
+      "goods_price": 348.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "69ef2a5939916f000180dd0e",
+      "goods_name": "Patchi 芭驰新品爆款 <咸脆玉米粒>夹心巧克力高端进口礼盒女友520礼物 芭驰「咸脆玉米粒」夹心牛奶巧克力礼盒200g",
+      "goods_price": 235.0,
+      "brand_name": "Patchi",
+      "goods_cat3": "巧克力"
+    },
+    {
+      "goods_id": "67e52d1bd2530000016eedbe",
+      "goods_name": "2015年 | 福鼎白茶 | 典藏寿眉 | 老寿眉 | 福鼎名牌 | 老白茶 老白茶 300克 —【1片】",
+      "goods_price": 218.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "白茶"
+    },
+    {
+      "goods_id": "675bf560be2f6800013efa65",
+      "goods_name": "企鹅市集 日本山梨县 梓 金酒 手工小批量 季之美茶Gin平替 720ml",
+      "goods_price": 328.0,
+      "brand_name": "企鹅市集",
+      "goods_cat3": "洋酒"
+    },
+    {
+      "goods_id": "69d4bfe24ee72d00014bb87f",
+      "goods_name": "玉堂春 陈皮豆沙奶油酥饼--伯爵红茶/斑斓椰蓉酥 240g/盒（6枚礼盒装） 斑斓椰蓉酥 1盒6只装",
+      "goods_price": 88.0,
+      "brand_name": "玉堂春",
+      "goods_cat3": "糕点/点心"
+    },
+    {
+      "goods_id": "6680cda5884f4e000174f92a",
+      "goods_name": "展博士 茯苓山药糕代餐养胃小零食健康养生茯苓夹饼小吃健康早餐茯湿糕 高含量【茯苓+山药95%】 6个【尝鲜装】炒鸡不划算",
+      "goods_price": 16.9,
+      "brand_name": "展博士",
+      "goods_cat3": "糕点/点心"
+    },
+    {
+      "goods_id": "679304c4f4d65700018eb9be",
+      "goods_name": "意大利弗朗瑞希庄园大师系橄榄油庄园典藏Villa Magra Grand Cru 250ml",
+      "goods_price": 439.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "食用油/调味油"
+    },
+    {
+      "goods_id": "692c249b2aa9d00001199715",
+      "goods_name": "70%黑巧柠檬橙皮瑰夏咖啡组合 双拼",
+      "goods_price": 158.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "糕点/点心"
+    },
+    {
+      "goods_id": "68cd72f7ff7b37000119247c",
+      "goods_name": "野生大耳赤嘴鱼胶 大耳赤嘴母14头 小耳赤嘴公23头 产后赤嘴鱼胶 澳 小耳朵 24头野赤嘴公 4只100克",
+      "goods_price": 858.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其它传统滋补品"
+    },
+    {
+      "goods_id": "697de4fb8dc4b300019bccd9",
+      "goods_name": "（浓郁烟韵）2014年兴海红票绿大树普洱生茶357g（GC） 1饼/357g(送茶样）",
+      "goods_price": 80.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "茶叶"
+    },
+    {
+      "goods_id": "68d14c674c66a500016341e1",
+      "goods_name": "广娟 广州市奶牛研究娟姗生牛乳高钙鲜牛奶早餐纯牛奶500g 煮沸后饮用 娟姗生牛乳500g*6袋",
+      "goods_price": 75.0,
+      "brand_name": "广娟",
+      "goods_cat3": "乳制品"
+    },
+    {
+      "goods_id": "6751a049dda0580001ff8204",
+      "goods_name": "0616期面包点心套装 篮子装",
+      "goods_price": 148.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "面包"
+    },
+    {
+      "goods_id": "66509e2003fea400013bd982",
+      "goods_name": "润心百合饮（心）",
+      "goods_price": 69.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "代用/花草/水果/再加工茶"
+    },
+    {
+      "goods_id": "67542d14d79d330001411ba8",
+      "goods_name": "利吉氏 【六物山楂丸】配料表干净不加蔗糖孩子孕妈妈安心零食独立包装 六物丸2包【山楂苹果山药陈皮茯苓红枣】",
+      "goods_price": 39.9,
+      "brand_name": "利吉氏",
+      "goods_cat3": "蜜饯/枣类/梅/果干/冻干"
+    },
+    {
+      "goods_id": "6548de0814ec5d0001c6953e",
+      "goods_name": "嗨小瓶 黑科技体重管理冷萃血橙咖啡液断咖啡轻断食提代有氧运动暴汗伴侣 暴汗榨脂血橙咖啡一盒+2支马黛茶咖啡（共16支）",
+      "goods_price": 129.0,
+      "brand_name": "嗨小瓶",
+      "goods_cat3": "速溶咖啡/咖啡豆/粉"
+    },
+    {
+      "goods_id": "66a1544d05d880000173bd8d",
+      "goods_name": "others LLM光明僧侣 Lucien Le Moine大区干白/干红 2023年白（1瓶）",
+      "goods_price": 680.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "674ab8d5ada6590001baaca2",
+      "goods_name": "韩要强 碧根果仁原味烘烤孕妇推荐200克 香酥 1罐*200克",
+      "goods_price": 35.0,
+      "brand_name": "韩要强",
+      "goods_cat3": "山核桃/坚果/炒货"
+    },
+    {
+      "goods_id": "6a0c5210e80a7b0001ec226d",
+      "goods_name": "Joshy's wine PYCM「白葡世家」默尔索 Meursault 村级 白葡萄酒 2023",
+      "goods_price": 2588.0,
+      "brand_name": "Joshy's wine",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "68c50d00fb0cef00010baea8",
+      "goods_name": "中通包邮 柳州本地螺蛳粉代买五姐曹妹阿柠檬铁三中新月娇姐真代g 五姐螺蛳粉 微辣",
+      "goods_price": 15.5,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "方便速食/速冻食品"
+    },
+    {
+      "goods_id": "68414b3fb68cf800019d05e8",
+      "goods_name": "上英山 无添加切片黄油曲奇现做现发 1盒 双拼（芝麻＋蔓越莓）",
+      "goods_price": 68.0,
+      "brand_name": "上英山",
+      "goods_cat3": "饼干/膨化"
+    },
+    {
+      "goods_id": "677f3df5627fd900019cab44",
+      "goods_name": "全食物日记 妆食记营养酵母粉健康营养即食素芝士冲泡饮品烘焙调料粉150g 【超10种营养 一次补充】1罐",
+      "goods_price": 168.0,
+      "brand_name": "全食物日记",
+      "goods_cat3": "其他膳食营养补充食品"
+    },
+    {
+      "goods_id": "69e84f48bd8c350001989d3c",
+      "goods_name": "米曰MIYUE 风味满贯紫菜卷紫菜包饭寿司加热即食方便速食早餐宵夜顺丰包邮 （共24片）【齐享4口味】黑醋金枪鱼+德肠芝士+火辣鱼饼+寿喜牛肉",
+      "goods_price": 109.0,
+      "brand_name": "米曰MIYUE",
+      "goods_cat3": "方便速食/速冻食品"
+    },
+    {
+      "goods_id": "6752f43253c11d0001c2d64a",
+      "goods_name": "others 必收！村级降级大区奶油冰淇淋默尔索当红炸子鸡Tessier干白 Bourgogne Champ Perrier2021年",
+      "goods_price": 588.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "699af6531dbf920001f890d5",
+      "goods_name": "【龙井43】2026头采明前龙井43号茶农高山绿茶叶豆香花香鲜爽回甘 头采龙井100克（3月18号）",
+      "goods_price": 160.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "绿茶"
+    },
+    {
+      "goods_id": "68ad9149ec7fed0001edf735",
+      "goods_name": "bruto prosecco产区的传奇酒庄 起泡酒教科书 Nino Franco RUSTICO",
+      "goods_price": 299.0,
+      "brand_name": "bruto",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6987f8d5a60bac000121a5e3",
+      "goods_name": "【闪光少女】迪拜软糯曲奇手工现做开心果口感丰富香糯拉丝60g/个 闪光闪光4个迪拜软曲奇（巧克力味）60g/个",
+      "goods_price": 49.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "巧克力"
+    },
+    {
+      "goods_id": "6969cd029d3b31000151bbf2",
+      "goods_name": "高泡甜白葡萄酒！舌尖冲浪～意大利DOCG金色阿斯蒂甜型起气泡酒 年度组合三支装",
+      "goods_price": 458.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "682292c3a68756000115cc22",
+      "goods_name": "【如果迪克小馆只能选一瓶橙酒】Dario Princic 意大利东北大名家 Jakot 2018",
+      "goods_price": 450.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "69db8a64ab6f9400013b18a7",
+      "goods_name": "Joshy's wine 奥利弗勒夫莱 Olivier leflaive 普利尼蒙哈榭 白葡萄酒 2022",
+      "goods_price": 1188.0,
+      "brand_name": "Joshy's wine",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "675f940fbee2b60001bd5989",
+      "goods_name": "茉莉花茶冷泡茶专属 清甜爽口【冰茉莉四窨】 补充装250g（纸包）",
+      "goods_price": 75.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "代用/花草/水果/再加工茶"
+    },
+    {
+      "goods_id": "682fff58fde0e20001ea30c1",
+      "goods_name": "「夏季冷萃绿绿瓜」公路咖啡意式SOE冷萃专用豆单品冰手冲咖啡豆 200g 不磨粉（默认咖啡豆）",
+      "goods_price": 78.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "速溶咖啡/咖啡豆/粉"
+    },
+    {
+      "goods_id": "68c43259e8b4ad000143b198",
+      "goods_name": "PK同村名家！勃艮第老藤黑皮诺 法国朗飞酒庄萨维尼小房红葡萄酒 1瓶",
+      "goods_price": 458.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "67d822460144270001ebff9d",
+      "goods_name": "【罗掌柜的油菌子】采用云南本地的新鲜菌子，和大蒜、辣椒",
+      "goods_price": 28.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "熏腊/香肠/火腿制品"
+    },
+    {
+      "goods_id": "6923fbb152eecb000180eccc",
+      "goods_name": "V&C 山帝仕传奇巴利·单一麦芽威士忌(礼盒版) 传奇巴利1号礼盒版（送梅酒+品鉴杯）",
+      "goods_price": 500.0,
+      "brand_name": "V&C",
+      "goods_cat3": "洋酒"
+    },
+    {
+      "goods_id": "67e393b4585fab00011a1947",
+      "goods_name": "粮仁福 新米五常大米10斤农户直发稻花香2号东北大米真空包装10斤 10斤",
+      "goods_price": 79.9,
+      "brand_name": "粮仁福",
+      "goods_cat3": "米/面粉/杂粮"
+    },
+    {
+      "goods_id": "68ee47493f37a900016ce7f9",
+      "goods_name": "【孕期、月子、术后】湛江赤嘴母|大补 调理 修复 送礼 16-17头母 4个试吃（约117克）",
+      "goods_price": 768.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "鲜炖滋补品"
+    },
+    {
+      "goods_id": "67e3e9d895c34500010d089a",
+      "goods_name": "七星伴月礼盒领导送礼送爸妈见家长送长辈生日礼物月子礼新年礼物 七星伴月B版",
+      "goods_price": 432.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其它传统滋补品"
+    },
+    {
+      "goods_id": "69dc69786ba4080001f76e78",
+      "goods_name": "巧克力五重奏蛋糕 巧克力五重奏蛋糕",
+      "goods_price": 65.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "低温糕点"
+    },
+    {
+      "goods_id": "6a03d621a7aa180001d21db4",
+      "goods_name": "新会陈皮2025七堡天马大红二红皮2024年冬后皮自然生晒干皮柑皮 2024七堡冬后皮（甜度高） 5斤【铁桶装】",
+      "goods_price": 1460.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "蜜饯/枣类/梅/果干/冻干"
+    },
+    {
+      "goods_id": "66179c316a084a000138f722",
+      "goods_name": "南食召 温州灰汤粽 天然草木灰·清新碱味 碱水粽端午新粽粽子 2袋",
+      "goods_price": 27.2,
+      "brand_name": "南食召",
+      "goods_cat3": "方便速食/速冻食品"
+    },
+    {
+      "goods_id": "689afe574dbac2000190b424",
+      "goods_name": "韩要强 原味现烤夏威夷果仁半片没有额外添加剂250克 1罐*250克",
+      "goods_price": 45.0,
+      "brand_name": "韩要强",
+      "goods_cat3": "山核桃/坚果/炒货"
+    },
+    {
+      "goods_id": "67dfd2c9b23017000101f8e7",
+      "goods_name": "仙妮贝儿Shaniabelle 防潮蝴蝶结干佩斯 翻糖膏 一件包邮 正版授权 防潮通用型干佩斯454克（5包）",
+      "goods_price": 100.0,
+      "brand_name": "仙妮贝儿Shaniabelle",
+      "goods_cat3": "烘焙原料/辅料/半成品/食品添加剂"
+    },
+    {
+      "goods_id": "66a8a7df6c3884000122a6b0",
+      "goods_name": "野生恒山正北芪浑源黄芪深山天然无硫切片 100g（8年生，0.8-1.0片形）",
+      "goods_price": 66.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "6a17f0c5df36740001b283c1",
+      "goods_name": "啃老师 达夫特米尔2012 冬季版 单一麦芽威士忌",
+      "goods_price": 1650.0,
+      "brand_name": "啃老师",
+      "goods_cat3": "洋酒"
+    },
+    {
+      "goods_id": "68abf325f38f970001b0c899",
+      "goods_name": "奔富 BIN407 赤霞珠红葡萄酒 407+博纳佰馥",
+      "goods_price": 1480.0,
+      "brand_name": "奔富",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6a13ef44017ffc000114c372",
+      "goods_name": "台山榔鼓扎传统手工制作非遗工艺海味蛋黄咸肉粽 台山绿豆咸肉粽250g*6条（送一条120g碱水粽共7条）",
+      "goods_price": 68.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "方便速食/速冻食品"
+    },
+    {
+      "goods_id": "69a6be5bdd2f4400014984b6",
+      "goods_name": "others 柠檬和茴香 让居永酒庄勃艮第山丘格拉皮尼白葡萄酒",
+      "goods_price": 599.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6a25233d1efaab0001dae469",
+      "goods_name": "AngeShare 稀有品格RC Brook Hill HoneyDew蜜露 12年美国黑麦威士忌单桶",
+      "goods_price": 3788.0,
+      "brand_name": "AngeShare",
+      "goods_cat3": "洋酒"
+    },
+    {
+      "goods_id": "685e67998b7d6f00012a60d2",
+      "goods_name": "others 金合欢烤芝麻黄油   LLM 老流氓 合集 光明僧侣普里尼蒙哈榭Champs Gain 香阁园 2023",
+      "goods_price": 2980.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "685be26f48753b0001e7ef5f",
+      "goods_name": "橙路 创意微景观富士山生日蛋糕深圳北京上海广州杭州宁波同城配送 6英寸（3-5人食用） 芒果夹心",
+      "goods_price": 429.0,
+      "brand_name": "橙路",
+      "goods_cat3": "低温糕点"
+    },
+    {
+      "goods_id": "69f065bf15602900015c952e",
+      "goods_name": "双倍咸蛋黄蛋黄酥！双倍快乐 纯手工现做现发 咸蛋超人2个就包邮 1个咸蛋超人+1个咸蛋小超人",
+      "goods_price": 28.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "糕点/点心"
+    },
+    {
+      "goods_id": "69e0a2ff8c762b00015efe6f",
+      "goods_name": "加点滋味 【辣椒脆香】重庆辣子鸡风味调料聚餐懒人菜空气炸锅美食 【超值必备】重庆辣子鸡调料*3袋",
+      "goods_price": 39.9,
+      "brand_name": "加点滋味",
+      "goods_cat3": "调味品/果酱/沙拉"
+    },
+    {
+      "goods_id": "67d406ee0144270001c48960",
+      "goods_name": "侍酒猫 德国摩泽尔“顶流”名庄！赫曼博士酒庄雷司令葡萄酒 「130年老藤7分甜！杏子奶油蜂蜜-」灵犀园晚摘独占园甜白2023",
+      "goods_price": 480.0,
+      "brand_name": "侍酒猫",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6577908a14f2c80001f25603",
+      "goods_name": "Le Gus't 蜂蜜香草奶油卷 夏山蒙哈榭单一园LES VOILLENOTS DESSUS霞多丽 2024 蜂蜜香草奶油卷 只有十几瓶的补货 错过又得等一年",
+      "goods_price": 986.0,
+      "brand_name": "Le Gus't",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6a13bbcce6d02a00018cd6f0",
+      "goods_name": "端阳茶叙｜端午节送客户送长辈茶叶礼盒送爸爸父亲节礼物大气精致 礼盒装",
+      "goods_price": 330.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其它茶叶"
+    },
+    {
+      "goods_id": "68496072e874f200014d8cfe",
+      "goods_name": "FARMentation 宝藏小甜水 无酒精 馥郁花仙子 玫瑰香玫瑰蜜水晶葡萄自流汁 【独家】玫瑰蜜葡萄",
+      "goods_price": 116.0,
+      "brand_name": "FARMentation",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6831846842360a0001a55c29",
+      "goods_name": "侍酒猫 超值性价比勃艮第！科迪亚父子酒庄干白葡萄酒/比克西干白葡萄酒 「菠萝奶油蛋卷！」马贡特酿霞多丽干白葡萄酒",
+      "goods_price": 278.0,
+      "brand_name": "侍酒猫",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6378ba6d36e0de0001fc19a7",
+      "goods_name": "格格茶一代·<三宝扎> 新会陈皮 腌渍时间长 可以长期储存家庭常备 裸称250g，加盐400g，2012年天马皮，约二十多粒（盐是含碘盐）",
+      "goods_price": 228.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "代用/花草/水果/再加工茶"
+    },
+    {
+      "goods_id": "69d77119c282a200019f7e7d",
+      "goods_name": "汤玛丁 Tomatin(18年)苏格兰单一麦芽威士忌洋酒700ML 汤马丁18年700ml（限时送双杯））",
+      "goods_price": 1697.0,
+      "brand_name": "汤玛丁",
+      "goods_cat3": "洋酒"
+    },
+    {
+      "goods_id": "65f3f11baed51c00018aecbb",
+      "goods_name": "知食大爆炸 花生味鸡蛋卷酥网红下午茶追剧茶点好吃的办公室宿舍女生充饥零食 牛轧味蛋卷1袋+花生味蛋卷1袋",
+      "goods_price": 36.9,
+      "brand_name": "知食大爆炸",
+      "goods_cat3": "饼干/膨化"
+    },
+    {
+      "goods_id": "682e892b6aec030015414c93",
+      "goods_name": "买4送2【净酮说】无麸质生酮魔芋饺子 低碳抗糖水 约230g-250g/盒 茴香猪肉饺子【4送2到手6盒】",
+      "goods_price": 198.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "方便速食/速冻食品"
+    },
+    {
+      "goods_id": "6a01453358e1b10001676db8",
+      "goods_name": "其他 9号盲盒日99元/6罐精酿啤酒盲盒多款风格随机发6不重复不临期 【2026/6/9盲盒】水猴子精酿9款随机发6",
+      "goods_price": 109.0,
+      "brand_name": "其他",
+      "goods_cat3": "啤酒"
+    },
+    {
+      "goods_id": "63ee2e80614337000174c996",
+      "goods_name": "豆仁胶公胶150头 360头豆仁胶纯公 q弹爽口不腥 适合小朋友鱼胶 150头 500g 豆仁公胶",
+      "goods_price": 920.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "海鲜/水产品/制品"
+    },
+    {
+      "goods_id": "69dddcf898fb930001d1e762",
+      "goods_name": "尚恰 炭烤腰果新货A170大颗粒带皮紫衣盐焗腰果休闲坚果干果零食 【A170特大果】500g*1罐（体验装/头茬新货）",
+      "goods_price": 59.9,
+      "brand_name": "尚恰",
+      "goods_cat3": "山核桃/坚果/炒货"
+    },
+    {
+      "goods_id": "68f0d7f34daabe0001d3e5fe",
+      "goods_name": "很丑、但干净的梨片（单拍不包邮） 500克",
+      "goods_price": 49.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "蜜饯/枣类/梅/果干/冻干"
+    },
+    {
+      "goods_id": "68901083e019f200018cd112",
+      "goods_name": "CoffeeBuff 哥伦比亚圣洁庄园Sudan Rume苏丹汝魅厌氧日晒家族典藏系列手冲豆 F406 圣洁庄园苏丹汝魅 60g",
+      "goods_price": 108.0,
+      "brand_name": "CoffeeBuff",
+      "goods_cat3": "速溶咖啡/咖啡豆/粉"
+    },
+    {
+      "goods_id": "682aeb0a35e1e40001ef5387",
+      "goods_name": "【酒店直供现货】上海花园饭店白脱饼干网红葡萄干夹心饼干伴手礼 【现货秒发】混合口味/6片",
+      "goods_price": 138.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "糕点/点心"
+    },
+    {
+      "goods_id": "655b699e54251d000163c974",
+      "goods_name": "轻奢6年红参 |又老又香很喜欢 1.6-1.8左右150克",
+      "goods_price": 178.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "参类滋补品"
+    },
+    {
+      "goods_id": "67307749ec68d7000144fb2c",
+      "goods_name": "合为养 逍遥膏 | 舒心解愁 | 情绪不好 | 熬夜党常备 1罐",
+      "goods_price": 199.0,
+      "brand_name": "合为养",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "61a8b0bb163edf00011245e3",
+      "goods_name": "葛之味 江西野生葛根粉500g新鲜农家葛根加工无添加送柴粉葛片江西特产 葛根粉1斤",
+      "goods_price": 65.0,
+      "brand_name": "葛之味",
+      "goods_cat3": "藕粉/麦片/冲饮品"
+    },
+    {
+      "goods_id": "6905c41e42726100016dc7e1",
+      "goods_name": "others 新荣记同款WE百大推荐Nino Franco 酒庄田园起泡酒此生必喝 【进店必入】Nino Franco",
+      "goods_price": 298.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "67260bb78a48d900011ad0b8",
+      "goods_name": "巨好吃！贝贝南瓜干｜0蔗糖0盐0添加剂｜配料只有南瓜｜越嚼越香 贝贝南瓜干250克*1包",
+      "goods_price": 23.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "蜜饯/枣类/梅/果干/冻干"
+    },
+    {
+      "goods_id": "62b527fa59331700018e5a4b",
+      "goods_name": "林间盏 宁安膏 | 酸枣仁百合膏 | 给夜晚一点仪式感丨仲夏夜膏 【1瓶】1月量 | 基础养",
+      "goods_price": 188.0,
+      "brand_name": "林间盏",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "69ec6835294caa0001ea9a4d",
+      "goods_name": "OTHER 桑塞尔终极定义・Domaine Vacheron Les Romains 2023 Les Romains 2023",
+      "goods_price": 690.0,
+      "brand_name": "OTHER",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6a17f54506b18e0001781a7f",
+      "goods_name": "村驴家麻酱拌冷面 370g*3袋",
+      "goods_price": 28.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "方便速食/速冻食品"
+    },
+    {
+      "goods_id": "67d1326ae15c910001fa2576",
+      "goods_name": "蒲昌酒庄 “白羽“+停云”茉莉花开”组合套装 白羽茉莉花开",
+      "goods_price": 358.0,
+      "brand_name": "蒲昌酒庄",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6916d4dcb94f260015d8870c",
+      "goods_name": "(静萱茶事）2015年白毫银针心头雪30g/250g 30g*1盒",
+      "goods_price": 280.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "白茶"
+    },
+    {
+      "goods_id": "67e3912895c3450001068e07",
+      "goods_name": "粮仁福 五常大米新米2斤试吃装农户直发稻花香2号真空装东北大米2斤 2斤",
+      "goods_price": 17.9,
+      "brand_name": "粮仁福",
+      "goods_cat3": "米/面粉/杂粮"
+    },
+    {
+      "goods_id": "693ed2f669110000019ca120",
+      "goods_name": "以味坊 【顺丰发货】高活性菌种发酵国产纳豆高品质益生菌纳豆激酶 3盒黄豆+3黑豆+1枇杷蜂蜜（新手友好）",
+      "goods_price": 49.9,
+      "brand_name": "以味坊",
+      "goods_cat3": "UNKNOWN"
+    },
+    {
+      "goods_id": "665a60126f30220001a20b52",
+      "goods_name": "轻奢原切高丽参（5月上架） 看完详情再下单 1.2cm左右500克",
+      "goods_price": 360.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "参类滋补品"
+    },
+    {
+      "goods_id": "69cf8c2cca154800016c4b2c",
+      "goods_name": "So Acai 【任意套组赠粉色摇摇杯】烘焙燕麦巴西莓粉shot可可碎黑巧组合 【纤体杯 畅通plus】冻干羽衣甘蓝粉*2+有机奇亚籽*2",
+      "goods_price": 240.0,
+      "brand_name": "So Acai",
+      "goods_cat3": "藕粉/麦片/冲饮品"
+    },
+    {
+      "goods_id": "648193dbd171fa000122df14",
+      "goods_name": "馥华 福建特产手工福州鱼丸包心火锅丸子关东煮食材台湾大厨重磅调配 【3包装】2包福州鱼丸+1包鲜虾鱼丸",
+      "goods_price": 119.0,
+      "brand_name": "馥华",
+      "goods_cat3": "方便速食/速冻食品"
+    },
+    {
+      "goods_id": "67400cef0082840001566728",
+      "goods_name": "大兴安岭 野生蔓越莓粉 酸酸的 蔓越莓粉单包（100g）很酸很酸",
+      "goods_price": 44.98,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "蜜饯/枣类/梅/果干/冻干"
+    },
+    {
+      "goods_id": "68947b458fe347000143426d",
+      "goods_name": "企鹅市集 新西兰绵羊金酒 独特奶香蜜香 麦卢卡蜂蜜 小批次手工蒸馏",
+      "goods_price": 360.0,
+      "brand_name": "企鹅市集",
+      "goods_cat3": "洋酒"
+    },
+    {
+      "goods_id": "68d218a99479760001439539",
+      "goods_name": "Baratti & Milano 【意大利原装进口】经典袋装糖果 水果硬糖/果汁软糖/夹心糖/柠檬 什锦水果夹心糖 200g",
+      "goods_price": 96.0,
+      "brand_name": "Baratti & Milano",
+      "goods_cat3": "其他"
+    },
+    {
+      "goods_id": "69e06d018c762b0001554599",
+      "goods_name": "八大爷酒庄Sylvain Pataille勃艮第马萨内Marsannay干白葡萄酒 他家白炒鸡好喝",
+      "goods_price": 620.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "69ed725ed4c111000137ae95",
+      "goods_name": "肥猫鲜森 黑草莓 紫米草莓糕 手工制作 紫米夹心草莓干 158g/盒 黑草莓【1盒】",
+      "goods_price": 39.8,
+      "brand_name": "肥猫鲜森",
+      "goods_cat3": "糕点/点心"
+    },
+    {
+      "goods_id": "6380cc11075d9b0001ff5a84",
+      "goods_name": "颐之宜 艾草肚脐贴 南怀瑾配方桂圆花椒艾绒 艾脐贴 尝鲜装：艾草肚脐贴1盒（贵在运费）",
+      "goods_price": 78.0,
+      "brand_name": "颐之宜",
+      "goods_cat3": "艾灸/艾草/艾条/艾制品"
+    },
+    {
+      "goods_id": "689b170611247e0001025a23",
+      "goods_name": "韩要强 0号特大现烤夏威夷果仁没有额外添加剂250克 1罐*250克【中大半粒】",
+      "goods_price": 45.0,
+      "brand_name": "韩要强",
+      "goods_cat3": "山核桃/坚果/炒货"
+    },
+    {
+      "goods_id": "66c8a6334e4f280001e82296",
+      "goods_name": "银耳羹（都 不用 敷面膜 了）",
+      "goods_price": 169.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "干货/土特产"
+    },
+    {
+      "goods_id": "64eb41a371e89a0001d33501",
+      "goods_name": "茯苓王子家大别山无硫茯苓卷煮水煲汤原产地岳西食用茯苓280g 280g一盒",
+      "goods_price": 88.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "69523f05b1e6660001749101",
+      "goods_name": "快乐老家+1！意大利Ca' del Baio奔马酒庄巴巴莱斯科葡萄酒合集 大A神园 | Asili（2022年）",
+      "goods_price": 499.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "684712bfd4dabb0001a04d8a",
+      "goods_name": "祖名豆浆营养早餐原味豆奶冰豆浆夏日饮品180ml*12袋 12袋",
+      "goods_price": 39.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "藕粉/麦片/冲饮品"
+    },
+    {
+      "goods_id": "67c062c6cb5e4200014f648e",
+      "goods_name": "苏母 北海母胶9.5头 20头 5.2头 精选玻璃肉 肉质软糯 胶质多 苏母 20头 100克 4个",
+      "goods_price": 258.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "海鲜/水产品/制品"
+    },
+    {
+      "goods_id": "6a1810ac6bc69c0001ea39b9",
+      "goods_name": "小婷婷·端午礼盒送长辈客户见家长商务送礼节日伴手礼实用高档礼 双拼（端午限定版） 当天发货·可私人定制",
+      "goods_price": 316.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其它传统滋补品"
+    },
+    {
+      "goods_id": "69c1e619d95b5a0001f7d001",
+      "goods_name": "【闪光少女】迪拜软糯曲奇手工现做开心果口感丰富香糯拉丝60g/个 【尝鲜装】1开心果+1奥利奥软曲奇",
+      "goods_price": 29.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "巧克力"
+    },
+    {
+      "goods_id": "6a15458be6f8790001bf92aa",
+      "goods_name": "Joshy's wine 「神之水滴」使徒酒庄 西鲁格 沃恩罗曼尼 Sirugue 红葡萄酒 2022 2022",
+      "goods_price": 968.0,
+      "brand_name": "Joshy's wine",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "69cb81575dab9a0001f49063",
+      "goods_name": "OTHER 爆火小农香槟・Antoine Bouvet Saignée de Bisseuil 1er Cru NV NV",
+      "goods_price": 1070.0,
+      "brand_name": "OTHER",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "669640710b151700016fba87",
+      "goods_name": "others 爆款回归！意大利名庄Zaccagnini莎泽卡尼尼树枝灰皮诺干白葡萄酒 莎卡尼尼灰皮诺干白单支装",
+      "goods_price": 168.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "697ac70bd0b05c000104bedf",
+      "goods_name": "札萨 【6.9囤货】辣子鸡香辣味芥末味蒜香牛脆片500g大袋装！非桶装！ 蒜香味300g大袋装*2",
+      "goods_price": 99999.0,
+      "brand_name": "札萨",
+      "goods_cat3": "肉干/肉脯/卤味零食"
+    },
+    {
+      "goods_id": "69a4379fb235720001fb6845",
+      "goods_name": "向往一杯｜话梅菠萝冰茉莉茶 · 大餐油腻解腻 低卡清爽 轻盈液断 【助代榭装】话梅菠萝冰茉莉茶10包",
+      "goods_price": 60.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "代用/花草/水果/再加工茶"
+    },
+    {
+      "goods_id": "66826833c8f3fa0001d444a8",
+      "goods_name": "九味亚麻籽无花果粉 种子循环粉 大豆异黄酮   非黄体酮粉养雌粉 一罐，亚麻籽无花果粉（350克/罐）",
+      "goods_price": 69.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "食疗滋补营养"
+    },
+    {
+      "goods_id": "6a0c552ad4cee90001712c5f",
+      "goods_name": "Joshy's wine HB 亨利布瓦洛Henri Boillo默尔索Richemont里奇蒙独占一级园2023",
+      "goods_price": 2258.0,
+      "brand_name": "Joshy's wine",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "67c144ff4a593600016d9a59",
+      "goods_name": "修哲 拍一送三  奶香金萱【赠品】果香冻顶+蜜香妃子笑+10年老乌龙 50g*4袋（奶香+果香+蜜香+十年老乌龙）",
+      "goods_price": 118.0,
+      "brand_name": "修哲",
+      "goods_cat3": "乌龙茶"
+    },
+    {
+      "goods_id": "6a1d7277b6178b00010963fc",
+      "goods_name": "紫云祥 2010年药香甜古树春料熟茶 两泡品鉴包（此规格无满赠）",
+      "goods_price": 38.0,
+      "brand_name": "紫云祥",
+      "goods_cat3": "其他"
+    },
+    {
+      "goods_id": "6705e4164ae1870001964e4c",
+      "goods_name": "古特拉庄园 【25年12月产】意大利进口庄园特级初榨冷压橄榄油500ml/1000ml 25年12月生产500ml",
+      "goods_price": 288.0,
+      "brand_name": "古特拉庄园",
+      "goods_cat3": "食用油/调味油"
+    },
+    {
+      "goods_id": "69e1f484a1dd78000171abf6",
+      "goods_name": "初荐 【不输马赛多】斯洛文尼亚2019年小狗庄单一园柯扎娜梅洛干红 2019年*1瓶+顺丰包邮",
+      "goods_price": 1980.0,
+      "brand_name": "初荐",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "696b7391b05f88000161aea8",
+      "goods_name": "orein 力荐大满贯！维娜德奥珍藏进口葡萄酒西班 单支（需要礼盒礼袋请备注）",
+      "goods_price": 479.0,
+      "brand_name": "orein",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6a11dab02d684c00016efbcd",
+      "goods_name": "Dashwood Vivino 4.0 新年份更新鲜达士木马尔堡长相思/灰皮诺干白葡萄酒 dashwood长相思单支",
+      "goods_price": 158.0,
+      "brand_name": "Dashwood",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6767b406b1267e0001bb55fd",
+      "goods_name": "小攀家 手撕麻椒鸡麻辣鲜香 熟食卤味整只开袋即食 解馋零食 年货好礼 【 麻椒鸡 】800g*1 袋",
+      "goods_price": 59.9,
+      "brand_name": "小攀家",
+      "goods_cat3": "熟食/凉菜/私房菜"
+    },
+    {
+      "goods_id": "69fb14b998ac430001d4628a",
+      "goods_name": "尝鲜装·多口味DailySeeds&Co烘焙燕麦片小包装试吃装套装【顺丰】 枫糖-柚子-抹茶-奶酪（15克*4款各1包）",
+      "goods_price": 25.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "藕粉/麦片/冲饮品"
+    },
+    {
+      "goods_id": "67c82aa697592600010b9e57",
+      "goods_name": "FREPPY 澳洲超火叛逆者！自然酒起泡酒葡萄酒 天才酿酒师惊世之作！ 【红醋栗浆果】流浪的洛克（干红）",
+      "goods_price": 187.0,
+      "brand_name": "FREPPY",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6722fafc7e48070001651464",
+      "goods_name": "初荐 【澳洲挖宝】澳洲玛格丽特河2024年皮耶诺酒庄霞多丽干白 1瓶+顺丰包邮",
+      "goods_price": 599.0,
+      "brand_name": "初荐",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6a0ac4083c8e6e00017fc080",
+      "goods_name": "茄汁沙丁鱼罐头 配料干净 开罐即食 健康早餐轻食海鲜下饭菜 160g*6罐（一人食）",
+      "goods_price": 64.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "海鲜/水产品/制品"
+    },
+    {
+      "goods_id": "68f1bf48c192ac0001f56687",
+      "goods_name": "杨直二 长白山西洋参正品中药材切片100g特级泡水官方正品无硫可试吃 【补气养阴】长白山西洋参片（100g)",
+      "goods_price": 119.0,
+      "brand_name": "杨直二",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "666ffb70f7984c000135b568",
+      "goods_name": "「顺时男孩」宝宝汤 · 灯芯草清心汤去心火清内热睡不安稳 5包（尝鲜） 为无硫产品，会生药虫不影响食用，介意者勿拍无硫产品！",
+      "goods_price": 68.8,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其它传统滋补品"
+    },
+    {
+      "goods_id": "69f1e2a2e0e86e00010282bb",
+      "goods_name": "苏农科JAAS 【农科院的花果米酒】纯粹果香 聚会微醺3度果酒 朋友送礼高级感 单瓶尝鲜装（自选备注口味）",
+      "goods_price": 48.0,
+      "brand_name": "苏农科JAAS",
+      "goods_cat3": "露酒/果酒"
+    },
+    {
+      "goods_id": "67b57f8229b9f70001ec4e97",
+      "goods_name": "『五黑粉』现磨即食代餐五谷粉 黑芝麻 黑米 黑豆 黑枸杞 黑桑葚 五黑粉120g*1『试吃装』",
+      "goods_price": 14.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "食补粉粉"
+    },
+    {
+      "goods_id": "67501792ccfbf90001e6677d",
+      "goods_name": "宏伦叙 特曲酒52/38度500ml浓香型白酒（拍5发6） 52度单瓶",
+      "goods_price": 78.0,
+      "brand_name": "宏伦叙",
+      "goods_cat3": "白酒"
+    },
+    {
+      "goods_id": "668e7ad5773cdd0001f08f41",
+      "goods_name": "【干花薰衣草】无提取精油/纯晒干 干花250g（贵在运费，不推荐）",
+      "goods_price": 36.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "永生花/干花"
+    },
+    {
+      "goods_id": "632332cf1204fe0001a1a128",
+      "goods_name": "燕鸣春 中科溯源印尼燕窝 干挑大盏中盏 100克 （干净度98 不用挑毛） 土豪VIP干挑大盏100克",
+      "goods_price": 3500.0,
+      "brand_name": "燕鸣春",
+      "goods_cat3": "燕窝滋补品"
+    },
+    {
+      "goods_id": "6976f1a53d52b20001b67c6e",
+      "goods_name": "【无花果干】无硫熏｜无腌糖｜开口 500g格莱斯紫心（有点少哦）",
+      "goods_price": 158.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "蜜饯/枣类/梅/果干/冻干"
+    },
+    {
+      "goods_id": "6785ca4303b5e400014cfd4b",
+      "goods_name": "others 柑橘柚子花香|法国进口美藤莎当妮维欧尼干白葡萄酒/干红葡萄酒 美藤歌海娜西拉马瑟兰干红",
+      "goods_price": 458.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6a1ecbbca7733a00015d5f16",
+      "goods_name": "紫云祥 2024镇号之宝麒麟单株级古树生茶 单泡品鉴包",
+      "goods_price": 59.0,
+      "brand_name": "紫云祥",
+      "goods_cat3": "其他"
+    },
+    {
+      "goods_id": "6a0acccb22eb650001d804ac",
+      "goods_name": "SLAB TOWN 石板城咖啡 6周年t恤限定爱心短袖 男女同款圆领T恤 休闲宽松上衣 水洗黑 M",
+      "goods_price": 219.0,
+      "brand_name": "SLAB TOWN",
+      "goods_cat3": "T恤"
+    },
+    {
+      "goods_id": "697a184a39c8000001844461",
+      "goods_name": "首芳 3分甜玫瑰甜瓜泡泡糖！Qi袍泡 玫瑰香甜型起泡酒 750ml 【仙品组合】无酒精+起泡酒！玫瑰香起泡+玫瑰香自流汁💦",
+      "goods_price": 236.0,
+      "brand_name": "首芳",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "64784e8def43dc0001aa4574",
+      "goods_name": "小憩居 柴火制九蒸九晒黄精果换食辟谷代餐 黄精500克",
+      "goods_price": 286.7,
+      "brand_name": "小憩居",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "6373646266da44000128e484",
+      "goods_name": "心雅燕 精品大肉条溯源码白官燕盏条燕条原装进口印尼燕窝孕妇滋补 60g",
+      "goods_price": 1585.0,
+      "brand_name": "心雅燕",
+      "goods_cat3": "燕窝滋补品"
+    },
+    {
+      "goods_id": "6473f6bbad5cef00010312a9",
+      "goods_name": "焦作温县怀山药片垆土铁棍山药片怀山药干煮水煮粥无硫熏无漂白 500克共2罐【经济实惠装】",
+      "goods_price": 69.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "山药制品"
+    },
+    {
+      "goods_id": "60dfd4adc2d06600012db0c4",
+      "goods_name": "阿尔帝 即食烤虾干开背凤尾虾大虾解馋零食海味零食追剧小零食点心 【原味】48g",
+      "goods_price": 29.7,
+      "brand_name": "阿尔帝",
+      "goods_cat3": "鱿鱼丝/鱼干/海味即食"
+    },
+    {
+      "goods_id": "62b5302e776dfb000148a067",
+      "goods_name": "林间盏 玉肌膏丨“‌做人呢，最要紧的就是开心‌” 丨少脾气 情绪好都好 【1瓶】1月量 | 基础养",
+      "goods_price": 198.0,
+      "brand_name": "林间盏",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "6a0ad67be1e137000140b509",
+      "goods_name": "理想燃料 四重力黑巧混合巧克力生酮餐前零食 【尝体验鲜1盒装】15片*1盒",
+      "goods_price": 129.0,
+      "brand_name": "理想燃料",
+      "goods_cat3": "巧克力"
+    },
+    {
+      "goods_id": "69b38d8d08e36900019c6caf",
+      "goods_name": "燕鸣春 印尼溯源码干挑中小燕条 100克 500克  （干净度97  耐炖） 锦燕中小条100克（10克一袋）",
+      "goods_price": 1500.0,
+      "brand_name": "燕鸣春",
+      "goods_cat3": "燕窝滋补品"
+    },
+    {
+      "goods_id": "69fc5fb998ac430001f642f6",
+      "goods_name": "2026年新下树鲍鱼果原味烘烤非油炸1罐*250g 1罐*250克【推荐一日食用3粒内】",
+      "goods_price": 80.8,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "山核桃/坚果/炒货"
+    },
+    {
+      "goods_id": "67dbbafdc259f30001e6367b",
+      "goods_name": "村驴家东北粘糊麻辣烫 3袋",
+      "goods_price": 36.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其他"
+    },
+    {
+      "goods_id": "6373646366da44000128e497",
+      "goods_name": "心雅燕 精品大肉条溯源码白官燕盏条燕条原装进口印尼燕窝孕妇滋补 100g",
+      "goods_price": 2470.0,
+      "brand_name": "心雅燕",
+      "goods_cat3": "燕窝滋补品"
+    },
+    {
+      "goods_id": "6194e83bbdaf7000018c2ecd",
+      "goods_name": "玉盈膏 无湿一身轻  身体回归轻松 轻盈 1罐270克",
+      "goods_price": 175.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "67fcb3f02a334f00010d6ae7",
+      "goods_name": "勃艮第老藤一级园！法国圣珍尼梅尔居雷玛希园霞多丽干白葡萄酒 单支装",
+      "goods_price": 538.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "67889f7daf83e10001aaa814",
+      "goods_name": "九窝颜食社 霍山石斛原浆夏季补充津液纯原浆九大仙草干燥养甘救星不寒凉 1盒装（10条）",
+      "goods_price": 80.0,
+      "brand_name": "九窝颜食社",
+      "goods_cat3": "石斛/枫斗"
+    },
+    {
+      "goods_id": "684d8e9ed4dabb0001d1d847",
+      "goods_name": "【顺丰】内蒙老赵牛心管！芥末/孜然/香辣！需要冷藏保存！巨好吃 1芥末味",
+      "goods_price": 52.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "肉干/肉脯/卤味零食"
+    },
+    {
+      "goods_id": "69eb1c4f933b0300011c01ef",
+      "goods_name": "向料 重庆老坛酸菜面调料800g火锅汤底砂锅米线粉丝煮面酸菜鱼调味料 重庆老坛酸菜面调料800g*1桶",
+      "goods_price": 29.9,
+      "brand_name": "向料",
+      "goods_cat3": "调味品/果酱/沙拉"
+    },
+    {
+      "goods_id": "6858a5919028340001b47a2e",
+      "goods_name": "光合日常 抹茶茶筅 · 紫竹真型茶筅茶道点茶抹茶刷 · 打抹茶工具 紫竹·真筅（精品款）",
+      "goods_price": 98.0,
+      "brand_name": "光合日常",
+      "goods_cat3": "食补粉粉"
+    },
+    {
+      "goods_id": "6816023caca44900011c450c",
+      "goods_name": "妈妈很忙 【端午送礼】五指毛桃茯湿膏220g 滋补配方干净即食 0添加麦芽糖 【体验装-初见食效】茯湿膏1罐（此选项拍2发3）",
+      "goods_price": 98.0,
+      "brand_name": "妈妈很忙",
+      "goods_cat3": "其它传统滋补品"
+    },
+    {
+      "goods_id": "69f1ba68fda9a40001acf829",
+      "goods_name": "Patchi 芭驰新品爆款 <烘焙咖啡豆>夹心巧克力纯可可脂办公室解馋零食 芭驰咖啡豆夹心巧克力礼盒145g",
+      "goods_price": 175.0,
+      "brand_name": "Patchi",
+      "goods_cat3": "巧克力"
+    },
+    {
+      "goods_id": "691c234dba5a830015f0f412",
+      "goods_name": "修哲 花香青心乌龙 台湾高山新茶 可冷泡 送太空舱三用杯（陶瓷） 100g*1袋 （送299元太空舱三用杯）",
+      "goods_price": 129.0,
+      "brand_name": "修哲",
+      "goods_cat3": "乌龙茶"
+    },
+    {
+      "goods_id": "62ed18810a79e90001c348c0",
+      "goods_name": "妈妈很忙 杏仁臻白饮 250g（25g*10包装）  代餐粉不脱油 杏仁臻白饮250g一盒（下单3盒送1盒）",
+      "goods_price": 68.0,
+      "brand_name": "妈妈很忙",
+      "goods_cat3": "藕粉/麦片/冲饮品"
+    },
+    {
+      "goods_id": "69f1bf7c9dea2d00013d6f94",
+      "goods_name": "合为养 【姜姜·好】2026姜枣茶 夏天三伏【4包自动送】新款650毫升吨吨杯 【拍4袋送吨吨杯】1袋/48g*7包",
+      "goods_price": 79.0,
+      "brand_name": "合为养",
+      "goods_cat3": "代用/花草/水果/再加工茶"
+    },
+    {
+      "goods_id": "69b2196fcdd36c0001ae4f29",
+      "goods_name": "极盏 黄芪七白羹南杏仁饮正北芪补气润颜焕亮无添加纯食材熬免煮早餐粥 微甜【白润净亮 黄芪加强版】黄芪七白羹168g*8碗",
+      "goods_price": 150.0,
+      "brand_name": "极盏",
+      "goods_cat3": "方便速食/速冻食品"
+    },
+    {
+      "goods_id": "69db890898fb930001f14483",
+      "goods_name": "Joshy's wine 奥利弗勒夫莱Olivier leflaive meursault 2023「默尔索标杆」 2023年份",
+      "goods_price": 1018.0,
+      "brand_name": "Joshy's wine",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "65e4b598927ba20001c63ab8",
+      "goods_name": "真方心【港太推荐】土茯苓牛大力汤 5包",
+      "goods_price": 358.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "698301595b50a30001977667",
+      "goods_name": "格格茶一代·<2016马上有甜>寿眉 老白茶 高香 福鼎 饼干紧压茶 50g（5g*10片）",
+      "goods_price": 88.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "白茶"
+    },
+    {
+      "goods_id": "67876b3ce741df0001217930",
+      "goods_name": "林间盏 枣间黄精·黄精抱枣 | 新疆大灰枣+九蒸九晒黄精 丨日常小食 【1盒】1周量丨基础养",
+      "goods_price": 39.0,
+      "brand_name": "林间盏",
+      "goods_cat3": "其它传统滋补品"
+    },
+    {
+      "goods_id": "63847788788cc90001491b62",
+      "goods_name": "新货正宗临安山核桃好好剥手剥大籽特大籽大罐净含量500克 好好剥大籽炭烧 净含量一斤送工具",
+      "goods_price": 105.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "山核桃/坚果/炒货"
+    },
+    {
+      "goods_id": "69114fb90319c900019e0923",
+      "goods_name": "大庵蜜桃香 蜜桃香 山韵枞韵 凤凰单丛 每罐100克 100g*1罐",
+      "goods_price": 366.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "乌龙茶"
+    },
+    {
+      "goods_id": "69ddb2196932b70001a3104b",
+      "goods_name": "4月5日出山秦岭树洞草药苦蜂蜜液态蒲公英黄连微苦排d抗焱巨猛 结晶微苦2斤装",
+      "goods_price": 170.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "蜂产品"
+    },
+    {
+      "goods_id": "6710d67ddeb6c200015c0a27",
+      "goods_name": "龙府井 2026年新茶明前茶杭州特产九曲红梅红茶茶叶礼盒[桂花红茶] （桂花款浓香）25年明前红茶75克",
+      "goods_price": 99.0,
+      "brand_name": "龙府井",
+      "goods_cat3": "红茶"
+    },
+    {
+      "goods_id": "69dc5fdb47a2e20001efb7ca",
+      "goods_name": "台湾海边走走蛋卷 真心推荐 花生蛋卷 芝麻蛋卷 送礼佳选 紫海派综合蛋卷礼盒-26支",
+      "goods_price": 238.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "饼干/膨化"
+    },
+    {
+      "goods_id": "68405a353aaa1e000193cc6c",
+      "goods_name": "牛胸口脆片（整体偏瘦，香香脆脆，下单千万看详情） 1桶",
+      "goods_price": 58.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "肉干/肉脯/卤味零食"
+    },
+    {
+      "goods_id": "67f5e46e04afe30001b3cda8",
+      "goods_name": "4号紫苏薄荷香包（蚊子，发随机）",
+      "goods_price": 49.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "香包/香囊"
+    },
+    {
+      "goods_id": "687745088fe34700017a1507",
+      "goods_name": "跳角 【延边正统】辣白菜3袋鲜制泡菜【顺丰】0 防腐停不下来的脆爽感 保鲜盒550ml（选购）+辣白菜3袋（400g/袋）【顺丰快递】",
+      "goods_price": 75.9,
+      "brand_name": "跳角",
+      "goods_cat3": "新鲜蔬菜/蔬菜制品"
+    },
+    {
+      "goods_id": "690a2043c091e300016e34ef",
+      "goods_name": "Joshy's wine 「AP」艾维娜佩诺酒庄AlvinaPernot普利尼蒙哈榭Noyers Brets2023",
+      "goods_price": 1328.0,
+      "brand_name": "Joshy's wine",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "65e1cf3cbf75ee0001cbe9e1",
+      "goods_name": "2018年六堡茶壹号200g罐装黑茶 六堡茶壹号200g*1罐",
+      "goods_price": 179.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "黑茶"
+    },
+    {
+      "goods_id": "69e71bf1454551000119d995",
+      "goods_name": "【德国VDP名庄】 雷柏行莱茵高雷司令精选甜白 微醺聚餐送礼 1瓶",
+      "goods_price": 222.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "654b2d235c5cfa0001b96e22",
+      "goods_name": "【999元3支任选】6月更新 任选18款清酒 冷藏保存 日期新鲜 任选3支记得备注编号",
+      "goods_price": 999.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "清酒/烧酒"
+    },
+    {
+      "goods_id": "6858cdd18b7d6f0001e03d49",
+      "goods_name": "合于道 九制黄精 秦岭终南山道地古法九蒸九晒 即食多花鸡头黄精泡水 半斤（新客尝鲜）",
+      "goods_price": 135.0,
+      "brand_name": "合于道",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "671ce913fe853100012c5e17",
+      "goods_name": "others 泰来晚装瓶年份波特酒LBV钵酒十年茶色Taylor's Port原瓶进口正品 泰来精选宝石红波特酒（750ml/单瓶）",
+      "goods_price": 199.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "69f682a015602900018f68f7",
+      "goods_name": "（黄精黑芝麻丸）",
+      "goods_price": 69.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "食疗滋补营养"
+    },
+    {
+      "goods_id": "682065a411665d00018748e7",
+      "goods_name": "光合日常 抹茶碗· 手作陶瓷原创器物粉引化妆土带嘴碗 · 打抹茶工具 雀斑(有雨漏效果·拍前请阅详情)",
+      "goods_price": 230.0,
+      "brand_name": "光合日常",
+      "goods_cat3": "茶具"
+    },
+    {
+      "goods_id": "686238fdb93d4100015237c5",
+      "goods_name": "有机亚麻籽油 低温物理压榨omega3食用油 瓶装/便携装 250ml*2瓶（有效期至2026.12.25）",
+      "goods_price": 49.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "食用油/调味油"
+    },
+    {
+      "goods_id": "64f578e41f2c0e0001c657ad",
+      "goods_name": "【山花蜜】新疆伊犁农家自产天然土蜂蜜黑蜂蜂蜜百花山花蜂蜜 原蜜 一瓶液态山花（共1kg）",
+      "goods_price": 99.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "蜂产品"
+    },
+    {
+      "goods_id": "67f51b77ec137400010191a6",
+      "goods_name": "【云南新货】中蜂米团花蜜源多的黑百花蜂蜜/黄菠萝土蜂蜜/黑苦蜜 云南黑百花蜜1斤（米团花蜜源多）",
+      "goods_price": 116.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "蜂产品"
+    },
+    {
+      "goods_id": "673ad10aef36300001d5afad",
+      "goods_name": "茜草生地膏纯手工代熬倪海厦原料生地茜草膏地黄膏乌黑 一瓶300克体验装",
+      "goods_price": 99.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "69457a2c8ff5d4000191dbdc",
+      "goods_name": "「茶 饼干」夹心饼干礼盒(8枚) 四拼(四种口味各2枚）",
+      "goods_price": 138.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "糕点/点心"
+    },
+    {
+      "goods_id": "65ec629c6ba0cc00015fa45f",
+      "goods_name": "美华志美 植物奶茶即食早餐燕窝杏仁七白饮粉铁棍山药葛根茯苓老少皆宜 燕窝杏仁七白粉1盒",
+      "goods_price": 79.0,
+      "brand_name": "美华志美",
+      "goods_cat3": "食补粉粉"
+    },
+    {
+      "goods_id": "69198bf243699b0001cd20dc",
+      "goods_name": "others 摩泽尔名园！蜜渍柠檬薄荷糖！仕缇纷酒庄药房园雷司令精选甜白 2023年份 500ml装",
+      "goods_price": 228.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6606a7895c3c5a0001506ec3",
+      "goods_name": "【落水甜心】茶人老郑2026年荒野牡丹王毫香花果香口感鲜爽 盒 50克",
+      "goods_price": 108.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "白茶"
+    },
+    {
+      "goods_id": "69ea34e4c4fc8200014bea8c",
+      "goods_name": "酒梦富 勃艮第 佛手酒庄 霞多丽干白 奇梦 Mongeard Mugneret",
+      "goods_price": 499.0,
+      "brand_name": "酒梦富",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "66717d99c19f1f0001b002f6",
+      "goods_name": "2026头茬羊肚菌干货4-6精选家庭装菌菇汤料 50g",
+      "goods_price": 64.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "UNKNOWN"
+    },
+    {
+      "goods_id": "69cb9103fcd43f0001b22635",
+      "goods_name": "others 聚会必备！法国新西兰意大利西班牙德国中国干白葡萄酒六支装推荐 一站式购买6国风土六支装",
+      "goods_price": 738.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6872455b527b4d0001200aae",
+      "goods_name": "张荣记 鲍鱼瑶柱虾子面*10个面/盒*吉品鲍瑶柱鲜味*香港69年老店原装进口 600g-10个面（礼盒装）",
+      "goods_price": 178.0,
+      "brand_name": "张荣记",
+      "goods_cat3": "方便速食/速冻食品"
+    },
+    {
+      "goods_id": "69bce9b20ac79f0001a769c4",
+      "goods_name": "食葡 Drunk Momi联名微醺小猫莫斯卡托起泡酒甜白葡萄酒玫珑蜜瓜果酒 下班猫莫斯卡托山竹荔枝起泡白葡萄酒-送冰箱贴+礼袋+明信片",
+      "goods_price": 179.0,
+      "brand_name": "食葡",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "696e4ab13db79c00019ba1a2",
+      "goods_name": "无任何添加燕麦（非杂交麦）",
+      "goods_price": 29.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "代用/花草/水果/再加工茶"
+    },
+    {
+      "goods_id": "6912ea17b270430001365a22",
+      "goods_name": "彼奇尼 匹诺曹红酒 意大利进口pinocchio奇遇半甜红葡萄酒曼托98分高分酒 【莓果炸弹】匹诺曹+月神+樱桃小狗",
+      "goods_price": 528.0,
+      "brand_name": "彼奇尼",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "68d3ed54d3eed20001c80d60",
+      "goods_name": "南三府 2026端午粽子礼盒装实木提盒团购定制嘉兴蛋黄肉粽甜粽节日送礼品 B款-好运接粽而来粽子礼盒",
+      "goods_price": 169.0,
+      "brand_name": "南三府",
+      "goods_cat3": "山核桃/坚果/炒货"
+    },
+    {
+      "goods_id": "66ba1b15a7c5830001307ba1",
+      "goods_name": "深山林下野生黄精传统九制泡茶泡水九蒸九晒无硫干货 九蒸九晒250g（野：有大有小）非独立装⚠️常温易发霉放冰箱冷藏",
+      "goods_price": 158.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "68aec5bff38f970001c5c9cd",
+      "goods_name": "苹果黄芪水｜素颜发光水 脸蜡黄容易累气皿不足内调养生茶 苹果黄芪水+赤小豆去湿茶（各5包/共10包）",
+      "goods_price": 36.8,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "代用/花草/水果/再加工茶"
+    },
+    {
+      "goods_id": "67af1303eef1820001f72118",
+      "goods_name": "九蒸九晒黑芝麻丸｜补肝养shen｜养发｜手工制作 一瓶 共200克（20粒，贵在运费，不推荐）",
+      "goods_price": 59.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其它传统滋补品"
+    },
+    {
+      "goods_id": "650278cc21e2da00013742d4",
+      "goods_name": "木姜子辣椒面贵州特产断桥柴火煳辣椒面断桥传统工艺贵州蘸水特辣 木姜子辣椒（微辣） 250g半斤装",
+      "goods_price": 19.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "调味品/果酱/沙拉"
+    },
+    {
+      "goods_id": "66befbfef33c4700015be751",
+      "goods_name": "2025年来凤藤茶·龙须本色藤茶 显齿蛇葡萄 莓茶 长寿藤 80克罐装 80g玻璃罐装+茶样2g一泡+手提袋+双层隔热玻璃杯1个",
+      "goods_price": 129.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "茶叶"
+    },
+    {
+      "goods_id": "693e0665691100000188b2ee",
+      "goods_name": "深山贵州野生紫灵芝切片，片片浓香煮茶炖汤必备食材250-500克1包 500克1包 250-500克 48小时发货",
+      "goods_price": 368.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "UNKNOWN"
+    },
+    {
+      "goods_id": "68c115b7635d460001ac31bd",
+      "goods_name": "Vinehoo 法国Francois Lurton 锁金长相思金酒风味配制金酒 锁金长相思金酒风味配制酒",
+      "goods_price": 389.0,
+      "brand_name": "Vinehoo",
+      "goods_cat3": "洋酒"
+    },
+    {
+      "goods_id": "6698e636d50cd40001d74c77",
+      "goods_name": "bruto 入选Noma酒单的低调名庄 神父之地橙酒2023新年份/老藤干白 神父之地橙酒",
+      "goods_price": 349.0,
+      "brand_name": "bruto",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "66f53e44674dfd0001f7bcdb",
+      "goods_name": "Joshy's wine 劳伦彭寿 Laurent Ponsot 伏旧 特级园  Clos de Vougeot 2019",
+      "goods_price": 3458.0,
+      "brand_name": "Joshy's wine",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "69f7390c43360b0001b789e1",
+      "goods_name": "丹溯 【怀姜枣膏】·12h非遗古法熬制，60%怀姜含量，260g 1罐【体验装】",
+      "goods_price": 89.0,
+      "brand_name": "丹溯",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "657c57de415e8e0001fac4bb",
+      "goods_name": "合为养 九制黄精 九华山道地九蒸九晒黄精果 精选10-15年多花黄精 有机黄精250g*1罐",
+      "goods_price": 158.0,
+      "brand_name": "合为养",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "660d4d04df3ddc0001487dc9",
+      "goods_name": "红豆薏米茶（麦茶家王炸）",
+      "goods_price": 69.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "代用/花草/水果/再加工茶"
+    },
+    {
+      "goods_id": "666a61665f1a0a0001497556",
+      "goods_name": "【空运】新疆轮台小白杏·甜蜜多汁 3.8斤（推荐）",
+      "goods_price": 108.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "新鲜水果/水果制品"
+    },
+    {
+      "goods_id": "689f2e405251bf000128a249",
+      "goods_name": "玫瑰花茶30g·大马士革香型·纯花瓣·红茶工艺·醒醒来喝茶",
+      "goods_price": 69.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "代用/花草/水果/再加工茶"
+    },
+    {
+      "goods_id": "69f81dca0511b500019107e9",
+      "goods_name": "OTHER 默尔索扫地僧之后・Pierre Boisson Bourgogne Murgey De Limozi 2021年",
+      "goods_price": 550.0,
+      "brand_name": "OTHER",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "68ad21c08ec6fa000143b75b",
+      "goods_name": "吉岳 印尼进口溯源燕窝正品雨季纯干挑工艺孕妇补品100g金丝白燕盏干燕 干挑实惠盏100克（011厂10月批次入境）",
+      "goods_price": 1299.0,
+      "brand_name": "吉岳",
+      "goods_cat3": "燕窝滋补品"
+    },
+    {
+      "goods_id": "69df07f1792662000112d2a8",
+      "goods_name": "小师姐评茶 倚邦生普纯料鸡嘴壳猫耳朵古树精品春茶普洱生茶饼龙珠 2026猫耳朵散茶5g-香甜",
+      "goods_price": 119.0,
+      "brand_name": "小师姐评茶",
+      "goods_cat3": "其他"
+    },
+    {
+      "goods_id": "662cdca4732cdd0001d942ee",
+      "goods_name": "必吃榜!【周年庆活动】鲜吊龙原切猪肉脯潮汕办公室追剧零食 轻蜜汁原切吊龙猪肉脯 125g",
+      "goods_price": 35.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "肉干/肉脯/卤味零食"
+    },
+    {
+      "goods_id": "69e8bb853aa96f0001e30dfa",
+      "goods_name": "Patchi 芭驰新品<法式薄脆棒>夹心巧克力礼盒进口高端零食礼盒女生礼物 芭驰「法式薄脆饼」夹心牛奶巧克力棒礼盒105g 本品运输过程易碎，介意请慎拍",
+      "goods_price": 165.0,
+      "brand_name": "Patchi",
+      "goods_cat3": "巧克力"
+    },
+    {
+      "goods_id": "68d3b9fb4daabe00014183bb",
+      "goods_name": "失重森林 黑牛大脆条超干牛肉干牛肉脆条内蒙古特产办公室休闲零食 (不够划算)原味100g*1盒",
+      "goods_price": 79.0,
+      "brand_name": "失重森林",
+      "goods_cat3": "肉干/肉脯/卤味零食"
+    },
+    {
+      "goods_id": "68de0d8f002e7e0001ec2d4a",
+      "goods_name": "生浙麦冬慈溪4年种植道地高品质经方经典优质正宗原产地直邮新鲜 浙麦冬100g*1罐",
+      "goods_price": 63.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其他"
+    },
+    {
+      "goods_id": "67d14496d9b11700010fb33d",
+      "goods_name": "全威派 柒杯【选桶合集】苏格兰单一麦芽威士忌700ml 正品行货 艺术酒标【阿德莫尔8年54.7%vol.】700ml",
+      "goods_price": 1000.0,
+      "brand_name": "全威派",
+      "goods_cat3": "洋酒"
+    },
+    {
+      "goods_id": "66e0ff7e44745f0001f9b862",
+      "goods_name": "牛胸口（有肥有瘦，无全肥，不支持偏肥备注） 此选项勿拍非产品。",
+      "goods_price": 49.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "肉干/肉脯/卤味零食"
+    },
+    {
+      "goods_id": "6a1280f26e373100017d792f",
+      "goods_name": "五倍子蜜泡的桑葚玫瑰蜜｜第一次买慎拍有中yao味 116克桑葚玫瑰蜜 五倍子蜜泡的有中草味介意勿拍",
+      "goods_price": 25.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "蜂产品"
+    },
+    {
+      "goods_id": "67296ebb181935000111c1fd",
+      "goods_name": "others 菠萝冰淇淋格芙美Grovemill霞多丽/灰皮诺/长相思干白 霞多丽",
+      "goods_price": 258.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "68cce73839f90c0001185fb8",
+      "goods_name": "拾山手作 | 手作抹茶碗 侘寂风 手作器物 艺术家手作器物 荷花 48小时发货",
+      "goods_price": 268.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "茶具"
+    },
+    {
+      "goods_id": "69b79a1619f8df0015df704f",
+      "goods_name": "2026头春蜜兰香 兰香蜜韵 滋味足 250g/罐·500g/袋 500g*1袋",
+      "goods_price": 178.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "乌龙茶"
+    },
+    {
+      "goods_id": "6364bcfda7a4f1000115f895",
+      "goods_name": "妈妈很忙 有机野生蔓越莓原浆500ml 女性饮料果汁 蔓越莓原浆*1盒10小包（拍3盒送1盒）",
+      "goods_price": 85.0,
+      "brand_name": "妈妈很忙",
+      "goods_cat3": "饮料"
+    },
+    {
+      "goods_id": "64db4878df033e000142a6f0",
+      "goods_name": "侍酒猫 帕西雍酒庄”双狗抱树\"勃艮第上夜丘干红葡萄酒2022 帕西雍酒庄”双狗抱树\"勃艮第上夜丘干红2022（298）",
+      "goods_price": 458.0,
+      "brand_name": "侍酒猫",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "68721acecdcd2b0001e865fd",
+      "goods_name": "Joshy's wine 「大金杯」 上夜丘 Gros F & S干白葡萄酒 2022/2023/2024 2023",
+      "goods_price": 718.0,
+      "brand_name": "Joshy's wine",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "684b97b2801a240001d0b45f",
+      "goods_name": "NOFUNSHOP 牛肉干100g 麻辣味椒麻味 内蒙古卤牛肉条冷吃牛肉即食解馋小零食 麻辣牛肉100g*1",
+      "goods_price": 49.9,
+      "brand_name": "NOFUNSHOP",
+      "goods_cat3": "肉干/肉脯/卤味零食"
+    },
+    {
+      "goods_id": "668e371c42add60001c5ccbd",
+      "goods_name": "袋鼠先生 即食牛肉健身代餐轻卤牛腱子肉饱腹高蛋白质主轻熟速食健康零食 原味轻卤牛腱肉55g*8袋",
+      "goods_price": 105.8,
+      "brand_name": "袋鼠先生",
+      "goods_cat3": "肉干/肉脯/卤味零食"
+    },
+    {
+      "goods_id": "69a7f11470850a0001a0fa79",
+      "goods_name": "林间盏 【品牌主推】黄精桑葚膏丨夜班一杯丨九制黄精 【黄精相关-充电零食】枣间黄精1盒",
+      "goods_price": 39.0,
+      "brand_name": "林间盏",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "69f6ce3a294caa0001491007",
+      "goods_name": "Qantu 【全合集】AOC金奖加拿大进口70%莫罗蓬春丘黑巧克力牛奶 “甜蜜生活”榛子脆脆50%奶巧",
+      "goods_price": 135.0,
+      "brand_name": "Qantu",
+      "goods_cat3": "巧克力"
+    },
+    {
+      "goods_id": "69c79724c6fcf5000157bc25",
+      "goods_name": "曼松王子山原生种古树 2026春 小份试饮（不支持试喝） 5克",
+      "goods_price": 459.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其他"
+    },
+    {
+      "goods_id": "6983f9bba60bac0001bc9085",
+      "goods_name": "愚草药行 草本养发膏 草本熬煮洗发正装460ml/瓶下单送随身试用装80ml/瓶 养发膏460ml+80ml",
+      "goods_price": 158.0,
+      "brand_name": "愚草药行",
+      "goods_cat3": "精油芳疗"
+    },
+    {
+      "goods_id": "68720f0475ae0c0001ab04cc",
+      "goods_name": "它香 埃塞瑰夏咖啡豆花果香冷萃咖啡豆推荐冰美式新鲜中度烘焙送冷萃壶 咖啡豆（不磨粉） 227克袋装送冷萃壶1个（480ml ，米白/黑色可备注）",
+      "goods_price": 319.99,
+      "brand_name": "它香",
+      "goods_cat3": "速溶咖啡/咖啡豆/粉"
+    },
+    {
+      "goods_id": "632a91606cfb6a0001acee7d",
+      "goods_name": "SOILETA 生可可粉 厄瓜多尔cacao未碱化健身咖啡减脂解馋烘焙巧克力粉 1罐",
+      "goods_price": 69.0,
+      "brand_name": "SOILETA",
+      "goods_cat3": "藕粉/麦片/冲饮品"
+    },
+    {
+      "goods_id": "69d5d2a6ccba710001c0c7d6",
+      "goods_name": "周家薄荷塘 2026年春 小份品鉴（不支持适喝） 5克*2",
+      "goods_price": 198.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其他"
+    },
+    {
+      "goods_id": "68ee03b07d3b3f00012d3dd6",
+      "goods_name": "燕之屋 【28天焕靓套餐】新一代鲜炖燕窝43g即食套餐 孕妇即食燕窝 周套餐（冰糖款）",
+      "goods_price": 568.0,
+      "brand_name": "燕之屋",
+      "goods_cat3": "鲜炖滋补品"
+    },
+    {
+      "goods_id": "677c9f8022ad9a00010556e2",
+      "goods_name": "Highland Park 高原骑士【石楠花桶强63.6%VOL】苏格兰单一麦芽威士忌700ml行货",
+      "goods_price": 850.0,
+      "brand_name": "Highland Park",
+      "goods_cat3": "洋酒"
+    },
+    {
+      "goods_id": "690e183781ef5a00015a1086",
+      "goods_name": "玉堂春 陈皮豆沙奶油酥饼--伯爵红茶/斑斓椰蓉酥 240g/盒（6枚礼盒装） 陈皮豆沙酥1盒6只装",
+      "goods_price": 88.0,
+      "brand_name": "玉堂春",
+      "goods_cat3": "糕点/点心"
+    },
+    {
+      "goods_id": "6934f6fb02483f00010e8cb8",
+      "goods_name": "精研萃取玫瑰油小金粒（10粒/盒） 2盒（尝鲜装）（别家买不到）",
+      "goods_price": 598.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "植物精华/提取物"
+    },
+    {
+      "goods_id": "662e582cc6bc7e0001714ef2",
+      "goods_name": "冬瓜荷叶茶（刮You 高zhi）",
+      "goods_price": 69.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "食疗滋补营养"
+    },
+    {
+      "goods_id": "68034b8996df400001342d06",
+      "goods_name": "合为养 伏湿膏 茯苓伏湿膏 茯苓占比超50% | 愿你体态轻盈 伏湿膏1罐",
+      "goods_price": 199.0,
+      "brand_name": "合为养",
+      "goods_cat3": "其它传统滋补品"
+    },
+    {
+      "goods_id": "69ce84023752710001b7bd2e",
+      "goods_name": "「上釉冰种壶」德化高端冰种白瓷 西施/龙蛋/德钟/ 思亭 带礼盒装 上釉小西施壶100cc（预售7天发出） 48小时发货",
+      "goods_price": 210.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "茶壶"
+    },
+    {
+      "goods_id": "69d0f9c47dd4a100018ce661",
+      "goods_name": "Joshy's wine 「大公鸡」武戈Vogue 香波慕西尼 红葡萄酒Chambolle-Musigny2022",
+      "goods_price": 3858.0,
+      "brand_name": "Joshy's wine",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6a1846f1bd63a300011ae3d0",
+      "goods_name": "紫云祥 2021年茶王茶皇后双株茶树头春料合体古树白茶 单泡品鉴包",
+      "goods_price": 29.0,
+      "brand_name": "紫云祥",
+      "goods_cat3": "其他"
+    },
+    {
+      "goods_id": "69ae7de74a353400011196b6",
+      "goods_name": "茶虎蜜兰香 凤凰单丛 26年新茶  高香雪韵 香甜爽滑 125g/罐 125g*1罐",
+      "goods_price": 80.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "乌龙茶"
+    },
+    {
+      "goods_id": "6a12e796859c5f0001bef720",
+      "goods_name": "端午 | 白美术馆线香礼盒 新色香包",
+      "goods_price": 328.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "中式香/经典熏香"
+    },
+    {
+      "goods_id": "660d3b67cca4850001a5ae8c",
+      "goods_name": "五红粥【家庭版(3-4人份)】",
+      "goods_price": 169.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "食疗滋补营养"
+    },
+    {
+      "goods_id": "69d5bb9410b42d0001700e23",
+      "goods_name": "江中猴姑 米稀富铁红养米糊红枣红豆补铁早餐代餐速食养气色滋补端午送礼 【杯装】富铁红养米糊6杯装（25g/杯）",
+      "goods_price": 89.0,
+      "brand_name": "江中猴姑",
+      "goods_cat3": "其他"
+    },
+    {
+      "goods_id": "69509e55c43df90001209821",
+      "goods_name": "零食随心配3件起拼任意组合解馋零食 ikoko巧克力威化100g",
+      "goods_price": 13.2,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "饼干/膨化"
+    },
+    {
+      "goods_id": "69b0aabc89705f0001dd7311",
+      "goods_name": "梅伯珍 凤瑞2025特级白牡丹王正宗福鼎白茶第一村柏柳村品牌礼盒套装收藏 单砖100克",
+      "goods_price": 256.0,
+      "brand_name": "梅伯珍",
+      "goods_cat3": "白茶"
+    },
+    {
+      "goods_id": "656d2040b2660700015fc7b1",
+      "goods_name": "水晶丝绒礼盒送长辈妈妈妇女节礼盒实用礼物见家月子礼盒生日礼物 红色水晶梳盏五拼",
+      "goods_price": 761.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "燕窝滋补品"
+    },
+    {
+      "goods_id": "69afaa55befcbd0001429584",
+      "goods_name": "真材实料真药 枕（谨慎拍，此品不退换） 兔子款",
+      "goods_price": 499.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "食疗滋补营养"
+    },
+    {
+      "goods_id": "6723297eb43c000001c72703",
+      "goods_name": "潮州手拉壶 张奕培水平壶 薄胎朱泥全手工壶小号70ml/100ml 70ml",
+      "goods_price": 980.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "茶壶"
+    },
+    {
+      "goods_id": "64c8a7c88a07760001264999",
+      "goods_name": "四季盛 火炙老姜糯米酒/老姜娘酒/老姜黄酒/客家娘酒/传统火炙 5斤装",
+      "goods_price": 150.0,
+      "brand_name": "四季盛",
+      "goods_cat3": "黄酒/养生酒"
+    },
+    {
+      "goods_id": "67c6a91aeef18200015fc4a2",
+      "goods_name": "橙路 网红创意儿童篮球男士生日蛋糕深圳北京上海广州杭州宁波同城配送 芒果夹心 6英寸（3-5人食用）",
+      "goods_price": 429.0,
+      "brand_name": "橙路",
+      "goods_cat3": "低温糕点"
+    },
+    {
+      "goods_id": "681f62279653670001f16812",
+      "goods_name": "20种奶酪·新手试吃装-全球精选奶酪随机掉落20 1盒",
+      "goods_price": 176.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "奶酪/乳制品"
+    },
+    {
+      "goods_id": "6951e5f06fadb700018c38cc",
+      "goods_name": "河南焦作温县垆土铁棍山药怀山药，到货去掉所有外包装 实发长度35公分左右5斤",
+      "goods_price": 49.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "新鲜蔬菜/蔬菜制品"
+    },
+    {
+      "goods_id": "69ec5fd33a4daf000198bae9",
+      "goods_name": "OTHER 极简主义大师・Thierry Pillot【圣欧班/默尔索】 Saint Aubin 1er Cru Les Castets 2023",
+      "goods_price": 890.0,
+      "brand_name": "OTHER",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6604d4f9d391df000176bca7",
+      "goods_name": "有悦 五红饮 气血系列 经典五红汤加酸枣仁便捷直饮 以红养红 开袋即饮 1盒（基础尝鲜，体验）",
+      "goods_price": 86.25,
+      "brand_name": "有悦",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "688b18c299631f0001b82c16",
+      "goods_name": "札萨 【牛脆片】芥末口味新鲜上市！ 酥脆奶香不冲鼻！桶装不易碎s 1桶",
+      "goods_price": 68.7,
+      "brand_name": "札萨",
+      "goods_cat3": "肉干/肉脯/卤味零食"
+    },
+    {
+      "goods_id": "68c279ab9c4f880001a2a5d0",
+      "goods_name": "波玛尔一级园！浓郁又华丽 法国勃艮第香莱酒庄波玛柏丹园黑皮诺 一级园！香莱酒庄波玛柏丹园干红 1瓶",
+      "goods_price": 998.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6331583c3d5cbf00011e6b89",
+      "goods_name": "妈妈很忙 三蒸三晒山药茯苓味舒茶 330g 养生冲调 传统麸炒 无熏硫 味舒茶1罐（买两罐送一罐）",
+      "goods_price": 69.0,
+      "brand_name": "妈妈很忙",
+      "goods_cat3": "藕粉/麦片/冲饮品"
+    },
+    {
+      "goods_id": "671f29efa706120001928528",
+      "goods_name": "猿小姐 小甜水3支装 德国雷司令+长相思甜白+豚萌莫斯卡托起泡葡萄酒 德哈森+艾拉贝拉甜白+豚萌",
+      "goods_price": 215.0,
+      "brand_name": "猿小姐",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "658fb885c76db100011586af",
+      "goods_name": "广东省中药研究所 逐湿茶 赤小豆薏米五指毛桃芡实土茯苓白扁豆罗汉果陈皮养生茶 逐湿茶一盒装（10罐）",
+      "goods_price": 128.0,
+      "brand_name": "广东省中药研究所",
+      "goods_cat3": "代用/花草/水果/再加工茶"
+    },
+    {
+      "goods_id": "694a44f3110a7f00019ebf57",
+      "goods_name": "TABB 【晚安奶酒合集】店铺奶酒销量TOP1微醺小奶瓶×白色恋人×椰林飘香 【醉新到货！金奖白巧奶酒】爱尔兰库尔天鹅奶油酒（含礼袋）26.3",
+      "goods_price": 369.0,
+      "brand_name": "TABB",
+      "goods_cat3": "其他酒"
+    },
+    {
+      "goods_id": "636b201032eeb60001770113",
+      "goods_name": "初荐 意大利托斯卡纳2019/2021年西施佳雅红葡萄酒 2021年*1瓶+顺丰包邮",
+      "goods_price": 2199.0,
+      "brand_name": "初荐",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "69ea3649933b03000105ec85",
+      "goods_name": "others 【不输蒙哈榭名园】蒂贝酒庄普依凡列尔龙舌兰园霞多丽干白AM92分 2021年份",
+      "goods_price": 590.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "68b0373fa50cd90001f0c514",
+      "goods_name": "仙马桥 贵州特产木姜子柴火糊辣椒面蘸水蘸料油泼辣子凉拌炒菜香辣浓郁 250袋 木姜子味(微辣) [已配好调料加点热汤水即可]",
+      "goods_price": 19.9,
+      "brand_name": "仙马桥",
+      "goods_cat3": "调味品/果酱/沙拉"
+    },
+    {
+      "goods_id": "694ceb0623d3ce000167928b",
+      "goods_name": "全威派 柒杯艾摩宴客2015年【山楂单桶】苏格兰单一麦芽威士忌700ml行货",
+      "goods_price": 1225.0,
+      "brand_name": "全威派",
+      "goods_cat3": "洋酒"
+    },
+    {
+      "goods_id": "68b6d00e0c1e9b0001ce56d7",
+      "goods_name": "others 默尔索代表之一月亮女神合集 勃艮第大区白BB精选 Bourgogne Initiales B.B. 2023",
+      "goods_price": 2100.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "68f9fd024272610001374af7",
+      "goods_name": "锦时｜2008年肉桂 50g标准装（6.3g×8） 需要手提袋",
+      "goods_price": 790.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "乌龙茶"
+    },
+    {
+      "goods_id": "65fa9721fcf75d00015b8584",
+      "goods_name": "橙子快跑 【分装版】轻食套餐精致分装版代餐饱腹速食常温免煮宿舍方便套餐 7天精致版分装",
+      "goods_price": 189.0,
+      "brand_name": "橙子快跑",
+      "goods_cat3": "UNKNOWN"
+    },
+    {
+      "goods_id": "6614b050eb324400016daa5f",
+      "goods_name": "龙府井 2026年新茶明前茶杭州特产九曲红梅红茶茶叶礼盒[桂花红茶] 2026年头采单芽（精品）红茶50克品鉴",
+      "goods_price": 199.0,
+      "brand_name": "龙府井",
+      "goods_cat3": "红茶"
+    },
+    {
+      "goods_id": "63ff2e5dde4391000154013f",
+      "goods_name": "锋味派 爆汁虾肉肠儿童早餐虾肠空气炸锅烤肠半成品速食香肠 经典原味*1",
+      "goods_price": 69.0,
+      "brand_name": "锋味派",
+      "goods_cat3": "熏腊/香肠/火腿制品"
+    },
+    {
+      "goods_id": "67074c6ca522a9000134ec98",
+      "goods_name": "瘦龙 有机特级初榨橄榄油500ml低温冷榨头道 瘦龙有机特级初榨橄榄油500ml*1瓶",
+      "goods_price": 168.0,
+      "brand_name": "瘦龙",
+      "goods_cat3": "食用油/调味油"
+    },
+    {
+      "goods_id": "69caa295ca154800019373fc",
+      "goods_name": "AAAAA无花果干不加糖更软糯蜜更多新货 无硫熏原生态果干 超大5AAAAA无花果干200克",
+      "goods_price": 26.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "干货/土特产-食用农产品（仅限邀约）"
+    },
+    {
+      "goods_id": "67ea8dd0acb9900001da7504",
+      "goods_name": "【现做现发】闽南烧肉粽 | 包邮套餐 | 顺丰冷链发货 实惠多拼套餐220-260g/颗",
+      "goods_price": 56.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "方便速食/速冻食品"
+    },
+    {
+      "goods_id": "68b2a78efba5440001dc3e90",
+      "goods_name": "男士腰肾充电|夫妻加油老公滋补|海马鹿茸肉苁蓉壮杜仲巴戟天汤料 1.5g配对小海马鹿茸汤(日常调理) 4包赠1包共5包一周期",
+      "goods_price": 99.8,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其它传统滋补品"
+    },
+    {
+      "goods_id": "6765351567b3ca00013ee5e2",
+      "goods_name": "GLENALLACHIE 格兰纳里奇 15年 新版 苏格兰单一麦芽威士忌 46%700ml行货 1瓶",
+      "goods_price": 1500.0,
+      "brand_name": "GLENALLACHIE",
+      "goods_cat3": "洋酒"
+    },
+    {
+      "goods_id": "645a0196947a220001b6f5f3",
+      "goods_name": "道地生酸枣仁炒熟打粉保真不掺假颗颗饱满煮水泡茶100g 试吃装100g 【帮炒熟】酸枣仁手选品质颗粒饱满高品质",
+      "goods_price": 189.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "6844238cea2a8100011f0dd8",
+      "goods_name": "茶人老郑2025年知青茶园虫眼贡眉50克梨香枞韵焖煮泡皆宜 1罐 50克",
+      "goods_price": 98.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "白茶"
+    },
+    {
+      "goods_id": "685ad1c4403edf00159087fb",
+      "goods_name": "【甜糯玉米&北京农科院】农科糯336 香甜软糯 低脂代餐 非转基因 白甜糯玉米1箱 220g*8根",
+      "goods_price": 29.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "米/面粉/杂粮"
+    },
+    {
+      "goods_id": "6a06ebf59f495c0001cbfcc3",
+      "goods_name": "618重点必囤｜2011年紫檀熟普洱小坨茶（必囤） 150克（➕赠1粒）（预售！6月发出）",
+      "goods_price": 1380.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "茶叶"
+    },
+    {
+      "goods_id": "68c3d07034db2a000138ffc8",
+      "goods_name": "汁水Biubiu～果味Boomboom！新西兰劳伦斯湾马尔堡长相思干白2025 单支装",
+      "goods_price": 99.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "65dd4af82152b000012a5436",
+      "goods_name": "野外生长国产太行山脉酸枣仁试吃100g（默认炒熟，其他备注） 100g（机器挑选，少量干瘪黑仁）要生或粉备注",
+      "goods_price": 189.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "66de8f5eb39d0f000136730e",
+      "goods_name": "男士滋补八宝大漠双雄养生肉苁蓉锁阳鹿茸淫羊藿桑葚枸杞黄芪八宝 20包/袋【小试牛刀】",
+      "goods_price": 128.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "代用/花草/水果/再加工茶"
+    },
+    {
+      "goods_id": "6a028a0b213e27000108f6da",
+      "goods_name": "燕鸣春 中科溯源马来西亚干挑中小盏 （干净度95，会有小绒毛） 马来干挑中小盏100克",
+      "goods_price": 2000.0,
+      "brand_name": "燕鸣春",
+      "goods_cat3": "燕窝滋补品"
+    },
+    {
+      "goods_id": "684546fe93d07800018c8923",
+      "goods_name": "others 黄油奶酥苹果派！超性价比勃艮第南部名家！科迪亚马贡霞多丽干白 【黄油奶酥苹果派】马贡霞多丽2024年份",
+      "goods_price": 258.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6821ba126d54370001b474a2",
+      "goods_name": "梅伯珍 万国博览会金奖纪念茶2019年果香寿眉1500g存茶大份量老白茶 1500克/箱（免费试喝）+限送一叶千金",
+      "goods_price": 598.0,
+      "brand_name": "梅伯珍",
+      "goods_cat3": "白茶"
+    },
+    {
+      "goods_id": "6836a1d9f078780001cc6d38",
+      "goods_name": "【兰香透骨 甜润似糖】2026年春茶 幽香仙子清香型漳平水仙乌龙茶 96克（12泡）",
+      "goods_price": 199.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "乌龙茶"
+    },
+    {
+      "goods_id": "69e21ae0cfc3750001b278ae",
+      "goods_name": "Dashwood 青青木！Vivino 4.0超高分！巨新鲜巨清爽的马尔堡长相思干白！ 「单支尝鲜」Dashwood青青木！长相思干白🏆",
+      "goods_price": 158.0,
+      "brand_name": "Dashwood",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "68f0fae1d3eed20001743ac4",
+      "goods_name": "真材实料真药 枕（谨慎拍，此品不退换） 黑格款",
+      "goods_price": 499.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "食疗滋补营养"
+    },
+    {
+      "goods_id": "68b155abf38f970001d5da98",
+      "goods_name": "侍酒猫 新派德国酒代表！德仙佳客酒庄干红葡萄酒 「天鹅绒般质感 特级园平替」年华黑皮诺干红葡萄酒",
+      "goods_price": 458.0,
+      "brand_name": "侍酒猫",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "693ad7ed33f9b30001691a0b",
+      "goods_name": "7cm雷火灸送灸桶（一用就爱上）",
+      "goods_price": 89.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "香包/香囊"
+    },
+    {
+      "goods_id": "65e958140af17e000126c534",
+      "goods_name": "野生白花胶（皮肤靓）印白62头 -大岛公司货 贵妇胶正南巴白花胶 大岛印白125头 100g",
+      "goods_price": 1099.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其它传统滋补品"
+    },
+    {
+      "goods_id": "67bd3f2f3298ba000120118a",
+      "goods_name": "允斌 【植物洗护发】氨基酸表活侧柏叶头皮洗露 洗发水/山茶盈润护发素 护发素:480ml",
+      "goods_price": 118.0,
+      "brand_name": "允斌",
+      "goods_cat3": "洗发护发"
+    },
+    {
+      "goods_id": "69b7a3045e5f0500019e907f",
+      "goods_name": "【松阳香茶】2026定制款明前绿茶板栗香125克罐装 125g（125g*1罐）",
+      "goods_price": 88.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "绿茶"
+    },
+    {
+      "goods_id": "646dd4f99ee73700015fad89",
+      "goods_name": "初荐 【大爆款】意大利2020年布格利酒庄经典阿玛罗尼干红 1瓶+顺丰包邮",
+      "goods_price": 449.0,
+      "brand_name": "初荐",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "67d53254ba9cf80001e9d3f0",
+      "goods_name": "小酌里 「巨峰冰茶」上新！9度冰茶手工鸡尾酒清爽耐喝！一罐当作两杯喝 【茶香微苦】茉莉冰茶*6❗️升级3.0版",
+      "goods_price": 178.8,
+      "brand_name": "小酌里",
+      "goods_cat3": "洋酒"
+    },
+    {
+      "goods_id": "698c3b4dd5afea0001c5a895",
+      "goods_name": "2016年 福鼎白茶 贡眉 | 大品牌 | 客订款 | 100克1盒 100克【1盒】（不带样茶） 48小时发货",
+      "goods_price": 143.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "白茶"
+    },
+    {
+      "goods_id": "673fe609ec68d7000183cbcb",
+      "goods_name": "九制黄精【15年生】所有规格均送试吃装，提供试吃保障！ （真空小袋）品鉴装250g【体验品质、对比品鉴】",
+      "goods_price": 178.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "696f215f26bf6e0001739e1b",
+      "goods_name": "食葡 【meimei同款】白桃青柠！法国云石庄园桑塞尔长相思干白干红 【霉霉同款】法国云石庄园长相思干白",
+      "goods_price": 500.0,
+      "brand_name": "食葡",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "69fc6e990511b50001fd118c",
+      "goods_name": "酩一 桃溪之上/岚若之下霞多丽干白2023 岚若之下霞多丽干白2023",
+      "goods_price": 980.0,
+      "brand_name": "酩一",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "67891845e7f8b5000150090b",
+      "goods_name": "ZEST MAKE 风味制造&kiri联名芝士白脱饼干曲奇伴手礼零食丨顺丰发货 kiri联名-芝士味x1盒",
+      "goods_price": 188.0,
+      "brand_name": "ZEST MAKE",
+      "goods_cat3": "低温糕点"
+    },
+    {
+      "goods_id": "69c0e481ff00dc0001da1d71",
+      "goods_name": "宁海特色手工艾草麻糍一盒400g6片装 玫瑰🌹麻糍（3盒）",
+      "goods_price": 60.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "方便速食/速冻食品"
+    },
+    {
+      "goods_id": "69d4a7f998fb930001d71633",
+      "goods_name": "失重森林 牛胸口脆片即食熟食牛胸口油拌锅巴牛脆脆牛排脆下酒零食 原味100g*1罐",
+      "goods_price": 79.0,
+      "brand_name": "失重森林",
+      "goods_cat3": "肉干/肉脯/卤味零食"
+    },
+    {
+      "goods_id": "697c5e338c608e00011668bd",
+      "goods_name": "三兔船长 季节限定｜舟山小馄饨·荠菜鲜肉·新鲜现做早餐，皮薄肉鲜卖到6月 【芹菜】鲜肉40只+纯肉40只（72小时）",
+      "goods_price": 69.9,
+      "brand_name": "三兔船长",
+      "goods_cat3": "方便速食/速冻食品"
+    },
+    {
+      "goods_id": "69fad8328c2c2300012f06c6",
+      "goods_name": "失重森林 和牛脆片牛肉脆片牛脆脆风干牛肉干和牛薄切 番茄味108g*1桶（拆封不退）",
+      "goods_price": 79.0,
+      "brand_name": "失重森林",
+      "goods_cat3": "肉干/肉脯/卤味零食"
+    },
+    {
+      "goods_id": "658feae5ff7b510001a988dc",
+      "goods_name": "赤匠 龙年生肖酒53度500ml酱香型白酒单瓶拍5发6 500ml单瓶",
+      "goods_price": 78.0,
+      "brand_name": "赤匠",
+      "goods_cat3": "白酒"
+    },
+    {
+      "goods_id": "697c3ffd30ddb100011dc32d",
+      "goods_name": "OTHER 勃艮第精品酒庄・Darviot-Perrin Meursault-Genevrières 1er Cru 2023年",
+      "goods_price": 1780.0,
+      "brand_name": "OTHER",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "68f82cabb8a4f60001b9f111",
+      "goods_name": "杨直二 九华黄精正宗正品中药材九华山九蒸九制黄精官方无添加泡水 九华有机黄精【真空黄精果1罐】250g",
+      "goods_price": 169.0,
+      "brand_name": "杨直二",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "698341867db7d20001e4515d",
+      "goods_name": "口粮巴拿马瑰夏浅烘焙精品手冲咖啡豆闪购团购专用链接100克特价 25产季翡翠红标水洗 100克 48小时发货",
+      "goods_price": 398.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "速溶咖啡/咖啡豆/粉"
+    },
+    {
+      "goods_id": "67270f9451e3a2000106180b",
+      "goods_name": "【云南新货】野生树酸蜂蜜/无刺蜂/树洞野生土蜂蜜/米团花黑蜜土 2026年新树酸即将售罄",
+      "goods_price": 999.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "蜂产品"
+    },
+    {
+      "goods_id": "662c5af53bf0c50001355d73",
+      "goods_name": "合为养 陈皮 真年份广东新会真核心产区 精选老陈皮 人工晾晒 | 自然陈化 三江圈枝大红皮 真6年 50克",
+      "goods_price": 258.0,
+      "brand_name": "合为养",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "666dd2950f78be00010b56a1",
+      "goods_name": "高原羊肚菌来自云南丽江深山的一款山珍 70克【送10克】",
+      "goods_price": 99.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "干货/土特产"
+    },
+    {
+      "goods_id": "66fa5c845bcbab00011ca9e6",
+      "goods_name": "OTHER 一滴金小金瓶法国贵腐甜白葡萄酒波尔多餐后甜酒 一滴金-1瓶尝鲜（限时拍1发2）",
+      "goods_price": 359.0,
+      "brand_name": "OTHER",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "690ef4f981ef5a00015f62ff",
+      "goods_name": "一山一禾 石斛梨蔗清润茶雪梨马蹄竹蔗无花果玉竹生津水嘴干嗓子疼有痰有火 石斛梨蔗清润茶一盒【17g*12包 滋润生津】",
+      "goods_price": 99.9,
+      "brand_name": "一山一禾",
+      "goods_cat3": "代用/花草/水果/再加工茶"
+    },
+    {
+      "goods_id": "69f018f66eeaf70001447c0e",
+      "goods_name": "重庆丽晶酒店 | 米菲联名端午礼盒",
+      "goods_price": 232.2,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "方便速食/速冻食品"
+    },
+    {
+      "goods_id": "69257472dd329c0001c5000e",
+      "goods_name": "广禾堂 【如期植物饮】如期2.0每月如期轻松度过D 【1盒尝鲜装不划算】25ml*10条",
+      "goods_price": 288.0,
+      "brand_name": "广禾堂",
+      "goods_cat3": "植物精华/提取物"
+    },
+    {
+      "goods_id": "6894661099631f0001177577",
+      "goods_name": "野生白花胶（皮肤靓）印白62头 -大岛公司货 贵妇胶正南巴白花胶 大岛印白62头 100g",
+      "goods_price": 1788.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其它传统滋补品"
+    },
+    {
+      "goods_id": "67593ab7dda0580001397c94",
+      "goods_name": "若耶溪 绍兴黄酒 中国境内没醉过/日富一日/马到成功 2008年冬酿 【720ml】日富一日",
+      "goods_price": 328.0,
+      "brand_name": "若耶溪",
+      "goods_cat3": "黄酒/养生酒"
+    },
+    {
+      "goods_id": "674918635ec9ca000134fdad",
+      "goods_name": "合为养 元气五红粉 营养元气早餐粉 道地食材 不熏硫 不染色 五红粉1盒",
+      "goods_price": 89.9,
+      "brand_name": "合为养",
+      "goods_cat3": "食疗滋补营养"
+    },
+    {
+      "goods_id": "689abb5bd42b610001fab694",
+      "goods_name": "【崔小元真选】青海有机枸杞原浆 1盒（35g*7袋/盒）",
+      "goods_price": 59.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "枸杞及其制品"
+    },
+    {
+      "goods_id": "650952c03997590001eb20ba",
+      "goods_name": "大熊里 章鱼烧试料三件套：章鱼烧粉+调味酱+蛋黄味沙拉酱 章鱼烧调味酱款",
+      "goods_price": 70.0,
+      "brand_name": "大熊里",
+      "goods_cat3": "调味品/果酱/沙拉"
+    },
+    {
+      "goods_id": "6741c6c65f84e2000194c7f3",
+      "goods_name": "颐之 红蒂｜珍藏系列 凤凰单丛茶 乌岽高山茶 果香 30克",
+      "goods_price": 580.0,
+      "brand_name": "颐之",
+      "goods_cat3": "乌龙茶"
+    },
+    {
+      "goods_id": "634370215b203e00015d4bb8",
+      "goods_name": "八千步 全麦面包糕点吐司整箱早餐代餐饱腹粗粮 6包 原味",
+      "goods_price": 9.9,
+      "brand_name": "八千步",
+      "goods_cat3": "糕点/点心"
+    },
+    {
+      "goods_id": "691406cbf168b90001b20435",
+      "goods_name": "NATURECARE.LIFE 冰冰同款 ·NC小红条小绿粉虎坚果植物奶膳食纤维代谢消化低卡 FRUNERGY+GREENERGY+ZEROLAIT",
+      "goods_price": 967.0,
+      "brand_name": "NATURECARE.LIFE",
+      "goods_cat3": "食补粉粉"
+    },
+    {
+      "goods_id": "67b02719c3cf0a0001a2fa2e",
+      "goods_name": "【白诗南入门】酒展新星Domaine de la Renière La Cerisaie 2022 【不过桶无malo】La Cerisaie 2022",
+      "goods_price": 300.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6285b1a6c7759600013429de",
+      "goods_name": "Patchi 芭驰新品爆款进口纯可可脂 <脆米麦丽素>巧克力礼盒解馋零食 脆米麦丽素巧克力豆礼盒 140g/盒（产品新升级-包装&克重略有调整）",
+      "goods_price": 175.0,
+      "brand_name": "Patchi",
+      "goods_cat3": "巧克力"
+    },
+    {
+      "goods_id": "63636c23ccd4c30001c3eb24",
+      "goods_name": "梅伯珍 独韵梅香2015年寿眉老白茶散茶250克正宗福鼎白茶枣香果甜香收藏 一盒250克（送焖杯）",
+      "goods_price": 480.0,
+      "brand_name": "梅伯珍",
+      "goods_cat3": "白茶"
+    },
+    {
+      "goods_id": "67b6f2583425c000158469ea",
+      "goods_name": "基础四神汤加味 变成了和湿有关的强力汤  足量40克一袋，一包8袋 加味祛湿四神汤37克*8袋",
+      "goods_price": 48.8,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其它传统滋补品"
+    },
+    {
+      "goods_id": "6a2907773222c60001df334c",
+      "goods_name": "二分之一手工端午节礼盒 粽子蛋黄酥凤梨酥组合 零食曲奇饼干礼盒 端午限定礼盒1篮",
+      "goods_price": 90.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "饼干/膨化"
+    },
+    {
+      "goods_id": "69bbb072180bf40001edf1c9",
+      "goods_name": "波特酒宗师！葡萄牙Kopke科普克酒庄20年波特葡萄酒 单支",
+      "goods_price": 399.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "69f6d56aa978450001619c71",
+      "goods_name": "Patchi 芭驰爆款黑巧克力<薄荷夹心>进口巧克力礼盒送女友 芭驰薄荷夹心薄片巧克力礼盒195g（效期至26年10月）",
+      "goods_price": 245.0,
+      "brand_name": "Patchi",
+      "goods_cat3": "巧克力"
+    },
+    {
+      "goods_id": "68dd1b95702da10001661b77",
+      "goods_name": "本利亚克 12年雪莉桶单一麦芽苏格兰威士忌700mlBenriach威士忌 1瓶",
+      "goods_price": 720.0,
+      "brand_name": "本利亚克",
+      "goods_cat3": "洋酒"
+    },
+    {
+      "goods_id": "67e3ea38585fab00012047e3",
+      "goods_name": "蔡澜花花世界 【顺丰包邮】一代粽诗非遗端午礼盒鲍鱼粽蛋黄肉粽送礼粽子 【常规款-售罄】颂锦鲤·非遗端午礼盒",
+      "goods_price": 265.0,
+      "brand_name": "蔡澜花花世界",
+      "goods_cat3": "方便速食/速冻食品"
+    },
+    {
+      "goods_id": "6a18105b818cb80001d18a7d",
+      "goods_name": "赤霞珠入门口粮！智利进口双象星炎日珍藏干红葡萄酒750ml*2瓶",
+      "goods_price": 99.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "66f53add1f680400014028fb",
+      "goods_name": "天山潮茗 团树叶 单株古树特级乌龙茶传统炭焙潮州茶叶凤凰单丛茶罐装50g",
+      "goods_price": 868.0,
+      "brand_name": "天山潮茗",
+      "goods_cat3": "乌龙茶"
+    },
+    {
+      "goods_id": "64ce3ea80fb0d000018e3e1f",
+      "goods_name": "2003年烟韵樟香普洱青饼生茶8582青饼400g 50g茶样",
+      "goods_price": 238.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "普洱"
+    },
+    {
+      "goods_id": "690b3f4f7071920001c0ef7f",
+      "goods_name": "黄花胶 18头 35头 42头 60头 花胶入门 鱼胶花胶 厚肉q弹不腥 8头 500g",
+      "goods_price": 2380.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其它传统滋补品"
+    },
+    {
+      "goods_id": "6933e5d6bf02330001934db5",
+      "goods_name": "Dashwood Vivino 4.0 新年份更新鲜达士木马尔堡长相思/灰皮诺干白葡萄酒 【不喜欢高酸推荐入】dashwood灰皮诺单支",
+      "goods_price": 158.0,
+      "brand_name": "Dashwood",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "66272a5a3152260001504ab8",
+      "goods_name": "以味坊 【顺丰发货】高活性菌种发酵国产纳豆高品质益生菌纳豆激酶 12盒（顺丰送货上门",
+      "goods_price": 69.0,
+      "brand_name": "以味坊",
+      "goods_cat3": "UNKNOWN"
+    },
+    {
+      "goods_id": "6742c8ccc14a2d0001199706",
+      "goods_name": "others 香气极度飘逸妖娆！两大名庄结合！杰曼信使小兰花勃艮第黑皮诺红 2023年份",
+      "goods_price": 780.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "68404ffcf9ad05000145df5e",
+      "goods_name": "【儿童清清】灯芯草鸡内金焦山楂麦芽煲汤材料成长汤焦三仙 【基础款】灯芯草鸡内金汤10包500g",
+      "goods_price": 79.8,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "65b37bfbdd621c00017badbb",
+      "goods_name": "橙路 创意微景观爱情岛爱心女士蛋糕深圳北京上海广州杭州宁波同城配送 6英寸（3-5人食用） 粉色-芒果夹心",
+      "goods_price": 359.0,
+      "brand_name": "橙路",
+      "goods_cat3": "低温糕点"
+    },
+    {
+      "goods_id": "6938f5dc4d53380001dec4b5",
+      "goods_name": "Baratti & Milano 【意大利原装进口】巧克力随心盒 5种经典组合 进口 零食伴手礼 意式榛巧随心盒 155g",
+      "goods_price": 228.0,
+      "brand_name": "Baratti & Milano",
+      "goods_cat3": "巧克力"
+    },
+    {
+      "goods_id": "69f1aa03a978450001ec69b8",
+      "goods_name": "TABB 三粒米季节限定合集，醉新日期，全程冷链，米其林三星同款清酒 【2026夏季限定】三粒米美人鱼，麝香葡萄26.4.1",
+      "goods_price": 499.0,
+      "brand_name": "TABB",
+      "goods_cat3": "清酒/烧酒"
+    },
+    {
+      "goods_id": "6a095e8833df70001591c593",
+      "goods_name": "阿渥 【冷泡茶10种口味混合装】夏花茶包泡水喝独立包装袋泡茶 冷泡茶10种口味混合装10包*1袋",
+      "goods_price": 39.0,
+      "brand_name": "阿渥",
+      "goods_cat3": "代用/花草/水果/再加工茶"
+    },
+    {
+      "goods_id": "691d27dc6ea74e00018036ab",
+      "goods_name": "上英山 特级物理压榨香榧油350ml送100ml",
+      "goods_price": 238.0,
+      "brand_name": "上英山",
+      "goods_cat3": "山核桃/坚果/炒货"
+    },
+    {
+      "goods_id": "62b52d2b6ab36e0001a65e21",
+      "goods_name": "林间盏 石斛玉润膏 | 温润入喉 | 条装挤即出 独立便携 | 一盒21条 【1盒】1月量丨基础养",
+      "goods_price": 198.0,
+      "brand_name": "林间盏",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "67891744e7f8b500015000db",
+      "goods_name": "不山 【三年坛泡】云南青梅酒微醺梅子低度果酒女士酒朋友家庭聚会必备 青梅酒375毫升*1瓶",
+      "goods_price": 69.0,
+      "brand_name": "不山",
+      "goods_cat3": "其他酒"
+    },
+    {
+      "goods_id": "69e07718933b0300013c2b21",
+      "goods_name": "益生菌慢发酵面包 0添加蔗糖0乳糖 松软不干噎 儿童营养早餐代餐 全麦种子面包棒2袋",
+      "goods_price": 129.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "糕点/点心"
+    },
+    {
+      "goods_id": "6a27ec7d2055620001ab4868",
+      "goods_name": "OTHER 香槟北境之王・Chartogne-Taillet Heurtebise Extra Brut 2019 2019年",
+      "goods_price": 1020.0,
+      "brand_name": "OTHER",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6867694f5b41e80001fa38a6",
+      "goods_name": "百香果冷萃咖啡套装 全套",
+      "goods_price": 229.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "速溶咖啡/咖啡豆/粉"
+    },
+    {
+      "goods_id": "69b75e937c9c8f0001eb9427",
+      "goods_name": "2026头春蜜兰香 兰香蜜韵 滋味足 250g/罐·500g/袋 500g*1袋（26年高香）",
+      "goods_price": 150.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "乌龙茶"
+    },
+    {
+      "goods_id": "69e7650e3aa96f0001bcb6b5",
+      "goods_name": "意大利酒王Gaja Bass佳雅蓝鸟单一园干白葡萄酒长相思·霞多丽23",
+      "goods_price": 940.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "666298ae646d150001c091ce",
+      "goods_name": "6年红参·红参里的优等生 老红参柳叶大片150克",
+      "goods_price": 178.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "参类滋补品"
+    },
+    {
+      "goods_id": "69de2815cfc3750001ae4de0",
+      "goods_name": "【1508·陈皮六堡】2015年陈皮+2008年老六堡 90g(9g*10包)/盒 90g*1盒",
+      "goods_price": 280.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "黑茶"
+    },
+    {
+      "goods_id": "6907510fbecfcc0001957f99",
+      "goods_name": "8-12年混合杂皮陈皮 里面有大红二红青皮 新会断片碎片 介意匆拍 8-12年 混合杂皮 介意匆拍 250g",
+      "goods_price": 49.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "蜜饯/枣类/梅/果干/冻干"
+    },
+    {
+      "goods_id": "66e015b3d0a0ac000171fb5a",
+      "goods_name": "松夏达瓦 精品灯影牛肉丝，牛肉含量超多，解馋追剧牛肉干零食 ✅（五香麻辣）混合，1大袋",
+      "goods_price": 39.8,
+      "brand_name": "松夏达瓦",
+      "goods_cat3": "肉干/肉脯/卤味零食"
+    },
+    {
+      "goods_id": "68ef095529904900011db5a9",
+      "goods_name": "上英山 坚果盐糖铁罐装（全口味） 香山夏榛巴五拼盐糖 160g原味",
+      "goods_price": 79.0,
+      "brand_name": "上英山",
+      "goods_cat3": "其他"
+    },
+    {
+      "goods_id": "6878a994e58d0700011e68c3",
+      "goods_name": "九窝颜食社 酸枣仁玫瑰九红原浆每晚睡前喝一条即饮玫瑰滋补桃花美人 1盒",
+      "goods_price": 92.0,
+      "brand_name": "九窝颜食社",
+      "goods_cat3": "鲜炖滋补品"
+    },
+    {
+      "goods_id": "68f4b740f5d0480001f58da6",
+      "goods_name": "OTHER 八大爷稀缺配额・西湾酒庄国王园阿里高特/国王园红葡萄酒套装 国王园红白套装 国王园黑皮诺2022+国王园阿里高特2019",
+      "goods_price": 1520.0,
+      "brand_name": "OTHER",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "630c6e75f60eed00014cb4be",
+      "goods_name": "小师姐评茶 蒸蒸日上政和荒野古树白茶 清甜粽子茶 50g",
+      "goods_price": 119.0,
+      "brand_name": "小师姐评茶",
+      "goods_cat3": "白茶"
+    },
+    {
+      "goods_id": "6646f76695742c000119a2fa",
+      "goods_name": "So Acai 【隔夜燕麦套组】超模营养健康早餐即食代餐饱腹麦片懒人隔夜 【赠燕麦杯】20天套组-可可粉口味",
+      "goods_price": 231.9,
+      "brand_name": "So Acai",
+      "goods_cat3": "藕粉/麦片/冲饮品"
+    },
+    {
+      "goods_id": "67b2cbaadb1dc10001fed529",
+      "goods_name": "胡子叔饮食工具包丨餐盘 吨吨桶 搅拌杯 饮食地图(不退货） 地中海餐盘（四格）",
+      "goods_price": 59.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其它餐饮具"
+    },
+    {
+      "goods_id": "6699daa63813ca000145c973",
+      "goods_name": "麦卡伦 臻味不凡系列•臻味啡凡 单一麦芽威士忌 麦卡伦臻味啡凡",
+      "goods_price": 1499.0,
+      "brand_name": "麦卡伦",
+      "goods_cat3": "洋酒"
+    },
+    {
+      "goods_id": "67dd0de321ffb300012c1f05",
+      "goods_name": "札萨 【一根猪】一根猪肉干！磨牙解馋！不支持无理由！s 嘶哈辣（特辣盒子破损不售后）120g非常辣！非常辣！",
+      "goods_price": 43.9,
+      "brand_name": "札萨",
+      "goods_cat3": "肉干/肉脯/卤味零食"
+    },
+    {
+      "goods_id": "6651d7a7b4882f0001167a81",
+      "goods_name": "九蒸九晒黄精｜长白山种植鸡头黄精｜长白山黄精｜8年九制黄精 黄精250克*1瓶（体验装｜拆封不退）",
+      "goods_price": 85.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "658b97e5862a3a0001f8cf10",
+      "goods_name": "Highland Park 高原骑士新包装【12/15/18年】苏格兰单一麦芽威士忌700ml 高原骑士新版12年",
+      "goods_price": 456.0,
+      "brand_name": "Highland Park",
+      "goods_cat3": "洋酒"
+    },
+    {
+      "goods_id": "697e0382eb0d9a00014ae72f",
+      "goods_name": "苦瓜芹菜葛根燕麦片（拍1发2）",
+      "goods_price": 69.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "藕粉/麦片/冲饮品"
+    },
+    {
+      "goods_id": "66bade1da7c583000133d6b3",
+      "goods_name": "三家村 四神藕粉山药芡实茯苓莲子四神汤粉杭州特产西湖藕粉营养早餐 【数量拍2送陶瓷碗勺】四神藕粉300g",
+      "goods_price": 79.9,
+      "brand_name": "三家村",
+      "goods_cat3": "藕粉/麦片/冲饮品"
+    },
+    {
+      "goods_id": "6857c68d7ec78a00015d874b",
+      "goods_name": "others 【草莓血橙覆盆子】德国VDP名家诺伊斯！果汁感超清爽黑皮诺桃红 2021年份",
+      "goods_price": 189.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "675923717f06b00001c57142",
+      "goods_name": "韩要强 半块苹果干(不加糖不加添加剂)250克 1袋",
+      "goods_price": 35.0,
+      "brand_name": "韩要强",
+      "goods_cat3": "蜜饯/枣类/梅/果干/冻干"
+    },
+    {
+      "goods_id": "6a072118c897f700011990f9",
+      "goods_name": "小师姐评茶 2016/2023年昔归古树挑采生普云南普洱生茶 限量分享 2016年昔归30g",
+      "goods_price": 850.0,
+      "brand_name": "小师姐评茶",
+      "goods_cat3": "其他"
+    },
+    {
+      "goods_id": "63749c5bc0685f0001a8758f",
+      "goods_name": "玉堂春 “空气感”凤梨酥金菠萝酥240克/盒（6只装） 一盒320g（40g/只*8）",
+      "goods_price": 98.0,
+      "brand_name": "玉堂春",
+      "goods_cat3": "糕点/点心"
+    },
+    {
+      "goods_id": "68f9e4820dfa750001e9f803",
+      "goods_name": "28天高端小月子水｜小月子茶饮茶包汤水粥｜人流药流清宫小产胎停 小月子全套养生方案",
+      "goods_price": 1468.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其它传统滋补品"
+    },
+    {
+      "goods_id": "695fcc3d81edf70001b570c3",
+      "goods_name": "精品咖啡豆*生态种植 波旁蜜处理（保山） 250g",
+      "goods_price": 108.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "速溶咖啡/咖啡豆/粉"
+    },
+    {
+      "goods_id": "692fdb4f4977f3000177e794",
+      "goods_name": "子乐宅 好事发生茉莉花茶礼盒 浓香高山茶叶礼盒 小罐装便携节日伴手礼 好事发生礼盒|赠礼袋",
+      "goods_price": 138.0,
+      "brand_name": "子乐宅",
+      "goods_cat3": "其他"
+    },
+    {
+      "goods_id": "65e33c4a735ada000188fd2e",
+      "goods_name": "2026云南野生紫芽普洱茶茶树花苞野生小奶球100克 铁罐装",
+      "goods_price": 98.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "茶叶"
+    },
+    {
+      "goods_id": "6a02f3c1721fd300013fa84d",
+      "goods_name": "莫氏鸡煲汤底料正品夏季配方200g每份顺丰极速到家 200g/份",
+      "goods_price": 38.8,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "调味品/果酱/沙拉"
+    },
+    {
+      "goods_id": "660d488ccca4850001a615a3",
+      "goods_name": "小师姐评茶 2026年满觉陇特级西湖龙井茶头采绿茶 老树/龙井43号 43号特级50克非头采",
+      "goods_price": 419.0,
+      "brand_name": "小师姐评茶",
+      "goods_cat3": "绿茶"
+    },
+    {
+      "goods_id": "69ef13563a4daf0001dcf20d",
+      "goods_name": "加长的味 【大师定制】老成都麻辣烫底料套装 正宗川味家用串串冒菜260g/袋 【尝鲜装】老式麻辣烫调味料260g*1袋",
+      "goods_price": 25.9,
+      "brand_name": "加长的味",
+      "goods_cat3": "调味品/果酱/沙拉"
+    },
+    {
+      "goods_id": "67ac52e329b9f70001b0d6aa",
+      "goods_name": "（仅2斤）野生西藏白肉松杉灵芝这款不苦500克菌味浓香（现切片） 共250克1包",
+      "goods_price": 498.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "UNKNOWN"
+    },
+    {
+      "goods_id": "6932510514f9d800013de7ca",
+      "goods_name": "查法蒂 意大利原瓶进口 花香炸裂 米其林同款爱法蒂干白葡萄酒750ml",
+      "goods_price": 322.0,
+      "brand_name": "查法蒂",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "66bc6ed7e6a354000108ae09",
+      "goods_name": "bruto 入选Noma酒单的低调名庄 神父之地橙酒2023新年份/老藤干白 60年老藤干白",
+      "goods_price": 329.0,
+      "brand_name": "bruto",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "69e999ca294caa0001a18163",
+      "goods_name": "非遗陶瓷花香薰520礼物礼盒花小众高级感生日礼品新婚无火香氛 宋画瓷花精油礼盒",
+      "goods_price": 288.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "非遗手工艺"
+    },
+    {
+      "goods_id": "69eb3f6dfaf0020001a2aebb",
+      "goods_name": "酒梦富 勃艮第 米歇尔格罗 米修狗 圣马丁之泉干红葡萄酒 Michel Gros 48小时发货",
+      "goods_price": 469.0,
+      "brand_name": "酒梦富",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "69db9da9ab6f9400013d48ae",
+      "goods_name": "铜箐河核心八颗高杆品鉴 2026春 （不支持试喝）普洱生茶 5克*1",
+      "goods_price": 289.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其他"
+    },
+    {
+      "goods_id": "675cfb14b9eb7500010b2ab9",
+      "goods_name": "韩要强 现烤混合坚果仁300g非油炸 1罐*300克【散装(所有果仁比例1比1)】",
+      "goods_price": 48.0,
+      "brand_name": "韩要强",
+      "goods_cat3": "山核桃/坚果/炒货"
+    },
+    {
+      "goods_id": "679c52ea068b240001830538",
+      "goods_name": "老茶树梅家坞 2026年新茶正宗梅家坞西湖龙井梅家坞村官方包装1800一斤 125克传统制作梅家坞龙井方包",
+      "goods_price": 450.0,
+      "brand_name": "老茶树梅家坞",
+      "goods_cat3": "绿茶"
+    },
+    {
+      "goods_id": "66f4a9255b7333000131e72c",
+      "goods_name": "敦幸 【0代糖杏皮水】不加糖开盖即饮润嗓甘肃特产慢熬煮天然健康饮料 敦幸杏皮水270ml*6瓶【1箱】",
+      "goods_price": 53.8,
+      "brand_name": "敦幸",
+      "goods_cat3": "饮料"
+    },
+    {
+      "goods_id": "6731c5394a9865000182715d",
+      "goods_name": "老谷头 夏季种子循环黄体酮茶养雌茶无花果黑豆黄芪亚麻籽玫瑰养降雄养生 黄体酮养雌茶（30罐）",
+      "goods_price": 168.0,
+      "brand_name": "老谷头",
+      "goods_cat3": "代用/花草/水果/再加工茶"
+    },
+    {
+      "goods_id": "68aae7e8a50cd90001ccf9ce",
+      "goods_name": "others 意大利巴罗洛超级名家！浓郁饱满有风骨！博诺No Name无名干红 2019年份 单瓶",
+      "goods_price": 599.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "68fae980ce94ee0001973ae6",
+      "goods_name": "九峰牧场 5.0g牛乳优质乳蛋白奶香浓郁营养丰富250ml/瓶日期新鲜需冷藏 【尝鲜2瓶贵在运费】5.0牛乳250ml*2瓶",
+      "goods_price": 29.9,
+      "brand_name": "九峰牧场",
+      "goods_cat3": "乳制品"
+    },
+    {
+      "goods_id": "694baf0def368800014e8639",
+      "goods_name": "福气小扫帚挂件包挂 手工编织原创扫把挂饰好运仪式感上岸礼物 红运当头·福气小扫把（红）",
+      "goods_price": 98.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "棕编/藤编工艺品"
+    },
+    {
+      "goods_id": "6a06e64e7b0d9c00017b88cb",
+      "goods_name": "啡否 【油脂王】完全无酸深度烘焙意式咖啡豆|美式拿铁拉花 【单包尝鲜】227g/包 咖啡豆（不磨粉）",
+      "goods_price": 119.0,
+      "brand_name": "啡否",
+      "goods_cat3": "速溶咖啡/咖啡豆/粉"
+    },
+    {
+      "goods_id": "6773774ebc6cbc00018b11d3",
+      "goods_name": "（新人调理组合）",
+      "goods_price": 414.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "代用/花草/水果/再加工茶"
+    },
+    {
+      "goods_id": "69344a09daf9270001123ce7",
+      "goods_name": "精油100%浓度 需稀释后使用 大马士革玫瑰 1毫升",
+      "goods_price": 120.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "香薰精油"
+    },
+    {
+      "goods_id": "6883918286c0df0001a081e0",
+      "goods_name": "加购5个一起下单39自动改价|大馅料欧包早餐代餐甜咸口芝士抹茶 红豆抹茶奶酥麻薯软欧包140g",
+      "goods_price": 20.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "糕点/点心"
+    },
+    {
+      "goods_id": "61a0fe53f0d19400013acf7c",
+      "goods_name": "花漫棠芷 <梨容棠>上热下寒 少津虚火旺 铁皮石斛升降白茅根虚不受补 一月量【此规格为一周期】（30包，共600g）",
+      "goods_price": 229.0,
+      "brand_name": "花漫棠芷",
+      "goods_cat3": "代用/花草/水果/再加工茶"
+    },
+    {
+      "goods_id": "67bd92203298ba0001251f17",
+      "goods_name": "红豆薏米茶（不做“潮”人） 红豆薏米茶单盒",
+      "goods_price": 57.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "代用/花草/水果/再加工茶"
+    },
+    {
+      "goods_id": "68470872e17b8a00017e5afc",
+      "goods_name": "潮汕牛肉饭酱料潮汕沙茶酱商用 沙茶原味酱100克+腌肉粉",
+      "goods_price": 9.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "调味品/果酱/沙拉"
+    },
+    {
+      "goods_id": "681b10b270bae10001d7fb37",
+      "goods_name": "抹茶油柑薄荷茶·清爽解腻 减脂期饮品 代替咖啡 夏日冷泡茶 抹茶油柑薄荷茶1袋共10包",
+      "goods_price": 79.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "代用/花草/水果/再加工茶"
+    },
+    {
+      "goods_id": "67e7a635bf527d000106c39f",
+      "goods_name": "others 双鸡前掌门人！大酒风范！Olivier Leflaive蒙塔尼一级园霞多丽白 2022年份",
+      "goods_price": 618.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "66ba1b15a7c5830001307ba4",
+      "goods_name": "深山林下野生黄精传统九制泡茶泡水九蒸九晒无硫干货 九蒸九晒500g（野：有大有小）非独立装⚠️口感不统一、甜酸微苦",
+      "goods_price": 278.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "69e8658f9dea2d00013cbfd5",
+      "goods_name": "六堡·2010年木香六堡 自然生金花 木质香 药香 米汤感醇厚茶气足 40克试饮罐装",
+      "goods_price": 185.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "黑茶"
+    },
+    {
+      "goods_id": "69de2ada4dd26e00013c7ffa",
+      "goods_name": "农家自家柴火米•炒党•参 1瓶*110g（尝鲜装）",
+      "goods_price": 159.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "代用/花草/水果/再加工茶"
+    },
+    {
+      "goods_id": "655dfd9852ae0b0001f24696",
+      "goods_name": "纯粉八珍糕粉健康早餐养生零食春游零食推荐好吃春游零食 【白扁豆版】不甜，适合便便稀或正常 1袋【无买送】贵在运费",
+      "goods_price": 29.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "糕点/点心"
+    },
+    {
+      "goods_id": "651ebd27182a6f0001327b14",
+      "goods_name": "吴巧巧 无熏硫无染色自产自销枸杞子宁夏农家中宁红苟干产地直发 中果250克（250克/袋*1）（适合泡水干吃煲汤煮粥泡酒） 01款",
+      "goods_price": 29.0,
+      "brand_name": "吴巧巧",
+      "goods_cat3": "枸杞及其制品"
+    },
+    {
+      "goods_id": "69b9222423faf800010b9734",
+      "goods_name": "极盏 【四神升级】黄芪铁棍山药雪花片粉富硒猴头菇营养暖胃米稀250g [富硒]黄芪山药雪花片1盒(送一条免费试饮)",
+      "goods_price": 99.9,
+      "brand_name": "极盏",
+      "goods_cat3": "山药制品"
+    },
+    {
+      "goods_id": "6a139ea55bfaa60001df7847",
+      "goods_name": "海河 花色牛奶薄荷巧克力200ml*10",
+      "goods_price": 29.9,
+      "brand_name": "海河",
+      "goods_cat3": "乳制品"
+    },
+    {
+      "goods_id": "69a64d5fd3a26b000143825c",
+      "goods_name": "EarthPark 地球乐园口腔益生菌含片口气口臭清新净异味留香微泡片-尝鲜装",
+      "goods_price": 318.0,
+      "brand_name": "EarthPark",
+      "goods_cat3": "其他"
+    },
+    {
+      "goods_id": "69a941e24a353400017ecadc",
+      "goods_name": "禹鸿物予 商务礼「轻舟越重山」节日送领导嘉宾客户长辈答谢东方美学伴手礼 商务版-轻舟越重山-Y2",
+      "goods_price": 498.0,
+      "brand_name": "禹鸿物予",
+      "goods_cat3": "白茶"
+    },
+    {
+      "goods_id": "65965377847b9c0001f53c8c",
+      "goods_name": "水一方 0糖烤虾手扒烤虾仁虾干即食低脂零食办公室解馋追剧 0糖烤虾70g*1盒（不够吃）",
+      "goods_price": 79.9,
+      "brand_name": "水一方",
+      "goods_cat3": "鱿鱼丝/鱼干/海味即食"
+    },
+    {
+      "goods_id": "68f3045cae1c1700019d1fac",
+      "goods_name": "爱顿博格AnthonBerg青花汾酒酒心黑巧克力4/12支节日礼盒原装进口 青花汾酒酒心黑巧克力10支装*1盒",
+      "goods_price": 159.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "巧克力"
+    },
+    {
+      "goods_id": "69f856e343360b0001cfa6f1",
+      "goods_name": "朗姆酒心黑巧巴斯克.奥利奥熔岩巴斯克.香蕉黑巧巴斯克 奥利奥熔岩巧克力巴斯克",
+      "goods_price": 85.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "糕点/点心"
+    },
+    {
+      "goods_id": "69dc9f9e2a1f2000015ea190",
+      "goods_name": "others 勃艮第大火的Paul Pillot酒商酒Thierry Pillot Meursaul默尔索 Meursault 1Er Cru Porusot 2023",
+      "goods_price": 2880.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "67544697317fb100016034c5",
+      "goods_name": "端午滋补品礼盒见家长送长辈领导妈妈生日礼物父亲节礼物实用礼品",
+      "goods_price": 398.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其它传统滋补品"
+    },
+    {
+      "goods_id": "643e2ff1e3a0de00019fa6c9",
+      "goods_name": "左中塞外牧场 边角料半斤链接（八成干） 纯瘦边角料（原味半斤",
+      "goods_price": 64.0,
+      "brand_name": "左中塞外牧场",
+      "goods_cat3": "肉干/肉脯/卤味零食"
+    },
+    {
+      "goods_id": "66c841715c80460001ccfa83",
+      "goods_name": "全食物日记 有机紫苏籽油omega3欧米伽3低温冷榨紫苏油口服食用油250ml 250ml*1瓶【营养师推荐🏅小红薯热销2w瓶】",
+      "goods_price": 107.0,
+      "brand_name": "全食物日记",
+      "goods_cat3": "食用油/调味油"
+    },
+    {
+      "goods_id": "6666ee9ef7984c0001fe04ba",
+      "goods_name": "村驴家 超好吃的蜂蜜大冷面 四袋",
+      "goods_price": 27.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "方便速食/速冻食品"
+    },
+    {
+      "goods_id": "69f5aeed0511b500015c50ad",
+      "goods_name": "天晒 2026福鼎白茶荒野老树白牡丹王200克花香型毫香十足|送2份同款品 200克/罐（送2份同款品鉴装）",
+      "goods_price": 399.0,
+      "brand_name": "天晒",
+      "goods_cat3": "白茶"
+    },
+    {
+      "goods_id": "69e0562a26065b0001a6859f",
+      "goods_name": "米惦 马师傅的牛舌饼 软韧嚼劲微甜不腻传统手作闽式糕点休闲零食 180g 马师傅的牛舌饼 180g*1盒",
+      "goods_price": 28.9,
+      "brand_name": "米惦",
+      "goods_cat3": "糕点/点心"
+    },
+    {
+      "goods_id": "66b575ec52b3a10001f0b772",
+      "goods_name": "八锦养 八珍粉-党参八珍粉 脾胃代餐 山药党参鸡内金 体验装1盒",
+      "goods_price": 88.0,
+      "brand_name": "八锦养",
+      "goods_cat3": "食补粉粉"
+    },
+    {
+      "goods_id": "67e90ac9c90d830001c74972",
+      "goods_name": "正宗酸枣仁精选优质河北道地产区野生酸枣仁 精选酸枣仁50g",
+      "goods_price": 58.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "694554654423c30001a00acf",
+      "goods_name": "韩要强 现烤原味巴旦木香脆饱满500g 1袋",
+      "goods_price": 50.0,
+      "brand_name": "韩要强",
+      "goods_cat3": "山核桃/坚果/炒货"
+    },
+    {
+      "goods_id": "6a27add4d5e6e60001045fb3",
+      "goods_name": "【上新】非常难得 无比平衡老年份火山白 I Vigneri Aurora 2014",
+      "goods_price": 350.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "69b140253026640001f56faa",
+      "goods_name": "法式甜点达克瓦兹（一盒6种口味）精致下午茶甜点小零食 招牌推荐（一盒6颗）",
+      "goods_price": 188.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "糕点/点心"
+    },
+    {
+      "goods_id": "6879b3e8eab7930001182d6c",
+      "goods_name": "玫瑰油胶囊  口服玫瑰油胶囊  玫瑰油添加量8%  30粒一盒 老版玫瑰油胶囊 一盒",
+      "goods_price": 68.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其他"
+    },
+    {
+      "goods_id": "68a835a78f531300015685f1",
+      "goods_name": "SOILETA 苹果醋4.0-辣木锡兰肉桂西芹苦瓜7合1 无添加纯醋原浆直饮 1盒",
+      "goods_price": 99.0,
+      "brand_name": "SOILETA",
+      "goods_cat3": "藕粉/麦片/冲饮品"
+    },
+    {
+      "goods_id": "6814bc29c883af0001277a57",
+      "goods_name": "如慕令 【来财成双】东方0卡糖蛋糕-北京上海配送3小时到家-6环内包邮 6英寸 x 2（适合8-10人） 化妆盒款",
+      "goods_price": 738.0,
+      "brand_name": "如慕令",
+      "goods_cat3": "糕点/点心"
+    },
+    {
+      "goods_id": "69667d1a3db79c0001701173",
+      "goods_name": "OTHER 爆火黄吨吨！花果香四溢！意大利国民品牌喜乐滋Prosecco起泡酒 小支装！随行黄吨吨！（200ml）",
+      "goods_price": 120.0,
+      "brand_name": "OTHER",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6868ab9a0bb4080001e8ede8",
+      "goods_name": "此间有茶 「真」紫竹茶宪非遗传承人陈金信监制抹茶茶筅 此间·真 紫竹茶筅（陈金信监制款） 24小时发货",
+      "goods_price": 89.9,
+      "brand_name": "此间有茶",
+      "goods_cat3": "竹雕/竹制品"
+    },
+    {
+      "goods_id": "66b0bc32fa3aa40001ef66b5",
+      "goods_name": "（静萱茶事）2006年特级参香六堡茶老六250g/500g 广西梧州老六堡250g*1罐",
+      "goods_price": 880.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "黑茶"
+    },
+    {
+      "goods_id": "68fb1766ae1c170001e94896",
+      "goods_name": "尚恰 炭烤腰果新货A170大颗粒带皮紫衣盐焗腰果休闲坚果干果零食 【A170特大颗粒】独立小包装15g*10袋(尝鲜装/贵在运费)",
+      "goods_price": 39.9,
+      "brand_name": "尚恰",
+      "goods_cat3": "山核桃/坚果/炒货"
+    },
+    {
+      "goods_id": "63ef8c12aeac9800018308a0",
+      "goods_name": "野货 小土鳘赤嘴鱼胶（气皿） 190头 210头 厚肉小赤嘴炖汤炖牛奶 500g 小土鳘 大约210头",
+      "goods_price": 628.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "海鲜/水产品/制品"
+    },
+    {
+      "goods_id": "69d1232110b42d0001abc363",
+      "goods_name": "新西兰第三大酒庄马尔堡长相思白葡萄酒 1瓶",
+      "goods_price": 218.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6530c49278d70300015ee597",
+      "goods_name": "锋味派 爆汁虾肉肠儿童早餐虾肠空气炸锅烤肠半成品速食香肠 原味*1+辣味*1",
+      "goods_price": 119.0,
+      "brand_name": "锋味派",
+      "goods_cat3": "熏腊/香肠/火腿制品"
+    },
+    {
+      "goods_id": "6a264c0f14e0a00001634a26",
+      "goods_name": "遇减嗨吃粉堵嘴排（果泥升级版） 1盒7包（体验）",
+      "goods_price": 39.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "婴幼儿/儿童零食"
+    },
+    {
+      "goods_id": "682444b86aec030015270212",
+      "goods_name": "OTHER 意大利当代文艺复兴名庄・Amorotti Trebbiano Abruzzo 2023 2023年",
+      "goods_price": 419.0,
+      "brand_name": "OTHER",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "66befd2e4bd59d0001514daf",
+      "goods_name": "2025年茉说破茉莉熟茶三窨一提100g小罐#茉莉普洱茶 100g小罐装，散茶，搭一泡品鉴",
+      "goods_price": 99.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "普洱"
+    },
+    {
+      "goods_id": "67bda37af2389c0001a60e91",
+      "goods_name": "2026年新A180带皮碳烤熟腰果500克休闲零食酥脆烘焙干果 1袋",
+      "goods_price": 50.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "山核桃/坚果/炒货"
+    },
+    {
+      "goods_id": "67877b79e741df0001224da0",
+      "goods_name": "长白山5年西洋参花旗参片｜100克69｜不加蜜糖1.4纯软质纹路明显 【1.4 -1.6】｜100克瓶装｜随机赠品一份",
+      "goods_price": 98.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "参类滋补品"
+    },
+    {
+      "goods_id": "642a4b33e8e4fa00011fa243",
+      "goods_name": "风零+ 【特膳款】酸樱桃柠檬酸泡腾片【3.5g*20】片/盒 1盒20片（10天体验装）",
+      "goods_price": 168.0,
+      "brand_name": "风零+",
+      "goods_cat3": "功能性饮料"
+    },
+    {
+      "goods_id": "69a00639d5afea00013d34e5",
+      "goods_name": "侍酒猫 新派德国酒代表！德仙佳客酒庄干红葡萄酒 「香槟灵感 香气华丽有灵气」年华雷司令干白葡萄酒",
+      "goods_price": 468.0,
+      "brand_name": "侍酒猫",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "67a0e44ae437e40001cd561e",
+      "goods_name": "保证正宗的四川川贝母野生松贝 川贝3g体验装",
+      "goods_price": 29.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "686a387cc27dbc0001aea5f2",
+      "goods_name": "others 新荣记同款！WE百大Top1！意大利Nino Franco田园起泡葡萄酒",
+      "goods_price": 328.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6895b4f802d7b000016854fd",
+      "goods_name": "功夫爷爷·湿气拜拜茶炒熟祛薏米赤小豆茯苓芡实养生花茶湿茶330克 1罐330克",
+      "goods_price": 39.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "代用/花草/水果/再加工茶"
+    },
+    {
+      "goods_id": "68e3da3dc192ac000195ad94",
+      "goods_name": "非遗蒸制·酸枣仁灵芝黄精膏（野酸枣仁30%·纯草本·无蜂蜜麦芽糖） 1瓶*200g（体验装·不推荐）",
+      "goods_price": 189.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其他"
+    },
+    {
+      "goods_id": "653b795dfc9f6800013c2496",
+      "goods_name": "小羊森林 古方四神饮 改良儿童四神汤 养护脾宝 山药五指毛桃茯苓陈皮直饮 1盒",
+      "goods_price": 99.0,
+      "brand_name": "小羊森林",
+      "goods_cat3": "其它传统滋补品"
+    },
+    {
+      "goods_id": "669a2ebb3813ca000149a1ff",
+      "goods_name": "橘乡橘里JUXIANGJUL 正宗化州橘红片陈年老树正毛胎果原产地橘红官方旗舰店桔红养生茶 化州橘红30克",
+      "goods_price": 58.0,
+      "brand_name": "橘乡橘里JUXIANGJUL",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "678a4c5c29b9f70001cb504b",
+      "goods_name": "麦卡伦 精粹2021年/2022年/2023年/2024年限量版苏格兰单一麦芽威士忌 精粹2024年",
+      "goods_price": 888.0,
+      "brand_name": "麦卡伦",
+      "goods_cat3": "洋酒"
+    },
+    {
+      "goods_id": "655c6dde52ae0b00019e0f21",
+      "goods_name": "【618】沙棘冻干粉全面调理新疆产地直发 200g/罐FD冻干 1罐",
+      "goods_price": 89.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "690eefca9de01f00011c2285",
+      "goods_name": "格格茶一代·<纯钛保温杯>天沏里外纯钛保温杯 多款 冷泡瓶 定制款 杯茶组合：山茶花银色纯钛吸管杯（350ml）+￥78白娘子白茶",
+      "goods_price": 338.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "杯子/水杯/水壶"
+    },
+    {
+      "goods_id": "68a936c6f38f9700019d564a",
+      "goods_name": "爆款超干肥瘦（非脆、不退换看好再买，冷冻保存切记下单看详情） 150克原味（尝鲜装）",
+      "goods_price": 64.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "肉干/肉脯/卤味零食"
+    },
+    {
+      "goods_id": "69ba5f56180bf40001b7165d",
+      "goods_name": "法国Mon P'tit Truffe白松露布里奶酪135g·奶油系软奶酪爆浆流心 135g/个",
+      "goods_price": 90.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "奶酪/乳制品"
+    },
+    {
+      "goods_id": "64c8b8cdc9f72f000119e59e",
+      "goods_name": "颐之宜 当归川芎白芍地黄黄芪 四物汤 红润不上火 无熏硫 尝鲜装：四物汤5包/袋（赠红糖）",
+      "goods_price": 88.0,
+      "brand_name": "颐之宜",
+      "goods_cat3": "代用/花草/水果/再加工茶"
+    },
+    {
+      "goods_id": "66bda0eb5a1fe600014beea6",
+      "goods_name": "葡萄酒小皮 阿玛罗尼！意大利维罗纳干红葡萄酒（2015老年份！浓缩又甜美~） 单支装",
+      "goods_price": 298.0,
+      "brand_name": "葡萄酒小皮",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "68cd002d9c4f880001e50b30",
+      "goods_name": "FREPPY 超高性价比自然酒！冻柠乌龙 马家婆干白葡萄酒橙酒 红葡萄酒 【黄杏冰话梅】维奥尼干白",
+      "goods_price": 218.0,
+      "brand_name": "FREPPY",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "62a8b9ffb0be56000129e640",
+      "goods_name": "OTHER 柑橘奶油蛋糕卷！丰润饱满！独角兽儒乐之日普依富赛霞多丽干白 2021年份",
+      "goods_price": 900.0,
+      "brand_name": "OTHER",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "68fcf89a0dfa75000108143d",
+      "goods_name": "格格茶一代·<2010暖堡堡>老六堡 暖甜 六堡茶 老茶头 闷着更好喝 100g圆罐装",
+      "goods_price": 128.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "黑茶"
+    },
+    {
+      "goods_id": "691ab72260f59700016d9015",
+      "goods_name": "馒头超人 【管理期主食】轻卡优碳之选.老面馒头. 自律期推荐 青稞燕麦+每日黑养+老南瓜+老八谷（到手4袋共1680克）",
+      "goods_price": 79.9,
+      "brand_name": "馒头超人",
+      "goods_cat3": "方便速食/速冻食品"
+    },
+    {
+      "goods_id": "658ac8e7ea7a0900019dd3e8",
+      "goods_name": "珍酒 珍三十53度酱香型白酒500ml礼盒装原盒原码包装 1瓶装",
+      "goods_price": 630.0,
+      "brand_name": "珍酒",
+      "goods_cat3": "白酒"
+    },
+    {
+      "goods_id": "6437afbfbb937a0001e8c48b",
+      "goods_name": "燕鸣春 中科溯源印尼燕窝 干挑大盏中盏 100克 （干净度98 不用挑毛） 土豪VIP干挑中盏100克",
+      "goods_price": 3000.0,
+      "brand_name": "燕鸣春",
+      "goods_cat3": "燕窝滋补品"
+    },
+    {
+      "goods_id": "6780e138b1ef540001b3fed5",
+      "goods_name": "韩要强 原味烤芒果干250克【无额外添加剂】 1袋",
+      "goods_price": 50.0,
+      "brand_name": "韩要强",
+      "goods_cat3": "蜜饯/枣类/梅/果干/冻干"
+    },
+    {
+      "goods_id": "67f74726e8f2430001c71637",
+      "goods_name": "札萨 【一根黑牛】油脂醇香无添加牛肉干健康零食!盒子破损不售后s 1盒",
+      "goods_price": 69.8,
+      "brand_name": "札萨",
+      "goods_cat3": "肉干/肉脯/卤味零食"
+    },
+    {
+      "goods_id": "63a3e8f74596520001945b39",
+      "goods_name": "OTHER 喝到一整颗柚子！稍喜柚子酒2.0！古法无添加低度数微醺糯米果酒 稍喜柚子酒 495ml（礼盒装）",
+      "goods_price": 139.0,
+      "brand_name": "OTHER",
+      "goods_cat3": "露酒/果酒"
+    },
+    {
+      "goods_id": "69a2a460e6346f0001003154",
+      "goods_name": "香槟省钱大法！法国Deguerne奥岚酒庄一级园小农香槟合集 一级园 | 精选香槟",
+      "goods_price": 319.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "65a647f981136200016b605b",
+      "goods_name": "高端小月子调理套餐｜小月子水｜小月子粥小月子汤艾灸泡脚全配齐 28天小月子水＋月子粥＋月子汤＋2盒泡脚包（配齐四宝款）",
+      "goods_price": 1029.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其它传统滋补品"
+    },
+    {
+      "goods_id": "69daebac98fb930001dee67f",
+      "goods_name": "【轻松又严肃】阿尔萨斯自然派 Rietsch/Julien Meyer/Brand Fils 【陈年雷魅力】Brand & Fils La Chimère（多年份混）",
+      "goods_price": 320.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "66597c93a29a700001c55aa1",
+      "goods_name": "V&C 博纳佰馥酒庄系列干红葡萄酒 博纳佰馥2022",
+      "goods_price": 659.0,
+      "brand_name": "V&C",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6823606ff073650015dc178c",
+      "goods_name": "2025年凤凰单丛贡茗春宋种黄枝香50g|高海拔中高火 50g*1罐（搭品鉴一泡）",
+      "goods_price": 129.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "乌龙茶"
+    },
+    {
+      "goods_id": "645a38c9301a420001b2fe37",
+      "goods_name": "妈妈很忙 手工桑葚核桃糕250g 酸甜软糯 1盒用料150颗新鲜桑葚 1盒",
+      "goods_price": 59.9,
+      "brand_name": "妈妈很忙",
+      "goods_cat3": "糕点/点心"
+    },
+    {
+      "goods_id": "64c8b4acba3ef20001de7df1",
+      "goods_name": "V&C 卡慕父子夏姆香贝丹(Charmes Chambertin)特级园(GrandCru)1997年 1997年份(750ml)",
+      "goods_price": 928.0,
+      "brand_name": "V&C",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "69f3271e30d0860001e91013",
+      "goods_name": "向往一杯｜敦煌杏皮话梅茉莉茶 身材管理 大餐伴侣清爽解腻 【大餐救星】杏皮茉莉话梅茶10包",
+      "goods_price": 60.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "代用/花草/水果/再加工茶"
+    },
+    {
+      "goods_id": "666417f71f01820001442960",
+      "goods_name": "6月14日出山秦岭树洞草药苦蜂蜜液态蒲公英黄连微苦排d抗焱巨猛 2斤苦蜜（罕见蜜建议囤）液态",
+      "goods_price": 170.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "蜂产品"
+    },
+    {
+      "goods_id": "65618f30d28d5d00018d3186",
+      "goods_name": "X-it 冰咖啡糖浓香丝滑香润糖开车加班犯困维c清凉咖啡糖88g/盒B 【两盒装】176g 88g",
+      "goods_price": 69.9,
+      "brand_name": "X-it",
+      "goods_cat3": "其他"
+    },
+    {
+      "goods_id": "69f46bab0511b5000145056c",
+      "goods_name": "2025年国平黄栀香丨名丛系列 潮州凤凰单丛茶 30g",
+      "goods_price": 1880.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "乌龙茶"
+    },
+    {
+      "goods_id": "633e49e23dba740001c0d547",
+      "goods_name": "玉黍生 逍遥膏丨疏甘养甘膏 肝郁脸黄焦虑全走开 佛手麦芽玫瑰270g/瓶 1瓶装",
+      "goods_price": 143.0,
+      "brand_name": "玉黍生",
+      "goods_cat3": "其它传统滋补品"
+    },
+    {
+      "goods_id": "63c4fc067f905b000155bb1a",
+      "goods_name": "沱牌 老款t68酒45度480ml整箱六瓶装",
+      "goods_price": 368.0,
+      "brand_name": "沱牌",
+      "goods_cat3": "白酒"
+    },
+    {
+      "goods_id": "6880db71a7c1e3000104ce2b",
+      "goods_name": "法国Le Sapin du Haut-Doubs上杜冷杉奶酪·松木香银奖奶酪250g",
+      "goods_price": 155.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "奶酪/乳制品"
+    },
+    {
+      "goods_id": "6a181eb6df36740001b84225",
+      "goods_name": "苏农科JAAS 【农科院的端午礼盒】端午送礼选农科院 健康好吃有面子 农科院的端午礼盒",
+      "goods_price": 257.0,
+      "brand_name": "苏农科JAAS",
+      "goods_cat3": "蜜饯果干"
+    },
+    {
+      "goods_id": "68145d83cd029e0001e1c88b",
+      "goods_name": "川派古法乌梅膏 |真9种食材真古法熬制烟熏乌梅乌梅膏上热下寒上 乌梅膏1瓶（尝鲜装10%的选择）",
+      "goods_price": 178.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "6809cf80348fcf000194d015",
+      "goods_name": "Baratti & Milano 【意大利原装进口】10种口味经典系列袋装巧克力 进口 零食伴手礼 黑巧风味吉安杜佳200g",
+      "goods_price": 170.0,
+      "brand_name": "Baratti & Milano",
+      "goods_cat3": "巧克力"
+    },
+    {
+      "goods_id": "69b79356e175160001a9a143",
+      "goods_name": "面包界顶流 越嚼越香早餐必备 【江浙沪皖专拍 满68包邮 拍4送2】 巴斯克吐司",
+      "goods_price": 40.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "面包"
+    },
+    {
+      "goods_id": "6a03fd11a7aa180001d74841",
+      "goods_name": "旺旺 旺趣时光戳戳乐零食礼盒 内含送快车模型盲袋520儿童节送礼 旺趣时光戳戳乐零食礼盒",
+      "goods_price": 59.9,
+      "brand_name": "旺旺",
+      "goods_cat3": "饼干/膨化"
+    },
+    {
+      "goods_id": "67ff1088ec1374000135b9b1",
+      "goods_name": "合为养 黄精桑葚膏 | 熬夜党常备 | 养生膏 黄精桑葚膏1罐",
+      "goods_price": 238.0,
+      "brand_name": "合为养",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "65e74507a03c0d000122f5e5",
+      "goods_name": "龙府井 2026新茶头采特级明前龙井43送长辈送领导绿茶叶礼盒（一揽春巅） 高端陶瓷半斤礼盒装（送长辈领导高档送礼首选）",
+      "goods_price": 750.0,
+      "brand_name": "龙府井",
+      "goods_cat3": "绿茶"
+    },
+    {
+      "goods_id": "68cbf0b9e8b4ad0001748e2d",
+      "goods_name": "TOMIC·<保温杯>特美刻 认准授权 陶瓷内胆 纯钛茶隔 杯茶组合:薄荷绿陶瓷涂层560ml+￥78稻花香+￥98如意小萌饼送背带",
+      "goods_price": 359.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "杯子/水杯/水壶"
+    },
+    {
+      "goods_id": "662f5c2f3bf0c50001494f31",
+      "goods_name": "So Acai 悦养种子组合种子循环健康有机南瓜籽亚麻籽葵花籽芝麻冲饮谷物 【三盒一个周期，赠粉色摇摇杯】悦养种子组合*3盒",
+      "goods_price": 384.0,
+      "brand_name": "So Acai",
+      "goods_cat3": "UNKNOWN"
+    },
+    {
+      "goods_id": "6708cde930fccd0001d7892d",
+      "goods_name": "木执 玫瑰精油 抗皱精油 5%单方精油含量 3瓶",
+      "goods_price": 660.0,
+      "brand_name": "木执",
+      "goods_cat3": "精油芳疗"
+    },
+    {
+      "goods_id": "66f8ca842c57110001a7f25b",
+      "goods_name": "麦卡伦 臻味可可臻味不凡系列第一版单一麦芽苏格兰威士忌",
+      "goods_price": 2999.0,
+      "brand_name": "麦卡伦",
+      "goods_cat3": "洋酒"
+    },
+    {
+      "goods_id": "67204f8075e23c000141137d",
+      "goods_name": "溯源码燕窝 25克体验 马来燕窝100克/盒 印尼干挑燕条 一盏一码 印尼 升级特大燕条 25克 体验装",
+      "goods_price": 328.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其它传统滋补品"
+    },
+    {
+      "goods_id": "6490240031f0c000013ff200",
+      "goods_name": "手工草编蒲扇 端午扇子灯芯草编织 夏日驱蚊纳凉手摇扇蒲扇 八角金盘·草编蒲扇",
+      "goods_price": 78.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "折扇/团扇/扇子"
+    },
+    {
+      "goods_id": "683eb28ff9ad0500013b93d6",
+      "goods_name": "2020年 | 白莺山（妙月清禅）| 古树普洱生茶 | 357克茶饼 妙月清禅-普洱生茶357克【1饼】",
+      "goods_price": 325.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其他"
+    },
+    {
+      "goods_id": "6805d83d382e17000105e2cd",
+      "goods_name": "葡萄酒小皮 经典基安蒂的大龙Soldera！意大利克莱尼庄园独眼龙干红葡萄酒 2022年份",
+      "goods_price": 748.0,
+      "brand_name": "葡萄酒小皮",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "695a2042ac83a2000113d570",
+      "goods_name": "玫瑰暖茶 玫瑰花瓣茶 发酵茶 试喝装20克",
+      "goods_price": 39.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "代用/花草/水果/再加工茶"
+    },
+    {
+      "goods_id": "694a2a5e1224b700017a9659",
+      "goods_name": "TABB 【爱尔兰鹿角兔金酒】鹿角兔 无花果限定款！蜜桃成精！可选礼盒 【精致3支装小酒版】鹿角兔经典风味mini3支礼盒装",
+      "goods_price": 249.0,
+      "brand_name": "TABB",
+      "goods_cat3": "洋酒"
+    },
+    {
+      "goods_id": "6824625a529cff00015d47a8",
+      "goods_name": "麦卡伦 12年雪莉桶苏格兰单一麦芽威士忌700mlMACALLAN 麦卡伦12年双雪莉桶【蓝钻】700ml",
+      "goods_price": 800.0,
+      "brand_name": "麦卡伦",
+      "goods_cat3": "洋酒"
+    },
+    {
+      "goods_id": "648964eb14c5df00018ce29a",
+      "goods_name": "妈妈很忙 西梅干450g 高纤维0添加蔗糖 软糯去核 西梅干1袋",
+      "goods_price": 69.0,
+      "brand_name": "妈妈很忙",
+      "goods_cat3": "蜜饯/枣类/梅/果干/冻干"
+    },
+    {
+      "goods_id": "69fabc56294caa0001a289a1",
+      "goods_name": "猿小姐 颜值控的天选之作 Black Tower德国黑塔秋花混酿半甜白葡萄酒",
+      "goods_price": 78.0,
+      "brand_name": "猿小姐",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6603c964f8b8cd00018dfaa5",
+      "goods_name": "家乡古月四神汤汤包茶包怀山药茯苓芡实莲子 无硫 四神汤一份40克×13包共520克",
+      "goods_price": 78.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "代用/花草/水果/再加工茶"
+    },
+    {
+      "goods_id": "64084639de43910001417537",
+      "goods_name": "三家村 九黑坚果纯藕粉九白坚果杏仁黑芝麻核桃黑八珍藕粉西湖藕粉羹早餐 【以黑养黑】九黑坚果藕粉500g",
+      "goods_price": 69.9,
+      "brand_name": "三家村",
+      "goods_cat3": "藕粉/麦片/冲饮品"
+    },
+    {
+      "goods_id": "6939338065055f00014ee55b",
+      "goods_name": "梅子箐森林白茶小方糖/熟果甜香/花蜜香18片/盒",
+      "goods_price": 128.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "白茶"
+    },
+    {
+      "goods_id": "67e03461e317a3000187ba20",
+      "goods_name": "老式酸甜口东北冷面 配料表很干净 7包装 7包装（酸甜咸口味）",
+      "goods_price": 31.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "方便速食/速冻食品"
+    },
+    {
+      "goods_id": "668f4d7f7221e10001597c15",
+      "goods_name": "福建建宁莲子干货精选通芯白莲手工去芯粉糯一煮即粉无硫磺 建宁新莲子95%通芯率250g",
+      "goods_price": 50.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "干货/土特产"
+    },
+    {
+      "goods_id": "67f8e4d104afe30001d8f58a",
+      "goods_name": "AvoPCOS 爱沃健康藻蓝蛋白丝绒BlueHour晚安奶藻蓝蛋白酸枣仁睡前牛乳 高品质·1盒/12条",
+      "goods_price": 82.0,
+      "brand_name": "AvoPCOS",
+      "goods_cat3": "藕粉/麦片/冲饮品"
+    },
+    {
+      "goods_id": "69d724c9b4722c0001a26c79",
+      "goods_name": "企鹅市集 冈山县御前酒藏 菩提酛 纯米酒微浊酒清酒 青提白桃酒酿 720ml",
+      "goods_price": 288.0,
+      "brand_name": "企鹅市集",
+      "goods_cat3": "清酒/烧酒"
+    },
+    {
+      "goods_id": "66096be6d391df000194fa15",
+      "goods_name": "谷味田 2025新米上市 东北五常大米 龙凤山原粮稻花香2号 真空包装 五常大米真空包装5kg*1袋 真空包装",
+      "goods_price": 89.8,
+      "brand_name": "谷味田",
+      "goods_cat3": "米/面粉/杂粮"
+    },
+    {
+      "goods_id": "692685759562430001421b70",
+      "goods_name": "真方心【港太推荐】製桑寄生 300g（8两）",
+      "goods_price": 336.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "67ea2441bf527d00011ec652",
+      "goods_name": "正三门土鳘公14头 48头 野生土鳘赤嘴公胶 赤嘴鳘鱼胶 双层肉厚肉 45头 土鳘公 250g",
+      "goods_price": 1518.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其它传统滋补品"
+    },
+    {
+      "goods_id": "69fc0e8f98ac430001e9dc9d",
+      "goods_name": "沙棘畅清红宝石 沙棘清肠油  2粒*15板/盒 1盒",
+      "goods_price": 199.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "683ebc374bb02800018f141e",
+      "goods_name": "others Noma米其林同款绝境诞生大漠之花霞多丽Tara Atacama Chardonnay",
+      "goods_price": 499.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "68285b8d82d86e000171942c",
+      "goods_name": "【送手提袋】上海国际饭店蝴蝶酥礼盒伴手礼饼干特产铁盒小蝴蝶酥 新款咖啡蝴蝶酥伴手礼",
+      "goods_price": 258.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "糕点/点心"
+    },
+    {
+      "goods_id": "64741dcfd171fa00018347cb",
+      "goods_name": "林间盏 玫瑰草本膏丨温润滋养丨关心在下 悉心温养 【1瓶】1月量 | 基础养",
+      "goods_price": 198.0,
+      "brand_name": "林间盏",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "6a227f570871190001e77581",
+      "goods_name": "桑葚玫瑰蜜漂亮蜜｜花青素、维C、｜开封不退换，介意勿拍哟 116g桑葚玫瑰果蜜试吃 洋槐蜜泡的哦",
+      "goods_price": 25.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "蜂产品"
+    },
+    {
+      "goods_id": "66725a71646d150001244e2b",
+      "goods_name": "【深山野麦冬-不熏硫不添加】可搭配黄芪泡水炖汤滋补干货麦冬茶 无硫野麦冬【250克/半斤】",
+      "goods_price": 68.8,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其它传统滋补品"
+    },
+    {
+      "goods_id": "66f549a69cb1040001714c6f",
+      "goods_name": "Joshy's wine 「大金杯」 上夜丘 Gros F & S干白葡萄酒 2022/2023/2024 2022",
+      "goods_price": 718.0,
+      "brand_name": "Joshy's wine",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "69cf8634069e7b00017f1f9d",
+      "goods_name": "【基地半手工】2026明前龙井43绿茶兰花香型50克罐装 50g（50g*1罐）",
+      "goods_price": 108.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "绿茶"
+    },
+    {
+      "goods_id": "67569fc3eb35d70001d22fd7",
+      "goods_name": "南食召 本鲜鸡汁(鸡汁调味料) 简单配料 无防腐剂家用调味料鸡汁 本鲜鸡汁（318g*1瓶）",
+      "goods_price": 29.75,
+      "brand_name": "南食召",
+      "goods_cat3": "调味品/果酱/沙拉"
+    },
+    {
+      "goods_id": "6538bbbe236b460001d0ee76",
+      "goods_name": "Mikiko娃娃脸老奶油蛋糕（白脱硬奶油）ButterCream 1号",
+      "goods_price": 52.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "低温糕点"
+    },
+    {
+      "goods_id": "67f600b31899f10001ad7bc8",
+      "goods_name": "5+5 泡脚包（荷叶包加快代谢垃圾）",
+      "goods_price": 69.0,
+      "brand_name": "5+5",
+      "goods_cat3": "足部护理"
+    },
+    {
+      "goods_id": "65fbb8090dd1aa000110abbc",
+      "goods_name": "景尚铭品 有机五常大米ORGANIC RICE 新米稻花香2号【顺丰|德邦送货上门】 5斤",
+      "goods_price": 129.0,
+      "brand_name": "景尚铭品",
+      "goods_cat3": "米/面粉/杂粮"
+    },
+    {
+      "goods_id": "677a4c5dfb112c0001b0e66e",
+      "goods_name": "格格茶一代·<稻花香六堡> 粮食香 糯米香 糯滑 黑茶  新手六堡茶 2010稻花香2.0版本，50g品鉴装",
+      "goods_price": 98.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "黑茶"
+    },
+    {
+      "goods_id": "6a23b7152c7daf0001a4d0cc",
+      "goods_name": "全食物日记 有机紫苏籽油250mL低温冷榨 250mL*1瓶",
+      "goods_price": 79.0,
+      "brand_name": "全食物日记",
+      "goods_cat3": "食用油/调味油"
+    },
+    {
+      "goods_id": "651195f57d86b000015d3c98",
+      "goods_name": "天然靓货桃胶人工精修剪正宗桃胶干净无杂质可搭配云南雪燕皂角米 人工精修无杂质中颗粒500g",
+      "goods_price": 69.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其它传统滋补品"
+    },
+    {
+      "goods_id": "68d218a99479760001439530",
+      "goods_name": "Baratti & Milano 【意大利原装进口】经典袋装糖果 水果硬糖/果汁软糖/夹心糖/柠檬 柠檬利口酒夹心糖 200g",
+      "goods_price": 96.0,
+      "brand_name": "Baratti & Milano",
+      "goods_cat3": "其他"
+    },
+    {
+      "goods_id": "6a0c4d0f1123b90001738114",
+      "goods_name": "Joshy's wine 「上新」PYCM「白葡世家」上伯恩丘 世界尽头 干白葡萄酒 2023 2023",
+      "goods_price": 1038.0,
+      "brand_name": "Joshy's wine",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "66b9ea66a7c58300012f0bf0",
+      "goods_name": "GLENALLACHIE 格兰纳里奇12年三桶桶强/13年酒厂限定苏格兰威士忌 格兰纳里奇12年三桶桶强700ml单支",
+      "goods_price": 1020.0,
+      "brand_name": "GLENALLACHIE",
+      "goods_cat3": "洋酒"
+    },
+    {
+      "goods_id": "6a046ea90283e20001cf16d0",
+      "goods_name": "麦小年 荔枝酥 进口安佳黄油  伯爵红茶 中式糕点茶点零食广东手信伴手礼 岭南手信|荔枝酥【1盒装6枚】",
+      "goods_price": 59.9,
+      "brand_name": "麦小年",
+      "goods_cat3": "糕点/点心"
+    },
+    {
+      "goods_id": "6a02f6d264eb41000158774e",
+      "goods_name": "others 蓝莓、樱桃酒 卡沙-奥奎丹酒庄科通韦尔根斯独占特级园 2014 2014",
+      "goods_price": 1799.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6861fff28b7d6f0001642b59",
+      "goods_name": "劲家庄 【喝1个月见效】有机枸杞原浆滋补养生宁夏枸杞认准NFC鲜果原液 【尝鲜装】小盒到手5袋",
+      "goods_price": 29.9,
+      "brand_name": "劲家庄",
+      "goods_cat3": "枸杞及其制品"
+    },
+    {
+      "goods_id": "631808956e29da000146ccbf",
+      "goods_name": "买2送1，买3送3！CCTV《中国三农报道》李景秀蜂蜜5周年店庆！ 槐花蜜",
+      "goods_price": 85.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "蜂产品"
+    },
+    {
+      "goods_id": "6a0c01ede1e1370001ef5af5",
+      "goods_name": "【上新】小众中的小众 葡萄牙火山白 Maçanita Verdelho 2022 【高酸高矿】Verdelho Original 2022",
+      "goods_price": 390.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "66b830e710abf700016d9689",
+      "goods_name": "必乐betale 增重大师｜增肥增胖饮品瘦人长胖瘦子增重食品蛋白质长肉男生女生 15瓶【效果一般】尝鲜装 香蕉味",
+      "goods_price": 289.0,
+      "brand_name": "必乐betale",
+      "goods_cat3": "藕粉/麦片/冲饮品"
+    },
+    {
+      "goods_id": "6983142d1b200000011ce620",
+      "goods_name": "others JPG Jean Pierre Guyon Vosne-Romanée沃恩罗曼尼村 Vosne-Romanée沃恩罗曼尼村2023",
+      "goods_price": 2480.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "66b9d29f251fc90001833164",
+      "goods_name": "others Lustau卢士涛雪莉酒 | 西班牙Fino Oloroso PX Sherry调酒调饮 东印度索雷拉雪莉酒（500ml*单瓶）",
+      "goods_price": 316.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "64c3a36ed664f500012e195e",
+      "goods_name": "【护胃队】纯怀山药粉（熟）一斤现磨现发0添加，记得放冰箱 一斤纯怀山药粉（山药原味口味一般）",
+      "goods_price": 88.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "山药制品"
+    },
+    {
+      "goods_id": "675a7518eb35d70001ea4e36",
+      "goods_name": "others 送酒刀！世界Top 1餐厅Noma同款！奥地利之光·安多芬小花安娜绿 「绿苹果青柠白花蜜」安多芬·绿威林干白🍏",
+      "goods_price": 298.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6a1800269a00d300014de25b",
+      "goods_name": "武夷岩茶 ｜永乐天阁｜武夷山老品牌 【红罐】大红袍60克1罐【不带茶样】",
+      "goods_price": 130.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "乌龙茶"
+    },
+    {
+      "goods_id": "6706a90b4cd28900010961e6",
+      "goods_name": "gurunie咕噜妮烘焙 咕噜爺研发【米麴恰巴塔 】独家天然酵母 创新发酵手作高含水面包 6个/箱 700g【尝鲜装】约120g/个",
+      "goods_price": 75.0,
+      "brand_name": "gurunie咕噜妮烘焙",
+      "goods_cat3": "面包"
+    },
+    {
+      "goods_id": "67d2a743bb9b9d000165f566",
+      "goods_name": "others 【名家长相思】超清爽！派迪云雾之湾卡特琳娜长相思干白葡萄酒！ 【口粮战斗机】卡特琳娜+派迪+众意+啵啵鸟",
+      "goods_price": 444.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "67ee002d5d35ce00017e55e5",
+      "goods_name": "福建霞浦特产海带头干货炒菜煲汤炖汤鲜香味美口感软糯干净无沙 【50g*3袋 家庭尝鲜装】精选二级海带头",
+      "goods_price": 59.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "海鲜/水产品/制品"
+    },
+    {
+      "goods_id": "69a3fd919069530001a83651",
+      "goods_name": "颐之 2026一马当先｜品鉴系列 潮州乌岽凤凰单丛茶 蜜香、花香、果香 50g",
+      "goods_price": 318.0,
+      "brand_name": "颐之",
+      "goods_cat3": "乌龙茶"
+    },
+    {
+      "goods_id": "67038e8194f7580001e18993",
+      "goods_name": "X-it 无糖冰黑咖啡糖浓香丝滑香润糖开车加班犯困维c咖啡糖98g/盒B 【70%甄选分享装】无糖冰咖啡糖98g*3盒",
+      "goods_price": 109.9,
+      "brand_name": "X-it",
+      "goods_cat3": "其他"
+    },
+    {
+      "goods_id": "69c0fccad6abc60001bfbb41",
+      "goods_name": "无聊的瓶子 大红袍/金观音康普茶益生菌发酵气泡茶饮料配料干净6瓶 【9月到期】大红袍康普茶230ml*6瓶",
+      "goods_price": 126.0,
+      "brand_name": "无聊的瓶子",
+      "goods_cat3": "饮料"
+    },
+    {
+      "goods_id": "697b0deb9814200001af06cc",
+      "goods_name": "others 奶油爆米花小科奇 单一园皮耶布神勃艮第上伯恩丘皮耶之路 2023 2023",
+      "goods_price": 599.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6765290b5677c9000130f2ce",
+      "goods_name": "【无花果干】无硫熏｜无腌糖｜开口 500g黄粉心（邮费贵，不推荐）",
+      "goods_price": 89.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "蜜饯/枣类/梅/果干/冻干"
+    },
+    {
+      "goods_id": "6a02f997273c7d00011416c7",
+      "goods_name": "布赫拉迪 【微物源单桶系列】苏格兰单一麦芽威士忌700ml【全威派行货】 布赫拉迪微物源单桶系列【#1226】700ml",
+      "goods_price": 1330.0,
+      "brand_name": "布赫拉迪",
+      "goods_cat3": "洋酒"
+    },
+    {
+      "goods_id": "66d6cee840e2bf000172f77b",
+      "goods_name": "有悦 水润护眼穴润目贴润眼贴 6大草本水润润小鹿眼60贴 清凉醒神缓解 1盒/60贴（体验装）",
+      "goods_price": 47.5,
+      "brand_name": "有悦",
+      "goods_cat3": "眼部健康用品"
+    },
+    {
+      "goods_id": "69b671ae3eb2480001f205e0",
+      "goods_name": "others 奶油香草冰淇淋！小Coche Dury！皮耶碧仙马贡沼泽村圣皮尔园干白 2021年份",
+      "goods_price": 425.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "69202d5814b5260001e4e0c6",
+      "goods_name": "TABB 液体白色恋人，爱尔兰库尔天鹅金奖白巧奶油利口酒（有礼袋） 爱尔兰库尔天鹅金奖白巧奶油酒（正装，有礼袋不含礼盒）",
+      "goods_price": 369.0,
+      "brand_name": "TABB",
+      "goods_cat3": "其他酒"
+    },
+    {
+      "goods_id": "6847915b9d4a550001abacd8",
+      "goods_name": "others 《神之水滴》同款！意大利Velenosi酒庄罗鸠红葡萄酒合集 【《神水》同款】罗鸠（2021年）",
+      "goods_price": 325.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "690ef9db1b78790001a6ca79",
+      "goods_name": "一山一禾 五指毛桃舒湿茶西洋参赤小豆芡实山药茯苓祛湿茶包有湿气养生茶包 五指毛桃舒湿茶一盒【28g*12包 远离湿重】",
+      "goods_price": 99.9,
+      "brand_name": "一山一禾",
+      "goods_cat3": "代用/花草/水果/再加工茶"
+    },
+    {
+      "goods_id": "662a578a9caea10001a3c3c1",
+      "goods_name": "糯米茶酿！窨制工艺！糯米香十足又甜又香云南无量山古树窨制 糯米红小罐66克",
+      "goods_price": 179.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "普洱"
+    },
+    {
+      "goods_id": "69aa93b3befcbd0001b3ad8c",
+      "goods_name": "合为养 紫苏艾草按摩精油 砭石刮痧推背揉腹  全身推拿揉腹精油 30ml*1瓶",
+      "goods_price": 298.0,
+      "brand_name": "合为养",
+      "goods_cat3": "身体护理"
+    },
+    {
+      "goods_id": "66b9b2866bf36b0001896b63",
+      "goods_name": "道地生酸枣仁炒熟打粉保真不掺假颗颗饱满煮水泡茶100g 试吃装100g 颗粒饱满好货，推荐一次拍两罐100克有满减，更划算",
+      "goods_price": 179.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "62b521677708440001b993a7",
+      "goods_name": "林间盏 【品牌主推】黄精桑葚膏丨夜班一杯丨九制黄精 【1瓶】1月量 | 基础养",
+      "goods_price": 198.0,
+      "brand_name": "林间盏",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "68726885f7fa4e0001d56970",
+      "goods_name": "others 勃艮第名庄Olivier Leflaive奥丽弗拉弗拉维庄园蒙塔尼一级园干白",
+      "goods_price": 499.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6502dfa15013b90001c7db30",
+      "goods_name": "黑皮诺合集！入门到精通 法国、德国、澳洲、瑞士、南非、智利 瑞士哲马酒庄富西奥黑比诺干红",
+      "goods_price": 368.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "69c9fe6f4ae1e70001919e9f",
+      "goods_name": "企鹅市集 月山清酒 最新限定innovation系列citrus纯米吟酿 柚子柑橘 720ml",
+      "goods_price": 298.0,
+      "brand_name": "企鹅市集",
+      "goods_cat3": "清酒/烧酒"
+    },
+    {
+      "goods_id": "69dd19a02a1f2000016bdee4",
+      "goods_name": "others 大Q此生必喝Quintarelli Amarone Classico 经典阿玛罗尼干红2018 大Q本Q Amarone Classico",
+      "goods_price": 3699.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "67b71d23eef182000136f0a2",
+      "goods_name": "SUPERICH 【双喜临门】火锅喜糖「富得牛油」/婚礼伴手礼/两颗装50克*2 9月10日可拍！补货中！！此链接勿拍，展示用",
+      "goods_price": 19.9,
+      "brand_name": "SUPERICH",
+      "goods_cat3": "调味品/果酱/沙拉"
+    },
+    {
+      "goods_id": "69e0c4e74dd26e000165441b",
+      "goods_name": "【村长助农】秦岭深山野生羊肚菌自然晾晒山珍美味营养丰富 100克（纯野生羊肚菌）",
+      "goods_price": 268.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "干货/土特产"
+    },
+    {
+      "goods_id": "64d1c470851fb10001d4a3ee",
+      "goods_name": "美猪优选 红豆薏米茶-无湿一身轻 1盒",
+      "goods_price": 54.0,
+      "brand_name": "美猪优选",
+      "goods_cat3": "代用/花草/水果/再加工茶"
+    },
+    {
+      "goods_id": "6650a724c0d6440001319780",
+      "goods_name": "参芪苹果饮（找回高光时的气色）",
+      "goods_price": 69.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "代用/花草/水果/再加工茶"
+    },
+    {
+      "goods_id": "686e2b2c7398810001f389f3",
+      "goods_name": "生杭白芍 个子 道地高品质经典优质正宗原产地直邮新鲜 杭白芍6年（小片直径1.4cm以下）100g*1袋",
+      "goods_price": 32.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "其他"
+    },
+    {
+      "goods_id": "66111166632219000188c128",
+      "goods_name": "盐焗鸡，尝鲜套餐鸡爪中翅鸡皮鸡胗鸡脆骨客家特产解馋零食 500g 【全家福】不支持备注",
+      "goods_price": 69.98,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "熟食/凉菜/私房菜"
+    },
+    {
+      "goods_id": "6568464714f2c80001298dd7",
+      "goods_name": "V&C 托马斯酒庄经典阿玛罗尼红葡萄酒 750ml",
+      "goods_price": 388.0,
+      "brand_name": "V&C",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "6a0af40a9cd553000186c77a",
+      "goods_name": "纸飞机酿造 阿达杏三倍杏桃奶昔冰激凌酸艾尔 精酿果泥啤酒473ML 2罐",
+      "goods_price": 68.3,
+      "brand_name": "纸飞机酿造",
+      "goods_cat3": "啤酒"
+    },
+    {
+      "goods_id": "674e9c446e529e0001a63153",
+      "goods_name": "味里河山 手工现做螺蛳粉 配料干净 小锅熬汤 酸辣鲜香 330g*3袋",
+      "goods_price": 49.0,
+      "brand_name": "味里河山",
+      "goods_cat3": "UNKNOWN"
+    },
+    {
+      "goods_id": "658922c9ff7b510001b698a3",
+      "goods_name": "苏母 北海母胶9.5头 20头 5.2头 精选玻璃肉 肉质软糯 胶质多 苏母 3头 一只约165~170克",
+      "goods_price": 798.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "海鲜/水产品/制品"
+    },
+    {
+      "goods_id": "66c18ba1acee800001ff10ed",
+      "goods_name": "others 超好喝的红酒！车厘子奶油草莓香 Brachetto波多拉甜红 【樱桃冰玫瑰】甜红销量王-波多拉",
+      "goods_price": 138.0,
+      "brand_name": "others",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "682ed33fd5fe8c00011e7bd2",
+      "goods_name": "WINE DETECTIVE 酒侦探 超值葡萄酒盲盒 多产区多风格精品/口粮酒！！ 两瓶口粮酒盲盒",
+      "goods_price": 299.0,
+      "brand_name": "WINE DETECTIVE 酒侦探",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "62b55f2b7708440001bea822",
+      "goods_name": "林间盏 【新品】黄精肉桂粉丨七味黑色食材丨大份量 全新口味丨香甜脆咸 【1盒】14条丨基础养",
+      "goods_price": 59.0,
+      "brand_name": "林间盏",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "66f2681036d7c200018d9b92",
+      "goods_name": "【勃艮第捡漏】法国勃艮第葡萄酒产区评测合集，捡漏目标完成！ 路易亚都马拉迪尔乐干红（桑特内一级园）",
+      "goods_price": 359.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "葡萄酒"
+    },
+    {
+      "goods_id": "67b57482fb96220001629625",
+      "goods_name": "米惦 【尝鲜装108g】奶奶小馒头现做现发劲道有嚼劲健康早餐糕点零食 奶奶小馒头【尝鲜装108g】*1袋",
+      "goods_price": 14.9,
+      "brand_name": "米惦",
+      "goods_cat3": "糕点/点心"
+    },
+    {
+      "goods_id": "6731b2547ec1440001805952",
+      "goods_name": "其他 甘草竹盐枇杷干营养清甜开袋即食农家无核枇杷果干果脯大果特产 【250克×2袋】小干果",
+      "goods_price": 119.9,
+      "brand_name": "其他",
+      "goods_cat3": "蜜饯/枣类/梅/果干/冻干"
+    },
+    {
+      "goods_id": "6801b4e58c73e20001170224",
+      "goods_name": "端午挂耳咖啡礼盒",
+      "goods_price": 218.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "速溶咖啡/咖啡豆/粉"
+    },
+    {
+      "goods_id": "6937df3e81a79500014d9d0e",
+      "goods_name": "芽苗菜陶瓷种植板 适宜种植各种芽苗类蔬菜 简单操作可反复使用 1个",
+      "goods_price": 158.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "园艺用品"
+    },
+    {
+      "goods_id": "69f77a8f213e270001971dc1",
+      "goods_name": "【云南新货】野生树酸蜂蜜/无刺蜂/树洞野生土蜂蜜/米团花黑蜜土 黄树酸1斤【约6分酸，蜂蜜里的劳斯莱斯，天然酵素蜜】",
+      "goods_price": 245.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "蜂产品"
+    },
+    {
+      "goods_id": "69e59830ddd1650001e58a39",
+      "goods_name": "杨直二 2026头茬云南冻干墨红玫瑰花茶100克大朵母亲节伴手礼礼物 墨红玫瑰花100g",
+      "goods_price": 164.0,
+      "brand_name": "杨直二",
+      "goods_cat3": "药食同源食品"
+    },
+    {
+      "goods_id": "69335e0e81a79500011299dd",
+      "goods_name": "村驴家香辣砂锅土豆粉 4袋",
+      "goods_price": 29.9,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "方便速食/速冻食品"
+    },
+    {
+      "goods_id": "68eccdb1c753610001e1e7a7",
+      "goods_name": "NATURECARE.LIFE 虎坚果生姜奶文东姜暖身驱寒温和滋养天然热力唤醒肠胃超级食物 240g/罐",
+      "goods_price": 299.0,
+      "brand_name": "NATURECARE.LIFE",
+      "goods_cat3": "食补粉粉"
+    },
+    {
+      "goods_id": "69574ff079e410001592b8e6",
+      "goods_name": "2019年小满·擎天岩水仙白牡丹40g罐装#政和白茶 40g*1罐",
+      "goods_price": 132.0,
+      "brand_name": "UNKNOWN",
+      "goods_cat3": "白茶"
+    },
+    {
+      "goods_id": "69799dc93d52b2000117fad9",
+      "goods_name": "OTHER 香槟劳斯莱斯・Krug Grande Cuvée 173ème Edition【MHD】 173ème",
+      "goods_price": 1850.0,
+      "brand_name": "OTHER",
+      "goods_cat3": "葡萄酒"
+    }
+  ],
+  "errorMsg": null,
+  "hasNext": false,
+  "outputName": null,
+  "success": true,
+  "tempTable": null,
+  "totalSize": 894
+}
