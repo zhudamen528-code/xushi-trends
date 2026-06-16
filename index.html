@@ -1264,6 +1264,51 @@ body {
 
 .empty-pool { padding:24px; text-align:center; color:#999; font-size:13px; background:#fafafa; border-radius:8px; }
 
+
+.v10-section { margin: 20px 0; }
+.v10-banner { background: linear-gradient(135deg, #fff9e6, #fff3d3); border-left: 4px solid #f5b400; border-radius: 10px; padding: 14px 18px; margin-bottom: 18px; }
+.v10-banner-title { font-size: 16px; font-weight: 700; color: #333; margin-bottom: 6px; }
+.v10-banner-sub { font-size: 12px; color: #666; line-height: 1.6; }
+.v10-mechanism { background: #f4f8ff; border-left: 3px solid #4a90e2; border-radius: 6px; padding: 12px 16px; margin: 14px 0; font-size: 13px; color: #333; line-height: 1.7; }
+.v10-subhead { font-size: 14px; font-weight: 700; margin: 18px 0 10px; padding: 6px 10px; border-radius: 4px; }
+.v10-subhead-green { color: #1a7a3f; background: #e8f5ee; }
+.v10-subhead-red { color: #b32a2a; background: #fde8e8; }
+.v10-cards-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 18px; }
+.v10-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 14px 16px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
+.v10-card-high { border-left: 4px solid #1a7a3f; }
+.v10-card-low { border-left: 4px solid #c0392b; background: #fffafa; }
+.v10-card-head { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; flex-wrap: wrap; }
+.v10-card-num { background: #1a7a3f; color: #fff; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; }
+.v10-card-num-red { background: #c0392b; }
+.v10-card-name { font-size: 14px; font-weight: 700; color: #222; flex: 1; }
+.conf-badge { font-size: 10px; padding: 2px 8px; border-radius: 10px; font-weight: 600; }
+.cb-high { background: #d4edda; color: #155724; }
+.cb-mid { background: #fff3cd; color: #856404; }
+.cb-low { background: #f8d7da; color: #721c24; }
+.v10-card-meta { font-size: 12px; color: #555; margin-bottom: 6px; }
+.v10-stat { color: #666; }
+.diff-pp { color: #1a7a3f; font-weight: 600; margin-left: 8px; }
+.diff-pp-red { color: #c0392b; }
+.diff-ratio { background: #fff8d6; padding: 1px 6px; border-radius: 4px; font-size: 11px; color: #8b6914; margin-left: 4px; }
+.v10-card-cat { font-size: 11px; color: #888; margin-bottom: 8px; line-height: 1.5; }
+.v10-card-advice { background: #f0f8ff; border-radius: 6px; padding: 8px 12px; font-size: 13px; color: #333; line-height: 1.6; }
+.v10-card-advice-red { background: #fff5f5; color: #2c2c2c; }
+.v10-card-examples { margin-top: 10px; font-size: 12px; color: #555; }
+.v10-card-examples summary { cursor: pointer; color: #4a90e2; padding: 4px 0; font-weight: 500; }
+.v10-card-examples summary:hover { color: #2c5fa5; }
+.v10-ex-block { margin: 8px 0; }
+.v10-ex-label { font-size: 11px; color: #888; font-weight: 600; margin-bottom: 4px; }
+.v10-ex-label-red { color: #c0392b; }
+.v10-ex-list { margin: 4px 0 0 18px; padding: 0; line-height: 1.7; color: #444; font-size: 12px; }
+.v10-ex-list li { margin-bottom: 3px; }
+
+@media (max-width: 768px) {
+  .v10-banner { padding: 10px 12px; }
+  .v10-banner-title { font-size: 14px; }
+  .v10-card { padding: 10px 12px; }
+  .v10-card-name { font-size: 13px; }
+}
+
 </style>
 <style>
 /* Tab4 创作工具补充样式 */
@@ -1777,7 +1822,126 @@ body {
   <div class="insights-title">🔁 本周反直觉发现</div>
   <div class="insights-list"><div class="insight-card"><span class="insight-pool">图文 CTR1 池</span><div class="insight-text">🔁 反直觉一：把『成分/配料/无添加/实名举证』摆到台面上反而拉低真诚度（-17.9 分）——系统把『硬刚同行』的写法读成强商业意图，但点击率依然高（+0.019），说明算法和用户在这里短暂分歧；适合短期引流不适合长期人设。</div></div><div class="insight-card"><span class="insight-pool">视频 CTR1 池</span><div class="insight-text">⚡ &lt;b&gt;👩‍⚕️ 痛点+健康人设科普体&lt;/b&gt;：算法真诚度比池均低 11.9 分（系统判商业感强），但 16 条笔记仍跑进强信号池。说明用户买这套但算法不爱——适合短期收割，不适合长线人设。</div></div></div>
 </div>
-  <div class="section-label">🎯 行业参考值（对照你的笔记后台数据）</div>
+  <div class="v10-section">
+  <div class="v10-banner">
+    <div class="v10-banner-title">🔬 CTR1（封面+标题点击） 高 vs 低对照差分聚类（V10 新增）</div>
+    <div class="v10-banner-sub">按类目内 P75 vs P25 严格切高低对照组，找出"高组独有 / 低组陷阱"写法。<b>这是相关性证据，不是因果，但样本量足够、类目变量已控住</b>。</div>
+  </div>
+  
+  <div class="v10-mechanism">💎 <b>核心机制</b>：CTR1 高 vs 低的本质差别不在标题字数、感叹号数量或封面是否精致，而在【真实剂量+具体钩子】 vs 【悬念词+上新公告】：高组用第一人称剂量叙事（喝了5杯/15年/15天）、具体大数字（799元/100万件/21万单）、关键词框选（「」/（））、并敢用'生活感封面'(aesthetic=低)；低组陷在'终于！XX来了''入夏必囤''XX的平替'这种缺乏具体落点的口号式公告，尤其在养生食疗赛道最严重（养生+夏季+终于 4.67x 高发于低组）。</div>
+  
+  <div class="v10-subhead v10-subhead-green">✅ 4 个高组独有写法 → 抄</div>
+  <div class="v10-cards-grid"><div class="v10-card v10-card-high">
+  <div class="v10-card-head">
+    <span class="v10-card-num">#1</span>
+    <span class="v10-card-name">封面美学=低 × 跨多类目（敢用'真实/粗糙'封面，不堆精修）</span>
+    <span class="conf-badge cb-high">信心 高</span>
+  </div>
+  <div class="v10-card-meta">
+    <span class="v10-stat">高组命中 25 条 vs 低组 7 条</span>
+    <span class="diff-pp">高组 +6.3pp</span> <span class="diff-ratio">3.17x</span>
+  </div>
+  <div class="v10-card-cat">📊 类目分布：跨类目通用（美测8/养生7/美展5/保健2/家居1/妈妈经验1/美其他1，覆盖 7 个类目）；低组同档位则高度集中在养生食疗（5/7），跨类目能力弱</div>
+  <div class="v10-card-advice">💡 <b>商家建议</b>：封面不必死磕'精致摆盘+滤镜'。若标题/产品本身有强叙事（人设故事/产地实拍/真实使用场景），可以放心使用'生活感'封面（aesthetic 档=低也无妨），CTR1 反而更高；但要确保画面清晰度（definition）≥中。</div>
+  <details class="v10-card-examples">
+    <summary>📌 高组案例（5）+ 低组反例（2）</summary>
+    <div class="v10-ex-block">
+      <div class="v10-ex-label">🟢 高组写法</div>
+      <ul class="v10-ex-list"><li>[美食测评] 北美爆火的Brook Hill要来了</li><li>[美食展示] 好吃到离谱的闽南烧肉粽！！</li><li>[家居用品] 25岁｜第一次给爸爸送了个'像样的'生日礼物</li><li>[养生食疗] 自从吃了这款干挑燕条，干挑盏就再也没买过</li></ul>
+    </div>
+    <div class="v10-ex-block"><div class="v10-ex-label v10-ex-label-red">🔴 低组反例</div><ul class="v10-ex-list"><li>[养生食疗] 2025顺时姜茶｜风火之年｜立夏喝到三伏🍵</li><li>[养生食疗] 这么夯，咋没人说呢</li></ul></div>
+  </details>
+</div><div class="v10-card v10-card-high">
+  <div class="v10-card-head">
+    <span class="v10-card-num">#2</span>
+    <span class="v10-card-name">标题用「书名号 / 引号 / 圆括号」框出关键词或副标题</span>
+    <span class="conf-badge cb-mid">信心 中</span>
+  </div>
+  <div class="v10-card-meta">
+    <span class="v10-stat">高组命中 11 条 vs 低组 3 条</span>
+    <span class="diff-pp">高组 +2.8pp</span> <span class="diff-ratio">2.83x</span>
+  </div>
+  <div class="v10-card-cat">📊 类目分布：美食展示 6 / 美食测评 4 / 养生食疗 1；茶酒占比 9%（跨类目通用，非茶酒驱动）</div>
+  <div class="v10-card-advice">💡 <b>商家建议</b>：把标题里最想被一眼抓住的关键词（爆款产品名、限定主题、活动期号）用「」/（）单独框起来，配合一段简短引语；比平铺直叙更易在信息流里制造视觉锚点。</div>
+  <details class="v10-card-examples">
+    <summary>📌 高组案例（4）+ 低组反例（1）</summary>
+    <div class="v10-ex-block">
+      <div class="v10-ex-label">🟢 高组写法</div>
+      <ul class="v10-ex-list"><li>[美食展示] 献给夏日的你们：「柠檬香草巴斯克」麦片🍋🏝️</li><li>[美食测评] 碱水棒全口味来啦！29.9七个（带热量版）</li><li>[美食展示] 千呼万唤的「此间 · 真」茶筅 正式预售了</li><li>[美食测评] 最成功的消费降级（2）</li></ul>
+    </div>
+    <div class="v10-ex-block"><div class="v10-ex-label v10-ex-label-red">🔴 低组反例</div><ul class="v10-ex-list"><li>[美食展示] 选【化州橘红】认准——广东茂名化州原产地‼️</li></ul></div>
+  </details>
+</div><div class="v10-card v10-card-high">
+  <div class="v10-card-head">
+    <span class="v10-card-num">#3</span>
+    <span class="v10-card-name">标题含具体价格 / 销量大数字（社会证明数字）</span>
+    <span class="conf-badge cb-mid">信心 中</span>
+  </div>
+  <div class="v10-card-meta">
+    <span class="v10-stat">高组命中 17 条 vs 低组 9 条</span>
+    <span class="diff-pp">高组 +2.9pp</span> <span class="diff-ratio">1.79x</span>
+  </div>
+  <div class="v10-card-cat">📊 类目分布：美食测评 / 展示 / 教程 / 养生均有；茶酒占比 29%（不集中）</div>
+  <div class="v10-card-advice">💡 <b>商家建议</b>：标题里塞一个'硬数字'：单价（799元/29.9七个）、累计销量（21万单/100万件）、用户数（2.8万人）任选其一；比'便宜/划算/爆款'这种形容词强得多。</div>
+  <details class="v10-card-examples">
+    <summary>📌 高组案例（5）+ 低组反例（2）</summary>
+    <div class="v10-ex-block">
+      <div class="v10-ex-label">🟢 高组写法</div>
+      <ul class="v10-ex-list"><li>[美食教程] 感谢小红书‼️让我们家贵州蘸水卖了21万➕</li><li>[美食展示] 立减1000！！799 元直入老年份科通特级园！</li><li>[美食测评] 阿玛罗尼风干酒名家，百年托马斯大促325元</li><li>[美食测评] 已售100万件商品的店铺，最好吃的产品</li></ul>
+    </div>
+    <div class="v10-ex-block"><div class="v10-ex-label v10-ex-label-red">🔴 低组反例</div><ul class="v10-ex-list"><li>[美食展示] 揭秘！卖坚果到底赚多少钱！（只提'赚多少钱'但无具体数字，悬念落空）</li><li>[养生食疗] 每天来一块，健康又养生！（口号型无数字）</li></ul></div>
+  </details>
+</div><div class="v10-card v10-card-high">
+  <div class="v10-card-head">
+    <span class="v10-card-num">#4</span>
+    <span class="v10-card-name">第一人称+具体数字（用量/年数/杯数）的体验叙事</span>
+    <span class="conf-badge cb-mid">信心 中</span>
+  </div>
+  <div class="v10-card-meta">
+    <span class="v10-stat">高组命中 33 条 vs 低组 27 条</span>
+    <span class="diff-pp">高组 +2.3pp</span> <span class="diff-ratio">1.24x</span>
+  </div>
+  <div class="v10-card-cat">📊 类目分布：美食测评 16 / 养生食疗 8 / 展示 5；茶酒 24%（不集中）</div>
+  <div class="v10-card-advice">💡 <b>商家建议</b>：把'我/我们家/孩子'+ 真实剂量（喝了X杯/吃了X年/X天后）写进标题，营造'真人在亲测'的代入感；避免'计划/方案/打卡'这种营销词。</div>
+  <details class="v10-card-examples">
+    <summary>📌 高组案例（5）+ 低组反例（2）</summary>
+    <div class="v10-ex-block">
+      <div class="v10-ex-label">🟢 高组写法</div>
+      <ul class="v10-ex-list"><li>[美食测评] 新荣记喝了5杯，回家买了5箱。。。。</li><li>[美食测评] 新荣记98一杯我喝了8杯🥹</li><li>[养生食疗] 吃燕窝15年，真心建议❗月薪族不要买干挑盏</li><li>[养生食疗] 便秘吃黄精3年多：太阳晒柴火蒸才是关键！</li></ul>
+    </div>
+    <div class="v10-ex-block"><div class="v10-ex-label v10-ex-label-red">🔴 低组反例</div><ul class="v10-ex-list"><li>[养生食疗] 每天来一块，健康又养生！（缺数字+缺人称）</li><li>[养生食疗] 春夏交替30天焕新计划：喝出红光（有数字但口号化、无第一人称剂量感）</li></ul></div>
+  </details>
+</div></div>
+  
+  <div class="v10-subhead v10-subhead-red">🚫 2 个低组陷阱 → 避</div>
+  <div class="v10-cards-grid"><div class="v10-card v10-card-low">
+  <div class="v10-card-head">
+    <span class="v10-card-num v10-card-num-red">⚠️ #1</span>
+    <span class="v10-card-name">【低组陷阱】养生食疗 + '终于到了 / 入夏-三伏 / 应季囤货' 上新提醒型</span>
+    <span class="conf-badge cb-high">信心 高</span>
+  </div>
+  <div class="v10-card-meta">
+    <span class="v10-stat">低组命中 14 条 vs 高组 3 条</span>
+    <span class="diff-pp diff-pp-red">低组 +3.8pp</span> <span class="diff-ratio">4.67x（低/高）</span>
+  </div>
+  <div class="v10-card-cat">📊 类目分布：养生食疗集中（14/14 全部为养生食疗）；茶酒占比 29%（姜枣茶/红豆薏米水属于养生'茶'，非奶茶/酒水赛道）</div>
+  <div class="v10-card-advice v10-card-advice-red">🚫 <b>避坑建议</b>：养生食疗标题千万少用'终于+季节倒数'套路——这是低 CTR1 的高发模式。同档位的高组（如'喝完这杯，我感觉我这口气终于顺下去了……'）用'终于'来描写身体反馈而非上新公告。建议改写为：①身体感受描述（'喝了X天，XX症状真的有变化'）；②具体疑问（'三伏天到底该不该喝姜茶'），避免'XX上新/终于来了/必囤'公告体。</div>
+  
+</div><div class="v10-card v10-card-low">
+  <div class="v10-card-head">
+    <span class="v10-card-num v10-card-num-red">⚠️ #2</span>
+    <span class="v10-card-name">【低组陷阱】悬念悬空型'终于/居然/原来/没想到'（curiosity gap 不落地）</span>
+    <span class="conf-badge cb-high">信心 高</span>
+  </div>
+  <div class="v10-card-meta">
+    <span class="v10-stat">低组命中 19 条 vs 高组 6 条</span>
+    <span class="diff-pp diff-pp-red">低组 +4.5pp</span> <span class="diff-ratio">3.17x（低/高）</span>
+  </div>
+  <div class="v10-card-cat">📊 类目分布：美食测评 10 / 养生食疗 7 / 美食展示 1 / 美食教程 1，跨类目陷阱；茶酒占比约 32%（不集中）</div>
+  <div class="v10-card-advice v10-card-advice-red">🚫 <b>避坑建议</b>：'终于/居然/没想到'要配一个具体落点——是什么终于来了、居然怎么样了。空泛地说'XX终于来了''终于！它来了！'对 CTR1 几乎是负效果，因为用户读完不知道你到底要让他点什么。</div>
+  
+</div></div>
+</div><div class="section-label">🎯 行业参考值（对照你的笔记后台数据）</div>
   <div class="kpi-grid kpi-grid-2col">
     <div class="kpi-card">
       <div class="kpi-title">📈 图文</div>
@@ -1941,7 +2105,158 @@ body {
   <div class="insights-title">🔁 本周反直觉发现</div>
   <div class="insights-list"><div class="insight-card"><span class="insight-pool">视频 CTR2 池</span><div class="insight-text">⚡ &lt;b&gt;🩺 痛点直击+药食同源解决方案&lt;/b&gt;：算法真诚度比池均低 4.1 分（系统判商业感强），但 30 条笔记仍跑进强信号池。说明用户买这套但算法不爱——适合短期收割，不适合长线人设。</div></div></div>
 </div>
-  <div class="section-label">🎯 行业参考值（对照你的笔记后台数据）</div>
+  <div class="v10-section">
+  <div class="v10-banner">
+    <div class="v10-banner-title">🔬 CTR2（商品卡点击） 高 vs 低对照差分聚类（V10 新增）</div>
+    <div class="v10-banner-sub">按类目内 P75 vs P25 严格切高低对照组，找出"高组独有 / 低组陷阱"写法。<b>这是相关性证据，不是因果，但样本量足够、类目变量已控住</b>。</div>
+  </div>
+  
+  <div class="v10-mechanism">💎 <b>核心机制</b>：CTR2 高组本质 = 商详顶部 0.5 秒能让用户做决定的'硬信息密度'（短标题/短商品名/克数·瓶数·产地·权威）；CTR2 低组本质 = 商详变成'品鉴文学'（送礼场景+堆砌风味词+长商品名+欲言又止标题），看似在讲故事其实在拖延决策。商家想提升 CTR2，应当把商详顶部当成'电梯演讲'：标题≤15字、商品名≤25字、正文前200字给一条规格+一条证据，而不是给五条风味描述。</div>
+  
+  <div class="v10-subhead v10-subhead-green">✅ 3 个高组独有写法 → 抄</div>
+  <div class="v10-cards-grid"><div class="v10-card v10-card-high">
+  <div class="v10-card-head">
+    <span class="v10-card-num">#1</span>
+    <span class="v10-card-name">短标题(≤15字)+规格量化</span>
+    <span class="conf-badge cb-high">信心 高</span>
+  </div>
+  <div class="v10-card-meta">
+    <span class="v10-stat">高组命中 58 条 vs 低组 35 条</span>
+    <span class="diff-pp">高组 +8.2pp</span> <span class="diff-ratio">1.68</span>
+  </div>
+  <div class="v10-card-cat">📊 类目分布：跨类目通用</div>
+  <div class="v10-card-advice">💡 <b>商家建议</b>：标题压到15字以内（一句钩子完事），商品名/正文里把克数·瓶数·规格直接亮出来；不要靠风味词撑长度，让用户0.5秒看懂'是什么+多少'。</div>
+  <details class="v10-card-examples">
+    <summary>📌 高组案例（3）+ 低组反例（2）</summary>
+    <div class="v10-ex-block">
+      <div class="v10-ex-label">🟢 高组写法</div>
+      <ul class="v10-ex-list"><li>《分享一款爱不释手的零食！.》｜商品名:妈妈很忙 西梅干450g 高纤维0添加蔗糖 软糯去核 西梅干1袋｜正文:办公室经常吃的这款零食，让我爱不释手。 它就是这款无糖无脂的西梅干，口感软糯，去核设计，吃起来方便又美味。它富含膳食纤维，既能满足我对美食的追求，又能帮助我维持 (ctr2=3.50)</li><li>《每天来一块，健康又养生！》｜商品名:九制黄精【15年生】所有规格均送试吃装，提供试吃保障！ （真空小袋）品鉴装250｜正文:﻿#养生[话题]#﻿ ﻿#九蒸九晒黄精[话题]#﻿ ﻿#九制黄精[话题]#﻿ ﻿#我的健康生活[话题]#﻿ ﻿#我的养生仪式感[话题]#﻿ ﻿#黄精[话题]#﻿ (ctr2=3.14)</li><li>《坚果从业者推荐坚果尽量吃原味》｜商品名:韩要强 0号特大现烤夏威夷果仁没有额外添加剂250克 1罐*250克【中大半粒】｜正文:夏威夷果是坚果添加剂的重灾区！ 很多夏威夷果会添加甜蜜素，白砂糖，香精，奶精等等 越来越多的证据表明，添加有害健康！ 尤其坚果，更推荐大家尽量选择原味！ #韩要 (ctr2=2.50)</li></ul>
+    </div>
+    <div class="v10-ex-block"><div class="v10-ex-label v10-ex-label-red">🔴 低组反例</div><ul class="v10-ex-list"><li>《救命蘸水！狠狠拿捏水煮菜🤏🤏🤏》｜商品名:仙马桥 贵州特产木姜子柴火糊辣椒面蘸水蘸料油泼辣子凉拌炒菜香辣浓郁 250袋 木｜正文:春节胡吃海喝后😭 肚子圆滚滚真的慌了！[失望R] 管不住嘴又迈不开腿的姐妹看过来👀 不用开火不用复杂调料 水煮菜随便煮一煮🥬 灵魂蘸料一拌直接香迷糊！😋 	 🥬 (ctr2=0.05)</li><li>《【黑色狂欢】不考验人性版》｜商品名:【云南新货】中蜂米团花蜜源多的黑百花蜂蜜/黄菠萝土蜂蜜/黑苦蜜 云南黑百花蜜1斤｜正文:又是一年黑蜜季[打卡R]奔赴2800公里多，常驻两个月，和各个山里的农户打交道，大家把信任交付给我，我也会一如即往的控好品质！！ 黑蜜的水很深，不花时间和精力， (ctr2=0.06)</li></ul></div>
+  </details>
+</div><div class="v10-card v10-card-high">
+  <div class="v10-card-head">
+    <span class="v10-card-num">#2</span>
+    <span class="v10-card-name">正文前200&lt;100字(惜字如金/话题为主)</span>
+    <span class="conf-badge cb-high">信心 高</span>
+  </div>
+  <div class="v10-card-meta">
+    <span class="v10-stat">高组命中 69 条 vs 低组 28 条</span>
+    <span class="diff-pp">高组 +14.5pp</span> <span class="diff-ratio">2.5</span>
+  </div>
+  <div class="v10-card-cat">📊 类目分布：跨类目通用</div>
+  <div class="v10-card-advice">💡 <b>商家建议</b>：正文不必长篇大论；前200字写'一句卖点+一句证据'即可，剩下交给话题tag。CTR2 要的是'快速验证决定下单'，不是'读完文章'。</div>
+  <details class="v10-card-examples">
+    <summary>📌 高组案例（3）+ 低组反例（2）</summary>
+    <div class="v10-ex-block">
+      <div class="v10-ex-label">🟢 高组写法</div>
+      <ul class="v10-ex-list"><li>《这瓶橘子酒承包整个春天的氛围感🍊》｜商品名:塔伦家 日落橘子海 爆汁橘子起泡酒  整颗橘子鲜榨~莫斯卡托 西班牙进口 1瓶｜正文:#小红书市集春上新[话题]# #塔伦家橘子酒[话题]# #微醺酒[话题]# #春日微醺[话题]# #橘子味[话题]# #气泡酒[话题]# (ctr2=10.17)</li><li>《每天来一块，健康又养生！》｜商品名:九制黄精【15年生】所有规格均送试吃装，提供试吃保障！ （真空小袋）品鉴装250｜正文:﻿#养生[话题]#﻿ ﻿#九蒸九晒黄精[话题]#﻿ ﻿#九制黄精[话题]#﻿ ﻿#我的健康生活[话题]#﻿ ﻿#我的养生仪式感[话题]#﻿ ﻿#黄精[话题]#﻿ (ctr2=3.14)</li><li>《番茄味和牛脆片，这味道也太夯了！》｜商品名:失重森林 和牛脆片牛肉脆片牛脆脆风干牛肉干和牛薄切 番茄味108g*1桶（拆封不｜正文:#失重森林[话题]# #失重森林和牛脆片[话题]# #新品上线[话题]# #零食推荐[话题]# #牛肉干[话题]# #这也太好吃了[话题]# #美食分享[话题] (ctr2=2.25)</li></ul>
+    </div>
+    <div class="v10-ex-block"><div class="v10-ex-label v10-ex-label-red">🔴 低组反例</div><ul class="v10-ex-list"><li>《潮汕牛肉饭美团套图，合作赠送找我领取》｜商品名:潮汕牛肉饭酱料潮汕沙茶酱商用 沙茶原味酱100克+腌肉粉｜正文:潮汕牛肉饭图片，潮汕沙茶牛肉饭套图#图片[话题]# #餐饮图片[话题]# (ctr2=0.03)</li><li>《女性内调保养不是智商税‼️要喝就喝点好的》｜商品名:玉脂膏 女子以肝为先天 皮肤 情绪 姨妈 经络 都跟肝息息相关 一罐（270克）｜正文:#我的养生仪式感[话题]# #女性保养[话题]# #喝出健康喝出美丽[话题]# #女性内调[话题]# #内调保养[话题]##养生膏[话题]# (ctr2=0.06)</li></ul></div>
+  </details>
+</div><div class="v10-card v10-card-high">
+  <div class="v10-card-head">
+    <span class="v10-card-num">#3</span>
+    <span class="v10-card-name">权威产地背书+规格量化</span>
+    <span class="conf-badge cb-mid">信心 中</span>
+  </div>
+  <div class="v10-card-meta">
+    <span class="v10-stat">高组命中 28 条 vs 低组 20 条</span>
+    <span class="diff-pp">高组 +2.9pp</span> <span class="diff-ratio">1.42</span>
+  </div>
+  <div class="v10-card-cat">📊 类目分布：跨类目通用</div>
+  <div class="v10-card-advice">💡 <b>商家建议</b>：把'核心产区/原产地/官方/老字号/认证'等硬背书 + 规格克数同时放进标题或商品名，背书+规格组合能在商详顶部稳住信任。</div>
+  <details class="v10-card-examples">
+    <summary>📌 高组案例（3）+ 低组反例（2）</summary>
+    <div class="v10-ex-block">
+      <div class="v10-ex-label">🟢 高组写法</div>
+      <ul class="v10-ex-list"><li>《这瓶橘子酒承包整个春天的氛围感🍊》｜商品名:塔伦家 日落橘子海 爆汁橘子起泡酒  整颗橘子鲜榨~莫斯卡托 西班牙进口 1瓶｜正文:#小红书市集春上新[话题]# #塔伦家橘子酒[话题]# #微醺酒[话题]# #春日微醺[话题]# #橘子味[话题]# #气泡酒[话题]# (ctr2=10.17)</li><li>《飞9000公里去西班牙🇪🇸，就为了这口橘子酒》｜商品名:塔伦家 日落橘子海 爆汁橘子起泡酒  整颗橘子鲜榨~莫斯卡托 西班牙进口 1瓶｜正文:巨好喝！特浓郁的爆汁儿橘子香气 	 7度的橘子气泡小甜酒，喝起来美滋滋没压力！ 	 未成年人请勿饮酒 	 #好酒推荐[话题]# #小红书市集春上新[话题]# # (ctr2=3.34)</li><li>《好茶会说话！一直在找茶的茶友可以试试这款》｜商品名:梅伯珍 凤瑞2025特级白牡丹王正宗福鼎白茶第一村柏柳村品牌礼盒套装收藏 单砖1｜正文:谁懂啊！喝到一款零青味的碳焙白牡丹😭 梅伯珍2025年凤瑞款，直接戳中白茶爱好者的心巴✅ ✅ 特级碳焙白牡丹｜古法工艺太香了 ✅ 自有有ji山场直供｜福鼎核心产 (ctr2=1.56)</li></ul>
+    </div>
+    <div class="v10-ex-block"><div class="v10-ex-label v10-ex-label-red">🔴 低组反例</div><ul class="v10-ex-list"><li>《【黑色狂欢】不考验人性版》｜商品名:【云南新货】中蜂米团花蜜源多的黑百花蜂蜜/黄菠萝土蜂蜜/黑苦蜜 云南黑百花蜜1斤｜正文:又是一年黑蜜季[打卡R]奔赴2800公里多，常驻两个月，和各个山里的农户打交道，大家把信任交付给我，我也会一如即往的控好品质！！ 黑蜜的水很深，不花时间和精力， (ctr2=0.06)</li><li>《低能量老鼠人就吃核桃姜茶，头一次感受充沛》｜商品名:养瑞和 松子核桃姜茶老姜汤花生核桃腰果健康营养坚果冲饮姜母茶250g 1罐体验装｜正文:老师傅用柴火铁锅足足翻炒上三个多小时才把姜茶送到你们手上 	 经常看到有人说：你们家的核桃姜茶做得好好吃，就是量少 我们一直记在心上，这次加量不加价，就是为了回 (ctr2=0.07)</li></ul></div>
+  </details>
+</div></div>
+  
+  <div class="v10-subhead v10-subhead-red">🚫 6 个低组陷阱 → 避</div>
+  <div class="v10-cards-grid"><div class="v10-card v10-card-low">
+  <div class="v10-card-head">
+    <span class="v10-card-num v10-card-num-red">⚠️ #1</span>
+    <span class="v10-card-name">商品名≥40字+正文堆砌≥2风味词(过度修辞)</span>
+    <span class="conf-badge cb-low">信心 低</span>
+  </div>
+  <div class="v10-card-meta">
+    <span class="v10-stat">低组命中 46 条 vs 高组 26 条</span>
+    <span class="diff-pp diff-pp-red">低组 +6.8pp</span> <span class="diff-ratio">1.74</span>
+  </div>
+  <div class="v10-card-cat">📊 类目分布：茶酒高度集中(63%)</div>
+  <div class="v10-card-advice v10-card-advice-red">🚫 <b>避坑建议</b>：警惕'品酒师式商品名+正文堆奶香果香花香'的写法——商详页看不到详细的视觉，纯文字堆叠让人疲惫，反而拉低决策；删一半修辞，换一条规格信息进来。</div>
+  <details class="v10-card-examples"><summary>📌 反例（1）</summary><ul class="v10-ex-list"><li>《台湾省特产巨甘甜😋奶香小甜水，送三种口味》｜商品名:修哲 拍一送三  奶香金萱【赠品】果香冻顶+蜜香妃子笑+10年老乌龙 50g*4｜正文:台湾省特产，巨甘甜，奶香小甜水，它叫金萱。 同时这4袋其中3袋价值300多是额外送给新粉的，每个新粉都只能拍一单，免费试喝12泡，像这款价值100多这款果香冻顶 (ctr2=18.04)</li></ul></details>
+</div><div class="v10-card v10-card-low">
+  <div class="v10-card-head">
+    <span class="v10-card-num v10-card-num-red">⚠️ #2</span>
+    <span class="v10-card-name">送礼/礼盒/伴手礼钩子</span>
+    <span class="conf-badge cb-mid">信心 中</span>
+  </div>
+  <div class="v10-card-meta">
+    <span class="v10-stat">低组命中 35 条 vs 高组 16 条</span>
+    <span class="diff-pp diff-pp-red">低组 +6.5pp</span> <span class="diff-ratio">2.16</span>
+  </div>
+  <div class="v10-card-cat">📊 类目分布：美食展示集中(54%)</div>
+  <div class="v10-card-advice v10-card-advice-red">🚫 <b>避坑建议</b>：'送礼/礼盒/伴手礼'看似强需求其实是泛人群，CTR2 反而低 7-8pp——除非店铺真做礼品定位，否则别把'送礼'当主钩子；改成自饮场景或产品功能描述。</div>
+  <details class="v10-card-examples"><summary>📌 反例（1）</summary><ul class="v10-ex-list"><li>《云南头茬墨红，直二邀您试喝！》｜商品名:杨直二 2026头茬云南冻干墨红玫瑰花茶100克大朵母亲节伴手礼礼物 墨红玫瑰花｜正文:#杨直二[话题]# #墨红玫瑰[话题]# #墨红玫瑰季节限定[话题]# #玫瑰[话题]# (ctr2=1.80)</li></ul></details>
+</div><div class="v10-card v10-card-low">
+  <div class="v10-card-head">
+    <span class="v10-card-num v10-card-num-red">⚠️ #3</span>
+    <span class="v10-card-name">标题用省略号/句中断(欲言又止)</span>
+    <span class="conf-badge cb-low">信心 低</span>
+  </div>
+  <div class="v10-card-meta">
+    <span class="v10-stat">低组命中 15 条 vs 高组 5 条</span>
+    <span class="diff-pp diff-pp-red">低组 +3.4pp</span> <span class="diff-ratio">2.96</span>
+  </div>
+  <div class="v10-card-cat">📊 类目分布：美食测评集中(47%)</div>
+  <div class="v10-card-advice v10-card-advice-red">🚫 <b>避坑建议</b>：标题用'...'欲言又止看似神秘，实际在商详页只显示半截，用户读完反而劝退；标题必须是完整短句，钩子写在句首。</div>
+  <details class="v10-card-examples"><summary>📌 反例（1）</summary><ul class="v10-ex-list"><li>《槟子榔子吞云吐雾，你可一定要...》｜商品名:其他 甘草竹盐枇杷干营养清甜开袋即食农家无核枇杷果干果脯大果特产 【250克×2｜正文:这款甘草竹盐枇杷干真的是原汁原味肉厚香甜，配料干净营养丰富老少皆宜     ﻿#枇杷干[话题]#﻿ ﻿#枇杷[话题]#﻿ ﻿#儿童零食[话题]#﻿ ﻿#甘草功效 (ctr2=5.56)</li></ul></details>
+</div><div class="v10-card v10-card-low">
+  <div class="v10-card-head">
+    <span class="v10-card-num v10-card-num-red">⚠️ #4</span>
+    <span class="v10-card-name">商品名≥46字(参数+规格全堆)</span>
+    <span class="conf-badge cb-mid">信心 中</span>
+  </div>
+  <div class="v10-card-meta">
+    <span class="v10-stat">低组命中 172 条 vs 高组 127 条</span>
+    <span class="diff-pp diff-pp-red">低组 +15.0pp</span> <span class="diff-ratio">1.34</span>
+  </div>
+  <div class="v10-card-cat">📊 类目分布：跨类目通用</div>
+  <div class="v10-card-advice v10-card-advice-red">🚫 <b>避坑建议</b>：商品名超过46字就是参数+规格+赠品+营销词全堆，移动端被截断，反而显得杂乱；控制在25-40字内，主信息前置。</div>
+  <details class="v10-card-examples"><summary>📌 反例（1）</summary><ul class="v10-ex-list"><li>《台湾省特产巨甘甜😋奶香小甜水，送三种口味》｜商品名:修哲 拍一送三  奶香金萱【赠品】果香冻顶+蜜香妃子笑+10年老乌龙 50g*4｜正文:台湾省特产，巨甘甜，奶香小甜水，它叫金萱。 同时这4袋其中3袋价值300多是额外送给新粉的，每个新粉都只能拍一单，免费试喝12泡，像这款价值100多这款果香冻顶 (ctr2=18.04)</li></ul></details>
+</div><div class="v10-card v10-card-low">
+  <div class="v10-card-head">
+    <span class="v10-card-num v10-card-num-red">⚠️ #5</span>
+    <span class="v10-card-name">场景日常铺垫(早八/通勤/带娃/办公室)</span>
+    <span class="conf-badge cb-high">信心 高</span>
+  </div>
+  <div class="v10-card-meta">
+    <span class="v10-stat">低组命中 62 条 vs 高组 39 条</span>
+    <span class="diff-pp diff-pp-red">低组 +7.8pp</span> <span class="diff-ratio">1.57</span>
+  </div>
+  <div class="v10-card-cat">📊 类目分布：跨类目通用</div>
+  <div class="v10-card-advice v10-card-advice-red">🚫 <b>避坑建议</b>：'早八/办公室/带娃'这种场景铺垫在 CTR1 阶段（封面+标题选人群）有用，但到商详页继续讲场景就是浪费篇幅，应该立刻给规格和差异化卖点。</div>
+  <details class="v10-card-examples"><summary>📌 反例（1）</summary><ul class="v10-ex-list"><li>《不能吃酸的姐妹👭千万不要轻易尝试！.》｜商品名:妈妈很忙 手工桑葚核桃糕250g 酸甜软糯 1盒用料150颗新鲜桑葚 1盒｜正文:满满的好食材，配料表简单！当季新鲜的桑葚、核桃仁、麦芽糖浆、食用植物油、淀粉不乱添加.6-7分熟的桑葚红中带黑，口感酸甜适中.搭配上香脆核桃从而让这款桑葚核桃糕 (ctr2=9.00)</li></ul></details>
+</div><div class="v10-card v10-card-low">
+  <div class="v10-card-head">
+    <span class="v10-card-num v10-card-num-red">⚠️ #6</span>
+    <span class="v10-card-name">销量/榜单/姐妹认可型社证</span>
+    <span class="conf-badge cb-low">信心 低</span>
+  </div>
+  <div class="v10-card-meta">
+    <span class="v10-stat">低组命中 24 条 vs 高组 16 条</span>
+    <span class="diff-pp diff-pp-red">低组 +2.7pp</span> <span class="diff-ratio">1.48</span>
+  </div>
+  <div class="v10-card-cat">📊 类目分布：跨类目通用</div>
+  <div class="v10-card-advice v10-card-advice-red">🚫 <b>避坑建议</b>：反直觉发现：'10w+姐妹好评/销量TOP/姐姐安利'类社证在 CTR2 阶段反而拉低转化——商详页用户已经感兴趣，社证说服力低于硬规格/价格信息。</div>
+  <details class="v10-card-examples"><summary>📌 反例（1）</summary><ul class="v10-ex-list"><li>《分享一款爱不释手的零食！.》｜商品名:妈妈很忙 西梅干450g 高纤维0添加蔗糖 软糯去核 西梅干1袋｜正文:办公室经常吃的这款零食，让我爱不释手。 它就是这款无糖无脂的西梅干，口感软糯，去核设计，吃起来方便又美味。它富含膳食纤维，既能满足我对美食的追求，又能帮助我维持 (ctr2=3.50)</li></ul></details>
+</div></div>
+</div><div class="section-label">🎯 行业参考值（对照你的笔记后台数据）</div>
   <div class="kpi-grid kpi-grid-2col">
     <div class="kpi-card">
       <div class="kpi-title">📈 图文</div>
@@ -2105,7 +2420,212 @@ body {
   <div class="insights-title">🔁 本周反直觉发现</div>
   <div class="insights-list"><div class="insight-card"><span class="insight-pool">图文 CVR 池</span><div class="insight-text">⚡ &lt;b&gt;💪 身体痛点→食疗解决方案体&lt;/b&gt;：算法真诚度比池均低 7.7 分（系统判商业感强），但 14 条笔记仍跑进强信号池。说明用户买这套但算法不爱——适合短期收割，不适合长线人设。</div></div><div class="insight-card"><span class="insight-pool">视频 CVR 池</span><div class="insight-text">⚡ &lt;b&gt;🌿 症状代入·古法养生&lt;/b&gt;：算法真诚度比池均低 4.7 分（系统判商业感强），但 22 条笔记仍跑进强信号池。说明用户买这套但算法不爱——适合短期收割，不适合长线人设。</div></div></div>
 </div>
-  <div class="section-label">🎯 行业参考值（对照你的笔记后台数据）</div>
+  <div class="v10-section">
+  <div class="v10-banner">
+    <div class="v10-banner-title">🔬 CVR（下单转化） 高 vs 低对照差分聚类（V10 新增）</div>
+    <div class="v10-banner-sub">按类目内 P75 vs P25 严格切高低对照组，找出"高组独有 / 低组陷阱"写法。<b>这是相关性证据，不是因果，但样本量足够、类目变量已控住</b>。</div>
+  </div>
+  
+  <div class="v10-mechanism">💎 <b>核心机制</b>：CVR 高 vs 低 的本质差别：高组把『商品』翻译成『一个具体人群在一个具体时刻的固定动作 + 情绪兜底』（人群锁定 → 场景化 → 每天一勺 → 治愈/安心）；低组停留在『产品描述+ 横向比较+ 规格数字+ 节日套话』，让用户自己脑补『我要不要、什么时候、怎么用』。所以提升 CVR 的核心动作不是把内容做得更长更专业，而是把『使用决策』提前替用户做完。</div>
+  
+  <div class="v10-subhead v10-subhead-green">✅ 7 个高组独有写法 → 抄</div>
+  <div class="v10-cards-grid"><div class="v10-card v10-card-high">
+  <div class="v10-card-head">
+    <span class="v10-card-num">#1</span>
+    <span class="v10-card-name">情感共鸣词包：治愈/舒服/安心/放心/小确幸（让人愿意点单的『情绪兜底』）</span>
+    <span class="conf-badge cb-mid">信心 中</span>
+  </div>
+  <div class="v10-card-meta">
+    <span class="v10-stat">高组命中 73 条 vs 低组 39 条</span>
+    <span class="diff-pp">高组 +12.0pp</span> <span class="diff-ratio">1.89</span>
+  </div>
+  <div class="v10-card-cat">📊 类目分布：跨类目通用 — 美食测评 28、养生食疗 16、美食展示 16、美食教程 5；茶酒占比 55%</div>
+  <div class="v10-card-advice">💡 <b>商家建议</b>：正文/ASR 加一段『谁喝/吃了之后会舒服/安心/被治愈』的情绪结论句，最好放在功效描述之后做情绪封口，比单纯堆原料更能促单。</div>
+  <details class="v10-card-examples">
+    <summary>📌 高组案例（3）+ 低组反例（2）</summary>
+    <div class="v10-ex-block">
+      <div class="v10-ex-label">🟢 高组写法</div>
+      <ul class="v10-ex-list"><li>[养生食疗|cvr=2.0] 肝郁+脾虚的人：少点内耗，先放过自己~ | ASR『一开始以为单纯…典型就是情绪不好的时候，脾胃会特别不舒服』</li><li>[美食展示|cvr=0.444] 所有女生坚持吃半个月，真的很舒服！ | ASR『八珍糕…老人孩子都喜欢吃』</li><li>[美食测评|cvr=0.5] 一口下去，整个办公室都听到了！ | ASR『满足感更强』</li></ul>
+    </div>
+    <div class="v10-ex-block"><div class="v10-ex-label v10-ex-label-red">🔴 低组反例</div><ul class="v10-ex-list"><li>[美食展示|cvr=0.018] 这次的买一送一，简直夯爆了！！（情感词被替换成促销词，无『安心/治愈』情绪兜底）</li><li>[家居用品|cvr=0.026] 2026端午礼 | 让我们闻香饮茶（高雅但情绪点远，无解决感）</li></ul></div>
+  </details>
+</div><div class="v10-card v10-card-high">
+  <div class="v10-card-head">
+    <span class="v10-card-num">#2</span>
+    <span class="v10-card-name">场景化使用法：办公室/睡前/熬夜/晨起/空腹（把商品塞进用户的某个具体时刻）</span>
+    <span class="conf-badge cb-mid">信心 中</span>
+  </div>
+  <div class="v10-card-meta">
+    <span class="v10-stat">高组命中 56 条 vs 低组 29 条</span>
+    <span class="diff-pp">高组 +9.5pp</span> <span class="diff-ratio">1.95</span>
+  </div>
+  <div class="v10-card-cat">📊 类目分布：养生食疗 25、美食测评 17、美食展示 5、美食教程 4，跨类目通用；茶酒占比 50%</div>
+  <div class="v10-card-advice">💡 <b>商家建议</b>：标题或 ASR 前 15s 必须出现一个具体时刻（睡前/晨起/办公室/经期/熬夜后），把商品定位成『这个时刻的固定动作』，比泛化讲『日常喝』转化高近一倍。</div>
+  <details class="v10-card-examples">
+    <summary>📌 高组案例（3）+ 低组反例（2）</summary>
+    <div class="v10-ex-block">
+      <div class="v10-ex-label">🟢 高组写法</div>
+      <ul class="v10-ex-list"><li>[养生食疗|cvr=0.667] 👀熬夜的女生丨春天是关键节点 | ASR『晚上十一点到凌晨三点是肝经循行的时间…』</li><li>[养生食疗|cvr=0.75] 经期结束后 我超爱的四物汤 | ASR『姨妈期那几天坐着不行躺着也不行』</li><li>[美食测评|cvr=0.5] 一口下去，整个办公室都听到了！（明确办公室场景）</li></ul>
+    </div>
+    <div class="v10-ex-block"><div class="v10-ex-label v10-ex-label-red">🔴 低组反例</div><ul class="v10-ex-list"><li>[美食测评|cvr=0.042] 一瓶奶酒怎么能好喝成这样？液体白色恋人..（只有口味形容，没有锚定到任何使用时刻）</li><li>[养生食疗|cvr=0.04] 酸酸甜甜，越喝越轻松的天然酵素蜜！（口感+模糊收益，无场景钩子）</li></ul></div>
+  </details>
+</div><div class="v10-card v10-card-high">
+  <div class="v10-card-head">
+    <span class="v10-card-num">#3</span>
+    <span class="v10-card-name">明确使用方法剂量：每天一勺/一颗/冲泡热水/搅拌（降低决策门槛）</span>
+    <span class="conf-badge cb-mid">信心 中</span>
+  </div>
+  <div class="v10-card-meta">
+    <span class="v10-stat">高组命中 83 条 vs 低组 58 条</span>
+    <span class="diff-pp">高组 +9.0pp</span> <span class="diff-ratio">1.45</span>
+  </div>
+  <div class="v10-card-cat">📊 类目分布：养生食疗 31、美食测评 19、美食展示 14、美食教程 10，跨类目；茶酒占比 53%</div>
+  <div class="v10-card-advice">💡 <b>商家建议</b>：ASR 后半段固定加一段『每天一勺/一颗/睡前冲一杯』的操作 SOP，把『要不要买』的犹豫转换成『照着做就行』的肌肉记忆。</div>
+  <details class="v10-card-examples">
+    <summary>📌 高组案例（3）+ 低组反例（2）</summary>
+    <div class="v10-ex-block">
+      <div class="v10-ex-label">🟢 高组写法</div>
+      <ul class="v10-ex-list"><li>[养生食疗|cvr=1.0] 女性内调保养不是智商税‼️要喝就喝点好的 | ASR『每天一勺一口收进21味本草精粹』</li><li>[养生食疗|cvr=0.387] 真养内里的养生零食（每天定量喝法）</li><li>[美食展示|cvr=0.444] 低咖啡因黄波旁，最近每天都喝它（『每天』+ 明确单品）</li></ul>
+    </div>
+    <div class="v10-ex-block"><div class="v10-ex-label v10-ex-label-red">🔴 低组反例</div><ul class="v10-ex-list"><li>[美食测评|cvr=0.038] 我们打算卖掉修哲（讲创业故事，未告诉用户怎么喝）</li><li>[养生食疗|cvr=0.015] 自从吃了这款干挑燕条，干挑盏就再也没买过（产品对比，没给使用法）</li></ul></div>
+  </details>
+</div><div class="v10-card v10-card-high">
+  <div class="v10-card-head">
+    <span class="v10-card-num">#4</span>
+    <span class="v10-card-name">痛点+解决方案 双钩组合（先点痛 后给药）</span>
+    <span class="conf-badge cb-mid">信心 中</span>
+  </div>
+  <div class="v10-card-meta">
+    <span class="v10-stat">高组命中 19 条 vs 低组 8 条</span>
+    <span class="diff-pp">高组 +3.8pp</span> <span class="diff-ratio">2.36</span>
+  </div>
+  <div class="v10-card-cat">📊 类目分布：养生食疗为主（约 80%）、辅以妈妈经验/美食教程；茶酒占比 47%</div>
+  <div class="v10-card-advice">💡 <b>商家建议</b>：养生/食疗类商品按『痛点描述→人群标签→每天怎么喝→食材配比』四段结构写，比堆原料/讲故事 CVR 高 2 倍。</div>
+  <details class="v10-card-examples">
+    <summary>📌 高组案例（3）+ 低组反例（1）</summary>
+    <div class="v10-ex-block">
+      <div class="v10-ex-label">🟢 高组写法</div>
+      <ul class="v10-ex-list"><li>[养生食疗|cvr=0.357] 润心百合饮 熬夜党喝对这杯，润到心坎里 | ASR『经常熬夜，嗓子干，嘴巴干容易起皮的姐妹』</li><li>[养生食疗|cvr=0.188] 睡不着、睡眠浅、半夜醒丨酸枣仁百合睡眠茶 | ASR『一罐11味健康草本，根据人体需求定量配比』</li><li>[养生食疗|cvr=0.182] 长期熬夜、内热明显的姐妹，很适合这样喝～</li></ul>
+    </div>
+    <div class="v10-ex-block"><div class="v10-ex-label v10-ex-label-red">🔴 低组反例</div><ul class="v10-ex-list"><li>[美食测评|cvr=0.046] 谁喝谁漂亮的桑葚玫瑰蜜爆单了，凭啥？（用销量证明替代痛点-方案链路）</li></ul></div>
+  </details>
+</div><div class="v10-card v10-card-high">
+  <div class="v10-card-head">
+    <span class="v10-card-num">#5</span>
+    <span class="v10-card-name">老字号/传承/匠人叙事（建立专业度信任）</span>
+    <span class="conf-badge cb-low">信心 低</span>
+  </div>
+  <div class="v10-card-meta">
+    <span class="v10-stat">高组命中 38 条 vs 低组 21 条</span>
+    <span class="diff-pp">高组 +5.9pp</span> <span class="diff-ratio">1.82</span>
+  </div>
+  <div class="v10-card-cat">📊 类目分布：养生食疗高度集中（约 60%）、辅以美食测评/教程；茶酒占比 63%</div>
+  <div class="v10-card-advice">💡 <b>商家建议</b>：养生/茶酒类强建议在 ASR 前 5s 出现一个『时间维度的传承』（XX 年从业 / 几代手艺 / 非遗工艺 / 核心产区直采），快速建立专业感再讲产品。</div>
+  <details class="v10-card-examples">
+    <summary>📌 高组案例（3）+ 低组反例（1）</summary>
+    <div class="v10-ex-block">
+      <div class="v10-ex-label">🟢 高组写法</div>
+      <ul class="v10-ex-list"><li>[养生食疗|cvr=1.0] 女性内调保养不是智商税 | ASR『十一年养生生根…采用非遗传统膏方制作技艺』</li><li>[养生食疗|cvr=2.0] 肝郁+脾虚（专家级口吻+中医知识叙事）</li><li>[养生食疗|cvr=0.357] 润心百合饮（核心产区原料+定量配比）</li></ul>
+    </div>
+    <div class="v10-ex-block"><div class="v10-ex-label v10-ex-label-red">🔴 低组反例</div><ul class="v10-ex-list"><li>[美食测评|cvr=0.031] 终于到货了…爱尔兰无花果金酒回归（强调到货而非传承沉淀）</li></ul></div>
+  </details>
+</div><div class="v10-card v10-card-high">
+  <div class="v10-card-head">
+    <span class="v10-card-num">#6</span>
+    <span class="v10-card-name">身材外貌人群直击（减脂/抗老/气色/皮肤）</span>
+    <span class="conf-badge cb-high">信心 高</span>
+  </div>
+  <div class="v10-card-meta">
+    <span class="v10-stat">高组命中 27 条 vs 低组 15 条</span>
+    <span class="diff-pp">高组 +4.3pp</span> <span class="diff-ratio">1.82</span>
+  </div>
+  <div class="v10-card-cat">📊 类目分布：养生食疗 + 健身饮食 + 妈妈经验 + 美食测评，跨类目通用；茶酒占比 33%（较低，意味着真普适）</div>
+  <div class="v10-card-advice">💡 <b>商家建议</b>：食品/养生类无论原品类是什么，都可以在标题挂一个外貌结果（瘦/气色/抗老/减脂期），把食欲消费翻译成女性自我投资语言，CVR 收益跨类目稳定。</div>
+  <details class="v10-card-examples">
+    <summary>📌 高组案例（3）+ 低组反例（1）</summary>
+    <div class="v10-ex-block">
+      <div class="v10-ex-label">🟢 高组写法</div>
+      <ul class="v10-ex-list"><li>[妈妈经验|cvr=1.0] 小月子里吃得比以前多还掉🥩了</li><li>[健身饮食|cvr=0.5] 办公室人手一袋…太适合减脂期嘴馋吃了🤣</li><li>[养生食疗|cvr=0.667] 👀熬夜的女生丨春天是关键节点（皮肤暗沉切入）</li></ul>
+    </div>
+    <div class="v10-ex-block"><div class="v10-ex-label v10-ex-label-red">🔴 低组反例</div><ul class="v10-ex-list"><li>[美食展示|cvr=0.025] 立减500！千元出头喝勃艮第超一级少女园（产品维度沟通，无外貌人群切入）</li></ul></div>
+  </details>
+</div><div class="v10-card v10-card-high">
+  <div class="v10-card-head">
+    <span class="v10-card-num">#7</span>
+    <span class="v10-card-name">『终于/再也不/救星』解决感句式</span>
+    <span class="conf-badge cb-low">信心 低</span>
+  </div>
+  <div class="v10-card-meta">
+    <span class="v10-stat">高组命中 25 条 vs 低组 17 条</span>
+    <span class="diff-pp">高组 +2.8pp</span> <span class="diff-ratio">1.48</span>
+  </div>
+  <div class="v10-card-cat">📊 类目分布：跨类目通用，美食测评/展示/养生食疗均匀分布；茶酒占比 60%</div>
+  <div class="v10-card-advice">💡 <b>商家建议</b>：用『终于』要落在『终于解决了某个问题/补到某个稀缺货』，而不是『终于能发视频了』这种内容创作者口吻；解决感要落在用户侧。</div>
+  <details class="v10-card-examples">
+    <summary>📌 高组案例（3）+ 低组反例（1）</summary>
+    <div class="v10-ex-block">
+      <div class="v10-ex-label">🟢 高组写法</div>
+      <ul class="v10-ex-list"><li>[美食展示|cvr=0.244] 终于买到了真正无添加的纯怀山药粉了</li><li>[美食测评|cvr=0.312] 我宣布！是今年喝过最伟大的白葡萄酒（『等了三个月终于补到』）</li><li>[美食展示|cvr=0.357] 像喝了一口青提酒酿酸奶，终于进口啦</li></ul>
+    </div>
+    <div class="v10-ex-block"><div class="v10-ex-label v10-ex-label-red">🔴 低组反例</div><ul class="v10-ex-list"><li>[美食测评|cvr=0.031] 上次这视频一发就秒删了，现在终于能发了..（『终于』是叙事钩子，不指向需求解决，效果反而不好）</li></ul></div>
+  </details>
+</div></div>
+  
+  <div class="v10-subhead v10-subhead-red">🚫 4 个低组陷阱 → 避</div>
+  <div class="v10-cards-grid"><div class="v10-card v10-card-low">
+  <div class="v10-card-head">
+    <span class="v10-card-num v10-card-num-red">⚠️ #1</span>
+    <span class="v10-card-name">横向比较型内容（『XX vs YY』『区别/差别在哪』）</span>
+    <span class="conf-badge cb-mid">信心 中</span>
+  </div>
+  <div class="v10-card-meta">
+    <span class="v10-stat">低组命中 54 条 vs 高组 39 条</span>
+    <span class="diff-pp diff-pp-red">低组 +5.0pp</span>
+  </div>
+  <div class="v10-card-cat">📊 类目分布：美食测评高度集中，茶酒占比偏高</div>
+  <div class="v10-card-advice v10-card-advice-red">🚫 <b>避坑建议</b>：做横向比较时务必给出唯一明确的购买结论，并紧跟『每天怎么喝/一勺多少』收口；只罗列差异、让用户自己判断会显著拉低 CVR。</div>
+  <details class="v10-card-examples"><summary>📌 反例（3）</summary><ul class="v10-ex-list"><li>[美食测评|cvr=0.038] 我们打算卖掉修哲，以后可能喝不到修哲茶了</li><li>[医疗药品|cvr=0.037] 速成黄精vs真黄精，你买对了吗？</li><li>[美食测评|cvr=0.02] 被米其林抢疯的奥地利小花到底多好喝？</li></ul></details>
+</div><div class="v10-card v10-card-low">
+  <div class="v10-card-head">
+    <span class="v10-card-num v10-card-num-red">⚠️ #2</span>
+    <span class="v10-card-name">数字量化但只讲规格/库存（XX 头/XX 克/仅剩 X 瓶）</span>
+    <span class="conf-badge cb-mid">信心 中</span>
+  </div>
+  <div class="v10-card-meta">
+    <span class="v10-stat">低组命中 82 条 vs 高组 55 条</span>
+    <span class="diff-pp diff-pp-red">低组 +9.4pp</span>
+  </div>
+  <div class="v10-card-cat">📊 类目分布：美食测评/展示集中，茶酒/海味/燕窝偏多</div>
+  <div class="v10-card-advice v10-card-advice-red">🚫 <b>避坑建议</b>：数字要服务于用户收益（多少味草本/每天多少剂量/几代人手艺），而不是只服务于商家规格（多少头/多少克/还剩几瓶）；前者增信、后者反而像低质叫卖。</div>
+  <details class="v10-card-examples"><summary>📌 反例（3）</summary><ul class="v10-ex-list"><li>[养生食疗|cvr=0.013] 8头黄花胶~出一包12斤🛫多谢老细❤️</li><li>[美食测评|cvr=0.046] 仅剩6瓶！等了7年！！！大Q巨好价拼手速！</li><li>[养生食疗|cvr=0.015] 自从吃了这款干挑燕条…</li></ul></details>
+</div><div class="v10-card v10-card-low">
+  <div class="v10-card-head">
+    <span class="v10-card-num v10-card-num-red">⚠️ #3</span>
+    <span class="v10-card-name">节日礼盒套话（端午/520/伴手礼）— 在没有解决方案叙事时拉低 CVR</span>
+    <span class="conf-badge cb-mid">信心 中</span>
+  </div>
+  <div class="v10-card-meta">
+    <span class="v10-stat">低组命中 39 条 vs 高组 27 条</span>
+    <span class="diff-pp diff-pp-red">低组 +4.2pp</span>
+  </div>
+  <div class="v10-card-cat">📊 类目分布：美食展示集中，茶酒/糕点类偏多</div>
+  <div class="v10-card-advice v10-card-advice-red">🚫 <b>避坑建议</b>：节日礼盒别只堆『福禄安康/伴手礼』套话；要么挂一个收礼人画像（送父母/送自己/送女友），要么给一个唯一推荐理由（『就选这款』），否则就是堆词不出单。</div>
+  <details class="v10-card-examples"><summary>📌 反例（3）</summary><ul class="v10-ex-list"><li>[美食展示|cvr=0.028] 福禄安康端午礼盒 | 已经进入高峰期啦</li><li>[美食展示|cvr=0.017] 福禄安康端午礼盒 | 排队出发，倒计时</li><li>[美食展示|cvr=0.025] 告别俗气端午礼，今年走心送礼就选端阳志</li></ul></details>
+</div><div class="v10-card v10-card-low">
+  <div class="v10-card-head">
+    <span class="v10-card-num v10-card-num-red">⚠️ #4</span>
+    <span class="v10-card-name">标题问号结尾（疑问式钩子，但没给答案）</span>
+    <span class="conf-badge cb-low">信心 低</span>
+  </div>
+  <div class="v10-card-meta">
+    <span class="v10-stat">低组命中 15 条 vs 高组 8 条</span>
+    <span class="diff-pp diff-pp-red">低组 +2.4pp</span>
+  </div>
+  <div class="v10-card-cat">📊 类目分布：美食测评集中，茶酒偏多</div>
+  <div class="v10-card-advice v10-card-advice-red">🚫 <b>避坑建议</b>：标题尽量用『陈述句给出结果或承诺』，少用『XX 凭什么/到底多好喝？』这种把判断踢回给用户的句式——疑问式钩子拉 CTR 可能可以，但 CVR 会被稀释。</div>
+  <details class="v10-card-examples"><summary>📌 反例（3）</summary><ul class="v10-ex-list"><li>[美食测评|cvr=0.042] 700年历史的勃艮第一级园 只卖这个价？</li><li>[美食测评|cvr=0.02] 被米其林抢疯的奥地利小花到底多好喝？</li><li>[养生食疗|cvr=0.046] 谁喝谁漂亮的桑葚玫瑰蜜爆单了，凭啥？</li></ul></details>
+</div></div>
+</div><div class="section-label">🎯 行业参考值（对照你的笔记后台数据）</div>
   <div class="kpi-grid kpi-grid-2col">
     <div class="kpi-card">
       <div class="kpi-title">📈 图文</div>
@@ -2269,7 +2789,182 @@ body {
   <div class="insights-title">🔁 本周反直觉发现</div>
   <div class="insights-list"><div class="insight-card"><span class="insight-pool">图文 件单价 池</span><div class="insight-text">🔁 反直觉一（最重要）：『价格锚定·平替对标』真诚度只有 24.7，比池均 32.51 整整低 7.8 分——是 5 种方法里被系统判得最『商业』的一组。但它依然能进件单价强信号池（19 条），说明在高客单场域里『把账算给买家听』确实有效，系统读得出你在做强促销，但买家就吃这一套。含义：愿意承担短期真诚度损失的店铺可以继续用；想做长线人设/承接老客的店铺，建议改写为『同源平替』风格，淡化『立减/直降』裸促销词。</div></div><div class="insight-card"><span class="insight-pool">视频 件单价 池</span><div class="insight-text">🔁 反直觉一：5 种方法里『工艺溯源·原料硬底』真诚度比池均低 29.5 分（最低），但依然进件单价强信号池——『冒死揭秘+硬刚同行』在水深的滋补品类（黄精/陈皮/精油）能精准截流『搜怎么辨真假』的人群。</div></div></div>
 </div>
-  <div class="section-label">🎯 行业参考值（对照你的笔记后台数据）</div>
+  <div class="v10-section">
+  <div class="v10-banner">
+    <div class="v10-banner-title">🔬 件单价（单笔客单） 高 vs 低对照差分聚类（V10 新增）</div>
+    <div class="v10-banner-sub">按类目内 P75 vs P25 严格切高低对照组，找出"高组独有 / 低组陷阱"写法。<b>这是相关性证据，不是因果，但样本量足够、类目变量已控住</b>。</div>
+  </div>
+  
+  <div class="v10-mechanism">💎 <b>核心机制</b>：件单价高 vs 低的本质差别是【&quot;价值证据&quot;的硬度】：高组用第三方可验证的硬证据（具体年份、酒庄名、产地等级、头数、溯源码、权威评分、稀缺数量、节庆礼盒场景）建立&quot;凭什么贵&quot;的叙事；低组用主观体验类的软话术（&quot;喝出红光&quot;、&quot;教你做&quot;、&quot;家常&quot;、&quot;9.9 包邮&quot;、&quot;实惠&quot;），默认把商品定位在日常可替代区。结构上：高组商品名首段固定写&quot;品类+硬指标（年份/产地/头数/认证）&quot;，低组商品名首段往往是&quot;风味形容词+量大袋装&quot;。结论性 caveat：休食件单价高组样本（89 条）超过一半为茶酒赛道（50.6% vs 低组 7.7%），「酒庄+年份」「老茶+陈化」类信号本质是茶酒赛道的资格门槛而非跨类目可复制方法；真·跨类目可复制的高价撬动器只有 3 个 —— 礼盒场景化、高客单养生硬通货（头数+溯源）、稀缺/权威背书叙事。</div>
+  
+  <div class="v10-subhead v10-subhead-green">✅ 6 个高组独有写法 → 抄</div>
+  <div class="v10-cards-grid"><div class="v10-card v10-card-high">
+  <div class="v10-card-head">
+    <span class="v10-card-num">#1</span>
+    <span class="v10-card-name">海外名庄+具体年份双锚定（如 2023 勃艮第 / 默尔索村级）</span>
+    <span class="conf-badge cb-mid">信心 中</span>
+  </div>
+  <div class="v10-card-meta">
+    <span class="v10-stat">高组命中 24 条 vs 低组 1 条</span>
+    <span class="diff-pp">高组 +26.6pp</span>
+  </div>
+  <div class="v10-card-cat">📊 类目分布：{'美食测评': 14, '美食展示': 8, '美食其他': 2}</div>
+  <div class="v10-card-advice">💡 <b>商家建议</b>：做葡萄酒/烈酒类必须把【酒庄名+年份+产区等级】三件套写进商品名首段，缺一件直接掉到低客单池。</div>
+  <details class="v10-card-examples">
+    <summary>📌 高组案例（3）+ 低组反例（1）</summary>
+    <div class="v10-ex-block">
+      <div class="v10-ex-label">🟢 高组写法</div>
+      <ul class="v10-ex-list"><li>【美食其他|¥4092】地表最强酿酒师，喝过科奇才算懂勃艮第白！ ｜ 商品：others 奶油爆米花小科奇 单一园皮耶布神勃艮第上伯恩丘皮耶之路 2023 2023</li><li>【美食测评|¥3651】低于均价1000+喝一级园标杆蜜蜂园！ ｜ 商品：others 勃艮第传奇大酒商之一，约瑟夫杜鲁安 （直播专用） 勃艮第黑皮诺 Bourgogne P</li><li>【美食测评|¥3733】仅剩6瓶！等了7年！！！大Q巨好价拼手速！ ｜ 商品：others 大Q此生必喝Quintarelli Amarone Classico 经典阿玛罗尼干红</li></ul>
+    </div>
+    <div class="v10-ex-block"><div class="v10-ex-label v10-ex-label-red">🔴 低组反例</div><ul class="v10-ex-list"><li>【美食测评|¥46】黑塔清仓｜以前158舍不得买，现在39随便喝 ｜ 商品：猿小姐 颜值控的天选之作 Black Tower德国黑塔秋花混酿半甜白葡萄酒</li></ul></div>
+  </details>
+</div><div class="v10-card v10-card-high">
+  <div class="v10-card-head">
+    <span class="v10-card-num">#2</span>
+    <span class="v10-card-name">陈化叙事（老茶/陈年/N年陈/窖藏，打&quot;时间价值&quot;）</span>
+    <span class="conf-badge cb-mid">信心 中</span>
+  </div>
+  <div class="v10-card-meta">
+    <span class="v10-stat">高组命中 16 条 vs 低组 5 条</span>
+    <span class="diff-pp">高组 +16.2pp</span>
+  </div>
+  <div class="v10-card-cat">📊 类目分布：{'美食测评': 9, '美食展示': 5, '美食其他': 1, '美食教程': 1}</div>
+  <div class="v10-card-advice">💡 <b>商家建议</b>：做普洱/白茶/烈酒，标题或商品名首字段写「2003 年/15 年陈/陈酿 7 年」，把&quot;时间&quot;明码标价，比写&quot;好茶/好酒&quot;溢价更高。</div>
+  <details class="v10-card-examples">
+    <summary>📌 高组案例（3）+ 低组反例（2）</summary>
+    <div class="v10-ex-block">
+      <div class="v10-ex-label">🟢 高组写法</div>
+      <ul class="v10-ex-list"><li>【美食测评|¥3651】低于均价1000+喝一级园标杆蜜蜂园！ ｜ 商品：others 勃艮第传奇大酒商之一，约瑟夫杜鲁安 （直播专用） 勃艮第黑皮诺 Bourgogne P</li><li>【美食测评|¥3733】仅剩6瓶！等了7年！！！大Q巨好价拼手速！ ｜ 商品：others 大Q此生必喝Quintarelli Amarone Classico 经典阿玛罗尼干红</li><li>【美食测评|¥2430】默尔索扫地僧传人，百年老藤仙泉园！ ｜ 商品：OTHER 默尔索扫地僧之后・Pierre Boisson Bourgogne Murgey De</li></ul>
+    </div>
+    <div class="v10-ex-block"><div class="v10-ex-label v10-ex-label-red">🔴 低组反例</div><ul class="v10-ex-list"><li>【保健品|¥74】舍不得上架系列，夏季肉妹王炸。 ｜ 商品：肉肉贴，超大量一盒40贴，儿童单拍肚脐贴。成人请搭配使用。 肉肉贴。肚子肉多。40贴。用10次</li><li>【美食测评|¥46】黑塔清仓｜以前158舍不得买，现在39随便喝 ｜ 商品：猿小姐 颜值控的天选之作 Black Tower德国黑塔秋花混酿半甜白葡萄酒</li></ul></div>
+  </details>
+</div><div class="v10-card v10-card-high">
+  <div class="v10-card-head">
+    <span class="v10-card-num">#3</span>
+    <span class="v10-card-name">高客单养生硬通货品（燕窝/花胶/石斛/海参 + 头数/产地/溯源）</span>
+    <span class="conf-badge cb-high">信心 高</span>
+  </div>
+  <div class="v10-card-meta">
+    <span class="v10-stat">高组命中 10 条 vs 低组 7 条</span>
+    <span class="diff-pp">高组 +8.8pp</span>
+  </div>
+  <div class="v10-card-cat">📊 类目分布：{'养生食疗': 10}</div>
+  <div class="v10-card-advice">💡 <b>商家建议</b>：做燕窝/花胶/海参，商品名必须出现「头数（8 头/62 头）+ 产地（印尼/湛江/赤嘴）+ 溯源码/认证（中科溯源/官方溯源）」三件套，把不可比的价值差异显性化。</div>
+  <details class="v10-card-examples">
+    <summary>📌 高组案例（3）+ 低组反例（1）</summary>
+    <div class="v10-ex-block">
+      <div class="v10-ex-label">🟢 高组写法</div>
+      <ul class="v10-ex-list"><li>【养生食疗|¥2541】自从吃了这款干挑燕条，干挑盏就再也没买过 ｜ 商品：燕鸣春 中科溯源码燕窝 土豪VIP干挑中大条 100克 500克98干净度不用挑毛 土豪VIP干挑中</li><li>【养生食疗|¥557】8头黄花胶~出一包12斤🛫多谢老细❤️ ｜ 商品：黄花胶 18头 35头 42头 60头 花胶入门 鱼胶花胶 厚肉q弹不腥 8头 500g</li><li>【养生食疗|¥2040】比起鲜炖燕窝，这款大条的性价比简直夯爆了 ｜ 商品：燕鸣春 中科溯源码印尼半干挑大燕条 燕窝 （干净度98  不用挑毛） 特级大燕条100克（10克一袋</li></ul>
+    </div>
+    <div class="v10-ex-block"><div class="v10-ex-label v10-ex-label-red">🔴 低组反例</div><ul class="v10-ex-list"><li>低组几乎无此类商品 — 这类品本身就是高客单赛道入场券</li></ul></div>
+  </details>
+</div><div class="v10-card v10-card-high">
+  <div class="v10-card-head">
+    <span class="v10-card-num">#4</span>
+    <span class="v10-card-name">礼盒/节庆送礼场景（端午/中秋/送领导嘉宾长辈）</span>
+    <span class="conf-badge cb-high">信心 高</span>
+  </div>
+  <div class="v10-card-meta">
+    <span class="v10-stat">高组命中 9 条 vs 低组 14 条</span>
+    <span class="diff-pp">高组 +5.2pp</span>
+  </div>
+  <div class="v10-card-cat">📊 类目分布：{'美食测评': 3, '美食展示': 3, '养生食疗': 3}</div>
+  <div class="v10-card-advice">💡 <b>商家建议</b>：做礼盒主推时，标题+商品名要锚定「节日+收礼对象+礼盒形态」，例：「2026 端午礼盒｜送领导嘉宾伴手礼」，比纯写&quot;好喝/好吃&quot;客单价能拉高 2-4 倍。</div>
+  <details class="v10-card-examples">
+    <summary>📌 高组案例（3）+ 低组反例（2）</summary>
+    <div class="v10-ex-block">
+      <div class="v10-ex-label">🟢 高组写法</div>
+      <ul class="v10-ex-list"><li>【美食测评|¥3651】低于均价1000+喝一级园标杆蜜蜂园！ ｜ 商品：others 勃艮第传奇大酒商之一，约瑟夫杜鲁安 （直播专用） 勃艮第黑皮诺 Bourgogne P</li><li>【美食展示|¥416】2026端午礼盒 | 福禄安康 ｜ 商品：竹编礼盒 | 福禄安康礼</li><li>【美食展示|¥420】告别俗气端午礼，今年走心送礼就选端阳志 ｜ 商品：禹鸿物予 端午节礼品「端阳志」2026端阳送领导嘉宾客户长辈节日答谢伴手礼 筝争日上 Z2S（含龙舟</li></ul>
+    </div>
+    <div class="v10-ex-block"><div class="v10-ex-label v10-ex-label-red">🔴 低组反例</div><ul class="v10-ex-list"><li>【美食展示|¥38】此时，一位出差的公主正在享用她的下午茶 ｜ 商品：祖祖珍巧 zuzu祖祖巧克力豆可可脂综合口味巧克力豆坚果水果冻干罐装送礼 小罐（150g）</li><li>【美食测评|¥90】陈皮豆沙酥，一枚藏了8年的的温柔味道 ｜ 商品：玉堂春 陈皮豆沙奶油酥饼--伯爵红茶/斑斓椰蓉酥 240g/盒（6枚礼盒装） 陈皮豆沙酥1盒6只装</li></ul></div>
+  </details>
+</div><div class="v10-card v10-card-high">
+  <div class="v10-card-head">
+    <span class="v10-card-num">#5</span>
+    <span class="v10-card-name">稀缺/限量/批次稀少叙事（仅剩 6 瓶 / 每批不多 / 小批量）</span>
+    <span class="conf-badge cb-mid">信心 中</span>
+  </div>
+  <div class="v10-card-meta">
+    <span class="v10-stat">高组命中 12 条 vs 低组 10 条</span>
+    <span class="diff-pp">高组 +10.0pp</span>
+  </div>
+  <div class="v10-card-cat">📊 类目分布：{'美食测评': 8, '美食展示': 2, '美食教程': 1, '美食其他': 1}</div>
+  <div class="v10-card-advice">💡 <b>商家建议</b>：高客单商品在标题里量化稀缺感（仅剩 6 瓶 / 每批次只做 50 盒 / 2003 厚纸版），比写&quot;好货&quot;更能转化为付费意愿。</div>
+  <details class="v10-card-examples">
+    <summary>📌 高组案例（3）+ 低组反例（2）</summary>
+    <div class="v10-ex-block">
+      <div class="v10-ex-label">🟢 高组写法</div>
+      <ul class="v10-ex-list"><li>【美食教程|¥137】不咸！来看看宁波人自己的“米其林” ｜ 商品：宁波红膏蟹糊 新鲜腌制鲜中带甜 即食腌制野生梭子蟹 0防腐少盐 【红膏蟹糊300g】*1盒</li><li>【美食其他|¥4092】地表最强酿酒师，喝过科奇才算懂勃艮第白！ ｜ 商品：others 奶油爆米花小科奇 单一园皮耶布神勃艮第上伯恩丘皮耶之路 2023 2023</li><li>【美食测评|¥3733】仅剩6瓶！等了7年！！！大Q巨好价拼手速！ ｜ 商品：others 大Q此生必喝Quintarelli Amarone Classico 经典阿玛罗尼干红</li></ul>
+    </div>
+    <div class="v10-ex-block"><div class="v10-ex-label v10-ex-label-red">🔴 低组反例</div><ul class="v10-ex-list"><li>【美食测评|¥29】官宣|夏日限定🍉海河西瓜牛奶清甜上新！ ｜ 商品：海河 花色牛奶 西瓜牛奶220ml*10 西瓜牛奶*10</li><li>【美食展示|¥69】开箱有了收礼物的感觉吗🎁😎🤲🏻🌿 ｜ 商品：Daily Seeds&amp;Co烘焙燕麦片·多口味【顺丰发货】 夏日限定·「柠檬香草巴斯克」烘焙燕麦片</li></ul></div>
+  </details>
+</div><div class="v10-card v10-card-high">
+  <div class="v10-card-head">
+    <span class="v10-card-num">#6</span>
+    <span class="v10-card-name">权威背书+收藏属性（拍卖行/帕克分/米其林/全球榜单）</span>
+    <span class="conf-badge cb-mid">信心 中</span>
+  </div>
+  <div class="v10-card-meta">
+    <span class="v10-stat">高组命中 12 条 vs 低组 6 条</span>
+    <span class="diff-pp">高组 +11.4pp</span>
+  </div>
+  <div class="v10-card-cat">📊 类目分布：{'美食测评': 7, '美食教程': 3, '美食其他': 1, '美食展示': 1}</div>
+  <div class="v10-card-advice">💡 <b>商家建议</b>：在正文价值感段引用第三方权威（帕克 92 分 / 米其林推荐 / Liv-ex 百强 / 国家级认证），把&quot;我说好&quot;换成&quot;权威说好&quot;，是 300 元↑客单价的标准动作。</div>
+  <details class="v10-card-examples">
+    <summary>📌 高组案例（3）+ 低组反例（1）</summary>
+    <div class="v10-ex-block">
+      <div class="v10-ex-label">🟢 高组写法</div>
+      <ul class="v10-ex-list"><li>【美食教程|¥137】不咸！来看看宁波人自己的“米其林” ｜ 商品：宁波红膏蟹糊 新鲜腌制鲜中带甜 即食腌制野生梭子蟹 0防腐少盐 【红膏蟹糊300g】*1盒</li><li>【美食其他|¥4092】地表最强酿酒师，喝过科奇才算懂勃艮第白！ ｜ 商品：others 奶油爆米花小科奇 单一园皮耶布神勃艮第上伯恩丘皮耶之路 2023 2023</li><li>【美食测评|¥3651】低于均价1000+喝一级园标杆蜜蜂园！ ｜ 商品：others 勃艮第传奇大酒商之一，约瑟夫杜鲁安 （直播专用） 勃艮第黑皮诺 Bourgogne P</li></ul>
+    </div>
+    <div class="v10-ex-block"><div class="v10-ex-label v10-ex-label-red">🔴 低组反例</div><ul class="v10-ex-list"><li>【养生食疗|¥82】春夏交替30天焕新计划：喝出红光
+满面 ｜ 商品：养瑞和 松子核桃姜茶老姜汤花生核桃腰果健康营养坚果冲饮姜母茶250g 1罐体验装经典版（立减10元）</li></ul></div>
+  </details>
+</div></div>
+  
+  <div class="v10-subhead v10-subhead-red">🚫 3 个低组陷阱 → 避</div>
+  <div class="v10-cards-grid"><div class="v10-card v10-card-low">
+  <div class="v10-card-head">
+    <span class="v10-card-num v10-card-num-red">⚠️ #1</span>
+    <span class="v10-card-name">体感调理叙事陷阱（喝出红光 / 内热没了 / 脾胃说谢谢）</span>
+    <span class="conf-badge cb-high">信心 高</span>
+  </div>
+  <div class="v10-card-meta">
+    <span class="v10-stat">低组命中 34 条 vs 高组 6 条</span>
+    <span class="diff-pp diff-pp-red">低组 +5.2pp</span>
+  </div>
+  <div class="v10-card-cat">📊 类目分布：{'养生食疗': 21, '美食测评': 5, '美食展示': 5, '美食其他': 1, '健身饮食': 1, '医疗药品': 1}</div>
+  <div class="v10-card-advice v10-card-advice-red">🚫 <b>避坑建议</b>：想冲高客单的养生品，不要再写&quot;喝完气色好&quot;、&quot;脾胃说谢谢&quot;这类体感话术——这是 50-100 元日常养生茶的标配；要切换成「克重/头数/产地溯源/方剂级配比/适用人群（孕期/术后/月子）」的硬指标叙事。</div>
+  <details class="v10-card-examples"><summary>📌 反例（3）</summary><ul class="v10-ex-list"><li>【养生食疗|¥82】春夏交替30天焕新计划：喝出红光
+满面 ｜ 商品：养瑞和 松子核桃姜茶老姜汤花生核桃腰果健康营养坚果冲饮姜母茶250g 1罐体验装经典版（立减10元）</li><li>【养生食疗|¥74】只是做对了这件事，内热居然没了 ｜ 商品：「顺时男孩」宝宝汤 · 灯芯草清心汤去心火清内热睡不安稳 5包（尝鲜） 为无硫产品，会生药虫不影响食</li><li>【养生食疗|¥82】老一辈说夏吃姜｜坚持15天早起了腮红都省了 ｜ 商品：养瑞和 松子核桃姜茶老姜汤花生核桃腰果健康营养坚果冲饮姜母茶250g 1罐体验装经典版（立减10元）</li></ul></details>
+</div><div class="v10-card v10-card-low">
+  <div class="v10-card-head">
+    <span class="v10-card-num v10-card-num-red">⚠️ #2</span>
+    <span class="v10-card-name">中国地标+日常品类陷阱（东北冷面 / 家常做法 / 9.9 多袋装）</span>
+    <span class="conf-badge cb-high">信心 高</span>
+  </div>
+  <div class="v10-card-meta">
+    <span class="v10-stat">低组命中 152 条 vs 高组 25 条</span>
+    <span class="diff-pp diff-pp-red">低组 +25.4pp</span>
+  </div>
+  <div class="v10-card-cat">📊 类目分布：{'养生食疗': 41, '美食测评': 40, '美食展示': 37, '美食教程': 17, '保健品': 5, '家居用品': 3, '美食其他': 3, '健身饮食': 3, '医疗药品': 2, '妈妈经验': 1}</div>
+  <div class="v10-card-advice v10-card-advice-red">🚫 <b>避坑建议</b>：商品本身是日常主食/调料（冷面/麻辣烫/纳豆/姜茶），不要试图用低价话术。想拉客单价：① 改包装做礼盒（参考端午礼盒簇）；② 强调产地稀缺工艺反差（参考宁波蟹糊的&quot;米其林&quot;打法）。</div>
+  <details class="v10-card-examples"><summary>📌 反例（3）</summary><ul class="v10-ex-list"><li>【美食展示|¥65】感谢10w+姐妹的认可🙏改良版纳豆好评超多 ｜ 商品：以味坊 【顺丰发货】高活性菌种发酵国产纳豆高品质益生菌纳豆激酶 3盒黄豆+3黑豆+1枇杷蜂蜜（新手友</li><li>【养生食疗|¥82】春夏交替30天焕新计划：喝出红光
+满面 ｜ 商品：养瑞和 松子核桃姜茶老姜汤花生核桃腰果健康营养坚果冲饮姜母茶250g 1罐体验装经典版（立减10元）</li><li>【美食展示|¥77】N次回购...踩雷无数才找到的家用咖啡豆‼ ｜ 商品：啡否 【油脂王】完全无酸深度烘焙意式咖啡豆|美式拿铁拉花 【单包尝鲜】227g/包 咖啡豆（不磨粉）</li></ul></details>
+</div><div class="v10-card v10-card-low">
+  <div class="v10-card-head">
+    <span class="v10-card-num v10-card-num-red">⚠️ #3</span>
+    <span class="v10-card-name">平价话术+量大袋装双锚（实惠 9.9 一包 / 家常 3 袋）</span>
+    <span class="conf-badge cb-mid">信心 中</span>
+  </div>
+  <div class="v10-card-meta">
+    <span class="v10-stat">低组命中 6 条 vs 高组 0 条</span>
+    <span class="diff-pp diff-pp-red">低组 +2.1pp</span>
+  </div>
+  <div class="v10-card-cat">📊 类目分布：{'美食测评': 2, '家居用品': 2, '美食展示': 1, '健身饮食': 1}</div>
+  <div class="v10-card-advice v10-card-advice-red">🚫 <b>避坑建议</b>：商品定位想做&quot;价位向上&quot;，避开&quot;平价+量大&quot;双绑定。高客单的&quot;性价比&quot;表达应该是&quot;比同档酒/同档花胶便宜 30%&quot;（参考价 anchor），而不是&quot;9.9 一包&quot;。</div>
+  <details class="v10-card-examples"><summary>📌 反例（3）</summary><ul class="v10-ex-list"><li>【美食展示|¥23】第一个提出爆款尝鲜装的人是天才来的 ｜ 商品：米惦 爆款尝鲜组合手撕牛轧饼&amp;奶奶小馒头&amp;吐司 点心营养早餐面包牛轧 3袋</li><li>【美食测评|¥4】碱水棒全口味来啦！29.9七个（带热量版） ｜ 商品：任选八枚【29.9/8包邮】手作碱水面包碱水棒套餐健身代餐早餐 任选8个加入购物车自动改价29.9（</li><li>【健身饮食|¥14】9.9到手一箱！剪脂人闭眼薅！太宝藏了！ ｜ 商品：八千步 全麦面包糕点吐司整箱早餐代餐饱腹粗粮 6包 原味</li></ul></details>
+</div></div>
+</div><div class="section-label">🎯 行业参考值（对照你的笔记后台数据）</div>
   <div class="kpi-grid kpi-grid-2col">
     <div class="kpi-card">
       <div class="kpi-title">📈 图文</div>
