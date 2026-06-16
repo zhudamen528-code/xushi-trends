@@ -148,24 +148,24 @@ def render_method_card(method, pool_id, metric_type):
     algo = extract_algo(method, pool_id)
     pool_av = pool_algo.get(pool_id, {})
 
-    # 翻译算法分到商家语言
+    # 翻译算法分到商家语言（避免出现"真诚度/算法分"等内部术语）
     algo_tags = []
     if algo['sincerity'] is not None and pool_av.get('sincerity_avg') is not None:
         d = algo['sincerity'] - pool_av['sincerity_avg']
         if d >= 3:
-            algo_tags.append('<span class="algo-tag algo-good">✅ 算法判定真诚度高</span>')
+            algo_tags.append('<span class="algo-tag algo-good">🚀 系统判"像真心分享"·推流加成</span>')
         elif d <= -3:
-            algo_tags.append('<span class="algo-tag algo-warn">⚠️ 算法判商业感强（短期收割型）</span>')
+            algo_tags.append('<span class="algo-tag algo-warn">⚡ 系统判"商业味重"·短期收割型</span>')
     if algo['good_click'] is not None and pool_av.get('good_click_avg') is not None:
         d = algo['good_click'] - pool_av['good_click_avg']
         if d >= 0.01:
-            algo_tags.append('<span class="algo-tag algo-good">✅ 读者点开后真看了</span>')
+            algo_tags.append('<span class="algo-tag algo-good">👁 点进来的人会认真看完</span>')
     if algo['low_bad'] is not None and pool_av.get('low_bad_avg') is not None:
         d = algo['low_bad'] - pool_av['low_bad_avg']
         if d >= 0.01:
-            algo_tags.append('<span class="algo-tag algo-good">✅ 避开了营销味雷区</span>')
+            algo_tags.append('<span class="algo-tag algo-good">🛡 避开"营销味太重"扣分</span>')
         elif d <= -0.02:
-            algo_tags.append('<span class="algo-tag algo-warn">⚠️ 营销味偏重</span>')
+            algo_tags.append('<span class="algo-tag algo-warn">⚠️ 营销味偏重·容易被压流量</span>')
 
     algo_tags_html = ' '.join(algo_tags) if algo_tags else ''
 
@@ -319,40 +319,40 @@ def render_two_weapons_for_tab(tab_key, pic_pool, vid_pool):
     long_methods.sort(key=lambda x: -x[0])
     short_methods.sort(key=lambda x: x[0])
 
-    def render_list(methods, max_n=6):
+    def render_list(methods, max_n=6, kind='long'):
         if not methods:
             return '<li class="tw-empty">本指标池里暂无该类方法</li>'
         items = []
         for d, name, form, n in methods[:max_n]:
-            d_str = f'+{d:.0f}' if d > 0 else f'{d:.0f}'
-            items.append(f'<li>{escape(name)} <span class="tw-meta">·{form}·{n}条·真诚度{d_str}</span></li>')
+            tag = '🚀 推流加成' if kind == 'long' else '⚡ 算法不爱但用户买'
+            items.append(f'<li>{escape(name)} <span class="tw-meta">·{form}·{n}条·{tag}</span></li>')
         return ''.join(items)
 
-    long_html = render_list(long_methods)
-    short_html = render_list(short_methods)
+    long_html = render_list(long_methods, kind='long')
+    short_html = render_list(short_methods, kind='short')
 
-    # 兜底：如果池里没有任何短线/长线方法，给一句说明
-    long_foot = '→ 算法+用户双优，可长线做不会被压' if long_methods else '→ 本指标池里此类方法稀缺'
-    short_foot = '→ 适合大促/库存清/季节末班车' if short_methods else '→ 本指标池里没有"算法压用户买"的方法'
+    # 兜底
+    long_foot = '→ 算法长期给流量，做老客承接 / 品牌人设' if long_methods else '→ 本指标池里这类方法少见'
+    short_foot = '→ 大促 / 库存清 / 季节末班车专用，别天天发' if short_methods else '→ 本指标池里没有"算法不爱但用户买"的方法'
 
     total_methods = len(clusters.get(pic_pool, {}).get('methods', [])) + len(clusters.get(vid_pool, {}).get('methods', []))
     return f'''<div class="two-weapons-banner">
-  <div class="tw-title">🎯 {escape(metric_label)} 的两套武器（基于本池 {total_methods} 个方法算法分排序）</div>
+  <div class="tw-title">🎯 {escape(metric_label)} 的两套打法（基于本池 {total_methods} 个方法的内容质量分类）</div>
   <div class="tw-grid">
     <div class="tw-card tw-long">
-      <div class="tw-head">🏛️ 长线武器（追算法 · 真诚度 ≥ +3）</div>
-      <div class="tw-desc">算法+用户双优，可持续做不会被降权</div>
+      <div class="tw-head">🏛️ 可持续打法</div>
+      <div class="tw-desc">读起来像真心分享，系统愿意持续给流量、不容易被压</div>
       <ul>{long_html}</ul>
       <div class="tw-foot">{long_foot}</div>
     </div>
     <div class="tw-card tw-short">
-      <div class="tw-head">⚡ 短线武器（追用户 · 真诚度 ≤ -3）</div>
-      <div class="tw-desc">算法压但用户买，CVR 高但不可持续</div>
+      <div class="tw-head">⚡ 短期收割打法</div>
+      <div class="tw-desc">系统会判定"商业味重"，但用户的购买决策会被强力推一把</div>
       <ul>{short_html}</ul>
       <div class="tw-foot">{short_foot}</div>
     </div>
   </div>
-  <div class="tw-tips">💡 单看「算法分高的方法」会错过短期爆款机会；单做「爆款方法」长期会被算法压。<b>这两套武器都要会，但要分场景用</b>。</div>
+  <div class="tw-tips">💡 <b>可持续打法</b>适合做长期人设和复购；<b>短期收割打法</b>适合大促/库存清/季节末班车，<b>但别天天用</b>——系统看到你模板化会压你的流量。两套打法都要会，分场景用。</div>
 </div>'''
 
 # ============ V9 额外 CSS（追加到 V8 之后）============
