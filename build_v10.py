@@ -301,6 +301,15 @@ V10_CSS = '''
 .corr-neg { color: #c0392b; background: #fde8e8; padding: 2px 8px; border-radius: 10px; font-size: 12px; margin-right: 4px; display: inline-block; margin-bottom: 4px; }
 .mac-key { background: #2c3e50; color: #fff; border-radius: 6px; padding: 10px 14px; margin-top: 12px; font-size: 12px; line-height: 1.7; }
 .mac-key b { color: #f5b400; }
+
+/* V9 老内容折叠样式 */
+.v9-legacy-fold { background: #fafbfc; border: 1px solid #e5e7eb; border-radius: 10px; margin: 24px 0 16px; padding: 0; }
+.v9-legacy-summary { cursor: pointer; padding: 14px 18px; font-size: 13px; font-weight: 600; color: #666; list-style: none; display: flex; align-items: center; gap: 8px; user-select: none; }
+.v9-legacy-summary::-webkit-details-marker { display: none; }
+.v9-legacy-summary::before { content: '▶'; transition: transform 0.2s; color: #999; font-size: 10px; }
+.v9-legacy-fold[open] .v9-legacy-summary::before { transform: rotate(90deg); }
+.v9-legacy-summary:hover { color: #d92f5e; }
+.v9-legacy-body { padding: 16px 18px 4px; border-top: 1px solid #e5e7eb; }
 .v10-subhead { font-size: 14px; font-weight: 700; margin: 18px 0 10px; padding: 6px 10px; border-radius: 4px; }
 .v10-subhead-green { color: #1a7a3f; background: #e8f5ee; }
 .v10-subhead-red { color: #b32a2a; background: #fde8e8; }
@@ -429,6 +438,35 @@ for metric_key in ['ctr1', 'ctr2', 'cvr', 'price']:
                 print(f'⚠️ {metric_key} Tab fallback 注入 V10 section')
         else:
             print(f'❌ {metric_key} Tab 未找到')
+
+# V10 UI 降噪：折叠 V9 老的"两套武器+反直觉+方法卡"为可展开模块
+# 4 指标 Tab 内：把 two-weapons-banner 到结尾整体包一层 details
+for metric_key in ['ctr1', 'ctr2', 'cvr', 'price']:
+    # 找该 tab 的 panel 边界
+    tab_start = html.find(f'<div class="tab-panel hidden" id="tab-{metric_key}">')
+    if tab_start < 0: continue
+    # 找该 tab 内 two-weapons-banner 位置
+    tw_start = html.find('<div class="two-weapons-banner">', tab_start)
+    if tw_start < 0: continue
+    # 找下一个 tab-panel 开始 或 closing 边界
+    next_tab = html.find('<div class="tab-panel hidden"', tab_start + 100)
+    if next_tab < 0: next_tab = html.find('</body>')
+    # tab panel 是否在边界内
+    if tw_start > next_tab: continue
+    # 找 panel 自身的 closing </div>（粗略：找到最后一个 </div> 紧贴下一个 tab 之前）
+    panel_end = next_tab
+    # 简化：从 two-weapons-banner 到 next_tab 之间的内容包 details
+    legacy = html[tw_start:panel_end].rstrip()
+    # 去掉末尾 </div>（保留给 panel 收尾）
+    while legacy.endswith('</div>'):
+        legacy = legacy[:-6].rstrip()
+    legacy_back_close = (panel_end - len((html[tw_start:panel_end]).rstrip())) - tw_start  # 不用，直接简化
+    wrapped = f'''<details class="v9-legacy-fold">
+  <summary class="v9-legacy-summary">📚 V9 老方法 · 两套武器框架 + 40 方法卡 + 反直觉发现（点开看更多角度参考）</summary>
+  <div class="v9-legacy-body">{html[tw_start:panel_end]}</div>
+</details>'''
+    html = html[:tw_start] + wrapped + html[panel_end:]
+    print(f'✅ {metric_key} Tab V9 老内容已折叠')
 
 # 注入 V10 CSS（接在 V9 CSS 之后）
 html = html.replace('</style>', V10_CSS + '\n</style>', 1)
