@@ -453,25 +453,35 @@ for metric_key in ['ctr1', 'ctr2', 'cvr', 'price']:
     else:
         section_html = render_v10_section(metric_key, metric_labels[metric_key])
     
-    # 找到这个 tab 的 panel
-    pattern = rf'(<div class="tab-panel hidden" id="tab-{metric_key}">.*?)(<div class="section-label">🎯 行业参考值)'
-    m = re.search(pattern, html, re.DOTALL)
-    if m:
-        # 在"行业参考值"之前插 V10 section
-        html = html[:m.end(1)] + section_html + html[m.end(1):]
-        print(f'✅ {metric_key} Tab 注入 V10 section')
-    else:
-        # fallback：直接找 tab-{key} 第一次出现
-        idx = html.find(f'<div class="tab-panel hidden" id="tab-{metric_key}">')
-        if idx >= 0:
-            # 找到 hero 块之后插
-            hero_end = html.find('</div>', html.find('<div class="hero', idx))
-            if hero_end > 0:
-                ins_pos = hero_end + len('</div>')
-                html = html[:ins_pos] + '\n' + section_html + html[ins_pos:]
-                print(f'⚠️ {metric_key} Tab fallback 注入 V10 section')
+    # 找到这个 tab 的 panel，插入位置 = hero block 之后、 two-weapons-banner 之前
+    # 这样后续 V9 折叠（从 two-weapons-banner 开始包）才不会把 V10 section 吞进去
+    tab_pat = rf'<div class="tab-panel hidden" id="tab-{metric_key}">'
+    tab_start = html.find(tab_pat)
+    if tab_start < 0:
+        print(f'❌ {metric_key} Tab 未找到')
+        continue
+    # 找 hero block 闭合（hero block 是 panel 内第一个 <div class="hero...">...</div>）
+    hero_open = html.find('<div class="hero', tab_start)
+    if hero_open < 0:
+        print(f'❌ {metric_key} 未找到 hero block')
+        continue
+    # hero block 可能嵌套，找匹配 </div>：用 depth 计数
+    depth = 1
+    i = hero_open + len('<div')
+    while depth > 0 and i < len(html):
+        nxt_open = html.find('<div', i)
+        nxt_close = html.find('</div>', i)
+        if nxt_close < 0: break
+        if 0 <= nxt_open < nxt_close:
+            depth += 1; i = nxt_open + len('<div')
         else:
-            print(f'❌ {metric_key} Tab 未找到')
+            depth -= 1; i = nxt_close + len('</div>')
+    if depth != 0:
+        print(f'❌ {metric_key} hero block 闭合不匹配')
+        continue
+    ins_pos = i  # 紧跟在 hero 闭合 </div> 之后
+    html = html[:ins_pos] + '\n' + section_html + '\n' + html[ins_pos:]
+    print(f'✅ {metric_key} Tab 注入 V10 section（hero 后）')
 
 # V10 UI 降噪：折叠 V9 老的"两套武器+反直觉+方法卡"为可展开模块
 # 4 指标 Tab 内：把 two-weapons-banner 到结尾整体包一层 details
