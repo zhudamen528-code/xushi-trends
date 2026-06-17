@@ -1,0 +1,82 @@
+{
+  "ctr1": [
+    {
+      "feat": "low_bad_market_score",
+      "label": "营销味淡",
+      "pearson": 0.079,
+      "n": 1199
+    },
+    {
+      "feat": "first_img_aesthetic_level",
+      "label": "封面美学",
+      "pearson": -0.074,
+      "n": 1192
+    },
+    {
+      "feat": "good_click_quality_score",
+      "label": "好点击留人",
+      "pearson": 0.07,
+      "n": 1199
+    }
+  ],
+  "ctr2": [
+    {
+      "feat": "model_sincerity_score",
+      "label": "真诚分享",
+      "pearson": 0.099,
+      "n": 1199
+    },
+    {
+      "feat": "low_bad_market_score",
+      "label": "营销味淡",
+      "pearson": 0.064,
+      "n": 1199
+    },
+    {
+      "feat": "first_img_quality_level",
+      "label": "封面质量",
+      "pearson": -0.062,
+      "n": 1192
+    }
+  ],
+  "cvr": [
+    {
+      "feat": "model_sincerity_score",
+      "label": "真诚分享",
+      "pearson": -0.106,
+      "n": 1199
+    },
+    {
+      "feat": "creation_level",
+      "label": "创作等级",
+      "pearson": 0.087,
+      "n": 1199
+    },
+    {
+      "feat": "low_bad_market_score",
+      "label": "营销味淡",
+      "pearson": -0.049,
+      "n": 1199
+    }
+  ],
+  "price": [
+    {
+      "feat": "note_quality_level",
+      "label": "笔记质量分",
+      "pearson": 0.11,
+      "n": 1199
+    },
+    {
+      "feat": "good_click_quality_score",
+      "label": "好点击留人",
+      "pearson": 0.074,
+      "n": 1199
+    },
+    {
+      "feat": "model_sincerity_score",
+      "label": "真诚分享",
+      "pearson": 0.026,
+      "n": 1199
+    }
+  ]
+}

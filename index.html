@@ -1270,6 +1270,34 @@ body {
 .v10-banner-title { font-size: 16px; font-weight: 700; color: #333; margin-bottom: 6px; }
 .v10-banner-sub { font-size: 12px; color: #666; line-height: 1.6; }
 .v10-mechanism { background: #f4f8ff; border-left: 3px solid #4a90e2; border-radius: 6px; padding: 12px 16px; margin: 14px 0; font-size: 13px; color: #333; line-height: 1.7; }
+/* 核心机制 hero 样式：深色背景、大字、高亮 */
+.v10-mech-hero { background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%) !important; color: #fff !important; border-left: 4px solid #f5b400 !important; padding: 16px 20px !important; font-size: 15px !important; line-height: 1.8 !important; box-shadow: 0 2px 8px rgba(0,0,0,0.15); margin: 16px 0 20px !important; border-radius: 8px !important; }
+.v10-mech-hero b { color: #f5b400 !important; font-size: 16px; }
+
+/* CTR2 三层优先级前置说明 */
+.ctr2-priority-note { background: #fff; border: 1px solid #e8eaed; border-radius: 10px; padding: 16px 18px; margin: 14px 0 18px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
+.cpn-title { font-size: 14px; font-weight: 700; color: #d92f5e; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px dashed #f0d4dd; }
+.cpn-tier { padding: 8px 12px; margin: 6px 0; border-radius: 6px; font-size: 12px; line-height: 1.7; color: #333; }
+.cpn-tier-1 { background: #fff0f0; border-left: 3px solid #d92f5e; }
+.cpn-tier-2 { background: #fffaeb; border-left: 3px solid #f5b400; }
+.cpn-tier-3 { background: #f0fff4; border-left: 3px solid #34c759; }
+.cpn-tier b { color: #222; font-size: 13px; }
+.cpn-key { background: #2c3e50; color: #fff; border-radius: 6px; padding: 10px 14px; margin-top: 12px; font-size: 12px; line-height: 1.7; }
+.cpn-key b { color: #f5b400; }
+
+/* 指标↔算法相关性表 */
+.metric-algo-corr { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 14px 18px; margin: 16px 0 0; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+.mac-title { font-size: 14px; font-weight: 700; color: #2c3e50; margin-bottom: 6px; }
+.mac-sub { font-size: 11px; color: #888; margin-bottom: 12px; line-height: 1.6; }
+.mac-table { width: 100%; border-collapse: collapse; }
+.mac-table th { font-size: 12px; color: #666; text-align: left; padding: 6px 10px; background: #f8f9fa; border-bottom: 1px solid #e5e7eb; }
+.mac-table td { padding: 8px 10px; font-size: 13px; border-bottom: 1px solid #f0f0f0; }
+.mac-metric { font-weight: 600; color: #333; white-space: nowrap; }
+.mac-feats { color: #555; }
+.corr-pos { color: #1a7a3f; background: #e8f5ee; padding: 2px 8px; border-radius: 10px; font-size: 12px; margin-right: 4px; display: inline-block; margin-bottom: 4px; }
+.corr-neg { color: #c0392b; background: #fde8e8; padding: 2px 8px; border-radius: 10px; font-size: 12px; margin-right: 4px; display: inline-block; margin-bottom: 4px; }
+.mac-key { background: #2c3e50; color: #fff; border-radius: 6px; padding: 10px 14px; margin-top: 12px; font-size: 12px; line-height: 1.7; }
+.mac-key b { color: #f5b400; }
 .v10-subhead { font-size: 14px; font-weight: 700; margin: 18px 0 10px; padding: 6px 10px; border-radius: 4px; }
 .v10-subhead-green { color: #1a7a3f; background: #e8f5ee; }
 .v10-subhead-red { color: #b32a2a; background: #fde8e8; }
@@ -1303,6 +1331,26 @@ body {
 .v10-ex-list li { margin-bottom: 3px; }
 .v10-note-link { color: #1a73e8; text-decoration: none; }
 .v10-note-link:hover { color: #d92f5e; text-decoration: underline; }
+
+/* 件单价 4 机制 playbook */
+.price-playbook-section { margin: 20px 0; }
+.price-banner { background: linear-gradient(135deg, #ffe9f0, #ffd5e3) !important; border-left-color: #d92f5e !important; }
+.v10-mech-hero { background: linear-gradient(135deg, #2c3e50, #34495e); color: #f0f0f0; border-left: 4px solid #f5b400; font-size: 14px; padding: 14px 18px; }
+.v10-mech-hero b { color: #fff; }
+.price-mech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
+.price-mech-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 14px 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); border-top: 3px solid #d92f5e; }
+.price-mech-head { margin-bottom: 8px; }
+.price-mech-name { font-size: 15px; font-weight: 700; color: #222; }
+.price-mech-desc { font-size: 12px; color: #666; margin-bottom: 10px; line-height: 1.6; }
+.price-mech-sop { background: #f0f8ff; border-radius: 6px; padding: 8px 12px; font-size: 13px; color: #333; line-height: 1.6; margin-bottom: 8px; }
+.price-mech-pitfall { background: #fff5e6; border-radius: 6px; padding: 8px 12px; font-size: 12px; color: #5d4a1f; line-height: 1.6; margin-bottom: 10px; }
+.price-mech-cases summary { cursor: pointer; color: #4a90e2; padding: 4px 0; font-weight: 500; font-size: 12px; }
+.price-mech-cases summary:hover { color: #d92f5e; }
+.case-meta { color: #888; font-size: 11px; }
+.case-empty { color: #aaa; font-style: italic; }
+@media (max-width: 768px) {
+  .price-mech-grid { grid-template-columns: 1fr; }
+}
 
 @media (max-width: 768px) {
   .v10-banner { padding: 10px 12px; }
@@ -1708,6 +1756,15 @@ body {
       <div class="formula-line"><strong>GPM = CTR1 × CTR2 × CVR × 件单价 × 1000</strong></div>
       <div class="formula-flow">笔记曝光 → <span class="step ctr1">👆 封面点击</span> → <span class="step ctr2">🔗 商品卡点击</span> → <span class="step cvr">💵 下单</span> → <span class="step price">💎 客单价</span></div>
       <div class="formula-tip">📍 <strong>GPM 是你笔记生意提升的核心</strong>：GPM 是商家自己 100% 可控的。GPM 提升不仅让每一份曝光能赚到的钱更多，平台也会把流量倾斜给 GPM 高的笔记——所以提升 GPM 是「单价 × 流量」双重增长。</div>
+<div class="metric-algo-corr">
+  <div class="mac-title">🤖 4 指标 ↔ 算法 Top 3 相关 feature</div>
+  <div class="mac-sub">皮尔逊系数（n=1199）。<b>↑ 表示算法该指标高的笔记，对应业务指标也越高</b>；↓ 表示反向关系。系数 0.05-0.15 属弱-中等相关，但方向已稳定。</div>
+  <table class="mac-table">
+    <thead><tr><th>业务指标</th><th>算法 feature Top 3</th></tr></thead>
+    <tbody><tr><td class="mac-metric">👆 CTR1（封面+标题点击）</td><td class="mac-feats"><span class="corr-pos">营销味淡↑0.08</span> · <span class="corr-neg">封面美学↓0.07</span> · <span class="corr-pos">好点击留人↑0.07</span></td></tr><tr><td class="mac-metric">🔗 CTR2（商品卡点击）</td><td class="mac-feats"><span class="corr-pos">真诚分享↑0.10</span> · <span class="corr-pos">营销味淡↑0.06</span> · <span class="corr-neg">封面质量↓0.06</span></td></tr><tr><td class="mac-metric">💵 CVR（下单转化）</td><td class="mac-feats"><span class="corr-neg">真诚分享↓0.11</span> · <span class="corr-pos">创作等级↑0.09</span> · <span class="corr-neg">营销味淡↓0.05</span></td></tr><tr><td class="mac-metric">💎 件单价（单笔客单）</td><td class="mac-feats"><span class="corr-pos">笔记质量分↑0.11</span> · <span class="corr-pos">好点击留人↑0.07</span> · <span class="corr-pos">真诚分享↑0.03</span></td></tr></tbody>
+  </table>
+  <div class="mac-key">💎 <b>关键洞察</b>：CVR 与「真诚分享」呈<b>负相关</b>（-0.11）——真诚分享是算法的"长期人设"奖励，但买家下单更买"具体使用方案 + 人群定位"，<b>追算法 ≠ 卖货好，两条线要分场景</b>。</div>
+</div>
     </div>
   </div>
 
@@ -1830,7 +1887,9 @@ body {
     <div class="v10-banner-sub">按类目内 P75 vs P25 严格切高低对照组，找出"高组独有 / 低组陷阱"写法。<b>这是相关性证据，不是因果，但样本量足够、类目变量已控住</b>。</div>
   </div>
   
-  <div class="v10-mechanism">💎 <b>核心机制</b>：CTR1 高 vs 低的本质差别不在标题字数、感叹号数量或封面是否精致，而在【真实剂量+具体钩子】 vs 【悬念词+上新公告】：高组用第一人称剂量叙事（喝了5杯/15年/15天）、具体大数字（799元/100万件/21万单）、关键词框选（「」/（））、并敢用'生活感封面'(aesthetic=低)；低组陷在'终于！XX来了''入夏必囤''XX的平替'这种缺乏具体落点的口号式公告，尤其在养生食疗赛道最严重（养生+夏季+终于 4.67x 高发于低组）。</div>
+  <div class="v10-mechanism v10-mech-hero">💎 <b>核心机制</b>：CTR1 高 vs 低的本质差别不在标题字数、感叹号数量或封面是否精致，而在【真实剂量+具体钩子】 vs 【悬念词+上新公告】：高组用第一人称剂量叙事（喝了5杯/15年/15天）、具体大数字（799元/100万件/21万单）、关键词框选（「」/（））、并敢用'生活感封面'(aesthetic=低)；低组陷在'终于！XX来了''入夏必囤''XX的平替'这种缺乏具体落点的口号式公告，尤其在养生食疗赛道最严重（养生+夏季+终于 4.67x 高发于低组）。</div>
+  
+  
   
   <div class="v10-subhead v10-subhead-green">✅ 4 个高组独有写法 → 抄</div>
   <div class="v10-cards-grid"><div class="v10-card v10-card-high">
@@ -2113,7 +2172,15 @@ body {
     <div class="v10-banner-sub">按类目内 P75 vs P25 严格切高低对照组，找出"高组独有 / 低组陷阱"写法。<b>这是相关性证据，不是因果，但样本量足够、类目变量已控住</b>。</div>
   </div>
   
-  <div class="v10-mechanism">💎 <b>核心机制</b>：CTR2 高组本质 = 商详顶部 0.5 秒能让用户做决定的'硬信息密度'（短标题/短商品名/克数·瓶数·产地·权威）；CTR2 低组本质 = 商详变成'品鉴文学'（送礼场景+堆砌风味词+长商品名+欲言又止标题），看似在讲故事其实在拖延决策。商家想提升 CTR2，应当把商详顶部当成'电梯演讲'：标题≤15字、商品名≤25字、正文前200字给一条规格+一条证据，而不是给五条风味描述。</div>
+  <div class="v10-mechanism v10-mech-hero">💎 <b>核心机制</b>：CTR2 高组本质 = 商详顶部 0.5 秒能让用户做决定的'硬信息密度'（短标题/短商品名/克数·瓶数·产地·权威）；CTR2 低组本质 = 商详变成'品鉴文学'（送礼场景+堆砌风味词+长商品名+欲言又止标题），看似在讲故事其实在拖延决策。商家想提升 CTR2，应当把商详顶部当成'电梯演讲'：标题≤15字、商品名≤25字、正文前200字给一条规格+一条证据，而不是给五条风味描述。</div>
+  
+  <div class="ctr2-priority-note">
+  <div class="cpn-title">📐 CTR2 三层优先级 · 字数本身不是因，「信息密度」才是</div>
+  <div class="cpn-tier cpn-tier-1"><b>🔴 首要 · 商品名做减法</b>（差距最大 +14.5pp）<br>≤ 25 字内只放「品类 + 1 个硬指标」。例：✅「韩要强夏威夷果 250g 中大半粒」/ ❌「韩要强 0号特大现烤夏威夷果仁没有额外添加剂250克 1罐*250克【中大半粒】」</div>
+  <div class="cpn-tier cpn-tier-2"><b>🟡 次要 · 正文前 200 字做减法</b>（< 100 字 +14.5pp）<br>一句卖点 + 一句证据，不要把商详顶部写成产品说明书。</div>
+  <div class="cpn-tier cpn-tier-3"><b>🟢 辅助 · 标题做减法</b>（≤ 15 字 +8.3pp）<br>≤ 15 字 + 规格量化数字，让用户在信息流 0.5 秒看懂「是什么 + 多少」。</div>
+  <div class="cpn-key">💡 <b>判断依据</b>：不是死磕字数，是看「单位字数的信息密度」——25 字商品名讲清 1 件事 > 50 字商品名塞 7 件事每件都没讲透。</div>
+</div>
   
   <div class="v10-subhead v10-subhead-green">✅ 3 个高组独有写法 → 抄</div>
   <div class="v10-cards-grid"><div class="v10-card v10-card-high">
@@ -2428,7 +2495,9 @@ body {
     <div class="v10-banner-sub">按类目内 P75 vs P25 严格切高低对照组，找出"高组独有 / 低组陷阱"写法。<b>这是相关性证据，不是因果，但样本量足够、类目变量已控住</b>。</div>
   </div>
   
-  <div class="v10-mechanism">💎 <b>核心机制</b>：CVR 高 vs 低 的本质差别：高组把『商品』翻译成『一个具体人群在一个具体时刻的固定动作 + 情绪兜底』（人群锁定 → 场景化 → 每天一勺 → 治愈/安心）；低组停留在『产品描述+ 横向比较+ 规格数字+ 节日套话』，让用户自己脑补『我要不要、什么时候、怎么用』。所以提升 CVR 的核心动作不是把内容做得更长更专业，而是把『使用决策』提前替用户做完。</div>
+  <div class="v10-mechanism v10-mech-hero">💎 <b>核心机制</b>：CVR 高 vs 低 的本质差别：高组把『商品』翻译成『一个具体人群在一个具体时刻的固定动作 + 情绪兜底』（人群锁定 → 场景化 → 每天一勺 → 治愈/安心）；低组停留在『产品描述+ 横向比较+ 规格数字+ 节日套话』，让用户自己脑补『我要不要、什么时候、怎么用』。所以提升 CVR 的核心动作不是把内容做得更长更专业，而是把『使用决策』提前替用户做完。</div>
+  
+  
   
   <div class="v10-subhead v10-subhead-green">✅ 7 个高组独有写法 → 抄</div>
   <div class="v10-cards-grid"><div class="v10-card v10-card-high">
@@ -2791,180 +2860,60 @@ body {
   <div class="insights-title">🔁 本周反直觉发现</div>
   <div class="insights-list"><div class="insight-card"><span class="insight-pool">图文 件单价 池</span><div class="insight-text">🔁 反直觉一（最重要）：『价格锚定·平替对标』真诚度只有 24.7，比池均 32.51 整整低 7.8 分——是 5 种方法里被系统判得最『商业』的一组。但它依然能进件单价强信号池（19 条），说明在高客单场域里『把账算给买家听』确实有效，系统读得出你在做强促销，但买家就吃这一套。含义：愿意承担短期真诚度损失的店铺可以继续用；想做长线人设/承接老客的店铺，建议改写为『同源平替』风格，淡化『立减/直降』裸促销词。</div></div><div class="insight-card"><span class="insight-pool">视频 件单价 池</span><div class="insight-text">🔁 反直觉一：5 种方法里『工艺溯源·原料硬底』真诚度比池均低 29.5 分（最低），但依然进件单价强信号池——『冒死揭秘+硬刚同行』在水深的滋补品类（黄精/陈皮/精油）能精准截流『搜怎么辨真假』的人群。</div></div></div>
 </div>
-  <div class="v10-section">
-  <div class="v10-banner">
-    <div class="v10-banner-title">🔬 件单价（单笔客单） 高 vs 低对照差分聚类（V10 新增）</div>
-    <div class="v10-banner-sub">按类目内 P75 vs P25 严格切高低对照组，找出"高组独有 / 低组陷阱"写法。<b>这是相关性证据，不是因果，但样本量足够、类目变量已控住</b>。</div>
+  <div class="v10-section price-playbook-section">
+  <div class="v10-banner price-banner">
+    <div class="v10-banner-title">💎 件单价拉升 · 4 大固定机制（V10 改版）</div>
+    <div class="v10-banner-sub">件单价受商品定价/促销/库存/人群消费力影响太大，<b>笔记内容只能影响临门一脚</b>。这里不做差分聚类（会被"贵商品天然贵"污染），改成 4 个可直接照抄的运营机制，配本周池里真实案例。</div>
   </div>
   
-  <div class="v10-mechanism">💎 <b>核心机制</b>：件单价高 vs 低的本质差别是【&quot;价值证据&quot;的硬度】：高组用第三方可验证的硬证据（具体年份、酒庄名、产地等级、头数、溯源码、权威评分、稀缺数量、节庆礼盒场景）建立&quot;凭什么贵&quot;的叙事；低组用主观体验类的软话术（&quot;喝出红光&quot;、&quot;教你做&quot;、&quot;家常&quot;、&quot;9.9 包邮&quot;、&quot;实惠&quot;），默认把商品定位在日常可替代区。结构上：高组商品名首段固定写&quot;品类+硬指标（年份/产地/头数/认证）&quot;，低组商品名首段往往是&quot;风味形容词+量大袋装&quot;。结论性 caveat：休食件单价高组样本（89 条）超过一半为茶酒赛道（50.6% vs 低组 7.7%），「酒庄+年份」「老茶+陈化」类信号本质是茶酒赛道的资格门槛而非跨类目可复制方法；真·跨类目可复制的高价撬动器只有 3 个 —— 礼盒场景化、高客单养生硬通货（头数+溯源）、稀缺/权威背书叙事。</div>
+  <div class="v10-mechanism v10-mech-hero">
+    💎 <b>核心心智</b>：件单价 = 商品定价 × 平均购买件数。商品定价改不了，但「平均购买件数」可以通过笔记话术拉高（凑单/赠品/囤货/任选）。
+  </div>
   
-  <div class="v10-subhead v10-subhead-green">✅ 6 个高组独有写法 → 抄</div>
-  <div class="v10-cards-grid"><div class="v10-card v10-card-high">
-  <div class="v10-card-head">
-    <span class="v10-card-num">#1</span>
-    <span class="v10-card-name">海外名庄+具体年份双锚定（如 2023 勃艮第 / 默尔索村级）</span>
-    <span class="conf-badge cb-mid">信心 中</span>
+  <div class="price-mech-grid"><div class="price-mech-card">
+  <div class="price-mech-head">
+    <span class="price-mech-name">🎁 多件多折</span>
   </div>
-  <div class="v10-card-meta">
-    <span class="v10-stat">高组命中 24 条 vs 低组 1 条</span>
-    <span class="diff-pp">高组 +26.6pp</span>
-  </div>
-  <div class="v10-card-cat">📊 类目分布：{'美食测评': 14, '美食展示': 8, '美食其他': 2}</div>
-  <div class="v10-card-advice">💡 <b>商家建议</b>：做葡萄酒/烈酒类必须把【酒庄名+年份+产区等级】三件套写进商品名首段，缺一件直接掉到低客单池。</div>
-  <details class="v10-card-examples">
-    <summary>📌 高组案例（3）+ 低组反例（1）</summary>
-    <div class="v10-ex-block">
-      <div class="v10-ex-label">🟢 高组写法</div>
-      <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6a190271000000000803298a" target="_blank" rel="noopener" class="v10-note-link">🔗 【美食其他|¥4092】地表最强酿酒师，喝过科奇才算懂勃艮第白！ ｜ 商品：others 奶油爆米花小科奇 单一园皮耶布神勃艮第上伯恩丘皮耶之路 2023 2023</a></li><li><a href="https://www.xiaohongshu.com/explore/6a12979f000000003601875e" target="_blank" rel="noopener" class="v10-note-link">🔗 【美食测评|¥3651】低于均价1000+喝一级园标杆蜜蜂园！ ｜ 商品：others 勃艮第传奇大酒商之一，约瑟夫杜鲁安 （直播专用） 勃艮第黑皮诺 Bourgogne P</a></li><li><a href="https://www.xiaohongshu.com/explore/6a0958200000000006020cd1" target="_blank" rel="noopener" class="v10-note-link">🔗 【美食测评|¥3733】仅剩6瓶！等了7年！！！大Q巨好价拼手速！ ｜ 商品：others 大Q此生必喝Quintarelli Amarone Classico 经典阿玛罗尼干红</a></li></ul>
-    </div>
-    <div class="v10-ex-block"><div class="v10-ex-label v10-ex-label-red">🔴 低组反例</div><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6a23efcc000000003503843e" target="_blank" rel="noopener" class="v10-note-link">🔗 【美食测评|¥46】黑塔清仓｜以前158舍不得买，现在39随便喝 ｜ 商品：猿小姐 颜值控的天选之作 Black Tower德国黑塔秋花混酿半甜白葡萄酒</a></li></ul></div>
+  <div class="price-mech-desc">高频复购品（茶/零食/调味）通过 N 件折扣提客单</div>
+  <div class="price-mech-sop">💡 <b>怎么做</b>：笔记里直接打出&quot;买 N 件减 X 元&quot;或&quot;买 N 送 1&quot;，配商品卡跳转，让用户在商品卡阶段就看到优惠</div>
+  <div class="price-mech-pitfall">⚠️ <b>避坑</b>：不要把多件价拉到比单件价低过多（差&gt;20%），算法会判低质价格欺诈降低分发</div>
+  <details class="price-mech-cases">
+    <summary>📌 本周池里命中的真实案例（3）</summary>
+    <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6a031ca10000000007012d5d" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗] 三伏天的安心是红豆薏米水给的🫶太牛了！</a> <span class="case-meta">件数 419 · 件单价 ¥72 · 关键词「买三送一」</span></li><li><a href="https://www.xiaohongshu.com/explore/6842a03c000000002002aa51" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评] 真诚分享‼️连着买了一年的咖啡豆🔥实在是香</a> <span class="case-meta">件数 201 · 件单价 ¥75 · 关键词「凑单」</span></li><li><a href="https://www.xiaohongshu.com/explore/6a0438b5000000003601cac9" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评] 你绝对没尝过！十年杏花一年蜜！</a> <span class="case-meta">件数 3 · 件单价 ¥85 · 关键词「2送1」</span></li></ul>
   </details>
-</div><div class="v10-card v10-card-high">
-  <div class="v10-card-head">
-    <span class="v10-card-num">#2</span>
-    <span class="v10-card-name">陈化叙事（老茶/陈年/N年陈/窖藏，打&quot;时间价值&quot;）</span>
-    <span class="conf-badge cb-mid">信心 中</span>
+</div><div class="price-mech-card">
+  <div class="price-mech-head">
+    <span class="price-mech-name">🎀 赠品诱饵</span>
   </div>
-  <div class="v10-card-meta">
-    <span class="v10-stat">高组命中 16 条 vs 低组 5 条</span>
-    <span class="diff-pp">高组 +16.2pp</span>
-  </div>
-  <div class="v10-card-cat">📊 类目分布：{'美食测评': 9, '美食展示': 5, '美食其他': 1, '美食教程': 1}</div>
-  <div class="v10-card-advice">💡 <b>商家建议</b>：做普洱/白茶/烈酒，标题或商品名首字段写「2003 年/15 年陈/陈酿 7 年」，把&quot;时间&quot;明码标价，比写&quot;好茶/好酒&quot;溢价更高。</div>
-  <details class="v10-card-examples">
-    <summary>📌 高组案例（3）+ 低组反例（2）</summary>
-    <div class="v10-ex-block">
-      <div class="v10-ex-label">🟢 高组写法</div>
-      <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6a12979f000000003601875e" target="_blank" rel="noopener" class="v10-note-link">🔗 【美食测评|¥3651】低于均价1000+喝一级园标杆蜜蜂园！ ｜ 商品：others 勃艮第传奇大酒商之一，约瑟夫杜鲁安 （直播专用） 勃艮第黑皮诺 Bourgogne P</a></li><li><a href="https://www.xiaohongshu.com/explore/6a0958200000000006020cd1" target="_blank" rel="noopener" class="v10-note-link">🔗 【美食测评|¥3733】仅剩6瓶！等了7年！！！大Q巨好价拼手速！ ｜ 商品：others 大Q此生必喝Quintarelli Amarone Classico 经典阿玛罗尼干红</a></li><li><a href="https://www.xiaohongshu.com/explore/6a0410c00000000007011964" target="_blank" rel="noopener" class="v10-note-link">🔗 【美食测评|¥2430】默尔索扫地僧传人，百年老藤仙泉园！ ｜ 商品：OTHER 默尔索扫地僧之后・Pierre Boisson Bourgogne Murgey De</a></li></ul>
-    </div>
-    <div class="v10-ex-block"><div class="v10-ex-label v10-ex-label-red">🔴 低组反例</div><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6a1e79b3000000002103c344" target="_blank" rel="noopener" class="v10-note-link">🔗 【保健品|¥74】舍不得上架系列，夏季肉妹王炸。 ｜ 商品：肉肉贴，超大量一盒40贴，儿童单拍肚脐贴。成人请搭配使用。 肉肉贴。肚子肉多。40贴。用10次</a></li><li><a href="https://www.xiaohongshu.com/explore/6a23efcc000000003503843e" target="_blank" rel="noopener" class="v10-note-link">🔗 【美食测评|¥46】黑塔清仓｜以前158舍不得买，现在39随便喝 ｜ 商品：猿小姐 颜值控的天选之作 Black Tower德国黑塔秋花混酿半甜白葡萄酒</a></li></ul></div>
+  <div class="price-mech-desc">中客单需推高（30-60 元 → 80+）用赠品提升心理价值</div>
+  <div class="price-mech-sop">💡 <b>怎么做</b>：&quot;满 80 送品鉴杯 / 满 100 加赠旅行装&quot;——赠品要和主品相关（茶送杯/零食送收纳盒），不要送无关品</div>
+  <div class="price-mech-pitfall">⚠️ <b>避坑</b>：赠品成本不能超过 SKU 利润的 30%，否则拉客单但毛利反而降</div>
+  <details class="price-mech-cases">
+    <summary>📌 本周池里命中的真实案例（5）</summary>
+    <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6a044aa6000000000602074f" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食展示] Patchi应该是疯了❗️❗️礼盒居然买一送一</a> <span class="case-meta">件数 98 · 件单价 ¥228 · 关键词「加送」</span></li><li><a href="https://www.xiaohongshu.com/explore/6a040edd000000003502dba5" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食展示] 我愿称之为冷萃咖啡的神！（买豆送杯）</a> <span class="case-meta">件数 212 · 件单价 ¥73 · 关键词「送杯」</span></li><li><a href="https://www.xiaohongshu.com/explore/6a0be75f00000000350264e9" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食教程] 答应大家加赠的冷萃瓶终于来了！！！</a> <span class="case-meta">件数 196 · 件单价 ¥67 · 关键词「加赠」</span></li><li><a href="https://www.xiaohongshu.com/explore/68c42dbf000000001d027b3c" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食展示] 力度超大的小当家牛胸口店庆活动9月16日🔥</a> <span class="case-meta">件数 14 · 件单价 ¥71 · 关键词「满赠」</span></li><li><a href="https://www.xiaohongshu.com/explore/69df499c00000000230051f1" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评] 换季状态差？一杯藤茶整个世界都变甜！</a> <span class="case-meta">件数 6 · 件单价 ¥160 · 关键词「送杯」</span></li></ul>
   </details>
-</div><div class="v10-card v10-card-high">
-  <div class="v10-card-head">
-    <span class="v10-card-num">#3</span>
-    <span class="v10-card-name">高客单养生硬通货品（燕窝/花胶/石斛/海参 + 头数/产地/溯源）</span>
-    <span class="conf-badge cb-high">信心 高</span>
+</div><div class="price-mech-card">
+  <div class="price-mech-head">
+    <span class="price-mech-name">📦 囤货货组</span>
   </div>
-  <div class="v10-card-meta">
-    <span class="v10-stat">高组命中 10 条 vs 低组 7 条</span>
-    <span class="diff-pp">高组 +8.8pp</span>
-  </div>
-  <div class="v10-card-cat">📊 类目分布：{'养生食疗': 10}</div>
-  <div class="v10-card-advice">💡 <b>商家建议</b>：做燕窝/花胶/海参，商品名必须出现「头数（8 头/62 头）+ 产地（印尼/湛江/赤嘴）+ 溯源码/认证（中科溯源/官方溯源）」三件套，把不可比的价值差异显性化。</div>
-  <details class="v10-card-examples">
-    <summary>📌 高组案例（3）+ 低组反例（1）</summary>
-    <div class="v10-ex-block">
-      <div class="v10-ex-label">🟢 高组写法</div>
-      <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/688b6d11000000000403d1b4" target="_blank" rel="noopener" class="v10-note-link">🔗 【养生食疗|¥2541】自从吃了这款干挑燕条，干挑盏就再也没买过 ｜ 商品：燕鸣春 中科溯源码燕窝 土豪VIP干挑中大条 100克 500克98干净度不用挑毛 土豪VIP干挑中</a></li><li><a href="https://www.xiaohongshu.com/explore/690c02a500000000040127ac" target="_blank" rel="noopener" class="v10-note-link">🔗 【养生食疗|¥557】8头黄花胶~出一包12斤🛫多谢老细❤️ ｜ 商品：黄花胶 18头 35头 42头 60头 花胶入门 鱼胶花胶 厚肉q弹不腥 8头 500g</a></li><li><a href="https://www.xiaohongshu.com/explore/6a2cefc0000000001503e751" target="_blank" rel="noopener" class="v10-note-link">🔗 【养生食疗|¥2040】比起鲜炖燕窝，这款大条的性价比简直夯爆了 ｜ 商品：燕鸣春 中科溯源码印尼半干挑大燕条 燕窝 （干净度98  不用挑毛） 特级大燕条100克（10克一袋</a></li></ul>
-    </div>
-    <div class="v10-ex-block"><div class="v10-ex-label v10-ex-label-red">🔴 低组反例</div><ul class="v10-ex-list"><li>低组几乎无此类商品 — 这类品本身就是高客单赛道入场券</li></ul></div>
+  <div class="price-mech-desc">季节品 / 节日品 / 一年用量打包</div>
+  <div class="price-mech-sop">💡 <b>怎么做</b>：&quot;三伏天囤一夏的姜茶&quot;、&quot;一年的茶都备齐&quot;——绑定时令/年用量场景，给&quot;屯&quot;一个合理理由</div>
+  <div class="price-mech-pitfall">⚠️ <b>避坑</b>：保质期短的品（生鲜/烘焙）不要做超 1 个月装，会被退货拉低 NPS</div>
+  <details class="price-mech-cases">
+    <summary>📌 本周池里命中的真实案例（5）</summary>
+    <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6a0d79870000000035028c2f" target="_blank" rel="noopener" class="v10-note-link">🔗 [科学科普] 【玉珍】⚠️购买须知</a> <span class="case-meta">件数 1402 · 件单价 ¥47 · 关键词「囤货」</span></li><li><a href="https://www.xiaohongshu.com/explore/6a1bce23000000000702a15d" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评] 这可能是最懂年轻人的一瓶酒</a> <span class="case-meta">件数 251 · 件单价 ¥187 · 关键词「囤货」</span></li><li><a href="https://www.xiaohongshu.com/explore/6a1b2d9d0000000036032aed" target="_blank" rel="noopener" class="v10-note-link">🔗 [家居用品] 扇子爆单了，正在加紧制作与发货...</a> <span class="case-meta">件数 396 · 件单价 ¥82 · 关键词「囤货」</span></li><li><a href="https://www.xiaohongshu.com/explore/6a0c23c200000000060223bb" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评] 九峰牧场真的太听劝了！爆款混合装终于来了！</a> <span class="case-meta">件数 347 · 件单价 ¥47 · 关键词「囤货」</span></li><li><a href="https://www.xiaohongshu.com/explore/6a09ae6900000000360301a1" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评] 巨好吃腰果仁|今天下午刚烤出来的</a> <span class="case-meta">件数 315 · 件单价 ¥47 · 关键词「囤货」</span></li></ul>
   </details>
-</div><div class="v10-card v10-card-high">
-  <div class="v10-card-head">
-    <span class="v10-card-num">#4</span>
-    <span class="v10-card-name">礼盒/节庆送礼场景（端午/中秋/送领导嘉宾长辈）</span>
-    <span class="conf-badge cb-high">信心 高</span>
+</div><div class="price-mech-card">
+  <div class="price-mech-head">
+    <span class="price-mech-name">🎲 X 元任选</span>
   </div>
-  <div class="v10-card-meta">
-    <span class="v10-stat">高组命中 9 条 vs 低组 14 条</span>
-    <span class="diff-pp">高组 +5.2pp</span>
-  </div>
-  <div class="v10-card-cat">📊 类目分布：{'美食测评': 3, '美食展示': 3, '养生食疗': 3}</div>
-  <div class="v10-card-advice">💡 <b>商家建议</b>：做礼盒主推时，标题+商品名要锚定「节日+收礼对象+礼盒形态」，例：「2026 端午礼盒｜送领导嘉宾伴手礼」，比纯写&quot;好喝/好吃&quot;客单价能拉高 2-4 倍。</div>
-  <details class="v10-card-examples">
-    <summary>📌 高组案例（3）+ 低组反例（2）</summary>
-    <div class="v10-ex-block">
-      <div class="v10-ex-label">🟢 高组写法</div>
-      <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6a12979f000000003601875e" target="_blank" rel="noopener" class="v10-note-link">🔗 【美食测评|¥3651】低于均价1000+喝一级园标杆蜜蜂园！ ｜ 商品：others 勃艮第传奇大酒商之一，约瑟夫杜鲁安 （直播专用） 勃艮第黑皮诺 Bourgogne P</a></li><li><a href="https://www.xiaohongshu.com/explore/69fbcf5f0000000035033020" target="_blank" rel="noopener" class="v10-note-link">🔗 【美食展示|¥416】2026端午礼盒 | 福禄安康 ｜ 商品：竹编礼盒 | 福禄安康礼</a></li><li><a href="https://www.xiaohongshu.com/explore/6a03d3fa0000000006037597" target="_blank" rel="noopener" class="v10-note-link">🔗 【美食展示|¥420】告别俗气端午礼，今年走心送礼就选端阳志 ｜ 商品：禹鸿物予 端午节礼品「端阳志」2026端阳送领导嘉宾客户长辈节日答谢伴手礼 筝争日上 Z2S（含龙舟</a></li></ul>
-    </div>
-    <div class="v10-ex-block"><div class="v10-ex-label v10-ex-label-red">🔴 低组反例</div><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/66fcfb20000000002c015127" target="_blank" rel="noopener" class="v10-note-link">🔗 【美食展示|¥38】此时，一位出差的公主正在享用她的下午茶 ｜ 商品：祖祖珍巧 zuzu祖祖巧克力豆可可脂综合口味巧克力豆坚果水果冻干罐装送礼 小罐（150g）</a></li><li><a href="https://www.xiaohongshu.com/explore/69bff8f7000000001a022069" target="_blank" rel="noopener" class="v10-note-link">🔗 【美食测评|¥90】陈皮豆沙酥，一枚藏了8年的的温柔味道 ｜ 商品：玉堂春 陈皮豆沙奶油酥饼--伯爵红茶/斑斓椰蓉酥 240g/盒（6枚礼盒装） 陈皮豆沙酥1盒6只装</a></li></ul></div>
+  <div class="price-mech-desc">多 SKU 商家 / 零食拼盘——让用户在固定预算内组合多 SKU</div>
+  <div class="price-mech-sop">💡 <b>怎么做</b>：&quot;39 元 5 选 3&quot;、&quot;79 元任选 6 包&quot;——锁定预算+给选择权，激发用户多拿</div>
+  <div class="price-mech-pitfall">⚠️ <b>避坑</b>：可选数量太少（如 3 选 1）反而限制选择感，建议起步是 N 选 N-2 以上</div>
+  <details class="price-mech-cases">
+    <summary>📌 本周池里命中的真实案例（2）</summary>
+    <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/68ef38a30000000005013a60" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评] 碱水棒全口味来啦！29.9七个（带热量版）</a> <span class="case-meta">件数 2631 · 件单价 ¥4 · 关键词「任选」</span></li><li><a href="https://www.xiaohongshu.com/explore/69ed76fd00000000360305b9" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食展示] 囤些甜点 | 假期和达克瓦兹很配</a> <span class="case-meta">件数 3 · 件单价 ¥148 · 关键词「任选」</span></li></ul>
   </details>
-</div><div class="v10-card v10-card-high">
-  <div class="v10-card-head">
-    <span class="v10-card-num">#5</span>
-    <span class="v10-card-name">稀缺/限量/批次稀少叙事（仅剩 6 瓶 / 每批不多 / 小批量）</span>
-    <span class="conf-badge cb-mid">信心 中</span>
-  </div>
-  <div class="v10-card-meta">
-    <span class="v10-stat">高组命中 12 条 vs 低组 10 条</span>
-    <span class="diff-pp">高组 +10.0pp</span>
-  </div>
-  <div class="v10-card-cat">📊 类目分布：{'美食测评': 8, '美食展示': 2, '美食教程': 1, '美食其他': 1}</div>
-  <div class="v10-card-advice">💡 <b>商家建议</b>：高客单商品在标题里量化稀缺感（仅剩 6 瓶 / 每批次只做 50 盒 / 2003 厚纸版），比写&quot;好货&quot;更能转化为付费意愿。</div>
-  <details class="v10-card-examples">
-    <summary>📌 高组案例（3）+ 低组反例（2）</summary>
-    <div class="v10-ex-block">
-      <div class="v10-ex-label">🟢 高组写法</div>
-      <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/69f73702000000003501c78e" target="_blank" rel="noopener" class="v10-note-link">🔗 【美食教程|¥137】不咸！来看看宁波人自己的“米其林” ｜ 商品：宁波红膏蟹糊 新鲜腌制鲜中带甜 即食腌制野生梭子蟹 0防腐少盐 【红膏蟹糊300g】*1盒</a></li><li><a href="https://www.xiaohongshu.com/explore/6a190271000000000803298a" target="_blank" rel="noopener" class="v10-note-link">🔗 【美食其他|¥4092】地表最强酿酒师，喝过科奇才算懂勃艮第白！ ｜ 商品：others 奶油爆米花小科奇 单一园皮耶布神勃艮第上伯恩丘皮耶之路 2023 2023</a></li><li><a href="https://www.xiaohongshu.com/explore/6a0958200000000006020cd1" target="_blank" rel="noopener" class="v10-note-link">🔗 【美食测评|¥3733】仅剩6瓶！等了7年！！！大Q巨好价拼手速！ ｜ 商品：others 大Q此生必喝Quintarelli Amarone Classico 经典阿玛罗尼干红</a></li></ul>
-    </div>
-    <div class="v10-ex-block"><div class="v10-ex-label v10-ex-label-red">🔴 低组反例</div><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6a264ac7000000001503d39e" target="_blank" rel="noopener" class="v10-note-link">🔗 【美食测评|¥29】官宣|夏日限定🍉海河西瓜牛奶清甜上新！ ｜ 商品：海河 花色牛奶 西瓜牛奶220ml*10 西瓜牛奶*10</a></li><li><a href="https://www.xiaohongshu.com/explore/6a2255ae000000003601b0c2" target="_blank" rel="noopener" class="v10-note-link">🔗 【美食展示|¥69】开箱有了收礼物的感觉吗🎁😎🤲🏻🌿 ｜ 商品：Daily Seeds&amp;Co烘焙燕麦片·多口味【顺丰发货】 夏日限定·「柠檬香草巴斯克」烘焙燕麦片</a></li></ul></div>
-  </details>
-</div><div class="v10-card v10-card-high">
-  <div class="v10-card-head">
-    <span class="v10-card-num">#6</span>
-    <span class="v10-card-name">权威背书+收藏属性（拍卖行/帕克分/米其林/全球榜单）</span>
-    <span class="conf-badge cb-mid">信心 中</span>
-  </div>
-  <div class="v10-card-meta">
-    <span class="v10-stat">高组命中 12 条 vs 低组 6 条</span>
-    <span class="diff-pp">高组 +11.4pp</span>
-  </div>
-  <div class="v10-card-cat">📊 类目分布：{'美食测评': 7, '美食教程': 3, '美食其他': 1, '美食展示': 1}</div>
-  <div class="v10-card-advice">💡 <b>商家建议</b>：在正文价值感段引用第三方权威（帕克 92 分 / 米其林推荐 / Liv-ex 百强 / 国家级认证），把&quot;我说好&quot;换成&quot;权威说好&quot;，是 300 元↑客单价的标准动作。</div>
-  <details class="v10-card-examples">
-    <summary>📌 高组案例（3）+ 低组反例（1）</summary>
-    <div class="v10-ex-block">
-      <div class="v10-ex-label">🟢 高组写法</div>
-      <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/69f73702000000003501c78e" target="_blank" rel="noopener" class="v10-note-link">🔗 【美食教程|¥137】不咸！来看看宁波人自己的“米其林” ｜ 商品：宁波红膏蟹糊 新鲜腌制鲜中带甜 即食腌制野生梭子蟹 0防腐少盐 【红膏蟹糊300g】*1盒</a></li><li><a href="https://www.xiaohongshu.com/explore/6a190271000000000803298a" target="_blank" rel="noopener" class="v10-note-link">🔗 【美食其他|¥4092】地表最强酿酒师，喝过科奇才算懂勃艮第白！ ｜ 商品：others 奶油爆米花小科奇 单一园皮耶布神勃艮第上伯恩丘皮耶之路 2023 2023</a></li><li><a href="https://www.xiaohongshu.com/explore/6a12979f000000003601875e" target="_blank" rel="noopener" class="v10-note-link">🔗 【美食测评|¥3651】低于均价1000+喝一级园标杆蜜蜂园！ ｜ 商品：others 勃艮第传奇大酒商之一，约瑟夫杜鲁安 （直播专用） 勃艮第黑皮诺 Bourgogne P</a></li></ul>
-    </div>
-    <div class="v10-ex-block"><div class="v10-ex-label v10-ex-label-red">🔴 低组反例</div><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/69e59e4a000000001f0075e8" target="_blank" rel="noopener" class="v10-note-link">🔗 【养生食疗|¥82】春夏交替30天焕新计划：喝出红光
-满面 ｜ 商品：养瑞和 松子核桃姜茶老姜汤花生核桃腰果健康营养坚果冲饮姜母茶250g 1罐体验装经典版（立减10元）</a></li></ul></div>
-  </details>
-</div></div>
-  
-  <div class="v10-subhead v10-subhead-red">🚫 3 个低组陷阱 → 避</div>
-  <div class="v10-cards-grid"><div class="v10-card v10-card-low">
-  <div class="v10-card-head">
-    <span class="v10-card-num v10-card-num-red">⚠️ #1</span>
-    <span class="v10-card-name">体感调理叙事陷阱（喝出红光 / 内热没了 / 脾胃说谢谢）</span>
-    <span class="conf-badge cb-high">信心 高</span>
-  </div>
-  <div class="v10-card-meta">
-    <span class="v10-stat">低组命中 34 条 vs 高组 6 条</span>
-    <span class="diff-pp diff-pp-red">低组 +5.2pp</span>
-  </div>
-  <div class="v10-card-cat">📊 类目分布：{'养生食疗': 21, '美食测评': 5, '美食展示': 5, '美食其他': 1, '健身饮食': 1, '医疗药品': 1}</div>
-  <div class="v10-card-advice v10-card-advice-red">🚫 <b>避坑建议</b>：想冲高客单的养生品，不要再写&quot;喝完气色好&quot;、&quot;脾胃说谢谢&quot;这类体感话术——这是 50-100 元日常养生茶的标配；要切换成「克重/头数/产地溯源/方剂级配比/适用人群（孕期/术后/月子）」的硬指标叙事。</div>
-  <details class="v10-card-examples"><summary>📌 反例（3）</summary><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/69e59e4a000000001f0075e8" target="_blank" rel="noopener" class="v10-note-link">🔗 【养生食疗|¥82】春夏交替30天焕新计划：喝出红光
-满面 ｜ 商品：养瑞和 松子核桃姜茶老姜汤花生核桃腰果健康营养坚果冲饮姜母茶250g 1罐体验装经典版（立减10元）</a></li><li><a href="https://www.xiaohongshu.com/explore/6a00c8d7000000000702b2ed" target="_blank" rel="noopener" class="v10-note-link">🔗 【养生食疗|¥74】只是做对了这件事，内热居然没了 ｜ 商品：「顺时男孩」宝宝汤 · 灯芯草清心汤去心火清内热睡不安稳 5包（尝鲜） 为无硫产品，会生药虫不影响食</a></li><li><a href="https://www.xiaohongshu.com/explore/6a06abe7000000000602164e" target="_blank" rel="noopener" class="v10-note-link">🔗 【养生食疗|¥82】老一辈说夏吃姜｜坚持15天早起了腮红都省了 ｜ 商品：养瑞和 松子核桃姜茶老姜汤花生核桃腰果健康营养坚果冲饮姜母茶250g 1罐体验装经典版（立减10元）</a></li></ul></details>
-</div><div class="v10-card v10-card-low">
-  <div class="v10-card-head">
-    <span class="v10-card-num v10-card-num-red">⚠️ #2</span>
-    <span class="v10-card-name">中国地标+日常品类陷阱（东北冷面 / 家常做法 / 9.9 多袋装）</span>
-    <span class="conf-badge cb-high">信心 高</span>
-  </div>
-  <div class="v10-card-meta">
-    <span class="v10-stat">低组命中 152 条 vs 高组 25 条</span>
-    <span class="diff-pp diff-pp-red">低组 +25.4pp</span>
-  </div>
-  <div class="v10-card-cat">📊 类目分布：{'养生食疗': 41, '美食测评': 40, '美食展示': 37, '美食教程': 17, '保健品': 5, '家居用品': 3, '美食其他': 3, '健身饮食': 3, '医疗药品': 2, '妈妈经验': 1}</div>
-  <div class="v10-card-advice v10-card-advice-red">🚫 <b>避坑建议</b>：商品本身是日常主食/调料（冷面/麻辣烫/纳豆/姜茶），不要试图用低价话术。想拉客单价：① 改包装做礼盒（参考端午礼盒簇）；② 强调产地稀缺工艺反差（参考宁波蟹糊的&quot;米其林&quot;打法）。</div>
-  <details class="v10-card-examples"><summary>📌 反例（3）</summary><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/69511a710000000021033987" target="_blank" rel="noopener" class="v10-note-link">🔗 【美食展示|¥65】感谢10w+姐妹的认可🙏改良版纳豆好评超多 ｜ 商品：以味坊 【顺丰发货】高活性菌种发酵国产纳豆高品质益生菌纳豆激酶 3盒黄豆+3黑豆+1枇杷蜂蜜（新手友</a></li><li><a href="https://www.xiaohongshu.com/explore/69e59e4a000000001f0075e8" target="_blank" rel="noopener" class="v10-note-link">🔗 【养生食疗|¥82】春夏交替30天焕新计划：喝出红光
-满面 ｜ 商品：养瑞和 松子核桃姜茶老姜汤花生核桃腰果健康营养坚果冲饮姜母茶250g 1罐体验装经典版（立减10元）</a></li><li><a href="https://www.xiaohongshu.com/explore/68a7cb0d000000001b0348cb" target="_blank" rel="noopener" class="v10-note-link">🔗 【美食展示|¥77】N次回购...踩雷无数才找到的家用咖啡豆‼ ｜ 商品：啡否 【油脂王】完全无酸深度烘焙意式咖啡豆|美式拿铁拉花 【单包尝鲜】227g/包 咖啡豆（不磨粉）</a></li></ul></details>
-</div><div class="v10-card v10-card-low">
-  <div class="v10-card-head">
-    <span class="v10-card-num v10-card-num-red">⚠️ #3</span>
-    <span class="v10-card-name">平价话术+量大袋装双锚（实惠 9.9 一包 / 家常 3 袋）</span>
-    <span class="conf-badge cb-mid">信心 中</span>
-  </div>
-  <div class="v10-card-meta">
-    <span class="v10-stat">低组命中 6 条 vs 高组 0 条</span>
-    <span class="diff-pp diff-pp-red">低组 +2.1pp</span>
-  </div>
-  <div class="v10-card-cat">📊 类目分布：{'美食测评': 2, '家居用品': 2, '美食展示': 1, '健身饮食': 1}</div>
-  <div class="v10-card-advice v10-card-advice-red">🚫 <b>避坑建议</b>：商品定位想做&quot;价位向上&quot;，避开&quot;平价+量大&quot;双绑定。高客单的&quot;性价比&quot;表达应该是&quot;比同档酒/同档花胶便宜 30%&quot;（参考价 anchor），而不是&quot;9.9 一包&quot;。</div>
-  <details class="v10-card-examples"><summary>📌 反例（3）</summary><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6a044c1d0000000007021bd2" target="_blank" rel="noopener" class="v10-note-link">🔗 【美食展示|¥23】第一个提出爆款尝鲜装的人是天才来的 ｜ 商品：米惦 爆款尝鲜组合手撕牛轧饼&amp;奶奶小馒头&amp;吐司 点心营养早餐面包牛轧 3袋</a></li><li><a href="https://www.xiaohongshu.com/explore/68ef38a30000000005013a60" target="_blank" rel="noopener" class="v10-note-link">🔗 【美食测评|¥4】碱水棒全口味来啦！29.9七个（带热量版） ｜ 商品：任选八枚【29.9/8包邮】手作碱水面包碱水棒套餐健身代餐早餐 任选8个加入购物车自动改价29.9（</a></li><li><a href="https://www.xiaohongshu.com/explore/689990800000000023021280" target="_blank" rel="noopener" class="v10-note-link">🔗 【健身饮食|¥14】9.9到手一箱！剪脂人闭眼薅！太宝藏了！ ｜ 商品：八千步 全麦面包糕点吐司整箱早餐代餐饱腹粗粮 6包 原味</a></li></ul></details>
 </div></div>
 </div><div class="section-label">🎯 行业参考值（对照你的笔记后台数据）</div>
   <div class="kpi-grid kpi-grid-2col">

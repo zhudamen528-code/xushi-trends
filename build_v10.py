@@ -14,10 +14,17 @@ import json, os, re, sys, importlib.util
 WORKDIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, WORKDIR)
 
-# 加载 V10 差分聚类结果
+# 加载 V10 差分聚类结果（ctr1/ctr2/cvr 跑差分；price 改固定 playbook）
 V10_DIFF = {}
-for m in ['ctr1', 'ctr2', 'cvr', 'price']:
+for m in ['ctr1', 'ctr2', 'cvr']:
     V10_DIFF[m] = json.load(open(os.path.join(WORKDIR, f'data/v10_clusters/{m}.diff.json'), encoding='utf-8'))
+
+# 件单价不做差分聚类（笔记内容只能影响临门一脚，影响因子太多控不住）
+# 改成固定 4 机制运营手册
+V10_PRICE_PLAYBOOK = json.load(open(os.path.join(WORKDIR, 'data/v10_price_playbook.json'), encoding='utf-8'))
+
+# 指标与算法 feature 相关性（皮尔逊）
+V10_METRIC_CORR = json.load(open(os.path.join(WORKDIR, 'data/v10_metric_algo_corr.json'), encoding='utf-8'))
 
 # 加载 title → note_id 索引（用于案例跳转）
 TITLE_IDX = {}
@@ -150,6 +157,86 @@ def render_low_card(p, idx):
   {f'<details class="v10-card-examples"><summary>📌 反例（{len(examples)}）</summary><ul class="v10-ex-list">{ex_html}</ul></details>' if examples else ''}
 </div>'''
 
+def render_price_playbook():
+    """件单价 Tab 改：4 大拉升机制固定运营手册（不做差分聚类）"""
+    mechs = V10_PRICE_PLAYBOOK.get('mechanisms', {})
+    cards = []
+    for mk, m in mechs.items():
+        cases_html = ''
+        for c in m['cases']:
+            nid = c['note_id']
+            tax = escape(c.get('taxonomy','?'))
+            buy = c['buy_n']
+            ppi = c['ppi']
+            title = escape(c['title'][:38])
+            kws = '·'.join(c['hit_kws'][:2])
+            cases_html += f'''<li><a href="https://www.xiaohongshu.com/explore/{escape(nid)}" target="_blank" rel="noopener" class="v10-note-link">🔗 [{tax}] {title}</a> <span class="case-meta">件数 {buy} · 件单价 ¥{ppi} · 关键词「{escape(kws)}」</span></li>'''
+        if not cases_html:
+            cases_html = '<li class="case-empty">本周池里暂无对应案例</li>'
+        
+        cards.append(f'''<div class="price-mech-card">
+  <div class="price-mech-head">
+    <span class="price-mech-name">{escape(m['name'])}</span>
+  </div>
+  <div class="price-mech-desc">{escape(m['desc'])}</div>
+  <div class="price-mech-sop">💡 <b>怎么做</b>：{escape(m['sop'])}</div>
+  <div class="price-mech-pitfall">⚠️ <b>避坑</b>：{escape(m['pitfall'])}</div>
+  <details class="price-mech-cases">
+    <summary>📌 本周池里命中的真实案例（{len(m['cases'])}）</summary>
+    <ul class="v10-ex-list">{cases_html}</ul>
+  </details>
+</div>''')
+    
+    return f'''<div class="v10-section price-playbook-section">
+  <div class="v10-banner price-banner">
+    <div class="v10-banner-title">💎 件单价拉升 · 4 大固定机制（V10 改版）</div>
+    <div class="v10-banner-sub">件单价受商品定价/促销/库存/人群消费力影响太大，<b>笔记内容只能影响临门一脚</b>。这里不做差分聚类（会被"贵商品天然贵"污染），改成 4 个可直接照抄的运营机制，配本周池里真实案例。</div>
+  </div>
+  
+  <div class="v10-mechanism v10-mech-hero">
+    💎 <b>核心心智</b>：件单价 = 商品定价 × 平均购买件数。商品定价改不了，但「平均购买件数」可以通过笔记话术拉高（凑单/赠品/囤货/任选）。
+  </div>
+  
+  <div class="price-mech-grid">{''.join(cards)}</div>
+</div>'''
+
+
+def render_metric_algo_corr_table():
+    """Tab1 GMV 公式旁渲染：每指标与 Top 3 算法 feature 相关性"""
+    metric_labels = {
+        'ctr1': '👆 CTR1（封面+标题点击）',
+        'ctr2': '🔗 CTR2（商品卡点击）',
+        'cvr': '💵 CVR（下单转化）',
+        'price': '💎 件单价（单笔客单）',
+    }
+    rows = []
+    for mk, label in metric_labels.items():
+        top = V10_METRIC_CORR.get(mk, [])[:3]
+        if not top: continue
+        feats = []
+        for t in top:
+            arrow = '↑' if t['pearson'] > 0 else '↓'
+            color_cls = 'corr-pos' if t['pearson'] > 0 else 'corr-neg'
+            feats.append(f'<span class="{color_cls}">{escape(t["label"])}{arrow}{abs(t["pearson"]):.2f}</span>')
+        rows.append(f'<tr><td class="mac-metric">{escape(label)}</td><td class="mac-feats">{" · ".join(feats)}</td></tr>')
+    return f'''<div class="metric-algo-corr">
+  <div class="mac-title">🤖 4 指标 ↔ 算法 Top 3 相关 feature</div>
+  <div class="mac-sub">皮尔逊系数（n=1199）。<b>↑ 表示算法该指标高的笔记，对应业务指标也越高</b>；↓ 表示反向关系。系数 0.05-0.15 属弱-中等相关，但方向已稳定。</div>
+  <table class="mac-table">
+    <thead><tr><th>业务指标</th><th>算法 feature Top 3</th></tr></thead>
+    <tbody>{''.join(rows)}</tbody>
+  </table>
+  <div class="mac-key">💎 <b>关键洞察</b>：CVR 与「真诚分享」呈<b>负相关</b>（-0.11）——真诚分享是算法的"长期人设"奖励，但买家下单更买"具体使用方案 + 人群定位"，<b>追算法 ≠ 卖货好，两条线要分场景</b>。</div>
+</div>'''
+
+CTR2_PRIORITY_NOTE = '''<div class="ctr2-priority-note">
+  <div class="cpn-title">📐 CTR2 三层优先级 · 字数本身不是因，「信息密度」才是</div>
+  <div class="cpn-tier cpn-tier-1"><b>🔴 首要 · 商品名做减法</b>（差距最大 +14.5pp）<br>≤ 25 字内只放「品类 + 1 个硬指标」。例：✅「韩要强夏威夷果 250g 中大半粒」/ ❌「韩要强 0号特大现烤夏威夷果仁没有额外添加剂250克 1罐*250克【中大半粒】」</div>
+  <div class="cpn-tier cpn-tier-2"><b>🟡 次要 · 正文前 200 字做减法</b>（< 100 字 +14.5pp）<br>一句卖点 + 一句证据，不要把商详顶部写成产品说明书。</div>
+  <div class="cpn-tier cpn-tier-3"><b>🟢 辅助 · 标题做减法</b>（≤ 15 字 +8.3pp）<br>≤ 15 字 + 规格量化数字，让用户在信息流 0.5 秒看懂「是什么 + 多少」。</div>
+  <div class="cpn-key">💡 <b>判断依据</b>：不是死磕字数，是看「单位字数的信息密度」——25 字商品名讲清 1 件事 > 50 字商品名塞 7 件事每件都没讲透。</div>
+</div>'''
+
 def render_v10_section(metric_key, metric_label):
     diff = V10_DIFF.get(metric_key, {})
     high_patterns = diff.get('high_only_patterns', [])
@@ -159,13 +246,18 @@ def render_v10_section(metric_key, metric_label):
     high_html = ''.join(render_high_card(p, i) for i, p in enumerate(high_patterns))
     low_html = ''.join(render_low_card(p, i) for i, p in enumerate(low_patterns))
     
+    # CTR2 加三层优先级前置说明
+    ctr2_priority = CTR2_PRIORITY_NOTE if metric_key == 'ctr2' else ''
+    
     return f'''<div class="v10-section">
   <div class="v10-banner">
     <div class="v10-banner-title">🔬 {escape(metric_label)} 高 vs 低对照差分聚类（V10 新增）</div>
     <div class="v10-banner-sub">按类目内 P75 vs P25 严格切高低对照组，找出"高组独有 / 低组陷阱"写法。<b>这是相关性证据，不是因果，但样本量足够、类目变量已控住</b>。</div>
   </div>
   
-  {f'<div class="v10-mechanism">💎 <b>核心机制</b>：{escape(mechanism)}</div>' if mechanism else ''}
+  {f'<div class="v10-mechanism v10-mech-hero">💎 <b>核心机制</b>：{escape(mechanism)}</div>' if mechanism else ''}
+  
+  {ctr2_priority}
   
   <div class="v10-subhead v10-subhead-green">✅ {len(high_patterns)} 个高组独有写法 → 抄</div>
   <div class="v10-cards-grid">{high_html}</div>
@@ -181,6 +273,34 @@ V10_CSS = '''
 .v10-banner-title { font-size: 16px; font-weight: 700; color: #333; margin-bottom: 6px; }
 .v10-banner-sub { font-size: 12px; color: #666; line-height: 1.6; }
 .v10-mechanism { background: #f4f8ff; border-left: 3px solid #4a90e2; border-radius: 6px; padding: 12px 16px; margin: 14px 0; font-size: 13px; color: #333; line-height: 1.7; }
+/* 核心机制 hero 样式：深色背景、大字、高亮 */
+.v10-mech-hero { background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%) !important; color: #fff !important; border-left: 4px solid #f5b400 !important; padding: 16px 20px !important; font-size: 15px !important; line-height: 1.8 !important; box-shadow: 0 2px 8px rgba(0,0,0,0.15); margin: 16px 0 20px !important; border-radius: 8px !important; }
+.v10-mech-hero b { color: #f5b400 !important; font-size: 16px; }
+
+/* CTR2 三层优先级前置说明 */
+.ctr2-priority-note { background: #fff; border: 1px solid #e8eaed; border-radius: 10px; padding: 16px 18px; margin: 14px 0 18px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
+.cpn-title { font-size: 14px; font-weight: 700; color: #d92f5e; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px dashed #f0d4dd; }
+.cpn-tier { padding: 8px 12px; margin: 6px 0; border-radius: 6px; font-size: 12px; line-height: 1.7; color: #333; }
+.cpn-tier-1 { background: #fff0f0; border-left: 3px solid #d92f5e; }
+.cpn-tier-2 { background: #fffaeb; border-left: 3px solid #f5b400; }
+.cpn-tier-3 { background: #f0fff4; border-left: 3px solid #34c759; }
+.cpn-tier b { color: #222; font-size: 13px; }
+.cpn-key { background: #2c3e50; color: #fff; border-radius: 6px; padding: 10px 14px; margin-top: 12px; font-size: 12px; line-height: 1.7; }
+.cpn-key b { color: #f5b400; }
+
+/* 指标↔算法相关性表 */
+.metric-algo-corr { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 14px 18px; margin: 16px 0 0; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+.mac-title { font-size: 14px; font-weight: 700; color: #2c3e50; margin-bottom: 6px; }
+.mac-sub { font-size: 11px; color: #888; margin-bottom: 12px; line-height: 1.6; }
+.mac-table { width: 100%; border-collapse: collapse; }
+.mac-table th { font-size: 12px; color: #666; text-align: left; padding: 6px 10px; background: #f8f9fa; border-bottom: 1px solid #e5e7eb; }
+.mac-table td { padding: 8px 10px; font-size: 13px; border-bottom: 1px solid #f0f0f0; }
+.mac-metric { font-weight: 600; color: #333; white-space: nowrap; }
+.mac-feats { color: #555; }
+.corr-pos { color: #1a7a3f; background: #e8f5ee; padding: 2px 8px; border-radius: 10px; font-size: 12px; margin-right: 4px; display: inline-block; margin-bottom: 4px; }
+.corr-neg { color: #c0392b; background: #fde8e8; padding: 2px 8px; border-radius: 10px; font-size: 12px; margin-right: 4px; display: inline-block; margin-bottom: 4px; }
+.mac-key { background: #2c3e50; color: #fff; border-radius: 6px; padding: 10px 14px; margin-top: 12px; font-size: 12px; line-height: 1.7; }
+.mac-key b { color: #f5b400; }
 .v10-subhead { font-size: 14px; font-weight: 700; margin: 18px 0 10px; padding: 6px 10px; border-radius: 4px; }
 .v10-subhead-green { color: #1a7a3f; background: #e8f5ee; }
 .v10-subhead-red { color: #b32a2a; background: #fde8e8; }
@@ -215,6 +335,26 @@ V10_CSS = '''
 .v10-note-link { color: #1a73e8; text-decoration: none; }
 .v10-note-link:hover { color: #d92f5e; text-decoration: underline; }
 
+/* 件单价 4 机制 playbook */
+.price-playbook-section { margin: 20px 0; }
+.price-banner { background: linear-gradient(135deg, #ffe9f0, #ffd5e3) !important; border-left-color: #d92f5e !important; }
+.v10-mech-hero { background: linear-gradient(135deg, #2c3e50, #34495e); color: #f0f0f0; border-left: 4px solid #f5b400; font-size: 14px; padding: 14px 18px; }
+.v10-mech-hero b { color: #fff; }
+.price-mech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
+.price-mech-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 14px 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); border-top: 3px solid #d92f5e; }
+.price-mech-head { margin-bottom: 8px; }
+.price-mech-name { font-size: 15px; font-weight: 700; color: #222; }
+.price-mech-desc { font-size: 12px; color: #666; margin-bottom: 10px; line-height: 1.6; }
+.price-mech-sop { background: #f0f8ff; border-radius: 6px; padding: 8px 12px; font-size: 13px; color: #333; line-height: 1.6; margin-bottom: 8px; }
+.price-mech-pitfall { background: #fff5e6; border-radius: 6px; padding: 8px 12px; font-size: 12px; color: #5d4a1f; line-height: 1.6; margin-bottom: 10px; }
+.price-mech-cases summary { cursor: pointer; color: #4a90e2; padding: 4px 0; font-weight: 500; font-size: 12px; }
+.price-mech-cases summary:hover { color: #d92f5e; }
+.case-meta { color: #888; font-size: 11px; }
+.case-empty { color: #aaa; font-style: italic; }
+@media (max-width: 768px) {
+  .price-mech-grid { grid-template-columns: 1fr; }
+}
+
 @media (max-width: 768px) {
   .v10-banner { padding: 10px 12px; }
   .v10-banner-title { font-size: 14px; }
@@ -248,8 +388,27 @@ metric_labels = {
 # tab-panel 顺序：gpm, ctr1, ctr2, cvr, price, cat, audit, tools
 # 在 tab-ctr1/ctr2/cvr/price 内部的"行业参考值" 前面注入
 
+# Tab1 注入"指标 ↔ 算法相关性"表
+mac_html = render_metric_algo_corr_table()
+mac_pattern = r'(<div class="formula-tip">.*?</div>)\s*(</div>\s*</div>\s*<div class="section-label">)'
+m = re.search(mac_pattern, html, re.DOTALL)
+if m:
+    html = html[:m.end(1)] + '\n' + mac_html + html[m.end(1):]
+    print('✅ Tab1 注入 metric-algo-corr 表')
+else:
+    print('⚠️ Tab1 metric-algo-corr 注入点未找到，尝试 fallback')
+    # fallback：找 funnel-formula div 末尾
+    fb_pat = r'(<div class="funnel-formula">.*?<div class="formula-tip">.*?</div>)\s*(</div>)'
+    m2 = re.search(fb_pat, html, re.DOTALL)
+    if m2:
+        html = html[:m2.end(1)] + '\n' + mac_html + html[m2.end(1):]
+        print('✅ Tab1 fallback 注入 metric-algo-corr 表')
+
 for metric_key in ['ctr1', 'ctr2', 'cvr', 'price']:
-    section_html = render_v10_section(metric_key, metric_labels[metric_key])
+    if metric_key == 'price':
+        section_html = render_price_playbook()
+    else:
+        section_html = render_v10_section(metric_key, metric_labels[metric_key])
     
     # 找到这个 tab 的 panel
     pattern = rf'(<div class="tab-panel hidden" id="tab-{metric_key}">.*?)(<div class="section-label">🎯 行业参考值)'
