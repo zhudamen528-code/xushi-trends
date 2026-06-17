@@ -1265,116 +1265,202 @@ body {
 .empty-pool { padding:24px; text-align:center; color:#999; font-size:13px; background:#fafafa; border-radius:8px; }
 
 
+/* ============ V10.2 Design Tokens（4 色系统）============ */
+:root {
+  /* 主色 4 个：深=结论 / 黄=提示 / 绿=可抄 / 红=避坑 */
+  --c-deep: #1f2937;       /* 深色（标题/结论 hero）*/
+  --c-deep-2: #374151;     /* 深色辅助 */
+  --c-deep-3: #6b7280;     /* 深色中度（次要文本）*/
+  --c-warn: #f59e0b;       /* 黄色（重要提示/平台心智）*/
+  --c-warn-bg: #fffbeb;    /* 黄色背景 */
+  --c-warn-bg-2: #fef3c7;  /* 黄色背景加深 */
+  --c-good: #10b981;       /* 绿色（可抄/正面）*/
+  --c-good-bg: #ecfdf5;    /* 绿色背景 */
+  --c-good-bg-2: #d1fae5;  /* 绿色背景加深 */
+  --c-bad: #ef4444;        /* 红色（避坑/反例）*/
+  --c-bad-bg: #fef2f2;     /* 红色背景 */
+  --c-bad-bg-2: #fee2e2;   /* 红色背景加深 */
+  /* 中性灰阶 */
+  --c-text: #111827;       /* 主文本 */
+  --c-text-2: #374151;     /* 次要文本 */
+  --c-text-3: #6b7280;     /* 弱化文本 */
+  --c-text-4: #9ca3af;     /* 极弱文本/标签 */
+  --c-bg: #ffffff;         /* 背景 */
+  --c-bg-2: #f9fafb;       /* 卡片背景 */
+  --c-bg-3: #f3f4f6;       /* 区块背景 */
+  --c-border: #e5e7eb;     /* 边框 */
+  --c-border-strong: #d1d5db; /* 强边框 */
+  /* 字号 5 级 */
+  --fs-xs: 11px;
+  --fs-sm: 12px;
+  --fs-base: 14px;
+  --fs-md: 16px;
+  --fs-lg: 20px;
+  --fs-xl: 28px;
+  /* 间距 4 级 */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 14px;
+  --sp-4: 20px;
+  --sp-5: 28px;
+  /* 圆角 */
+  --r-sm: 6px;
+  --r: 10px;
+  --r-lg: 14px;
+}
+/* 全站轻量重置 */
+body { color: var(--c-text); }
+
 .v10-section { margin: 20px 0; }
-.v10-banner { background: linear-gradient(135deg, #fff9e6, #fff3d3); border-left: 4px solid #f5b400; border-radius: 10px; padding: 14px 18px; margin-bottom: 18px; }
-.v10-banner-title { font-size: 16px; font-weight: 700; color: #333; margin-bottom: 6px; }
-.v10-banner-sub { font-size: 12px; color: #666; line-height: 1.6; }
-.v10-mechanism { background: #f4f8ff; border-left: 3px solid #4a90e2; border-radius: 6px; padding: 12px 16px; margin: 14px 0; font-size: 13px; color: #333; line-height: 1.7; }
+.v10-banner { background: linear-gradient(135deg, var(--c-warn-bg), var(--c-warn-bg-2)); border-left: 4px solid var(--c-warn); border-radius: 10px; padding: 14px 18px; margin-bottom: 18px; }
+.v10-banner-title { font-size: 16px; font-weight: 700; color: var(--c-text); margin-bottom: 6px; }
+.v10-banner-sub { font-size: 12px; color: var(--c-text-3); line-height: 1.6; }
+.v10-mechanism { background: #f4f8ff; border-left: 3px solid var(--c-deep); border-radius: 6px; padding: 12px 16px; margin: 14px 0; font-size: 13px; color: var(--c-text); line-height: 1.7; }
 /* 核心机制 hero 样式：深色背景、大字、高亮 */
-.v10-mech-hero { background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%) !important; color: #fff !important; border-left: 4px solid #f5b400 !important; padding: 16px 20px !important; font-size: 15px !important; line-height: 1.8 !important; box-shadow: 0 2px 8px rgba(0,0,0,0.15); margin: 16px 0 20px !important; border-radius: 8px !important; }
-.v10-mech-hero b { color: #f5b400 !important; font-size: 16px; }
+.v10-mech-hero { background: linear-gradient(135deg, var(--c-deep) 0%, var(--c-deep-2) 100%) !important; color: #fff !important; border-left: 4px solid var(--c-warn) !important; padding: 16px 20px !important; font-size: 15px !important; line-height: 1.8 !important; box-shadow: 0 2px 8px rgba(0,0,0,0.15); margin: 16px 0 20px !important; border-radius: 8px !important; }
+.v10-mech-hero b { color: var(--c-warn) !important; font-size: 16px; }
 
 /* <abbr class="term-abbr" title="商品卡点击率：看了笔记 → 点开商品卡的比例">CTR2</abbr> 三层优先级前置说明 */
 .ctr2-priority-note { background: #fff; border: 1px solid #e8eaed; border-radius: 10px; padding: 16px 18px; margin: 14px 0 18px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
 .cpn-title { font-size: 14px; font-weight: 700; color: #d92f5e; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px dashed #f0d4dd; }
-.cpn-tier { padding: 8px 12px; margin: 6px 0; border-radius: 6px; font-size: 12px; line-height: 1.7; color: #333; }
+.cpn-tier { padding: 8px 12px; margin: 6px 0; border-radius: 6px; font-size: 12px; line-height: 1.7; color: var(--c-text); }
 .cpn-tier-1 { background: #fff0f0; border-left: 3px solid #d92f5e; }
-.cpn-tier-2 { background: #fffaeb; border-left: 3px solid #f5b400; }
-.cpn-tier-3 { background: #f0fff4; border-left: 3px solid #34c759; }
-.cpn-tier b { color: #222; font-size: 13px; }
-.cpn-key { background: #2c3e50; color: #fff; border-radius: 6px; padding: 10px 14px; margin-top: 12px; font-size: 12px; line-height: 1.7; }
-.cpn-key b { color: #f5b400; }
+.cpn-tier-2 { background: #fffaeb; border-left: 3px solid var(--c-warn); }
+.cpn-tier-3 { background: #f0fff4; border-left: 3px solid var(--c-good); }
+.cpn-tier b { color: var(--c-deep); font-size: 13px; }
+.cpn-key { background: var(--c-deep); color: #fff; border-radius: 6px; padding: 10px 14px; margin-top: 12px; font-size: 12px; line-height: 1.7; }
+.cpn-key b { color: var(--c-warn); }
 
 /* 指标↔算法相关性表 */
 .metric-algo-corr { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 14px 18px; margin: 16px 0 0; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
-.mac-title { font-size: 14px; font-weight: 700; color: #2c3e50; margin-bottom: 6px; }
-.mac-sub { font-size: 11px; color: #888; margin-bottom: 12px; line-height: 1.6; }
+.mac-title { font-size: 14px; font-weight: 700; color: var(--c-deep); margin-bottom: 6px; }
+.mac-sub { font-size: 11px; color: var(--c-text-3); margin-bottom: 12px; line-height: 1.6; }
 .mac-table { width: 100%; border-collapse: collapse; }
-.mac-table th { font-size: 12px; color: #666; text-align: left; padding: 6px 10px; background: #f8f9fa; border-bottom: 1px solid #e5e7eb; }
+.mac-table th { font-size: 12px; color: var(--c-text-3); text-align: left; padding: 6px 10px; background: #f8f9fa; border-bottom: 1px solid #e5e7eb; }
 .mac-table td { padding: 8px 10px; font-size: 13px; border-bottom: 1px solid #f0f0f0; }
-.mac-metric { font-weight: 600; color: #333; white-space: nowrap; }
-.mac-feats { color: #555; }
-.corr-pos { color: #1a7a3f; background: #e8f5ee; padding: 2px 8px; border-radius: 10px; font-size: 12px; margin-right: 4px; display: inline-block; margin-bottom: 4px; }
-.corr-neg { color: #c0392b; background: #fde8e8; padding: 2px 8px; border-radius: 10px; font-size: 12px; margin-right: 4px; display: inline-block; margin-bottom: 4px; }
-.mac-key { background: #2c3e50; color: #fff; border-radius: 6px; padding: 10px 14px; margin-top: 12px; font-size: 12px; line-height: 1.7; }
-.mac-key b { color: #f5b400; }
-.mac-warn { font-size: 11px; color: #999; margin-top: 8px; padding: 8px 12px; background: #f8f9fa; border-radius: 4px; border-left: 2px solid #ccc; }
+.mac-metric { font-weight: 600; color: var(--c-text); white-space: nowrap; }
+.mac-feats { color: var(--c-text-2); }
+.corr-pos { color: var(--c-good); background: #e8f5ee; padding: 2px 8px; border-radius: 10px; font-size: 12px; margin-right: 4px; display: inline-block; margin-bottom: 4px; }
+.corr-neg { color: var(--c-bad); background: #fde8e8; padding: 2px 8px; border-radius: 10px; font-size: 12px; margin-right: 4px; display: inline-block; margin-bottom: 4px; }
+.mac-key { background: var(--c-deep); color: #fff; border-radius: 6px; padding: 10px 14px; margin-top: 12px; font-size: 12px; line-height: 1.7; }
+.mac-key b { color: var(--c-warn); }
+.mac-warn { font-size: 11px; color: var(--c-text-4); margin-top: 8px; padding: 8px 12px; background: #f8f9fa; border-radius: 4px; border-left: 2px solid var(--c-border-strong); }
 /* Ladder 表 */
 .mac-ladder td, .mac-ladder th { padding: 8px 10px; text-align: center; font-size: 13px; }
 .mac-ladder th:first-child, .mac-ladder td:first-child { text-align: left; }
-.ladder-feat { font-weight: 600; color: #333; }
-.ladder-q1 { color: #888; }
-.ladder-q4 { color: #1a7a3f; font-weight: 600; }
+.ladder-feat { font-weight: 600; color: var(--c-text); }
+.ladder-q1 { color: var(--c-text-3); }
+.ladder-q4 { color: var(--c-good); font-weight: 600; }
 .ladder-mult { font-weight: 600; }
-.ladder-x { color: #1a7a3f; background: #e8f5ee; padding: 2px 8px; border-radius: 10px; }
-.ladder-x-neg { color: #c0392b; background: #fde8e8; padding: 2px 8px; border-radius: 10px; }
+.ladder-x { color: var(--c-good); background: #e8f5ee; padding: 2px 8px; border-radius: 10px; }
+.ladder-x-neg { color: var(--c-bad); background: #fde8e8; padding: 2px 8px; border-radius: 10px; }
 .ladder-neg { background: #fffafa; }
-.ladder-warn { color: #c0392b; font-size: 11px; font-weight: 600; }
+.ladder-warn { color: var(--c-bad); font-size: 11px; font-weight: 600; }
 
 /* V9 老内容折叠样式 */
 .v9-legacy-fold { background: #fafbfc; border: 1px solid #e5e7eb; border-radius: 10px; margin: 24px 0 16px; padding: 0; }
-.v9-legacy-summary { cursor: pointer; padding: 14px 18px; font-size: 13px; font-weight: 600; color: #666; list-style: none; display: flex; align-items: center; gap: 8px; user-select: none; }
+.v9-legacy-summary { cursor: pointer; padding: 14px 18px; font-size: 13px; font-weight: 600; color: var(--c-text-3); list-style: none; display: flex; align-items: center; gap: 8px; user-select: none; }
 .v9-legacy-summary::-webkit-details-marker { display: none; }
-.v9-legacy-summary::before { content: '▶'; transition: transform 0.2s; color: #999; font-size: 10px; }
+.v9-legacy-summary::before { content: '▶'; transition: transform 0.2s; color: var(--c-text-4); font-size: 10px; }
 .v9-legacy-fold[open] .v9-legacy-summary::before { transform: rotate(90deg); }
 .v9-legacy-summary:hover { color: #d92f5e; }
-.v9-legacy-body { padding: 16px 18px 4px; border-top: 1px solid #e5e7eb; }
+.v9-legacy-body { padding: 16px 18px 4px; border-top: 1px solid var(--c-border); }
 
 /* 业务术语 hover */
-.term-abbr { text-decoration: none; border-bottom: 1px dotted #aaa; cursor: help; }
-.term-abbr:hover { background: #fff5d6; }
-.mac-th-sub { display: block; font-size: 10px; color: #888; font-weight: 400; margin-top: 2px; }
+.term-abbr { text-decoration: none; border-bottom: 1px dotted var(--c-text-4); cursor: help; }
+.term-abbr:hover { background: var(--c-warn-bg-2); }
+.mac-th-sub { display: block; font-size: 10px; color: var(--c-text-3); font-weight: 400; margin-top: 2px; }
 abbr.conf-badge { text-decoration: none; cursor: help; }
+
+/* ============ V10.2 UI 大改：卡片紧凑 + 双栏对比 + sticky 锚 ============ */
+.v10-card { transition: box-shadow 0.15s; }
+.v10-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+.v10-card-head { display: flex; align-items: center; gap: 8px; margin-bottom: var(--sp-2); flex-wrap: wrap; }
+.v10-card-num { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: var(--c-good); color: #fff; font-size: var(--fs-xs); font-weight: 700; flex-shrink: 0; }
+.v10-card-num-red { background: var(--c-bad); }
+.v10-card-name { font-size: var(--fs-base); font-weight: 700; color: var(--c-text); flex: 1; line-height: 1.4; min-width: 200px; }
+.v10-card-stat-row { display: flex; align-items: center; gap: 8px; margin-bottom: var(--sp-2); font-size: var(--fs-sm); color: var(--c-text-3); flex-wrap: wrap; }
+.v10-stat-good { color: var(--c-good); }
+.v10-stat-good b { color: var(--c-good); font-size: var(--fs-base); }
+.v10-stat-bad { color: var(--c-bad); }
+.v10-stat-bad b { color: var(--c-bad); font-size: var(--fs-base); }
+.v10-stat-sep { color: var(--c-text-4); font-size: 10px; font-weight: 400; }
+.v10-card-cat { font-size: var(--fs-xs); color: var(--c-text-3); margin-bottom: var(--sp-2); }
+
+/* Tab 内 sticky 小目录（仅 GMV 总览 Tab）*/
+.tab-anchor-nav { position: sticky; top: 56px; z-index: 8; background: rgba(255,255,255,0.97); backdrop-filter: blur(8px); border-bottom: 1px solid var(--c-border); margin: -8px -8px var(--sp-3); padding: 8px 8px; display: flex; gap: 6px; overflow-x: auto; font-size: var(--fs-xs); }
+.tab-anchor-nav a { color: var(--c-text-3); text-decoration: none; white-space: nowrap; padding: 4px 10px; border-radius: 6px; border: 1px solid transparent; transition: all 0.15s; }
+.tab-anchor-nav a:hover { background: var(--c-bg-3); color: var(--c-text); border-color: var(--c-border); }
+
+/* 区块视觉锚（数字标 + 块标题）*/
+.section-block { margin: var(--sp-5) 0 var(--sp-4); }
+.section-block-head { display: flex; align-items: center; gap: 10px; margin-bottom: var(--sp-3); padding-bottom: var(--sp-2); border-bottom: 2px solid var(--c-deep); }
+.section-block-num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; background: var(--c-deep); color: #fff; border-radius: 6px; font-weight: 700; font-size: var(--fs-sm); flex-shrink: 0; }
+.section-block-title { font-size: var(--fs-md); font-weight: 700; color: var(--c-text); }
+.section-block-sub { font-size: var(--fs-xs); color: var(--c-text-3); margin-left: auto; }
+
+/* 行业 KPI 双栏对照表 */
+.industry-kpi-dual { background: var(--c-bg); border: 1px solid var(--c-border); border-radius: var(--r); padding: var(--sp-4); }
+.industry-kpi-dual-table { width: 100%; border-collapse: collapse; font-size: var(--fs-sm); }
+.industry-kpi-dual-table th { text-align: left; padding: 10px 12px; color: var(--c-text-2); font-weight: 600; border-bottom: 2px solid var(--c-border); font-size: var(--fs-xs); }
+.industry-kpi-dual-table th.pic-col { color: var(--c-good); }
+.industry-kpi-dual-table th.vid-col { color: var(--c-deep-2); }
+.industry-kpi-dual-table td { padding: 12px; border-bottom: 1px solid var(--c-border); }
+.industry-kpi-dual-table td.kpi-name { color: var(--c-text-2); font-weight: 500; }
+.industry-kpi-dual-table td.kpi-val-pic { font-weight: 700; color: var(--c-good); font-size: var(--fs-base); }
+.industry-kpi-dual-table td.kpi-val-vid { font-weight: 700; color: var(--c-deep); font-size: var(--fs-base); }
+.industry-kpi-dual-table tr:hover { background: var(--c-bg-2); }
+.industry-kpi-note { font-size: var(--fs-xs); color: var(--c-text-3); margin-top: 12px; padding: 8px 12px; background: var(--c-bg-2); border-radius: var(--r-sm); }
 .v10-subhead { font-size: 14px; font-weight: 700; margin: 18px 0 10px; padding: 6px 10px; border-radius: 4px; }
-.v10-subhead-green { color: #1a7a3f; background: #e8f5ee; }
-.v10-subhead-red { color: #b32a2a; background: #fde8e8; }
+.v10-subhead-green { color: var(--c-good); background: #e8f5ee; }
+.v10-subhead-red { color: var(--c-bad); background: #fde8e8; }
 .v10-cards-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 18px; }
 .v10-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 14px 16px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
-.v10-card-high { border-left: 4px solid #1a7a3f; }
-.v10-card-low { border-left: 4px solid #c0392b; background: #fffafa; }
+.v10-card-high { border-left: 4px solid var(--c-good); }
+.v10-card-low { border-left: 4px solid var(--c-bad); background: #fffafa; }
 .v10-card-head { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; flex-wrap: wrap; }
-.v10-card-num { background: #1a7a3f; color: #fff; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; }
-.v10-card-num-red { background: #c0392b; }
-.v10-card-name { font-size: 14px; font-weight: 700; color: #222; flex: 1; }
+.v10-card-num { background: var(--c-good); color: #fff; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; }
+.v10-card-num-red { background: var(--c-bad); }
+.v10-card-name { font-size: 14px; font-weight: 700; color: var(--c-deep); flex: 1; }
 .conf-badge { font-size: 10px; padding: 2px 8px; border-radius: 10px; font-weight: 600; }
-.cb-high { background: #d4edda; color: #155724; }
-.cb-mid { background: #fff3cd; color: #856404; }
-.cb-low { background: #f8d7da; color: #721c24; }
-.v10-card-meta { font-size: 12px; color: #555; margin-bottom: 6px; }
-.v10-stat { color: #666; }
-.diff-pp { color: #1a7a3f; font-weight: 600; margin-left: 8px; }
-.diff-pp-red { color: #c0392b; }
-.diff-ratio { background: #fff8d6; padding: 1px 6px; border-radius: 4px; font-size: 11px; color: #8b6914; margin-left: 4px; }
-.v10-card-cat { font-size: 11px; color: #888; margin-bottom: 8px; line-height: 1.5; }
-.v10-card-advice { background: #f0f8ff; border-radius: 6px; padding: 8px 12px; font-size: 13px; color: #333; line-height: 1.6; }
-.v10-card-advice-red { background: #fff5f5; color: #2c2c2c; }
-.v10-card-examples { margin-top: 10px; font-size: 12px; color: #555; }
-.v10-card-examples summary { cursor: pointer; color: #4a90e2; padding: 4px 0; font-weight: 500; }
-.v10-card-examples summary:hover { color: #2c5fa5; }
+.cb-high { background: #d4edda; color: var(--c-good); }
+.cb-mid { background: #fff3cd; color: var(--c-text-2); }
+.cb-low { background: #f8d7da; color: var(--c-bad); }
+.v10-card-meta { font-size: 12px; color: var(--c-text-2); margin-bottom: 6px; }
+.v10-stat { color: var(--c-text-3); }
+.diff-pp { color: var(--c-good); font-weight: 600; margin-left: 8px; }
+.diff-pp-red { color: var(--c-bad); }
+.diff-ratio { background: #fff8d6; padding: 1px 6px; border-radius: 4px; font-size: 11px; color: var(--c-text-2); margin-left: 4px; }
+.v10-card-cat { font-size: 11px; color: var(--c-text-3); margin-bottom: 8px; line-height: 1.5; }
+.v10-card-advice { background: #f0f8ff; border-radius: 6px; padding: 8px 12px; font-size: 13px; color: var(--c-text); line-height: 1.6; }
+.v10-card-advice-red { background: #fff5f5; color: var(--c-text); }
+.v10-card-examples { margin-top: 10px; font-size: 12px; color: var(--c-text-2); }
+.v10-card-examples summary { cursor: pointer; color: var(--c-deep); padding: 4px 0; font-weight: 500; }
+.v10-card-examples summary:hover { color: var(--c-deep); }
 .v10-ex-block { margin: 8px 0; }
-.v10-ex-label { font-size: 11px; color: #888; font-weight: 600; margin-bottom: 4px; }
-.v10-ex-label-red { color: #c0392b; }
-.v10-ex-list { margin: 4px 0 0 18px; padding: 0; line-height: 1.7; color: #444; font-size: 12px; }
+.v10-ex-label { font-size: 11px; color: var(--c-text-3); font-weight: 600; margin-bottom: 4px; }
+.v10-ex-label-red { color: var(--c-bad); }
+.v10-ex-list { margin: 4px 0 0 18px; padding: 0; line-height: 1.7; color: var(--c-text-2); font-size: 12px; }
 .v10-ex-list li { margin-bottom: 3px; }
-.v10-note-link { color: #1a73e8; text-decoration: none; }
+.v10-note-link { color: var(--c-deep); text-decoration: none; }
 .v10-note-link:hover { color: #d92f5e; text-decoration: underline; }
 
 /* 件单价 4 机制 playbook */
 .price-playbook-section { margin: 20px 0; }
 .price-banner { background: linear-gradient(135deg, #ffe9f0, #ffd5e3) !important; border-left-color: #d92f5e !important; }
-.v10-mech-hero { background: linear-gradient(135deg, #2c3e50, #34495e); color: #f0f0f0; border-left: 4px solid #f5b400; font-size: 14px; padding: 14px 18px; }
+.v10-mech-hero { background: linear-gradient(135deg, var(--c-deep), var(--c-deep-2)); color: #f0f0f0; border-left: 4px solid var(--c-warn); font-size: 14px; padding: 14px 18px; }
 .v10-mech-hero b { color: #fff; }
 .price-mech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
 .price-mech-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 14px 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); border-top: 3px solid #d92f5e; }
 .price-mech-head { margin-bottom: 8px; }
-.price-mech-name { font-size: 15px; font-weight: 700; color: #222; }
-.price-mech-desc { font-size: 12px; color: #666; margin-bottom: 10px; line-height: 1.6; }
-.price-mech-sop { background: #f0f8ff; border-radius: 6px; padding: 8px 12px; font-size: 13px; color: #333; line-height: 1.6; margin-bottom: 8px; }
-.price-mech-pitfall { background: #fff5e6; border-radius: 6px; padding: 8px 12px; font-size: 12px; color: #5d4a1f; line-height: 1.6; margin-bottom: 10px; }
-.price-mech-cases summary { cursor: pointer; color: #4a90e2; padding: 4px 0; font-weight: 500; font-size: 12px; }
+.price-mech-name { font-size: 15px; font-weight: 700; color: var(--c-deep); }
+.price-mech-desc { font-size: 12px; color: var(--c-text-3); margin-bottom: 10px; line-height: 1.6; }
+.price-mech-sop { background: #f0f8ff; border-radius: 6px; padding: 8px 12px; font-size: 13px; color: var(--c-text); line-height: 1.6; margin-bottom: 8px; }
+.price-mech-pitfall { background: #fff5e6; border-radius: 6px; padding: 8px 12px; font-size: 12px; color: var(--c-text-2); line-height: 1.6; margin-bottom: 10px; }
+.price-mech-cases summary { cursor: pointer; color: var(--c-deep); padding: 4px 0; font-weight: 500; font-size: 12px; }
 .price-mech-cases summary:hover { color: #d92f5e; }
-.case-meta { color: #888; font-size: 11px; }
-.case-empty { color: #aaa; font-style: italic; }
+.case-meta { color: var(--c-text-3); font-size: 11px; }
+.case-empty { color: var(--c-text-4); font-style: italic; }
 @media (max-width: 768px) {
   .price-mech-grid { grid-template-columns: 1fr; }
 }
@@ -1778,12 +1864,12 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   <div class="hero">
     <h2>💰 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> 总览 · 提升你的笔记生意</h2>
     <p class="meta">数据窗口：2026-05-27 至 2026-06-09 · 笔记发布≥2026-05-27 · 更新 2026-06-10 17:50</p>
-    <div class="funnel-formula">
+    <div class="funnel-formula" id="anchor-formula">
       <div class="formula-line"><strong>笔记 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> = <abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 GMV，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> × 曝光（PV） ÷ 1000</strong></div>
       <div class="formula-line"><strong><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> = <abbr class="term-abbr" title="封面点击率：曝光 → 点开笔记的比例（你后台叫&quot;封面点击率/CTR&quot;）">CTR1</abbr> × <abbr class="term-abbr" title="商品卡点击率：看了笔记 → 点开商品卡的比例">CTR2</abbr> × <abbr class="term-abbr" title="下单转化率：看了商品卡 → 实际下单的比例">CVR</abbr> × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000</strong></div>
       <div class="formula-flow">笔记曝光 → <span class="step ctr1">👆 封面点击</span> → <span class="step ctr2">🔗 商品卡点击</span> → <span class="step cvr">💵 下单</span> → <span class="step price">💎 客单价</span></div>
       <div class="formula-tip">📍 <strong><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 是你笔记生意提升的核心</strong>：<abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 是商家自己 100% 可控的。<abbr class="term-abbr" title="GMV per Mille：每 1000 次曝光带来的 GMV，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 提升不仅让每一份曝光能赚到的钱更多，平台也会把流量倾斜给 GPM 高的笔记——所以提升 GPM 是「单价 × 流量」双重增长。</div>
-<div class="metric-algo-corr">
+<div class="metric-algo-corr" id="anchor-algo">
   <div class="mac-title">🤖 平台算法分 × <abbr title="DGMV = 笔记带来的直接成交金额（小红书后台同口径）"><abbr class="term-abbr" title="笔记直接带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>（小红书后台同口径，不含间接成交）">DGMV</abbr></abbr> 真实阶梯（n=1199 篇笔记）</div>
   <div class="mac-sub">把池里 1199 篇笔记<b>按算法打分从低到高排队</b>，分成 4 段，看每段笔记<b>典型 <abbr class="term-abbr" title="笔记直接带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>（小红书后台同口径，不含间接成交）">DGMV</abbr> 和曝光</b>是多少。<b>这是实测产出，不是统计模型</b>。</div>
   <table class="mac-table mac-ladder">
@@ -1837,65 +1923,49 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
 </div>
     </div>
   </div>
+<nav class="tab-anchor-nav">
+  <a href="#anchor-formula">📐 公式</a>
+  <a href="#anchor-algo">🤖 算法分阶梯</a>
+  <a href="#anchor-industry">🎯 行业参考</a>
+  <a href="#anchor-selfcheck">🧮 <abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 自查</a>
+</nav>
 
-  <div class="section-label">📈 休食 · 图文</div>
-  <div class="kpi-grid">
-    <div class="kpi-card">
-      <div class="kpi-title"><abbr class="term-abbr" title="封面点击率：曝光 → 点开笔记的比例（你后台叫&quot;封面点击率/CTR&quot;）">CTR1</abbr> 封面点击率</div>
-      <div class="kpi-value">10.1%</div>
-      <div class="kpi-sub">行业优秀线（参考）</div>
-      <div class="kpi-ka">行业中位：6.8%</div>
-    </div>
-    <div class="kpi-card">
-      <div class="kpi-title"><abbr class="term-abbr" title="商品卡点击率：看了笔记 → 点开商品卡的比例">CTR2</abbr> 商品卡点击率</div>
-      <div class="kpi-value">35.6%</div>
-      <div class="kpi-sub">行业优秀线（参考）</div>
-      <div class="kpi-ka">行业中位：—</div>
-    </div>
-    <div class="kpi-card">
-      <div class="kpi-title"><abbr class="term-abbr" title="下单转化率：看了商品卡 → 实际下单的比例">CVR</abbr> 转化率</div>
-      <div class="kpi-value">6.2%</div>
-      <div class="kpi-sub">行业优秀线（参考）</div>
-      <div class="kpi-ka">行业中位：0.0%</div>
-    </div>
-    <div class="kpi-card">
-      <div class="kpi-title"><abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr></div>
-      <div class="kpi-value">¥46</div>
-      <div class="kpi-sub">行业优秀线（参考）</div>
-      <div class="kpi-ka">行业中位：¥25</div>
-    </div>
+  <div class="section-block" id="anchor-industry">
+  <div class="section-block-head">
+    <span class="section-block-num">4</span>
+    <span class="section-block-title">行业参考值 · 图文 vs 视频对照</span>
+    <span class="section-block-sub">把你后台数据对一下</span>
   </div>
-
-  <div class="section-label">🎬 休食 · 视频</div>
-  <div class="kpi-grid">
-    <div class="kpi-card">
-      <div class="kpi-title"><abbr class="term-abbr" title="封面点击率：曝光 → 点开笔记的比例（你后台叫&quot;封面点击率/CTR&quot;）">CTR1</abbr> 封面点击率</div>
-      <div class="kpi-value">7.7%</div>
-      <div class="kpi-sub">行业优秀线（参考）</div>
-      <div class="kpi-ka">行业中位：4.7%</div>
-    </div>
-    <div class="kpi-card">
-      <div class="kpi-title"><abbr class="term-abbr" title="商品卡点击率：看了笔记 → 点开商品卡的比例">CTR2</abbr> 商品卡点击率</div>
-      <div class="kpi-value">8.9%</div>
-      <div class="kpi-sub">行业优秀线（参考）</div>
-      <div class="kpi-ka">行业中位：2.9%</div>
-    </div>
-    <div class="kpi-card">
-      <div class="kpi-title"><abbr class="term-abbr" title="下单转化率：看了商品卡 → 实际下单的比例">CVR</abbr> 转化率</div>
-      <div class="kpi-value">7.7%</div>
-      <div class="kpi-sub">行业优秀线（参考）</div>
-      <div class="kpi-ka">行业中位：0.0%</div>
-    </div>
-    <div class="kpi-card">
-      <div class="kpi-title"><abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr></div>
-      <div class="kpi-value">¥41</div>
-      <div class="kpi-sub">行业优秀线（参考）</div>
-      <div class="kpi-ka">行业中位：¥24</div>
-    </div>
+  <div class="industry-kpi-dual">
+    <table class="industry-kpi-dual-table">
+      <thead>
+        <tr>
+          <th>指标</th>
+          <th class="pic-col">📈 图文 P75</th>
+          <th class="vid-col">🎬 视频 P75</th>
+        </tr>
+      </thead>
+      <tbody><tr>
+  <td class="kpi-name"><abbr class="term-abbr" title="封面点击率：曝光 → 点开笔记的比例（你后台叫&quot;封面点击率/CTR&quot;）">CTR1</abbr> 封面点击率</td>
+  <td class="kpi-val-pic">10.1%</td>
+  <td class="kpi-val-vid">7.7%</td>
+</tr><tr>
+  <td class="kpi-name"><abbr class="term-abbr" title="商品卡点击率：看了笔记 → 点开商品卡的比例">CTR2</abbr> 商品卡点击率</td>
+  <td class="kpi-val-pic">35.6%</td>
+  <td class="kpi-val-vid">8.9%</td>
+</tr><tr>
+  <td class="kpi-name"><abbr class="term-abbr" title="下单转化率：看了商品卡 → 实际下单的比例">CVR</abbr> 转化率</td>
+  <td class="kpi-val-pic">6.2%</td>
+  <td class="kpi-val-vid">7.7%</td>
+</tr><tr>
+  <td class="kpi-name"><abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr></td>
+  <td class="kpi-val-pic">¥46</td>
+  <td class="kpi-val-vid">¥41</td>
+</tr></tbody>
+    </table>
+    <div class="industry-kpi-note">📌 P75 = 把所有商家按这个指标从高到低排队，排在第 25% 位置的值；超过这个数就算行业前 25%</div>
   </div>
-
-  <div class="tips-box">
-    <strong>💡 怎么看：</strong> 把行业优秀线 / 中位作为参考，对照你后台笔记的封面点击率、商品卡点击率、转化率、客单价数据。<strong>哪一环明显落后行业，就优先优化哪一环</strong>。点击上方 Tab 看对应环节的方法路径 + 本周休食优秀案例。<br><br>
+</div>客单价数据。<strong>哪一环明显落后行业，就优先优化哪一环</strong>。点击上方 Tab 看对应环节的方法路径 + 本周休食优秀案例。<br><br>
     数据基于近 14 天休食类目商品笔记的统计结果，每周一更新。
   </div>
 
@@ -1941,18 +2011,20 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   <div class="v10-subhead v10-subhead-green">✅ 表现好的笔记常用的 4 招 → 抄</div>
   <div class="v10-cards-grid"><div class="v10-card v10-card-high">
   <div class="v10-card-head">
-    <span class="v10-card-num">#1</span>
+    <span class="v10-card-num">1</span>
     <span class="v10-card-name">封面美学=低 × 跨多类目（敢用'真实/粗糙'封面，不堆精修）</span>
     <abbr class="conf-badge cb-high" title="差距大 + 跨多个类目 + 样本量足">证据强</abbr>
   </div>
-  <div class="v10-card-meta">
-    <span class="v10-stat">表现好的笔记里 <b>25 篇</b>用了这招 · 表现差的笔记里只 <b>7 篇</b>用</span>
+  <div class="v10-card-stat-row">
+    <span class="v10-stat-good">✅ 表现好 <b>25</b> 篇</span>
+    <span class="v10-stat-sep">vs</span>
+    <span class="v10-stat-bad">表现差仅 <b>7</b> 篇</span>
     <span class="diff-pp">表现好的多 6.3%</span> <span class="diff-ratio">3.17x</span>
   </div>
-  <div class="v10-card-cat">📊 类目分布：跨类目通用（美测8/养生7/美展5/保健2/家居1/妈妈经验1/美其他1，覆盖 7 个类目）；低组同档位则高度集中在养生食疗（5/7），跨类目能力弱</div>
-  <div class="v10-card-advice">💡 <b>商家建议</b>：封面不必死磕'精致摆盘+滤镜'。若标题/产品本身有强叙事（人设故事/产地实拍/真实使用场景），可以放心使用'生活感'封面（aesthetic 档=低也无妨），<abbr class="term-abbr" title="封面点击率：曝光 → 点开笔记的比例（你后台叫&quot;封面点击率/CTR&quot;）">CTR1</abbr> 反而更高；但要确保画面清晰度（definition）≥中。</div>
+  <div class="v10-card-cat">📊 跨类目通用（美测8/养生7/美展5/保健2/家居1/妈妈经验1/美其他1，覆盖 7 个类目）；低组同档位则高度集中在养生食疗（5/7），跨类目能力弱</div>
+  <div class="v10-card-advice">💡 封面不必死磕'精致摆盘+滤镜'。若标题/产品本身有强叙事（人设故事/产地实拍/真实使用场景），可以放心使用'生活感'封面（aesthetic 档=低也无妨），<abbr class="term-abbr" title="封面点击率：曝光 → 点开笔记的比例（你后台叫&quot;封面点击率/CTR&quot;）">CTR1</abbr> 反而更高；但要确保画面清晰度（definition）≥中。</div>
   <details class="v10-card-examples">
-    <summary>📌 看真实案例（5 篇好笔记 + 2 篇反例）</summary>
+    <summary>看 5 篇真实案例 + 2 篇反例</summary>
     <div class="v10-ex-block">
       <div class="v10-ex-label">🟢 表现好的笔记是这么写的</div>
       <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6a252871000000001702c1dd" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评] 北美爆火的Brook Hill要来了</a></li><li><a href="https://www.xiaohongshu.com/explore/647d86100000000027000062" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食展示] 好吃到离谱的闽南烧肉粽！！</a></li><li><a href="https://www.xiaohongshu.com/explore/69ca89b5000000002202b61a" target="_blank" rel="noopener" class="v10-note-link">🔗 [家居用品] 25岁｜第一次给爸爸送了个'像样的'生日礼物</a></li><li><a href="https://www.xiaohongshu.com/explore/688b6d11000000000403d1b4" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗] 自从吃了这款干挑燕条，干挑盏就再也没买过</a></li></ul>
@@ -1961,18 +2033,20 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   </details>
 </div><div class="v10-card v10-card-high">
   <div class="v10-card-head">
-    <span class="v10-card-num">#2</span>
+    <span class="v10-card-num">2</span>
     <span class="v10-card-name">标题用「书名号 / 引号 / 圆括号」框出关键词或副标题</span>
     <abbr class="conf-badge cb-mid" title="差距中等或样本偏小，可参考但需结合自身判断">证据中</abbr>
   </div>
-  <div class="v10-card-meta">
-    <span class="v10-stat">表现好的笔记里 <b>11 篇</b>用了这招 · 表现差的笔记里只 <b>3 篇</b>用</span>
+  <div class="v10-card-stat-row">
+    <span class="v10-stat-good">✅ 表现好 <b>11</b> 篇</span>
+    <span class="v10-stat-sep">vs</span>
+    <span class="v10-stat-bad">表现差仅 <b>3</b> 篇</span>
     <span class="diff-pp">表现好的多 2.8%</span> <span class="diff-ratio">2.83x</span>
   </div>
-  <div class="v10-card-cat">📊 类目分布：美食展示 6 / 美食测评 4 / 养生食疗 1；茶酒占比 9%（跨类目通用，非茶酒驱动）</div>
-  <div class="v10-card-advice">💡 <b>商家建议</b>：把标题里最想被一眼抓住的关键词（爆款产品名、限定主题、活动期号）用「」/（）单独框起来，配合一段简短引语；比平铺直叙更易在信息流里制造视觉锚点。</div>
+  <div class="v10-card-cat">📊 美食展示 6 / 美食测评 4 / 养生食疗 1；茶酒占比 9%（跨类目通用，非茶酒驱动）</div>
+  <div class="v10-card-advice">💡 把标题里最想被一眼抓住的关键词（爆款产品名、限定主题、活动期号）用「」/（）单独框起来，配合一段简短引语；比平铺直叙更易在信息流里制造视觉锚点。</div>
   <details class="v10-card-examples">
-    <summary>📌 看真实案例（4 篇好笔记 + 1 篇反例）</summary>
+    <summary>看 4 篇真实案例 + 1 篇反例</summary>
     <div class="v10-ex-block">
       <div class="v10-ex-label">🟢 表现好的笔记是这么写的</div>
       <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6a12bbca0000000036031e23" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食展示] 献给夏日的你们：「柠檬香草巴斯克」麦片🍋🏝️</a></li><li><a href="https://www.xiaohongshu.com/explore/68ef38a30000000005013a60" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评] 碱水棒全口味来啦！29.9七个（带热量版）</a></li><li><a href="https://www.xiaohongshu.com/explore/6868f24c000000002001a255" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食展示] 千呼万唤的「此间 · 真」茶筅 正式预售了</a></li><li><a href="https://www.xiaohongshu.com/explore/69620ce1000000001a01fa1d" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评] 最成功的消费降级（2）</a></li></ul>
@@ -1981,18 +2055,20 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   </details>
 </div><div class="v10-card v10-card-high">
   <div class="v10-card-head">
-    <span class="v10-card-num">#3</span>
+    <span class="v10-card-num">3</span>
     <span class="v10-card-name">标题含具体价格 / 销量大数字（社会证明数字）</span>
     <abbr class="conf-badge cb-mid" title="差距中等或样本偏小，可参考但需结合自身判断">证据中</abbr>
   </div>
-  <div class="v10-card-meta">
-    <span class="v10-stat">表现好的笔记里 <b>17 篇</b>用了这招 · 表现差的笔记里只 <b>9 篇</b>用</span>
+  <div class="v10-card-stat-row">
+    <span class="v10-stat-good">✅ 表现好 <b>17</b> 篇</span>
+    <span class="v10-stat-sep">vs</span>
+    <span class="v10-stat-bad">表现差仅 <b>9</b> 篇</span>
     <span class="diff-pp">表现好的多 2.9%</span> <span class="diff-ratio">1.79x</span>
   </div>
-  <div class="v10-card-cat">📊 类目分布：美食测评 / 展示 / 教程 / 养生均有；茶酒占比 29%（不集中）</div>
-  <div class="v10-card-advice">💡 <b>商家建议</b>：标题里塞一个'硬数字'：单价（799元/29.9七个）、累计销量（21万单/100万件）、用户数（2.8万人）任选其一；比'便宜/划算/爆款'这种形容词强得多。</div>
+  <div class="v10-card-cat">📊 美食测评 / 展示 / 教程 / 养生均有；茶酒占比 29%（不集中）</div>
+  <div class="v10-card-advice">💡 标题里塞一个'硬数字'：单价（799元/29.9七个）、累计销量（21万单/100万件）、用户数（2.8万人）任选其一；比'便宜/划算/爆款'这种形容词强得多。</div>
   <details class="v10-card-examples">
-    <summary>📌 看真实案例（5 篇好笔记 + 2 篇反例）</summary>
+    <summary>看 5 篇真实案例 + 2 篇反例</summary>
     <div class="v10-ex-block">
       <div class="v10-ex-label">🟢 表现好的笔记是这么写的</div>
       <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/690223640000000007023c84" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食教程] 感谢小红书‼️让我们家贵州蘸水卖了21万➕</a></li><li><a href="https://www.xiaohongshu.com/explore/6a02f940000000003700cfb9" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食展示] 立减1000！！799 元直入老年份科通特级园！</a></li><li><a href="https://www.xiaohongshu.com/explore/69ff14890000000036031bd3" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评] 阿玛罗尼风干酒名家，百年托马斯大促325元</a></li><li><a href="https://www.xiaohongshu.com/explore/69115c310000000004016145" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评] 已售100万件商品的店铺，最好吃的产品</a></li></ul>
@@ -2001,18 +2077,20 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   </details>
 </div><div class="v10-card v10-card-high">
   <div class="v10-card-head">
-    <span class="v10-card-num">#4</span>
+    <span class="v10-card-num">4</span>
     <span class="v10-card-name">第一人称+具体数字（用量/年数/杯数）的体验叙事</span>
     <abbr class="conf-badge cb-mid" title="差距中等或样本偏小，可参考但需结合自身判断">证据中</abbr>
   </div>
-  <div class="v10-card-meta">
-    <span class="v10-stat">表现好的笔记里 <b>33 篇</b>用了这招 · 表现差的笔记里只 <b>27 篇</b>用</span>
+  <div class="v10-card-stat-row">
+    <span class="v10-stat-good">✅ 表现好 <b>33</b> 篇</span>
+    <span class="v10-stat-sep">vs</span>
+    <span class="v10-stat-bad">表现差仅 <b>27</b> 篇</span>
     <span class="diff-pp">表现好的多 2.3%</span> <span class="diff-ratio">1.24x</span>
   </div>
-  <div class="v10-card-cat">📊 类目分布：美食测评 16 / 养生食疗 8 / 展示 5；茶酒 24%（不集中）</div>
-  <div class="v10-card-advice">💡 <b>商家建议</b>：把'我/我们家/孩子'+ 真实剂量（喝了X杯/吃了X年/X天后）写进标题，营造'真人在亲测'的代入感；避免'计划/方案/打卡'这种营销词。</div>
+  <div class="v10-card-cat">📊 美食测评 16 / 养生食疗 8 / 展示 5；茶酒 24%（不集中）</div>
+  <div class="v10-card-advice">💡 把'我/我们家/孩子'+ 真实剂量（喝了X杯/吃了X年/X天后）写进标题，营造'真人在亲测'的代入感；避免'计划/方案/打卡'这种营销词。</div>
   <details class="v10-card-examples">
-    <summary>📌 看真实案例（5 篇好笔记 + 2 篇反例）</summary>
+    <summary>看 5 篇真实案例 + 2 篇反例</summary>
     <div class="v10-ex-block">
       <div class="v10-ex-label">🟢 表现好的笔记是这么写的</div>
       <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6a0bd8220000000006037a02" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评] 新荣记喝了5杯，回家买了5箱。。。。</a></li><li><a href="https://www.xiaohongshu.com/explore/6a07fca500000000080304f0" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评] 新荣记98一杯我喝了8杯🥹</a></li><li><a href="https://www.xiaohongshu.com/explore/69364c4b000000000d039523" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗] 吃燕窝15年，真心建议❗月薪族不要买干挑盏</a></li><li><a href="https://www.xiaohongshu.com/explore/691dbdbe000000001e0136cb" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗] 便秘吃黄精3年多：太阳晒柴火蒸才是关键！</a></li></ul>
@@ -2024,29 +2102,33 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   <div class="v10-subhead v10-subhead-red">🚫 表现差的笔记常踩的 2 个坑 → 避</div>
   <div class="v10-cards-grid"><div class="v10-card v10-card-low">
   <div class="v10-card-head">
-    <span class="v10-card-num v10-card-num-red">⚠️ #1</span>
+    <span class="v10-card-num v10-card-num-red">1</span>
     <span class="v10-card-name">【低组陷阱】养生食疗 + '终于到了 / 入夏-三伏 / 应季囤货' 上新提醒型</span>
     <abbr class="conf-badge cb-high" title="差距大 + 跨多个类目 + 样本量足">证据强</abbr>
   </div>
-  <div class="v10-card-meta">
-    <span class="v10-stat">表现差的笔记里 <b>14 篇</b>踩了这坑 · 表现好的笔记里只 <b>3 篇</b>这么写</span>
+  <div class="v10-card-stat-row">
+    <span class="v10-stat-bad">🔴 表现差 <b>14</b> 篇踩坑</span>
+    <span class="v10-stat-sep">vs</span>
+    <span class="v10-stat-good">表现好仅 <b>3</b> 篇</span>
     <span class="diff-pp diff-pp-red">表现差的多 3.8%</span> <span class="diff-ratio">4.67x（低/高）</span>
   </div>
-  <div class="v10-card-cat">📊 类目分布：养生食疗集中（14/14 全部为养生食疗）；茶酒占比 29%（姜枣茶/红豆薏米水属于养生'茶'，非奶茶/酒水赛道）</div>
-  <div class="v10-card-advice v10-card-advice-red">🚫 <b>避坑建议</b>：养生食疗标题千万少用'终于+季节倒数'套路——这是低 <abbr class="term-abbr" title="封面点击率：曝光 → 点开笔记的比例（你后台叫&quot;封面点击率/CTR&quot;）">CTR1</abbr> 的高发模式。同档位的高组（如'喝完这杯，我感觉我这口气终于顺下去了……'）用'终于'来描写身体反馈而非上新公告。建议改写为：①身体感受描述（'喝了X天，XX症状真的有变化'）；②具体疑问（'三伏天到底该不该喝姜茶'），避免'XX上新/终于来了/必囤'公告体。</div>
+  <div class="v10-card-cat">📊 养生食疗集中（14/14 全部为养生食疗）；茶酒占比 29%（姜枣茶/红豆薏米水属于养生'茶'，非奶茶/酒水赛道）</div>
+  <div class="v10-card-advice v10-card-advice-red">🚫 养生食疗标题千万少用'终于+季节倒数'套路——这是低 <abbr class="term-abbr" title="封面点击率：曝光 → 点开笔记的比例（你后台叫&quot;封面点击率/CTR&quot;）">CTR1</abbr> 的高发模式。同档位的高组（如'喝完这杯，我感觉我这口气终于顺下去了……'）用'终于'来描写身体反馈而非上新公告。建议改写为：①身体感受描述（'喝了X天，XX症状真的有变化'）；②具体疑问（'三伏天到底该不该喝姜茶'），避免'XX上新/终于来了/必囤'公告体。</div>
   
 </div><div class="v10-card v10-card-low">
   <div class="v10-card-head">
-    <span class="v10-card-num v10-card-num-red">⚠️ #2</span>
+    <span class="v10-card-num v10-card-num-red">2</span>
     <span class="v10-card-name">【低组陷阱】悬念悬空型'终于/居然/原来/没想到'（curiosity gap 不落地）</span>
     <abbr class="conf-badge cb-high" title="差距大 + 跨多个类目 + 样本量足">证据强</abbr>
   </div>
-  <div class="v10-card-meta">
-    <span class="v10-stat">表现差的笔记里 <b>19 篇</b>踩了这坑 · 表现好的笔记里只 <b>6 篇</b>这么写</span>
+  <div class="v10-card-stat-row">
+    <span class="v10-stat-bad">🔴 表现差 <b>19</b> 篇踩坑</span>
+    <span class="v10-stat-sep">vs</span>
+    <span class="v10-stat-good">表现好仅 <b>6</b> 篇</span>
     <span class="diff-pp diff-pp-red">表现差的多 4.5%</span> <span class="diff-ratio">3.17x（低/高）</span>
   </div>
-  <div class="v10-card-cat">📊 类目分布：美食测评 10 / 养生食疗 7 / 美食展示 1 / 美食教程 1，跨类目陷阱；茶酒占比约 32%（不集中）</div>
-  <div class="v10-card-advice v10-card-advice-red">🚫 <b>避坑建议</b>：'终于/居然/没想到'要配一个具体落点——是什么终于来了、居然怎么样了。空泛地说'XX终于来了''终于！它来了！'对 <abbr class="term-abbr" title="封面点击率：曝光 → 点开笔记的比例（你后台叫&quot;封面点击率/CTR&quot;）">CTR1</abbr> 几乎是负效果，因为用户读完不知道你到底要让他点什么。</div>
+  <div class="v10-card-cat">📊 美食测评 10 / 养生食疗 7 / 美食展示 1 / 美食教程 1，跨类目陷阱；茶酒占比约 32%（不集中）</div>
+  <div class="v10-card-advice v10-card-advice-red">🚫 '终于/居然/没想到'要配一个具体落点——是什么终于来了、居然怎么样了。空泛地说'XX终于来了''终于！它来了！'对 <abbr class="term-abbr" title="封面点击率：曝光 → 点开笔记的比例（你后台叫&quot;封面点击率/CTR&quot;）">CTR1</abbr> 几乎是负效果，因为用户读完不知道你到底要让他点什么。</div>
   
 </div></div>
 </div>
@@ -2237,18 +2319,20 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   <div class="v10-subhead v10-subhead-green">✅ 表现好的笔记常用的 3 招 → 抄</div>
   <div class="v10-cards-grid"><div class="v10-card v10-card-high">
   <div class="v10-card-head">
-    <span class="v10-card-num">#1</span>
+    <span class="v10-card-num">1</span>
     <span class="v10-card-name">短标题(≤15字)+规格量化</span>
     <abbr class="conf-badge cb-high" title="差距大 + 跨多个类目 + 样本量足">证据强</abbr>
   </div>
-  <div class="v10-card-meta">
-    <span class="v10-stat">表现好的笔记里 <b>58 篇</b>用了这招 · 表现差的笔记里只 <b>35 篇</b>用</span>
+  <div class="v10-card-stat-row">
+    <span class="v10-stat-good">✅ 表现好 <b>58</b> 篇</span>
+    <span class="v10-stat-sep">vs</span>
+    <span class="v10-stat-bad">表现差仅 <b>35</b> 篇</span>
     <span class="diff-pp">表现好的多 8.2%</span> <span class="diff-ratio">1.68</span>
   </div>
-  <div class="v10-card-cat">📊 类目分布：跨类目通用</div>
-  <div class="v10-card-advice">💡 <b>商家建议</b>：标题压到15字以内（一句钩子完事），商品名/正文里把克数·瓶数·规格直接亮出来；不要靠风味词撑长度，让用户0.5秒看懂'是什么+多少'。</div>
+  <div class="v10-card-cat">📊 跨类目通用</div>
+  <div class="v10-card-advice">💡 标题压到15字以内（一句钩子完事），商品名/正文里把克数·瓶数·规格直接亮出来；不要靠风味词撑长度，让用户0.5秒看懂'是什么+多少'。</div>
   <details class="v10-card-examples">
-    <summary>📌 看真实案例（3 篇好笔记 + 2 篇反例）</summary>
+    <summary>看 3 篇真实案例 + 2 篇反例</summary>
     <div class="v10-ex-block">
       <div class="v10-ex-label">🟢 表现好的笔记是这么写的</div>
       <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/669cefed00000000250173ac" target="_blank" rel="noopener" class="v10-note-link">🔗 《分享一款爱不释手的零食！.》｜商品名:妈妈很忙 西梅干450g 高纤维0添加蔗糖 软糯去核 西梅干1袋｜正文:办公室经常吃的这款零食，让我爱不释手。 它就是这款无糖无脂的西梅干，口感软糯，去核设计，吃起来方便又美味。它富含膳食纤维，既能满足我对美食的追求，又能帮助我维持 (ctr2=3.50)</a></li><li><a href="https://www.xiaohongshu.com/explore/68a2d99a000000001d0236ab" target="_blank" rel="noopener" class="v10-note-link">🔗 《每天来一块，健康又养生！》｜商品名:九制黄精【15年生】所有规格均送试吃装，提供试吃保障！ （真空小袋）品鉴装250｜正文:﻿#养生[话题]#﻿ ﻿#九蒸九晒黄精[话题]#﻿ ﻿#九制黄精[话题]#﻿ ﻿#我的健康生活[话题]#﻿ ﻿#我的养生仪式感[话题]#﻿ ﻿#黄精[话题]#﻿ (ctr2=3.14)</a></li><li><a href="https://www.xiaohongshu.com/explore/6905f9ec000000000301fba2" target="_blank" rel="noopener" class="v10-note-link">🔗 《坚果从业者推荐坚果尽量吃原味》｜商品名:韩要强 0号特大现烤夏威夷果仁没有额外添加剂250克 1罐*250克【中大半粒】｜正文:夏威夷果是坚果添加剂的重灾区！ 很多夏威夷果会添加甜蜜素，白砂糖，香精，奶精等等 越来越多的证据表明，添加有害健康！ 尤其坚果，更推荐大家尽量选择原味！ #韩要 (ctr2=2.50)</a></li></ul>
@@ -2257,18 +2341,20 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   </details>
 </div><div class="v10-card v10-card-high">
   <div class="v10-card-head">
-    <span class="v10-card-num">#2</span>
+    <span class="v10-card-num">2</span>
     <span class="v10-card-name">正文前200&lt;100字(惜字如金/话题为主)</span>
     <abbr class="conf-badge cb-high" title="差距大 + 跨多个类目 + 样本量足">证据强</abbr>
   </div>
-  <div class="v10-card-meta">
-    <span class="v10-stat">表现好的笔记里 <b>69 篇</b>用了这招 · 表现差的笔记里只 <b>28 篇</b>用</span>
+  <div class="v10-card-stat-row">
+    <span class="v10-stat-good">✅ 表现好 <b>69</b> 篇</span>
+    <span class="v10-stat-sep">vs</span>
+    <span class="v10-stat-bad">表现差仅 <b>28</b> 篇</span>
     <span class="diff-pp">表现好的多 14.5%</span> <span class="diff-ratio">2.5</span>
   </div>
-  <div class="v10-card-cat">📊 类目分布：跨类目通用</div>
-  <div class="v10-card-advice">💡 <b>商家建议</b>：正文不必长篇大论；前200字写'一句卖点+一句证据'即可，剩下交给话题tag。<abbr class="term-abbr" title="商品卡点击率：看了笔记 → 点开商品卡的比例">CTR2</abbr> 要的是'快速验证决定下单'，不是'读完文章'。</div>
+  <div class="v10-card-cat">📊 跨类目通用</div>
+  <div class="v10-card-advice">💡 正文不必长篇大论；前200字写'一句卖点+一句证据'即可，剩下交给话题tag。<abbr class="term-abbr" title="商品卡点击率：看了笔记 → 点开商品卡的比例">CTR2</abbr> 要的是'快速验证决定下单'，不是'读完文章'。</div>
   <details class="v10-card-examples">
-    <summary>📌 看真实案例（3 篇好笔记 + 2 篇反例）</summary>
+    <summary>看 3 篇真实案例 + 2 篇反例</summary>
     <div class="v10-ex-block">
       <div class="v10-ex-label">🟢 表现好的笔记是这么写的</div>
       <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/69b290500000000022030c24" target="_blank" rel="noopener" class="v10-note-link">🔗 《这瓶橘子酒承包整个春天的氛围感🍊》｜商品名:塔伦家 日落橘子海 爆汁橘子起泡酒  整颗橘子鲜榨~莫斯卡托 西班牙进口 1瓶｜正文:#小红书市集春上新[话题]# #塔伦家橘子酒[话题]# #微醺酒[话题]# #春日微醺[话题]# #橘子味[话题]# #气泡酒[话题]# (ctr2=10.17)</a></li><li><a href="https://www.xiaohongshu.com/explore/68a2d99a000000001d0236ab" target="_blank" rel="noopener" class="v10-note-link">🔗 《每天来一块，健康又养生！》｜商品名:九制黄精【15年生】所有规格均送试吃装，提供试吃保障！ （真空小袋）品鉴装250｜正文:﻿#养生[话题]#﻿ ﻿#九蒸九晒黄精[话题]#﻿ ﻿#九制黄精[话题]#﻿ ﻿#我的健康生活[话题]#﻿ ﻿#我的养生仪式感[话题]#﻿ ﻿#黄精[话题]#﻿ (ctr2=3.14)</a></li><li><a href="https://www.xiaohongshu.com/explore/6a0d15ac000000000803de6e" target="_blank" rel="noopener" class="v10-note-link">🔗 《番茄味和牛脆片，这味道也太夯了！》｜商品名:失重森林 和牛脆片牛肉脆片牛脆脆风干牛肉干和牛薄切 番茄味108g*1桶（拆封不｜正文:#失重森林[话题]# #失重森林和牛脆片[话题]# #新品上线[话题]# #零食推荐[话题]# #牛肉干[话题]# #这也太好吃了[话题]# #美食分享[话题] (ctr2=2.25)</a></li></ul>
@@ -2277,18 +2363,20 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   </details>
 </div><div class="v10-card v10-card-high">
   <div class="v10-card-head">
-    <span class="v10-card-num">#3</span>
+    <span class="v10-card-num">3</span>
     <span class="v10-card-name">权威产地背书+规格量化</span>
     <abbr class="conf-badge cb-mid" title="差距中等或样本偏小，可参考但需结合自身判断">证据中</abbr>
   </div>
-  <div class="v10-card-meta">
-    <span class="v10-stat">表现好的笔记里 <b>28 篇</b>用了这招 · 表现差的笔记里只 <b>20 篇</b>用</span>
+  <div class="v10-card-stat-row">
+    <span class="v10-stat-good">✅ 表现好 <b>28</b> 篇</span>
+    <span class="v10-stat-sep">vs</span>
+    <span class="v10-stat-bad">表现差仅 <b>20</b> 篇</span>
     <span class="diff-pp">表现好的多 2.9%</span> <span class="diff-ratio">1.42</span>
   </div>
-  <div class="v10-card-cat">📊 类目分布：跨类目通用</div>
-  <div class="v10-card-advice">💡 <b>商家建议</b>：把'核心产区/原产地/官方/老字号/认证'等硬背书 + 规格克数同时放进标题或商品名，背书+规格组合能在商详顶部稳住信任。</div>
+  <div class="v10-card-cat">📊 跨类目通用</div>
+  <div class="v10-card-advice">💡 把'核心产区/原产地/官方/老字号/认证'等硬背书 + 规格克数同时放进标题或商品名，背书+规格组合能在商详顶部稳住信任。</div>
   <details class="v10-card-examples">
-    <summary>📌 看真实案例（3 篇好笔记 + 2 篇反例）</summary>
+    <summary>看 3 篇真实案例 + 2 篇反例</summary>
     <div class="v10-ex-block">
       <div class="v10-ex-label">🟢 表现好的笔记是这么写的</div>
       <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/69b290500000000022030c24" target="_blank" rel="noopener" class="v10-note-link">🔗 《这瓶橘子酒承包整个春天的氛围感🍊》｜商品名:塔伦家 日落橘子海 爆汁橘子起泡酒  整颗橘子鲜榨~莫斯卡托 西班牙进口 1瓶｜正文:#小红书市集春上新[话题]# #塔伦家橘子酒[话题]# #微醺酒[话题]# #春日微醺[话题]# #橘子味[话题]# #气泡酒[话题]# (ctr2=10.17)</a></li><li><a href="https://www.xiaohongshu.com/explore/69b10a7c0000000022023e5b" target="_blank" rel="noopener" class="v10-note-link">🔗 《飞9000公里去西班牙🇪🇸，就为了这口橘子酒》｜商品名:塔伦家 日落橘子海 爆汁橘子起泡酒  整颗橘子鲜榨~莫斯卡托 西班牙进口 1瓶｜正文:巨好喝！特浓郁的爆汁儿橘子香气 	 7度的橘子气泡小甜酒，喝起来美滋滋没压力！ 	 未成年人请勿饮酒 	 #好酒推荐[话题]# #小红书市集春上新[话题]# # (ctr2=3.34)</a></li><li><a href="https://www.xiaohongshu.com/explore/69dd9840000000002102f198" target="_blank" rel="noopener" class="v10-note-link">🔗 《好茶会说话！一直在找茶的茶友可以试试这款》｜商品名:梅伯珍 凤瑞2025特级白牡丹王正宗福鼎白茶第一村柏柳村品牌礼盒套装收藏 单砖1｜正文:谁懂啊！喝到一款零青味的碳焙白牡丹😭 梅伯珍2025年凤瑞款，直接戳中白茶爱好者的心巴✅ ✅ 特级碳焙白牡丹｜古法工艺太香了 ✅ 自有有ji山场直供｜福鼎核心产 (ctr2=1.56)</a></li></ul>
@@ -2300,82 +2388,94 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   <div class="v10-subhead v10-subhead-red">🚫 表现差的笔记常踩的 6 个坑 → 避</div>
   <div class="v10-cards-grid"><div class="v10-card v10-card-low">
   <div class="v10-card-head">
-    <span class="v10-card-num v10-card-num-red">⚠️ #1</span>
+    <span class="v10-card-num v10-card-num-red">1</span>
     <span class="v10-card-name">商品名≥40字+正文堆砌≥2风味词(过度修辞)</span>
     <abbr class="conf-badge cb-low" title="可能是品类特性或样本噪声，仅供参考">证据弱</abbr>
   </div>
-  <div class="v10-card-meta">
-    <span class="v10-stat">表现差的笔记里 <b>46 篇</b>踩了这坑 · 表现好的笔记里只 <b>26 篇</b>这么写</span>
+  <div class="v10-card-stat-row">
+    <span class="v10-stat-bad">🔴 表现差 <b>46</b> 篇踩坑</span>
+    <span class="v10-stat-sep">vs</span>
+    <span class="v10-stat-good">表现好仅 <b>26</b> 篇</span>
     <span class="diff-pp diff-pp-red">表现差的多 6.8%</span> <span class="diff-ratio">1.74</span>
   </div>
-  <div class="v10-card-cat">📊 类目分布：茶酒高度集中(63%)</div>
-  <div class="v10-card-advice v10-card-advice-red">🚫 <b>避坑建议</b>：警惕'品酒师式商品名+正文堆奶香果香花香'的写法——商详页看不到详细的视觉，纯文字堆叠让人疲惫，反而拉低决策；删一半修辞，换一条规格信息进来。</div>
-  <details class="v10-card-examples"><summary>📌 看真实反例（1 篇）</summary><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/67c6b942000000001201cc3e" target="_blank" rel="noopener" class="v10-note-link">🔗 《台湾省特产巨甘甜😋奶香小甜水，送三种口味》｜商品名:修哲 拍一送三  奶香金萱【赠品】果香冻顶+蜜香妃子笑+10年老乌龙 50g*4｜正文:台湾省特产，巨甘甜，奶香小甜水，它叫金萱。 同时这4袋其中3袋价值300多是额外送给新粉的，每个新粉都只能拍一单，免费试喝12泡，像这款价值100多这款果香冻顶 (ctr2=18.04)</a></li></ul></details>
+  <div class="v10-card-cat">📊 茶酒高度集中(63%)</div>
+  <div class="v10-card-advice v10-card-advice-red">🚫 警惕'品酒师式商品名+正文堆奶香果香花香'的写法——商详页看不到详细的视觉，纯文字堆叠让人疲惫，反而拉低决策；删一半修辞，换一条规格信息进来。</div>
+  <details class="v10-card-examples"><summary>看 1 篇真实反例</summary><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/67c6b942000000001201cc3e" target="_blank" rel="noopener" class="v10-note-link">🔗 《台湾省特产巨甘甜😋奶香小甜水，送三种口味》｜商品名:修哲 拍一送三  奶香金萱【赠品】果香冻顶+蜜香妃子笑+10年老乌龙 50g*4｜正文:台湾省特产，巨甘甜，奶香小甜水，它叫金萱。 同时这4袋其中3袋价值300多是额外送给新粉的，每个新粉都只能拍一单，免费试喝12泡，像这款价值100多这款果香冻顶 (ctr2=18.04)</a></li></ul></details>
 </div><div class="v10-card v10-card-low">
   <div class="v10-card-head">
-    <span class="v10-card-num v10-card-num-red">⚠️ #2</span>
+    <span class="v10-card-num v10-card-num-red">2</span>
     <span class="v10-card-name">送礼/礼盒/伴手礼钩子</span>
     <abbr class="conf-badge cb-mid" title="差距中等或样本偏小，可参考但需结合自身判断">证据中</abbr>
   </div>
-  <div class="v10-card-meta">
-    <span class="v10-stat">表现差的笔记里 <b>35 篇</b>踩了这坑 · 表现好的笔记里只 <b>16 篇</b>这么写</span>
+  <div class="v10-card-stat-row">
+    <span class="v10-stat-bad">🔴 表现差 <b>35</b> 篇踩坑</span>
+    <span class="v10-stat-sep">vs</span>
+    <span class="v10-stat-good">表现好仅 <b>16</b> 篇</span>
     <span class="diff-pp diff-pp-red">表现差的多 6.5%</span> <span class="diff-ratio">2.16</span>
   </div>
-  <div class="v10-card-cat">📊 类目分布：美食展示集中(54%)</div>
-  <div class="v10-card-advice v10-card-advice-red">🚫 <b>避坑建议</b>：'送礼/礼盒/伴手礼'看似强需求其实是泛人群，<abbr class="term-abbr" title="商品卡点击率：看了笔记 → 点开商品卡的比例">CTR2</abbr> 反而低 7-8pp——除非店铺真做礼品定位，否则别把'送礼'当主钩子；改成自饮场景或产品功能描述。</div>
-  <details class="v10-card-examples"><summary>📌 看真实反例（1 篇）</summary><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/69f3260c000000001f00126d" target="_blank" rel="noopener" class="v10-note-link">🔗 《云南头茬墨红，直二邀您试喝！》｜商品名:杨直二 2026头茬云南冻干墨红玫瑰花茶100克大朵母亲节伴手礼礼物 墨红玫瑰花｜正文:#杨直二[话题]# #墨红玫瑰[话题]# #墨红玫瑰季节限定[话题]# #玫瑰[话题]# (ctr2=1.80)</a></li></ul></details>
+  <div class="v10-card-cat">📊 美食展示集中(54%)</div>
+  <div class="v10-card-advice v10-card-advice-red">🚫 '送礼/礼盒/伴手礼'看似强需求其实是泛人群，<abbr class="term-abbr" title="商品卡点击率：看了笔记 → 点开商品卡的比例">CTR2</abbr> 反而低 7-8pp——除非店铺真做礼品定位，否则别把'送礼'当主钩子；改成自饮场景或产品功能描述。</div>
+  <details class="v10-card-examples"><summary>看 1 篇真实反例</summary><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/69f3260c000000001f00126d" target="_blank" rel="noopener" class="v10-note-link">🔗 《云南头茬墨红，直二邀您试喝！》｜商品名:杨直二 2026头茬云南冻干墨红玫瑰花茶100克大朵母亲节伴手礼礼物 墨红玫瑰花｜正文:#杨直二[话题]# #墨红玫瑰[话题]# #墨红玫瑰季节限定[话题]# #玫瑰[话题]# (ctr2=1.80)</a></li></ul></details>
 </div><div class="v10-card v10-card-low">
   <div class="v10-card-head">
-    <span class="v10-card-num v10-card-num-red">⚠️ #3</span>
+    <span class="v10-card-num v10-card-num-red">3</span>
     <span class="v10-card-name">标题用省略号/句中断(欲言又止)</span>
     <abbr class="conf-badge cb-low" title="可能是品类特性或样本噪声，仅供参考">证据弱</abbr>
   </div>
-  <div class="v10-card-meta">
-    <span class="v10-stat">表现差的笔记里 <b>15 篇</b>踩了这坑 · 表现好的笔记里只 <b>5 篇</b>这么写</span>
+  <div class="v10-card-stat-row">
+    <span class="v10-stat-bad">🔴 表现差 <b>15</b> 篇踩坑</span>
+    <span class="v10-stat-sep">vs</span>
+    <span class="v10-stat-good">表现好仅 <b>5</b> 篇</span>
     <span class="diff-pp diff-pp-red">表现差的多 3.4%</span> <span class="diff-ratio">2.96</span>
   </div>
-  <div class="v10-card-cat">📊 类目分布：美食测评集中(47%)</div>
-  <div class="v10-card-advice v10-card-advice-red">🚫 <b>避坑建议</b>：标题用'...'欲言又止看似神秘，实际在商详页只显示半截，用户读完反而劝退；标题必须是完整短句，钩子写在句首。</div>
-  <details class="v10-card-examples"><summary>📌 看真实反例（1 篇）</summary><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/689558790000000023034cf6" target="_blank" rel="noopener" class="v10-note-link">🔗 《槟子榔子吞云吐雾，你可一定要...》｜商品名:其他 甘草竹盐枇杷干营养清甜开袋即食农家无核枇杷果干果脯大果特产 【250克×2｜正文:这款甘草竹盐枇杷干真的是原汁原味肉厚香甜，配料干净营养丰富老少皆宜     ﻿#枇杷干[话题]#﻿ ﻿#枇杷[话题]#﻿ ﻿#儿童零食[话题]#﻿ ﻿#甘草功效 (ctr2=5.56)</a></li></ul></details>
+  <div class="v10-card-cat">📊 美食测评集中(47%)</div>
+  <div class="v10-card-advice v10-card-advice-red">🚫 标题用'...'欲言又止看似神秘，实际在商详页只显示半截，用户读完反而劝退；标题必须是完整短句，钩子写在句首。</div>
+  <details class="v10-card-examples"><summary>看 1 篇真实反例</summary><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/689558790000000023034cf6" target="_blank" rel="noopener" class="v10-note-link">🔗 《槟子榔子吞云吐雾，你可一定要...》｜商品名:其他 甘草竹盐枇杷干营养清甜开袋即食农家无核枇杷果干果脯大果特产 【250克×2｜正文:这款甘草竹盐枇杷干真的是原汁原味肉厚香甜，配料干净营养丰富老少皆宜     ﻿#枇杷干[话题]#﻿ ﻿#枇杷[话题]#﻿ ﻿#儿童零食[话题]#﻿ ﻿#甘草功效 (ctr2=5.56)</a></li></ul></details>
 </div><div class="v10-card v10-card-low">
   <div class="v10-card-head">
-    <span class="v10-card-num v10-card-num-red">⚠️ #4</span>
+    <span class="v10-card-num v10-card-num-red">4</span>
     <span class="v10-card-name">商品名≥46字(参数+规格全堆)</span>
     <abbr class="conf-badge cb-mid" title="差距中等或样本偏小，可参考但需结合自身判断">证据中</abbr>
   </div>
-  <div class="v10-card-meta">
-    <span class="v10-stat">表现差的笔记里 <b>172 篇</b>踩了这坑 · 表现好的笔记里只 <b>127 篇</b>这么写</span>
+  <div class="v10-card-stat-row">
+    <span class="v10-stat-bad">🔴 表现差 <b>172</b> 篇踩坑</span>
+    <span class="v10-stat-sep">vs</span>
+    <span class="v10-stat-good">表现好仅 <b>127</b> 篇</span>
     <span class="diff-pp diff-pp-red">表现差的多 15.0%</span> <span class="diff-ratio">1.34</span>
   </div>
-  <div class="v10-card-cat">📊 类目分布：跨类目通用</div>
-  <div class="v10-card-advice v10-card-advice-red">🚫 <b>避坑建议</b>：商品名超过46字就是参数+规格+赠品+营销词全堆，移动端被截断，反而显得杂乱；控制在25-40字内，主信息前置。</div>
-  <details class="v10-card-examples"><summary>📌 看真实反例（1 篇）</summary><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/67c6b942000000001201cc3e" target="_blank" rel="noopener" class="v10-note-link">🔗 《台湾省特产巨甘甜😋奶香小甜水，送三种口味》｜商品名:修哲 拍一送三  奶香金萱【赠品】果香冻顶+蜜香妃子笑+10年老乌龙 50g*4｜正文:台湾省特产，巨甘甜，奶香小甜水，它叫金萱。 同时这4袋其中3袋价值300多是额外送给新粉的，每个新粉都只能拍一单，免费试喝12泡，像这款价值100多这款果香冻顶 (ctr2=18.04)</a></li></ul></details>
+  <div class="v10-card-cat">📊 跨类目通用</div>
+  <div class="v10-card-advice v10-card-advice-red">🚫 商品名超过46字就是参数+规格+赠品+营销词全堆，移动端被截断，反而显得杂乱；控制在25-40字内，主信息前置。</div>
+  <details class="v10-card-examples"><summary>看 1 篇真实反例</summary><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/67c6b942000000001201cc3e" target="_blank" rel="noopener" class="v10-note-link">🔗 《台湾省特产巨甘甜😋奶香小甜水，送三种口味》｜商品名:修哲 拍一送三  奶香金萱【赠品】果香冻顶+蜜香妃子笑+10年老乌龙 50g*4｜正文:台湾省特产，巨甘甜，奶香小甜水，它叫金萱。 同时这4袋其中3袋价值300多是额外送给新粉的，每个新粉都只能拍一单，免费试喝12泡，像这款价值100多这款果香冻顶 (ctr2=18.04)</a></li></ul></details>
 </div><div class="v10-card v10-card-low">
   <div class="v10-card-head">
-    <span class="v10-card-num v10-card-num-red">⚠️ #5</span>
+    <span class="v10-card-num v10-card-num-red">5</span>
     <span class="v10-card-name">场景日常铺垫(早八/通勤/带娃/办公室)</span>
     <abbr class="conf-badge cb-high" title="差距大 + 跨多个类目 + 样本量足">证据强</abbr>
   </div>
-  <div class="v10-card-meta">
-    <span class="v10-stat">表现差的笔记里 <b>62 篇</b>踩了这坑 · 表现好的笔记里只 <b>39 篇</b>这么写</span>
+  <div class="v10-card-stat-row">
+    <span class="v10-stat-bad">🔴 表现差 <b>62</b> 篇踩坑</span>
+    <span class="v10-stat-sep">vs</span>
+    <span class="v10-stat-good">表现好仅 <b>39</b> 篇</span>
     <span class="diff-pp diff-pp-red">表现差的多 7.8%</span> <span class="diff-ratio">1.57</span>
   </div>
-  <div class="v10-card-cat">📊 类目分布：跨类目通用</div>
-  <div class="v10-card-advice v10-card-advice-red">🚫 <b>避坑建议</b>：'早八/办公室/带娃'这种场景铺垫在 <abbr class="term-abbr" title="封面点击率：曝光 → 点开笔记的比例（你后台叫&quot;封面点击率/CTR&quot;）">CTR1</abbr> 阶段（封面+标题选人群）有用，但到商详页继续讲场景就是浪费篇幅，应该立刻给规格和差异化卖点。</div>
-  <details class="v10-card-examples"><summary>📌 看真实反例（1 篇）</summary><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/684c1415000000002300103e" target="_blank" rel="noopener" class="v10-note-link">🔗 《不能吃酸的姐妹👭千万不要轻易尝试！.》｜商品名:妈妈很忙 手工桑葚核桃糕250g 酸甜软糯 1盒用料150颗新鲜桑葚 1盒｜正文:满满的好食材，配料表简单！当季新鲜的桑葚、核桃仁、麦芽糖浆、食用植物油、淀粉不乱添加.6-7分熟的桑葚红中带黑，口感酸甜适中.搭配上香脆核桃从而让这款桑葚核桃糕 (ctr2=9.00)</a></li></ul></details>
+  <div class="v10-card-cat">📊 跨类目通用</div>
+  <div class="v10-card-advice v10-card-advice-red">🚫 '早八/办公室/带娃'这种场景铺垫在 <abbr class="term-abbr" title="封面点击率：曝光 → 点开笔记的比例（你后台叫&quot;封面点击率/CTR&quot;）">CTR1</abbr> 阶段（封面+标题选人群）有用，但到商详页继续讲场景就是浪费篇幅，应该立刻给规格和差异化卖点。</div>
+  <details class="v10-card-examples"><summary>看 1 篇真实反例</summary><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/684c1415000000002300103e" target="_blank" rel="noopener" class="v10-note-link">🔗 《不能吃酸的姐妹👭千万不要轻易尝试！.》｜商品名:妈妈很忙 手工桑葚核桃糕250g 酸甜软糯 1盒用料150颗新鲜桑葚 1盒｜正文:满满的好食材，配料表简单！当季新鲜的桑葚、核桃仁、麦芽糖浆、食用植物油、淀粉不乱添加.6-7分熟的桑葚红中带黑，口感酸甜适中.搭配上香脆核桃从而让这款桑葚核桃糕 (ctr2=9.00)</a></li></ul></details>
 </div><div class="v10-card v10-card-low">
   <div class="v10-card-head">
-    <span class="v10-card-num v10-card-num-red">⚠️ #6</span>
+    <span class="v10-card-num v10-card-num-red">6</span>
     <span class="v10-card-name">销量/榜单/姐妹认可型社证</span>
     <abbr class="conf-badge cb-low" title="可能是品类特性或样本噪声，仅供参考">证据弱</abbr>
   </div>
-  <div class="v10-card-meta">
-    <span class="v10-stat">表现差的笔记里 <b>24 篇</b>踩了这坑 · 表现好的笔记里只 <b>16 篇</b>这么写</span>
+  <div class="v10-card-stat-row">
+    <span class="v10-stat-bad">🔴 表现差 <b>24</b> 篇踩坑</span>
+    <span class="v10-stat-sep">vs</span>
+    <span class="v10-stat-good">表现好仅 <b>16</b> 篇</span>
     <span class="diff-pp diff-pp-red">表现差的多 2.7%</span> <span class="diff-ratio">1.48</span>
   </div>
-  <div class="v10-card-cat">📊 类目分布：跨类目通用</div>
-  <div class="v10-card-advice v10-card-advice-red">🚫 <b>避坑建议</b>：反直觉发现：'10w+姐妹好评/销量TOP/姐姐安利'类社证在 <abbr class="term-abbr" title="商品卡点击率：看了笔记 → 点开商品卡的比例">CTR2</abbr> 阶段反而拉低转化——商详页用户已经感兴趣，社证说服力低于硬规格/价格信息。</div>
-  <details class="v10-card-examples"><summary>📌 看真实反例（1 篇）</summary><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/669cefed00000000250173ac" target="_blank" rel="noopener" class="v10-note-link">🔗 《分享一款爱不释手的零食！.》｜商品名:妈妈很忙 西梅干450g 高纤维0添加蔗糖 软糯去核 西梅干1袋｜正文:办公室经常吃的这款零食，让我爱不释手。 它就是这款无糖无脂的西梅干，口感软糯，去核设计，吃起来方便又美味。它富含膳食纤维，既能满足我对美食的追求，又能帮助我维持 (ctr2=3.50)</a></li></ul></details>
+  <div class="v10-card-cat">📊 跨类目通用</div>
+  <div class="v10-card-advice v10-card-advice-red">🚫 反直觉发现：'10w+姐妹好评/销量TOP/姐姐安利'类社证在 <abbr class="term-abbr" title="商品卡点击率：看了笔记 → 点开商品卡的比例">CTR2</abbr> 阶段反而拉低转化——商详页用户已经感兴趣，社证说服力低于硬规格/价格信息。</div>
+  <details class="v10-card-examples"><summary>看 1 篇真实反例</summary><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/669cefed00000000250173ac" target="_blank" rel="noopener" class="v10-note-link">🔗 《分享一款爱不释手的零食！.》｜商品名:妈妈很忙 西梅干450g 高纤维0添加蔗糖 软糯去核 西梅干1袋｜正文:办公室经常吃的这款零食，让我爱不释手。 它就是这款无糖无脂的西梅干，口感软糯，去核设计，吃起来方便又美味。它富含膳食纤维，既能满足我对美食的追求，又能帮助我维持 (ctr2=3.50)</a></li></ul></details>
 </div></div>
 </div>
 
@@ -2559,18 +2659,20 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   <div class="v10-subhead v10-subhead-green">✅ 表现好的笔记常用的 7 招 → 抄</div>
   <div class="v10-cards-grid"><div class="v10-card v10-card-high">
   <div class="v10-card-head">
-    <span class="v10-card-num">#1</span>
+    <span class="v10-card-num">1</span>
     <span class="v10-card-name">情感共鸣词包：治愈/舒服/安心/放心/小确幸（让人愿意点单的『情绪兜底』）</span>
     <abbr class="conf-badge cb-mid" title="差距中等或样本偏小，可参考但需结合自身判断">证据中</abbr>
   </div>
-  <div class="v10-card-meta">
-    <span class="v10-stat">表现好的笔记里 <b>73 篇</b>用了这招 · 表现差的笔记里只 <b>39 篇</b>用</span>
+  <div class="v10-card-stat-row">
+    <span class="v10-stat-good">✅ 表现好 <b>73</b> 篇</span>
+    <span class="v10-stat-sep">vs</span>
+    <span class="v10-stat-bad">表现差仅 <b>39</b> 篇</span>
     <span class="diff-pp">表现好的多 12.0%</span> <span class="diff-ratio">1.89</span>
   </div>
-  <div class="v10-card-cat">📊 类目分布：跨类目通用 — 美食测评 28、养生食疗 16、美食展示 16、美食教程 5；茶酒占比 55%</div>
-  <div class="v10-card-advice">💡 <b>商家建议</b>：正文/ASR 加一段『谁喝/吃了之后会舒服/安心/被治愈』的情绪结论句，最好放在功效描述之后做情绪封口，比单纯堆原料更能促单。</div>
+  <div class="v10-card-cat">📊 跨类目通用 — 美食测评 28、养生食疗 16、美食展示 16、美食教程 5；茶酒占比 55%</div>
+  <div class="v10-card-advice">💡 正文/ASR 加一段『谁喝/吃了之后会舒服/安心/被治愈』的情绪结论句，最好放在功效描述之后做情绪封口，比单纯堆原料更能促单。</div>
   <details class="v10-card-examples">
-    <summary>📌 看真实案例（3 篇好笔记 + 2 篇反例）</summary>
+    <summary>看 3 篇真实案例 + 2 篇反例</summary>
     <div class="v10-ex-block">
       <div class="v10-ex-label">🟢 表现好的笔记是这么写的</div>
       <ul class="v10-ex-list"><li>[养生食疗|cvr=2.0] 肝郁+脾虚的人：少点内耗，先放过自己~ | ASR『一开始以为单纯…典型就是情绪不好的时候，脾胃会特别不舒服』</li><li><a href="https://www.xiaohongshu.com/explore/69c38494000000001f002caa" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食展示|cvr=0.444] 所有女生坚持吃半个月，真的很舒服！ | ASR『八珍糕…老人孩子都喜欢吃』</a></li><li><a href="https://www.xiaohongshu.com/explore/69ca1c1a000000001b002de8" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评|cvr=0.5] 一口下去，整个办公室都听到了！ | ASR『满足感更强』</a></li></ul>
@@ -2579,18 +2681,20 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   </details>
 </div><div class="v10-card v10-card-high">
   <div class="v10-card-head">
-    <span class="v10-card-num">#2</span>
+    <span class="v10-card-num">2</span>
     <span class="v10-card-name">场景化使用法：办公室/睡前/熬夜/晨起/空腹（把商品塞进用户的某个具体时刻）</span>
     <abbr class="conf-badge cb-mid" title="差距中等或样本偏小，可参考但需结合自身判断">证据中</abbr>
   </div>
-  <div class="v10-card-meta">
-    <span class="v10-stat">表现好的笔记里 <b>56 篇</b>用了这招 · 表现差的笔记里只 <b>29 篇</b>用</span>
+  <div class="v10-card-stat-row">
+    <span class="v10-stat-good">✅ 表现好 <b>56</b> 篇</span>
+    <span class="v10-stat-sep">vs</span>
+    <span class="v10-stat-bad">表现差仅 <b>29</b> 篇</span>
     <span class="diff-pp">表现好的多 9.5%</span> <span class="diff-ratio">1.95</span>
   </div>
-  <div class="v10-card-cat">📊 类目分布：养生食疗 25、美食测评 17、美食展示 5、美食教程 4，跨类目通用；茶酒占比 50%</div>
-  <div class="v10-card-advice">💡 <b>商家建议</b>：标题或 ASR 前 15s 必须出现一个具体时刻（睡前/晨起/办公室/经期/熬夜后），把商品定位成『这个时刻的固定动作』，比泛化讲『日常喝』转化高近一倍。</div>
+  <div class="v10-card-cat">📊 养生食疗 25、美食测评 17、美食展示 5、美食教程 4，跨类目通用；茶酒占比 50%</div>
+  <div class="v10-card-advice">💡 标题或 ASR 前 15s 必须出现一个具体时刻（睡前/晨起/办公室/经期/熬夜后），把商品定位成『这个时刻的固定动作』，比泛化讲『日常喝』转化高近一倍。</div>
   <details class="v10-card-examples">
-    <summary>📌 看真实案例（3 篇好笔记 + 2 篇反例）</summary>
+    <summary>看 3 篇真实案例 + 2 篇反例</summary>
     <div class="v10-ex-block">
       <div class="v10-ex-label">🟢 表现好的笔记是这么写的</div>
       <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/69bd237b00000000230120b8" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗|cvr=0.667] 👀熬夜的女生丨春天是关键节点 | ASR『晚上十一点到凌晨三点是肝经循行的时间…』</a></li><li>[养生食疗|cvr=0.75] 经期结束后 我超爱的四物汤 | ASR『姨妈期那几天坐着不行躺着也不行』</li><li><a href="https://www.xiaohongshu.com/explore/69ca1c1a000000001b002de8" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评|cvr=0.5] 一口下去，整个办公室都听到了！（明确办公室场景）</a></li></ul>
@@ -2599,18 +2703,20 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   </details>
 </div><div class="v10-card v10-card-high">
   <div class="v10-card-head">
-    <span class="v10-card-num">#3</span>
+    <span class="v10-card-num">3</span>
     <span class="v10-card-name">明确使用方法剂量：每天一勺/一颗/冲泡热水/搅拌（降低决策门槛）</span>
     <abbr class="conf-badge cb-mid" title="差距中等或样本偏小，可参考但需结合自身判断">证据中</abbr>
   </div>
-  <div class="v10-card-meta">
-    <span class="v10-stat">表现好的笔记里 <b>83 篇</b>用了这招 · 表现差的笔记里只 <b>58 篇</b>用</span>
+  <div class="v10-card-stat-row">
+    <span class="v10-stat-good">✅ 表现好 <b>83</b> 篇</span>
+    <span class="v10-stat-sep">vs</span>
+    <span class="v10-stat-bad">表现差仅 <b>58</b> 篇</span>
     <span class="diff-pp">表现好的多 9.0%</span> <span class="diff-ratio">1.45</span>
   </div>
-  <div class="v10-card-cat">📊 类目分布：养生食疗 31、美食测评 19、美食展示 14、美食教程 10，跨类目；茶酒占比 53%</div>
-  <div class="v10-card-advice">💡 <b>商家建议</b>：ASR 后半段固定加一段『每天一勺/一颗/睡前冲一杯』的操作 SOP，把『要不要买』的犹豫转换成『照着做就行』的肌肉记忆。</div>
+  <div class="v10-card-cat">📊 养生食疗 31、美食测评 19、美食展示 14、美食教程 10，跨类目；茶酒占比 53%</div>
+  <div class="v10-card-advice">💡 ASR 后半段固定加一段『每天一勺/一颗/睡前冲一杯』的操作 SOP，把『要不要买』的犹豫转换成『照着做就行』的肌肉记忆。</div>
   <details class="v10-card-examples">
-    <summary>📌 看真实案例（3 篇好笔记 + 2 篇反例）</summary>
+    <summary>看 3 篇真实案例 + 2 篇反例</summary>
     <div class="v10-ex-block">
       <div class="v10-ex-label">🟢 表现好的笔记是这么写的</div>
       <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6a008666000000000702c36b" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗|cvr=1.0] 女性内调保养不是智商税‼️要喝就喝点好的 | ASR『每天一勺一口收进21味本草精粹』</a></li><li>[养生食疗|cvr=0.387] 真养内里的养生零食（每天定量喝法）</li><li><a href="https://www.xiaohongshu.com/explore/6a0bb7580000000035020207" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食展示|cvr=0.444] 低咖啡因黄波旁，最近每天都喝它（『每天』+ 明确单品）</a></li></ul>
@@ -2619,18 +2725,20 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   </details>
 </div><div class="v10-card v10-card-high">
   <div class="v10-card-head">
-    <span class="v10-card-num">#4</span>
+    <span class="v10-card-num">4</span>
     <span class="v10-card-name">痛点+解决方案 双钩组合（先点痛 后给药）</span>
     <abbr class="conf-badge cb-mid" title="差距中等或样本偏小，可参考但需结合自身判断">证据中</abbr>
   </div>
-  <div class="v10-card-meta">
-    <span class="v10-stat">表现好的笔记里 <b>19 篇</b>用了这招 · 表现差的笔记里只 <b>8 篇</b>用</span>
+  <div class="v10-card-stat-row">
+    <span class="v10-stat-good">✅ 表现好 <b>19</b> 篇</span>
+    <span class="v10-stat-sep">vs</span>
+    <span class="v10-stat-bad">表现差仅 <b>8</b> 篇</span>
     <span class="diff-pp">表现好的多 3.8%</span> <span class="diff-ratio">2.36</span>
   </div>
-  <div class="v10-card-cat">📊 类目分布：养生食疗为主（约 80%）、辅以妈妈经验/美食教程；茶酒占比 47%</div>
-  <div class="v10-card-advice">💡 <b>商家建议</b>：养生/食疗类商品按『痛点描述→人群标签→每天怎么喝→食材配比』四段结构写，比堆原料/讲故事 <abbr class="term-abbr" title="下单转化率：看了商品卡 → 实际下单的比例">CVR</abbr> 高 2 倍。</div>
+  <div class="v10-card-cat">📊 养生食疗为主（约 80%）、辅以妈妈经验/美食教程；茶酒占比 47%</div>
+  <div class="v10-card-advice">💡 养生/食疗类商品按『痛点描述→人群标签→每天怎么喝→食材配比』四段结构写，比堆原料/讲故事 <abbr class="term-abbr" title="下单转化率：看了商品卡 → 实际下单的比例">CVR</abbr> 高 2 倍。</div>
   <details class="v10-card-examples">
-    <summary>📌 看真实案例（3 篇好笔记 + 1 篇反例）</summary>
+    <summary>看 3 篇真实案例 + 1 篇反例</summary>
     <div class="v10-ex-block">
       <div class="v10-ex-label">🟢 表现好的笔记是这么写的</div>
       <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/69b3d1500000000022003e54" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗|cvr=0.357] 润心百合饮 熬夜党喝对这杯，润到心坎里 | ASR『经常熬夜，嗓子干，嘴巴干容易起皮的姐妹』</a></li><li><a href="https://www.xiaohongshu.com/explore/68b14c4c000000001c032fc7" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗|cvr=0.188] 睡不着、睡眠浅、半夜醒丨酸枣仁百合睡眠茶 | ASR『一罐11味健康草本，根据人体需求定量配比』</a></li><li><a href="https://www.xiaohongshu.com/explore/69b935b30000000022001fda" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗|cvr=0.182] 长期熬夜、内热明显的姐妹，很适合这样喝～</a></li></ul>
@@ -2639,18 +2747,20 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   </details>
 </div><div class="v10-card v10-card-high">
   <div class="v10-card-head">
-    <span class="v10-card-num">#5</span>
+    <span class="v10-card-num">5</span>
     <span class="v10-card-name">老字号/传承/匠人叙事（建立专业度信任）</span>
     <abbr class="conf-badge cb-low" title="可能是品类特性或样本噪声，仅供参考">证据弱</abbr>
   </div>
-  <div class="v10-card-meta">
-    <span class="v10-stat">表现好的笔记里 <b>38 篇</b>用了这招 · 表现差的笔记里只 <b>21 篇</b>用</span>
+  <div class="v10-card-stat-row">
+    <span class="v10-stat-good">✅ 表现好 <b>38</b> 篇</span>
+    <span class="v10-stat-sep">vs</span>
+    <span class="v10-stat-bad">表现差仅 <b>21</b> 篇</span>
     <span class="diff-pp">表现好的多 5.9%</span> <span class="diff-ratio">1.82</span>
   </div>
-  <div class="v10-card-cat">📊 类目分布：养生食疗高度集中（约 60%）、辅以美食测评/教程；茶酒占比 63%</div>
-  <div class="v10-card-advice">💡 <b>商家建议</b>：养生/茶酒类强建议在 ASR 前 5s 出现一个『时间维度的传承』（XX 年从业 / 几代手艺 / 非遗工艺 / 核心产区直采），快速建立专业感再讲产品。</div>
+  <div class="v10-card-cat">📊 养生食疗高度集中（约 60%）、辅以美食测评/教程；茶酒占比 63%</div>
+  <div class="v10-card-advice">💡 养生/茶酒类强建议在 ASR 前 5s 出现一个『时间维度的传承』（XX 年从业 / 几代手艺 / 非遗工艺 / 核心产区直采），快速建立专业感再讲产品。</div>
   <details class="v10-card-examples">
-    <summary>📌 看真实案例（3 篇好笔记 + 1 篇反例）</summary>
+    <summary>看 3 篇真实案例 + 1 篇反例</summary>
     <div class="v10-ex-block">
       <div class="v10-ex-label">🟢 表现好的笔记是这么写的</div>
       <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6a008666000000000702c36b" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗|cvr=1.0] 女性内调保养不是智商税 | ASR『十一年养生生根…采用非遗传统膏方制作技艺』</a></li><li>[养生食疗|cvr=2.0] 肝郁+脾虚（专家级口吻+中医知识叙事）</li><li>[养生食疗|cvr=0.357] 润心百合饮（核心产区原料+定量配比）</li></ul>
@@ -2659,18 +2769,20 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   </details>
 </div><div class="v10-card v10-card-high">
   <div class="v10-card-head">
-    <span class="v10-card-num">#6</span>
+    <span class="v10-card-num">6</span>
     <span class="v10-card-name">身材外貌人群直击（减脂/抗老/气色/皮肤）</span>
     <abbr class="conf-badge cb-high" title="差距大 + 跨多个类目 + 样本量足">证据强</abbr>
   </div>
-  <div class="v10-card-meta">
-    <span class="v10-stat">表现好的笔记里 <b>27 篇</b>用了这招 · 表现差的笔记里只 <b>15 篇</b>用</span>
+  <div class="v10-card-stat-row">
+    <span class="v10-stat-good">✅ 表现好 <b>27</b> 篇</span>
+    <span class="v10-stat-sep">vs</span>
+    <span class="v10-stat-bad">表现差仅 <b>15</b> 篇</span>
     <span class="diff-pp">表现好的多 4.3%</span> <span class="diff-ratio">1.82</span>
   </div>
-  <div class="v10-card-cat">📊 类目分布：养生食疗 + 健身饮食 + 妈妈经验 + 美食测评，跨类目通用；茶酒占比 33%（较低，意味着真普适）</div>
-  <div class="v10-card-advice">💡 <b>商家建议</b>：食品/养生类无论原品类是什么，都可以在标题挂一个外貌结果（瘦/气色/抗老/减脂期），把食欲消费翻译成女性自我投资语言，<abbr class="term-abbr" title="下单转化率：看了商品卡 → 实际下单的比例">CVR</abbr> 收益跨类目稳定。</div>
+  <div class="v10-card-cat">📊 养生食疗 + 健身饮食 + 妈妈经验 + 美食测评，跨类目通用；茶酒占比 33%（较低，意味着真普适）</div>
+  <div class="v10-card-advice">💡 食品/养生类无论原品类是什么，都可以在标题挂一个外貌结果（瘦/气色/抗老/减脂期），把食欲消费翻译成女性自我投资语言，<abbr class="term-abbr" title="下单转化率：看了商品卡 → 实际下单的比例">CVR</abbr> 收益跨类目稳定。</div>
   <details class="v10-card-examples">
-    <summary>📌 看真实案例（3 篇好笔记 + 1 篇反例）</summary>
+    <summary>看 3 篇真实案例 + 1 篇反例</summary>
     <div class="v10-ex-block">
       <div class="v10-ex-label">🟢 表现好的笔记是这么写的</div>
       <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6794adf80000000029014aa4" target="_blank" rel="noopener" class="v10-note-link">🔗 [妈妈经验|cvr=1.0] 小月子里吃得比以前多还掉🥩了</a></li><li><a href="https://www.xiaohongshu.com/explore/6628d02300000000040180b3" target="_blank" rel="noopener" class="v10-note-link">🔗 [健身饮食|cvr=0.5] 办公室人手一袋…太适合减脂期嘴馋吃了🤣</a></li><li><a href="https://www.xiaohongshu.com/explore/69bd237b00000000230120b8" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗|cvr=0.667] 👀熬夜的女生丨春天是关键节点（皮肤暗沉切入）</a></li></ul>
@@ -2679,18 +2791,20 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   </details>
 </div><div class="v10-card v10-card-high">
   <div class="v10-card-head">
-    <span class="v10-card-num">#7</span>
+    <span class="v10-card-num">7</span>
     <span class="v10-card-name">『终于/再也不/救星』解决感句式</span>
     <abbr class="conf-badge cb-low" title="可能是品类特性或样本噪声，仅供参考">证据弱</abbr>
   </div>
-  <div class="v10-card-meta">
-    <span class="v10-stat">表现好的笔记里 <b>25 篇</b>用了这招 · 表现差的笔记里只 <b>17 篇</b>用</span>
+  <div class="v10-card-stat-row">
+    <span class="v10-stat-good">✅ 表现好 <b>25</b> 篇</span>
+    <span class="v10-stat-sep">vs</span>
+    <span class="v10-stat-bad">表现差仅 <b>17</b> 篇</span>
     <span class="diff-pp">表现好的多 2.8%</span> <span class="diff-ratio">1.48</span>
   </div>
-  <div class="v10-card-cat">📊 类目分布：跨类目通用，美食测评/展示/养生食疗均匀分布；茶酒占比 60%</div>
-  <div class="v10-card-advice">💡 <b>商家建议</b>：用『终于』要落在『终于解决了某个问题/补到某个稀缺货』，而不是『终于能发视频了』这种内容创作者口吻；解决感要落在用户侧。</div>
+  <div class="v10-card-cat">📊 跨类目通用，美食测评/展示/养生食疗均匀分布；茶酒占比 60%</div>
+  <div class="v10-card-advice">💡 用『终于』要落在『终于解决了某个问题/补到某个稀缺货』，而不是『终于能发视频了』这种内容创作者口吻；解决感要落在用户侧。</div>
   <details class="v10-card-examples">
-    <summary>📌 看真实案例（3 篇好笔记 + 1 篇反例）</summary>
+    <summary>看 3 篇真实案例 + 1 篇反例</summary>
     <div class="v10-ex-block">
       <div class="v10-ex-label">🟢 表现好的笔记是这么写的</div>
       <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/68ac3eec000000001d00eb6b" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食展示|cvr=0.244] 终于买到了真正无添加的纯怀山药粉了</a></li><li><a href="https://www.xiaohongshu.com/explore/69e0956e00000000210045ec" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评|cvr=0.312] 我宣布！是今年喝过最伟大的白葡萄酒（『等了三个月终于补到』）</a></li><li>[美食展示|cvr=0.357] 像喝了一口青提酒酿酸奶，终于进口啦</li></ul>
@@ -2702,56 +2816,64 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   <div class="v10-subhead v10-subhead-red">🚫 表现差的笔记常踩的 4 个坑 → 避</div>
   <div class="v10-cards-grid"><div class="v10-card v10-card-low">
   <div class="v10-card-head">
-    <span class="v10-card-num v10-card-num-red">⚠️ #1</span>
+    <span class="v10-card-num v10-card-num-red">1</span>
     <span class="v10-card-name">横向比较型内容（『XX vs YY』『区别/差别在哪』）</span>
     <abbr class="conf-badge cb-mid" title="差距中等或样本偏小，可参考但需结合自身判断">证据中</abbr>
   </div>
-  <div class="v10-card-meta">
-    <span class="v10-stat">表现差的笔记里 <b>54 篇</b>踩了这坑 · 表现好的笔记里只 <b>39 篇</b>这么写</span>
+  <div class="v10-card-stat-row">
+    <span class="v10-stat-bad">🔴 表现差 <b>54</b> 篇踩坑</span>
+    <span class="v10-stat-sep">vs</span>
+    <span class="v10-stat-good">表现好仅 <b>39</b> 篇</span>
     <span class="diff-pp diff-pp-red">表现差的多 5.0%</span>
   </div>
-  <div class="v10-card-cat">📊 类目分布：美食测评高度集中，茶酒占比偏高</div>
-  <div class="v10-card-advice v10-card-advice-red">🚫 <b>避坑建议</b>：做横向比较时务必给出唯一明确的购买结论，并紧跟『每天怎么喝/一勺多少』收口；只罗列差异、让用户自己判断会显著拉低 <abbr class="term-abbr" title="下单转化率：看了商品卡 → 实际下单的比例">CVR</abbr>。</div>
-  <details class="v10-card-examples"><summary>📌 看真实反例（3 篇）</summary><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6a1e60330000000022009537" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评|cvr=0.038] 我们打算卖掉修哲，以后可能喝不到修哲茶了</a></li><li><a href="https://www.xiaohongshu.com/explore/69e189b2000000002301374d" target="_blank" rel="noopener" class="v10-note-link">🔗 [医疗药品|cvr=0.037] 速成黄精vs真黄精，你买对了吗？</a></li><li><a href="https://www.xiaohongshu.com/explore/6a10402000000000060342a3" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评|cvr=0.02] 被米其林抢疯的奥地利小花到底多好喝？</a></li></ul></details>
+  <div class="v10-card-cat">📊 美食测评高度集中，茶酒占比偏高</div>
+  <div class="v10-card-advice v10-card-advice-red">🚫 做横向比较时务必给出唯一明确的购买结论，并紧跟『每天怎么喝/一勺多少』收口；只罗列差异、让用户自己判断会显著拉低 <abbr class="term-abbr" title="下单转化率：看了商品卡 → 实际下单的比例">CVR</abbr>。</div>
+  <details class="v10-card-examples"><summary>看 3 篇真实反例</summary><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6a1e60330000000022009537" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评|cvr=0.038] 我们打算卖掉修哲，以后可能喝不到修哲茶了</a></li><li><a href="https://www.xiaohongshu.com/explore/69e189b2000000002301374d" target="_blank" rel="noopener" class="v10-note-link">🔗 [医疗药品|cvr=0.037] 速成黄精vs真黄精，你买对了吗？</a></li><li><a href="https://www.xiaohongshu.com/explore/6a10402000000000060342a3" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评|cvr=0.02] 被米其林抢疯的奥地利小花到底多好喝？</a></li></ul></details>
 </div><div class="v10-card v10-card-low">
   <div class="v10-card-head">
-    <span class="v10-card-num v10-card-num-red">⚠️ #2</span>
+    <span class="v10-card-num v10-card-num-red">2</span>
     <span class="v10-card-name">数字量化但只讲规格/库存（XX 头/XX 克/仅剩 X 瓶）</span>
     <abbr class="conf-badge cb-mid" title="差距中等或样本偏小，可参考但需结合自身判断">证据中</abbr>
   </div>
-  <div class="v10-card-meta">
-    <span class="v10-stat">表现差的笔记里 <b>82 篇</b>踩了这坑 · 表现好的笔记里只 <b>55 篇</b>这么写</span>
+  <div class="v10-card-stat-row">
+    <span class="v10-stat-bad">🔴 表现差 <b>82</b> 篇踩坑</span>
+    <span class="v10-stat-sep">vs</span>
+    <span class="v10-stat-good">表现好仅 <b>55</b> 篇</span>
     <span class="diff-pp diff-pp-red">表现差的多 9.4%</span>
   </div>
-  <div class="v10-card-cat">📊 类目分布：美食测评/展示集中，茶酒/海味/燕窝偏多</div>
-  <div class="v10-card-advice v10-card-advice-red">🚫 <b>避坑建议</b>：数字要服务于用户收益（多少味草本/每天多少剂量/几代人手艺），而不是只服务于商家规格（多少头/多少克/还剩几瓶）；前者增信、后者反而像低质叫卖。</div>
-  <details class="v10-card-examples"><summary>📌 看真实反例（3 篇）</summary><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/690c02a500000000040127ac" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗|cvr=0.013] 8头黄花胶~出一包12斤🛫多谢老细❤️</a></li><li><a href="https://www.xiaohongshu.com/explore/6a0958200000000006020cd1" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评|cvr=0.046] 仅剩6瓶！等了7年！！！大Q巨好价拼手速！</a></li><li><a href="https://www.xiaohongshu.com/explore/688b6d11000000000403d1b4" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗|cvr=0.015] 自从吃了这款干挑燕条…</a></li></ul></details>
+  <div class="v10-card-cat">📊 美食测评/展示集中，茶酒/海味/燕窝偏多</div>
+  <div class="v10-card-advice v10-card-advice-red">🚫 数字要服务于用户收益（多少味草本/每天多少剂量/几代人手艺），而不是只服务于商家规格（多少头/多少克/还剩几瓶）；前者增信、后者反而像低质叫卖。</div>
+  <details class="v10-card-examples"><summary>看 3 篇真实反例</summary><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/690c02a500000000040127ac" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗|cvr=0.013] 8头黄花胶~出一包12斤🛫多谢老细❤️</a></li><li><a href="https://www.xiaohongshu.com/explore/6a0958200000000006020cd1" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评|cvr=0.046] 仅剩6瓶！等了7年！！！大Q巨好价拼手速！</a></li><li><a href="https://www.xiaohongshu.com/explore/688b6d11000000000403d1b4" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗|cvr=0.015] 自从吃了这款干挑燕条…</a></li></ul></details>
 </div><div class="v10-card v10-card-low">
   <div class="v10-card-head">
-    <span class="v10-card-num v10-card-num-red">⚠️ #3</span>
+    <span class="v10-card-num v10-card-num-red">3</span>
     <span class="v10-card-name">节日礼盒套话（端午/520/伴手礼）— 在没有解决方案叙事时拉低 <abbr class="term-abbr" title="下单转化率：看了商品卡 → 实际下单的比例">CVR</abbr></span>
     <abbr class="conf-badge cb-mid" title="差距中等或样本偏小，可参考但需结合自身判断">证据中</abbr>
   </div>
-  <div class="v10-card-meta">
-    <span class="v10-stat">表现差的笔记里 <b>39 篇</b>踩了这坑 · 表现好的笔记里只 <b>27 篇</b>这么写</span>
+  <div class="v10-card-stat-row">
+    <span class="v10-stat-bad">🔴 表现差 <b>39</b> 篇踩坑</span>
+    <span class="v10-stat-sep">vs</span>
+    <span class="v10-stat-good">表现好仅 <b>27</b> 篇</span>
     <span class="diff-pp diff-pp-red">表现差的多 4.2%</span>
   </div>
-  <div class="v10-card-cat">📊 类目分布：美食展示集中，茶酒/糕点类偏多</div>
-  <div class="v10-card-advice v10-card-advice-red">🚫 <b>避坑建议</b>：节日礼盒别只堆『福禄安康/伴手礼』套话；要么挂一个收礼人画像（送父母/送自己/送女友），要么给一个唯一推荐理由（『就选这款』），否则就是堆词不出单。</div>
-  <details class="v10-card-examples"><summary>📌 看真实反例（3 篇）</summary><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6a1ba293000000003502a3b1" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食展示|cvr=0.028] 福禄安康端午礼盒 | 已经进入高峰期啦</a></li><li><a href="https://www.xiaohongshu.com/explore/6a1ed0a0000000002202b0a4" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食展示|cvr=0.017] 福禄安康端午礼盒 | 排队出发，倒计时</a></li><li><a href="https://www.xiaohongshu.com/explore/6a03d3fa0000000006037597" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食展示|cvr=0.025] 告别俗气端午礼，今年走心送礼就选端阳志</a></li></ul></details>
+  <div class="v10-card-cat">📊 美食展示集中，茶酒/糕点类偏多</div>
+  <div class="v10-card-advice v10-card-advice-red">🚫 节日礼盒别只堆『福禄安康/伴手礼』套话；要么挂一个收礼人画像（送父母/送自己/送女友），要么给一个唯一推荐理由（『就选这款』），否则就是堆词不出单。</div>
+  <details class="v10-card-examples"><summary>看 3 篇真实反例</summary><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6a1ba293000000003502a3b1" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食展示|cvr=0.028] 福禄安康端午礼盒 | 已经进入高峰期啦</a></li><li><a href="https://www.xiaohongshu.com/explore/6a1ed0a0000000002202b0a4" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食展示|cvr=0.017] 福禄安康端午礼盒 | 排队出发，倒计时</a></li><li><a href="https://www.xiaohongshu.com/explore/6a03d3fa0000000006037597" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食展示|cvr=0.025] 告别俗气端午礼，今年走心送礼就选端阳志</a></li></ul></details>
 </div><div class="v10-card v10-card-low">
   <div class="v10-card-head">
-    <span class="v10-card-num v10-card-num-red">⚠️ #4</span>
+    <span class="v10-card-num v10-card-num-red">4</span>
     <span class="v10-card-name">标题问号结尾（疑问式钩子，但没给答案）</span>
     <abbr class="conf-badge cb-low" title="可能是品类特性或样本噪声，仅供参考">证据弱</abbr>
   </div>
-  <div class="v10-card-meta">
-    <span class="v10-stat">表现差的笔记里 <b>15 篇</b>踩了这坑 · 表现好的笔记里只 <b>8 篇</b>这么写</span>
+  <div class="v10-card-stat-row">
+    <span class="v10-stat-bad">🔴 表现差 <b>15</b> 篇踩坑</span>
+    <span class="v10-stat-sep">vs</span>
+    <span class="v10-stat-good">表现好仅 <b>8</b> 篇</span>
     <span class="diff-pp diff-pp-red">表现差的多 2.4%</span>
   </div>
-  <div class="v10-card-cat">📊 类目分布：美食测评集中，茶酒偏多</div>
-  <div class="v10-card-advice v10-card-advice-red">🚫 <b>避坑建议</b>：标题尽量用『陈述句给出结果或承诺』，少用『XX 凭什么/到底多好喝？』这种把判断踢回给用户的句式——疑问式钩子拉 CTR 可能可以，但 <abbr class="term-abbr" title="下单转化率：看了商品卡 → 实际下单的比例">CVR</abbr> 会被稀释。</div>
-  <details class="v10-card-examples"><summary>📌 看真实反例（3 篇）</summary><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/677768650000000013018247" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评|cvr=0.042] 700年历史的勃艮第一级园 只卖这个价？</a></li><li><a href="https://www.xiaohongshu.com/explore/6a10402000000000060342a3" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评|cvr=0.02] 被米其林抢疯的奥地利小花到底多好喝？</a></li><li><a href="https://www.xiaohongshu.com/explore/69fef3a8000000001f005188" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗|cvr=0.046] 谁喝谁漂亮的桑葚玫瑰蜜爆单了，凭啥？</a></li></ul></details>
+  <div class="v10-card-cat">📊 美食测评集中，茶酒偏多</div>
+  <div class="v10-card-advice v10-card-advice-red">🚫 标题尽量用『陈述句给出结果或承诺』，少用『XX 凭什么/到底多好喝？』这种把判断踢回给用户的句式——疑问式钩子拉 CTR 可能可以，但 <abbr class="term-abbr" title="下单转化率：看了商品卡 → 实际下单的比例">CVR</abbr> 会被稀释。</div>
+  <details class="v10-card-examples"><summary>看 3 篇真实反例</summary><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/677768650000000013018247" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评|cvr=0.042] 700年历史的勃艮第一级园 只卖这个价？</a></li><li><a href="https://www.xiaohongshu.com/explore/6a10402000000000060342a3" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评|cvr=0.02] 被米其林抢疯的奥地利小花到底多好喝？</a></li><li><a href="https://www.xiaohongshu.com/explore/69fef3a8000000001f005188" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗|cvr=0.046] 谁喝谁漂亮的桑葚玫瑰蜜爆单了，凭啥？</a></li></ul></details>
 </div></div>
 </div>
 

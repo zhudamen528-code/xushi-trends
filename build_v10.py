@@ -102,18 +102,20 @@ def render_high_card(p, idx):
     
     return f'''<div class="v10-card v10-card-high">
   <div class="v10-card-head">
-    <span class="v10-card-num">#{idx+1}</span>
+    <span class="v10-card-num">{idx+1}</span>
     <span class="v10-card-name">{name}</span>
     {confidence_badge(conf)}
   </div>
-  <div class="v10-card-meta">
-    <span class="v10-stat">表现好的笔记里 <b>{high_n} 篇</b>用了这招 · 表现差的笔记里只 <b>{low_n} 篇</b>用</span>
+  <div class="v10-card-stat-row">
+    <span class="v10-stat-good">✅ 表现好 <b>{high_n}</b> 篇</span>
+    <span class="v10-stat-sep">vs</span>
+    <span class="v10-stat-bad">表现差仅 <b>{low_n}</b> 篇</span>
     {diff_str}
   </div>
-  <div class="v10-card-cat">📊 类目分布：{cat}</div>
-  <div class="v10-card-advice">💡 <b>商家建议</b>：{advice}</div>
+  <div class="v10-card-cat">📊 {cat}</div>
+  <div class="v10-card-advice">💡 {advice}</div>
   <details class="v10-card-examples">
-    <summary>📌 看真实案例（{len(examples)} 篇好笔记 + {len(contrast)} 篇反例）</summary>
+    <summary>看 {len(examples)} 篇真实案例 + {len(contrast)} 篇反例</summary>
     <div class="v10-ex-block">
       <div class="v10-ex-label">🟢 表现好的笔记是这么写的</div>
       <ul class="v10-ex-list">{ex_html}</ul>
@@ -144,17 +146,19 @@ def render_low_card(p, idx):
     
     return f'''<div class="v10-card v10-card-low">
   <div class="v10-card-head">
-    <span class="v10-card-num v10-card-num-red">⚠️ #{idx+1}</span>
+    <span class="v10-card-num v10-card-num-red">{idx+1}</span>
     <span class="v10-card-name">{name}</span>
     {confidence_badge(conf)}
   </div>
-  <div class="v10-card-meta">
-    <span class="v10-stat">表现差的笔记里 <b>{low_n} 篇</b>踩了这坑 · 表现好的笔记里只 <b>{high_n} 篇</b>这么写</span>
+  <div class="v10-card-stat-row">
+    <span class="v10-stat-bad">🔴 表现差 <b>{low_n}</b> 篇踩坑</span>
+    <span class="v10-stat-sep">vs</span>
+    <span class="v10-stat-good">表现好仅 <b>{high_n}</b> 篇</span>
     {diff_str}
   </div>
-  <div class="v10-card-cat">📊 类目分布：{cat}</div>
-  <div class="v10-card-advice v10-card-advice-red">🚫 <b>避坑建议</b>：{advice}</div>
-  {f'<details class="v10-card-examples"><summary>📌 看真实反例（{len(examples)} 篇）</summary><ul class="v10-ex-list">{ex_html}</ul></details>' if examples else ''}
+  <div class="v10-card-cat">📊 {cat}</div>
+  <div class="v10-card-advice v10-card-advice-red">🚫 {advice}</div>
+  {f'<details class="v10-card-examples"><summary>看 {len(examples)} 篇真实反例</summary><ul class="v10-ex-list">{ex_html}</ul></details>' if examples else ''}
 </div>'''
 
 def render_price_playbook():
@@ -284,116 +288,202 @@ def render_v10_section(metric_key, metric_label):
 
 # ============ V10 CSS ============
 V10_CSS = '''
+/* ============ V10.2 Design Tokens（4 色系统）============ */
+:root {
+  /* 主色 4 个：深=结论 / 黄=提示 / 绿=可抄 / 红=避坑 */
+  --c-deep: #1f2937;       /* 深色（标题/结论 hero）*/
+  --c-deep-2: #374151;     /* 深色辅助 */
+  --c-deep-3: #6b7280;     /* 深色中度（次要文本）*/
+  --c-warn: #f59e0b;       /* 黄色（重要提示/平台心智）*/
+  --c-warn-bg: #fffbeb;    /* 黄色背景 */
+  --c-warn-bg-2: #fef3c7;  /* 黄色背景加深 */
+  --c-good: #10b981;       /* 绿色（可抄/正面）*/
+  --c-good-bg: #ecfdf5;    /* 绿色背景 */
+  --c-good-bg-2: #d1fae5;  /* 绿色背景加深 */
+  --c-bad: #ef4444;        /* 红色（避坑/反例）*/
+  --c-bad-bg: #fef2f2;     /* 红色背景 */
+  --c-bad-bg-2: #fee2e2;   /* 红色背景加深 */
+  /* 中性灰阶 */
+  --c-text: #111827;       /* 主文本 */
+  --c-text-2: #374151;     /* 次要文本 */
+  --c-text-3: #6b7280;     /* 弱化文本 */
+  --c-text-4: #9ca3af;     /* 极弱文本/标签 */
+  --c-bg: #ffffff;         /* 背景 */
+  --c-bg-2: #f9fafb;       /* 卡片背景 */
+  --c-bg-3: #f3f4f6;       /* 区块背景 */
+  --c-border: #e5e7eb;     /* 边框 */
+  --c-border-strong: #d1d5db; /* 强边框 */
+  /* 字号 5 级 */
+  --fs-xs: 11px;
+  --fs-sm: 12px;
+  --fs-base: 14px;
+  --fs-md: 16px;
+  --fs-lg: 20px;
+  --fs-xl: 28px;
+  /* 间距 4 级 */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 14px;
+  --sp-4: 20px;
+  --sp-5: 28px;
+  /* 圆角 */
+  --r-sm: 6px;
+  --r: 10px;
+  --r-lg: 14px;
+}
+/* 全站轻量重置 */
+body { color: var(--c-text); }
+
 .v10-section { margin: 20px 0; }
-.v10-banner { background: linear-gradient(135deg, #fff9e6, #fff3d3); border-left: 4px solid #f5b400; border-radius: 10px; padding: 14px 18px; margin-bottom: 18px; }
-.v10-banner-title { font-size: 16px; font-weight: 700; color: #333; margin-bottom: 6px; }
-.v10-banner-sub { font-size: 12px; color: #666; line-height: 1.6; }
-.v10-mechanism { background: #f4f8ff; border-left: 3px solid #4a90e2; border-radius: 6px; padding: 12px 16px; margin: 14px 0; font-size: 13px; color: #333; line-height: 1.7; }
+.v10-banner { background: linear-gradient(135deg, var(--c-warn-bg), var(--c-warn-bg-2)); border-left: 4px solid var(--c-warn); border-radius: 10px; padding: 14px 18px; margin-bottom: 18px; }
+.v10-banner-title { font-size: 16px; font-weight: 700; color: var(--c-text); margin-bottom: 6px; }
+.v10-banner-sub { font-size: 12px; color: var(--c-text-3); line-height: 1.6; }
+.v10-mechanism { background: #f4f8ff; border-left: 3px solid var(--c-deep); border-radius: 6px; padding: 12px 16px; margin: 14px 0; font-size: 13px; color: var(--c-text); line-height: 1.7; }
 /* 核心机制 hero 样式：深色背景、大字、高亮 */
-.v10-mech-hero { background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%) !important; color: #fff !important; border-left: 4px solid #f5b400 !important; padding: 16px 20px !important; font-size: 15px !important; line-height: 1.8 !important; box-shadow: 0 2px 8px rgba(0,0,0,0.15); margin: 16px 0 20px !important; border-radius: 8px !important; }
-.v10-mech-hero b { color: #f5b400 !important; font-size: 16px; }
+.v10-mech-hero { background: linear-gradient(135deg, var(--c-deep) 0%, var(--c-deep-2) 100%) !important; color: #fff !important; border-left: 4px solid var(--c-warn) !important; padding: 16px 20px !important; font-size: 15px !important; line-height: 1.8 !important; box-shadow: 0 2px 8px rgba(0,0,0,0.15); margin: 16px 0 20px !important; border-radius: 8px !important; }
+.v10-mech-hero b { color: var(--c-warn) !important; font-size: 16px; }
 
 /* CTR2 三层优先级前置说明 */
 .ctr2-priority-note { background: #fff; border: 1px solid #e8eaed; border-radius: 10px; padding: 16px 18px; margin: 14px 0 18px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
 .cpn-title { font-size: 14px; font-weight: 700; color: #d92f5e; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px dashed #f0d4dd; }
-.cpn-tier { padding: 8px 12px; margin: 6px 0; border-radius: 6px; font-size: 12px; line-height: 1.7; color: #333; }
+.cpn-tier { padding: 8px 12px; margin: 6px 0; border-radius: 6px; font-size: 12px; line-height: 1.7; color: var(--c-text); }
 .cpn-tier-1 { background: #fff0f0; border-left: 3px solid #d92f5e; }
-.cpn-tier-2 { background: #fffaeb; border-left: 3px solid #f5b400; }
-.cpn-tier-3 { background: #f0fff4; border-left: 3px solid #34c759; }
-.cpn-tier b { color: #222; font-size: 13px; }
-.cpn-key { background: #2c3e50; color: #fff; border-radius: 6px; padding: 10px 14px; margin-top: 12px; font-size: 12px; line-height: 1.7; }
-.cpn-key b { color: #f5b400; }
+.cpn-tier-2 { background: #fffaeb; border-left: 3px solid var(--c-warn); }
+.cpn-tier-3 { background: #f0fff4; border-left: 3px solid var(--c-good); }
+.cpn-tier b { color: var(--c-deep); font-size: 13px; }
+.cpn-key { background: var(--c-deep); color: #fff; border-radius: 6px; padding: 10px 14px; margin-top: 12px; font-size: 12px; line-height: 1.7; }
+.cpn-key b { color: var(--c-warn); }
 
 /* 指标↔算法相关性表 */
 .metric-algo-corr { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 14px 18px; margin: 16px 0 0; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
-.mac-title { font-size: 14px; font-weight: 700; color: #2c3e50; margin-bottom: 6px; }
-.mac-sub { font-size: 11px; color: #888; margin-bottom: 12px; line-height: 1.6; }
+.mac-title { font-size: 14px; font-weight: 700; color: var(--c-deep); margin-bottom: 6px; }
+.mac-sub { font-size: 11px; color: var(--c-text-3); margin-bottom: 12px; line-height: 1.6; }
 .mac-table { width: 100%; border-collapse: collapse; }
-.mac-table th { font-size: 12px; color: #666; text-align: left; padding: 6px 10px; background: #f8f9fa; border-bottom: 1px solid #e5e7eb; }
+.mac-table th { font-size: 12px; color: var(--c-text-3); text-align: left; padding: 6px 10px; background: #f8f9fa; border-bottom: 1px solid #e5e7eb; }
 .mac-table td { padding: 8px 10px; font-size: 13px; border-bottom: 1px solid #f0f0f0; }
-.mac-metric { font-weight: 600; color: #333; white-space: nowrap; }
-.mac-feats { color: #555; }
-.corr-pos { color: #1a7a3f; background: #e8f5ee; padding: 2px 8px; border-radius: 10px; font-size: 12px; margin-right: 4px; display: inline-block; margin-bottom: 4px; }
-.corr-neg { color: #c0392b; background: #fde8e8; padding: 2px 8px; border-radius: 10px; font-size: 12px; margin-right: 4px; display: inline-block; margin-bottom: 4px; }
-.mac-key { background: #2c3e50; color: #fff; border-radius: 6px; padding: 10px 14px; margin-top: 12px; font-size: 12px; line-height: 1.7; }
-.mac-key b { color: #f5b400; }
-.mac-warn { font-size: 11px; color: #999; margin-top: 8px; padding: 8px 12px; background: #f8f9fa; border-radius: 4px; border-left: 2px solid #ccc; }
+.mac-metric { font-weight: 600; color: var(--c-text); white-space: nowrap; }
+.mac-feats { color: var(--c-text-2); }
+.corr-pos { color: var(--c-good); background: #e8f5ee; padding: 2px 8px; border-radius: 10px; font-size: 12px; margin-right: 4px; display: inline-block; margin-bottom: 4px; }
+.corr-neg { color: var(--c-bad); background: #fde8e8; padding: 2px 8px; border-radius: 10px; font-size: 12px; margin-right: 4px; display: inline-block; margin-bottom: 4px; }
+.mac-key { background: var(--c-deep); color: #fff; border-radius: 6px; padding: 10px 14px; margin-top: 12px; font-size: 12px; line-height: 1.7; }
+.mac-key b { color: var(--c-warn); }
+.mac-warn { font-size: 11px; color: var(--c-text-4); margin-top: 8px; padding: 8px 12px; background: #f8f9fa; border-radius: 4px; border-left: 2px solid var(--c-border-strong); }
 /* Ladder 表 */
 .mac-ladder td, .mac-ladder th { padding: 8px 10px; text-align: center; font-size: 13px; }
 .mac-ladder th:first-child, .mac-ladder td:first-child { text-align: left; }
-.ladder-feat { font-weight: 600; color: #333; }
-.ladder-q1 { color: #888; }
-.ladder-q4 { color: #1a7a3f; font-weight: 600; }
+.ladder-feat { font-weight: 600; color: var(--c-text); }
+.ladder-q1 { color: var(--c-text-3); }
+.ladder-q4 { color: var(--c-good); font-weight: 600; }
 .ladder-mult { font-weight: 600; }
-.ladder-x { color: #1a7a3f; background: #e8f5ee; padding: 2px 8px; border-radius: 10px; }
-.ladder-x-neg { color: #c0392b; background: #fde8e8; padding: 2px 8px; border-radius: 10px; }
+.ladder-x { color: var(--c-good); background: #e8f5ee; padding: 2px 8px; border-radius: 10px; }
+.ladder-x-neg { color: var(--c-bad); background: #fde8e8; padding: 2px 8px; border-radius: 10px; }
 .ladder-neg { background: #fffafa; }
-.ladder-warn { color: #c0392b; font-size: 11px; font-weight: 600; }
+.ladder-warn { color: var(--c-bad); font-size: 11px; font-weight: 600; }
 
 /* V9 老内容折叠样式 */
 .v9-legacy-fold { background: #fafbfc; border: 1px solid #e5e7eb; border-radius: 10px; margin: 24px 0 16px; padding: 0; }
-.v9-legacy-summary { cursor: pointer; padding: 14px 18px; font-size: 13px; font-weight: 600; color: #666; list-style: none; display: flex; align-items: center; gap: 8px; user-select: none; }
+.v9-legacy-summary { cursor: pointer; padding: 14px 18px; font-size: 13px; font-weight: 600; color: var(--c-text-3); list-style: none; display: flex; align-items: center; gap: 8px; user-select: none; }
 .v9-legacy-summary::-webkit-details-marker { display: none; }
-.v9-legacy-summary::before { content: '▶'; transition: transform 0.2s; color: #999; font-size: 10px; }
+.v9-legacy-summary::before { content: '▶'; transition: transform 0.2s; color: var(--c-text-4); font-size: 10px; }
 .v9-legacy-fold[open] .v9-legacy-summary::before { transform: rotate(90deg); }
 .v9-legacy-summary:hover { color: #d92f5e; }
-.v9-legacy-body { padding: 16px 18px 4px; border-top: 1px solid #e5e7eb; }
+.v9-legacy-body { padding: 16px 18px 4px; border-top: 1px solid var(--c-border); }
 
 /* 业务术语 hover */
-.term-abbr { text-decoration: none; border-bottom: 1px dotted #aaa; cursor: help; }
-.term-abbr:hover { background: #fff5d6; }
-.mac-th-sub { display: block; font-size: 10px; color: #888; font-weight: 400; margin-top: 2px; }
+.term-abbr { text-decoration: none; border-bottom: 1px dotted var(--c-text-4); cursor: help; }
+.term-abbr:hover { background: var(--c-warn-bg-2); }
+.mac-th-sub { display: block; font-size: 10px; color: var(--c-text-3); font-weight: 400; margin-top: 2px; }
 abbr.conf-badge { text-decoration: none; cursor: help; }
+
+/* ============ V10.2 UI 大改：卡片紧凑 + 双栏对比 + sticky 锚 ============ */
+.v10-card { transition: box-shadow 0.15s; }
+.v10-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+.v10-card-head { display: flex; align-items: center; gap: 8px; margin-bottom: var(--sp-2); flex-wrap: wrap; }
+.v10-card-num { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: var(--c-good); color: #fff; font-size: var(--fs-xs); font-weight: 700; flex-shrink: 0; }
+.v10-card-num-red { background: var(--c-bad); }
+.v10-card-name { font-size: var(--fs-base); font-weight: 700; color: var(--c-text); flex: 1; line-height: 1.4; min-width: 200px; }
+.v10-card-stat-row { display: flex; align-items: center; gap: 8px; margin-bottom: var(--sp-2); font-size: var(--fs-sm); color: var(--c-text-3); flex-wrap: wrap; }
+.v10-stat-good { color: var(--c-good); }
+.v10-stat-good b { color: var(--c-good); font-size: var(--fs-base); }
+.v10-stat-bad { color: var(--c-bad); }
+.v10-stat-bad b { color: var(--c-bad); font-size: var(--fs-base); }
+.v10-stat-sep { color: var(--c-text-4); font-size: 10px; font-weight: 400; }
+.v10-card-cat { font-size: var(--fs-xs); color: var(--c-text-3); margin-bottom: var(--sp-2); }
+
+/* Tab 内 sticky 小目录（仅 GMV 总览 Tab）*/
+.tab-anchor-nav { position: sticky; top: 56px; z-index: 8; background: rgba(255,255,255,0.97); backdrop-filter: blur(8px); border-bottom: 1px solid var(--c-border); margin: -8px -8px var(--sp-3); padding: 8px 8px; display: flex; gap: 6px; overflow-x: auto; font-size: var(--fs-xs); }
+.tab-anchor-nav a { color: var(--c-text-3); text-decoration: none; white-space: nowrap; padding: 4px 10px; border-radius: 6px; border: 1px solid transparent; transition: all 0.15s; }
+.tab-anchor-nav a:hover { background: var(--c-bg-3); color: var(--c-text); border-color: var(--c-border); }
+
+/* 区块视觉锚（数字标 + 块标题）*/
+.section-block { margin: var(--sp-5) 0 var(--sp-4); }
+.section-block-head { display: flex; align-items: center; gap: 10px; margin-bottom: var(--sp-3); padding-bottom: var(--sp-2); border-bottom: 2px solid var(--c-deep); }
+.section-block-num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; background: var(--c-deep); color: #fff; border-radius: 6px; font-weight: 700; font-size: var(--fs-sm); flex-shrink: 0; }
+.section-block-title { font-size: var(--fs-md); font-weight: 700; color: var(--c-text); }
+.section-block-sub { font-size: var(--fs-xs); color: var(--c-text-3); margin-left: auto; }
+
+/* 行业 KPI 双栏对照表 */
+.industry-kpi-dual { background: var(--c-bg); border: 1px solid var(--c-border); border-radius: var(--r); padding: var(--sp-4); }
+.industry-kpi-dual-table { width: 100%; border-collapse: collapse; font-size: var(--fs-sm); }
+.industry-kpi-dual-table th { text-align: left; padding: 10px 12px; color: var(--c-text-2); font-weight: 600; border-bottom: 2px solid var(--c-border); font-size: var(--fs-xs); }
+.industry-kpi-dual-table th.pic-col { color: var(--c-good); }
+.industry-kpi-dual-table th.vid-col { color: var(--c-deep-2); }
+.industry-kpi-dual-table td { padding: 12px; border-bottom: 1px solid var(--c-border); }
+.industry-kpi-dual-table td.kpi-name { color: var(--c-text-2); font-weight: 500; }
+.industry-kpi-dual-table td.kpi-val-pic { font-weight: 700; color: var(--c-good); font-size: var(--fs-base); }
+.industry-kpi-dual-table td.kpi-val-vid { font-weight: 700; color: var(--c-deep); font-size: var(--fs-base); }
+.industry-kpi-dual-table tr:hover { background: var(--c-bg-2); }
+.industry-kpi-note { font-size: var(--fs-xs); color: var(--c-text-3); margin-top: 12px; padding: 8px 12px; background: var(--c-bg-2); border-radius: var(--r-sm); }
 .v10-subhead { font-size: 14px; font-weight: 700; margin: 18px 0 10px; padding: 6px 10px; border-radius: 4px; }
-.v10-subhead-green { color: #1a7a3f; background: #e8f5ee; }
-.v10-subhead-red { color: #b32a2a; background: #fde8e8; }
+.v10-subhead-green { color: var(--c-good); background: #e8f5ee; }
+.v10-subhead-red { color: var(--c-bad); background: #fde8e8; }
 .v10-cards-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 18px; }
 .v10-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 14px 16px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
-.v10-card-high { border-left: 4px solid #1a7a3f; }
-.v10-card-low { border-left: 4px solid #c0392b; background: #fffafa; }
+.v10-card-high { border-left: 4px solid var(--c-good); }
+.v10-card-low { border-left: 4px solid var(--c-bad); background: #fffafa; }
 .v10-card-head { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; flex-wrap: wrap; }
-.v10-card-num { background: #1a7a3f; color: #fff; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; }
-.v10-card-num-red { background: #c0392b; }
-.v10-card-name { font-size: 14px; font-weight: 700; color: #222; flex: 1; }
+.v10-card-num { background: var(--c-good); color: #fff; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; }
+.v10-card-num-red { background: var(--c-bad); }
+.v10-card-name { font-size: 14px; font-weight: 700; color: var(--c-deep); flex: 1; }
 .conf-badge { font-size: 10px; padding: 2px 8px; border-radius: 10px; font-weight: 600; }
-.cb-high { background: #d4edda; color: #155724; }
-.cb-mid { background: #fff3cd; color: #856404; }
-.cb-low { background: #f8d7da; color: #721c24; }
-.v10-card-meta { font-size: 12px; color: #555; margin-bottom: 6px; }
-.v10-stat { color: #666; }
-.diff-pp { color: #1a7a3f; font-weight: 600; margin-left: 8px; }
-.diff-pp-red { color: #c0392b; }
-.diff-ratio { background: #fff8d6; padding: 1px 6px; border-radius: 4px; font-size: 11px; color: #8b6914; margin-left: 4px; }
-.v10-card-cat { font-size: 11px; color: #888; margin-bottom: 8px; line-height: 1.5; }
-.v10-card-advice { background: #f0f8ff; border-radius: 6px; padding: 8px 12px; font-size: 13px; color: #333; line-height: 1.6; }
-.v10-card-advice-red { background: #fff5f5; color: #2c2c2c; }
-.v10-card-examples { margin-top: 10px; font-size: 12px; color: #555; }
-.v10-card-examples summary { cursor: pointer; color: #4a90e2; padding: 4px 0; font-weight: 500; }
-.v10-card-examples summary:hover { color: #2c5fa5; }
+.cb-high { background: #d4edda; color: var(--c-good); }
+.cb-mid { background: #fff3cd; color: var(--c-text-2); }
+.cb-low { background: #f8d7da; color: var(--c-bad); }
+.v10-card-meta { font-size: 12px; color: var(--c-text-2); margin-bottom: 6px; }
+.v10-stat { color: var(--c-text-3); }
+.diff-pp { color: var(--c-good); font-weight: 600; margin-left: 8px; }
+.diff-pp-red { color: var(--c-bad); }
+.diff-ratio { background: #fff8d6; padding: 1px 6px; border-radius: 4px; font-size: 11px; color: var(--c-text-2); margin-left: 4px; }
+.v10-card-cat { font-size: 11px; color: var(--c-text-3); margin-bottom: 8px; line-height: 1.5; }
+.v10-card-advice { background: #f0f8ff; border-radius: 6px; padding: 8px 12px; font-size: 13px; color: var(--c-text); line-height: 1.6; }
+.v10-card-advice-red { background: #fff5f5; color: var(--c-text); }
+.v10-card-examples { margin-top: 10px; font-size: 12px; color: var(--c-text-2); }
+.v10-card-examples summary { cursor: pointer; color: var(--c-deep); padding: 4px 0; font-weight: 500; }
+.v10-card-examples summary:hover { color: var(--c-deep); }
 .v10-ex-block { margin: 8px 0; }
-.v10-ex-label { font-size: 11px; color: #888; font-weight: 600; margin-bottom: 4px; }
-.v10-ex-label-red { color: #c0392b; }
-.v10-ex-list { margin: 4px 0 0 18px; padding: 0; line-height: 1.7; color: #444; font-size: 12px; }
+.v10-ex-label { font-size: 11px; color: var(--c-text-3); font-weight: 600; margin-bottom: 4px; }
+.v10-ex-label-red { color: var(--c-bad); }
+.v10-ex-list { margin: 4px 0 0 18px; padding: 0; line-height: 1.7; color: var(--c-text-2); font-size: 12px; }
 .v10-ex-list li { margin-bottom: 3px; }
-.v10-note-link { color: #1a73e8; text-decoration: none; }
+.v10-note-link { color: var(--c-deep); text-decoration: none; }
 .v10-note-link:hover { color: #d92f5e; text-decoration: underline; }
 
 /* 件单价 4 机制 playbook */
 .price-playbook-section { margin: 20px 0; }
 .price-banner { background: linear-gradient(135deg, #ffe9f0, #ffd5e3) !important; border-left-color: #d92f5e !important; }
-.v10-mech-hero { background: linear-gradient(135deg, #2c3e50, #34495e); color: #f0f0f0; border-left: 4px solid #f5b400; font-size: 14px; padding: 14px 18px; }
+.v10-mech-hero { background: linear-gradient(135deg, var(--c-deep), var(--c-deep-2)); color: #f0f0f0; border-left: 4px solid var(--c-warn); font-size: 14px; padding: 14px 18px; }
 .v10-mech-hero b { color: #fff; }
 .price-mech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
 .price-mech-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 14px 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); border-top: 3px solid #d92f5e; }
 .price-mech-head { margin-bottom: 8px; }
-.price-mech-name { font-size: 15px; font-weight: 700; color: #222; }
-.price-mech-desc { font-size: 12px; color: #666; margin-bottom: 10px; line-height: 1.6; }
-.price-mech-sop { background: #f0f8ff; border-radius: 6px; padding: 8px 12px; font-size: 13px; color: #333; line-height: 1.6; margin-bottom: 8px; }
-.price-mech-pitfall { background: #fff5e6; border-radius: 6px; padding: 8px 12px; font-size: 12px; color: #5d4a1f; line-height: 1.6; margin-bottom: 10px; }
-.price-mech-cases summary { cursor: pointer; color: #4a90e2; padding: 4px 0; font-weight: 500; font-size: 12px; }
+.price-mech-name { font-size: 15px; font-weight: 700; color: var(--c-deep); }
+.price-mech-desc { font-size: 12px; color: var(--c-text-3); margin-bottom: 10px; line-height: 1.6; }
+.price-mech-sop { background: #f0f8ff; border-radius: 6px; padding: 8px 12px; font-size: 13px; color: var(--c-text); line-height: 1.6; margin-bottom: 8px; }
+.price-mech-pitfall { background: #fff5e6; border-radius: 6px; padding: 8px 12px; font-size: 12px; color: var(--c-text-2); line-height: 1.6; margin-bottom: 10px; }
+.price-mech-cases summary { cursor: pointer; color: var(--c-deep); padding: 4px 0; font-weight: 500; font-size: 12px; }
 .price-mech-cases summary:hover { color: #d92f5e; }
-.case-meta { color: #888; font-size: 11px; }
-.case-empty { color: #aaa; font-style: italic; }
+.case-meta { color: var(--c-text-3); font-size: 11px; }
+.case-empty { color: var(--c-text-4); font-style: italic; }
 @media (max-width: 768px) {
   .price-mech-grid { grid-template-columns: 1fr; }
 }
@@ -511,6 +601,146 @@ for metric_key in ['ctr1', 'ctr2', 'cvr', 'price']:
 </details>'''
     html = html[:tw_start] + wrapped + html[panel_end:]
     print(f'✅ {metric_key} Tab V9 老内容已折叠')
+
+# V10.2 UI 改造：GMV 总览 Tab 内
+# 1) 加 sticky 锚目录
+# 2) 把图文/视频 8 张 KPI 卡合并成双栏对照表
+import json as _json
+def render_industry_kpi_dual_table():
+    """读 data/industry_*.json，render 成图文 vs 视频双栏对照表"""
+    # 尝试从已 build 的 HTML 抓数（避免依赖外部文件）
+    pic = {}
+    vid = {}
+    # 用 regex 从原 HTML KPI 卡里抓值
+    return None  # 留空：直接基于现有 KPI 数据 transform
+
+# 用 BeautifulSoup-style regex 改造：把 KPI 8 卡片折成对照表
+def transform_industry_kpi(html):
+    """把 Tab1 内 2 个 '行业参考值' section + 8 张 kpi-card 合并成 1 张对照表"""
+    # 找 Tab1 panel
+    tab_start = html.find('<div class="tab-panel" id="tab-gpm">')
+    tab_end = html.find('<div class="tab-panel hidden"', tab_start + 100)
+    if tab_start < 0 or tab_end < 0:
+        return html
+    panel = html[tab_start:tab_end]
+    
+    # 抓 2 个 section-label + 后续 KPI 数据
+    # 用 regex 匹配每个 kpi-card 的关键值
+    # kpi-card 结构: <div class="kpi-card"><div class="kpi-label">CTR1 ...</div><div class="kpi-value">10.1%</div>...</div>
+    kpi_pattern = re.compile(
+        r'<div class="kpi-card">\s*<div class="kpi-title">([^<]+)</div>\s*<div class="kpi-value">([^<]+)</div>',
+        re.DOTALL
+    )
+    matches = list(kpi_pattern.finditer(panel))
+    if len(matches) < 8:
+        print(f'⚠️ 行业 KPI 卡只找到 {len(matches)} 张，未做折叠')
+        return html
+    
+    # 前 4 个=图文，后 4 个=视频
+    pic_kpis = matches[:4]
+    vid_kpis = matches[4:8]
+    
+    # 找 2 个 section-label 在 panel 内位置（相对）
+    label_pat = re.compile(r'<div class="section-label">[^<]+</div>')
+    labels = list(label_pat.finditer(panel))
+    if len(labels) < 2:
+        print('⚠️ 找不到 2 个 section-label')
+        return html
+    pic_label_start = labels[0].start()
+    # 视频组结束位置：找第 4 个视频 kpi-card 之后的 </div>，简单点：第 8 张卡末尾后第一个 </div>
+    vid_last_end = vid_kpis[3].end()
+    # 找该位置之后的下一个 section-label（即 GPM 自查）或下一个 </div></div>
+    next_section = panel.find('<div class="section-label">', vid_last_end)
+    if next_section < 0:
+        next_section = vid_last_end + 200
+    
+    # 构建对照表
+    def kn(label):
+        return re.sub(r'\s+', ' ', label).strip()
+    
+    rows = ''
+    for i, k in enumerate(['CTR1 封面点击率', 'CTR2 商品卡点击率', 'CVR 转化率', '件单价']):
+        p = pic_kpis[i]
+        v = vid_kpis[i]
+        rows += f'''<tr>
+  <td class="kpi-name">{k}</td>
+  <td class="kpi-val-pic">{p.group(2)}</td>
+  <td class="kpi-val-vid">{v.group(2)}</td>
+</tr>'''
+    
+    new_block = f'''<div class="section-block">
+  <div class="section-block-head">
+    <span class="section-block-num">4</span>
+    <span class="section-block-title">行业参考值 · 图文 vs 视频对照</span>
+    <span class="section-block-sub">把你后台数据对一下</span>
+  </div>
+  <div class="industry-kpi-dual">
+    <table class="industry-kpi-dual-table">
+      <thead>
+        <tr>
+          <th>指标</th>
+          <th class="pic-col">📈 图文 P75</th>
+          <th class="vid-col">🎬 视频 P75</th>
+        </tr>
+      </thead>
+      <tbody>{rows}</tbody>
+    </table>
+    <div class="industry-kpi-note">📌 P75 = 把所有商家按这个指标从高到低排队，排在第 25% 位置的值；超过这个数就算行业前 25%</div>
+  </div>
+</div>'''
+    
+    # 替换：从 pic_label_start 到 next_section
+    new_panel = panel[:pic_label_start] + new_block + panel[next_section:]
+    html = html[:tab_start] + new_panel + html[tab_end:]
+    print(f'✅ Tab1 行业 KPI 8 卡片合并为对照表')
+    return html
+
+html = transform_industry_kpi(html)
+
+# Tab1 顶部加 sticky 锚目录
+def add_tab1_anchor_nav(html):
+    tab_start = html.find('<div class="tab-panel" id="tab-gpm">')
+    if tab_start < 0: return html
+    # 找 hero block 闭合位置
+    hero_open = html.find('<div class="hero', tab_start)
+    if hero_open < 0: return html
+    depth = 1
+    i = hero_open + len('<div')
+    while depth > 0 and i < len(html):
+        nxt_open = html.find('<div', i)
+        nxt_close = html.find('</div>', i)
+        if nxt_close < 0: break
+        if 0 <= nxt_open < nxt_close: depth += 1; i = nxt_open + len('<div')
+        else: depth -= 1; i = nxt_close + len('</div>')
+    if depth != 0: return html
+    
+    nav = '''
+<nav class="tab-anchor-nav">
+  <a href="#anchor-formula">📐 公式</a>
+  <a href="#anchor-algo">🤖 算法分阶梯</a>
+  <a href="#anchor-industry">🎯 行业参考</a>
+  <a href="#anchor-selfcheck">🧮 GPM 自查</a>
+</nav>'''
+    html = html[:i] + nav + html[i:]
+    print('✅ Tab1 sticky 锚目录已添加')
+    return html
+
+html = add_tab1_anchor_nav(html)
+
+# 给 4 个区块加 anchor id：公式 / 算法分 / 行业参考 / 自查
+def add_block_anchors(html):
+    # 1. funnel-formula → anchor-formula
+    html = html.replace('<div class="funnel-formula">', '<div class="funnel-formula" id="anchor-formula">', 1)
+    # 2. metric-algo-corr → anchor-algo
+    html = html.replace('<div class="metric-algo-corr">', '<div class="metric-algo-corr" id="anchor-algo">', 1)
+    # 3. section-block （行业参考表）→ anchor-industry
+    html = html.replace('<div class="section-block">', '<div class="section-block" id="anchor-industry">', 1)
+    # 4. GPM 自查 section-label → anchor-selfcheck
+    html = re.sub(r'<div class="section-label">🧮', '<div class="section-label" id="anchor-selfcheck">🧮', html, count=1)
+    print('✅ 4 个区块 anchor id 已添加')
+    return html
+
+html = add_block_anchors(html)
 
 # V10 卖点助手 prompt 替换为 V10 方法论版本
 V10_PROMPT_FN = open(os.path.join(WORKDIR, 'v10_prompt_template.js'), encoding='utf-8').read().strip()
