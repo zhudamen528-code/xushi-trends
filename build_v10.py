@@ -19,6 +19,47 @@ V10_DIFF = {}
 for m in ['ctr1', 'ctr2', 'cvr', 'price']:
     V10_DIFF[m] = json.load(open(os.path.join(WORKDIR, f'data/v10_clusters/{m}.diff.json'), encoding='utf-8'))
 
+# 加载 title → note_id 索引（用于案例跳转）
+TITLE_IDX = {}
+try:
+    TITLE_IDX = json.load(open(os.path.join(WORKDIR, 'data/v10_clusters/title_to_noteid.json'), encoding='utf-8'))
+except FileNotFoundError:
+    print('⚠️ title_to_noteid.json 不存在，案例无跳转链')
+
+def _norm(s): return re.sub(r'[\s\u3000【】「」\[\]<>《》（）()]+','', s or '')
+NORM_IDX = {_norm(k): v for k, v in TITLE_IDX.items() if len(_norm(k)) >= 6}
+
+def _example_candidates(ex):
+    s = ex.strip()
+    s = re.sub(r'^[\[【][^\]】]+[\]】]\s*', '', s)
+    cands = [s]
+    m = re.match(r'^《([^》]+)》', s)
+    if m: cands.append(m.group(1).strip())
+    for seg in re.split(r'[|｜]', s):
+        seg = seg.strip()
+        if len(seg) >= 4: cands.append(seg)
+    out = []
+    for c in cands:
+        out.append(c)
+        for L in [25,20,15,12,10,8]:
+            out.append(c[:L])
+    return out
+
+def lookup_note_id(ex):
+    for c in _example_candidates(ex):
+        if c in TITLE_IDX: return TITLE_IDX[c]
+        nc = _norm(c)
+        if nc in NORM_IDX: return NORM_IDX[nc]
+    return None
+
+def example_li(ex):
+    nid = lookup_note_id(ex)
+    text = escape(ex)
+    if nid:
+        # 小红书笔记跳转链
+        return f'<li><a href="https://www.xiaohongshu.com/explore/{escape(nid)}" target="_blank" rel="noopener" class="v10-note-link">🔗 {text}</a></li>'
+    return f'<li>{text}</li>'
+
 # ============ HTML 工具 ============
 def escape(s):
     if s is None: return ''
@@ -47,8 +88,8 @@ def render_high_card(p, idx):
     examples = p.get('high_examples', [])
     contrast = p.get('low_contrast_examples', [])
     
-    ex_html = ''.join(f'<li>{escape(e)}</li>' for e in examples[:4])
-    co_html = ''.join(f'<li>{escape(e)}</li>' for e in contrast[:2])
+    ex_html = ''.join(example_li(e) for e in examples[:4])
+    co_html = ''.join(example_li(e) for e in contrast[:2])
     
     return f'''<div class="v10-card v10-card-high">
   <div class="v10-card-head">
@@ -91,8 +132,8 @@ def render_low_card(p, idx):
     examples = p.get('high_examples', []) or p.get('low_examples', [])
     contrast = p.get('low_contrast_examples', []) or p.get('high_contrast_examples', [])
     
-    ex_html = ''.join(f'<li>{escape(e)}</li>' for e in examples[:4])
-    co_html = ''.join(f'<li>{escape(e)}</li>' for e in contrast[:2])
+    ex_html = ''.join(example_li(e) for e in examples[:4])
+    co_html = ''.join(example_li(e) for e in contrast[:2])
     
     return f'''<div class="v10-card v10-card-low">
   <div class="v10-card-head">
@@ -171,6 +212,8 @@ V10_CSS = '''
 .v10-ex-label-red { color: #c0392b; }
 .v10-ex-list { margin: 4px 0 0 18px; padding: 0; line-height: 1.7; color: #444; font-size: 12px; }
 .v10-ex-list li { margin-bottom: 3px; }
+.v10-note-link { color: #1a73e8; text-decoration: none; }
+.v10-note-link:hover { color: #d92f5e; text-decoration: underline; }
 
 @media (max-width: 768px) {
   .v10-banner { padding: 10px 12px; }
