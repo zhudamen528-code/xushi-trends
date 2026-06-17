@@ -496,6 +496,16 @@ for metric_key in ['ctr1', 'ctr2', 'cvr', 'price']:
     html = html[:tw_start] + wrapped + html[panel_end:]
     print(f'✅ {metric_key} Tab V9 老内容已折叠')
 
+# V10 卖点助手 prompt 替换为 V10 方法论版本
+V10_PROMPT_FN = open(os.path.join(WORKDIR, 'v10_prompt_template.js'), encoding='utf-8').read().strip()
+old_prompt_pat = re.compile(r'function buildRefPromptText\(p\)\s*\{.*?return\s+`[^`]*`;\s*\}', re.DOTALL)
+m_prompt = old_prompt_pat.search(html)
+if m_prompt:
+    html = html[:m_prompt.start()] + V10_PROMPT_FN + html[m_prompt.end():]
+    print('✅ 卖点助手 prompt 已替换为 V10 版本')
+else:
+    print('⚠️ 老 buildRefPromptText 未找到，prompt 未更新')
+
 # 注入 V10 CSS（接在 V9 CSS 之后）
 html = html.replace('</style>', V10_CSS + '\n</style>', 1)
 
