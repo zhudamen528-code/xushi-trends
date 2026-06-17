@@ -75,7 +75,9 @@ def escape(s):
 def confidence_badge(c):
     if not c: return ''
     color = {'高': 'cb-high', '中': 'cb-mid', '低': 'cb-low'}.get(c, 'cb-mid')
-    return f'<span class="conf-badge {color}">信心 {escape(c)}</span>'
+    label = {'高': '证据强', '中': '证据中', '低': '证据弱'}.get(c, '证据中')
+    tooltip = {'高': '差距大 + 跨多个类目 + 样本量足', '中': '差距中等或样本偏小，可参考但需结合自身判断', '低': '可能是品类特性或样本噪声，仅供参考'}.get(c, '')
+    return f'<abbr class="conf-badge {color}" title="{tooltip}">{label}</abbr>'
 
 def render_high_card(p, idx):
     name = escape(p.get('cluster_name', '?'))
@@ -88,7 +90,7 @@ def render_high_card(p, idx):
     advice = escape(p.get('merchant_advice', '—'))
     
     diff_str = ''
-    if diff: diff_str = f'<span class="diff-pp">高组 +{diff}pp</span>'
+    if diff: diff_str = f'<span class="diff-pp">表现好的多 {diff}%</span>'
     if ratio and ratio != diff_str:
         diff_str += f' <span class="diff-ratio">{escape(ratio)}</span>'
     
@@ -105,18 +107,18 @@ def render_high_card(p, idx):
     {confidence_badge(conf)}
   </div>
   <div class="v10-card-meta">
-    <span class="v10-stat">高组命中 {high_n} 条 vs 低组 {low_n} 条</span>
+    <span class="v10-stat">表现好的笔记里 <b>{high_n} 篇</b>用了这招 · 表现差的笔记里只 <b>{low_n} 篇</b>用</span>
     {diff_str}
   </div>
   <div class="v10-card-cat">📊 类目分布：{cat}</div>
   <div class="v10-card-advice">💡 <b>商家建议</b>：{advice}</div>
   <details class="v10-card-examples">
-    <summary>📌 高组案例（{len(examples)}）+ 低组反例（{len(contrast)}）</summary>
+    <summary>📌 看真实案例（{len(examples)} 篇好笔记 + {len(contrast)} 篇反例）</summary>
     <div class="v10-ex-block">
-      <div class="v10-ex-label">🟢 高组写法</div>
+      <div class="v10-ex-label">🟢 表现好的笔记是这么写的</div>
       <ul class="v10-ex-list">{ex_html}</ul>
     </div>
-    {f'<div class="v10-ex-block"><div class="v10-ex-label v10-ex-label-red">🔴 低组反例</div><ul class="v10-ex-list">{co_html}</ul></div>' if co_html else ''}
+    {f'<div class="v10-ex-block"><div class="v10-ex-label v10-ex-label-red">🔴 表现差的笔记反例</div><ul class="v10-ex-list">{co_html}</ul></div>' if co_html else ''}
   </details>
 </div>'''
 
@@ -131,11 +133,9 @@ def render_low_card(p, idx):
     advice = escape(p.get('merchant_advice', '—'))
     
     diff_str = ''
-    if diff: diff_str = f'<span class="diff-pp diff-pp-red">低组 +{abs(diff) if isinstance(diff, (int, float)) else diff}pp</span>'
+    if diff: diff_str = f'<span class="diff-pp diff-pp-red">表现差的多 {abs(diff) if isinstance(diff, (int, float)) else diff}%</span>'
     if ratio: diff_str += f' <span class="diff-ratio">{escape(ratio)}</span>'
     
-    # 陷阱卡只看 low_examples（即 high_examples 字段在 low_only_patterns 里可能是 low 的案例）
-    # 兼容 schema：subagent 输出的 low_only_patterns 里 high_examples 通常指代低组案例
     examples = p.get('high_examples', []) or p.get('low_examples', [])
     contrast = p.get('low_contrast_examples', []) or p.get('high_contrast_examples', [])
     
@@ -149,12 +149,12 @@ def render_low_card(p, idx):
     {confidence_badge(conf)}
   </div>
   <div class="v10-card-meta">
-    <span class="v10-stat">低组命中 {low_n} 条 vs 高组 {high_n} 条</span>
+    <span class="v10-stat">表现差的笔记里 <b>{low_n} 篇</b>踩了这坑 · 表现好的笔记里只 <b>{high_n} 篇</b>这么写</span>
     {diff_str}
   </div>
   <div class="v10-card-cat">📊 类目分布：{cat}</div>
   <div class="v10-card-advice v10-card-advice-red">🚫 <b>避坑建议</b>：{advice}</div>
-  {f'<details class="v10-card-examples"><summary>📌 反例（{len(examples)}）</summary><ul class="v10-ex-list">{ex_html}</ul></details>' if examples else ''}
+  {f'<details class="v10-card-examples"><summary>📌 看真实反例（{len(examples)} 篇）</summary><ul class="v10-ex-list">{ex_html}</ul></details>' if examples else ''}
 </div>'''
 
 def render_price_playbook():
@@ -189,12 +189,12 @@ def render_price_playbook():
     
     return f'''<div class="v10-section price-playbook-section">
   <div class="v10-banner price-banner">
-    <div class="v10-banner-title">💎 件单价拉升 · 4 大固定机制（V10 改版）</div>
-    <div class="v10-banner-sub">件单价受商品定价/促销/库存/人群消费力影响太大，<b>笔记内容只能影响临门一脚</b>。这里不做差分聚类（会被"贵商品天然贵"污染），改成 4 个可直接照抄的运营机制，配本周池里真实案例。</div>
+    <div class="v10-banner-title">💎 件单价怎么拉？· 4 个能直接抄的玩法</div>
+    <div class="v10-banner-sub">件单价受商品定价、促销、库存、人群消费力影响，<b>笔记内容能改的是"临门一脚的引导"</b>。这里给 4 个能直接抄的玩法，配本周真实案例。</div>
   </div>
   
   <div class="v10-mechanism v10-mech-hero">
-    💎 <b>核心心智</b>：件单价 = 商品定价 × 平均购买件数。商品定价改不了，但「平均购买件数」可以通过笔记话术拉高（凑单/赠品/囤货/任选）。
+    💎 <b>关键心智</b>：件单价 = 商品标价 × 平均买几件。商品标价改不了，但<b>平均买几件</b>可以通过笔记话术拉高（凑单 / 赠品 / 囤货 / 任选）。
   </div>
   
   <div class="price-mech-grid">{''.join(cards)}</div>
@@ -228,21 +228,21 @@ def render_metric_algo_corr_table():
 </tr>''')
     
     return f'''<div class="metric-algo-corr">
-  <div class="mac-title">🤖 算法分 × DGMV 真实阶梯（n=1199）</div>
-  <div class="mac-sub">把池里 1199 篇笔记按算法分 4 等分（Q1 低 → Q4 高），看每档真实 DGMV 和曝光中位数。<b>这不是拟合，是实测产出</b>。</div>
+  <div class="mac-title">🤖 平台算法分 × <abbr title="DGMV = 笔记带来的直接成交金额（小红书后台同口径）">DGMV</abbr> 真实阶梯（n=1199 篇笔记）</div>
+  <div class="mac-sub">把池里 1199 篇笔记<b>按算法打分从低到高排队</b>，分成 4 段，看每段笔记<b>典型 DGMV 和曝光</b>是多少。<b>这是实测产出，不是统计模型</b>。</div>
   <table class="mac-table mac-ladder">
     <thead><tr>
-      <th>算法分</th>
-      <th>Q1(低) 中位 DGMV</th>
-      <th>Q4(高) 中位 DGMV</th>
-      <th>DGMV 倍率</th>
-      <th>曝光倍率</th>
+      <th>平台给的算法分</th>
+      <th><abbr title="把所有笔记按算法分从高到低排队，分数最低的 25%">算法分倒数 25%</abbr><br><span class="mac-th-sub">这批笔记典型 DGMV</span></th>
+      <th><abbr title="把所有笔记按算法分从高到低排队，分数最高的 25%">算法分 Top 25%</abbr><br><span class="mac-th-sub">这批笔记典型 DGMV</span></th>
+      <th>多卖多少倍</th>
+      <th>多拿多少倍曝光</th>
       <th></th>
     </tr></thead>
     <tbody>{''.join(rows)}</tbody>
   </table>
   <div class="mac-key">💎 <b>关键洞察</b>：算法分高的笔记 DGMV 是算法分低的 <b>2-19 倍</b>，曝光最多大 <b>170 倍</b>。追"<b>真诚分享 / 营销味淡 / 笔记质量分</b>"非常有用；但要警惕"<b>好点击留人</b>"分高的笔记反而少卖货——可能是标题党骗到了点击但卖不动。</div>
-  <div class="mac-warn">📌 注：之前版本用皮尔逊系数拟合 4 个比率指标（CTR1/CTR2/CVR/件单价），系数 0.05-0.15 噪声级别且方向解读容易误导，已撤换为分箱真实阶梯。</div>
+  <div class="mac-warn">📌 注：之前用统计相关系数（皮尔逊）拟合点击率类指标，数值小且方向容易误导，已改成上面的"按算法分排队分 4 段看典型产出"。</div>
 </div>'''
 
 CTR2_PRIORITY_NOTE = '''<div class="ctr2-priority-note">
@@ -267,18 +267,18 @@ def render_v10_section(metric_key, metric_label):
     
     return f'''<div class="v10-section">
   <div class="v10-banner">
-    <div class="v10-banner-title">🔬 {escape(metric_label)} 高 vs 低对照差分聚类（V10 新增）</div>
-    <div class="v10-banner-sub">按类目内 P75 vs P25 严格切高低对照组，找出"高组独有 / 低组陷阱"写法。<b>这是相关性证据，不是因果，但样本量足够、类目变量已控住</b>。</div>
+    <div class="v10-banner-title">🔬 {escape(metric_label)} 高低对照 · 学好的，避坑的</div>
+    <div class="v10-banner-sub">把同类目里"<b>{escape(metric_label)} 排前 25%</b>"和"<b>排后 25%</b>"的笔记拉出来比，找出"好笔记常用、坏笔记踩坑"的写法。<b>这是从已发笔记里归纳的规律，是参考不是保证</b>。</div>
   </div>
   
-  {f'<div class="v10-mechanism v10-mech-hero">💎 <b>核心机制</b>：{escape(mechanism)}</div>' if mechanism else ''}
+  {f'<div class="v10-mechanism v10-mech-hero">💎 <b>核心规律</b>：{escape(mechanism)}</div>' if mechanism else ''}
   
   {ctr2_priority}
   
-  <div class="v10-subhead v10-subhead-green">✅ {len(high_patterns)} 个高组独有写法 → 抄</div>
+  <div class="v10-subhead v10-subhead-green">✅ 表现好的笔记常用的 {len(high_patterns)} 招 → 抄</div>
   <div class="v10-cards-grid">{high_html}</div>
   
-  <div class="v10-subhead v10-subhead-red">🚫 {len(low_patterns)} 个低组陷阱 → 避</div>
+  <div class="v10-subhead v10-subhead-red">🚫 表现差的笔记常踩的 {len(low_patterns)} 个坑 → 避</div>
   <div class="v10-cards-grid">{low_html}</div>
 </div>'''
 
@@ -338,6 +338,12 @@ V10_CSS = '''
 .v9-legacy-fold[open] .v9-legacy-summary::before { transform: rotate(90deg); }
 .v9-legacy-summary:hover { color: #d92f5e; }
 .v9-legacy-body { padding: 16px 18px 4px; border-top: 1px solid #e5e7eb; }
+
+/* 业务术语 hover */
+.term-abbr { text-decoration: none; border-bottom: 1px dotted #aaa; cursor: help; }
+.term-abbr:hover { background: #fff5d6; }
+.mac-th-sub { display: block; font-size: 10px; color: #888; font-weight: 400; margin-top: 2px; }
+abbr.conf-badge { text-decoration: none; cursor: help; }
 .v10-subhead { font-size: 14px; font-weight: 700; margin: 18px 0 10px; padding: 6px 10px; border-radius: 4px; }
 .v10-subhead-green { color: #1a7a3f; background: #e8f5ee; }
 .v10-subhead-red { color: #b32a2a; background: #fde8e8; }
@@ -490,7 +496,7 @@ for metric_key in ['ctr1', 'ctr2', 'cvr', 'price']:
         legacy = legacy[:-6].rstrip()
     legacy_back_close = (panel_end - len((html[tw_start:panel_end]).rstrip())) - tw_start  # 不用，直接简化
     wrapped = f'''<details class="v9-legacy-fold">
-  <summary class="v9-legacy-summary">📚 V9 老方法 · 两套武器框架 + 40 方法卡 + 反直觉发现（点开看更多角度参考）</summary>
+  <summary class="v9-legacy-summary">📚 看更多写法参考（点开：图文/视频路径详细方法卡 + 反直觉发现）</summary>
   <div class="v9-legacy-body">{html[tw_start:panel_end]}</div>
 </details>'''
     html = html[:tw_start] + wrapped + html[panel_end:]
@@ -508,6 +514,43 @@ else:
 
 # 注入 V10 CSS（接在 V9 CSS 之后）
 html = html.replace('</style>', V10_CSS + '\n</style>', 1)
+
+# 给 CTR1/CTR2/CVR/GPM/DGMV 等业务术语加 hover 解释（仅文本中的独立词，避 tag attribute）
+TERM_TOOLTIPS = {
+    'CTR1': '封面点击率：曝光 → 点开笔记的比例（你后台叫"封面点击率/CTR"）',
+    'CTR2': '商品卡点击率：看了笔记 → 点开商品卡的比例',
+    'CVR':  '下单转化率：看了商品卡 → 实际下单的比例',
+    'GPM':  'GMV per Mille：每 1000 次曝光带来的 GMV，等于 CTR1 × CTR2 × CVR × 件单价 × 1000',
+    'DGMV': '笔记直接带来的 GMV（小红书后台同口径，不含间接成交）',
+    'GMV':  '商品成交金额（销售额）',
+    '件单价': '单笔订单平均成交金额 = DGMV / 下单数',
+}
+# 只替换文本节点中第一次出现的（避免重复嵌套）
+import html as _html
+already_wrapped = set()
+def wrap_terms_in_text(html_text):
+    """对 HTML 文本（非 attribute/tag）替换术语"""
+    # 简单做法：先 split 成 tag/text segments
+    parts = re.split(r'(<[^>]+>)', html_text)
+    out = []
+    for i, p in enumerate(parts):
+        if i % 2 == 1:
+            # 是 tag，不动
+            out.append(p)
+            continue
+        # 文本段，对每个术语只替换首次（避免无限嵌套）
+        for term, tip in TERM_TOOLTIPS.items():
+            # 已被 abbr 包过的就跳过
+            if f'>{term}<' in p or f'"{tip}"' in p: continue
+            # 用边界匹配避免误替换（如 "ictr1" 不替换）
+            pattern = re.compile(r'(?<![A-Za-z0-9_])' + re.escape(term) + r'(?![A-Za-z0-9_])')
+            # 替换前两次（防止整页太多 abbr）
+            p, n = pattern.subn(f'<abbr class="term-abbr" title="{_html.escape(tip)}">{term}</abbr>', p, count=2)
+        out.append(p)
+    return ''.join(out)
+
+html = wrap_terms_in_text(html)
+print(f'✅ 业务术语已加 hover tooltip')
 
 # 写回
 open(out_path, 'w', encoding='utf-8').write(html)
