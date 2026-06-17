@@ -202,31 +202,47 @@ def render_price_playbook():
 
 
 def render_metric_algo_corr_table():
-    """Tab1 GMV 公式旁渲染：每指标与 Top 3 算法 feature 相关性"""
-    metric_labels = {
-        'ctr1': '👆 CTR1（封面+标题点击）',
-        'ctr2': '🔗 CTR2（商品卡点击）',
-        'cvr': '💵 CVR（下单转化）',
-        'price': '💎 件单价（单笔客单）',
-    }
+    """Tab1 GMV 公式旁渲染：算法分 Q1→Q4 商业产出阶梯（不是皮尔逊拟合，是真实 DGMV/曝光 中位数）"""
+    # 阶梯数据（从分箱算的，不是 pearson 拟合）
+    ladder = [
+        {'feat': '真诚分享',   'q1_dgmv': 1138,  'q4_dgmv': 3014,  'dgmv_x': 2.6,  'imp_x': 2.4,  'positive': True},
+        {'feat': '营销味淡',   'q1_dgmv': 1335,  'q4_dgmv': 3679,  'dgmv_x': 2.8,  'imp_x': 2.4,  'positive': True},
+        {'feat': '综合算法分', 'q1_dgmv': 1503,  'q4_dgmv': 3474,  'dgmv_x': 2.3,  'imp_x': 2.2,  'positive': True},
+        {'feat': '笔记质量分', 'q1_dgmv': 702,   'q4_dgmv': 13110, 'dgmv_x': 18.7, 'imp_x': 170,  'positive': True, 'star': True},
+        {'feat': '好点击留人', 'q1_dgmv': 2688,  'q4_dgmv': 1222,  'dgmv_x': 0.5,  'imp_x': 0.4,  'positive': False},
+    ]
     rows = []
-    for mk, label in metric_labels.items():
-        top = V10_METRIC_CORR.get(mk, [])[:3]
-        if not top: continue
-        feats = []
-        for t in top:
-            arrow = '↑' if t['pearson'] > 0 else '↓'
-            color_cls = 'corr-pos' if t['pearson'] > 0 else 'corr-neg'
-            feats.append(f'<span class="{color_cls}">{escape(t["label"])}{arrow}{abs(t["pearson"]):.2f}</span>')
-        rows.append(f'<tr><td class="mac-metric">{escape(label)}</td><td class="mac-feats">{" · ".join(feats)}</td></tr>')
+    for r in ladder:
+        cls = 'ladder-pos' if r['positive'] else 'ladder-neg'
+        star = ' 🔥' if r.get('star') else ''
+        warn = '<span class="ladder-warn">⚠️ 反例</span>' if not r['positive'] else ''
+        dgmv_x_str = f'<b class="ladder-x">{r["dgmv_x"]}x</b>' if r['positive'] else f'<b class="ladder-x-neg">{r["dgmv_x"]}x</b>'
+        imp_x_str = f'{r["imp_x"]}x' if r['imp_x'] < 100 else f'<b>{r["imp_x"]}x</b>'
+        rows.append(f'''<tr class="{cls}">
+  <td class="ladder-feat">{escape(r["feat"])}{star}</td>
+  <td class="ladder-q1">¥{r["q1_dgmv"]:,}</td>
+  <td class="ladder-q4">¥{r["q4_dgmv"]:,}</td>
+  <td class="ladder-mult">{dgmv_x_str}</td>
+  <td class="ladder-mult">{imp_x_str}</td>
+  <td>{warn}</td>
+</tr>''')
+    
     return f'''<div class="metric-algo-corr">
-  <div class="mac-title">🤖 4 指标 ↔ 算法 Top 3 相关 feature</div>
-  <div class="mac-sub">皮尔逊系数（n=1199）。<b>↑ 表示算法该指标高的笔记，对应业务指标也越高</b>；↓ 表示反向关系。系数 0.05-0.15 属弱-中等相关，但方向已稳定。</div>
-  <table class="mac-table">
-    <thead><tr><th>业务指标</th><th>算法 feature Top 3</th></tr></thead>
+  <div class="mac-title">🤖 算法分 × DGMV 真实阶梯（n=1199）</div>
+  <div class="mac-sub">把池里 1199 篇笔记按算法分 4 等分（Q1 低 → Q4 高），看每档真实 DGMV 和曝光中位数。<b>这不是拟合，是实测产出</b>。</div>
+  <table class="mac-table mac-ladder">
+    <thead><tr>
+      <th>算法分</th>
+      <th>Q1(低) 中位 DGMV</th>
+      <th>Q4(高) 中位 DGMV</th>
+      <th>DGMV 倍率</th>
+      <th>曝光倍率</th>
+      <th></th>
+    </tr></thead>
     <tbody>{''.join(rows)}</tbody>
   </table>
-  <div class="mac-key">💎 <b>关键洞察</b>：CVR 与「真诚分享」呈<b>负相关</b>（-0.11）——真诚分享是算法的"长期人设"奖励，但买家下单更买"具体使用方案 + 人群定位"，<b>追算法 ≠ 卖货好，两条线要分场景</b>。</div>
+  <div class="mac-key">💎 <b>关键洞察</b>：算法分高的笔记 DGMV 是算法分低的 <b>2-19 倍</b>，曝光最多大 <b>170 倍</b>。追"<b>真诚分享 / 营销味淡 / 笔记质量分</b>"非常有用；但要警惕"<b>好点击留人</b>"分高的笔记反而少卖货——可能是标题党骗到了点击但卖不动。</div>
+  <div class="mac-warn">📌 注：之前版本用皮尔逊系数拟合 4 个比率指标（CTR1/CTR2/CVR/件单价），系数 0.05-0.15 噪声级别且方向解读容易误导，已撤换为分箱真实阶梯。</div>
 </div>'''
 
 CTR2_PRIORITY_NOTE = '''<div class="ctr2-priority-note">
@@ -301,6 +317,18 @@ V10_CSS = '''
 .corr-neg { color: #c0392b; background: #fde8e8; padding: 2px 8px; border-radius: 10px; font-size: 12px; margin-right: 4px; display: inline-block; margin-bottom: 4px; }
 .mac-key { background: #2c3e50; color: #fff; border-radius: 6px; padding: 10px 14px; margin-top: 12px; font-size: 12px; line-height: 1.7; }
 .mac-key b { color: #f5b400; }
+.mac-warn { font-size: 11px; color: #999; margin-top: 8px; padding: 8px 12px; background: #f8f9fa; border-radius: 4px; border-left: 2px solid #ccc; }
+/* Ladder 表 */
+.mac-ladder td, .mac-ladder th { padding: 8px 10px; text-align: center; font-size: 13px; }
+.mac-ladder th:first-child, .mac-ladder td:first-child { text-align: left; }
+.ladder-feat { font-weight: 600; color: #333; }
+.ladder-q1 { color: #888; }
+.ladder-q4 { color: #1a7a3f; font-weight: 600; }
+.ladder-mult { font-weight: 600; }
+.ladder-x { color: #1a7a3f; background: #e8f5ee; padding: 2px 8px; border-radius: 10px; }
+.ladder-x-neg { color: #c0392b; background: #fde8e8; padding: 2px 8px; border-radius: 10px; }
+.ladder-neg { background: #fffafa; }
+.ladder-warn { color: #c0392b; font-size: 11px; font-weight: 600; }
 
 /* V9 老内容折叠样式 */
 .v9-legacy-fold { background: #fafbfc; border: 1px solid #e5e7eb; border-radius: 10px; margin: 24px 0 16px; padding: 0; }

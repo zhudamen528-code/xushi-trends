@@ -1,0 +1,98 @@
+{
+  "imp_log": [
+    {
+      "feat": "algo_quality_rank",
+      "label": "综合算法分位",
+      "pearson": 0.119,
+      "n": 1200
+    },
+    {
+      "feat": "first_img_quality_level",
+      "label": "封面质量",
+      "pearson": 0.095,
+      "n": 1193
+    },
+    {
+      "feat": "rk_good_click",
+      "label": "好点击留人分位",
+      "pearson": 0.095,
+      "n": 1200
+    },
+    {
+      "feat": "rk_low_bad",
+      "label": "营销味淡分位",
+      "pearson": 0.093,
+      "n": 1200
+    },
+    {
+      "feat": "good_click_quality_score",
+      "label": "好点击留人",
+      "pearson": -0.091,
+      "n": 1200
+    }
+  ],
+  "dgmv_log": [
+    {
+      "feat": "rk_low_bad",
+      "label": "营销味淡分位",
+      "pearson": 0.099,
+      "n": 1200
+    },
+    {
+      "feat": "first_img_quality_level",
+      "label": "封面质量",
+      "pearson": 0.086,
+      "n": 1193
+    },
+    {
+      "feat": "model_sincerity_score",
+      "label": "真诚分享",
+      "pearson": 0.085,
+      "n": 1200
+    },
+    {
+      "feat": "rk_sincerity",
+      "label": "真诚分享分位",
+      "pearson": -0.084,
+      "n": 1200
+    },
+    {
+      "feat": "algo_quality_rank",
+      "label": "综合算法分位",
+      "pearson": 0.073,
+      "n": 1200
+    }
+  ],
+  "gpm_log": [
+    {
+      "feat": "algo_quality_rank",
+      "label": "综合算法分位",
+      "pearson": -0.16,
+      "n": 1200
+    },
+    {
+      "feat": "rk_good_click",
+      "label": "好点击留人分位",
+      "pearson": -0.117,
+      "n": 1200
+    },
+    {
+      "feat": "good_click_quality_score",
+      "label": "好点击留人",
+      "pearson": 0.107,
+      "n": 1200
+    },
+    {
+      "feat": "aigc_score",
+      "label": "AIGC风险",
+      "pearson": 0.102,
+      "n": 1194
+    },
+    {
+      "feat": "first_img_quality_level",
+      "label": "封面质量",
+      "pearson": -0.091,
+      "n": 1193
+    }
+  ]
+}
