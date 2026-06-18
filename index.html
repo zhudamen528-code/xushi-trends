@@ -956,7 +956,7 @@ body {
 .main-layout { display: block !important; flex-direction: column !important; }
 .main-content { width: 100% !important; }
 
-/* === V8 <abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 风格 === */
+/* === V8 <abbr class="term-abbr" data-tip="每千次曝光带来的销售额（GMV per Mille）">GPM</abbr> 风格 === */
 .hero { background: linear-gradient(135deg,#fff0f0,#fff9f5); padding: 24px; border-radius: 16px; margin-bottom: 24px; }
 .hero h2 { margin: 0 0 8px; color: #ff2442; font-size: 22px; }
 .hero .meta { margin: 0; color: #666; font-size: 13px; }
@@ -1187,7 +1187,7 @@ body {
 #tab-cat .cat-focus { font-size:11px; color:#1565c0; background:#e3f2fd; padding:6px 10px; border-radius:4px; }
 
 
-/* === V8f: <abbr class="term-abbr" title="GMV per Mille：每 1000 次曝光带来的 GMV，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 自查工具 === */
+/* === V8f: <abbr class="term-abbr" data-tip="每千次曝光带来的销售额（GMV per Mille）">GPM</abbr> 自查工具 === */
 .self-check-card { background:white; border:1px solid #eee; border-radius:12px; padding:18px; margin-top:18px; box-shadow:0 2px 6px rgba(255,36,66,0.05); }
 .self-check-head { display:flex; flex-direction:column; gap:4px; margin-bottom:14px; }
 .self-check-head strong { font-size:15px; color:#333; }
@@ -1320,7 +1320,7 @@ body { color: var(--c-text); }
 .v10-mech-hero { background: linear-gradient(135deg, var(--c-deep) 0%, var(--c-deep-2) 100%) !important; color: #fff !important; border-left: 4px solid var(--c-warn) !important; padding: 16px 20px !important; font-size: 15px !important; line-height: 1.8 !important; box-shadow: 0 2px 8px rgba(0,0,0,0.15); margin: 16px 0 20px !important; border-radius: 8px !important; }
 .v10-mech-hero b { color: var(--c-warn) !important; font-size: 16px; }
 
-/* <abbr class="term-abbr" title="商品卡点击率：看了笔记 → 点开商品卡的比例">CTR2</abbr> 三层优先级前置说明 */
+/* <abbr class="term-abbr" data-tip="商品卡点击率，看了笔记后点开商品卡的比例">CTR2</abbr> 三层优先级前置说明 */
 .ctr2-priority-note { background: #fff; border: 1px solid #e8eaed; border-radius: 10px; padding: 16px 18px; margin: 14px 0 18px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
 .cpn-title { font-size: 14px; font-weight: 700; color: #d92f5e; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px dashed #f0d4dd; }
 .cpn-tier { padding: 8px 12px; margin: 6px 0; border-radius: 6px; font-size: 12px; line-height: 1.7; color: var(--c-text); }
@@ -1366,9 +1366,67 @@ body { color: var(--c-text); }
 .v9-legacy-summary:hover { color: #d92f5e; }
 .v9-legacy-body { padding: 16px 18px 4px; border-top: 1px solid var(--c-border); }
 
-/* 业务术语 hover */
-.term-abbr { text-decoration: none; border-bottom: 1px dotted var(--c-text-4); cursor: help; }
-.term-abbr:hover { background: var(--c-warn-bg-2); }
+/* 业务术语 hover：自实现 tooltip，桌面 hover + 移动 tap 都支持 */
+.term-abbr { 
+  text-decoration: none; 
+  border-bottom: 1px dotted var(--c-text-4); 
+  cursor: help; 
+  position: relative;
+  background: var(--c-warn-bg);
+  padding: 0 2px;
+  border-radius: 3px;
+}
+.term-abbr:hover, .term-abbr.tip-open { background: var(--c-warn-bg-2); }
+.term-abbr::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--c-deep);
+  color: #fff;
+  font-size: var(--fs-xs);
+  font-weight: 400;
+  line-height: 1.6;
+  padding: 8px 12px;
+  border-radius: 6px;
+  white-space: normal;
+  width: max-content;
+  max-width: 240px;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s, transform 0.15s, visibility 0.15s;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  text-align: left;
+}
+.term-abbr::before {
+  content: '';
+  position: absolute;
+  bottom: calc(100% + 0px);
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: var(--c-deep);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s, visibility 0.15s;
+  pointer-events: none;
+  z-index: 999;
+}
+.term-abbr:hover::after, .term-abbr:hover::before,
+.term-abbr.tip-open::after, .term-abbr.tip-open::before {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+.term-abbr:hover::before, .term-abbr.tip-open::before {
+  transform: translateX(-50%);
+}
+@media (max-width: 640px) {
+  .term-abbr::after { max-width: 220px; font-size: 11px; }
+}
 .mac-th-sub { display: block; font-size: 10px; color: var(--c-text-3); font-weight: 400; margin-top: 2px; }
 abbr.conf-badge { text-decoration: none; cursor: help; }
 
@@ -1387,7 +1445,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
 .v10-stat-sep { color: var(--c-text-4); font-size: 10px; font-weight: 400; }
 .v10-card-cat { font-size: var(--fs-xs); color: var(--c-text-3); margin-bottom: var(--sp-2); }
 
-/* Tab 内 sticky 小目录（仅 GMV 总览 Tab）*/
+/* Tab 内 sticky 小目录（仅 <abbr class="term-abbr" data-tip="商品成交金额，即销售额">GMV</abbr> 总览 Tab）*/
 .tab-anchor-nav { position: sticky; top: 56px; z-index: 8; background: rgba(255,255,255,0.97); backdrop-filter: blur(8px); border-bottom: 1px solid var(--c-border); margin: -8px -8px var(--sp-3); padding: 8px 8px; display: flex; gap: 6px; overflow-x: auto; font-size: var(--fs-xs); }
 .tab-anchor-nav a { color: var(--c-text-3); text-decoration: none; white-space: nowrap; padding: 4px 10px; border-radius: 6px; border: 1px solid transparent; transition: all 0.15s; }
 .tab-anchor-nav a:hover { background: var(--c-bg-3); color: var(--c-text); border-color: var(--c-border); }
@@ -1445,7 +1503,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
 .v10-note-link { color: var(--c-deep); text-decoration: none; }
 .v10-note-link:hover { color: #d92f5e; text-decoration: underline; }
 
-/* 件单价 4 机制 playbook */
+/* <abbr class="term-abbr" data-tip="单笔订单平均成交金额">件单价</abbr> 4 机制 playbook */
 .price-playbook-section { margin: 20px 0; }
 .price-banner { background: linear-gradient(135deg, #ffe9f0, #ffd5e3) !important; border-left-color: #d92f5e !important; }
 .v10-mech-hero { background: linear-gradient(135deg, var(--c-deep), var(--c-deep-2)); color: #f0f0f0; border-left: 4px solid var(--c-warn); font-size: 14px; padding: 14px 18px; }
@@ -1817,11 +1875,11 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
 <div class="container">
 
   <div class="tab-nav">
-    <button class="tab-btn active" onclick="switchTab(event,'gpm')">💰 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> 总览</button>
-    <button class="tab-btn" onclick="switchTab(event,'ctr1')">👆 <abbr class="term-abbr" title="封面点击率：曝光 → 点开笔记的比例（你后台叫&quot;封面点击率/CTR&quot;）">CTR1</abbr> 封面+标题</button>
-    <button class="tab-btn" onclick="switchTab(event,'ctr2')">🔗 <abbr class="term-abbr" title="商品卡点击率：看了笔记 → 点开商品卡的比例">CTR2</abbr> 商品卡</button>
-    <button class="tab-btn" onclick="switchTab(event,'cvr')">💵 <abbr class="term-abbr" title="下单转化率：看了商品卡 → 实际下单的比例">CVR</abbr> 转化</button>
-    <button class="tab-btn" onclick="switchTab(event,'price')">💎 <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr></button>
+    <button class="tab-btn active" onclick="switchTab(event,'gpm')">💰 <abbr class="term-abbr" data-tip="商品成交金额，即销售额">GMV</abbr> 总览</button>
+    <button class="tab-btn" onclick="switchTab(event,'ctr1')">👆 <abbr class="term-abbr" data-tip="封面点击率，曝光后被点开笔记的比例（小红书后台叫封面点击率）">CTR1</abbr> 封面+标题</button>
+    <button class="tab-btn" onclick="switchTab(event,'ctr2')">🔗 <abbr class="term-abbr" data-tip="商品卡点击率，看了笔记后点开商品卡的比例">CTR2</abbr> 商品卡</button>
+    <button class="tab-btn" onclick="switchTab(event,'cvr')">💵 <abbr class="term-abbr" data-tip="下单转化率，点开商品卡后实际下单的比例">CVR</abbr> 转化</button>
+    <button class="tab-btn" onclick="switchTab(event,'price')">💎 <abbr class="term-abbr" data-tip="单笔订单平均成交金额">件单价</abbr></button>
     <button class="tab-btn" onclick="switchTab(event,'cat')">🎁 卖点&策划助手</button>
     <button class="tab-btn" onclick="switchTab(event,'audit')">🚦 违规预审</button>
     <button class="tab-btn" onclick="switchTab(event,'tools')">🛠️ 我的参考</button>
@@ -1862,21 +1920,21 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <div class="main-content">
 <div class="tab-panel" id="tab-gpm">
   <div class="hero">
-    <h2>💰 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> 总览 · 提升你的笔记生意</h2>
+    <h2>💰 <abbr class="term-abbr" data-tip="商品成交金额，即销售额">GMV</abbr> 总览 · 提升你的笔记生意</h2>
     <p class="meta">数据窗口：2026-05-27 至 2026-06-09 · 笔记发布≥2026-05-27 · 更新 2026-06-10 17:50</p>
     <div class="funnel-formula" id="anchor-formula">
-      <div class="formula-line"><strong>笔记 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> = <abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 GMV，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> × 曝光（PV） ÷ 1000</strong></div>
-      <div class="formula-line"><strong><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> = <abbr class="term-abbr" title="封面点击率：曝光 → 点开笔记的比例（你后台叫&quot;封面点击率/CTR&quot;）">CTR1</abbr> × <abbr class="term-abbr" title="商品卡点击率：看了笔记 → 点开商品卡的比例">CTR2</abbr> × <abbr class="term-abbr" title="下单转化率：看了商品卡 → 实际下单的比例">CVR</abbr> × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000</strong></div>
+      <div class="formula-line"><strong>笔记 <abbr class="term-abbr" data-tip="商品成交金额，即销售额">GMV</abbr> = <abbr class="term-abbr" data-tip="每千次曝光带来的销售额（GMV per Mille）">GPM</abbr> × 曝光（PV） ÷ 1000</strong></div>
+      <div class="formula-line"><strong><abbr class="term-abbr" data-tip="每千次曝光带来的销售额（GMV per Mille）">GPM</abbr> = <abbr class="term-abbr" data-tip="封面点击率，曝光后被点开笔记的比例（小红书后台叫封面点击率）">CTR1</abbr> × <abbr class="term-abbr" data-tip="商品卡点击率，看了笔记后点开商品卡的比例">CTR2</abbr> × <abbr class="term-abbr" data-tip="下单转化率，点开商品卡后实际下单的比例">CVR</abbr> × <abbr class="term-abbr" data-tip="单笔订单平均成交金额">件单价</abbr> × 1000</strong></div>
       <div class="formula-flow">笔记曝光 → <span class="step ctr1">👆 封面点击</span> → <span class="step ctr2">🔗 商品卡点击</span> → <span class="step cvr">💵 下单</span> → <span class="step price">💎 客单价</span></div>
-      <div class="formula-tip">📍 <strong><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 是你笔记生意提升的核心</strong>：<abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 是商家自己 100% 可控的。<abbr class="term-abbr" title="GMV per Mille：每 1000 次曝光带来的 GMV，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 提升不仅让每一份曝光能赚到的钱更多，平台也会把流量倾斜给 GPM 高的笔记——所以提升 GPM 是「单价 × 流量」双重增长。</div>
+      <div class="formula-tip">📍 <strong><abbr class="term-abbr" data-tip="每千次曝光带来的销售额（GMV per Mille）">GPM</abbr> 是你笔记生意提升的核心</strong>：<abbr class="term-abbr" data-tip="每千次曝光带来的销售额（GMV per Mille）">GPM</abbr> 是商家自己 100% 可控的。<abbr class="term-abbr" data-tip="每千次曝光带来的销售额（GMV per Mille）">GPM</abbr> 提升不仅让每一份曝光能赚到的钱更多，平台也会把流量倾斜给 <abbr class="term-abbr" data-tip="每千次曝光带来的销售额（GMV per Mille）">GPM</abbr> 高的笔记——所以提升 GPM 是「单价 × 流量」双重增长。</div>
 <div class="metric-algo-corr" id="anchor-algo">
-  <div class="mac-title">🤖 平台算法分 × <abbr title="DGMV = 笔记带来的直接成交金额（小红书后台同口径）"><abbr class="term-abbr" title="笔记直接带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>（小红书后台同口径，不含间接成交）">DGMV</abbr></abbr> 真实阶梯（n=1199 篇笔记）</div>
-  <div class="mac-sub">把池里 1199 篇笔记<b>按算法打分从低到高排队</b>，分成 4 段，看每段笔记<b>典型 <abbr class="term-abbr" title="笔记直接带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>（小红书后台同口径，不含间接成交）">DGMV</abbr> 和曝光</b>是多少。<b>这是实测产出，不是统计模型</b>。</div>
+  <div class="mac-title">🤖 平台算法分 × <abbr title="DGMV = 笔记带来的直接成交金额（小红书后台同口径）">DGMV</abbr> 真实阶梯（n=1199 篇笔记）</div>
+  <div class="mac-sub">把池里 1199 篇笔记<b>按算法打分从低到高排队</b>，分成 4 段，看每段笔记<b>典型 <abbr class="term-abbr" data-tip="笔记直接带来的销售额（不含间接成交，小红书后台同口径）">DGMV</abbr> 和曝光</b>是多少。<b>这是实测产出，不是统计模型</b>。</div>
   <table class="mac-table mac-ladder">
     <thead><tr>
       <th>平台给的算法分</th>
-      <th><abbr title="把所有笔记按算法分从高到低排队，分数最低的 25%">算法分倒数 25%</abbr><br><span class="mac-th-sub">这批笔记典型 <abbr class="term-abbr" title="笔记直接带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>（小红书后台同口径，不含间接成交）">DGMV</abbr></span></th>
-      <th><abbr title="把所有笔记按算法分从高到低排队，分数最高的 25%">算法分 Top 25%</abbr><br><span class="mac-th-sub">这批笔记典型 <abbr class="term-abbr" title="笔记直接带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>（小红书后台同口径，不含间接成交）">DGMV</abbr></span></th>
+      <th><abbr title="把所有笔记按算法分从高到低排队，分数最低的 25%">算法分倒数 25%</abbr><br><span class="mac-th-sub">这批笔记典型 <abbr class="term-abbr" data-tip="笔记直接带来的销售额（不含间接成交，小红书后台同口径）">DGMV</abbr></span></th>
+      <th><abbr title="把所有笔记按算法分从高到低排队，分数最高的 25%">算法分 Top 25%</abbr><br><span class="mac-th-sub">这批笔记典型 <abbr class="term-abbr" data-tip="笔记直接带来的销售额（不含间接成交，小红书后台同口径）">DGMV</abbr></span></th>
       <th>多卖多少倍</th>
       <th>多拿多少倍曝光</th>
       <th></th>
@@ -1918,7 +1976,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   <td><span class="ladder-warn">⚠️ 反例</span></td>
 </tr></tbody>
   </table>
-  <div class="mac-key">💎 <b>关键洞察</b>：算法分高的笔记 <abbr class="term-abbr" title="笔记直接带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>（小红书后台同口径，不含间接成交）">DGMV</abbr> 是算法分低的 <b>2-19 倍</b>，曝光最多大 <b>170 倍</b>。追"<b>真诚分享 / 营销味淡 / 笔记质量分</b>"非常有用；但要警惕"<b>好点击留人</b>"分高的笔记反而少卖货——可能是标题党骗到了点击但卖不动。</div>
+  <div class="mac-key">💎 <b>关键洞察</b>：算法分高的笔记 <abbr class="term-abbr" data-tip="笔记直接带来的销售额（不含间接成交，小红书后台同口径）">DGMV</abbr> 是算法分低的 <b>2-19 倍</b>，曝光最多大 <b>170 倍</b>。追"<b>真诚分享 / 营销味淡 / 笔记质量分</b>"非常有用；但要警惕"<b>好点击留人</b>"分高的笔记反而少卖货——可能是标题党骗到了点击但卖不动。</div>
   <div class="mac-warn">📌 注：之前用统计相关系数（皮尔逊）拟合点击率类指标，数值小且方向容易误导，已改成上面的"按算法分排队分 4 段看典型产出"。</div>
 </div>
     </div>
@@ -1927,7 +1985,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   <a href="#anchor-formula">📐 公式</a>
   <a href="#anchor-algo">🤖 算法分阶梯</a>
   <a href="#anchor-industry">🎯 行业参考</a>
-  <a href="#anchor-selfcheck">🧮 <abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 自查</a>
+  <a href="#anchor-selfcheck">🧮 GPM 自查</a>
 </nav>
 
   <div class="section-block" id="anchor-industry">
@@ -1946,19 +2004,19 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
         </tr>
       </thead>
       <tbody><tr>
-  <td class="kpi-name"><abbr class="term-abbr" title="封面点击率：曝光 → 点开笔记的比例（你后台叫&quot;封面点击率/CTR&quot;）">CTR1</abbr> 封面点击率</td>
+  <td class="kpi-name"><abbr class="term-abbr" data-tip="封面点击率，曝光后被点开笔记的比例（小红书后台叫封面点击率）">CTR1</abbr> 封面点击率</td>
   <td class="kpi-val-pic">10.1%</td>
   <td class="kpi-val-vid">7.7%</td>
 </tr><tr>
-  <td class="kpi-name"><abbr class="term-abbr" title="商品卡点击率：看了笔记 → 点开商品卡的比例">CTR2</abbr> 商品卡点击率</td>
+  <td class="kpi-name"><abbr class="term-abbr" data-tip="商品卡点击率，看了笔记后点开商品卡的比例">CTR2</abbr> 商品卡点击率</td>
   <td class="kpi-val-pic">35.6%</td>
   <td class="kpi-val-vid">8.9%</td>
 </tr><tr>
-  <td class="kpi-name"><abbr class="term-abbr" title="下单转化率：看了商品卡 → 实际下单的比例">CVR</abbr> 转化率</td>
+  <td class="kpi-name"><abbr class="term-abbr" data-tip="下单转化率，点开商品卡后实际下单的比例">CVR</abbr> 转化率</td>
   <td class="kpi-val-pic">6.2%</td>
   <td class="kpi-val-vid">7.7%</td>
 </tr><tr>
-  <td class="kpi-name"><abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr></td>
+  <td class="kpi-name"><abbr class="term-abbr" data-tip="单笔订单平均成交金额">件单价</abbr></td>
   <td class="kpi-val-pic">¥46</td>
   <td class="kpi-val-vid">¥41</td>
 </tr></tbody>
@@ -1972,7 +2030,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   <!-- V8f: 商家自查 GPM 工具 -->
   <div class="self-check-card">
     <div class="self-check-head">
-      <strong>🔍 我的笔记 <abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 自查</strong>
+      <strong>🔍 我的笔记 GPM 自查</strong>
       <span class="self-check-sub">从你后台笔记数据中填进来，一键定位最弱环节</span>
     </div>
     <div class="self-check-form">
@@ -1983,10 +2041,10 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
         </div>
       </div>
       <div class="sc-grid">
-        <div class="sc-input"><label><abbr class="term-abbr" title="封面点击率：曝光 → 点开笔记的比例（你后台叫&quot;封面点击率/CTR&quot;）">CTR1</abbr> (封面点击率, %)</label><input type="number" step="0.1" id="sc-ctr1" placeholder="例 8.5"></div>
-        <div class="sc-input"><label><abbr class="term-abbr" title="商品卡点击率：看了笔记 → 点开商品卡的比例">CTR2</abbr> (商品卡点击率, %)</label><input type="number" step="0.1" id="sc-ctr2" placeholder="例 30"></div>
-        <div class="sc-input"><label><abbr class="term-abbr" title="下单转化率：看了商品卡 → 实际下单的比例">CVR</abbr> (转化率, %)</label><input type="number" step="0.1" id="sc-cvr" placeholder="例 5"></div>
-        <div class="sc-input"><label><abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> (¥)</label><input type="number" step="1" id="sc-price" placeholder="例 40"></div>
+        <div class="sc-input"><label><abbr class="term-abbr" data-tip="封面点击率，曝光后被点开笔记的比例（小红书后台叫封面点击率）">CTR1</abbr> (封面点击率, %)</label><input type="number" step="0.1" id="sc-ctr1" placeholder="例 8.5"></div>
+        <div class="sc-input"><label><abbr class="term-abbr" data-tip="商品卡点击率，看了笔记后点开商品卡的比例">CTR2</abbr> (商品卡点击率, %)</label><input type="number" step="0.1" id="sc-ctr2" placeholder="例 30"></div>
+        <div class="sc-input"><label><abbr class="term-abbr" data-tip="下单转化率，点开商品卡后实际下单的比例">CVR</abbr> (转化率, %)</label><input type="number" step="0.1" id="sc-cvr" placeholder="例 5"></div>
+        <div class="sc-input"><label><abbr class="term-abbr" data-tip="单笔订单平均成交金额">件单价</abbr> (¥)</label><input type="number" step="1" id="sc-price" placeholder="例 40"></div>
       </div>
       <button class="sc-btn-go" onclick="runSelfCheck()">🔍 对照行业 · 找到我最弱环节</button>
       <div id="sc-result" style="display:none;margin-top:14px"></div>
@@ -1995,16 +2053,16 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
 </div>
 <div class="tab-panel hidden" id="tab-ctr1">
   <div class="hero hero-sub hero-ctr1">
-    <h2>📈 <abbr class="term-abbr" title="封面点击率：曝光 → 点开笔记的比例（你后台叫&quot;封面点击率/CTR&quot;）">CTR1</abbr>（封面+标题点击）表现好的笔记长什么样</h2>
-    <p class="meta">⚠️ 这是从高 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> 笔记里聚类出的相关性画像，不是因果证明。仅作为内容方向参考，不保证按此改一定提升该指标</p>
+    <h2>📈 <abbr class="term-abbr" data-tip="封面点击率，曝光后被点开笔记的比例（小红书后台叫封面点击率）">CTR1</abbr>（封面+标题点击）表现好的笔记长什么样</h2>
+    <p class="meta">⚠️ 这是从高 <abbr class="term-abbr" data-tip="商品成交金额，即销售额">GMV</abbr> 笔记里聚类出的相关性画像，不是因果证明。仅作为内容方向参考，不保证按此改一定提升该指标</p>
   </div>
 <div class="v10-section">
   <div class="v10-banner">
-    <div class="v10-banner-title">🔬 <abbr class="term-abbr" title="封面点击率：曝光 → 点开笔记的比例（你后台叫&quot;封面点击率/CTR&quot;）">CTR1</abbr>（封面+标题点击） 高低对照 · 学好的，避坑的</div>
-    <div class="v10-banner-sub">把同类目里"<b><abbr class="term-abbr" title="封面点击率：曝光 → 点开笔记的比例（你后台叫&quot;封面点击率/CTR&quot;）">CTR1</abbr>（封面+标题点击） 排前 25%</b>"和"<b>排后 25%</b>"的笔记拉出来比，找出"好笔记常用、坏笔记踩坑"的写法。<b>这是从已发笔记里归纳的规律，是参考不是保证</b>。</div>
+    <div class="v10-banner-title">🔬 <abbr class="term-abbr" data-tip="封面点击率，曝光后被点开笔记的比例（小红书后台叫封面点击率）">CTR1</abbr>（封面+标题点击） 高低对照 · 学好的，避坑的</div>
+    <div class="v10-banner-sub">把同类目里"<b><abbr class="term-abbr" data-tip="封面点击率，曝光后被点开笔记的比例（小红书后台叫封面点击率）">CTR1</abbr>（封面+标题点击） 排前 25%</b>"和"<b>排后 25%</b>"的笔记拉出来比，找出"好笔记常用、坏笔记踩坑"的写法。<b>这是从已发笔记里归纳的规律，是参考不是保证</b>。</div>
   </div>
   
-  <div class="v10-mechanism v10-mech-hero">💎 <b>核心规律</b>：<abbr class="term-abbr" title="封面点击率：曝光 → 点开笔记的比例（你后台叫&quot;封面点击率/CTR&quot;）">CTR1</abbr> 高 vs 低的本质差别不在标题字数、感叹号数量或封面是否精致，而在【真实剂量+具体钩子】 vs 【悬念词+上新公告】：高组用第一人称剂量叙事（喝了5杯/15年/15天）、具体大数字（799元/100万件/21万单）、关键词框选（「」/（））、并敢用'生活感封面'(aesthetic=低)；低组陷在'终于！XX来了''入夏必囤''XX的平替'这种缺乏具体落点的口号式公告，尤其在养生食疗赛道最严重（养生+夏季+终于 4.67x 高发于低组）。</div>
+  <div class="v10-mechanism v10-mech-hero">💎 <b>核心规律</b>：<abbr class="term-abbr" data-tip="封面点击率，曝光后被点开笔记的比例（小红书后台叫封面点击率）">CTR1</abbr> 高 vs 低的本质差别不在标题字数、感叹号数量或封面是否精致，而在【真实剂量+具体钩子】 vs 【悬念词+上新公告】：高组用第一人称剂量叙事（喝了5杯/15年/15天）、具体大数字（799元/100万件/21万单）、关键词框选（「」/（））、并敢用'生活感封面'(aesthetic=低)；低组陷在'终于！XX来了''入夏必囤''XX的平替'这种缺乏具体落点的口号式公告，尤其在养生食疗赛道最严重（养生+夏季+终于 4.67x 高发于低组）。</div>
   
   
   
@@ -2022,7 +2080,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="diff-pp">表现好的多 6.3%</span> <span class="diff-ratio">3.17x</span>
   </div>
   <div class="v10-card-cat">📊 跨类目通用（美测8/养生7/美展5/保健2/家居1/妈妈经验1/美其他1，覆盖 7 个类目）；低组同档位则高度集中在养生食疗（5/7），跨类目能力弱</div>
-  <div class="v10-card-advice">💡 封面不必死磕'精致摆盘+滤镜'。若标题/产品本身有强叙事（人设故事/产地实拍/真实使用场景），可以放心使用'生活感'封面（aesthetic 档=低也无妨），<abbr class="term-abbr" title="封面点击率：曝光 → 点开笔记的比例（你后台叫&quot;封面点击率/CTR&quot;）">CTR1</abbr> 反而更高；但要确保画面清晰度（definition）≥中。</div>
+  <div class="v10-card-advice">💡 封面不必死磕'精致摆盘+滤镜'。若标题/产品本身有强叙事（人设故事/产地实拍/真实使用场景），可以放心使用'生活感'封面（aesthetic 档=低也无妨），CTR1 反而更高；但要确保画面清晰度（definition）≥中。</div>
   <details class="v10-card-examples">
     <summary>看 5 篇真实案例 + 2 篇反例</summary>
     <div class="v10-ex-block">
@@ -2113,7 +2171,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="diff-pp diff-pp-red">表现差的多 3.8%</span> <span class="diff-ratio">4.67x（低/高）</span>
   </div>
   <div class="v10-card-cat">📊 养生食疗集中（14/14 全部为养生食疗）；茶酒占比 29%（姜枣茶/红豆薏米水属于养生'茶'，非奶茶/酒水赛道）</div>
-  <div class="v10-card-advice v10-card-advice-red">🚫 养生食疗标题千万少用'终于+季节倒数'套路——这是低 <abbr class="term-abbr" title="封面点击率：曝光 → 点开笔记的比例（你后台叫&quot;封面点击率/CTR&quot;）">CTR1</abbr> 的高发模式。同档位的高组（如'喝完这杯，我感觉我这口气终于顺下去了……'）用'终于'来描写身体反馈而非上新公告。建议改写为：①身体感受描述（'喝了X天，XX症状真的有变化'）；②具体疑问（'三伏天到底该不该喝姜茶'），避免'XX上新/终于来了/必囤'公告体。</div>
+  <div class="v10-card-advice v10-card-advice-red">🚫 养生食疗标题千万少用'终于+季节倒数'套路——这是低 CTR1 的高发模式。同档位的高组（如'喝完这杯，我感觉我这口气终于顺下去了……'）用'终于'来描写身体反馈而非上新公告。建议改写为：①身体感受描述（'喝了X天，XX症状真的有变化'）；②具体疑问（'三伏天到底该不该喝姜茶'），避免'XX上新/终于来了/必囤'公告体。</div>
   
 </div><div class="v10-card v10-card-low">
   <div class="v10-card-head">
@@ -2128,7 +2186,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="diff-pp diff-pp-red">表现差的多 4.5%</span> <span class="diff-ratio">3.17x（低/高）</span>
   </div>
   <div class="v10-card-cat">📊 美食测评 10 / 养生食疗 7 / 美食展示 1 / 美食教程 1，跨类目陷阱；茶酒占比约 32%（不集中）</div>
-  <div class="v10-card-advice v10-card-advice-red">🚫 '终于/居然/没想到'要配一个具体落点——是什么终于来了、居然怎么样了。空泛地说'XX终于来了''终于！它来了！'对 <abbr class="term-abbr" title="封面点击率：曝光 → 点开笔记的比例（你后台叫&quot;封面点击率/CTR&quot;）">CTR1</abbr> 几乎是负效果，因为用户读完不知道你到底要让他点什么。</div>
+  <div class="v10-card-advice v10-card-advice-red">🚫 '终于/居然/没想到'要配一个具体落点——是什么终于来了、居然怎么样了。空泛地说'XX终于来了''终于！它来了！'对 CTR1 几乎是负效果，因为用户读完不知道你到底要让他点什么。</div>
   
 </div></div>
 </div>
@@ -2137,7 +2195,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   <details class="v9-legacy-fold">
   <summary class="v9-legacy-summary">📚 看更多写法参考（点开：图文/视频路径详细方法卡 + 反直觉发现）</summary>
   <div class="v9-legacy-body"><div class="two-weapons-banner">
-  <div class="tw-title">🎯 <abbr class="term-abbr" title="封面点击率：曝光 → 点开笔记的比例（你后台叫&quot;封面点击率/CTR&quot;）">CTR1</abbr>（封面+标题） 表现好的笔记里，有 2 种不同算法画像（共 10 个方法）</div>
+  <div class="tw-title">🎯 CTR1（封面+标题） 表现好的笔记里，有 2 种不同算法画像（共 10 个方法）</div>
   <div class="tw-grid">
     <div class="tw-card tw-long">
       <div class="tw-head">🏛️ 可持续打法</div>
@@ -2156,7 +2214,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
 </div>
   <div class="insights-banner">
   <div class="insights-title">🔁 本周反直觉发现</div>
-  <div class="insights-list"><div class="insight-card"><span class="insight-pool">图文 <abbr class="term-abbr" title="封面点击率：曝光 → 点开笔记的比例（你后台叫&quot;封面点击率/CTR&quot;）">CTR1</abbr> 池</span><div class="insight-text">🔁 反直觉一：把『成分/配料/无添加/实名举证』摆到台面上反而拉低真诚度（-17.9 分）——系统把『硬刚同行』的写法读成强商业意图，但点击率依然高（+0.019），说明算法和用户在这里短暂分歧；适合短期引流不适合长期人设。</div></div><div class="insight-card"><span class="insight-pool">视频 <abbr class="term-abbr" title="封面点击率：曝光 → 点开笔记的比例（你后台叫&quot;封面点击率/CTR&quot;）">CTR1</abbr> 池</span><div class="insight-text">⚡ &lt;b&gt;👩‍⚕️ 痛点+健康人设科普体&lt;/b&gt;：算法真诚度比池均低 11.9 分（系统判商业感强），但 16 条笔记仍跑进强信号池。说明用户买这套但算法不爱——适合短期收割，不适合长线人设。</div></div></div>
+  <div class="insights-list"><div class="insight-card"><span class="insight-pool">图文 CTR1 池</span><div class="insight-text">🔁 反直觉一：把『成分/配料/无添加/实名举证』摆到台面上反而拉低真诚度（-17.9 分）——系统把『硬刚同行』的写法读成强商业意图，但点击率依然高（+0.019），说明算法和用户在这里短暂分歧；适合短期引流不适合长期人设。</div></div><div class="insight-card"><span class="insight-pool">视频 CTR1 池</span><div class="insight-text">⚡ &lt;b&gt;👩‍⚕️ 痛点+健康人设科普体&lt;/b&gt;：算法真诚度比池均低 11.9 分（系统判商业感强），但 16 条笔记仍跑进强信号池。说明用户买这套但算法不爱——适合短期收割，不适合长线人设。</div></div></div>
 </div>
   <div class="section-label">🎯 行业参考值（对照你的笔记后台数据）</div>
   <div class="kpi-grid kpi-grid-2col">
@@ -2184,7 +2242,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="method-cats">🏷️ 主要类目：葡萄酒(4) / 洋酒(4) / 速溶咖啡/咖啡豆/粉(2)</span>
     <div class="algo-tags"><span class="algo-tag algo-good">🚀 系统判"像真心分享"·推流加成</span></div>
   </div>
-  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6a1e3fde000000003601c38b" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 87</span><span class="ic-title">SLAB TOWN ｜六周年爱心T恤❤️‍🔥</span><span class="ic-hl">🛒 SLAB TOWN 石板城咖啡 6周年t恤限定爱</span><span class="ic-meta-row">—</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/690223640000000007023c84" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 101</span><span class="ic-title">感谢小红书‼️让我们家贵州蘸水卖了21万➕</span><span class="ic-hl">🛒 木姜子辣椒面贵州特产断桥柴火煳辣椒面断桥传统工艺</span><span class="ic-meta-row">—</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/68e5d4da0000000003011785" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 131</span><span class="ic-title">假货，才是大家抵触卖货的真正根源...</span><span class="ic-hl">🛒 深山林下野生黄精传统九制泡茶泡水九蒸九晒无硫干货</span><span class="ic-meta-row">—</span></a></div>
+  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6a1e3fde000000003601c38b" target="_blank"><span class="ic-metric">GPM 87</span><span class="ic-title">SLAB TOWN ｜六周年爱心T恤❤️‍🔥</span><span class="ic-hl">🛒 SLAB TOWN 石板城咖啡 6周年t恤限定爱</span><span class="ic-meta-row">—</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/690223640000000007023c84" target="_blank"><span class="ic-metric">GPM 101</span><span class="ic-title">感谢小红书‼️让我们家贵州蘸水卖了21万➕</span><span class="ic-hl">🛒 木姜子辣椒面贵州特产断桥柴火煳辣椒面断桥传统工艺</span><span class="ic-meta-row">—</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/68e5d4da0000000003011785" target="_blank"><span class="ic-metric">GPM 131</span><span class="ic-title">假货，才是大家抵触卖货的真正根源...</span><span class="ic-hl">🛒 深山林下野生黄精传统九制泡茶泡水九蒸九晒无硫干货</span><span class="ic-meta-row">—</span></a></div>
   <div class="method-source">数据来源：V9 算法分相对分位筛后池（24 条真实笔记聚类）</div>
 </div><div class="method-card-v2">
   <div class="method-title">📚 教程指南·选购避坑 <span class="method-count">· 21 条</span></div>
@@ -2195,7 +2253,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="method-cats">🏷️ 主要类目：葡萄酒(3) / 药食同源食品(3) / 燕窝滋补品(3)</span>
     <div class="algo-tags"><span class="algo-tag algo-good">👁 点进来的人会认真看完</span></div>
   </div>
-  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69fef5820000000036001d45" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 67</span><span class="ic-title">易获取回报率超高的 对抗猪瘾的可可奶</span><span class="ic-hl">🛒 SOILETA 生可可粉 厄瓜多尔cacao未碱</span><span class="ic-meta-row">—</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69e1f687000000001b0002ea" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 91</span><span class="ic-title">张荣记虾子面｜香港制造，100%正宗港式味道</span><span class="ic-hl">🛒 张荣记 鲍鱼瑶柱虾子面*10个面/盒*吉品鲍瑶柱</span><span class="ic-meta-row">—</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6948c68c000000001e02464a" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 25</span><span class="ic-title">这个饼国内有没有平替？？？</span><span class="ic-hl">🛒 千层夹心酥饼干办公室零食配料干净孕妇小朋友可食用</span><span class="ic-meta-row">—</span></a></div>
+  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69fef5820000000036001d45" target="_blank"><span class="ic-metric">GPM 67</span><span class="ic-title">易获取回报率超高的 对抗猪瘾的可可奶</span><span class="ic-hl">🛒 SOILETA 生可可粉 厄瓜多尔cacao未碱</span><span class="ic-meta-row">—</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69e1f687000000001b0002ea" target="_blank"><span class="ic-metric">GPM 91</span><span class="ic-title">张荣记虾子面｜香港制造，100%正宗港式味道</span><span class="ic-hl">🛒 张荣记 鲍鱼瑶柱虾子面*10个面/盒*吉品鲍瑶柱</span><span class="ic-meta-row">—</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6948c68c000000001e02464a" target="_blank"><span class="ic-metric">GPM 25</span><span class="ic-title">这个饼国内有没有平替？？？</span><span class="ic-hl">🛒 千层夹心酥饼干办公室零食配料干净孕妇小朋友可食用</span><span class="ic-meta-row">—</span></a></div>
   <div class="method-source">数据来源：V9 算法分相对分位筛后池（21 条真实笔记聚类）</div>
 </div><div class="method-card-v2">
   <div class="method-title">🏛 故事工艺·专业讲究 <span class="method-count">· 16 条</span></div>
@@ -2206,7 +2264,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="method-cats">🏷️ 主要类目：葡萄酒(7) / 洋酒(3) / 糕点/点心(1)</span>
     <div class="algo-tags"><span class="algo-tag algo-good">🚀 系统判"像真心分享"·推流加成</span></div>
   </div>
-  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/695e052f000000002203206e" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 354</span><span class="ic-title">上海国际饭店蝴蝶酥伴手礼免排队顺丰邮寄啦</span><span class="ic-hl">🛒 【送手提袋】上海国际饭店蝴蝶酥礼盒伴手礼饼干特产</span><span class="ic-meta-row">—</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6a2537c50000000017009ff6" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 49</span><span class="ic-title">挂上蝴蝶之后，我妈非说我家运气变好了🦋</span><span class="ic-hl">🛒 【少量现货】西秦刺绣蝴蝶手工挂件居家布艺挂串装饰</span><span class="ic-meta-row">—</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69fc498700000000230069bf" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 99</span><span class="ic-title">来新荣记吃一顿饭花3000，就为了喝这瓶！</span><span class="ic-hl">🛒 others 新荣记同款WE百大推荐Nino F</span><span class="ic-meta-row">—</span></a></div>
+  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/695e052f000000002203206e" target="_blank"><span class="ic-metric">GPM 354</span><span class="ic-title">上海国际饭店蝴蝶酥伴手礼免排队顺丰邮寄啦</span><span class="ic-hl">🛒 【送手提袋】上海国际饭店蝴蝶酥礼盒伴手礼饼干特产</span><span class="ic-meta-row">—</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6a2537c50000000017009ff6" target="_blank"><span class="ic-metric">GPM 49</span><span class="ic-title">挂上蝴蝶之后，我妈非说我家运气变好了🦋</span><span class="ic-hl">🛒 【少量现货】西秦刺绣蝴蝶手工挂件居家布艺挂串装饰</span><span class="ic-meta-row">—</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69fc498700000000230069bf" target="_blank"><span class="ic-metric">GPM 99</span><span class="ic-title">来新荣记吃一顿饭花3000，就为了喝这瓶！</span><span class="ic-hl">🛒 others 新荣记同款WE百大推荐Nino F</span><span class="ic-meta-row">—</span></a></div>
   <div class="method-source">数据来源：V9 算法分相对分位筛后池（16 条真实笔记聚类）</div>
 </div><div class="method-card-v2">
   <div class="method-title">💥 强情绪·直球种草 <span class="method-count">· 13 条</span></div>
@@ -2217,18 +2275,18 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="method-cats">🏷️ 主要类目：方便速食/速冻食品(2) / 其它传统滋补品(2) / 糕点/点心(2)</span>
     <div class="algo-tags"><span class="algo-tag algo-good">👁 点进来的人会认真看完</span></div>
   </div>
-  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6a0d79870000000035028c2f" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 193</span><span class="ic-title">【玉珍】⚠️购买须知</span><span class="ic-hl">🛒 玉珍【酸笋】酸汤组合</span><span class="ic-meta-row">—</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69842dcd000000000b00a23d" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 186</span><span class="ic-title">感谢家人们🙏，2.2W单啦！！</span><span class="ic-hl">🛒 中通包邮 柳州本地螺蛳粉代买五姐曹妹阿柠檬铁三中</span><span class="ic-meta-row">—</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69427849000000001d03981a" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 154</span><span class="ic-title">6个王牌搭一起 腰肾靓汤❗️老公满分燃起</span><span class="ic-hl">🛒 男士腰肾充电|夫妻加油老公滋补|海马鹿茸肉苁蓉壮</span><span class="ic-meta-row">—</span></a></div>
+  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6a0d79870000000035028c2f" target="_blank"><span class="ic-metric">GPM 193</span><span class="ic-title">【玉珍】⚠️购买须知</span><span class="ic-hl">🛒 玉珍【酸笋】酸汤组合</span><span class="ic-meta-row">—</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69842dcd000000000b00a23d" target="_blank"><span class="ic-metric">GPM 186</span><span class="ic-title">感谢家人们🙏，2.2W单啦！！</span><span class="ic-hl">🛒 中通包邮 柳州本地螺蛳粉代买五姐曹妹阿柠檬铁三中</span><span class="ic-meta-row">—</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69427849000000001d03981a" target="_blank"><span class="ic-metric">GPM 154</span><span class="ic-title">6个王牌搭一起 腰肾靓汤❗️老公满分燃起</span><span class="ic-hl">🛒 男士腰肾充电|夫妻加油老公滋补|海马鹿茸肉苁蓉壮</span><span class="ic-meta-row">—</span></a></div>
   <div class="method-source">数据来源：V9 算法分相对分位筛后池（13 条真实笔记聚类）</div>
 </div><div class="method-card-v2">
   <div class="method-title">🔬 真材实料·硬刚同行 <span class="method-count">· 8 条</span></div>
   <div class="method-desc">把『敢写含量/无添加/实名出镜/0添加』当卖点直球喊</div>
   
-  <div class="method-why">💡 <strong>为什么奏效</strong>：⚠️ 这是一种『反直觉』的写法：把『敢把含量写出来、0 添加、纯、实名举证』直接抛到标题和正文里。读者感受到的是『博主在挑战行业潜规则』，但系统读到的更多是『商业意图明确、有强烈对比同行的暗示』——所以这一组的真诚度比池均低 17.9 分。它依然能进 <abbr class="term-abbr" title="封面点击率：曝光 → 点开笔记的比例（你后台叫&quot;封面点击率/CTR&quot;）">CTR1</abbr> 强信号池，靠的是『叛逆人设』带来的高点击率（互动质量分+0.019）。慎用，且必须真的有差异化成分作为底牌，否则流量进来留不住。</div>
+  <div class="method-why">💡 <strong>为什么奏效</strong>：⚠️ 这是一种『反直觉』的写法：把『敢把含量写出来、0 添加、纯、实名举证』直接抛到标题和正文里。读者感受到的是『博主在挑战行业潜规则』，但系统读到的更多是『商业意图明确、有强烈对比同行的暗示』——所以这一组的真诚度比池均低 17.9 分。它依然能进 CTR1 强信号池，靠的是『叛逆人设』带来的高点击率（互动质量分+0.019）。慎用，且必须真的有差异化成分作为底牌，否则流量进来留不住。</div>
   <div class="method-meta">
     <span class="method-cats">🏷️ 主要类目：米/面粉/杂粮(2) / 艾灸/艾草/艾条/艾制品(1) / 山核桃/坚果/炒货(1)</span>
     <div class="algo-tags"><span class="algo-tag algo-warn">⚡ 系统判"商业味重"·短期收割型</span> <span class="algo-tag algo-good">👁 点进来的人会认真看完</span> <span class="algo-tag algo-good">🛡 避开"营销味太重"扣分</span></div>
   </div>
-  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6927924b000000001e003b7e" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 135</span><span class="ic-title">我们一家人实名举证实名出境，五常啊，不是联</span><span class="ic-hl">🛒 秋极晟 2025年袋装新米上市正宗五常原粮稻花香</span><span class="ic-meta-row">—</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/684cd625000000000303ee81" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 181</span><span class="ic-title">无糖无盐混合坚果推荐</span><span class="ic-hl">🛒 韩要强 现烤混合坚果仁300g非油炸 1罐*30</span><span class="ic-meta-row">—</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6a05a04f000000003503149b" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 24</span><span class="ic-title">真心建议5月多吃，脾胃实在是太舒服了😌</span><span class="ic-hl">🛒 糙能农场 【铁棍山药】九谷猴菇山药面60g/袋 </span><span class="ic-meta-row">—</span></a></div>
+  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6927924b000000001e003b7e" target="_blank"><span class="ic-metric">GPM 135</span><span class="ic-title">我们一家人实名举证实名出境，五常啊，不是联</span><span class="ic-hl">🛒 秋极晟 2025年袋装新米上市正宗五常原粮稻花香</span><span class="ic-meta-row">—</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/684cd625000000000303ee81" target="_blank"><span class="ic-metric">GPM 181</span><span class="ic-title">无糖无盐混合坚果推荐</span><span class="ic-hl">🛒 韩要强 现烤混合坚果仁300g非油炸 1罐*30</span><span class="ic-meta-row">—</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6a05a04f000000003503149b" target="_blank"><span class="ic-metric">GPM 24</span><span class="ic-title">真心建议5月多吃，脾胃实在是太舒服了😌</span><span class="ic-hl">🛒 糙能农场 【铁棍山药】九谷猴菇山药面60g/袋 </span><span class="ic-meta-row">—</span></a></div>
   <div class="method-source">数据来源：V9 算法分相对分位筛后池（8 条真实笔记聚类）</div>
 </div></div>
 
@@ -2242,7 +2300,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="method-cats">🏷️ 主要类目：滋补/食补 / 茶叶 / 肉脯/肉干/海鲜</span>
     <div class="algo-tags"><span class="algo-tag algo-good">🚀 系统判"像真心分享"·推流加成</span></div>
   </div>
-  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/688c38180000000023029088" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 555</span><span class="ic-title">全店产品我的最爱，没有之一！</span><span class="ic-hl">🛒 札萨 【牛脆片】芥末口味新鲜上市！ 酥脆奶香不冲</span><span class="ic-meta-row">札萨旗舰店 · 曝光 1,639</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/692be813000000001e0277c1" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 626</span><span class="ic-title">火爆全网的一根猪！鼻祖做活动了！</span><span class="ic-hl">🛒 札萨 【一根猪】一根猪肉干！磨牙解馋！不支持无理</span><span class="ic-meta-row">札萨旗舰店 · 曝光 17,581</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/68c42dbf000000001d027b3c" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 1244</span><span class="ic-title">力度超大的小当家牛胸口店庆活动9月16日🔥</span><span class="ic-hl">🛒 牛胸口（有肥有瘦，无全肥，不支持偏肥备注） 此选</span><span class="ic-meta-row">爱吃牛胸口的小当家的店 · 曝光 794</span></a></div>
+  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/688c38180000000023029088" target="_blank"><span class="ic-metric">GPM 555</span><span class="ic-title">全店产品我的最爱，没有之一！</span><span class="ic-hl">🛒 札萨 【牛脆片】芥末口味新鲜上市！ 酥脆奶香不冲</span><span class="ic-meta-row">札萨旗舰店 · 曝光 1,639</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/692be813000000001e0277c1" target="_blank"><span class="ic-metric">GPM 626</span><span class="ic-title">火爆全网的一根猪！鼻祖做活动了！</span><span class="ic-hl">🛒 札萨 【一根猪】一根猪肉干！磨牙解馋！不支持无理</span><span class="ic-meta-row">札萨旗舰店 · 曝光 17,581</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/68c42dbf000000001d027b3c" target="_blank"><span class="ic-metric">GPM 1244</span><span class="ic-title">力度超大的小当家牛胸口店庆活动9月16日🔥</span><span class="ic-hl">🛒 牛胸口（有肥有瘦，无全肥，不支持偏肥备注） 此选</span><span class="ic-meta-row">爱吃牛胸口的小当家的店 · 曝光 794</span></a></div>
   <div class="method-source">数据来源：V9 算法分相对分位筛后池（30 条真实笔记聚类）</div>
 </div><div class="method-card-v2">
   <div class="method-title">🔍 鉴别避坑+真假对比体 <span class="method-count">· 25 条</span></div>
@@ -2253,7 +2311,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="method-cats">🏷️ 主要类目：滋补/食补 / 茶叶 / 葡萄酒/洋酒</span>
     <div class="algo-tags"><span class="algo-tag algo-good">👁 点进来的人会认真看完</span></div>
   </div>
-  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69a68377000000000e00e721" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 36</span><span class="ic-title">救命蘸水！狠狠拿捏水煮菜🤏🤏🤏</span><span class="ic-hl">🛒 仙马桥 贵州特产木姜子柴火糊辣椒面蘸水蘸料油泼辣</span><span class="ic-meta-row">黔味小当家的店 · 曝光 289,966</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/68bec2dd000000001d036cf5" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 869</span><span class="ic-title">全食物日记十年品牌，凭的是实力和有机品质</span><span class="ic-hl">🛒 全食物日记 有机紫苏籽油omega3欧米伽3低温</span><span class="ic-meta-row">全食物日记旗舰店 · 曝光 595</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69a10c710000000015030d70" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 541</span><span class="ic-title">我为什么不喝牛奶？</span><span class="ic-hl">🛒 胡子叔的餐盘 酸奶发酵菌粉丨干酪乳酪杆菌Zhan</span><span class="ic-meta-row">胡子叔的餐盘的店 · 曝光 837</span></a></div>
+  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69a68377000000000e00e721" target="_blank"><span class="ic-metric">GPM 36</span><span class="ic-title">救命蘸水！狠狠拿捏水煮菜🤏🤏🤏</span><span class="ic-hl">🛒 仙马桥 贵州特产木姜子柴火糊辣椒面蘸水蘸料油泼辣</span><span class="ic-meta-row">黔味小当家的店 · 曝光 289,966</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/68bec2dd000000001d036cf5" target="_blank"><span class="ic-metric">GPM 869</span><span class="ic-title">全食物日记十年品牌，凭的是实力和有机品质</span><span class="ic-hl">🛒 全食物日记 有机紫苏籽油omega3欧米伽3低温</span><span class="ic-meta-row">全食物日记旗舰店 · 曝光 595</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69a10c710000000015030d70" target="_blank"><span class="ic-metric">GPM 541</span><span class="ic-title">我为什么不喝牛奶？</span><span class="ic-hl">🛒 胡子叔的餐盘 酸奶发酵菌粉丨干酪乳酪杆菌Zhan</span><span class="ic-meta-row">胡子叔的餐盘的店 · 曝光 837</span></a></div>
   <div class="method-source">数据来源：V9 算法分相对分位筛后池（25 条真实笔记聚类）</div>
 </div><div class="method-card-v2">
   <div class="method-title">👩‍⚕️ 痛点+健康人设科普体 <span class="method-count">· 16 条</span></div>
@@ -2264,7 +2322,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="method-cats">🏷️ 主要类目：茶叶 / 滋补/食补</span>
     <div class="algo-tags"><span class="algo-tag algo-warn">⚡ 系统判"商业味重"·短期收割型</span> <span class="algo-tag algo-good">👁 点进来的人会认真看完</span></div>
   </div>
-  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/694e4fda000000001e00322c" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 88</span><span class="ic-title">年货坚果挑花眼？配料干净的腰果全家爱！</span><span class="ic-hl">🛒 尚恰 炭烤腰果新货A170大颗粒带皮紫衣盐焗腰果</span><span class="ic-meta-row">尚恰旗舰店 · 曝光 118,882</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/66794d54000000001c0208b4" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 520</span><span class="ic-title">冷泡茶必喝清单！15款冷泡好喝的茶大盘点</span><span class="ic-hl">🛒 冷泡甜·2023普洱生茶·散茶60g·梅子箐产区</span><span class="ic-meta-row">醒醒来喝茶的店 · 曝光 519</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69f16c2c000000003502887b" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 528</span><span class="ic-title">做轻断食基本技能：学会自制代餐咖啡！</span><span class="ic-hl">🛒 精品黑咖啡系列  挂耳/咖啡豆 新鲜烘焙 保留原</span><span class="ic-meta-row">胡子叔的餐盘的店 · 曝光 638</span></a></div>
+  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/694e4fda000000001e00322c" target="_blank"><span class="ic-metric">GPM 88</span><span class="ic-title">年货坚果挑花眼？配料干净的腰果全家爱！</span><span class="ic-hl">🛒 尚恰 炭烤腰果新货A170大颗粒带皮紫衣盐焗腰果</span><span class="ic-meta-row">尚恰旗舰店 · 曝光 118,882</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/66794d54000000001c0208b4" target="_blank"><span class="ic-metric">GPM 520</span><span class="ic-title">冷泡茶必喝清单！15款冷泡好喝的茶大盘点</span><span class="ic-hl">🛒 冷泡甜·2023普洱生茶·散茶60g·梅子箐产区</span><span class="ic-meta-row">醒醒来喝茶的店 · 曝光 519</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69f16c2c000000003502887b" target="_blank"><span class="ic-metric">GPM 528</span><span class="ic-title">做轻断食基本技能：学会自制代餐咖啡！</span><span class="ic-hl">🛒 精品黑咖啡系列  挂耳/咖啡豆 新鲜烘焙 保留原</span><span class="ic-meta-row">胡子叔的餐盘的店 · 曝光 638</span></a></div>
   <div class="method-source">数据来源：V9 算法分相对分位筛后池（16 条真实笔记聚类）</div>
 </div><div class="method-card-v2">
   <div class="method-title">🔥 情绪钩子+反差标题体 <span class="method-count">· 12 条</span></div>
@@ -2275,7 +2333,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="method-cats">🏷️ 主要类目：滋补/食补 / 肉脯/肉干/海鲜</span>
     <div class="algo-tags"><span class="algo-tag algo-warn">⚡ 系统判"商业味重"·短期收割型</span></div>
   </div>
-  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69eb35d90000000020007002" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 47</span><span class="ic-title">睡着后的亲亲到底得有多上头❤️</span><span class="ic-hl">🛒 EarthPark 地球乐园口腔益生菌含片口气口</span><span class="ic-meta-row">小舒君的店 · 曝光 293,650</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69ef30ef000000003700f1d2" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 62</span><span class="ic-title">谁懂啊！男朋友睡醒突然亲我有多甜…</span><span class="ic-hl">🛒 EarthPark 地球乐园口腔益生菌含片口气口</span><span class="ic-meta-row">小舒君的店 · 曝光 193,632</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/68ba992e000000001b01dca6" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 674</span><span class="ic-title">哭唧唧！冰冰姐居然吐槽小红条不够喝？😱</span><span class="ic-hl">🛒 NATURECARE.LIFE 冰冰同款 ·NC</span><span class="ic-meta-row">NATURECARE.L · 曝光 1,219</span></a></div>
+  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69eb35d90000000020007002" target="_blank"><span class="ic-metric">GPM 47</span><span class="ic-title">睡着后的亲亲到底得有多上头❤️</span><span class="ic-hl">🛒 EarthPark 地球乐园口腔益生菌含片口气口</span><span class="ic-meta-row">小舒君的店 · 曝光 293,650</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69ef30ef000000003700f1d2" target="_blank"><span class="ic-metric">GPM 62</span><span class="ic-title">谁懂啊！男朋友睡醒突然亲我有多甜…</span><span class="ic-hl">🛒 EarthPark 地球乐园口腔益生菌含片口气口</span><span class="ic-meta-row">小舒君的店 · 曝光 193,632</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/68ba992e000000001b01dca6" target="_blank"><span class="ic-metric">GPM 674</span><span class="ic-title">哭唧唧！冰冰姐居然吐槽小红条不够喝？😱</span><span class="ic-hl">🛒 NATURECARE.LIFE 冰冰同款 ·NC</span><span class="ic-meta-row">NATURECARE.L · 曝光 1,219</span></a></div>
   <div class="method-source">数据来源：V9 算法分相对分位筛后池（12 条真实笔记聚类）</div>
 </div><div class="method-card-v2">
   <div class="method-title">🍷 专业行话+年份品级硬核体 <span class="method-count">· 11 条</span></div>
@@ -2286,30 +2344,30 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="method-cats">🏷️ 主要类目：茶叶 / 滋补/食补</span>
     <div class="algo-tags"><span class="algo-tag algo-good">🚀 系统判"像真心分享"·推流加成</span></div>
   </div>
-  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/67075698000000001902f912" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 1533</span><span class="ic-title">让你喝完跳脚的06年老六堡茶！</span><span class="ic-hl">🛒 （静萱茶事）2006年特级参香六堡茶老六250g</span><span class="ic-meta-row">静萱茶事的店 · 曝光 561</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69c365230000000021006a9f" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 3090</span><span class="ic-title">11年的心头雪，喝到了巧克力香的老银针🍫</span><span class="ic-hl">🛒 (静萱茶事）2015年白毫银针心头雪30g/25</span><span class="ic-meta-row">静萱茶事的店 · 曝光 647</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69a934e6000000001d0276b5" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 789</span><span class="ic-title">糯香控超爱的销冠稻花香六堡！汤感升级了！</span><span class="ic-hl">🛒 格格茶一代·&lt;稻花香六堡&gt; 粮食香 </span><span class="ic-meta-row">格格丨茶一代的店 · 曝光 1,385</span></a></div>
+  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/67075698000000001902f912" target="_blank"><span class="ic-metric">GPM 1533</span><span class="ic-title">让你喝完跳脚的06年老六堡茶！</span><span class="ic-hl">🛒 （静萱茶事）2006年特级参香六堡茶老六250g</span><span class="ic-meta-row">静萱茶事的店 · 曝光 561</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69c365230000000021006a9f" target="_blank"><span class="ic-metric">GPM 3090</span><span class="ic-title">11年的心头雪，喝到了巧克力香的老银针🍫</span><span class="ic-hl">🛒 (静萱茶事）2015年白毫银针心头雪30g/25</span><span class="ic-meta-row">静萱茶事的店 · 曝光 647</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69a934e6000000001d0276b5" target="_blank"><span class="ic-metric">GPM 789</span><span class="ic-title">糯香控超爱的销冠稻花香六堡！汤感升级了！</span><span class="ic-hl">🛒 格格茶一代·&lt;稻花香六堡&gt; 粮食香 </span><span class="ic-meta-row">格格丨茶一代的店 · 曝光 1,385</span></a></div>
   <div class="method-source">数据来源：V9 算法分相对分位筛后池（11 条真实笔记聚类）</div>
 </div></div>
 
   <div class="tips-box">
-    <strong>💡 怎么用：</strong> 每条方法下有 2 个本周真实案例，是该指标表现好的笔记里聚类出的写法规律。<b>注意</b>：这是相关性，不是因果——同一批笔记同时高 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>、高 CTR/<abbr class="term-abbr" title="下单转化率：看了商品卡 → 实际下单的比例">CVR</abbr>，方法论可能跨指标重叠。建议优先看你品类的案例，不要硬抄跨品类。
+    <strong>💡 怎么用：</strong> 每条方法下有 2 个本周真实案例，是该指标表现好的笔记里聚类出的写法规律。<b>注意</b>：这是相关性，不是因果——同一批笔记同时高 <abbr class="term-abbr" data-tip="商品成交金额，即销售额">GMV</abbr>、高 CTR/<abbr class="term-abbr" data-tip="下单转化率，点开商品卡后实际下单的比例">CVR</abbr>，方法论可能跨指标重叠。建议优先看你品类的案例，不要硬抄跨品类。
   </div>
 </div>
 </div>
 </details><div class="tab-panel hidden" id="tab-ctr2">
   <div class="hero hero-sub hero-ctr2">
-    <h2>📈 <abbr class="term-abbr" title="商品卡点击率：看了笔记 → 点开商品卡的比例">CTR2</abbr>（商品卡点击）表现好的笔记长什么样</h2>
-    <p class="meta">⚠️ 这是从高 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> 笔记里聚类出的相关性画像，不是因果证明。仅作为内容方向参考，不保证按此改一定提升该指标</p>
+    <h2>📈 <abbr class="term-abbr" data-tip="商品卡点击率，看了笔记后点开商品卡的比例">CTR2</abbr>（商品卡点击）表现好的笔记长什么样</h2>
+    <p class="meta">⚠️ 这是从高 <abbr class="term-abbr" data-tip="商品成交金额，即销售额">GMV</abbr> 笔记里聚类出的相关性画像，不是因果证明。仅作为内容方向参考，不保证按此改一定提升该指标</p>
   </div>
 <div class="v10-section">
   <div class="v10-banner">
-    <div class="v10-banner-title">🔬 <abbr class="term-abbr" title="商品卡点击率：看了笔记 → 点开商品卡的比例">CTR2</abbr>（商品卡点击） 高低对照 · 学好的，避坑的</div>
-    <div class="v10-banner-sub">把同类目里"<b><abbr class="term-abbr" title="商品卡点击率：看了笔记 → 点开商品卡的比例">CTR2</abbr>（商品卡点击） 排前 25%</b>"和"<b>排后 25%</b>"的笔记拉出来比，找出"好笔记常用、坏笔记踩坑"的写法。<b>这是从已发笔记里归纳的规律，是参考不是保证</b>。</div>
+    <div class="v10-banner-title">🔬 <abbr class="term-abbr" data-tip="商品卡点击率，看了笔记后点开商品卡的比例">CTR2</abbr>（商品卡点击） 高低对照 · 学好的，避坑的</div>
+    <div class="v10-banner-sub">把同类目里"<b><abbr class="term-abbr" data-tip="商品卡点击率，看了笔记后点开商品卡的比例">CTR2</abbr>（商品卡点击） 排前 25%</b>"和"<b>排后 25%</b>"的笔记拉出来比，找出"好笔记常用、坏笔记踩坑"的写法。<b>这是从已发笔记里归纳的规律，是参考不是保证</b>。</div>
   </div>
   
-  <div class="v10-mechanism v10-mech-hero">💎 <b>核心规律</b>：<abbr class="term-abbr" title="商品卡点击率：看了笔记 → 点开商品卡的比例">CTR2</abbr> 高组本质 = 商详顶部 0.5 秒能让用户做决定的'硬信息密度'（短标题/短商品名/克数·瓶数·产地·权威）；<abbr class="term-abbr" title="商品卡点击率：看了笔记 → 点开商品卡的比例">CTR2</abbr> 低组本质 = 商详变成'品鉴文学'（送礼场景+堆砌风味词+长商品名+欲言又止标题），看似在讲故事其实在拖延决策。商家想提升 CTR2，应当把商详顶部当成'电梯演讲'：标题≤15字、商品名≤25字、正文前200字给一条规格+一条证据，而不是给五条风味描述。</div>
+  <div class="v10-mechanism v10-mech-hero">💎 <b>核心规律</b>：CTR2 高组本质 = 商详顶部 0.5 秒能让用户做决定的'硬信息密度'（短标题/短商品名/克数·瓶数·产地·权威）；CTR2 低组本质 = 商详变成'品鉴文学'（送礼场景+堆砌风味词+长商品名+欲言又止标题），看似在讲故事其实在拖延决策。商家想提升 CTR2，应当把商详顶部当成'电梯演讲'：标题≤15字、商品名≤25字、正文前200字给一条规格+一条证据，而不是给五条风味描述。</div>
   
   <div class="ctr2-priority-note">
-  <div class="cpn-title">📐 <abbr class="term-abbr" title="商品卡点击率：看了笔记 → 点开商品卡的比例">CTR2</abbr> 三层优先级 · 字数本身不是因，「信息密度」才是</div>
+  <div class="cpn-title">📐 CTR2 三层优先级 · 字数本身不是因，「信息密度」才是</div>
   <div class="cpn-tier cpn-tier-1"><b>🔴 首要 · 商品名做减法</b>（差距最大 +14.5pp）<br>≤ 25 字内只放「品类 + 1 个硬指标」。例：✅「韩要强夏威夷果 250g 中大半粒」/ ❌「韩要强 0号特大现烤夏威夷果仁没有额外添加剂250克 1罐*250克【中大半粒】」</div>
   <div class="cpn-tier cpn-tier-2"><b>🟡 次要 · 正文前 200 字做减法</b>（< 100 字 +14.5pp）<br>一句卖点 + 一句证据，不要把商详顶部写成产品说明书。</div>
   <div class="cpn-tier cpn-tier-3"><b>🟢 辅助 · 标题做减法</b>（≤ 15 字 +8.3pp）<br>≤ 15 字 + 规格量化数字，让用户在信息流 0.5 秒看懂「是什么 + 多少」。</div>
@@ -2352,7 +2410,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="diff-pp">表现好的多 14.5%</span> <span class="diff-ratio">2.5</span>
   </div>
   <div class="v10-card-cat">📊 跨类目通用</div>
-  <div class="v10-card-advice">💡 正文不必长篇大论；前200字写'一句卖点+一句证据'即可，剩下交给话题tag。<abbr class="term-abbr" title="商品卡点击率：看了笔记 → 点开商品卡的比例">CTR2</abbr> 要的是'快速验证决定下单'，不是'读完文章'。</div>
+  <div class="v10-card-advice">💡 正文不必长篇大论；前200字写'一句卖点+一句证据'即可，剩下交给话题tag。CTR2 要的是'快速验证决定下单'，不是'读完文章'。</div>
   <details class="v10-card-examples">
     <summary>看 3 篇真实案例 + 2 篇反例</summary>
     <div class="v10-ex-block">
@@ -2414,7 +2472,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="diff-pp diff-pp-red">表现差的多 6.5%</span> <span class="diff-ratio">2.16</span>
   </div>
   <div class="v10-card-cat">📊 美食展示集中(54%)</div>
-  <div class="v10-card-advice v10-card-advice-red">🚫 '送礼/礼盒/伴手礼'看似强需求其实是泛人群，<abbr class="term-abbr" title="商品卡点击率：看了笔记 → 点开商品卡的比例">CTR2</abbr> 反而低 7-8pp——除非店铺真做礼品定位，否则别把'送礼'当主钩子；改成自饮场景或产品功能描述。</div>
+  <div class="v10-card-advice v10-card-advice-red">🚫 '送礼/礼盒/伴手礼'看似强需求其实是泛人群，CTR2 反而低 7-8pp——除非店铺真做礼品定位，否则别把'送礼'当主钩子；改成自饮场景或产品功能描述。</div>
   <details class="v10-card-examples"><summary>看 1 篇真实反例</summary><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/69f3260c000000001f00126d" target="_blank" rel="noopener" class="v10-note-link">🔗 《云南头茬墨红，直二邀您试喝！》｜商品名:杨直二 2026头茬云南冻干墨红玫瑰花茶100克大朵母亲节伴手礼礼物 墨红玫瑰花｜正文:#杨直二[话题]# #墨红玫瑰[话题]# #墨红玫瑰季节限定[话题]# #玫瑰[话题]# (ctr2=1.80)</a></li></ul></details>
 </div><div class="v10-card v10-card-low">
   <div class="v10-card-head">
@@ -2459,7 +2517,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="diff-pp diff-pp-red">表现差的多 7.8%</span> <span class="diff-ratio">1.57</span>
   </div>
   <div class="v10-card-cat">📊 跨类目通用</div>
-  <div class="v10-card-advice v10-card-advice-red">🚫 '早八/办公室/带娃'这种场景铺垫在 <abbr class="term-abbr" title="封面点击率：曝光 → 点开笔记的比例（你后台叫&quot;封面点击率/CTR&quot;）">CTR1</abbr> 阶段（封面+标题选人群）有用，但到商详页继续讲场景就是浪费篇幅，应该立刻给规格和差异化卖点。</div>
+  <div class="v10-card-advice v10-card-advice-red">🚫 '早八/办公室/带娃'这种场景铺垫在 CTR1 阶段（封面+标题选人群）有用，但到商详页继续讲场景就是浪费篇幅，应该立刻给规格和差异化卖点。</div>
   <details class="v10-card-examples"><summary>看 1 篇真实反例</summary><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/684c1415000000002300103e" target="_blank" rel="noopener" class="v10-note-link">🔗 《不能吃酸的姐妹👭千万不要轻易尝试！.》｜商品名:妈妈很忙 手工桑葚核桃糕250g 酸甜软糯 1盒用料150颗新鲜桑葚 1盒｜正文:满满的好食材，配料表简单！当季新鲜的桑葚、核桃仁、麦芽糖浆、食用植物油、淀粉不乱添加.6-7分熟的桑葚红中带黑，口感酸甜适中.搭配上香脆核桃从而让这款桑葚核桃糕 (ctr2=9.00)</a></li></ul></details>
 </div><div class="v10-card v10-card-low">
   <div class="v10-card-head">
@@ -2474,7 +2532,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="diff-pp diff-pp-red">表现差的多 2.7%</span> <span class="diff-ratio">1.48</span>
   </div>
   <div class="v10-card-cat">📊 跨类目通用</div>
-  <div class="v10-card-advice v10-card-advice-red">🚫 反直觉发现：'10w+姐妹好评/销量TOP/姐姐安利'类社证在 <abbr class="term-abbr" title="商品卡点击率：看了笔记 → 点开商品卡的比例">CTR2</abbr> 阶段反而拉低转化——商详页用户已经感兴趣，社证说服力低于硬规格/价格信息。</div>
+  <div class="v10-card-advice v10-card-advice-red">🚫 反直觉发现：'10w+姐妹好评/销量TOP/姐姐安利'类社证在 CTR2 阶段反而拉低转化——商详页用户已经感兴趣，社证说服力低于硬规格/价格信息。</div>
   <details class="v10-card-examples"><summary>看 1 篇真实反例</summary><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/669cefed00000000250173ac" target="_blank" rel="noopener" class="v10-note-link">🔗 《分享一款爱不释手的零食！.》｜商品名:妈妈很忙 西梅干450g 高纤维0添加蔗糖 软糯去核 西梅干1袋｜正文:办公室经常吃的这款零食，让我爱不释手。 它就是这款无糖无脂的西梅干，口感软糯，去核设计，吃起来方便又美味。它富含膳食纤维，既能满足我对美食的追求，又能帮助我维持 (ctr2=3.50)</a></li></ul></details>
 </div></div>
 </div>
@@ -2483,7 +2541,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   <details class="v9-legacy-fold">
   <summary class="v9-legacy-summary">📚 看更多写法参考（点开：图文/视频路径详细方法卡 + 反直觉发现）</summary>
   <div class="v9-legacy-body"><div class="two-weapons-banner">
-  <div class="tw-title">🎯 <abbr class="term-abbr" title="商品卡点击率：看了笔记 → 点开商品卡的比例">CTR2</abbr>（商品卡点击） 表现好的笔记里，有 2 种不同算法画像（共 10 个方法）</div>
+  <div class="tw-title">🎯 CTR2（商品卡点击） 表现好的笔记里，有 2 种不同算法画像（共 10 个方法）</div>
   <div class="tw-grid">
     <div class="tw-card tw-long">
       <div class="tw-head">🏛️ 可持续打法</div>
@@ -2502,7 +2560,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
 </div>
   <div class="insights-banner">
   <div class="insights-title">🔁 本周反直觉发现</div>
-  <div class="insights-list"><div class="insight-card"><span class="insight-pool">视频 <abbr class="term-abbr" title="商品卡点击率：看了笔记 → 点开商品卡的比例">CTR2</abbr> 池</span><div class="insight-text">⚡ &lt;b&gt;🩺 痛点直击+药食同源解决方案&lt;/b&gt;：算法真诚度比池均低 4.1 分（系统判商业感强），但 30 条笔记仍跑进强信号池。说明用户买这套但算法不爱——适合短期收割，不适合长线人设。</div></div></div>
+  <div class="insights-list"><div class="insight-card"><span class="insight-pool">视频 CTR2 池</span><div class="insight-text">⚡ &lt;b&gt;🩺 痛点直击+药食同源解决方案&lt;/b&gt;：算法真诚度比池均低 4.1 分（系统判商业感强），但 30 条笔记仍跑进强信号池。说明用户买这套但算法不爱——适合短期收割，不适合长线人设。</div></div></div>
 </div>
   <div class="section-label">🎯 行业参考值（对照你的笔记后台数据）</div>
   <div class="kpi-grid kpi-grid-2col">
@@ -2525,56 +2583,56 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   <div class="method-title">🌾 老板自白×真材实料溯源体 <span class="method-count">· 35 条</span></div>
   <div class="method-desc">正文是商家以第一人称讲自家供应链/工艺/数据战绩，让用户读完想点商品卡看'到底是不是真的'</div>
   <div class="method-tips"><div class="tip-line"><span class="tip-tag tip-cover">🔑 识别信号</span>正文用第一人称'我们家/咱家/我家'开头，禁止用'本店/官方/品牌方'这种距离感词 · 用真实战绩数字做铺垫：'卖了 XX 万单''XX 人喜欢''坚持 XX 年'，数字越具体越能引发点击 · 用分点结构列'真材实料'：①原料产地 ②工艺步骤 ③不加什么 ④发货方式，每条 1-2 行最好</div></div>
-  <div class="method-why">💡 <strong>为什么奏效</strong>：图文 <abbr class="term-abbr" title="商品卡点击率：看了笔记 → 点开商品卡的比例">CTR2</abbr>（商品卡点击率）最高的一类（70.3，高于池均值），算法的'真实度'比池子平均高 5 分，'低劣评分'和'优质点击'也都高于均值——说明这类笔记被系统判定为'非营销文'、是'值得继续往下看的真东西'，所以用户愿意点开商品卡求证。商家不在标题硬推产品，而是用'卖了11万单''2.8万人喜欢''坚持初心''配料表前 3 位是 XX''粉丝催了几个月'这种'有数字、有时间、有手感'的细节铺</div>
+  <div class="method-why">💡 <strong>为什么奏效</strong>：图文 CTR2（商品卡点击率）最高的一类（70.3，高于池均值），算法的'真实度'比池子平均高 5 分，'低劣评分'和'优质点击'也都高于均值——说明这类笔记被系统判定为'非营销文'、是'值得继续往下看的真东西'，所以用户愿意点开商品卡求证。商家不在标题硬推产品，而是用'卖了11万单''2.8万人喜欢''坚持初心''配料表前 3 位是 XX''粉丝催了几个月'这种'有数字、有时间、有手感'的细节铺</div>
   <div class="method-meta">
     <span class="method-cats">🏷️ 主要类目：药食同源食品 / 食补粉粉 / 参类滋补品</span>
     
   </div>
-  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/67e22003000000001c00cf6e" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 1502</span><span class="ic-title">卖了100W只舟山小馄饨❗️感谢小红书宝子们🥣</span><span class="ic-hl">🛒 舟山弄堂薄皮小馄饨手工现做，薄如蝉翼，只用本地猪</span><span class="ic-meta-row">三兔船长的店 · 曝光 640</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69e59a580000000022002f0d" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 595</span><span class="ic-title">小当家牛胸口庆五一活动来啦🎉</span><span class="ic-hl">🛒 牛胸口脆片（整体偏瘦，香香脆脆，下单千万看详情）</span><span class="ic-meta-row">爱吃牛胸口的小当家的店 · 曝光 4,152</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/694611c9000000001f008102" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 563</span><span class="ic-title">这就是我半年多一点卖了11万单的…底气</span><span class="ic-hl">🛒 『五黑粉』现磨即食代餐五谷粉 黑芝麻 黑米 黑豆</span><span class="ic-meta-row">秋喵食养手作的店 · 曝光 848</span></a></div>
+  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/67e22003000000001c00cf6e" target="_blank"><span class="ic-metric">GPM 1502</span><span class="ic-title">卖了100W只舟山小馄饨❗️感谢小红书宝子们🥣</span><span class="ic-hl">🛒 舟山弄堂薄皮小馄饨手工现做，薄如蝉翼，只用本地猪</span><span class="ic-meta-row">三兔船长的店 · 曝光 640</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69e59a580000000022002f0d" target="_blank"><span class="ic-metric">GPM 595</span><span class="ic-title">小当家牛胸口庆五一活动来啦🎉</span><span class="ic-hl">🛒 牛胸口脆片（整体偏瘦，香香脆脆，下单千万看详情）</span><span class="ic-meta-row">爱吃牛胸口的小当家的店 · 曝光 4,152</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/694611c9000000001f008102" target="_blank"><span class="ic-metric">GPM 563</span><span class="ic-title">这就是我半年多一点卖了11万单的…底气</span><span class="ic-hl">🛒 『五黑粉』现磨即食代餐五谷粉 黑芝麻 黑米 黑豆</span><span class="ic-meta-row">秋喵食养手作的店 · 曝光 848</span></a></div>
   <div class="method-source">数据来源：V9 算法分相对分位筛后池（35 条真实笔记聚类）</div>
 </div><div class="method-card-v2">
   <div class="method-title">🍷 酒款品鉴笔记体（开瓶→入口→尾韵 + 酒庄背景） <span class="method-count">· 31 条</span></div>
   <div class="method-desc">正文像一张专业品酒卡：先讲酒庄/年份/产区背景，再按'开瓶香气-入口-中段-尾韵'四段写风味画面，让懂酒的人按'我也想试一口'的冲动去点商品卡</div>
   <div class="method-tips"><div class="tip-line"><span class="tip-tag tip-cover">🔑 识别信号</span>正文用'开瓶/入口/中段/尾韵'四段式结构写风味，每段 2-3 句具体到水果/坚果/矿物等可想象的画面词 · 开篇 1-2 句交代酒庄底子：哪一年建庄、谁带的、用什么手法（生物动力法/老藤/小橡木桶等） · 至少出现一次酒评分或权威背书：WA/JS/WS/Vinous/Vivino 分数、Jasper Morris、米其林、酒评家名字</div></div>
-  <div class="method-why">💡 <strong>为什么奏效</strong>：葡萄酒是池子里最大类目（37 条），客单价均值 1624 元属高客单。这类笔记的算法'真实度'实际比池均值低 6.5 分（用户读起来更像'内行黑话'而非生活分享），但 <abbr class="term-abbr" title="商品卡点击率：看了笔记 → 点开商品卡的比例">CTR2</abbr> 依然达到 66.7——反直觉发现：高客单酒类用户进来就是来'看专业测评的'，正文越像一张品酒卡、越敢堆酒庄信息和风味词，目标买家越愿意点开商品卡看价格和年份。这一类的商品挂法基本是单品（is_multi_goods=0），</div>
+  <div class="method-why">💡 <strong>为什么奏效</strong>：葡萄酒是池子里最大类目（37 条），客单价均值 1624 元属高客单。这类笔记的算法'真实度'实际比池均值低 6.5 分（用户读起来更像'内行黑话'而非生活分享），但 CTR2 依然达到 66.7——反直觉发现：高客单酒类用户进来就是来'看专业测评的'，正文越像一张品酒卡、越敢堆酒庄信息和风味词，目标买家越愿意点开商品卡看价格和年份。这一类的商品挂法基本是单品（is_multi_goods=0），</div>
   <div class="method-meta">
     <span class="method-cats">🏷️ 主要类目：葡萄酒（勃艮第/波尔多/巴罗洛/香槟） / 洋酒（威士忌/金酒） / 清酒/烧酒</span>
     
   </div>
-  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69fd9800000000003502bef9" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 1736</span><span class="ic-title">冰镇到10度！这支勃艮第单一田太绝了🥂</span><span class="ic-hl">🛒 Le Gus't 蜂蜜香草奶油卷 夏山蒙哈榭单一</span><span class="ic-meta-row">法国酒农酒庄指南的店 · 曝光 655</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69bbc370000000001a02b472" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 1620</span><span class="ic-title">醉古老波特酒庄，20年高端液体甜点！</span><span class="ic-hl">🛒 波特酒宗师！葡萄牙Kopke科普克酒庄20年波特</span><span class="ic-meta-row">兔总的葡萄酒买手店的店 · 曝光 689</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6a117612000000000603274b" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 2859</span><span class="ic-title">极简主义大师Thierry Pillot圣欧班/默尔索</span><span class="ic-hl">🛒 OTHER 极简主义大师・Thierry Pil</span><span class="ic-meta-row">兔吉酒太甜的店 · 曝光 889</span></a></div>
+  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69fd9800000000003502bef9" target="_blank"><span class="ic-metric">GPM 1736</span><span class="ic-title">冰镇到10度！这支勃艮第单一田太绝了🥂</span><span class="ic-hl">🛒 Le Gus't 蜂蜜香草奶油卷 夏山蒙哈榭单一</span><span class="ic-meta-row">法国酒农酒庄指南的店 · 曝光 655</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69bbc370000000001a02b472" target="_blank"><span class="ic-metric">GPM 1620</span><span class="ic-title">醉古老波特酒庄，20年高端液体甜点！</span><span class="ic-hl">🛒 波特酒宗师！葡萄牙Kopke科普克酒庄20年波特</span><span class="ic-meta-row">兔总的葡萄酒买手店的店 · 曝光 689</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6a117612000000000603274b" target="_blank"><span class="ic-metric">GPM 2859</span><span class="ic-title">极简主义大师Thierry Pillot圣欧班/默尔索</span><span class="ic-hl">🛒 OTHER 极简主义大师・Thierry Pil</span><span class="ic-meta-row">兔吉酒太甜的店 · 曝光 889</span></a></div>
   <div class="method-source">数据来源：V9 算法分相对分位筛后池（31 条真实笔记聚类）</div>
 </div><div class="method-card-v2">
   <div class="method-title">💸 价格反差锚定体（贵 vs 我家便宜） <span class="method-count">· 21 条</span></div>
   <div class="method-desc">标题直接抛'国际均价 vs 我家价格'的反差锚点，正文用整段铺'立减多少/原价多少/同类多少'，让点开商品卡变成'去验证便宜多少'的动作</div>
   <div class="method-tips"><div class="tip-line"><span class="tip-tag tip-cover">🔑 识别信号</span>标题第一眼必须出现'数字 + 反差词'：直降 1000 / 立减 / 百元喝出千元 / 低于均价 / 99 元 / 8.5 折 · 正文开头 1-2 段铺锚点：'国际均价/友商价/原价 XX，我家现在 XX'，金额差距越大越能驱动点击 · 商品挂法以单品为主（高价酒类）或组合套装（低客单食品），商品名要带'套装/单瓶/几瓶装/规格'让用户在商品卡里继续算账</div></div>
-  <div class="method-why">💡 <strong>为什么奏效</strong>：这是图文 <abbr class="term-abbr" title="商品卡点击率：看了笔记 → 点开商品卡的比例">CTR2</abbr> 池里出现频次第二高的方法（21 条，大多落在酒类），算法'真实度'其实是 5 类里偏低的（-5.7），说明这类内容被系统识别为'促销味较重'，但 <abbr class="term-abbr" title="商品卡点击率：看了笔记 → 点开商品卡的比例">CTR2</abbr> 依然能跑到 66.9——因为'对比锚点'是商品卡点击最直接的钩子：用户看到'立减 1000/百元喝出千元/低于均价 1000+/99 元 6 罐'，第一反应就是去商品卡核对真假。这类方法的商品名通常会带'2023 年份''单</div>
+  <div class="method-why">💡 <strong>为什么奏效</strong>：这是图文 CTR2 池里出现频次第二高的方法（21 条，大多落在酒类），算法'真实度'其实是 5 类里偏低的（-5.7），说明这类内容被系统识别为'促销味较重'，但 CTR2 依然能跑到 66.9——因为'对比锚点'是商品卡点击最直接的钩子：用户看到'立减 1000/百元喝出千元/低于均价 1000+/99 元 6 罐'，第一反应就是去商品卡核对真假。这类方法的商品名通常会带'2023 年份''单</div>
   <div class="method-meta">
     <span class="method-cats">🏷️ 主要类目：葡萄酒（高客单平替） / 洋酒 / 精油芳疗</span>
     
   </div>
-  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6a1022730000000038037cdd" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 828</span><span class="ic-title">6.6大促开始了，山里人实在，只为你放心下单</span><span class="ic-hl">🛒 合于道 九制黄精 秦岭终南山道地古法九蒸九晒 即</span><span class="ic-meta-row">合于道漢方的店 · 曝光 602</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69cf20ac000000001a029c36" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 12052</span><span class="ic-title">百元喝出千元质感，一口沦陷的层次炸弹</span><span class="ic-hl">🛒 others 柑橘海盐芝士奶盖 勃艮第默尔索名家</span><span class="ic-meta-row">HolidayWine假 · 曝光 523</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6a10225000000000080006cc" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 2958</span><span class="ic-title">直降1000喝意大利“大龙”！稀缺配额</span><span class="ic-hl">🛒 others 索德拉卡瑟巴斯酒庄（大龙)意大利托</span><span class="ic-meta-row">Caillie凯莉的小酒 · 曝光 1,994</span></a></div>
+  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6a1022730000000038037cdd" target="_blank"><span class="ic-metric">GPM 828</span><span class="ic-title">6.6大促开始了，山里人实在，只为你放心下单</span><span class="ic-hl">🛒 合于道 九制黄精 秦岭终南山道地古法九蒸九晒 即</span><span class="ic-meta-row">合于道漢方的店 · 曝光 602</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69cf20ac000000001a029c36" target="_blank"><span class="ic-metric">GPM 12052</span><span class="ic-title">百元喝出千元质感，一口沦陷的层次炸弹</span><span class="ic-hl">🛒 others 柑橘海盐芝士奶盖 勃艮第默尔索名家</span><span class="ic-meta-row">HolidayWine假 · 曝光 523</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6a10225000000000080006cc" target="_blank"><span class="ic-metric">GPM 2958</span><span class="ic-title">直降1000喝意大利“大龙”！稀缺配额</span><span class="ic-hl">🛒 others 索德拉卡瑟巴斯酒庄（大龙)意大利托</span><span class="ic-meta-row">Caillie凯莉的小酒 · 曝光 1,994</span></a></div>
   <div class="method-source">数据来源：V9 算法分相对分位筛后池（21 条真实笔记聚类）</div>
 </div><div class="method-card-v2">
   <div class="method-title">🎁 节日礼盒场景代入体（端午/送礼/伴手） <span class="method-count">· 7 条</span></div>
   <div class="method-desc">标题锁定具体节日+送礼对象，正文用'打开瞬间的仪式感+体面感'让送礼焦虑的用户直接点商品卡看礼盒长什么样</div>
   <div class="method-tips"><div class="tip-line"><span class="tip-tag tip-cover">🔑 识别信号</span>标题=节点 + 送礼对象 + 关键词：'2026 端午送客户''新娘必看''上海特产伴手礼''企业定制' · 正文第一段写'打开瞬间的仪式感'：双开门、烫金、竹编、丝绒，让用户脑补'拿出去有面儿' · 中段列礼盒内含物清单：①X 个粽子 ②X 罐茶 ③茶具，告诉用户点商品卡能看到完整礼盒构成</div></div>
-  <div class="method-why">💡 <strong>为什么奏效</strong>：样本量虽然不大（7 条），但算法画像非常干净——'真实度'比池均值高 8.7 分、'低劣评分'高 0.027（5 类里最高），说明系统把这类内容判定为'正向、可读、不打扰'。<abbr class="term-abbr" title="商品卡点击率：看了笔记 → 点开商品卡的比例">CTR2</abbr> 反而是 5 类里最低（58.4），不是方法不行，而是受众更精准：只有正在找礼物的人才会点商品卡。商品挂法多是单 SKU 礼盒（含组合套装），商品名通常带'端午/福禄安康/双开门礼盒/客户送礼'等关键词，与标题直接呼应</div>
+  <div class="method-why">💡 <strong>为什么奏效</strong>：样本量虽然不大（7 条），但算法画像非常干净——'真实度'比池均值高 8.7 分、'低劣评分'高 0.027（5 类里最高），说明系统把这类内容判定为'正向、可读、不打扰'。CTR2 反而是 5 类里最低（58.4），不是方法不行，而是受众更精准：只有正在找礼物的人才会点商品卡。商品挂法多是单 SKU 礼盒（含组合套装），商品名通常带'端午/福禄安康/双开门礼盒/客户送礼'等关键词，与标题直接呼应</div>
   <div class="method-meta">
     <span class="method-cats">🏷️ 主要类目：节日礼盒（端午粽/中秋月饼） / 茶礼盒 / 上海/地方特产伴手礼</span>
     
   </div>
-  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/67bea854000000001201ce45" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 484</span><span class="ic-title">新娘必看！辣妹专属！19.9元的“小心机”</span><span class="ic-hl">🛒 SUPERICH 【双喜临门】火锅喜糖「富得牛油</span><span class="ic-meta-row">SUPERICH富得牛油 · 曝光 551</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69fc0407000000003700f77e" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 1626</span><span class="ic-title">收到这个双开门双层礼盒直接被惊艳到了！✨</span><span class="ic-hl">🛒 南三府 粽子礼盒装团购定制嘉兴蛋黄大肉粽蜜枣甜粽</span><span class="ic-meta-row">南三府食品礼盒的店 · 曝光 615</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6a13c953000000000701208b" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 2389</span><span class="ic-title">2026端午节真的可以送客户‼️100+💰大气显贵</span><span class="ic-hl">🛒 端阳茶叙｜端午节送客户送长辈茶叶礼盒送爸爸父亲节</span><span class="ic-meta-row">壹心堂食养的店 · 曝光 1,018</span></a></div>
+  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/67bea854000000001201ce45" target="_blank"><span class="ic-metric">GPM 484</span><span class="ic-title">新娘必看！辣妹专属！19.9元的“小心机”</span><span class="ic-hl">🛒 SUPERICH 【双喜临门】火锅喜糖「富得牛油</span><span class="ic-meta-row">SUPERICH富得牛油 · 曝光 551</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69fc0407000000003700f77e" target="_blank"><span class="ic-metric">GPM 1626</span><span class="ic-title">收到这个双开门双层礼盒直接被惊艳到了！✨</span><span class="ic-hl">🛒 南三府 粽子礼盒装团购定制嘉兴蛋黄大肉粽蜜枣甜粽</span><span class="ic-meta-row">南三府食品礼盒的店 · 曝光 615</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6a13c953000000000701208b" target="_blank"><span class="ic-metric">GPM 2389</span><span class="ic-title">2026端午节真的可以送客户‼️100+💰大气显贵</span><span class="ic-hl">🛒 端阳茶叙｜端午节送客户送长辈茶叶礼盒送爸爸父亲节</span><span class="ic-meta-row">壹心堂食养的店 · 曝光 1,018</span></a></div>
   <div class="method-source">数据来源：V9 算法分相对分位筛后池（7 条真实笔记聚类）</div>
 </div><div class="method-card-v2">
   <div class="method-title">⏳ 稀缺补货回归体（仅剩/断货/下架前） <span class="method-count">· 6 条</span></div>
   <div class="method-desc">标题/正文反复强调'今晚补货/下架前狂吃/发完要停一阵/等了一年回归'，把点商品卡变成'抢不到就没了'的紧迫动作</div>
   <div class="method-tips"><div class="tip-line"><span class="tip-tag tip-cover">🔑 识别信号</span>标题给出非常具体的稀缺锚点：'今晚 8 点补货''仅剩 6 瓶''下架前''季节限定到 6 月''等了一年回归' · 正文必须解释'为什么稀缺'：原料只能采到几月、手工只能做几罐、酒庄绝版、季节性食材——避免空喊稀缺 · 用老顾客原声做佐证：'被催了几个月''老粉一直在等''去年这个味道封神'，让稀缺感不是商家自卖自夸</div></div>
-  <div class="method-why">💡 <strong>为什么奏效</strong>：样本量不大（6 条），但算法画像在 5 类里最'扎眼'：'真实度'比池均值高 14 分（5 类最高！），'低劣评分'也是高位。这是一个反直觉的强信号——系统不仅没把这类内容判成'营销味重'，反而判得更真实，原因是这类正文都是'老板亲自说为什么要停''荠菜季只到 6 月''今晚 8 点补货'这种把'稀缺'落到具体时间和原因上的诚意写法。<abbr class="term-abbr" title="商品卡点击率：看了笔记 → 点开商品卡的比例">CTR2</abbr> 在样本少的情况下仍有 62.4，足以说明'真稀缺'比'</div>
+  <div class="method-why">💡 <strong>为什么奏效</strong>：样本量不大（6 条），但算法画像在 5 类里最'扎眼'：'真实度'比池均值高 14 分（5 类最高！），'低劣评分'也是高位。这是一个反直觉的强信号——系统不仅没把这类内容判成'营销味重'，反而判得更真实，原因是这类正文都是'老板亲自说为什么要停''荠菜季只到 6 月''今晚 8 点补货'这种把'稀缺'落到具体时间和原因上的诚意写法。CTR2 在样本少的情况下仍有 62.4，足以说明'真稀缺'比'</div>
   <div class="method-meta">
     <span class="method-cats">🏷️ 主要类目：方便速食（季节限定馄饨） / 药食同源食品（酸枣仁等山货） / 代用茶（果茶补货）</span>
     
   </div>
-  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69c3a77e000000001b00273e" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 523</span><span class="ic-title">补货到！VC满满，活力酸甜🍊血橙水果茶</span><span class="ic-hl">🛒 HARNEY &amp; SONS 活力血橙果茶</span><span class="ic-meta-row">HARNEY&amp;S · 曝光 1,097</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6a0db3970000000008031200" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 126</span><span class="ic-title">无限回购❗️下架前我要狂吃！！</span><span class="ic-hl">🛒 三兔船长 季节限定｜舟山小馄饨·荠菜鲜肉·新鲜现</span><span class="ic-meta-row">三兔船长的店 · 曝光 112,190</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69cb9a5a000000001b000f70" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 548</span><span class="ic-title">等了一年的荠菜鲜肉小馄饨回归✅红虾季结束</span><span class="ic-hl">🛒 三兔船长 季节限定｜舟山小馄饨·荠菜鲜肉·新鲜现</span><span class="ic-meta-row">三兔船长的店 · 曝光 1,460</span></a></div>
+  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69c3a77e000000001b00273e" target="_blank"><span class="ic-metric">GPM 523</span><span class="ic-title">补货到！VC满满，活力酸甜🍊血橙水果茶</span><span class="ic-hl">🛒 HARNEY &amp; SONS 活力血橙果茶</span><span class="ic-meta-row">HARNEY&amp;S · 曝光 1,097</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6a0db3970000000008031200" target="_blank"><span class="ic-metric">GPM 126</span><span class="ic-title">无限回购❗️下架前我要狂吃！！</span><span class="ic-hl">🛒 三兔船长 季节限定｜舟山小馄饨·荠菜鲜肉·新鲜现</span><span class="ic-meta-row">三兔船长的店 · 曝光 112,190</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69cb9a5a000000001b000f70" target="_blank"><span class="ic-metric">GPM 548</span><span class="ic-title">等了一年的荠菜鲜肉小馄饨回归✅红虾季结束</span><span class="ic-hl">🛒 三兔船长 季节限定｜舟山小馄饨·荠菜鲜肉·新鲜现</span><span class="ic-meta-row">三兔船长的店 · 曝光 1,460</span></a></div>
   <div class="method-source">数据来源：V9 算法分相对分位筛后池（6 条真实笔记聚类）</div>
 </div></div>
 
@@ -2588,7 +2646,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="method-cats">🏷️ 主要类目：乌龙茶 / 肉干/肉脯/卤味零食 / 山核桃/坚果/炒货</span>
     <div class="algo-tags"><span class="algo-tag algo-good">👁 点进来的人会认真看完</span></div>
   </div>
-  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/67c6b942000000001201cc3e" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 216</span><span class="ic-title">台湾省特产巨甘甜😋奶香小甜水，送三种口味</span><span class="ic-hl">🛒 修哲 拍一送三  奶香金萱【赠品】果香冻顶+蜜香</span><span class="ic-meta-row">修哲 SHOWZE的店 · 曝光 47,443</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/68c42dbf000000001d027b3c" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 1244</span><span class="ic-title">力度超大的小当家牛胸口店庆活动9月16日🔥</span><span class="ic-hl">🛒 牛胸口（有肥有瘦，无全肥，不支持偏肥备注） 此选</span><span class="ic-meta-row">爱吃牛胸口的小当家的店 · 曝光 794</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/67a339b90000000018011e90" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 171</span><span class="ic-title">拿到祖国居民证❤️把台湾省茶叶送给大家尝尝</span><span class="ic-hl">🛒 修哲 拍一送三  奶香金萱【赠品】果香冻顶+蜜香</span><span class="ic-meta-row">修哲 SHOWZE的店 · 曝光 81,829</span></a></div>
+  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/67c6b942000000001201cc3e" target="_blank"><span class="ic-metric">GPM 216</span><span class="ic-title">台湾省特产巨甘甜😋奶香小甜水，送三种口味</span><span class="ic-hl">🛒 修哲 拍一送三  奶香金萱【赠品】果香冻顶+蜜香</span><span class="ic-meta-row">修哲 SHOWZE的店 · 曝光 47,443</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/68c42dbf000000001d027b3c" target="_blank"><span class="ic-metric">GPM 1244</span><span class="ic-title">力度超大的小当家牛胸口店庆活动9月16日🔥</span><span class="ic-hl">🛒 牛胸口（有肥有瘦，无全肥，不支持偏肥备注） 此选</span><span class="ic-meta-row">爱吃牛胸口的小当家的店 · 曝光 794</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/67a339b90000000018011e90" target="_blank"><span class="ic-metric">GPM 171</span><span class="ic-title">拿到祖国居民证❤️把台湾省茶叶送给大家尝尝</span><span class="ic-hl">🛒 修哲 拍一送三  奶香金萱【赠品】果香冻顶+蜜香</span><span class="ic-meta-row">修哲 SHOWZE的店 · 曝光 81,829</span></a></div>
   <div class="method-source">数据来源：V9 算法分相对分位筛后池（5 条真实笔记聚类）</div>
 </div><div class="method-card-v2">
   <div class="method-title">😭 老板亲自下场委屈体 <span class="method-count">· 12 条</span></div>
@@ -2599,18 +2657,18 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="method-cats">🏷️ 主要类目：蜂产品 / 米/面粉/杂粮 / 蜜饯/枣类/梅/果干/冻干</span>
     <div class="algo-tags"><span class="algo-tag algo-good">🚀 系统判"像真心分享"·推流加成</span></div>
   </div>
-  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/684c1415000000002300103e" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 946</span><span class="ic-title">不能吃酸的姐妹👭千万不要轻易尝试！.</span><span class="ic-hl">🛒 妈妈很忙 手工桑葚核桃糕250g 酸甜软糯 1盒</span><span class="ic-meta-row">妈妈很忙手工美食的店 · 曝光 745</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69eb107c0000000013030805" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 73</span><span class="ic-title">在新疆卖个蜂蜜太难了😭退货让我哭笑不得</span><span class="ic-hl">🛒 【黄芪蜜】新疆蜜｜黑蜂采｜不添加喂糖 黄芪500</span><span class="ic-meta-row">新疆尼勒克黑蜂蜂蜜的店 · 曝光 2,566,202</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69fdd01f000000003701c03e" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 32</span><span class="ic-title">摆摊卖自己家大米，社恐出摊</span><span class="ic-hl">🛒 粮仁福 五常大米新米2斤试吃装农户直发稻花香2号</span><span class="ic-meta-row">五常明明舅的店 · 曝光 1,247,281</span></a></div>
+  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/684c1415000000002300103e" target="_blank"><span class="ic-metric">GPM 946</span><span class="ic-title">不能吃酸的姐妹👭千万不要轻易尝试！.</span><span class="ic-hl">🛒 妈妈很忙 手工桑葚核桃糕250g 酸甜软糯 1盒</span><span class="ic-meta-row">妈妈很忙手工美食的店 · 曝光 745</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69eb107c0000000013030805" target="_blank"><span class="ic-metric">GPM 73</span><span class="ic-title">在新疆卖个蜂蜜太难了😭退货让我哭笑不得</span><span class="ic-hl">🛒 【黄芪蜜】新疆蜜｜黑蜂采｜不添加喂糖 黄芪500</span><span class="ic-meta-row">新疆尼勒克黑蜂蜂蜜的店 · 曝光 2,566,202</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69fdd01f000000003701c03e" target="_blank"><span class="ic-metric">GPM 32</span><span class="ic-title">摆摊卖自己家大米，社恐出摊</span><span class="ic-hl">🛒 粮仁福 五常大米新米2斤试吃装农户直发稻花香2号</span><span class="ic-meta-row">五常明明舅的店 · 曝光 1,247,281</span></a></div>
   <div class="method-source">数据来源：V9 算法分相对分位筛后池（12 条真实笔记聚类）</div>
 </div><div class="method-card-v2">
   <div class="method-title">🩺 痛点直击+药食同源解决方案 <span class="method-count">· 30 条</span></div>
   <div class="method-desc">用&quot;湿气重/姨妈痛/管理期/卵巢保养/嘴里有味&quot;这类高频健康焦虑词当钩子，把商品定位成&quot;对症的吃喝方案&quot;而不是普通食品。</div>
   <div class="method-tips"><div class="tip-line"><span class="tip-tag tip-cover">🔑 识别信号</span>标题包含具体症状+人群词：&quot;姨妈热饮&quot;&quot;管理期主食&quot;&quot;卵巢保养&quot;&quot;不长痘&quot;&quot;备孕&quot; · 商品名直接用药食同源词：黄精、黄芪、玉竹、四神汤、石斛、茯苓、燕窝 · 开篇3秒列5条用户自查清单（&quot;是不是经常累/便秘/上火&quot;），让用户对号入座</div></div>
-  <div class="method-why">💡 <strong>为什么奏效</strong>：这类笔记的转化率高达10.98%（全池第二），且占池子30%，是<abbr class="term-abbr" title="商品卡点击率：看了笔记 → 点开商品卡的比例">CTR2</abbr>转化的主力。脚本结构很统一：先点出用户每天都在搜的身体困扰（&quot;嘴里有味&quot;&quot;一动就累&quot;&quot;手脚冰凉&quot;），然后把商品包装成&quot;中医古方/药食同源/15年生黄精&quot;的解药，再给一个清晰的&quot;每天来一块/泡水喝/一罐就够&quot;的食用动作。算法的真诚</div>
+  <div class="method-why">💡 <strong>为什么奏效</strong>：这类笔记的转化率高达10.98%（全池第二），且占池子30%，是CTR2转化的主力。脚本结构很统一：先点出用户每天都在搜的身体困扰（&quot;嘴里有味&quot;&quot;一动就累&quot;&quot;手脚冰凉&quot;），然后把商品包装成&quot;中医古方/药食同源/15年生黄精&quot;的解药，再给一个清晰的&quot;每天来一块/泡水喝/一罐就够&quot;的食用动作。算法的真诚</div>
   <div class="method-meta">
     <span class="method-cats">🏷️ 主要类目：药食同源食品 / 代用/花草/水果/再加工茶 / 其它传统滋补品</span>
     <div class="algo-tags"><span class="algo-tag algo-warn">⚡ 系统判"商业味重"·短期收割型</span> <span class="algo-tag algo-good">👁 点进来的人会认真看完</span></div>
   </div>
-  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69f17a0a000000003700e862" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 364</span><span class="ic-title">卖断货的黄芪七白羹！什么时候吃事半功倍！</span><span class="ic-hl">🛒 极盏 黄芪七白羹南杏仁饮正北芪补气润颜焕亮无添加</span><span class="ic-meta-row">极盏旗舰店 · 曝光 35,452</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6a0585380000000035028dc5" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 65</span><span class="ic-title">农科院的甜糯玉米，小撒老师实名爱吃😝</span><span class="ic-hl">🛒 【甜糯玉米&amp;北京农科院】农科糯336 香</span><span class="ic-meta-row">农科优选的店 · 曝光 1,024,042</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/689558790000000023034cf6" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 527</span><span class="ic-title">槟子榔子吞云吐雾，你可一定要...</span><span class="ic-hl">🛒 其他 甘草竹盐枇杷干营养清甜开袋即食农家无核枇杷</span><span class="ic-meta-row">味多多零食的店 · 曝光 2,403</span></a></div>
+  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69f17a0a000000003700e862" target="_blank"><span class="ic-metric">GPM 364</span><span class="ic-title">卖断货的黄芪七白羹！什么时候吃事半功倍！</span><span class="ic-hl">🛒 极盏 黄芪七白羹南杏仁饮正北芪补气润颜焕亮无添加</span><span class="ic-meta-row">极盏旗舰店 · 曝光 35,452</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6a0585380000000035028dc5" target="_blank"><span class="ic-metric">GPM 65</span><span class="ic-title">农科院的甜糯玉米，小撒老师实名爱吃😝</span><span class="ic-hl">🛒 【甜糯玉米&amp;北京农科院】农科糯336 香</span><span class="ic-meta-row">农科优选的店 · 曝光 1,024,042</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/689558790000000023034cf6" target="_blank"><span class="ic-metric">GPM 527</span><span class="ic-title">槟子榔子吞云吐雾，你可一定要...</span><span class="ic-hl">🛒 其他 甘草竹盐枇杷干营养清甜开袋即食农家无核枇杷</span><span class="ic-meta-row">味多多零食的店 · 曝光 2,403</span></a></div>
   <div class="method-source">数据来源：V9 算法分相对分位筛后池（30 条真实笔记聚类）</div>
 </div><div class="method-card-v2">
   <div class="method-title">🍷 庄园+年份+风味词专业品鉴体 <span class="method-count">· 21 条</span></div>
@@ -2621,7 +2679,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="method-cats">🏷️ 主要类目：葡萄酒 / 白茶 / 露酒/果酒</span>
     <div class="algo-tags"><span class="algo-tag algo-good">🚀 系统判"像真心分享"·推流加成</span></div>
   </div>
-  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69b290500000000022030c24" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 537</span><span class="ic-title">这瓶橘子酒承包整个春天的氛围感🍊</span><span class="ic-hl">🛒 塔伦家 日落橘子海 爆汁橘子起泡酒  整颗橘子鲜</span><span class="ic-meta-row">疆进酒少庄主精选葡萄酒的 · 曝光 3,609</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69c24fa1000000001a0248ee" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 489</span><span class="ic-title">意大利新贵酒庄—Amorotti，好喝不贵</span><span class="ic-hl">🛒 OTHER 意大利当代文艺复兴名庄・Amorot</span><span class="ic-meta-row">兔吉酒太甜的店 · 曝光 856</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6852b431000000002400a0d7" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 2058</span><span class="ic-title">八大爷藏在国王园里的秘密，你们知道吗</span><span class="ic-hl">🛒 OTHER 八大爷稀缺配额・西湾酒庄国王园阿里高</span><span class="ic-meta-row">兔吉酒太甜的店 · 曝光 951</span></a></div>
+  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69b290500000000022030c24" target="_blank"><span class="ic-metric">GPM 537</span><span class="ic-title">这瓶橘子酒承包整个春天的氛围感🍊</span><span class="ic-hl">🛒 塔伦家 日落橘子海 爆汁橘子起泡酒  整颗橘子鲜</span><span class="ic-meta-row">疆进酒少庄主精选葡萄酒的 · 曝光 3,609</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69c24fa1000000001a0248ee" target="_blank"><span class="ic-metric">GPM 489</span><span class="ic-title">意大利新贵酒庄—Amorotti，好喝不贵</span><span class="ic-hl">🛒 OTHER 意大利当代文艺复兴名庄・Amorot</span><span class="ic-meta-row">兔吉酒太甜的店 · 曝光 856</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6852b431000000002400a0d7" target="_blank"><span class="ic-metric">GPM 2058</span><span class="ic-title">八大爷藏在国王园里的秘密，你们知道吗</span><span class="ic-hl">🛒 OTHER 八大爷稀缺配额・西湾酒庄国王园阿里高</span><span class="ic-meta-row">兔吉酒太甜的店 · 曝光 951</span></a></div>
   <div class="method-source">数据来源：V9 算法分相对分位筛后池（21 条真实笔记聚类）</div>
 </div><div class="method-card-v2">
   <div class="method-title">⏰ 季节限定+末班车催单体 <span class="method-count">· 11 条</span></div>
@@ -2632,27 +2690,27 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="method-cats">🏷️ 主要类目：糕点/点心 / 其他 / 药食同源食品</span>
     <div class="algo-tags"><span class="algo-tag algo-warn">⚡ 系统判"商业味重"·短期收割型</span></div>
   </div>
-  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/67de7603000000001b03935a" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 335</span><span class="ic-title">终于理解这个让人惊艳的咖啡糖🥹！！</span><span class="ic-hl">🛒 X-it 无糖冰黑咖啡糖浓香丝滑香润糖开车加班犯</span><span class="ic-meta-row">IMINT旗舰店 · 曝光 54,978</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69f3260c000000001f00126d" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 1023</span><span class="ic-title">云南头茬墨红，直二邀您试喝！</span><span class="ic-hl">🛒 杨直二 2026头茬云南冻干墨红玫瑰花茶100克</span><span class="ic-meta-row">杨直二的店 · 曝光 1,070</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/692eee2f000000001b027f69" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 521</span><span class="ic-title">坚果控请进！</span><span class="ic-hl">🛒 2026年新现烤不加盐原味大腰果仁 300克</span><span class="ic-meta-row">韩要强现烤坚果的店 · 曝光 1,101</span></a></div>
+  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/67de7603000000001b03935a" target="_blank"><span class="ic-metric">GPM 335</span><span class="ic-title">终于理解这个让人惊艳的咖啡糖🥹！！</span><span class="ic-hl">🛒 X-it 无糖冰黑咖啡糖浓香丝滑香润糖开车加班犯</span><span class="ic-meta-row">IMINT旗舰店 · 曝光 54,978</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69f3260c000000001f00126d" target="_blank"><span class="ic-metric">GPM 1023</span><span class="ic-title">云南头茬墨红，直二邀您试喝！</span><span class="ic-hl">🛒 杨直二 2026头茬云南冻干墨红玫瑰花茶100克</span><span class="ic-meta-row">杨直二的店 · 曝光 1,070</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/692eee2f000000001b027f69" target="_blank"><span class="ic-metric">GPM 521</span><span class="ic-title">坚果控请进！</span><span class="ic-hl">🛒 2026年新现烤不加盐原味大腰果仁 300克</span><span class="ic-meta-row">韩要强现烤坚果的店 · 曝光 1,101</span></a></div>
   <div class="method-source">数据来源：V9 算法分相对分位筛后池（11 条真实笔记聚类）</div>
 </div></div>
 
   <div class="tips-box">
-    <strong>💡 怎么用：</strong> 每条方法下有 2 个本周真实案例，是该指标表现好的笔记里聚类出的写法规律。<b>注意</b>：这是相关性，不是因果——同一批笔记同时高 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>、高 CTR/<abbr class="term-abbr" title="下单转化率：看了商品卡 → 实际下单的比例">CVR</abbr>，方法论可能跨指标重叠。建议优先看你品类的案例，不要硬抄跨品类。
+    <strong>💡 怎么用：</strong> 每条方法下有 2 个本周真实案例，是该指标表现好的笔记里聚类出的写法规律。<b>注意</b>：这是相关性，不是因果——同一批笔记同时高 <abbr class="term-abbr" data-tip="商品成交金额，即销售额">GMV</abbr>、高 CTR/<abbr class="term-abbr" data-tip="下单转化率，点开商品卡后实际下单的比例">CVR</abbr>，方法论可能跨指标重叠。建议优先看你品类的案例，不要硬抄跨品类。
   </div>
 </div>
 </div>
 </details><div class="tab-panel hidden" id="tab-cvr">
   <div class="hero hero-sub hero-cvr">
-    <h2>📈 <abbr class="term-abbr" title="下单转化率：看了商品卡 → 实际下单的比例">CVR</abbr>（下单转化）表现好的笔记长什么样</h2>
-    <p class="meta">⚠️ 这是从高 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> 笔记里聚类出的相关性画像，不是因果证明。仅作为内容方向参考，不保证按此改一定提升该指标</p>
+    <h2>📈 <abbr class="term-abbr" data-tip="下单转化率，点开商品卡后实际下单的比例">CVR</abbr>（下单转化）表现好的笔记长什么样</h2>
+    <p class="meta">⚠️ 这是从高 GMV 笔记里聚类出的相关性画像，不是因果证明。仅作为内容方向参考，不保证按此改一定提升该指标</p>
   </div>
 <div class="v10-section">
   <div class="v10-banner">
-    <div class="v10-banner-title">🔬 <abbr class="term-abbr" title="下单转化率：看了商品卡 → 实际下单的比例">CVR</abbr>（下单转化） 高低对照 · 学好的，避坑的</div>
-    <div class="v10-banner-sub">把同类目里"<b><abbr class="term-abbr" title="下单转化率：看了商品卡 → 实际下单的比例">CVR</abbr>（下单转化） 排前 25%</b>"和"<b>排后 25%</b>"的笔记拉出来比，找出"好笔记常用、坏笔记踩坑"的写法。<b>这是从已发笔记里归纳的规律，是参考不是保证</b>。</div>
+    <div class="v10-banner-title">🔬 <abbr class="term-abbr" data-tip="下单转化率，点开商品卡后实际下单的比例">CVR</abbr>（下单转化） 高低对照 · 学好的，避坑的</div>
+    <div class="v10-banner-sub">把同类目里"<b>CVR（下单转化） 排前 25%</b>"和"<b>排后 25%</b>"的笔记拉出来比，找出"好笔记常用、坏笔记踩坑"的写法。<b>这是从已发笔记里归纳的规律，是参考不是保证</b>。</div>
   </div>
   
-  <div class="v10-mechanism v10-mech-hero">💎 <b>核心规律</b>：<abbr class="term-abbr" title="下单转化率：看了商品卡 → 实际下单的比例">CVR</abbr> 高 vs 低 的本质差别：高组把『商品』翻译成『一个具体人群在一个具体时刻的固定动作 + 情绪兜底』（人群锁定 → 场景化 → 每天一勺 → 治愈/安心）；低组停留在『产品描述+ 横向比较+ 规格数字+ 节日套话』，让用户自己脑补『我要不要、什么时候、怎么用』。所以提升 <abbr class="term-abbr" title="下单转化率：看了商品卡 → 实际下单的比例">CVR</abbr> 的核心动作不是把内容做得更长更专业，而是把『使用决策』提前替用户做完。</div>
+  <div class="v10-mechanism v10-mech-hero">💎 <b>核心规律</b>：CVR 高 vs 低 的本质差别：高组把『商品』翻译成『一个具体人群在一个具体时刻的固定动作 + 情绪兜底』（人群锁定 → 场景化 → 每天一勺 → 治愈/安心）；低组停留在『产品描述+ 横向比较+ 规格数字+ 节日套话』，让用户自己脑补『我要不要、什么时候、怎么用』。所以提升 CVR 的核心动作不是把内容做得更长更专业，而是把『使用决策』提前替用户做完。</div>
   
   
   
@@ -2736,7 +2794,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="diff-pp">表现好的多 3.8%</span> <span class="diff-ratio">2.36</span>
   </div>
   <div class="v10-card-cat">📊 养生食疗为主（约 80%）、辅以妈妈经验/美食教程；茶酒占比 47%</div>
-  <div class="v10-card-advice">💡 养生/食疗类商品按『痛点描述→人群标签→每天怎么喝→食材配比』四段结构写，比堆原料/讲故事 <abbr class="term-abbr" title="下单转化率：看了商品卡 → 实际下单的比例">CVR</abbr> 高 2 倍。</div>
+  <div class="v10-card-advice">💡 养生/食疗类商品按『痛点描述→人群标签→每天怎么喝→食材配比』四段结构写，比堆原料/讲故事 CVR 高 2 倍。</div>
   <details class="v10-card-examples">
     <summary>看 3 篇真实案例 + 1 篇反例</summary>
     <div class="v10-ex-block">
@@ -2780,7 +2838,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="diff-pp">表现好的多 4.3%</span> <span class="diff-ratio">1.82</span>
   </div>
   <div class="v10-card-cat">📊 养生食疗 + 健身饮食 + 妈妈经验 + 美食测评，跨类目通用；茶酒占比 33%（较低，意味着真普适）</div>
-  <div class="v10-card-advice">💡 食品/养生类无论原品类是什么，都可以在标题挂一个外貌结果（瘦/气色/抗老/减脂期），把食欲消费翻译成女性自我投资语言，<abbr class="term-abbr" title="下单转化率：看了商品卡 → 实际下单的比例">CVR</abbr> 收益跨类目稳定。</div>
+  <div class="v10-card-advice">💡 食品/养生类无论原品类是什么，都可以在标题挂一个外貌结果（瘦/气色/抗老/减脂期），把食欲消费翻译成女性自我投资语言，CVR 收益跨类目稳定。</div>
   <details class="v10-card-examples">
     <summary>看 3 篇真实案例 + 1 篇反例</summary>
     <div class="v10-ex-block">
@@ -2827,7 +2885,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="diff-pp diff-pp-red">表现差的多 5.0%</span>
   </div>
   <div class="v10-card-cat">📊 美食测评高度集中，茶酒占比偏高</div>
-  <div class="v10-card-advice v10-card-advice-red">🚫 做横向比较时务必给出唯一明确的购买结论，并紧跟『每天怎么喝/一勺多少』收口；只罗列差异、让用户自己判断会显著拉低 <abbr class="term-abbr" title="下单转化率：看了商品卡 → 实际下单的比例">CVR</abbr>。</div>
+  <div class="v10-card-advice v10-card-advice-red">🚫 做横向比较时务必给出唯一明确的购买结论，并紧跟『每天怎么喝/一勺多少』收口；只罗列差异、让用户自己判断会显著拉低 CVR。</div>
   <details class="v10-card-examples"><summary>看 3 篇真实反例</summary><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6a1e60330000000022009537" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评|cvr=0.038] 我们打算卖掉修哲，以后可能喝不到修哲茶了</a></li><li><a href="https://www.xiaohongshu.com/explore/69e189b2000000002301374d" target="_blank" rel="noopener" class="v10-note-link">🔗 [医疗药品|cvr=0.037] 速成黄精vs真黄精，你买对了吗？</a></li><li><a href="https://www.xiaohongshu.com/explore/6a10402000000000060342a3" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评|cvr=0.02] 被米其林抢疯的奥地利小花到底多好喝？</a></li></ul></details>
 </div><div class="v10-card v10-card-low">
   <div class="v10-card-head">
@@ -2847,7 +2905,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
 </div><div class="v10-card v10-card-low">
   <div class="v10-card-head">
     <span class="v10-card-num v10-card-num-red">3</span>
-    <span class="v10-card-name">节日礼盒套话（端午/520/伴手礼）— 在没有解决方案叙事时拉低 <abbr class="term-abbr" title="下单转化率：看了商品卡 → 实际下单的比例">CVR</abbr></span>
+    <span class="v10-card-name">节日礼盒套话（端午/520/伴手礼）— 在没有解决方案叙事时拉低 CVR</span>
     <abbr class="conf-badge cb-mid" title="差距中等或样本偏小，可参考但需结合自身判断">证据中</abbr>
   </div>
   <div class="v10-card-stat-row">
@@ -2872,7 +2930,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="diff-pp diff-pp-red">表现差的多 2.4%</span>
   </div>
   <div class="v10-card-cat">📊 美食测评集中，茶酒偏多</div>
-  <div class="v10-card-advice v10-card-advice-red">🚫 标题尽量用『陈述句给出结果或承诺』，少用『XX 凭什么/到底多好喝？』这种把判断踢回给用户的句式——疑问式钩子拉 CTR 可能可以，但 <abbr class="term-abbr" title="下单转化率：看了商品卡 → 实际下单的比例">CVR</abbr> 会被稀释。</div>
+  <div class="v10-card-advice v10-card-advice-red">🚫 标题尽量用『陈述句给出结果或承诺』，少用『XX 凭什么/到底多好喝？』这种把判断踢回给用户的句式——疑问式钩子拉 CTR 可能可以，但 CVR 会被稀释。</div>
   <details class="v10-card-examples"><summary>看 3 篇真实反例</summary><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/677768650000000013018247" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评|cvr=0.042] 700年历史的勃艮第一级园 只卖这个价？</a></li><li><a href="https://www.xiaohongshu.com/explore/6a10402000000000060342a3" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评|cvr=0.02] 被米其林抢疯的奥地利小花到底多好喝？</a></li><li><a href="https://www.xiaohongshu.com/explore/69fef3a8000000001f005188" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗|cvr=0.046] 谁喝谁漂亮的桑葚玫瑰蜜爆单了，凭啥？</a></li></ul></details>
 </div></div>
 </div>
@@ -2881,7 +2939,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   <details class="v9-legacy-fold">
   <summary class="v9-legacy-summary">📚 看更多写法参考（点开：图文/视频路径详细方法卡 + 反直觉发现）</summary>
   <div class="v9-legacy-body"><div class="two-weapons-banner">
-  <div class="tw-title">🎯 <abbr class="term-abbr" title="下单转化率：看了商品卡 → 实际下单的比例">CVR</abbr>（转化下单） 表现好的笔记里，有 2 种不同算法画像（共 10 个方法）</div>
+  <div class="tw-title">🎯 CVR（转化下单） 表现好的笔记里，有 2 种不同算法画像（共 10 个方法）</div>
   <div class="tw-grid">
     <div class="tw-card tw-long">
       <div class="tw-head">🏛️ 可持续打法</div>
@@ -2900,7 +2958,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
 </div>
   <div class="insights-banner">
   <div class="insights-title">🔁 本周反直觉发现</div>
-  <div class="insights-list"><div class="insight-card"><span class="insight-pool">图文 <abbr class="term-abbr" title="下单转化率：看了商品卡 → 实际下单的比例">CVR</abbr> 池</span><div class="insight-text">⚡ &lt;b&gt;💪 身体痛点→食疗解决方案体&lt;/b&gt;：算法真诚度比池均低 7.7 分（系统判商业感强），但 14 条笔记仍跑进强信号池。说明用户买这套但算法不爱——适合短期收割，不适合长线人设。</div></div><div class="insight-card"><span class="insight-pool">视频 <abbr class="term-abbr" title="下单转化率：看了商品卡 → 实际下单的比例">CVR</abbr> 池</span><div class="insight-text">⚡ &lt;b&gt;🌿 症状代入·古法养生&lt;/b&gt;：算法真诚度比池均低 4.7 分（系统判商业感强），但 22 条笔记仍跑进强信号池。说明用户买这套但算法不爱——适合短期收割，不适合长线人设。</div></div></div>
+  <div class="insights-list"><div class="insight-card"><span class="insight-pool">图文 CVR 池</span><div class="insight-text">⚡ &lt;b&gt;💪 身体痛点→食疗解决方案体&lt;/b&gt;：算法真诚度比池均低 7.7 分（系统判商业感强），但 14 条笔记仍跑进强信号池。说明用户买这套但算法不爱——适合短期收割，不适合长线人设。</div></div><div class="insight-card"><span class="insight-pool">视频 CVR 池</span><div class="insight-text">⚡ &lt;b&gt;🌿 症状代入·古法养生&lt;/b&gt;：算法真诚度比池均低 4.7 分（系统判商业感强），但 22 条笔记仍跑进强信号池。说明用户买这套但算法不爱——适合短期收割，不适合长线人设。</div></div></div>
 </div>
   <div class="section-label">🎯 行业参考值（对照你的笔记后台数据）</div>
   <div class="kpi-grid kpi-grid-2col">
@@ -2928,29 +2986,29 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="method-cats">🏷️ 主要类目：葡萄酒 / 洋酒 / 清酒/烧酒</span>
     
   </div>
-  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69c0e7380000000023026056" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 939</span><span class="ic-title">比去年便宜400..突然很感谢之前说很贵的人</span><span class="ic-hl">🛒 others 柑橘柚子花香|法国进口美藤莎当妮维</span><span class="ic-meta-row">酒類美術館Wine Ga · 曝光 726</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69f463af0000000038021af5" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 477</span><span class="ic-title">不到百元？我愿称这瓶德黑是醉佳勃艮第平替</span><span class="ic-hl">🛒 Vinehoo 莱茵黑森名家，18个月桶陈 托乐</span><span class="ic-meta-row">酒云网的店 · 曝光 503</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69cf20ac000000001a029c36" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 12052</span><span class="ic-title">百元喝出千元质感，一口沦陷的层次炸弹</span><span class="ic-hl">🛒 others 柑橘海盐芝士奶盖 勃艮第默尔索名家</span><span class="ic-meta-row">HolidayWine假 · 曝光 523</span></a></div>
+  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69c0e7380000000023026056" target="_blank"><span class="ic-metric">GPM 939</span><span class="ic-title">比去年便宜400..突然很感谢之前说很贵的人</span><span class="ic-hl">🛒 others 柑橘柚子花香|法国进口美藤莎当妮维</span><span class="ic-meta-row">酒類美術館Wine Ga · 曝光 726</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69f463af0000000038021af5" target="_blank"><span class="ic-metric">GPM 477</span><span class="ic-title">不到百元？我愿称这瓶德黑是醉佳勃艮第平替</span><span class="ic-hl">🛒 Vinehoo 莱茵黑森名家，18个月桶陈 托乐</span><span class="ic-meta-row">酒云网的店 · 曝光 503</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69cf20ac000000001a029c36" target="_blank"><span class="ic-metric">GPM 12052</span><span class="ic-title">百元喝出千元质感，一口沦陷的层次炸弹</span><span class="ic-hl">🛒 others 柑橘海盐芝士奶盖 勃艮第默尔索名家</span><span class="ic-meta-row">HolidayWine假 · 曝光 523</span></a></div>
   <div class="method-source">数据来源：V9 算法分相对分位筛后池（23 条真实笔记聚类）</div>
 </div><div class="method-card-v2">
   <div class="method-title">🎁 节日+对象+礼盒一句话锁定体 <span class="method-count">· 9 条</span></div>
   <div class="method-desc">标题在20字内同时给出『节日』『送礼对象』『礼盒视觉锚』三要素，把笔记变成『正在选礼物的人』的精准搜索答案</div>
   <div class="method-tips"><div class="tip-line"><span class="tip-tag tip-cover">🔑 识别信号</span>标题三件套：节日（端午/父亲节/520/跨年/中秋）+ 对象（送爸爸/送客户/送长辈/送男友）+ 价位与体面感（100+大气显贵/拿得出手） · 商品名直接复述场景：『端午节送客户送长辈茶叶礼盒送爸爸父亲节礼物大气精致 礼盒装』 · 封面突出礼盒打开瞬间、烫金/丝绸/铁盒/金砖等高级感视觉锚</div></div>
-  <div class="method-why">💡 <strong>为什么奏效</strong>：送礼是高焦虑决策——用户不是『随便看看』而是『就要找端午送爸妈的礼盒』。标题里同时锁定『端午/父亲节/520+爸妈/客户/女友+大气显贵/铁盒/金砖』三要素，等于把搜索框里那句话直接当标题写出来，进来的人意图特别集中。商品页一看礼盒颜值在线、价位300-800元甜区，几乎不需要二次比价就下单。这个方法平均<abbr class="term-abbr" title="下单转化率：看了商品卡 → 实际下单的比例">CVR</abbr>=31.9，高于池均20+，说明送礼场景的『选定即下单率』天然高</div>
+  <div class="method-why">💡 <strong>为什么奏效</strong>：送礼是高焦虑决策——用户不是『随便看看』而是『就要找端午送爸妈的礼盒』。标题里同时锁定『端午/父亲节/520+爸妈/客户/女友+大气显贵/铁盒/金砖』三要素，等于把搜索框里那句话直接当标题写出来，进来的人意图特别集中。商品页一看礼盒颜值在线、价位300-800元甜区，几乎不需要二次比价就下单。这个方法平均CVR=31.9，高于池均20+，说明送礼场景的『选定即下单率』天然高</div>
   <div class="method-meta">
     <span class="method-cats">🏷️ 主要类目：其他酒 / 糕点/点心 / 巧克力</span>
     <div class="algo-tags"><span class="algo-tag algo-warn">⚡ 系统判"商业味重"·短期收割型</span></div>
   </div>
-  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6a13c953000000000701208b" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 2389</span><span class="ic-title">2026端午节真的可以送客户‼️100+💰大气显贵</span><span class="ic-hl">🛒 端阳茶叙｜端午节送客户送长辈茶叶礼盒送爸爸父亲节</span><span class="ic-meta-row">壹心堂食养的店 · 曝光 1,018</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69fd298d000000003503a473" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 569</span><span class="ic-title">被问爆的「海边走走」蛋卷，4口味全测评来</span><span class="ic-hl">🛒 台湾海边走走蛋卷 真心推荐 花生蛋卷 芝麻蛋卷 </span><span class="ic-meta-row">台湾饮品的店 · 曝光 970</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6a29435b00000000150246e9" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 1062</span><span class="ic-title">威士忌父亲节送礼封神榜单！送礼醉强卷王！</span><span class="ic-hl">🛒 若耶溪 会稽山绍兴酒·2008年冬酿米酒黄酒1.</span><span class="ic-meta-row">艾老板爱微醺的店 · 曝光 875</span></a></div>
+  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6a13c953000000000701208b" target="_blank"><span class="ic-metric">GPM 2389</span><span class="ic-title">2026端午节真的可以送客户‼️100+💰大气显贵</span><span class="ic-hl">🛒 端阳茶叙｜端午节送客户送长辈茶叶礼盒送爸爸父亲节</span><span class="ic-meta-row">壹心堂食养的店 · 曝光 1,018</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69fd298d000000003503a473" target="_blank"><span class="ic-metric">GPM 569</span><span class="ic-title">被问爆的「海边走走」蛋卷，4口味全测评来</span><span class="ic-hl">🛒 台湾海边走走蛋卷 真心推荐 花生蛋卷 芝麻蛋卷 </span><span class="ic-meta-row">台湾饮品的店 · 曝光 970</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6a29435b00000000150246e9" target="_blank"><span class="ic-metric">GPM 1062</span><span class="ic-title">威士忌父亲节送礼封神榜单！送礼醉强卷王！</span><span class="ic-hl">🛒 若耶溪 会稽山绍兴酒·2008年冬酿米酒黄酒1.</span><span class="ic-meta-row">艾老板爱微醺的店 · 曝光 875</span></a></div>
   <div class="method-source">数据来源：V9 算法分相对分位筛后池（9 条真实笔记聚类）</div>
 </div><div class="method-card-v2">
   <div class="method-title">💪 身体痛点→食疗解决方案体 <span class="method-count">· 14 条</span></div>
   <div class="method-desc">标题直接喊出一个具体身体场景痛点（坐月子/姨妈来不下来/上妆卡粉/上热下寒/熬夜内热），把商品定位为『解题答案』而不是『一款产品』</div>
   <div class="method-tips"><div class="tip-line"><span class="tip-tag tip-cover">🔑 识别信号</span>标题就是用户自己嘴里那句话：『经期前有姨妈感，但下不来，喝什么？』『只是喝了津液，上妆就不卡了……』 · 锁定一个非常细的身体场景：术后/小月子/上热下寒/沙漠干皮/久坐发沉/熬夜内热，越窄越好 · 正文用『为什么→食养原理→怎么吃』三段，引用《黄帝内经》《太平惠民和剂局方》增加权威感</div></div>
-  <div class="method-why">💡 <strong>为什么奏效</strong>：这个池子里最反直觉的发现：这一组算法真诚度只有18.9（远低于池均26.6），算法把『姨妈/熬夜/上妆卡粉/管理期』识别为『功效硬卖话术』扣分了——但用户下单率反而最高（<abbr class="term-abbr" title="下单转化率：看了商品卡 → 实际下单的比例">CVR</abbr>=30.9，仅次于送礼）。原因很直接：被痛点击中的姐妹根本不care笔记是不是『软文』，她要的是『有没有用、怎么吃、要不要试一下』。商品名只要在前几个字给出明确解决方案承诺（术后五红汤/桃红四物汤/酸枣仁晚安膏/石斛玉润膏）</div>
+  <div class="method-why">💡 <strong>为什么奏效</strong>：这个池子里最反直觉的发现：这一组算法真诚度只有18.9（远低于池均26.6），算法把『姨妈/熬夜/上妆卡粉/管理期』识别为『功效硬卖话术』扣分了——但用户下单率反而最高（CVR=30.9，仅次于送礼）。原因很直接：被痛点击中的姐妹根本不care笔记是不是『软文』，她要的是『有没有用、怎么吃、要不要试一下』。商品名只要在前几个字给出明确解决方案承诺（术后五红汤/桃红四物汤/酸枣仁晚安膏/石斛玉润膏）</div>
   <div class="method-meta">
     <span class="method-cats">🏷️ 主要类目：代用/花草/水果/再加工茶 / 药食同源食品 / 其它传统滋补品</span>
     <div class="algo-tags"><span class="algo-tag algo-warn">⚡ 系统判"商业味重"·短期收割型</span> <span class="algo-tag algo-good">👁 点进来的人会认真看完</span></div>
   </div>
-  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6794adf80000000029014aa4" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 1092</span><span class="ic-title">小月子里吃得比以前多还掉🥩了，怎么回事？</span><span class="ic-hl">🛒 高端小月子调理套餐｜小月子水｜小月子粥小月子汤艾</span><span class="ic-meta-row">桔妈中式食补的店 · 曝光 557</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6628d02300000000040180b3" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 524</span><span class="ic-title">办公室人手一袋…太适合减脂期嘴馋吃了🤣</span><span class="ic-hl">🛒 阿尔帝 即食烘烤虾干开背凤尾虾耐嚼解馋海味小零食</span><span class="ic-meta-row">阿尔帝旗舰店 · 曝光 840</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/697b29840000000021033990" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 650</span><span class="ic-title">建议囤些三宝扎，别等需要了才想到它的好~</span><span class="ic-hl">🛒 格格茶一代·&lt;三宝扎&gt; 新会陈皮 腌</span><span class="ic-meta-row">格格丨茶一代的店 · 曝光 520</span></a></div>
+  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6794adf80000000029014aa4" target="_blank"><span class="ic-metric">GPM 1092</span><span class="ic-title">小月子里吃得比以前多还掉🥩了，怎么回事？</span><span class="ic-hl">🛒 高端小月子调理套餐｜小月子水｜小月子粥小月子汤艾</span><span class="ic-meta-row">桔妈中式食补的店 · 曝光 557</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6628d02300000000040180b3" target="_blank"><span class="ic-metric">GPM 524</span><span class="ic-title">办公室人手一袋…太适合减脂期嘴馋吃了🤣</span><span class="ic-hl">🛒 阿尔帝 即食烘烤虾干开背凤尾虾耐嚼解馋海味小零食</span><span class="ic-meta-row">阿尔帝旗舰店 · 曝光 840</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/697b29840000000021033990" target="_blank"><span class="ic-metric">GPM 650</span><span class="ic-title">建议囤些三宝扎，别等需要了才想到它的好~</span><span class="ic-hl">🛒 格格茶一代·&lt;三宝扎&gt; 新会陈皮 腌</span><span class="ic-meta-row">格格丨茶一代的店 · 曝光 520</span></a></div>
   <div class="method-source">数据来源：V9 算法分相对分位筛后池（14 条真实笔记聚类）</div>
 </div><div class="method-card-v2">
   <div class="method-title">🧂 原料溯源硬刚·反甜剂反添加体 <span class="method-count">· 9 条</span></div>
@@ -2961,7 +3019,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="method-cats">🏷️ 主要类目：调味品/果酱/沙拉 / 速溶咖啡/咖啡豆/粉 / 其他糖果零食/果冻/软糖</span>
     
   </div>
-  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6a05864b00000000380214e3" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 4042</span><span class="ic-title">这么夯，咋没人说呢</span><span class="ic-hl">🛒 宜谷磨方 [八珍原浆] 9味道地食材 一口喝到真</span><span class="ic-meta-row">宜谷磨方旗舰店 · 曝光 4,262</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/699e6a8e000000001503834f" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 585</span><span class="ic-title">迄今为止，在小红书买的真养内里的养生零食</span><span class="ic-hl">🛒 菜菜羊小叮叮糖，柴火手工发酵糖，麦芽糖，150克</span><span class="ic-meta-row">熬麦芽糖的菜菜羊的店 · 曝光 988</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/68ef38a30000000005013a60" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 60</span><span class="ic-title">碱水棒全口味来啦！29.9七个（带热量版）</span><span class="ic-hl">🛒 任选八枚【29.9/8包邮】手作碱水面包碱水棒套</span><span class="ic-meta-row">谷味侬的店 · 曝光 194,856</span></a></div>
+  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6a05864b00000000380214e3" target="_blank"><span class="ic-metric">GPM 4042</span><span class="ic-title">这么夯，咋没人说呢</span><span class="ic-hl">🛒 宜谷磨方 [八珍原浆] 9味道地食材 一口喝到真</span><span class="ic-meta-row">宜谷磨方旗舰店 · 曝光 4,262</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/699e6a8e000000001503834f" target="_blank"><span class="ic-metric">GPM 585</span><span class="ic-title">迄今为止，在小红书买的真养内里的养生零食</span><span class="ic-hl">🛒 菜菜羊小叮叮糖，柴火手工发酵糖，麦芽糖，150克</span><span class="ic-meta-row">熬麦芽糖的菜菜羊的店 · 曝光 988</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/68ef38a30000000005013a60" target="_blank"><span class="ic-metric">GPM 60</span><span class="ic-title">碱水棒全口味来啦！29.9七个（带热量版）</span><span class="ic-hl">🛒 任选八枚【29.9/8包邮】手作碱水面包碱水棒套</span><span class="ic-meta-row">谷味侬的店 · 曝光 194,856</span></a></div>
   <div class="method-source">数据来源：V9 算法分相对分位筛后池（9 条真实笔记聚类）</div>
 </div><div class="method-card-v2">
   <div class="method-title">🙏 老板真心话+爆单战报体 <span class="method-count">· 16 条</span></div>
@@ -2972,7 +3030,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="method-cats">🏷️ 主要类目：方便速食/速冻食品 / 药食同源食品 / 蜜饯/枣类/梅/果干/冻干</span>
     
   </div>
-  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/65854fe9000000003403f0b3" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 616</span><span class="ic-title">真心建议管理期的姐妹把零食换成这个！！</span><span class="ic-hl">🛒 阿尔帝 即食烤虾干开背凤尾虾大虾解馋零食海味零食</span><span class="ic-meta-row">阿尔帝旗舰店 · 曝光 640</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6a2809b600000000360027b1" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 561</span><span class="ic-title">酸枣仁这批卖完暂停，别等断了才问</span><span class="ic-hl">🛒 野外生长国产太行山脉酸枣仁试吃100g（默认炒熟</span><span class="ic-meta-row">山野小青滋补的店 · 曝光 533</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69cb9a5a000000001b000f70" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 548</span><span class="ic-title">等了一年的荠菜鲜肉小馄饨回归✅红虾季结束</span><span class="ic-hl">🛒 三兔船长 季节限定｜舟山小馄饨·荠菜鲜肉·新鲜现</span><span class="ic-meta-row">三兔船长的店 · 曝光 1,460</span></a></div>
+  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/65854fe9000000003403f0b3" target="_blank"><span class="ic-metric">GPM 616</span><span class="ic-title">真心建议管理期的姐妹把零食换成这个！！</span><span class="ic-hl">🛒 阿尔帝 即食烤虾干开背凤尾虾大虾解馋零食海味零食</span><span class="ic-meta-row">阿尔帝旗舰店 · 曝光 640</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6a2809b600000000360027b1" target="_blank"><span class="ic-metric">GPM 561</span><span class="ic-title">酸枣仁这批卖完暂停，别等断了才问</span><span class="ic-hl">🛒 野外生长国产太行山脉酸枣仁试吃100g（默认炒熟</span><span class="ic-meta-row">山野小青滋补的店 · 曝光 533</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69cb9a5a000000001b000f70" target="_blank"><span class="ic-metric">GPM 548</span><span class="ic-title">等了一年的荠菜鲜肉小馄饨回归✅红虾季结束</span><span class="ic-hl">🛒 三兔船长 季节限定｜舟山小馄饨·荠菜鲜肉·新鲜现</span><span class="ic-meta-row">三兔船长的店 · 曝光 1,460</span></a></div>
   <div class="method-source">数据来源：V9 算法分相对分位筛后池（16 条真实笔记聚类）</div>
 </div></div>
 
@@ -2986,7 +3044,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="method-cats">🏷️ 主要类目：肉干/肉脯/卤味零食(6) / 山核桃/坚果/炒货(3) / 葡萄酒(2)</span>
     <div class="algo-tags"><span class="algo-tag algo-good">🚀 系统判"像真心分享"·推流加成</span> <span class="algo-tag algo-warn">⚠️ 营销味偏重·容易被压流量</span></div>
   </div>
-  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69cf8c49000000002102e810" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 58</span><span class="ic-title">海带头配青椒一炒绝了！</span><span class="ic-hl">🛒 福建霞浦特产海带头干货炒菜煲汤炖汤鲜香味美口感软</span><span class="ic-meta-row">—</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/67de7603000000001b03935a" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 335</span><span class="ic-title">终于理解这个让人惊艳的咖啡糖🥹！！</span><span class="ic-hl">🛒 X-it 无糖冰黑咖啡糖浓香丝滑香润糖开车加班犯</span><span class="ic-meta-row">—</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6a0d15ac000000000803de6e" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 287</span><span class="ic-title">番茄味和牛脆片，这味道也太夯了！</span><span class="ic-hl">🛒 失重森林 和牛脆片牛肉脆片牛脆脆风干牛肉干和牛薄</span><span class="ic-meta-row">—</span></a></div>
+  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69cf8c49000000002102e810" target="_blank"><span class="ic-metric">GPM 58</span><span class="ic-title">海带头配青椒一炒绝了！</span><span class="ic-hl">🛒 福建霞浦特产海带头干货炒菜煲汤炖汤鲜香味美口感软</span><span class="ic-meta-row">—</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/67de7603000000001b03935a" target="_blank"><span class="ic-metric">GPM 335</span><span class="ic-title">终于理解这个让人惊艳的咖啡糖🥹！！</span><span class="ic-hl">🛒 X-it 无糖冰黑咖啡糖浓香丝滑香润糖开车加班犯</span><span class="ic-meta-row">—</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6a0d15ac000000000803de6e" target="_blank"><span class="ic-metric">GPM 287</span><span class="ic-title">番茄味和牛脆片，这味道也太夯了！</span><span class="ic-hl">🛒 失重森林 和牛脆片牛肉脆片牛脆脆风干牛肉干和牛薄</span><span class="ic-meta-row">—</span></a></div>
   <div class="method-source">数据来源：V9 算法分相对分位筛后池（25 条真实笔记聚类）</div>
 </div><div class="method-card-v2">
   <div class="method-title">🍽️ 吃法搭子·场景植入 <span class="method-count">· 23 条</span></div>
@@ -2997,7 +3055,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="method-cats">🏷️ 主要类目：代用/花草/水果/再加工茶(6) / 药食同源食品(2) / 其它传统滋补品(2)</span>
     <div class="algo-tags"><span class="algo-tag algo-good">👁 点进来的人会认真看完</span> <span class="algo-tag algo-good">🛡 避开"营销味太重"扣分</span></div>
   </div>
-  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6a0e7434000000000702d4be" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 280</span><span class="ic-title">立夏到三伏正确打开方式，就藏在这碗拌拌乐</span><span class="ic-hl">🛒 养瑞和 松子核桃姜茶老姜汤花生核桃腰果健康营养坚</span><span class="ic-meta-row">—</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6a0d26e900000000070289b8" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 148</span><span class="ic-title">小满15天焕新计划：清清爽爽过夏天</span><span class="ic-hl">🛒 养瑞和 松子核桃姜茶老姜汤花生核桃腰果健康营养坚</span><span class="ic-meta-row">—</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69a68377000000000e00e721" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 36</span><span class="ic-title">救命蘸水！狠狠拿捏水煮菜🤏🤏🤏</span><span class="ic-hl">🛒 仙马桥 贵州特产木姜子柴火糊辣椒面蘸水蘸料油泼辣</span><span class="ic-meta-row">—</span></a></div>
+  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6a0e7434000000000702d4be" target="_blank"><span class="ic-metric">GPM 280</span><span class="ic-title">立夏到三伏正确打开方式，就藏在这碗拌拌乐</span><span class="ic-hl">🛒 养瑞和 松子核桃姜茶老姜汤花生核桃腰果健康营养坚</span><span class="ic-meta-row">—</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6a0d26e900000000070289b8" target="_blank"><span class="ic-metric">GPM 148</span><span class="ic-title">小满15天焕新计划：清清爽爽过夏天</span><span class="ic-hl">🛒 养瑞和 松子核桃姜茶老姜汤花生核桃腰果健康营养坚</span><span class="ic-meta-row">—</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69a68377000000000e00e721" target="_blank"><span class="ic-metric">GPM 36</span><span class="ic-title">救命蘸水！狠狠拿捏水煮菜🤏🤏🤏</span><span class="ic-hl">🛒 仙马桥 贵州特产木姜子柴火糊辣椒面蘸水蘸料油泼辣</span><span class="ic-meta-row">—</span></a></div>
   <div class="method-source">数据来源：V9 算法分相对分位筛后池（23 条真实笔记聚类）</div>
 </div><div class="method-card-v2">
   <div class="method-title">🌿 症状代入·古法养生 <span class="method-count">· 22 条</span></div>
@@ -3008,7 +3066,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="method-cats">🏷️ 主要类目：药食同源食品(7) / 代用/花草/水果/再加工茶(4) / 植物精华/提取物(2)</span>
     <div class="algo-tags"><span class="algo-tag algo-warn">⚡ 系统判"商业味重"·短期收割型</span> <span class="algo-tag algo-good">👁 点进来的人会认真看完</span> <span class="algo-tag algo-good">🛡 避开"营销味太重"扣分</span></div>
   </div>
-  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69ce2ffd0000000023012b90" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 1526</span><span class="ic-title">复活了！还得是老祖宗的智慧！</span><span class="ic-hl">🛒 铁皮石斛决明子茶（学生党 用眼多）</span><span class="ic-meta-row">—</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69a849ca0000000023038e51" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 1374</span><span class="ic-title">睡前放脸上，眼睛跟着一起，真正的休息</span><span class="ic-hl">🛒 缓解眼部疲劳（拆封不退换） 兔子款</span><span class="ic-meta-row">—</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6a0a8bef0000000008025c1b" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 1117</span><span class="ic-title">坐小月子也是女人改变体质的机会！</span><span class="ic-hl">🛒 28天高端小月子水｜小月子茶饮茶包汤水粥｜人流药</span><span class="ic-meta-row">—</span></a></div>
+  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69ce2ffd0000000023012b90" target="_blank"><span class="ic-metric">GPM 1526</span><span class="ic-title">复活了！还得是老祖宗的智慧！</span><span class="ic-hl">🛒 铁皮石斛决明子茶（学生党 用眼多）</span><span class="ic-meta-row">—</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69a849ca0000000023038e51" target="_blank"><span class="ic-metric">GPM 1374</span><span class="ic-title">睡前放脸上，眼睛跟着一起，真正的休息</span><span class="ic-hl">🛒 缓解眼部疲劳（拆封不退换） 兔子款</span><span class="ic-meta-row">—</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6a0a8bef0000000008025c1b" target="_blank"><span class="ic-metric">GPM 1117</span><span class="ic-title">坐小月子也是女人改变体质的机会！</span><span class="ic-hl">🛒 28天高端小月子水｜小月子茶饮茶包汤水粥｜人流药</span><span class="ic-meta-row">—</span></a></div>
   <div class="method-source">数据来源：V9 算法分相对分位筛后池（22 条真实笔记聚类）</div>
 </div><div class="method-card-v2">
   <div class="method-title">🔍 真假鉴别·原料溯源 <span class="method-count">· 19 条</span></div>
@@ -3019,7 +3077,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="method-cats">🏷️ 主要类目：药食同源食品(5) / 藕粉/麦片/冲饮品(3) / 新鲜蔬菜/蔬菜制品(2)</span>
     <div class="algo-tags"><span class="algo-tag algo-good">👁 点进来的人会认真看完</span> <span class="algo-tag algo-good">🛡 避开"营销味太重"扣分</span></div>
   </div>
-  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6919bd170000000007003d91" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 935</span><span class="ic-title">温县怀山药，原产地直供，你买对了吗？</span><span class="ic-hl">🛒 河南焦作温县垆土铁棍山药怀山药，到货去掉所有外包</span><span class="ic-meta-row">—</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/68a3f3a9000000001b034d20" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 456</span><span class="ic-title">为什么我们坚持只做纯藕粉？看完你就懂了</span><span class="ic-hl">🛒 妈妈很忙 手切纯藕粉250g（配料表只有藕粉） </span><span class="ic-meta-row">—</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/67e11d6e000000000603c6d1" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 675</span><span class="ic-title">宁夏农家种植小枸杞，没熏硫磺，没泡亚钠</span><span class="ic-hl">🛒 吴巧巧 无熏硫无染色自产自销枸杞子宁夏农家中宁红</span><span class="ic-meta-row">—</span></a></div>
+  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/6919bd170000000007003d91" target="_blank"><span class="ic-metric">GPM 935</span><span class="ic-title">温县怀山药，原产地直供，你买对了吗？</span><span class="ic-hl">🛒 河南焦作温县垆土铁棍山药怀山药，到货去掉所有外包</span><span class="ic-meta-row">—</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/68a3f3a9000000001b034d20" target="_blank"><span class="ic-metric">GPM 456</span><span class="ic-title">为什么我们坚持只做纯藕粉？看完你就懂了</span><span class="ic-hl">🛒 妈妈很忙 手切纯藕粉250g（配料表只有藕粉） </span><span class="ic-meta-row">—</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/67e11d6e000000000603c6d1" target="_blank"><span class="ic-metric">GPM 675</span><span class="ic-title">宁夏农家种植小枸杞，没熏硫磺，没泡亚钠</span><span class="ic-hl">🛒 吴巧巧 无熏硫无染色自产自销枸杞子宁夏农家中宁红</span><span class="ic-meta-row">—</span></a></div>
   <div class="method-source">数据来源：V9 算法分相对分位筛后池（19 条真实笔记聚类）</div>
 </div><div class="method-card-v2">
   <div class="method-title">🤝 老客证言·销量背书 <span class="method-count">· 11 条</span></div>
@@ -3030,28 +3088,28 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="method-cats">🏷️ 主要类目：葡萄酒(2) / 肉干/肉脯/卤味零食(2) / 蜜饯/枣类/梅/果干/冻干(1)</span>
     <div class="algo-tags"><span class="algo-tag algo-good">🚀 系统判"像真心分享"·推流加成</span></div>
   </div>
-  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69c006e0000000002200f7fb" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 2745</span><span class="ic-title">年翻N倍的月亮女神，少量尾货必须冲一波！</span><span class="ic-hl">🛒 others 默尔索代表之一月亮女神合集 勃艮第</span><span class="ic-meta-row">—</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69da174e000000001d01d463" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 717</span><span class="ic-title">记录一份被信任的暖意♥️</span><span class="ic-hl">🛒 5+5 泡脚包（荷叶包加快代谢垃圾）</span><span class="ic-meta-row">—</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69e0956e00000000210045ec" target="_blank"><span class="ic-metric"><abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 1635</span><span class="ic-title">我宣布！是今年喝过最伟大的白葡萄酒🐚💦</span><span class="ic-hl">🛒 食葡 【爆汁菠萝奶昔】意大利小香槟！贝壳白中白起</span><span class="ic-meta-row">—</span></a></div>
+  <div class="method-cases"><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69c006e0000000002200f7fb" target="_blank"><span class="ic-metric">GPM 2745</span><span class="ic-title">年翻N倍的月亮女神，少量尾货必须冲一波！</span><span class="ic-hl">🛒 others 默尔索代表之一月亮女神合集 勃艮第</span><span class="ic-meta-row">—</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69da174e000000001d01d463" target="_blank"><span class="ic-metric">GPM 717</span><span class="ic-title">记录一份被信任的暖意♥️</span><span class="ic-hl">🛒 5+5 泡脚包（荷叶包加快代谢垃圾）</span><span class="ic-meta-row">—</span></a><a class="inline-case inline-case-row" href="https://www.xiaohongshu.com/explore/69e0956e00000000210045ec" target="_blank"><span class="ic-metric">GPM 1635</span><span class="ic-title">我宣布！是今年喝过最伟大的白葡萄酒🐚💦</span><span class="ic-hl">🛒 食葡 【爆汁菠萝奶昔】意大利小香槟！贝壳白中白起</span><span class="ic-meta-row">—</span></a></div>
   <div class="method-source">数据来源：V9 算法分相对分位筛后池（11 条真实笔记聚类）</div>
 </div></div>
 
   <div class="tips-box">
-    <strong>💡 怎么用：</strong> 每条方法下有 2 个本周真实案例，是该指标表现好的笔记里聚类出的写法规律。<b>注意</b>：这是相关性，不是因果——同一批笔记同时高 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>、高 CTR/<abbr class="term-abbr" title="下单转化率：看了商品卡 → 实际下单的比例">CVR</abbr>，方法论可能跨指标重叠。建议优先看你品类的案例，不要硬抄跨品类。
+    <strong>💡 怎么用：</strong> 每条方法下有 2 个本周真实案例，是该指标表现好的笔记里聚类出的写法规律。<b>注意</b>：这是相关性，不是因果——同一批笔记同时高 GMV、高 CTR/CVR，方法论可能跨指标重叠。建议优先看你品类的案例，不要硬抄跨品类。
   </div>
 </div>
 </div>
 </details><div class="tab-panel hidden" id="tab-price">
   <div class="hero hero-sub hero-price">
-    <h2>📈 <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr>表现好的笔记长什么样</h2>
-    <p class="meta">⚠️ 这是从高 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> 笔记里聚类出的相关性画像，不是因果证明。仅作为内容方向参考，不保证按此改一定提升该指标</p>
+    <h2>📈 <abbr class="term-abbr" data-tip="单笔订单平均成交金额">件单价</abbr>表现好的笔记长什么样</h2>
+    <p class="meta">⚠️ 这是从高 GMV 笔记里聚类出的相关性画像，不是因果证明。仅作为内容方向参考，不保证按此改一定提升该指标</p>
   </div>
 <div class="v10-section price-playbook-section">
   <div class="v10-banner price-banner">
-    <div class="v10-banner-title">💎 <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr>怎么拉？· 4 个能直接抄的玩法</div>
-    <div class="v10-banner-sub"><abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr>受商品定价、促销、库存、人群消费力影响，<b>笔记内容能改的是"临门一脚的引导"</b>。这里给 4 个能直接抄的玩法，配本周真实案例。</div>
+    <div class="v10-banner-title">💎 <abbr class="term-abbr" data-tip="单笔订单平均成交金额">件单价</abbr>怎么拉？· 4 个能直接抄的玩法</div>
+    <div class="v10-banner-sub"><abbr class="term-abbr" data-tip="单笔订单平均成交金额">件单价</abbr>受商品定价、促销、库存、人群消费力影响，<b>笔记内容能改的是"临门一脚的引导"</b>。这里给 4 个能直接抄的玩法，配本周真实案例。</div>
   </div>
   
   <div class="v10-mechanism v10-mech-hero">
-    💎 <b>关键心智</b>：<abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> = 商品标价 × 平均买几件。商品标价改不了，但<b>平均买几件</b>可以通过笔记话术拉高（凑单 / 赠品 / 囤货 / 任选）。
+    💎 <b>关键心智</b>：件单价 = 商品标价 × 平均买几件。商品标价改不了，但<b>平均买几件</b>可以通过笔记话术拉高（凑单 / 赠品 / 囤货 / 任选）。
   </div>
   
   <div class="price-mech-grid"><div class="price-mech-card">
@@ -3063,7 +3121,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   <div class="price-mech-pitfall">⚠️ <b>避坑</b>：不要把多件价拉到比单件价低过多（差&gt;20%），算法会判低质价格欺诈降低分发</div>
   <details class="price-mech-cases">
     <summary>📌 本周池里命中的真实案例（3）</summary>
-    <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6a031ca10000000007012d5d" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗] 三伏天的安心是红豆薏米水给的🫶太牛了！</a> <span class="case-meta">件数 419 · <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> ¥72 · 关键词「买三送一」</span></li><li><a href="https://www.xiaohongshu.com/explore/6842a03c000000002002aa51" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评] 真诚分享‼️连着买了一年的咖啡豆🔥实在是香</a> <span class="case-meta">件数 201 · <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> ¥75 · 关键词「凑单」</span></li><li><a href="https://www.xiaohongshu.com/explore/6a0438b5000000003601cac9" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评] 你绝对没尝过！十年杏花一年蜜！</a> <span class="case-meta">件数 3 · <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> ¥85 · 关键词「2送1」</span></li></ul>
+    <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6a031ca10000000007012d5d" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗] 三伏天的安心是红豆薏米水给的🫶太牛了！</a> <span class="case-meta">件数 419 · 件单价 ¥72 · 关键词「买三送一」</span></li><li><a href="https://www.xiaohongshu.com/explore/6842a03c000000002002aa51" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评] 真诚分享‼️连着买了一年的咖啡豆🔥实在是香</a> <span class="case-meta">件数 201 · 件单价 ¥75 · 关键词「凑单」</span></li><li><a href="https://www.xiaohongshu.com/explore/6a0438b5000000003601cac9" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评] 你绝对没尝过！十年杏花一年蜜！</a> <span class="case-meta">件数 3 · 件单价 ¥85 · 关键词「2送1」</span></li></ul>
   </details>
 </div><div class="price-mech-card">
   <div class="price-mech-head">
@@ -3074,7 +3132,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   <div class="price-mech-pitfall">⚠️ <b>避坑</b>：赠品成本不能超过 SKU 利润的 30%，否则拉客单但毛利反而降</div>
   <details class="price-mech-cases">
     <summary>📌 本周池里命中的真实案例（5）</summary>
-    <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6a044aa6000000000602074f" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食展示] Patchi应该是疯了❗️❗️礼盒居然买一送一</a> <span class="case-meta">件数 98 · <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> ¥228 · 关键词「加送」</span></li><li><a href="https://www.xiaohongshu.com/explore/6a040edd000000003502dba5" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食展示] 我愿称之为冷萃咖啡的神！（买豆送杯）</a> <span class="case-meta">件数 212 · <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> ¥73 · 关键词「送杯」</span></li><li><a href="https://www.xiaohongshu.com/explore/6a0be75f00000000350264e9" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食教程] 答应大家加赠的冷萃瓶终于来了！！！</a> <span class="case-meta">件数 196 · <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> ¥67 · 关键词「加赠」</span></li><li><a href="https://www.xiaohongshu.com/explore/68c42dbf000000001d027b3c" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食展示] 力度超大的小当家牛胸口店庆活动9月16日🔥</a> <span class="case-meta">件数 14 · <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> ¥71 · 关键词「满赠」</span></li><li><a href="https://www.xiaohongshu.com/explore/69df499c00000000230051f1" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评] 换季状态差？一杯藤茶整个世界都变甜！</a> <span class="case-meta">件数 6 · <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> ¥160 · 关键词「送杯」</span></li></ul>
+    <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6a044aa6000000000602074f" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食展示] Patchi应该是疯了❗️❗️礼盒居然买一送一</a> <span class="case-meta">件数 98 · 件单价 ¥228 · 关键词「加送」</span></li><li><a href="https://www.xiaohongshu.com/explore/6a040edd000000003502dba5" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食展示] 我愿称之为冷萃咖啡的神！（买豆送杯）</a> <span class="case-meta">件数 212 · 件单价 ¥73 · 关键词「送杯」</span></li><li><a href="https://www.xiaohongshu.com/explore/6a0be75f00000000350264e9" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食教程] 答应大家加赠的冷萃瓶终于来了！！！</a> <span class="case-meta">件数 196 · 件单价 ¥67 · 关键词「加赠」</span></li><li><a href="https://www.xiaohongshu.com/explore/68c42dbf000000001d027b3c" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食展示] 力度超大的小当家牛胸口店庆活动9月16日🔥</a> <span class="case-meta">件数 14 · 件单价 ¥71 · 关键词「满赠」</span></li><li><a href="https://www.xiaohongshu.com/explore/69df499c00000000230051f1" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评] 换季状态差？一杯藤茶整个世界都变甜！</a> <span class="case-meta">件数 6 · 件单价 ¥160 · 关键词「送杯」</span></li></ul>
   </details>
 </div><div class="price-mech-card">
   <div class="price-mech-head">
@@ -3085,7 +3143,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   <div class="price-mech-pitfall">⚠️ <b>避坑</b>：保质期短的品（生鲜/烘焙）不要做超 1 个月装，会被退货拉低 NPS</div>
   <details class="price-mech-cases">
     <summary>📌 本周池里命中的真实案例（5）</summary>
-    <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6a0d79870000000035028c2f" target="_blank" rel="noopener" class="v10-note-link">🔗 [科学科普] 【玉珍】⚠️购买须知</a> <span class="case-meta">件数 1402 · <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> ¥47 · 关键词「囤货」</span></li><li><a href="https://www.xiaohongshu.com/explore/6a1bce23000000000702a15d" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评] 这可能是最懂年轻人的一瓶酒</a> <span class="case-meta">件数 251 · <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> ¥187 · 关键词「囤货」</span></li><li><a href="https://www.xiaohongshu.com/explore/6a1b2d9d0000000036032aed" target="_blank" rel="noopener" class="v10-note-link">🔗 [家居用品] 扇子爆单了，正在加紧制作与发货...</a> <span class="case-meta">件数 396 · <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> ¥82 · 关键词「囤货」</span></li><li><a href="https://www.xiaohongshu.com/explore/6a0c23c200000000060223bb" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评] 九峰牧场真的太听劝了！爆款混合装终于来了！</a> <span class="case-meta">件数 347 · <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> ¥47 · 关键词「囤货」</span></li><li><a href="https://www.xiaohongshu.com/explore/6a09ae6900000000360301a1" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评] 巨好吃腰果仁|今天下午刚烤出来的</a> <span class="case-meta">件数 315 · <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> ¥47 · 关键词「囤货」</span></li></ul>
+    <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6a0d79870000000035028c2f" target="_blank" rel="noopener" class="v10-note-link">🔗 [科学科普] 【玉珍】⚠️购买须知</a> <span class="case-meta">件数 1402 · 件单价 ¥47 · 关键词「囤货」</span></li><li><a href="https://www.xiaohongshu.com/explore/6a1bce23000000000702a15d" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评] 这可能是最懂年轻人的一瓶酒</a> <span class="case-meta">件数 251 · 件单价 ¥187 · 关键词「囤货」</span></li><li><a href="https://www.xiaohongshu.com/explore/6a1b2d9d0000000036032aed" target="_blank" rel="noopener" class="v10-note-link">🔗 [家居用品] 扇子爆单了，正在加紧制作与发货...</a> <span class="case-meta">件数 396 · 件单价 ¥82 · 关键词「囤货」</span></li><li><a href="https://www.xiaohongshu.com/explore/6a0c23c200000000060223bb" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评] 九峰牧场真的太听劝了！爆款混合装终于来了！</a> <span class="case-meta">件数 347 · 件单价 ¥47 · 关键词「囤货」</span></li><li><a href="https://www.xiaohongshu.com/explore/6a09ae6900000000360301a1" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评] 巨好吃腰果仁|今天下午刚烤出来的</a> <span class="case-meta">件数 315 · 件单价 ¥47 · 关键词「囤货」</span></li></ul>
   </details>
 </div><div class="price-mech-card">
   <div class="price-mech-head">
@@ -3096,7 +3154,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   <div class="price-mech-pitfall">⚠️ <b>避坑</b>：可选数量太少（如 3 选 1）反而限制选择感，建议起步是 N 选 N-2 以上</div>
   <details class="price-mech-cases">
     <summary>📌 本周池里命中的真实案例（2）</summary>
-    <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/68ef38a30000000005013a60" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评] 碱水棒全口味来啦！29.9七个（带热量版）</a> <span class="case-meta">件数 2631 · <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> ¥4 · 关键词「任选」</span></li><li><a href="https://www.xiaohongshu.com/explore/69ed76fd00000000360305b9" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食展示] 囤些甜点 | 假期和达克瓦兹很配</a> <span class="case-meta">件数 3 · <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> ¥148 · 关键词「任选」</span></li></ul>
+    <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/68ef38a30000000005013a60" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评] 碱水棒全口味来啦！29.9七个（带热量版）</a> <span class="case-meta">件数 2631 · 件单价 ¥4 · 关键词「任选」</span></li><li><a href="https://www.xiaohongshu.com/explore/69ed76fd00000000360305b9" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食展示] 囤些甜点 | 假期和达克瓦兹很配</a> <span class="case-meta">件数 3 · 件单价 ¥148 · 关键词「任选」</span></li></ul>
   </details>
 </div></div>
 </div>
@@ -3105,7 +3163,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   <details class="v9-legacy-fold">
   <summary class="v9-legacy-summary">📚 看更多写法参考（点开：图文/视频路径详细方法卡 + 反直觉发现）</summary>
   <div class="v9-legacy-body"><div class="two-weapons-banner">
-  <div class="tw-title">🎯 <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr>（高客单） 表现好的笔记里，有 2 种不同算法画像（共 10 个方法）</div>
+  <div class="tw-title">🎯 件单价（高客单） 表现好的笔记里，有 2 种不同算法画像（共 10 个方法）</div>
   <div class="tw-grid">
     <div class="tw-card tw-long">
       <div class="tw-head">🏛️ 可持续打法</div>
@@ -3124,7 +3182,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
 </div>
   <div class="insights-banner">
   <div class="insights-title">🔁 本周反直觉发现</div>
-  <div class="insights-list"><div class="insight-card"><span class="insight-pool">图文 <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> 池</span><div class="insight-text">🔁 反直觉一（最重要）：『价格锚定·平替对标』真诚度只有 24.7，比池均 32.51 整整低 7.8 分——是 5 种方法里被系统判得最『商业』的一组。但它依然能进<abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr>强信号池（19 条），说明在高客单场域里『把账算给买家听』确实有效，系统读得出你在做强促销，但买家就吃这一套。含义：愿意承担短期真诚度损失的店铺可以继续用；想做长线人设/承接老客的店铺，建议改写为『同源平替』风格，淡化『立减/直降』裸促销词。</div></div><div class="insight-card"><span class="insight-pool">视频 <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> 池</span><div class="insight-text">🔁 反直觉一：5 种方法里『工艺溯源·原料硬底』真诚度比池均低 29.5 分（最低），但依然进<abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr>强信号池——『冒死揭秘+硬刚同行』在水深的滋补品类（黄精/陈皮/精油）能精准截流『搜怎么辨真假』的人群。</div></div></div>
+  <div class="insights-list"><div class="insight-card"><span class="insight-pool">图文 件单价 池</span><div class="insight-text">🔁 反直觉一（最重要）：『价格锚定·平替对标』真诚度只有 24.7，比池均 32.51 整整低 7.8 分——是 5 种方法里被系统判得最『商业』的一组。但它依然能进件单价强信号池（19 条），说明在高客单场域里『把账算给买家听』确实有效，系统读得出你在做强促销，但买家就吃这一套。含义：愿意承担短期真诚度损失的店铺可以继续用；想做长线人设/承接老客的店铺，建议改写为『同源平替』风格，淡化『立减/直降』裸促销词。</div></div><div class="insight-card"><span class="insight-pool">视频 件单价 池</span><div class="insight-text">🔁 反直觉一：5 种方法里『工艺溯源·原料硬底』真诚度比池均低 29.5 分（最低），但依然进件单价强信号池——『冒死揭秘+硬刚同行』在水深的滋补品类（黄精/陈皮/精油）能精准截流『搜怎么辨真假』的人群。</div></div></div>
 </div>
   <div class="section-label">🎯 行业参考值（对照你的笔记后台数据）</div>
   <div class="kpi-grid kpi-grid-2col">
@@ -3147,7 +3205,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   <div class="method-title">⏳ 倒计时·限量稀缺 <span class="method-count">· 39 条</span></div>
   <div class="method-desc">用『仅剩X瓶/绝版/断货/限定/拼手速』把高客单变成『错过就没有』</div>
   
-  <div class="method-why">💡 <strong>为什么奏效</strong>：把『仅剩6瓶 / 配额 / 断货回归 / 等了7年 / 拼手速』摆在标题最前面，让读者一进来就感到『再不下手就没了』。在<abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr>场域里，这种紧迫感不是促销味，而是给『敢买高价』的人一个推背感的理由——因此系统反而把它读成『老主顾在通知熟客』而不是『商家在做硬广』，真诚度比池均高出明显幅度。适合做名庄稀缺品、年份酒、新桶/限定版上新，封面只放实物 + 数字（『仅剩X瓶』/『限量XX支』），不要花哨设计</div>
+  <div class="method-why">💡 <strong>为什么奏效</strong>：把『仅剩6瓶 / 配额 / 断货回归 / 等了7年 / 拼手速』摆在标题最前面，让读者一进来就感到『再不下手就没了』。在件单价场域里，这种紧迫感不是促销味，而是给『敢买高价』的人一个推背感的理由——因此系统反而把它读成『老主顾在通知熟客』而不是『商家在做硬广』，真诚度比池均高出明显幅度。适合做名庄稀缺品、年份酒、新桶/限定版上新，封面只放实物 + 数字（『仅剩X瓶』/『限量XX支』），不要花哨设计</div>
   <div class="method-meta">
     <span class="method-cats">🏷️ 主要类目：饮品测评(23) / 普通美食展示(12) / 养生食疗(3)</span>
     
@@ -3158,7 +3216,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   <div class="method-title">📐 价格锚定·平替对标 <span class="method-count">· 19 条</span></div>
   <div class="method-desc">用『立减/直降/低于均价/百元喝大酒/同源平替』给高客单一个『值』的支点</div>
   
-  <div class="method-why">💡 <strong>为什么奏效</strong>：高客单最怕读者第一反应是『贵』，所以这一组的核心动作是先给一个『参照锚』再报价——『立减1000』『同园1/20价格』『百元就能拿下』『800+喝出千元质感』。锚要么是同款常规价，要么是更出名的贵价兄弟款。在<abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr>图文池里，这一组的商业意图被系统识别得最强（商业感系数高于池均），但读者依然愿意点进来看——因为锚定本身就是『懂行的人帮你算账』。适合店主有比价能力、敢秀『进价/对标价/平替价』的店铺，</div>
+  <div class="method-why">💡 <strong>为什么奏效</strong>：高客单最怕读者第一反应是『贵』，所以这一组的核心动作是先给一个『参照锚』再报价——『立减1000』『同园1/20价格』『百元就能拿下』『800+喝出千元质感』。锚要么是同款常规价，要么是更出名的贵价兄弟款。在件单价图文池里，这一组的商业意图被系统识别得最强（商业感系数高于池均），但读者依然愿意点进来看——因为锚定本身就是『懂行的人帮你算账』。适合店主有比价能力、敢秀『进价/对标价/平替价』的店铺，</div>
   <div class="method-meta">
     <span class="method-cats">🏷️ 主要类目：饮品测评(12) / 养生食疗(3) / 普通美食展示(2)</span>
     <div class="algo-tags"><span class="algo-tag algo-warn">⚡ 系统判"商业味重"·短期收割型</span></div>
@@ -3169,7 +3227,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   <div class="method-title">🍷 名庄风土·专业内行话 <span class="method-count">· 15 条</span></div>
   <div class="method-desc">把酒庄/年份/产区/酿酒师/评分讲透，让懂酒的人觉得『这就是同行写的』</div>
   
-  <div class="method-why">💡 <strong>为什么奏效</strong>：这一组几乎不讲价、不讲优惠，只把酒庄历史、产区风土、年份评分、酿酒师故事讲透——『Allen Meadows评价2019巅峰之作』『勃艮第极简主义大师Thierry Pillot』『香槟北境之王Chartogne-Taillet』。在<abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr>场域里，这类内容的真诚度低于池均（系统看到大量品牌/产区专有名词，会判定为强营销），但它是高客单酒类的根基写法：买家就是冲着『行家给行家写的笔记』来的。适合勃艮</div>
+  <div class="method-why">💡 <strong>为什么奏效</strong>：这一组几乎不讲价、不讲优惠，只把酒庄历史、产区风土、年份评分、酿酒师故事讲透——『Allen Meadows评价2019巅峰之作』『勃艮第极简主义大师Thierry Pillot』『香槟北境之王Chartogne-Taillet』。在件单价场域里，这类内容的真诚度低于池均（系统看到大量品牌/产区专有名词，会判定为强营销），但它是高客单酒类的根基写法：买家就是冲着『行家给行家写的笔记』来的。适合勃艮</div>
   <div class="method-meta">
     <span class="method-cats">🏷️ 主要类目：饮品测评(12) / 普通美食展示(3)</span>
     
@@ -3180,7 +3238,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   <div class="method-title">📏 量化标准·工艺溯源 <span class="method-count">· 17 条</span></div>
   <div class="method-desc">用『干净度/克重/头数/年份陈/工艺/溯源码』把高客单变成可验证的规格</div>
   
-  <div class="method-why">💡 <strong>为什么奏效</strong>：高客单滋补品和茶不能像酒一样靠产区故事，必须靠『可验证的数字』撑价——『干净度98 不用挑毛』『100克吃5个月』『九蒸九晒』『中科溯源码』『头采明前』。把规格、克重、工艺、产地保护、年份陈放全部明牌写出来，等于在告诉读者『同价位别家给不到这些指标』。在<abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr>图文池里，这一组真诚度接近池均、商业感系数也健康，因为系统读到的是『参数清单』而不是『营销话术』。适合燕窝、虫草、陈皮、龙井、九制黄精这类有</div>
+  <div class="method-why">💡 <strong>为什么奏效</strong>：高客单滋补品和茶不能像酒一样靠产区故事，必须靠『可验证的数字』撑价——『干净度98 不用挑毛』『100克吃5个月』『九蒸九晒』『中科溯源码』『头采明前』。把规格、克重、工艺、产地保护、年份陈放全部明牌写出来，等于在告诉读者『同价位别家给不到这些指标』。在件单价图文池里，这一组真诚度接近池均、商业感系数也健康，因为系统读到的是『参数清单』而不是『营销话术』。适合燕窝、虫草、陈皮、龙井、九制黄精这类有</div>
   <div class="method-meta">
     <span class="method-cats">🏷️ 主要类目：养生食疗(7) / 饮品测评(4) / 普通美食展示(2)</span>
     <div class="algo-tags"><span class="algo-tag algo-good">👁 点进来的人会认真看完</span> <span class="algo-tag algo-good">🛡 避开"营销味太重"扣分</span></div>
@@ -3191,7 +3249,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   <div class="method-title">🎁 送礼仪式·礼盒人情 <span class="method-count">· 8 条</span></div>
   <div class="method-desc">用『礼盒/送领导/节日限定/心意感』把高客单切到送礼场景</div>
   
-  <div class="method-why">💡 <strong>为什么奏效</strong>：这一组绕开『自用值不值』的对比，直接把高客单切到送礼场景——『送领导/送长辈/父亲节/端午限定/双开门礼盒/伴手礼』。读者评估的不是『我自己想不想喝』，而是『送出去够不够体面』，客单价天花板自动被礼品场景顶上去。在<abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr>图文池里，这组真诚度高于池均（系统读到节日 + 礼盒词，判定为生活化、非硬广），互动质量也最稳。适合所有有礼盒 SKU 的休食店铺（蝴蝶酥、粽子、茶叶、香囊、伴手礼），笔记必出现的</div>
+  <div class="method-why">💡 <strong>为什么奏效</strong>：这一组绕开『自用值不值』的对比，直接把高客单切到送礼场景——『送领导/送长辈/父亲节/端午限定/双开门礼盒/伴手礼』。读者评估的不是『我自己想不想喝』，而是『送出去够不够体面』，客单价天花板自动被礼品场景顶上去。在件单价图文池里，这组真诚度高于池均（系统读到节日 + 礼盒词，判定为生活化、非硬广），互动质量也最稳。适合所有有礼盒 SKU 的休食店铺（蝴蝶酥、粽子、茶叶、香囊、伴手礼），笔记必出现的</div>
   <div class="method-meta">
     <span class="method-cats">🏷️ 主要类目：养生食疗(2) / 普通美食展示(2) / 家居装饰其他(1)</span>
     <div class="algo-tags"><span class="algo-tag algo-good">🚀 系统判"像真心分享"·推流加成</span> <span class="algo-tag algo-good">🛡 避开"营销味太重"扣分</span></div>
@@ -3220,7 +3278,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   
   <div class="method-why">💡 <strong>为什么奏效</strong>：这一组的视频几乎是同一个模板：『今天到货 XX 头 / 干净度 98 / 雨季头期 / 大岛公司货』，镜头怼到燕盏燕条上让你看纹理、薄厚、玻璃肉。ASR 直接报规格 + 产地批次 + 不需要挑毛 + 孕妇能吃，几乎没有故事，只有『硬数据 + 实拍』。
 
-算法画像比较温和（真诚度 -2、互动质量 -0.02），但平均<abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> 1381 元、平均 <abbr class="term-abbr" title="笔记直接带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>（小红书后台同口径，不含间接成交）">DGMV</abbr> 2805 元（5 种里第二高），说明燕窝鱼胶高</div>
+算法画像比较温和（真诚度 -2、互动质量 -0.02），但平均件单价 1381 元、平均 <abbr class="term-abbr" data-tip="笔记直接带来的销售额（不含间接成交，小红书后台同口径）">DGMV</abbr> 2805 元（5 种里第二高），说明燕窝鱼胶高</div>
   <div class="method-meta">
     <span class="method-cats">🏷️ 主要类目：燕窝滋补品(11) / 海鲜/水产品/制品(3) / 普洱(2)</span>
     
@@ -3234,7 +3292,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   
   <div class="method-why">💡 <strong>为什么奏效</strong>：这一组开口就是『2003 年 7542 闪电纹 / 2015 心头雪 / 国平黄栀香母树 / 苍梧群体种菜茶』，ASR 大量出现年份 + 山头 + 工艺 + 茶人故事。读者读到的不是『一饼茶』而是『茶人的私藏出处』，真诚度比池均高 16 分（5 种里最高）、互动质量 +0.017（也是最高），双高优等生。
 
-🎯 反直觉：平均<abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr>反而是最低的（596 元，比酒便宜 3 倍），但 <abbr class="term-abbr" title="笔记直接带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>（小红书后台同口径，不含间接成交）">DGMV</abbr> 一点不差</div>
+🎯 反直觉：平均件单价反而是最低的（596 元，比酒便宜 3 倍），但 <abbr class="term-abbr" data-tip="笔记直接带来的销售额（不含间接成交，小红书后台同口径）">DGMV</abbr> 一点不差</div>
   <div class="method-meta">
     <span class="method-cats">🏷️ 主要类目：白茶(6) / 乌龙茶(3) / 葡萄酒(3)</span>
     <div class="algo-tags"><span class="algo-tag algo-good">🚀 系统判"像真心分享"·推流加成</span> <span class="algo-tag algo-good">👁 点进来的人会认真看完</span></div>
@@ -3245,7 +3303,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   <div class="method-title">🍷 名庄对标·盲品稀缺 <span class="method-count">· 24 条</span></div>
   <div class="method-desc">用名庄 / 盲品 / 价格梯度证明这瓶酒为什么值这个价</div>
   
-  <div class="method-why">💡 <strong>为什么奏效</strong>：这一组是池子里<abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr>最高的一组（平均 2123 元、平均 <abbr class="term-abbr" title="笔记直接带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>（小红书后台同口径，不含间接成交）">DGMV</abbr> 3896 元），打法非常一致：标题永远在做对标 — 『不输马赛多 / 媲美大龙 / 默尔索扫地僧传人 / 比大金杯还难抢 / 西施佳雅 100 分平替』。ASR 永远在讲『康帝/拉菲/双鸡』这种顶级名庄做参照，然后告诉你这瓶比那些便宜几倍。
+  <div class="method-why">💡 <strong>为什么奏效</strong>：这一组是池子里件单价最高的一组（平均 2123 元、平均 <abbr class="term-abbr" data-tip="笔记直接带来的销售额（不含间接成交，小红书后台同口径）">DGMV</abbr> 3896 元），打法非常一致：标题永远在做对标 — 『不输马赛多 / 媲美大龙 / 默尔索扫地僧传人 / 比大金杯还难抢 / 西施佳雅 100 分平替』。ASR 永远在讲『康帝/拉菲/双鸡』这种顶级名庄做参照，然后告诉你这瓶比那些便宜几倍。
 
 真诚度比池均高 10 分、商业感系数也是 5 种里最高的（+0.008）— 说明算法既识</div>
   <div class="method-meta">
@@ -3258,7 +3316,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   <div class="method-title">🌿 工艺溯源·原料硬底 <span class="method-count">· 5 条</span></div>
   <div class="method-desc">黄精/高丽参/陈皮/精油等滋补品讲清『几蒸几晒 / 产地核心区 / 真假辨识』</div>
   
-  <div class="method-why">💡 <strong>为什么奏效</strong>：⚠️ 池子里最反直觉的一组：真诚度比池均低足足 30 分（最低），商业感系数也是最低（-0.019），但它依然能进<abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr>强信号池。
+  <div class="method-why">💡 <strong>为什么奏效</strong>：⚠️ 池子里最反直觉的一组：真诚度比池均低足足 30 分（最低），商业感系数也是最低（-0.019），但它依然能进件单价强信号池。
 
 打法是这样：标题挂『冒死说出行业内幕 / 99% 的都是假的 / 揭秘 / 全链路有机』，ASR 大量出现『市面上 / 大部分商家 / 你买到的 / 实际上是』这种『对比同行』话术，然后亮出自家产品的『九蒸九晒 / 真核心产区 / 真年份 / 100% 浓度』。算法</div>
   <div class="method-meta">
@@ -3270,7 +3328,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
 </div></div>
 
   <div class="tips-box">
-    <strong>💡 怎么用：</strong> 每条方法下有 2 个本周真实案例，是该指标表现好的笔记里聚类出的写法规律。<b>注意</b>：这是相关性，不是因果——同一批笔记同时高 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>、高 CTR/<abbr class="term-abbr" title="下单转化率：看了商品卡 → 实际下单的比例">CVR</abbr>，方法论可能跨指标重叠。建议优先看你品类的案例，不要硬抄跨品类。
+    <strong>💡 怎么用：</strong> 每条方法下有 2 个本周真实案例，是该指标表现好的笔记里聚类出的写法规律。<b>注意</b>：这是相关性，不是因果——同一批笔记同时高 GMV、高 CTR/CVR，方法论可能跨指标重叠。建议优先看你品类的案例，不要硬抄跨品类。
   </div>
 </div>
 </div>
@@ -4585,16 +4643,16 @@ function buildRefPromptText(p) {
 ## 平台 V10 实测方法论（基于本周 1200 篇休食优质笔记差分聚类得出，请严格套用，不要凭空想）
 
 ### ① 算法分阶梯（n=1199 真实分箱数据，不是拟合）
-- 「笔记质量分」Q4(高) 比 Q1(低)：<abbr class="term-abbr" title="笔记直接带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>（小红书后台同口径，不含间接成交）">DGMV</abbr> 19 倍 / 曝光 170 倍 ← 最强放大器
-- 「真诚分享」「营销味淡」「综合算法分」Q4/Q1：<abbr class="term-abbr" title="笔记直接带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>（小红书后台同口径，不含间接成交）">DGMV</abbr> 2-3 倍 / 曝光 2 倍
+- 「笔记质量分」Q4(高) 比 Q1(低)：<abbr class="term-abbr" data-tip="笔记直接带来的销售额（不含间接成交，小红书后台同口径）">DGMV</abbr> 19 倍 / 曝光 170 倍 ← 最强放大器
+- 「真诚分享」「营销味淡」「综合算法分」Q4/Q1：DGMV 2-3 倍 / 曝光 2 倍
 - ⚠️ 反例「好点击留人」：分越高 DGMV 反而越低（0.5 倍）— 标题党骗到点击但不卖货
 
-### ② <abbr class="term-abbr" title="封面点击率：曝光 → 点开笔记的比例（你后台叫&quot;封面点击率/CTR&quot;）">CTR1</abbr> 高 vs 低对照（封面+标题点击）
+### ② CTR1 高 vs 低对照（封面+标题点击）
 **核心机制**：真实剂量+具体钩子 vs 悬念词+上新公告
 - ✅ 抄：封面美学=低（生活感/真实感）跨 7 类目都好，敢用"非精修"封面 / 标题用「」（）【】框关键词 / 具体大数字（799元/21万单/2.8万人喜欢）
 - 🚫 避：满屏 ❗✨ emoji（高组用得反而克制） / "终于来了/原来如此/居然"悬念悬空 / 养生类目"2025顺时姜茶｜立夏喝到三伏"节气倒数公告
 
-### ③ <abbr class="term-abbr" title="商品卡点击率：看了笔记 → 点开商品卡的比例">CTR2</abbr> 三层优先级（商品卡点击）
+### ③ CTR2 三层优先级（商品卡点击）
 **核心机制**：电梯演讲 vs 品鉴文学 → 不是字数本身，是「单位字数的信息密度」
 - 🔴 P0 商品名做减法（差距最大 +14.5pp）：≤25 字只放"品类+1 个硬指标"，不要塞"品牌+品类+规格+口味+赠品+营销词"
 - 🟡 P1 正文前 200 字做减法（< 100 字）：一句卖点 + 一句证据
@@ -4766,7 +4824,7 @@ async function generateRefAI() {
 }
 
 
-// V8f: <abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> 自查工具
+// V8f: GPM 自查工具
 window.scForm = '图文';
 function selfCheckForm(btn, form) {
   document.querySelectorAll('.sc-btn').forEach(b => b.classList.remove('active'));
@@ -4785,7 +4843,7 @@ function runSelfCheck() {
   const benchmark = window.scForm === '图文'
     ? { ctr1: 10.1, ctr2: 35.6, cvr: 6.2, price: 46 }
     : { ctr1: 7.7,  ctr2: 8.9,  cvr: 7.7, price: 41 };
-  const labels = { ctr1: '<abbr class="term-abbr" title="封面点击率：曝光 → 点开笔记的比例（你后台叫&quot;封面点击率/CTR&quot;）">CTR1</abbr> 封面点击', ctr2: '<abbr class="term-abbr" title="商品卡点击率：看了笔记 → 点开商品卡的比例">CTR2</abbr> 商品卡', cvr: '<abbr class="term-abbr" title="下单转化率：看了商品卡 → 实际下单的比例">CVR</abbr> 转化', price: '<abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr>' };
+  const labels = { ctr1: 'CTR1 封面点击', ctr2: 'CTR2 商品卡', cvr: 'CVR 转化', price: '件单价' };
   const tabMap = { ctr1: 'ctr1', ctr2: 'ctr2', cvr: 'cvr', price: 'price' };
   const my = { ctr1, ctr2, cvr, price };
   const gaps = [];
@@ -4799,8 +4857,8 @@ function runSelfCheck() {
   const benchGPM = (benchmark.ctr1/100) * (benchmark.ctr2/100) * (benchmark.cvr/100) * benchmark.price * 1000;
   let html = `
     <div style="background:#fff9e0;border:1px solid #ffe9b3;border-radius:8px;padding:14px;margin-bottom:12px">
-      <div style="font-size:14px;color:#5d4a1f">📊 你的笔记 <abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> = <strong style="font-size:18px;color:#d84315">¥${myGPM.toFixed(2)}</strong> / 千次曝光</div>
-      <div style="font-size:12px;color:#8b6914;margin-top:4px">行业优秀线 <abbr class="term-abbr" title="<abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr> per Mille：每 1000 次曝光带来的 <abbr class="term-abbr" title="商品成交金额（销售额）">GMV</abbr>，等于 CTR1 × CTR2 × CVR × <abbr class="term-abbr" title="单笔订单平均成交金额 = DGMV / 下单数">件单价</abbr> × 1000">GPM</abbr> ≈ ¥${benchGPM.toFixed(2)} · 差距 ${((myGPM-benchGPM)/benchGPM*100).toFixed(0)}%</div>
+      <div style="font-size:14px;color:#5d4a1f">📊 你的笔记 GPM = <strong style="font-size:18px;color:#d84315">¥${myGPM.toFixed(2)}</strong> / 千次曝光</div>
+      <div style="font-size:12px;color:#8b6914;margin-top:4px">行业优秀线 GPM ≈ ¥${benchGPM.toFixed(2)} · 差距 ${((myGPM-benchGPM)/benchGPM*100).toFixed(0)}%</div>
     </div>
     <div style="font-size:13px;color:#666;margin-bottom:8px">📍 各环节对比（按落后程度排序）：</div>
     <table style="width:100%;border-collapse:collapse;font-size:12px">
@@ -4831,6 +4889,25 @@ document.addEventListener('click', function(e){
   }, 0);
 });
 
+</script>
+
+<script>
+// V10.2 移动端 tooltip tap 触发
+(function(){
+  let curOpen = null;
+  document.addEventListener('click', function(e){
+    const t = e.target.closest('.term-abbr');
+    if (t) {
+      e.preventDefault();
+      if (curOpen && curOpen !== t) curOpen.classList.remove('tip-open');
+      t.classList.toggle('tip-open');
+      curOpen = t.classList.contains('tip-open') ? t : null;
+    } else if (curOpen) {
+      curOpen.classList.remove('tip-open');
+      curOpen = null;
+    }
+  });
+})();
 </script>
 </body>
 </html>

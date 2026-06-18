@@ -389,9 +389,67 @@ body { color: var(--c-text); }
 .v9-legacy-summary:hover { color: #d92f5e; }
 .v9-legacy-body { padding: 16px 18px 4px; border-top: 1px solid var(--c-border); }
 
-/* 业务术语 hover */
-.term-abbr { text-decoration: none; border-bottom: 1px dotted var(--c-text-4); cursor: help; }
-.term-abbr:hover { background: var(--c-warn-bg-2); }
+/* 业务术语 hover：自实现 tooltip，桌面 hover + 移动 tap 都支持 */
+.term-abbr { 
+  text-decoration: none; 
+  border-bottom: 1px dotted var(--c-text-4); 
+  cursor: help; 
+  position: relative;
+  background: var(--c-warn-bg);
+  padding: 0 2px;
+  border-radius: 3px;
+}
+.term-abbr:hover, .term-abbr.tip-open { background: var(--c-warn-bg-2); }
+.term-abbr::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--c-deep);
+  color: #fff;
+  font-size: var(--fs-xs);
+  font-weight: 400;
+  line-height: 1.6;
+  padding: 8px 12px;
+  border-radius: 6px;
+  white-space: normal;
+  width: max-content;
+  max-width: 240px;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s, transform 0.15s, visibility 0.15s;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  text-align: left;
+}
+.term-abbr::before {
+  content: '';
+  position: absolute;
+  bottom: calc(100% + 0px);
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: var(--c-deep);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s, visibility 0.15s;
+  pointer-events: none;
+  z-index: 999;
+}
+.term-abbr:hover::after, .term-abbr:hover::before,
+.term-abbr.tip-open::after, .term-abbr.tip-open::before {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+.term-abbr:hover::before, .term-abbr.tip-open::before {
+  transform: translateX(-50%);
+}
+@media (max-width: 640px) {
+  .term-abbr::after { max-width: 220px; font-size: 11px; }
+}
 .mac-th-sub { display: block; font-size: 10px; color: var(--c-text-3); font-weight: 400; margin-top: 2px; }
 abbr.conf-badge { text-decoration: none; cursor: help; }
 
@@ -757,40 +815,96 @@ html = html.replace('</style>', V10_CSS + '\n</style>', 1)
 
 # 给 CTR1/CTR2/CVR/GPM/DGMV 等业务术语加 hover 解释（仅文本中的独立词，避 tag attribute）
 TERM_TOOLTIPS = {
-    'CTR1': '封面点击率：曝光 → 点开笔记的比例（你后台叫"封面点击率/CTR"）',
-    'CTR2': '商品卡点击率：看了笔记 → 点开商品卡的比例',
-    'CVR':  '下单转化率：看了商品卡 → 实际下单的比例',
-    'GPM':  'GMV per Mille：每 1000 次曝光带来的 GMV，等于 CTR1 × CTR2 × CVR × 件单价 × 1000',
-    'DGMV': '笔记直接带来的 GMV（小红书后台同口径，不含间接成交）',
-    'GMV':  '商品成交金额（销售额）',
-    '件单价': '单笔订单平均成交金额 = DGMV / 下单数',
+    # 注意 tooltip 文本必须不含 " 和不含本表其他术语，否则会 1) 撑爆 HTML attribute 2) 嵌套 wrap 撕裂
+    'CTR1': '封面点击率，曝光后被点开笔记的比例（小红书后台叫封面点击率）',
+    'CTR2': '商品卡点击率，看了笔记后点开商品卡的比例',
+    'CVR':  '下单转化率，点开商品卡后实际下单的比例',
+    'GPM':  '每千次曝光带来的销售额（GMV per Mille）',
+    'DGMV': '笔记直接带来的销售额（不含间接成交，小红书后台同口径）',
+    'GMV':  '商品成交金额，即销售额',
+    '件单价': '单笔订单平均成交金额',
 }
-# 只替换文本节点中第一次出现的（避免重复嵌套）
+# 严格 segment 拆分：tag / text / 已有 abbr 三类，仅 text 类才扫描替换；
+# 替换后用 sentinel 占位避免被后续术语再次匹配
 import html as _html
-already_wrapped = set()
+import uuid as _uuid
+
 def wrap_terms_in_text(html_text):
-    """对 HTML 文本（非 attribute/tag）替换术语"""
-    # 简单做法：先 split 成 tag/text segments
-    parts = re.split(r'(<[^>]+>)', html_text)
-    out = []
-    for i, p in enumerate(parts):
-        if i % 2 == 1:
-            # 是 tag，不动
-            out.append(p)
-            continue
-        # 文本段，对每个术语只替换首次（避免无限嵌套）
-        for term, tip in TERM_TOOLTIPS.items():
-            # 已被 abbr 包过的就跳过
-            if f'>{term}<' in p or f'"{tip}"' in p: continue
-            # 用边界匹配避免误替换（如 "ictr1" 不替换）
-            pattern = re.compile(r'(?<![A-Za-z0-9_])' + re.escape(term) + r'(?![A-Za-z0-9_])')
-            # 替换前两次（防止整页太多 abbr）
-            p, n = pattern.subn(f'<abbr class="term-abbr" title="{_html.escape(tip)}">{term}</abbr>', p, count=2)
-        out.append(p)
-    return ''.join(out)
+    """
+    严格 wrap：避免 4 类 bug
+      1) 嵌套 abbr（GPM tip 含 GMV 又被 GMV wrap）
+      2) 在 tag 内替换（如 <div class="something CTR1 ...">）
+      3) 在已有 abbr 内替换
+      4) tip 文本含 " 把 attribute 撑爆
+    实现：每次 wrap 完一个术语就把所有新 abbr 整段 stash 成 sentinel，下一术语只扫 sentinel 之外的文本。
+    """
+    placeholders = {}
+    def _stash(m):
+        k = f'@@A_{_uuid.uuid4().hex[:14]}@@'
+        placeholders[k] = m.group(0)
+        return k
+    
+    # 0) 先 stash 已存在的所有 abbr
+    abbr_pat = re.compile(r'<abbr[^>]*>.*?</abbr>', re.DOTALL)
+    html_text = abbr_pat.sub(_stash, html_text)
+    
+    PER_TERM_GLOBAL_CAP = 8
+    counts = {t: 0 for t in TERM_TOOLTIPS}
+    
+    # 按 dict 顺序逐个术语 wrap，每次 wrap 完立刻 stash 新生成的 abbr
+    for term, tip in TERM_TOOLTIPS.items():
+        if counts[term] >= PER_TERM_GLOBAL_CAP: continue
+        # 1) 把当前 html split 成 tag/text，只在 text 段替换
+        parts = re.split(r'(<[^>]+>)', html_text)
+        for i, p in enumerate(parts):
+            if i % 2 == 1:
+                continue  # tag 不动
+            if counts[term] >= PER_TERM_GLOBAL_CAP:
+                continue
+            # 边界：左侧不能是字母/数字/下划线/中文（避免误替换"超CTR1"等）
+            # 右侧不能是字母/数字/下划线
+            pat = re.compile(r'(?<![A-Za-z0-9_\u4e00-\u9fa5])' + re.escape(term) + r'(?![A-Za-z0-9_])')
+            def _rep(m):
+                if counts[term] >= PER_TERM_GLOBAL_CAP:
+                    return m.group(0)
+                counts[term] += 1
+                safe = _html.escape(tip, quote=True)
+                return f'<abbr class="term-abbr" data-tip="{safe}">{term}</abbr>'
+            parts[i] = pat.sub(_rep, p)
+        html_text = ''.join(parts)
+        # 2) 立刻 stash 本轮生成的 abbr，让下一术语不会再扫到它里面的文本
+        html_text = abbr_pat.sub(_stash, html_text)
+    
+    # 还原所有 sentinel
+    for k, v in placeholders.items():
+        html_text = html_text.replace(k, v)
+    return html_text
 
 html = wrap_terms_in_text(html)
 print(f'✅ 业务术语已加 hover tooltip')
+
+# 注入移动端 tap 触发 tooltip 的 JS（桌面 hover 仍由 CSS 处理）
+TIP_JS = '''
+<script>
+// V10.2 移动端 tooltip tap 触发
+(function(){
+  let curOpen = null;
+  document.addEventListener('click', function(e){
+    const t = e.target.closest('.term-abbr');
+    if (t) {
+      e.preventDefault();
+      if (curOpen && curOpen !== t) curOpen.classList.remove('tip-open');
+      t.classList.toggle('tip-open');
+      curOpen = t.classList.contains('tip-open') ? t : null;
+    } else if (curOpen) {
+      curOpen.classList.remove('tip-open');
+      curOpen = null;
+    }
+  });
+})();
+</script>
+'''
+html = html.replace('</body>', TIP_JS + '</body>', 1)
 
 # 写回
 open(out_path, 'w', encoding='utf-8').write(html)
