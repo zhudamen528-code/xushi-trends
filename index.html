@@ -1967,17 +1967,10 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   <td class="ladder-mult"><b class="ladder-x">18.7x</b></td>
   <td class="ladder-mult"><b>170x</b></td>
   <td></td>
-</tr><tr class="ladder-neg">
-  <td class="ladder-feat">好点击留人</td>
-  <td class="ladder-q1">¥2,688</td>
-  <td class="ladder-q4">¥1,222</td>
-  <td class="ladder-mult"><b class="ladder-x-neg">0.5x</b></td>
-  <td class="ladder-mult">0.4x</td>
-  <td><span class="ladder-warn">⚠️ 反例</span></td>
 </tr></tbody>
   </table>
-  <div class="mac-key">💎 <b>关键洞察</b>：算法分高的笔记 <abbr class="term-abbr" data-tip="笔记直接带来的销售额（不含间接成交，小红书后台同口径）">DGMV</abbr> 是算法分低的 <b>2-19 倍</b>，曝光最多大 <b>170 倍</b>。追"<b>真诚分享 / 营销味淡 / 笔记质量分</b>"非常有用；但要警惕"<b>好点击留人</b>"分高的笔记反而少卖货——可能是标题党骗到了点击但卖不动。</div>
-  <div class="mac-warn">📌 注：之前用统计相关系数（皮尔逊）拟合点击率类指标，数值小且方向容易误导，已改成上面的"按算法分排队分 4 段看典型产出"。</div>
+  <div class="mac-key">💎 <b>关键洞察</b>：算法分高的笔记 <abbr class="term-abbr" data-tip="笔记直接带来的销售额（不含间接成交，小红书后台同口径）">DGMV</abbr> 是算法分低的 <b>2-19 倍</b>，曝光最多大 <b>170 倍</b>。重点追"<b>笔记质量分 / 真诚分享 / 营销味淡 / 综合算法分</b>"这 4 个分。</div>
+  <div class="mac-warn">📌 注：这是把 1199 篇笔记按算法分排队分 4 段看典型 <abbr class="term-abbr" data-tip="笔记直接带来的销售额（不含间接成交，小红书后台同口径）">DGMV</abbr>/曝光，是实测产出不是统计模型。算法分由平台计算，商家不能直接改，但能通过"内容方向"间接影响——具体怎么写见下面 4 个指标 Tab。</div>
 </div>
     </div>
   </div>
@@ -4643,9 +4636,9 @@ function buildRefPromptText(p) {
 ## 平台 V10 实测方法论（基于本周 1200 篇休食优质笔记差分聚类得出，请严格套用，不要凭空想）
 
 ### ① 算法分阶梯（n=1199 真实分箱数据，不是拟合）
-- 「笔记质量分」Q4(高) 比 Q1(低)：<abbr class="term-abbr" data-tip="笔记直接带来的销售额（不含间接成交，小红书后台同口径）">DGMV</abbr> 19 倍 / 曝光 170 倍 ← 最强放大器
+- 「笔记质量分」Q4(高) 比 Q1(低)：DGMV 19 倍 / 曝光 170 倍 ← 最强放大器
 - 「真诚分享」「营销味淡」「综合算法分」Q4/Q1：DGMV 2-3 倍 / 曝光 2 倍
-- ⚠️ 反例「好点击留人」：分越高 DGMV 反而越低（0.5 倍）— 标题党骗到点击但不卖货
+- 这是平台算法对笔记的综合评分，商家不能直接改分数，但能通过下面 ②③④⑤ 4 个写法路径间接影响
 
 ### ② CTR1 高 vs 低对照（封面+标题点击）
 **核心机制**：真实剂量+具体钩子 vs 悬念词+上新公告
@@ -4713,7 +4706,6 @@ function buildRefPromptText(p) {
 基于产品价格档、品类、内容目标，告诉我：
 - 这周该重点打 GPM 漏斗哪一环？（CTR1 / CTR2 / CVR / 件单价 选 1-2）
 - 算法分要追"真诚分享/营销味淡/笔记质量分"哪一个最关键？（结合品类和叙事路径推荐）
-- 避免做"好点击留人"型笔记（标题党骗点击但不卖货）
 
 —— 请直接开始输出，不要复述上面的指令。`;
 }

@@ -208,12 +208,13 @@ def render_price_playbook():
 def render_metric_algo_corr_table():
     """Tab1 GMV 公式旁渲染：算法分 Q1→Q4 商业产出阶梯（不是皮尔逊拟合，是真实 DGMV/曝光 中位数）"""
     # 阶梯数据（从分箱算的，不是 pearson 拟合）
+    # ⚠️ 注：'好点击留人' 行（dgmv 0.5x）已删除，因为它会误导商家："留人率高=GMV 低=别让用户停留" 是错误推论。
+    # 真相：留人率高的多是干货/科普长文，用户读完后去其他渠道下单，DGMV 只算小红书原地成交。这是衡量口径偏差，不是策略指南。
     ladder = [
         {'feat': '真诚分享',   'q1_dgmv': 1138,  'q4_dgmv': 3014,  'dgmv_x': 2.6,  'imp_x': 2.4,  'positive': True},
         {'feat': '营销味淡',   'q1_dgmv': 1335,  'q4_dgmv': 3679,  'dgmv_x': 2.8,  'imp_x': 2.4,  'positive': True},
         {'feat': '综合算法分', 'q1_dgmv': 1503,  'q4_dgmv': 3474,  'dgmv_x': 2.3,  'imp_x': 2.2,  'positive': True},
         {'feat': '笔记质量分', 'q1_dgmv': 702,   'q4_dgmv': 13110, 'dgmv_x': 18.7, 'imp_x': 170,  'positive': True, 'star': True},
-        {'feat': '好点击留人', 'q1_dgmv': 2688,  'q4_dgmv': 1222,  'dgmv_x': 0.5,  'imp_x': 0.4,  'positive': False},
     ]
     rows = []
     for r in ladder:
@@ -245,8 +246,8 @@ def render_metric_algo_corr_table():
     </tr></thead>
     <tbody>{''.join(rows)}</tbody>
   </table>
-  <div class="mac-key">💎 <b>关键洞察</b>：算法分高的笔记 DGMV 是算法分低的 <b>2-19 倍</b>，曝光最多大 <b>170 倍</b>。追"<b>真诚分享 / 营销味淡 / 笔记质量分</b>"非常有用；但要警惕"<b>好点击留人</b>"分高的笔记反而少卖货——可能是标题党骗到了点击但卖不动。</div>
-  <div class="mac-warn">📌 注：之前用统计相关系数（皮尔逊）拟合点击率类指标，数值小且方向容易误导，已改成上面的"按算法分排队分 4 段看典型产出"。</div>
+  <div class="mac-key">💎 <b>关键洞察</b>：算法分高的笔记 DGMV 是算法分低的 <b>2-19 倍</b>，曝光最多大 <b>170 倍</b>。重点追"<b>笔记质量分 / 真诚分享 / 营销味淡 / 综合算法分</b>"这 4 个分。</div>
+  <div class="mac-warn">📌 注：这是把 1199 篇笔记按算法分排队分 4 段看典型 DGMV/曝光，是实测产出不是统计模型。算法分由平台计算，商家不能直接改，但能通过"内容方向"间接影响——具体怎么写见下面 4 个指标 Tab。</div>
 </div>'''
 
 CTR2_PRIORITY_NOTE = '''<div class="ctr2-priority-note">
