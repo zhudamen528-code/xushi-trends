@@ -624,6 +624,22 @@ if result.returncode != 0:
 out_path = os.path.join(WORKDIR, 'index.html')
 html = open(out_path, encoding='utf-8').read()
 
+# 安全检查：getFormData 函数是否存在（某些 V8/V9 build 路径会丢失它）
+if 'function getFormData()' not in html:
+    GET_FORM_DATA_JS = """function getFormData() {
+    const name = document.getElementById('product-name').value.trim();
+    const feature = document.getElementById('product-feature').value.trim();
+    const audience = document.getElementById('product-audience').value.trim();
+    const cat = document.querySelector('input[name="cat"]:checked').value;
+    return { name, feature, audience, cat };
+  }
+
+  """
+    html = html.replace('function buildPrompt()', GET_FORM_DATA_JS + 'function buildPrompt()', 1)
+    print('✅ getFormData 函数已补注入（V8/V9 丢失兜底）')
+else:
+    print('✅ getFormData 函数已存在，跳过补注入')
+
 # 在每个 Tab 里 "🎯 行业参考值" 标签之前注入 V10 section
 metric_labels = {
     'ctr1': 'CTR1（封面+标题点击）',

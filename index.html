@@ -4294,6 +4294,14 @@ button.btn-gen:first-child,
     const btns = document.querySelectorAll('.tab-btn');
     if (btns[i]) btns[i].click();
   }
+  function getFormData() {
+    const name = document.getElementById('product-name').value.trim();
+    const feature = document.getElementById('product-feature').value.trim();
+    const audience = document.getElementById('product-audience').value.trim();
+    const cat = document.querySelector('input[name="cat"]:checked').value;
+    return { name, feature, audience, cat };
+  }
+
   function buildPrompt() {
     const { name, feature, audience, cat } = getFormData();
     if (!name) return '请先填写产品名称';
