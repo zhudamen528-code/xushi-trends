@@ -1530,6 +1530,14 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   .v10-card-name { font-size: 13px; }
 }
 
+/* === V10.3 按钮可见性修复 === */
+/* btn-gen 文字强制白色（V10 body color 全局 override 可能影响） */
+.btn-gen { color: #fff !important; }
+/* Kimi 按钮用绿色区分（更易识别） */
+button.btn-gen:first-child,
+.planner-actions .btn-gen:first-of-type { background: #00b96b !important; }
+/* <abbr class="term-abbr" data-tip="商品卡点击率，看了笔记后点开商品卡的比例">CTR2</abbr> 优先级卡 +pp 改成中文描述，不挂术语 */
+
 </style>
 <style>
 /* Tab4 创作工具补充样式 */
@@ -1875,11 +1883,11 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
 <div class="container">
 
   <div class="tab-nav">
-    <button class="tab-btn active" onclick="switchTab(event,'gpm')">💰 <abbr class="term-abbr" data-tip="商品成交金额，即销售额">GMV</abbr> 总览</button>
-    <button class="tab-btn" onclick="switchTab(event,'ctr1')">👆 <abbr class="term-abbr" data-tip="封面点击率，曝光后被点开笔记的比例（小红书后台叫封面点击率）">CTR1</abbr> 封面+标题</button>
-    <button class="tab-btn" onclick="switchTab(event,'ctr2')">🔗 <abbr class="term-abbr" data-tip="商品卡点击率，看了笔记后点开商品卡的比例">CTR2</abbr> 商品卡</button>
-    <button class="tab-btn" onclick="switchTab(event,'cvr')">💵 <abbr class="term-abbr" data-tip="下单转化率，点开商品卡后实际下单的比例">CVR</abbr> 转化</button>
-    <button class="tab-btn" onclick="switchTab(event,'price')">💎 <abbr class="term-abbr" data-tip="单笔订单平均成交金额">件单价</abbr></button>
+    <button class="tab-btn active" onclick="switchTab(event,'gpm')">💰 GMV 总览</button>
+    <button class="tab-btn" onclick="switchTab(event,'ctr1')">👆 CTR1 封面+标题</button>
+    <button class="tab-btn" onclick="switchTab(event,'ctr2')">🔗 CTR2 商品卡</button>
+    <button class="tab-btn" onclick="switchTab(event,'cvr')">💵 CVR 转化</button>
+    <button class="tab-btn" onclick="switchTab(event,'price')">💎 件单价</button>
     <button class="tab-btn" onclick="switchTab(event,'cat')">🎁 卖点&策划助手</button>
     <button class="tab-btn" onclick="switchTab(event,'audit')">🚦 违规预审</button>
     <button class="tab-btn" onclick="switchTab(event,'tools')">🛠️ 我的参考</button>
@@ -1969,7 +1977,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   <td></td>
 </tr></tbody>
   </table>
-  <div class="mac-key">💎 <b>关键洞察</b>：算法分高的笔记 <abbr class="term-abbr" data-tip="笔记直接带来的销售额（不含间接成交，小红书后台同口径）">DGMV</abbr> 是算法分低的 <b>2-19 倍</b>，曝光最多大 <b>170 倍</b>。重点追"<b>笔记质量分 / 真诚分享 / 营销味淡 / 综合算法分</b>"这 4 个分。</div>
+  <div class="mac-key">💎 <b>关键洞察</b>：算法分高的笔记 DGMV 是算法分低的 <b>2-19 倍</b>，曝光最多大 <b>170 倍</b>。重点追"<b>笔记质量分 / 真诚分享 / 营销味淡 / 综合算法分</b>"这 4 个分。</div>
   <div class="mac-warn">📌 注：这是把 1199 篇笔记按算法分排队分 4 段看典型 <abbr class="term-abbr" data-tip="笔记直接带来的销售额（不含间接成交，小红书后台同口径）">DGMV</abbr>/曝光，是实测产出不是统计模型。算法分由平台计算，商家不能直接改，但能通过"内容方向"间接影响——具体怎么写见下面 4 个指标 Tab。</div>
 </div>
     </div>
@@ -2055,7 +2063,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <div class="v10-banner-sub">把同类目里"<b><abbr class="term-abbr" data-tip="封面点击率，曝光后被点开笔记的比例（小红书后台叫封面点击率）">CTR1</abbr>（封面+标题点击） 排前 25%</b>"和"<b>排后 25%</b>"的笔记拉出来比，找出"好笔记常用、坏笔记踩坑"的写法。<b>这是从已发笔记里归纳的规律，是参考不是保证</b>。</div>
   </div>
   
-  <div class="v10-mechanism v10-mech-hero">💎 <b>核心规律</b>：<abbr class="term-abbr" data-tip="封面点击率，曝光后被点开笔记的比例（小红书后台叫封面点击率）">CTR1</abbr> 高 vs 低的本质差别不在标题字数、感叹号数量或封面是否精致，而在【真实剂量+具体钩子】 vs 【悬念词+上新公告】：高组用第一人称剂量叙事（喝了5杯/15年/15天）、具体大数字（799元/100万件/21万单）、关键词框选（「」/（））、并敢用'生活感封面'(aesthetic=低)；低组陷在'终于！XX来了''入夏必囤''XX的平替'这种缺乏具体落点的口号式公告，尤其在养生食疗赛道最严重（养生+夏季+终于 4.67x 高发于低组）。</div>
+  <div class="v10-mechanism v10-mech-hero">💎 <b>核心规律</b>：CTR1 高 vs 低的本质差别不在标题字数、感叹号数量或封面是否精致，而在【真实剂量+具体钩子】 vs 【悬念词+上新公告】：表现好的笔记用第一人称剂量叙事（喝了5杯/15年/15天）、具体大数字（799元/100万件/21万单）、关键词框选（「」/（））、并敢用'生活感封面'(生活感重)；表现差的笔记陷在'终于！XX来了''入夏必囤''XX的平替'这种缺乏具体落点的口号式公告，尤其在养生食疗赛道最严重（养生+夏季+终于 4.67x 高发于表现差的笔记）。</div>
   
   
   
@@ -2070,17 +2078,16 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="v10-stat-good">✅ 表现好 <b>25</b> 篇</span>
     <span class="v10-stat-sep">vs</span>
     <span class="v10-stat-bad">表现差仅 <b>7</b> 篇</span>
-    <span class="diff-pp">表现好的多 6.3%</span> <span class="diff-ratio">3.17x</span>
+     <span class="diff-ratio">3.17x</span>
   </div>
-  <div class="v10-card-cat">📊 跨类目通用（美测8/养生7/美展5/保健2/家居1/妈妈经验1/美其他1，覆盖 7 个类目）；低组同档位则高度集中在养生食疗（5/7），跨类目能力弱</div>
-  <div class="v10-card-advice">💡 封面不必死磕'精致摆盘+滤镜'。若标题/产品本身有强叙事（人设故事/产地实拍/真实使用场景），可以放心使用'生活感'封面（aesthetic 档=低也无妨），CTR1 反而更高；但要确保画面清晰度（definition）≥中。</div>
+  <div class="v10-card-cat">📊 跨类目通用（美测8/养生7/美展5/保健2/家居1/妈妈经验1/美其他1，覆盖 7 个类目）；表现差的笔记同档位则高度集中在养生食疗（5/7），跨类目能力弱</div>
+  <div class="v10-card-advice">💡 封面不必死磕'精致摆盘+滤镜'。若标题/产品本身有强叙事（人设故事/产地实拍/真实使用场景），可以放心使用'生活感'封面（生活感封面也无妨），<abbr class="term-abbr" data-tip="封面点击率，曝光后被点开笔记的比例（小红书后台叫封面点击率）">CTR1</abbr> 反而更高；但要确保画面清晰度（清晰度≥中。</div>
   <details class="v10-card-examples">
-    <summary>看 5 篇真实案例 + 2 篇反例</summary>
+    <summary>看 4 篇真实案例</summary>
     <div class="v10-ex-block">
       <div class="v10-ex-label">🟢 表现好的笔记是这么写的</div>
-      <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6a252871000000001702c1dd" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评] 北美爆火的Brook Hill要来了</a></li><li><a href="https://www.xiaohongshu.com/explore/647d86100000000027000062" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食展示] 好吃到离谱的闽南烧肉粽！！</a></li><li><a href="https://www.xiaohongshu.com/explore/69ca89b5000000002202b61a" target="_blank" rel="noopener" class="v10-note-link">🔗 [家居用品] 25岁｜第一次给爸爸送了个'像样的'生日礼物</a></li><li><a href="https://www.xiaohongshu.com/explore/688b6d11000000000403d1b4" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗] 自从吃了这款干挑燕条，干挑盏就再也没买过</a></li></ul>
+      <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6a252871000000001702c1dd" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评] 北美爆火的Brook Hill要来了</a></li><li><a href="https://www.xiaohongshu.com/explore/647d86100000000027000062" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食展示] 好吃到离谱的闽南烧肉粽！！</a></li><li><a href="https://www.xiaohongshu.com/explore/688b6d11000000000403d1b4" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗] 自从吃了这款干挑燕条，干挑盏就再也没买过</a></li><li><a href="https://www.xiaohongshu.com/explore/69ca89b5000000002202b61a" target="_blank" rel="noopener" class="v10-note-link">🔗 [家居用品] 25岁｜第一次给爸爸送了个'像样的'生日礼物</a></li></ul>
     </div>
-    <div class="v10-ex-block"><div class="v10-ex-label v10-ex-label-red">🔴 表现差的笔记反例</div><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/681c9518000000000303f494" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗] 2025顺时姜茶｜风火之年｜立夏喝到三伏🍵</a></li><li><a href="https://www.xiaohongshu.com/explore/6a05864b00000000380214e3" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗] 这么夯，咋没人说呢</a></li></ul></div>
   </details>
 </div><div class="v10-card v10-card-high">
   <div class="v10-card-head">
@@ -2092,17 +2099,16 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="v10-stat-good">✅ 表现好 <b>11</b> 篇</span>
     <span class="v10-stat-sep">vs</span>
     <span class="v10-stat-bad">表现差仅 <b>3</b> 篇</span>
-    <span class="diff-pp">表现好的多 2.8%</span> <span class="diff-ratio">2.83x</span>
+     <span class="diff-ratio">2.83x</span>
   </div>
   <div class="v10-card-cat">📊 美食展示 6 / 美食测评 4 / 养生食疗 1；茶酒占比 9%（跨类目通用，非茶酒驱动）</div>
   <div class="v10-card-advice">💡 把标题里最想被一眼抓住的关键词（爆款产品名、限定主题、活动期号）用「」/（）单独框起来，配合一段简短引语；比平铺直叙更易在信息流里制造视觉锚点。</div>
   <details class="v10-card-examples">
-    <summary>看 4 篇真实案例 + 1 篇反例</summary>
+    <summary>看 4 篇真实案例</summary>
     <div class="v10-ex-block">
       <div class="v10-ex-label">🟢 表现好的笔记是这么写的</div>
       <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6a12bbca0000000036031e23" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食展示] 献给夏日的你们：「柠檬香草巴斯克」麦片🍋🏝️</a></li><li><a href="https://www.xiaohongshu.com/explore/68ef38a30000000005013a60" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评] 碱水棒全口味来啦！29.9七个（带热量版）</a></li><li><a href="https://www.xiaohongshu.com/explore/6868f24c000000002001a255" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食展示] 千呼万唤的「此间 · 真」茶筅 正式预售了</a></li><li><a href="https://www.xiaohongshu.com/explore/69620ce1000000001a01fa1d" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评] 最成功的消费降级（2）</a></li></ul>
     </div>
-    <div class="v10-ex-block"><div class="v10-ex-label v10-ex-label-red">🔴 表现差的笔记反例</div><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/66e0f057000000001e01830f" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食展示] 选【化州橘红】认准——广东茂名化州原产地‼️</a></li></ul></div>
   </details>
 </div><div class="v10-card v10-card-high">
   <div class="v10-card-head">
@@ -2114,17 +2120,16 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="v10-stat-good">✅ 表现好 <b>17</b> 篇</span>
     <span class="v10-stat-sep">vs</span>
     <span class="v10-stat-bad">表现差仅 <b>9</b> 篇</span>
-    <span class="diff-pp">表现好的多 2.9%</span> <span class="diff-ratio">1.79x</span>
+     <span class="diff-ratio">1.79x</span>
   </div>
   <div class="v10-card-cat">📊 美食测评 / 展示 / 教程 / 养生均有；茶酒占比 29%（不集中）</div>
   <div class="v10-card-advice">💡 标题里塞一个'硬数字'：单价（799元/29.9七个）、累计销量（21万单/100万件）、用户数（2.8万人）任选其一；比'便宜/划算/爆款'这种形容词强得多。</div>
   <details class="v10-card-examples">
-    <summary>看 5 篇真实案例 + 2 篇反例</summary>
+    <summary>看 4 篇真实案例</summary>
     <div class="v10-ex-block">
       <div class="v10-ex-label">🟢 表现好的笔记是这么写的</div>
-      <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/690223640000000007023c84" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食教程] 感谢小红书‼️让我们家贵州蘸水卖了21万➕</a></li><li><a href="https://www.xiaohongshu.com/explore/6a02f940000000003700cfb9" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食展示] 立减1000！！799 元直入老年份科通特级园！</a></li><li><a href="https://www.xiaohongshu.com/explore/69ff14890000000036031bd3" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评] 阿玛罗尼风干酒名家，百年托马斯大促325元</a></li><li><a href="https://www.xiaohongshu.com/explore/69115c310000000004016145" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评] 已售100万件商品的店铺，最好吃的产品</a></li></ul>
+      <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6a02f940000000003700cfb9" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食展示] 立减1000！！799 元直入老年份科通特级园！</a></li><li><a href="https://www.xiaohongshu.com/explore/69ff14890000000036031bd3" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评] 阿玛罗尼风干酒名家，百年托马斯大促325元</a></li><li><a href="https://www.xiaohongshu.com/explore/690223640000000007023c84" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食教程] 感谢小红书‼️让我们家贵州蘸水卖了21万➕</a></li><li><a href="https://www.xiaohongshu.com/explore/6856408d000000002203f9f9" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食展示] 关于2.8万人喜欢的怀山药干——感谢🙏篇</a></li></ul>
     </div>
-    <div class="v10-ex-block"><div class="v10-ex-label v10-ex-label-red">🔴 表现差的笔记反例</div><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6a16fedd000000003701fb35" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食展示] 揭秘！卖坚果到底赚多少钱！（只提'赚多少钱'但无具体数字，悬念落空）</a></li><li><a href="https://www.xiaohongshu.com/explore/68a2d99a000000001d0236ab" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗] 每天来一块，健康又养生！（口号型无数字）</a></li></ul></div>
   </details>
 </div><div class="v10-card v10-card-high">
   <div class="v10-card-head">
@@ -2136,17 +2141,16 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="v10-stat-good">✅ 表现好 <b>33</b> 篇</span>
     <span class="v10-stat-sep">vs</span>
     <span class="v10-stat-bad">表现差仅 <b>27</b> 篇</span>
-    <span class="diff-pp">表现好的多 2.3%</span> <span class="diff-ratio">1.24x</span>
+     <span class="diff-ratio">1.24x</span>
   </div>
   <div class="v10-card-cat">📊 美食测评 16 / 养生食疗 8 / 展示 5；茶酒 24%（不集中）</div>
   <div class="v10-card-advice">💡 把'我/我们家/孩子'+ 真实剂量（喝了X杯/吃了X年/X天后）写进标题，营造'真人在亲测'的代入感；避免'计划/方案/打卡'这种营销词。</div>
   <details class="v10-card-examples">
-    <summary>看 5 篇真实案例 + 2 篇反例</summary>
+    <summary>看 4 篇真实案例</summary>
     <div class="v10-ex-block">
       <div class="v10-ex-label">🟢 表现好的笔记是这么写的</div>
-      <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6a0bd8220000000006037a02" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评] 新荣记喝了5杯，回家买了5箱。。。。</a></li><li><a href="https://www.xiaohongshu.com/explore/6a07fca500000000080304f0" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评] 新荣记98一杯我喝了8杯🥹</a></li><li><a href="https://www.xiaohongshu.com/explore/69364c4b000000000d039523" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗] 吃燕窝15年，真心建议❗月薪族不要买干挑盏</a></li><li><a href="https://www.xiaohongshu.com/explore/691dbdbe000000001e0136cb" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗] 便秘吃黄精3年多：太阳晒柴火蒸才是关键！</a></li></ul>
+      <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6a0bd8220000000006037a02" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评] 新荣记喝了5杯，回家买了5箱。。。。</a></li><li><a href="https://www.xiaohongshu.com/explore/69364c4b000000000d039523" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗] 吃燕窝15年，真心建议❗月薪族不要买干挑盏</a></li><li><a href="https://www.xiaohongshu.com/explore/6a07fca500000000080304f0" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评] 新荣记98一杯我喝了8杯🥹</a></li><li><a href="https://www.xiaohongshu.com/explore/691dbdbe000000001e0136cb" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗] 便秘吃黄精3年多：太阳晒柴火蒸才是关键！</a></li></ul>
     </div>
-    <div class="v10-ex-block"><div class="v10-ex-label v10-ex-label-red">🔴 表现差的笔记反例</div><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/68a2d99a000000001d0236ab" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗] 每天来一块，健康又养生！（缺数字+缺人称）</a></li><li><a href="https://www.xiaohongshu.com/explore/69e59e4a000000001f0075e8" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗] 春夏交替30天焕新计划：喝出红光（有数字但口号化、无第一人称剂量感）</a></li></ul></div>
   </details>
 </div></div>
   
@@ -2154,33 +2158,31 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   <div class="v10-cards-grid"><div class="v10-card v10-card-low">
   <div class="v10-card-head">
     <span class="v10-card-num v10-card-num-red">1</span>
-    <span class="v10-card-name">【低组陷阱】养生食疗 + '终于到了 / 入夏-三伏 / 应季囤货' 上新提醒型</span>
+    <span class="v10-card-name">【表现差的笔记陷阱】养生食疗 + '终于到了 / 入夏-三伏 / 应季囤货' 上新提醒型</span>
     <abbr class="conf-badge cb-high" title="差距大 + 跨多个类目 + 样本量足">证据强</abbr>
   </div>
   <div class="v10-card-stat-row">
     <span class="v10-stat-bad">🔴 表现差 <b>14</b> 篇踩坑</span>
     <span class="v10-stat-sep">vs</span>
     <span class="v10-stat-good">表现好仅 <b>3</b> 篇</span>
-    <span class="diff-pp diff-pp-red">表现差的多 3.8%</span> <span class="diff-ratio">4.67x（低/高）</span>
+     <span class="diff-ratio">4.67x（低/高）</span>
   </div>
   <div class="v10-card-cat">📊 养生食疗集中（14/14 全部为养生食疗）；茶酒占比 29%（姜枣茶/红豆薏米水属于养生'茶'，非奶茶/酒水赛道）</div>
-  <div class="v10-card-advice v10-card-advice-red">🚫 养生食疗标题千万少用'终于+季节倒数'套路——这是低 CTR1 的高发模式。同档位的高组（如'喝完这杯，我感觉我这口气终于顺下去了……'）用'终于'来描写身体反馈而非上新公告。建议改写为：①身体感受描述（'喝了X天，XX症状真的有变化'）；②具体疑问（'三伏天到底该不该喝姜茶'），避免'XX上新/终于来了/必囤'公告体。</div>
-  
+  <div class="v10-card-advice v10-card-advice-red">🚫 养生食疗标题千万少用'终于+季节倒数'套路——这是低 <abbr class="term-abbr" data-tip="封面点击率，曝光后被点开笔记的比例（小红书后台叫封面点击率）">CTR1</abbr> 的高发模式。同档位的表现好的笔记（如'喝完这杯，我感觉我这口气终于顺下去了……'）用'终于'来描写身体反馈而非上新公告。建议改写为：①身体感受描述（'喝了X天，XX症状真的有变化'）；②具体疑问（'三伏天到底该不该喝姜茶'），避免'XX上新/终于来了/必囤'公告体。</div>
 </div><div class="v10-card v10-card-low">
   <div class="v10-card-head">
     <span class="v10-card-num v10-card-num-red">2</span>
-    <span class="v10-card-name">【低组陷阱】悬念悬空型'终于/居然/原来/没想到'（curiosity gap 不落地）</span>
+    <span class="v10-card-name">【表现差的笔记陷阱】悬念悬空型'终于/居然/原来/没想到'（curiosity gap 不落地）</span>
     <abbr class="conf-badge cb-high" title="差距大 + 跨多个类目 + 样本量足">证据强</abbr>
   </div>
   <div class="v10-card-stat-row">
     <span class="v10-stat-bad">🔴 表现差 <b>19</b> 篇踩坑</span>
     <span class="v10-stat-sep">vs</span>
     <span class="v10-stat-good">表现好仅 <b>6</b> 篇</span>
-    <span class="diff-pp diff-pp-red">表现差的多 4.5%</span> <span class="diff-ratio">3.17x（低/高）</span>
+     <span class="diff-ratio">3.17x（低/高）</span>
   </div>
   <div class="v10-card-cat">📊 美食测评 10 / 养生食疗 7 / 美食展示 1 / 美食教程 1，跨类目陷阱；茶酒占比约 32%（不集中）</div>
   <div class="v10-card-advice v10-card-advice-red">🚫 '终于/居然/没想到'要配一个具体落点——是什么终于来了、居然怎么样了。空泛地说'XX终于来了''终于！它来了！'对 CTR1 几乎是负效果，因为用户读完不知道你到底要让他点什么。</div>
-  
 </div></div>
 </div>
 
@@ -2357,13 +2359,13 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <div class="v10-banner-sub">把同类目里"<b><abbr class="term-abbr" data-tip="商品卡点击率，看了笔记后点开商品卡的比例">CTR2</abbr>（商品卡点击） 排前 25%</b>"和"<b>排后 25%</b>"的笔记拉出来比，找出"好笔记常用、坏笔记踩坑"的写法。<b>这是从已发笔记里归纳的规律，是参考不是保证</b>。</div>
   </div>
   
-  <div class="v10-mechanism v10-mech-hero">💎 <b>核心规律</b>：CTR2 高组本质 = 商详顶部 0.5 秒能让用户做决定的'硬信息密度'（短标题/短商品名/克数·瓶数·产地·权威）；CTR2 低组本质 = 商详变成'品鉴文学'（送礼场景+堆砌风味词+长商品名+欲言又止标题），看似在讲故事其实在拖延决策。商家想提升 CTR2，应当把商详顶部当成'电梯演讲'：标题≤15字、商品名≤25字、正文前200字给一条规格+一条证据，而不是给五条风味描述。</div>
+  <div class="v10-mechanism v10-mech-hero">💎 <b>核心规律</b>：CTR2 表现好的笔记本质 = 商详顶部 0.5 秒能让用户做决定的'硬信息密度'（短标题/短商品名/克数·瓶数·产地·权威）；CTR2 表现差的笔记本质 = 商详变成'品鉴文学'（送礼场景+堆砌风味词+长商品名+欲言又止标题），看似在讲故事其实在拖延决策。商家想提升 CTR2，应当把商详顶部当成'电梯演讲'：标题≤15字、商品名≤25字、正文前200字给一条规格+一条证据，而不是给五条风味描述。</div>
   
   <div class="ctr2-priority-note">
   <div class="cpn-title">📐 CTR2 三层优先级 · 字数本身不是因，「信息密度」才是</div>
-  <div class="cpn-tier cpn-tier-1"><b>🔴 首要 · 商品名做减法</b>（差距最大 +14.5pp）<br>≤ 25 字内只放「品类 + 1 个硬指标」。例：✅「韩要强夏威夷果 250g 中大半粒」/ ❌「韩要强 0号特大现烤夏威夷果仁没有额外添加剂250克 1罐*250克【中大半粒】」</div>
-  <div class="cpn-tier cpn-tier-2"><b>🟡 次要 · 正文前 200 字做减法</b>（< 100 字 +14.5pp）<br>一句卖点 + 一句证据，不要把商详顶部写成产品说明书。</div>
-  <div class="cpn-tier cpn-tier-3"><b>🟢 辅助 · 标题做减法</b>（≤ 15 字 +8.3pp）<br>≤ 15 字 + 规格量化数字，让用户在信息流 0.5 秒看懂「是什么 + 多少」。</div>
+  <div class="cpn-tier cpn-tier-1"><b>🔴 首要 · 商品卡里的商品名做减法</b>（差距最大 +14.5 个百分点）<br>≤ 25 字内只放「品类 + 1 个硬指标」。例：✅「韩要强夏威夷果 250g 中大半粒」/ ❌「韩要强 0号特大现烤夏威夷果仁没有额外添加剂250克 1罐*250克【中大半粒】」</div>
+  <div class="cpn-tier cpn-tier-2"><b>🟡 次要 · 笔记正文前 200 字做减法</b>（< 100 字 +14.5 个百分点）<br>一句卖点 + 一句证据，不要把商详顶部写成产品说明书。</div>
+  <div class="cpn-tier cpn-tier-3"><b>🟢 辅助 · 笔记标题做减法</b>（≤ 15 字 +8.3 个百分点）<br>≤ 15 字 + 规格量化数字，让用户在信息流 0.5 秒看懂「是什么 + 多少」。</div>
   <div class="cpn-key">💡 <b>判断依据</b>：不是死磕字数，是看「单位字数的信息密度」——25 字商品名讲清 1 件事 > 50 字商品名塞 7 件事每件都没讲透。</div>
 </div>
   
@@ -2378,17 +2380,16 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="v10-stat-good">✅ 表现好 <b>58</b> 篇</span>
     <span class="v10-stat-sep">vs</span>
     <span class="v10-stat-bad">表现差仅 <b>35</b> 篇</span>
-    <span class="diff-pp">表现好的多 8.2%</span> <span class="diff-ratio">1.68</span>
+     <span class="diff-ratio">1.68</span>
   </div>
   <div class="v10-card-cat">📊 跨类目通用</div>
   <div class="v10-card-advice">💡 标题压到15字以内（一句钩子完事），商品名/正文里把克数·瓶数·规格直接亮出来；不要靠风味词撑长度，让用户0.5秒看懂'是什么+多少'。</div>
   <details class="v10-card-examples">
-    <summary>看 3 篇真实案例 + 2 篇反例</summary>
+    <summary>看 2 篇真实案例</summary>
     <div class="v10-ex-block">
       <div class="v10-ex-label">🟢 表现好的笔记是这么写的</div>
-      <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/669cefed00000000250173ac" target="_blank" rel="noopener" class="v10-note-link">🔗 《分享一款爱不释手的零食！.》｜商品名:妈妈很忙 西梅干450g 高纤维0添加蔗糖 软糯去核 西梅干1袋｜正文:办公室经常吃的这款零食，让我爱不释手。 它就是这款无糖无脂的西梅干，口感软糯，去核设计，吃起来方便又美味。它富含膳食纤维，既能满足我对美食的追求，又能帮助我维持 (ctr2=3.50)</a></li><li><a href="https://www.xiaohongshu.com/explore/68a2d99a000000001d0236ab" target="_blank" rel="noopener" class="v10-note-link">🔗 《每天来一块，健康又养生！》｜商品名:九制黄精【15年生】所有规格均送试吃装，提供试吃保障！ （真空小袋）品鉴装250｜正文:﻿#养生[话题]#﻿ ﻿#九蒸九晒黄精[话题]#﻿ ﻿#九制黄精[话题]#﻿ ﻿#我的健康生活[话题]#﻿ ﻿#我的养生仪式感[话题]#﻿ ﻿#黄精[话题]#﻿ (ctr2=3.14)</a></li><li><a href="https://www.xiaohongshu.com/explore/6905f9ec000000000301fba2" target="_blank" rel="noopener" class="v10-note-link">🔗 《坚果从业者推荐坚果尽量吃原味》｜商品名:韩要强 0号特大现烤夏威夷果仁没有额外添加剂250克 1罐*250克【中大半粒】｜正文:夏威夷果是坚果添加剂的重灾区！ 很多夏威夷果会添加甜蜜素，白砂糖，香精，奶精等等 越来越多的证据表明，添加有害健康！ 尤其坚果，更推荐大家尽量选择原味！ #韩要 (ctr2=2.50)</a></li></ul>
+      <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/669cefed00000000250173ac" target="_blank" rel="noopener" class="v10-note-link">🔗 《分享一款爱不释手的零食！.》｜商品名:妈妈很忙 西梅干450g 高纤维0添加蔗糖 软糯去核 西梅干1袋｜正文:办公室经常吃的这款零食，让我爱不释手。 它就是这款无糖无脂的西梅干，口感软糯，去核设计，吃起来方便又美味。它富含膳食纤维，既能满足我对美食的追求，又能帮助我维持 (ctr2=3.50)</a></li><li><a href="https://www.xiaohongshu.com/explore/68a2d99a000000001d0236ab" target="_blank" rel="noopener" class="v10-note-link">🔗 《每天来一块，健康又养生！》｜商品名:九制黄精【15年生】所有规格均送试吃装，提供试吃保障！ （真空小袋）品鉴装250｜正文:﻿#养生[话题]#﻿ ﻿#九蒸九晒黄精[话题]#﻿ ﻿#九制黄精[话题]#﻿ ﻿#我的健康生活[话题]#﻿ ﻿#我的养生仪式感[话题]#﻿ ﻿#黄精[话题]#﻿ (ctr2=3.14)</a></li></ul>
     </div>
-    <div class="v10-ex-block"><div class="v10-ex-label v10-ex-label-red">🔴 表现差的笔记反例</div><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/69a68377000000000e00e721" target="_blank" rel="noopener" class="v10-note-link">🔗 《救命蘸水！狠狠拿捏水煮菜🤏🤏🤏》｜商品名:仙马桥 贵州特产木姜子柴火糊辣椒面蘸水蘸料油泼辣子凉拌炒菜香辣浓郁 250袋 木｜正文:春节胡吃海喝后😭 肚子圆滚滚真的慌了！[失望R] 管不住嘴又迈不开腿的姐妹看过来👀 不用开火不用复杂调料 水煮菜随便煮一煮🥬 灵魂蘸料一拌直接香迷糊！😋 	 🥬 (ctr2=0.05)</a></li><li><a href="https://www.xiaohongshu.com/explore/68046bc4000000001d024343" target="_blank" rel="noopener" class="v10-note-link">🔗 《【黑色狂欢】不考验人性版》｜商品名:【云南新货】中蜂米团花蜜源多的黑百花蜂蜜/黄菠萝土蜂蜜/黑苦蜜 云南黑百花蜜1斤｜正文:又是一年黑蜜季[打卡R]奔赴2800公里多，常驻两个月，和各个山里的农户打交道，大家把信任交付给我，我也会一如即往的控好品质！！ 黑蜜的水很深，不花时间和精力， (ctr2=0.06)</a></li></ul></div>
   </details>
 </div><div class="v10-card v10-card-high">
   <div class="v10-card-head">
@@ -2400,17 +2401,16 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="v10-stat-good">✅ 表现好 <b>69</b> 篇</span>
     <span class="v10-stat-sep">vs</span>
     <span class="v10-stat-bad">表现差仅 <b>28</b> 篇</span>
-    <span class="diff-pp">表现好的多 14.5%</span> <span class="diff-ratio">2.5</span>
+     <span class="diff-ratio">2.5</span>
   </div>
   <div class="v10-card-cat">📊 跨类目通用</div>
   <div class="v10-card-advice">💡 正文不必长篇大论；前200字写'一句卖点+一句证据'即可，剩下交给话题tag。CTR2 要的是'快速验证决定下单'，不是'读完文章'。</div>
   <details class="v10-card-examples">
-    <summary>看 3 篇真实案例 + 2 篇反例</summary>
+    <summary>看 2 篇真实案例</summary>
     <div class="v10-ex-block">
       <div class="v10-ex-label">🟢 表现好的笔记是这么写的</div>
-      <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/69b290500000000022030c24" target="_blank" rel="noopener" class="v10-note-link">🔗 《这瓶橘子酒承包整个春天的氛围感🍊》｜商品名:塔伦家 日落橘子海 爆汁橘子起泡酒  整颗橘子鲜榨~莫斯卡托 西班牙进口 1瓶｜正文:#小红书市集春上新[话题]# #塔伦家橘子酒[话题]# #微醺酒[话题]# #春日微醺[话题]# #橘子味[话题]# #气泡酒[话题]# (ctr2=10.17)</a></li><li><a href="https://www.xiaohongshu.com/explore/68a2d99a000000001d0236ab" target="_blank" rel="noopener" class="v10-note-link">🔗 《每天来一块，健康又养生！》｜商品名:九制黄精【15年生】所有规格均送试吃装，提供试吃保障！ （真空小袋）品鉴装250｜正文:﻿#养生[话题]#﻿ ﻿#九蒸九晒黄精[话题]#﻿ ﻿#九制黄精[话题]#﻿ ﻿#我的健康生活[话题]#﻿ ﻿#我的养生仪式感[话题]#﻿ ﻿#黄精[话题]#﻿ (ctr2=3.14)</a></li><li><a href="https://www.xiaohongshu.com/explore/6a0d15ac000000000803de6e" target="_blank" rel="noopener" class="v10-note-link">🔗 《番茄味和牛脆片，这味道也太夯了！》｜商品名:失重森林 和牛脆片牛肉脆片牛脆脆风干牛肉干和牛薄切 番茄味108g*1桶（拆封不｜正文:#失重森林[话题]# #失重森林和牛脆片[话题]# #新品上线[话题]# #零食推荐[话题]# #牛肉干[话题]# #这也太好吃了[话题]# #美食分享[话题] (ctr2=2.25)</a></li></ul>
+      <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/69b290500000000022030c24" target="_blank" rel="noopener" class="v10-note-link">🔗 《这瓶橘子酒承包整个春天的氛围感🍊》｜商品名:塔伦家 日落橘子海 爆汁橘子起泡酒  整颗橘子鲜榨~莫斯卡托 西班牙进口 1瓶｜正文:#小红书市集春上新[话题]# #塔伦家橘子酒[话题]# #微醺酒[话题]# #春日微醺[话题]# #橘子味[话题]# #气泡酒[话题]# (ctr2=10.17)</a></li><li><a href="https://www.xiaohongshu.com/explore/68a2d99a000000001d0236ab" target="_blank" rel="noopener" class="v10-note-link">🔗 《每天来一块，健康又养生！》｜商品名:九制黄精【15年生】所有规格均送试吃装，提供试吃保障！ （真空小袋）品鉴装250｜正文:﻿#养生[话题]#﻿ ﻿#九蒸九晒黄精[话题]#﻿ ﻿#九制黄精[话题]#﻿ ﻿#我的健康生活[话题]#﻿ ﻿#我的养生仪式感[话题]#﻿ ﻿#黄精[话题]#﻿ (ctr2=3.14)</a></li></ul>
     </div>
-    <div class="v10-ex-block"><div class="v10-ex-label v10-ex-label-red">🔴 表现差的笔记反例</div><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/686f55a8000000000d02649c" target="_blank" rel="noopener" class="v10-note-link">🔗 《潮汕牛肉饭美团套图，合作赠送找我领取》｜商品名:潮汕牛肉饭酱料潮汕沙茶酱商用 沙茶原味酱100克+腌肉粉｜正文:潮汕牛肉饭图片，潮汕沙茶牛肉饭套图#图片[话题]# #餐饮图片[话题]# (ctr2=0.03)</a></li><li><a href="https://www.xiaohongshu.com/explore/6a008666000000000702c36b" target="_blank" rel="noopener" class="v10-note-link">🔗 《女性内调保养不是智商税‼️要喝就喝点好的》｜商品名:玉脂膏 女子以肝为先天 皮肤 情绪 姨妈 经络 都跟肝息息相关 一罐（270克）｜正文:#我的养生仪式感[话题]# #女性保养[话题]# #喝出健康喝出美丽[话题]# #女性内调[话题]# #内调保养[话题]##养生膏[话题]# (ctr2=0.06)</a></li></ul></div>
   </details>
 </div><div class="v10-card v10-card-high">
   <div class="v10-card-head">
@@ -2422,17 +2422,16 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="v10-stat-good">✅ 表现好 <b>28</b> 篇</span>
     <span class="v10-stat-sep">vs</span>
     <span class="v10-stat-bad">表现差仅 <b>20</b> 篇</span>
-    <span class="diff-pp">表现好的多 2.9%</span> <span class="diff-ratio">1.42</span>
+     <span class="diff-ratio">1.42</span>
   </div>
   <div class="v10-card-cat">📊 跨类目通用</div>
   <div class="v10-card-advice">💡 把'核心产区/原产地/官方/老字号/认证'等硬背书 + 规格克数同时放进标题或商品名，背书+规格组合能在商详顶部稳住信任。</div>
   <details class="v10-card-examples">
-    <summary>看 3 篇真实案例 + 2 篇反例</summary>
+    <summary>看 2 篇真实案例</summary>
     <div class="v10-ex-block">
       <div class="v10-ex-label">🟢 表现好的笔记是这么写的</div>
-      <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/69b290500000000022030c24" target="_blank" rel="noopener" class="v10-note-link">🔗 《这瓶橘子酒承包整个春天的氛围感🍊》｜商品名:塔伦家 日落橘子海 爆汁橘子起泡酒  整颗橘子鲜榨~莫斯卡托 西班牙进口 1瓶｜正文:#小红书市集春上新[话题]# #塔伦家橘子酒[话题]# #微醺酒[话题]# #春日微醺[话题]# #橘子味[话题]# #气泡酒[话题]# (ctr2=10.17)</a></li><li><a href="https://www.xiaohongshu.com/explore/69b10a7c0000000022023e5b" target="_blank" rel="noopener" class="v10-note-link">🔗 《飞9000公里去西班牙🇪🇸，就为了这口橘子酒》｜商品名:塔伦家 日落橘子海 爆汁橘子起泡酒  整颗橘子鲜榨~莫斯卡托 西班牙进口 1瓶｜正文:巨好喝！特浓郁的爆汁儿橘子香气 	 7度的橘子气泡小甜酒，喝起来美滋滋没压力！ 	 未成年人请勿饮酒 	 #好酒推荐[话题]# #小红书市集春上新[话题]# # (ctr2=3.34)</a></li><li><a href="https://www.xiaohongshu.com/explore/69dd9840000000002102f198" target="_blank" rel="noopener" class="v10-note-link">🔗 《好茶会说话！一直在找茶的茶友可以试试这款》｜商品名:梅伯珍 凤瑞2025特级白牡丹王正宗福鼎白茶第一村柏柳村品牌礼盒套装收藏 单砖1｜正文:谁懂啊！喝到一款零青味的碳焙白牡丹😭 梅伯珍2025年凤瑞款，直接戳中白茶爱好者的心巴✅ ✅ 特级碳焙白牡丹｜古法工艺太香了 ✅ 自有有ji山场直供｜福鼎核心产 (ctr2=1.56)</a></li></ul>
+      <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/69b290500000000022030c24" target="_blank" rel="noopener" class="v10-note-link">🔗 《这瓶橘子酒承包整个春天的氛围感🍊》｜商品名:塔伦家 日落橘子海 爆汁橘子起泡酒  整颗橘子鲜榨~莫斯卡托 西班牙进口 1瓶｜正文:#小红书市集春上新[话题]# #塔伦家橘子酒[话题]# #微醺酒[话题]# #春日微醺[话题]# #橘子味[话题]# #气泡酒[话题]# (ctr2=10.17)</a></li><li><a href="https://www.xiaohongshu.com/explore/69b10a7c0000000022023e5b" target="_blank" rel="noopener" class="v10-note-link">🔗 《飞9000公里去西班牙🇪🇸，就为了这口橘子酒》｜商品名:塔伦家 日落橘子海 爆汁橘子起泡酒  整颗橘子鲜榨~莫斯卡托 西班牙进口 1瓶｜正文:巨好喝！特浓郁的爆汁儿橘子香气 	 7度的橘子气泡小甜酒，喝起来美滋滋没压力！ 	 未成年人请勿饮酒 	 #好酒推荐[话题]# #小红书市集春上新[话题]# # (ctr2=3.34)</a></li></ul>
     </div>
-    <div class="v10-ex-block"><div class="v10-ex-label v10-ex-label-red">🔴 表现差的笔记反例</div><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/68046bc4000000001d024343" target="_blank" rel="noopener" class="v10-note-link">🔗 《【黑色狂欢】不考验人性版》｜商品名:【云南新货】中蜂米团花蜜源多的黑百花蜂蜜/黄菠萝土蜂蜜/黑苦蜜 云南黑百花蜜1斤｜正文:又是一年黑蜜季[打卡R]奔赴2800公里多，常驻两个月，和各个山里的农户打交道，大家把信任交付给我，我也会一如即往的控好品质！！ 黑蜜的水很深，不花时间和精力， (ctr2=0.06)</a></li><li><a href="https://www.xiaohongshu.com/explore/69a2797c000000001a030636" target="_blank" rel="noopener" class="v10-note-link">🔗 《低能量老鼠人就吃核桃姜茶，头一次感受充沛》｜商品名:养瑞和 松子核桃姜茶老姜汤花生核桃腰果健康营养坚果冲饮姜母茶250g 1罐体验装｜正文:老师傅用柴火铁锅足足翻炒上三个多小时才把姜茶送到你们手上 	 经常看到有人说：你们家的核桃姜茶做得好好吃，就是量少 我们一直记在心上，这次加量不加价，就是为了回 (ctr2=0.07)</a></li></ul></div>
   </details>
 </div></div>
   
@@ -2447,11 +2446,10 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="v10-stat-bad">🔴 表现差 <b>46</b> 篇踩坑</span>
     <span class="v10-stat-sep">vs</span>
     <span class="v10-stat-good">表现好仅 <b>26</b> 篇</span>
-    <span class="diff-pp diff-pp-red">表现差的多 6.8%</span> <span class="diff-ratio">1.74</span>
+     <span class="diff-ratio">1.74</span>
   </div>
   <div class="v10-card-cat">📊 茶酒高度集中(63%)</div>
   <div class="v10-card-advice v10-card-advice-red">🚫 警惕'品酒师式商品名+正文堆奶香果香花香'的写法——商详页看不到详细的视觉，纯文字堆叠让人疲惫，反而拉低决策；删一半修辞，换一条规格信息进来。</div>
-  <details class="v10-card-examples"><summary>看 1 篇真实反例</summary><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/67c6b942000000001201cc3e" target="_blank" rel="noopener" class="v10-note-link">🔗 《台湾省特产巨甘甜😋奶香小甜水，送三种口味》｜商品名:修哲 拍一送三  奶香金萱【赠品】果香冻顶+蜜香妃子笑+10年老乌龙 50g*4｜正文:台湾省特产，巨甘甜，奶香小甜水，它叫金萱。 同时这4袋其中3袋价值300多是额外送给新粉的，每个新粉都只能拍一单，免费试喝12泡，像这款价值100多这款果香冻顶 (ctr2=18.04)</a></li></ul></details>
 </div><div class="v10-card v10-card-low">
   <div class="v10-card-head">
     <span class="v10-card-num v10-card-num-red">2</span>
@@ -2462,11 +2460,10 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="v10-stat-bad">🔴 表现差 <b>35</b> 篇踩坑</span>
     <span class="v10-stat-sep">vs</span>
     <span class="v10-stat-good">表现好仅 <b>16</b> 篇</span>
-    <span class="diff-pp diff-pp-red">表现差的多 6.5%</span> <span class="diff-ratio">2.16</span>
+     <span class="diff-ratio">2.16</span>
   </div>
   <div class="v10-card-cat">📊 美食展示集中(54%)</div>
-  <div class="v10-card-advice v10-card-advice-red">🚫 '送礼/礼盒/伴手礼'看似强需求其实是泛人群，CTR2 反而低 7-8pp——除非店铺真做礼品定位，否则别把'送礼'当主钩子；改成自饮场景或产品功能描述。</div>
-  <details class="v10-card-examples"><summary>看 1 篇真实反例</summary><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/69f3260c000000001f00126d" target="_blank" rel="noopener" class="v10-note-link">🔗 《云南头茬墨红，直二邀您试喝！》｜商品名:杨直二 2026头茬云南冻干墨红玫瑰花茶100克大朵母亲节伴手礼礼物 墨红玫瑰花｜正文:#杨直二[话题]# #墨红玫瑰[话题]# #墨红玫瑰季节限定[话题]# #玫瑰[话题]# (ctr2=1.80)</a></li></ul></details>
+  <div class="v10-card-advice v10-card-advice-red">🚫 '送礼/礼盒/伴手礼'看似强需求其实是泛人群，CTR2 反而低 7-8个百分点——除非店铺真做礼品定位，否则别把'送礼'当主钩子；改成自饮场景或产品功能描述。</div>
 </div><div class="v10-card v10-card-low">
   <div class="v10-card-head">
     <span class="v10-card-num v10-card-num-red">3</span>
@@ -2477,11 +2474,10 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="v10-stat-bad">🔴 表现差 <b>15</b> 篇踩坑</span>
     <span class="v10-stat-sep">vs</span>
     <span class="v10-stat-good">表现好仅 <b>5</b> 篇</span>
-    <span class="diff-pp diff-pp-red">表现差的多 3.4%</span> <span class="diff-ratio">2.96</span>
+     <span class="diff-ratio">2.96</span>
   </div>
   <div class="v10-card-cat">📊 美食测评集中(47%)</div>
   <div class="v10-card-advice v10-card-advice-red">🚫 标题用'...'欲言又止看似神秘，实际在商详页只显示半截，用户读完反而劝退；标题必须是完整短句，钩子写在句首。</div>
-  <details class="v10-card-examples"><summary>看 1 篇真实反例</summary><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/689558790000000023034cf6" target="_blank" rel="noopener" class="v10-note-link">🔗 《槟子榔子吞云吐雾，你可一定要...》｜商品名:其他 甘草竹盐枇杷干营养清甜开袋即食农家无核枇杷果干果脯大果特产 【250克×2｜正文:这款甘草竹盐枇杷干真的是原汁原味肉厚香甜，配料干净营养丰富老少皆宜     ﻿#枇杷干[话题]#﻿ ﻿#枇杷[话题]#﻿ ﻿#儿童零食[话题]#﻿ ﻿#甘草功效 (ctr2=5.56)</a></li></ul></details>
 </div><div class="v10-card v10-card-low">
   <div class="v10-card-head">
     <span class="v10-card-num v10-card-num-red">4</span>
@@ -2492,11 +2488,10 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="v10-stat-bad">🔴 表现差 <b>172</b> 篇踩坑</span>
     <span class="v10-stat-sep">vs</span>
     <span class="v10-stat-good">表现好仅 <b>127</b> 篇</span>
-    <span class="diff-pp diff-pp-red">表现差的多 15.0%</span> <span class="diff-ratio">1.34</span>
+     <span class="diff-ratio">1.34</span>
   </div>
   <div class="v10-card-cat">📊 跨类目通用</div>
   <div class="v10-card-advice v10-card-advice-red">🚫 商品名超过46字就是参数+规格+赠品+营销词全堆，移动端被截断，反而显得杂乱；控制在25-40字内，主信息前置。</div>
-  <details class="v10-card-examples"><summary>看 1 篇真实反例</summary><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/67c6b942000000001201cc3e" target="_blank" rel="noopener" class="v10-note-link">🔗 《台湾省特产巨甘甜😋奶香小甜水，送三种口味》｜商品名:修哲 拍一送三  奶香金萱【赠品】果香冻顶+蜜香妃子笑+10年老乌龙 50g*4｜正文:台湾省特产，巨甘甜，奶香小甜水，它叫金萱。 同时这4袋其中3袋价值300多是额外送给新粉的，每个新粉都只能拍一单，免费试喝12泡，像这款价值100多这款果香冻顶 (ctr2=18.04)</a></li></ul></details>
 </div><div class="v10-card v10-card-low">
   <div class="v10-card-head">
     <span class="v10-card-num v10-card-num-red">5</span>
@@ -2507,11 +2502,10 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="v10-stat-bad">🔴 表现差 <b>62</b> 篇踩坑</span>
     <span class="v10-stat-sep">vs</span>
     <span class="v10-stat-good">表现好仅 <b>39</b> 篇</span>
-    <span class="diff-pp diff-pp-red">表现差的多 7.8%</span> <span class="diff-ratio">1.57</span>
+     <span class="diff-ratio">1.57</span>
   </div>
   <div class="v10-card-cat">📊 跨类目通用</div>
   <div class="v10-card-advice v10-card-advice-red">🚫 '早八/办公室/带娃'这种场景铺垫在 CTR1 阶段（封面+标题选人群）有用，但到商详页继续讲场景就是浪费篇幅，应该立刻给规格和差异化卖点。</div>
-  <details class="v10-card-examples"><summary>看 1 篇真实反例</summary><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/684c1415000000002300103e" target="_blank" rel="noopener" class="v10-note-link">🔗 《不能吃酸的姐妹👭千万不要轻易尝试！.》｜商品名:妈妈很忙 手工桑葚核桃糕250g 酸甜软糯 1盒用料150颗新鲜桑葚 1盒｜正文:满满的好食材，配料表简单！当季新鲜的桑葚、核桃仁、麦芽糖浆、食用植物油、淀粉不乱添加.6-7分熟的桑葚红中带黑，口感酸甜适中.搭配上香脆核桃从而让这款桑葚核桃糕 (ctr2=9.00)</a></li></ul></details>
 </div><div class="v10-card v10-card-low">
   <div class="v10-card-head">
     <span class="v10-card-num v10-card-num-red">6</span>
@@ -2522,11 +2516,10 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="v10-stat-bad">🔴 表现差 <b>24</b> 篇踩坑</span>
     <span class="v10-stat-sep">vs</span>
     <span class="v10-stat-good">表现好仅 <b>16</b> 篇</span>
-    <span class="diff-pp diff-pp-red">表现差的多 2.7%</span> <span class="diff-ratio">1.48</span>
+     <span class="diff-ratio">1.48</span>
   </div>
   <div class="v10-card-cat">📊 跨类目通用</div>
   <div class="v10-card-advice v10-card-advice-red">🚫 反直觉发现：'10w+姐妹好评/销量TOP/姐姐安利'类社证在 CTR2 阶段反而拉低转化——商详页用户已经感兴趣，社证说服力低于硬规格/价格信息。</div>
-  <details class="v10-card-examples"><summary>看 1 篇真实反例</summary><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/669cefed00000000250173ac" target="_blank" rel="noopener" class="v10-note-link">🔗 《分享一款爱不释手的零食！.》｜商品名:妈妈很忙 西梅干450g 高纤维0添加蔗糖 软糯去核 西梅干1袋｜正文:办公室经常吃的这款零食，让我爱不释手。 它就是这款无糖无脂的西梅干，口感软糯，去核设计，吃起来方便又美味。它富含膳食纤维，既能满足我对美食的追求，又能帮助我维持 (ctr2=3.50)</a></li></ul></details>
 </div></div>
 </div>
 
@@ -2695,15 +2688,15 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
 </details><div class="tab-panel hidden" id="tab-cvr">
   <div class="hero hero-sub hero-cvr">
     <h2>📈 <abbr class="term-abbr" data-tip="下单转化率，点开商品卡后实际下单的比例">CVR</abbr>（下单转化）表现好的笔记长什么样</h2>
-    <p class="meta">⚠️ 这是从高 GMV 笔记里聚类出的相关性画像，不是因果证明。仅作为内容方向参考，不保证按此改一定提升该指标</p>
+    <p class="meta">⚠️ 这是从高 <abbr class="term-abbr" data-tip="商品成交金额，即销售额">GMV</abbr> 笔记里聚类出的相关性画像，不是因果证明。仅作为内容方向参考，不保证按此改一定提升该指标</p>
   </div>
 <div class="v10-section">
   <div class="v10-banner">
     <div class="v10-banner-title">🔬 <abbr class="term-abbr" data-tip="下单转化率，点开商品卡后实际下单的比例">CVR</abbr>（下单转化） 高低对照 · 学好的，避坑的</div>
-    <div class="v10-banner-sub">把同类目里"<b>CVR（下单转化） 排前 25%</b>"和"<b>排后 25%</b>"的笔记拉出来比，找出"好笔记常用、坏笔记踩坑"的写法。<b>这是从已发笔记里归纳的规律，是参考不是保证</b>。</div>
+    <div class="v10-banner-sub">把同类目里"<b><abbr class="term-abbr" data-tip="下单转化率，点开商品卡后实际下单的比例">CVR</abbr>（下单转化） 排前 25%</b>"和"<b>排后 25%</b>"的笔记拉出来比，找出"好笔记常用、坏笔记踩坑"的写法。<b>这是从已发笔记里归纳的规律，是参考不是保证</b>。</div>
   </div>
   
-  <div class="v10-mechanism v10-mech-hero">💎 <b>核心规律</b>：CVR 高 vs 低 的本质差别：高组把『商品』翻译成『一个具体人群在一个具体时刻的固定动作 + 情绪兜底』（人群锁定 → 场景化 → 每天一勺 → 治愈/安心）；低组停留在『产品描述+ 横向比较+ 规格数字+ 节日套话』，让用户自己脑补『我要不要、什么时候、怎么用』。所以提升 CVR 的核心动作不是把内容做得更长更专业，而是把『使用决策』提前替用户做完。</div>
+  <div class="v10-mechanism v10-mech-hero">💎 <b>核心规律</b>：CVR 高 vs 低 的本质差别：表现好的笔记把『商品』翻译成『一个具体人群在一个具体时刻的固定动作 + 情绪兜底』（人群锁定 → 场景化 → 每天一勺 → 治愈/安心）；表现差的笔记停留在『产品描述+ 横向比较+ 规格数字+ 节日套话』，让用户自己脑补『我要不要、什么时候、怎么用』。所以提升 CVR 的核心动作不是把内容做得更长更专业，而是把『使用决策』提前替用户做完。</div>
   
   
   
@@ -2718,17 +2711,16 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="v10-stat-good">✅ 表现好 <b>73</b> 篇</span>
     <span class="v10-stat-sep">vs</span>
     <span class="v10-stat-bad">表现差仅 <b>39</b> 篇</span>
-    <span class="diff-pp">表现好的多 12.0%</span> <span class="diff-ratio">1.89</span>
+     <span class="diff-ratio">1.89</span>
   </div>
   <div class="v10-card-cat">📊 跨类目通用 — 美食测评 28、养生食疗 16、美食展示 16、美食教程 5；茶酒占比 55%</div>
   <div class="v10-card-advice">💡 正文/ASR 加一段『谁喝/吃了之后会舒服/安心/被治愈』的情绪结论句，最好放在功效描述之后做情绪封口，比单纯堆原料更能促单。</div>
   <details class="v10-card-examples">
-    <summary>看 3 篇真实案例 + 2 篇反例</summary>
+    <summary>看 3 篇真实案例</summary>
     <div class="v10-ex-block">
       <div class="v10-ex-label">🟢 表现好的笔记是这么写的</div>
       <ul class="v10-ex-list"><li>[养生食疗|cvr=2.0] 肝郁+脾虚的人：少点内耗，先放过自己~ | ASR『一开始以为单纯…典型就是情绪不好的时候，脾胃会特别不舒服』</li><li><a href="https://www.xiaohongshu.com/explore/69c38494000000001f002caa" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食展示|cvr=0.444] 所有女生坚持吃半个月，真的很舒服！ | ASR『八珍糕…老人孩子都喜欢吃』</a></li><li><a href="https://www.xiaohongshu.com/explore/69ca1c1a000000001b002de8" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评|cvr=0.5] 一口下去，整个办公室都听到了！ | ASR『满足感更强』</a></li></ul>
     </div>
-    <div class="v10-ex-block"><div class="v10-ex-label v10-ex-label-red">🔴 表现差的笔记反例</div><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6a058f70000000003701d048" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食展示|cvr=0.018] 这次的买一送一，简直夯爆了！！（情感词被替换成促销词，无『安心/治愈』情绪兜底）</a></li><li><a href="https://www.xiaohongshu.com/explore/69fca98b0000000035023f3a" target="_blank" rel="noopener" class="v10-note-link">🔗 [家居用品|cvr=0.026] 2026端午礼 | 让我们闻香饮茶（高雅但情绪点远，无解决感）</a></li></ul></div>
   </details>
 </div><div class="v10-card v10-card-high">
   <div class="v10-card-head">
@@ -2740,17 +2732,16 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="v10-stat-good">✅ 表现好 <b>56</b> 篇</span>
     <span class="v10-stat-sep">vs</span>
     <span class="v10-stat-bad">表现差仅 <b>29</b> 篇</span>
-    <span class="diff-pp">表现好的多 9.5%</span> <span class="diff-ratio">1.95</span>
+     <span class="diff-ratio">1.95</span>
   </div>
   <div class="v10-card-cat">📊 养生食疗 25、美食测评 17、美食展示 5、美食教程 4，跨类目通用；茶酒占比 50%</div>
   <div class="v10-card-advice">💡 标题或 ASR 前 15s 必须出现一个具体时刻（睡前/晨起/办公室/经期/熬夜后），把商品定位成『这个时刻的固定动作』，比泛化讲『日常喝』转化高近一倍。</div>
   <details class="v10-card-examples">
-    <summary>看 3 篇真实案例 + 2 篇反例</summary>
+    <summary>看 3 篇真实案例</summary>
     <div class="v10-ex-block">
       <div class="v10-ex-label">🟢 表现好的笔记是这么写的</div>
       <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/69bd237b00000000230120b8" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗|cvr=0.667] 👀熬夜的女生丨春天是关键节点 | ASR『晚上十一点到凌晨三点是肝经循行的时间…』</a></li><li>[养生食疗|cvr=0.75] 经期结束后 我超爱的四物汤 | ASR『姨妈期那几天坐着不行躺着也不行』</li><li><a href="https://www.xiaohongshu.com/explore/69ca1c1a000000001b002de8" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评|cvr=0.5] 一口下去，整个办公室都听到了！（明确办公室场景）</a></li></ul>
     </div>
-    <div class="v10-ex-block"><div class="v10-ex-label v10-ex-label-red">🔴 表现差的笔记反例</div><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6a0c1931000000003503ad29" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评|cvr=0.042] 一瓶奶酒怎么能好喝成这样？液体白色恋人..（只有口味形容，没有锚定到任何使用时刻）</a></li><li><a href="https://www.xiaohongshu.com/explore/6a1021c800000000070222c8" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗|cvr=0.04] 酸酸甜甜，越喝越轻松的天然酵素蜜！（口感+模糊收益，无场景钩子）</a></li></ul></div>
   </details>
 </div><div class="v10-card v10-card-high">
   <div class="v10-card-head">
@@ -2762,17 +2753,16 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="v10-stat-good">✅ 表现好 <b>83</b> 篇</span>
     <span class="v10-stat-sep">vs</span>
     <span class="v10-stat-bad">表现差仅 <b>58</b> 篇</span>
-    <span class="diff-pp">表现好的多 9.0%</span> <span class="diff-ratio">1.45</span>
+     <span class="diff-ratio">1.45</span>
   </div>
   <div class="v10-card-cat">📊 养生食疗 31、美食测评 19、美食展示 14、美食教程 10，跨类目；茶酒占比 53%</div>
   <div class="v10-card-advice">💡 ASR 后半段固定加一段『每天一勺/一颗/睡前冲一杯』的操作 SOP，把『要不要买』的犹豫转换成『照着做就行』的肌肉记忆。</div>
   <details class="v10-card-examples">
-    <summary>看 3 篇真实案例 + 2 篇反例</summary>
+    <summary>看 3 篇真实案例</summary>
     <div class="v10-ex-block">
       <div class="v10-ex-label">🟢 表现好的笔记是这么写的</div>
       <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6a008666000000000702c36b" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗|cvr=1.0] 女性内调保养不是智商税‼️要喝就喝点好的 | ASR『每天一勺一口收进21味本草精粹』</a></li><li>[养生食疗|cvr=0.387] 真养内里的养生零食（每天定量喝法）</li><li><a href="https://www.xiaohongshu.com/explore/6a0bb7580000000035020207" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食展示|cvr=0.444] 低咖啡因黄波旁，最近每天都喝它（『每天』+ 明确单品）</a></li></ul>
     </div>
-    <div class="v10-ex-block"><div class="v10-ex-label v10-ex-label-red">🔴 表现差的笔记反例</div><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6a1e60330000000022009537" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评|cvr=0.038] 我们打算卖掉修哲（讲创业故事，未告诉用户怎么喝）</a></li><li><a href="https://www.xiaohongshu.com/explore/688b6d11000000000403d1b4" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗|cvr=0.015] 自从吃了这款干挑燕条，干挑盏就再也没买过（产品对比，没给使用法）</a></li></ul></div>
   </details>
 </div><div class="v10-card v10-card-high">
   <div class="v10-card-head">
@@ -2784,17 +2774,16 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="v10-stat-good">✅ 表现好 <b>19</b> 篇</span>
     <span class="v10-stat-sep">vs</span>
     <span class="v10-stat-bad">表现差仅 <b>8</b> 篇</span>
-    <span class="diff-pp">表现好的多 3.8%</span> <span class="diff-ratio">2.36</span>
+     <span class="diff-ratio">2.36</span>
   </div>
   <div class="v10-card-cat">📊 养生食疗为主（约 80%）、辅以妈妈经验/美食教程；茶酒占比 47%</div>
   <div class="v10-card-advice">💡 养生/食疗类商品按『痛点描述→人群标签→每天怎么喝→食材配比』四段结构写，比堆原料/讲故事 CVR 高 2 倍。</div>
   <details class="v10-card-examples">
-    <summary>看 3 篇真实案例 + 1 篇反例</summary>
+    <summary>看 3 篇真实案例</summary>
     <div class="v10-ex-block">
       <div class="v10-ex-label">🟢 表现好的笔记是这么写的</div>
       <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/69b3d1500000000022003e54" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗|cvr=0.357] 润心百合饮 熬夜党喝对这杯，润到心坎里 | ASR『经常熬夜，嗓子干，嘴巴干容易起皮的姐妹』</a></li><li><a href="https://www.xiaohongshu.com/explore/68b14c4c000000001c032fc7" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗|cvr=0.188] 睡不着、睡眠浅、半夜醒丨酸枣仁百合睡眠茶 | ASR『一罐11味健康草本，根据人体需求定量配比』</a></li><li><a href="https://www.xiaohongshu.com/explore/69b935b30000000022001fda" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗|cvr=0.182] 长期熬夜、内热明显的姐妹，很适合这样喝～</a></li></ul>
     </div>
-    <div class="v10-ex-block"><div class="v10-ex-label v10-ex-label-red">🔴 表现差的笔记反例</div><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/69fef3a8000000001f005188" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评|cvr=0.046] 谁喝谁漂亮的桑葚玫瑰蜜爆单了，凭啥？（用销量证明替代痛点-方案链路）</a></li></ul></div>
   </details>
 </div><div class="v10-card v10-card-high">
   <div class="v10-card-head">
@@ -2806,17 +2795,16 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="v10-stat-good">✅ 表现好 <b>38</b> 篇</span>
     <span class="v10-stat-sep">vs</span>
     <span class="v10-stat-bad">表现差仅 <b>21</b> 篇</span>
-    <span class="diff-pp">表现好的多 5.9%</span> <span class="diff-ratio">1.82</span>
+     <span class="diff-ratio">1.82</span>
   </div>
   <div class="v10-card-cat">📊 养生食疗高度集中（约 60%）、辅以美食测评/教程；茶酒占比 63%</div>
   <div class="v10-card-advice">💡 养生/茶酒类强建议在 ASR 前 5s 出现一个『时间维度的传承』（XX 年从业 / 几代手艺 / 非遗工艺 / 核心产区直采），快速建立专业感再讲产品。</div>
   <details class="v10-card-examples">
-    <summary>看 3 篇真实案例 + 1 篇反例</summary>
+    <summary>看 3 篇真实案例</summary>
     <div class="v10-ex-block">
       <div class="v10-ex-label">🟢 表现好的笔记是这么写的</div>
       <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6a008666000000000702c36b" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗|cvr=1.0] 女性内调保养不是智商税 | ASR『十一年养生生根…采用非遗传统膏方制作技艺』</a></li><li>[养生食疗|cvr=2.0] 肝郁+脾虚（专家级口吻+中医知识叙事）</li><li>[养生食疗|cvr=0.357] 润心百合饮（核心产区原料+定量配比）</li></ul>
     </div>
-    <div class="v10-ex-block"><div class="v10-ex-label v10-ex-label-red">🔴 表现差的笔记反例</div><ul class="v10-ex-list"><li>[美食测评|cvr=0.031] 终于到货了…爱尔兰无花果金酒回归（强调到货而非传承沉淀）</li></ul></div>
   </details>
 </div><div class="v10-card v10-card-high">
   <div class="v10-card-head">
@@ -2828,17 +2816,16 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="v10-stat-good">✅ 表现好 <b>27</b> 篇</span>
     <span class="v10-stat-sep">vs</span>
     <span class="v10-stat-bad">表现差仅 <b>15</b> 篇</span>
-    <span class="diff-pp">表现好的多 4.3%</span> <span class="diff-ratio">1.82</span>
+     <span class="diff-ratio">1.82</span>
   </div>
   <div class="v10-card-cat">📊 养生食疗 + 健身饮食 + 妈妈经验 + 美食测评，跨类目通用；茶酒占比 33%（较低，意味着真普适）</div>
   <div class="v10-card-advice">💡 食品/养生类无论原品类是什么，都可以在标题挂一个外貌结果（瘦/气色/抗老/减脂期），把食欲消费翻译成女性自我投资语言，CVR 收益跨类目稳定。</div>
   <details class="v10-card-examples">
-    <summary>看 3 篇真实案例 + 1 篇反例</summary>
+    <summary>看 3 篇真实案例</summary>
     <div class="v10-ex-block">
       <div class="v10-ex-label">🟢 表现好的笔记是这么写的</div>
       <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6794adf80000000029014aa4" target="_blank" rel="noopener" class="v10-note-link">🔗 [妈妈经验|cvr=1.0] 小月子里吃得比以前多还掉🥩了</a></li><li><a href="https://www.xiaohongshu.com/explore/6628d02300000000040180b3" target="_blank" rel="noopener" class="v10-note-link">🔗 [健身饮食|cvr=0.5] 办公室人手一袋…太适合减脂期嘴馋吃了🤣</a></li><li><a href="https://www.xiaohongshu.com/explore/69bd237b00000000230120b8" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗|cvr=0.667] 👀熬夜的女生丨春天是关键节点（皮肤暗沉切入）</a></li></ul>
     </div>
-    <div class="v10-ex-block"><div class="v10-ex-label v10-ex-label-red">🔴 表现差的笔记反例</div><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6a223c6d0000000022021879" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食展示|cvr=0.025] 立减500！千元出头喝勃艮第超一级少女园（产品维度沟通，无外貌人群切入）</a></li></ul></div>
   </details>
 </div><div class="v10-card v10-card-high">
   <div class="v10-card-head">
@@ -2850,17 +2837,16 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="v10-stat-good">✅ 表现好 <b>25</b> 篇</span>
     <span class="v10-stat-sep">vs</span>
     <span class="v10-stat-bad">表现差仅 <b>17</b> 篇</span>
-    <span class="diff-pp">表现好的多 2.8%</span> <span class="diff-ratio">1.48</span>
+     <span class="diff-ratio">1.48</span>
   </div>
   <div class="v10-card-cat">📊 跨类目通用，美食测评/展示/养生食疗均匀分布；茶酒占比 60%</div>
   <div class="v10-card-advice">💡 用『终于』要落在『终于解决了某个问题/补到某个稀缺货』，而不是『终于能发视频了』这种内容创作者口吻；解决感要落在用户侧。</div>
   <details class="v10-card-examples">
-    <summary>看 3 篇真实案例 + 1 篇反例</summary>
+    <summary>看 3 篇真实案例</summary>
     <div class="v10-ex-block">
       <div class="v10-ex-label">🟢 表现好的笔记是这么写的</div>
       <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/68ac3eec000000001d00eb6b" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食展示|cvr=0.244] 终于买到了真正无添加的纯怀山药粉了</a></li><li><a href="https://www.xiaohongshu.com/explore/69e0956e00000000210045ec" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评|cvr=0.312] 我宣布！是今年喝过最伟大的白葡萄酒（『等了三个月终于补到』）</a></li><li>[美食展示|cvr=0.357] 像喝了一口青提酒酿酸奶，终于进口啦</li></ul>
     </div>
-    <div class="v10-ex-block"><div class="v10-ex-label v10-ex-label-red">🔴 表现差的笔记反例</div><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/69fd6a150000000036031cda" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评|cvr=0.031] 上次这视频一发就秒删了，现在终于能发了..（『终于』是叙事钩子，不指向需求解决，效果反而不好）</a></li></ul></div>
   </details>
 </div></div>
   
@@ -2875,11 +2861,10 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="v10-stat-bad">🔴 表现差 <b>54</b> 篇踩坑</span>
     <span class="v10-stat-sep">vs</span>
     <span class="v10-stat-good">表现好仅 <b>39</b> 篇</span>
-    <span class="diff-pp diff-pp-red">表现差的多 5.0%</span>
+    
   </div>
   <div class="v10-card-cat">📊 美食测评高度集中，茶酒占比偏高</div>
   <div class="v10-card-advice v10-card-advice-red">🚫 做横向比较时务必给出唯一明确的购买结论，并紧跟『每天怎么喝/一勺多少』收口；只罗列差异、让用户自己判断会显著拉低 CVR。</div>
-  <details class="v10-card-examples"><summary>看 3 篇真实反例</summary><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6a1e60330000000022009537" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评|cvr=0.038] 我们打算卖掉修哲，以后可能喝不到修哲茶了</a></li><li><a href="https://www.xiaohongshu.com/explore/69e189b2000000002301374d" target="_blank" rel="noopener" class="v10-note-link">🔗 [医疗药品|cvr=0.037] 速成黄精vs真黄精，你买对了吗？</a></li><li><a href="https://www.xiaohongshu.com/explore/6a10402000000000060342a3" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评|cvr=0.02] 被米其林抢疯的奥地利小花到底多好喝？</a></li></ul></details>
 </div><div class="v10-card v10-card-low">
   <div class="v10-card-head">
     <span class="v10-card-num v10-card-num-red">2</span>
@@ -2890,11 +2875,10 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="v10-stat-bad">🔴 表现差 <b>82</b> 篇踩坑</span>
     <span class="v10-stat-sep">vs</span>
     <span class="v10-stat-good">表现好仅 <b>55</b> 篇</span>
-    <span class="diff-pp diff-pp-red">表现差的多 9.4%</span>
+    
   </div>
   <div class="v10-card-cat">📊 美食测评/展示集中，茶酒/海味/燕窝偏多</div>
   <div class="v10-card-advice v10-card-advice-red">🚫 数字要服务于用户收益（多少味草本/每天多少剂量/几代人手艺），而不是只服务于商家规格（多少头/多少克/还剩几瓶）；前者增信、后者反而像低质叫卖。</div>
-  <details class="v10-card-examples"><summary>看 3 篇真实反例</summary><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/690c02a500000000040127ac" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗|cvr=0.013] 8头黄花胶~出一包12斤🛫多谢老细❤️</a></li><li><a href="https://www.xiaohongshu.com/explore/6a0958200000000006020cd1" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评|cvr=0.046] 仅剩6瓶！等了7年！！！大Q巨好价拼手速！</a></li><li><a href="https://www.xiaohongshu.com/explore/688b6d11000000000403d1b4" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗|cvr=0.015] 自从吃了这款干挑燕条…</a></li></ul></details>
 </div><div class="v10-card v10-card-low">
   <div class="v10-card-head">
     <span class="v10-card-num v10-card-num-red">3</span>
@@ -2905,11 +2889,10 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="v10-stat-bad">🔴 表现差 <b>39</b> 篇踩坑</span>
     <span class="v10-stat-sep">vs</span>
     <span class="v10-stat-good">表现好仅 <b>27</b> 篇</span>
-    <span class="diff-pp diff-pp-red">表现差的多 4.2%</span>
+    
   </div>
   <div class="v10-card-cat">📊 美食展示集中，茶酒/糕点类偏多</div>
   <div class="v10-card-advice v10-card-advice-red">🚫 节日礼盒别只堆『福禄安康/伴手礼』套话；要么挂一个收礼人画像（送父母/送自己/送女友），要么给一个唯一推荐理由（『就选这款』），否则就是堆词不出单。</div>
-  <details class="v10-card-examples"><summary>看 3 篇真实反例</summary><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6a1ba293000000003502a3b1" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食展示|cvr=0.028] 福禄安康端午礼盒 | 已经进入高峰期啦</a></li><li><a href="https://www.xiaohongshu.com/explore/6a1ed0a0000000002202b0a4" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食展示|cvr=0.017] 福禄安康端午礼盒 | 排队出发，倒计时</a></li><li><a href="https://www.xiaohongshu.com/explore/6a03d3fa0000000006037597" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食展示|cvr=0.025] 告别俗气端午礼，今年走心送礼就选端阳志</a></li></ul></details>
 </div><div class="v10-card v10-card-low">
   <div class="v10-card-head">
     <span class="v10-card-num v10-card-num-red">4</span>
@@ -2920,11 +2903,10 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
     <span class="v10-stat-bad">🔴 表现差 <b>15</b> 篇踩坑</span>
     <span class="v10-stat-sep">vs</span>
     <span class="v10-stat-good">表现好仅 <b>8</b> 篇</span>
-    <span class="diff-pp diff-pp-red">表现差的多 2.4%</span>
+    
   </div>
   <div class="v10-card-cat">📊 美食测评集中，茶酒偏多</div>
   <div class="v10-card-advice v10-card-advice-red">🚫 标题尽量用『陈述句给出结果或承诺』，少用『XX 凭什么/到底多好喝？』这种把判断踢回给用户的句式——疑问式钩子拉 CTR 可能可以，但 CVR 会被稀释。</div>
-  <details class="v10-card-examples"><summary>看 3 篇真实反例</summary><ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/677768650000000013018247" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评|cvr=0.042] 700年历史的勃艮第一级园 只卖这个价？</a></li><li><a href="https://www.xiaohongshu.com/explore/6a10402000000000060342a3" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评|cvr=0.02] 被米其林抢疯的奥地利小花到底多好喝？</a></li><li><a href="https://www.xiaohongshu.com/explore/69fef3a8000000001f005188" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗|cvr=0.046] 谁喝谁漂亮的桑葚玫瑰蜜爆单了，凭啥？</a></li></ul></details>
 </div></div>
 </div>
 
@@ -3114,7 +3096,7 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   <div class="price-mech-pitfall">⚠️ <b>避坑</b>：不要把多件价拉到比单件价低过多（差&gt;20%），算法会判低质价格欺诈降低分发</div>
   <details class="price-mech-cases">
     <summary>📌 本周池里命中的真实案例（3）</summary>
-    <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6a031ca10000000007012d5d" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗] 三伏天的安心是红豆薏米水给的🫶太牛了！</a> <span class="case-meta">件数 419 · 件单价 ¥72 · 关键词「买三送一」</span></li><li><a href="https://www.xiaohongshu.com/explore/6842a03c000000002002aa51" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评] 真诚分享‼️连着买了一年的咖啡豆🔥实在是香</a> <span class="case-meta">件数 201 · 件单价 ¥75 · 关键词「凑单」</span></li><li><a href="https://www.xiaohongshu.com/explore/6a0438b5000000003601cac9" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评] 你绝对没尝过！十年杏花一年蜜！</a> <span class="case-meta">件数 3 · 件单价 ¥85 · 关键词「2送1」</span></li></ul>
+    <ul class="v10-ex-list"><li><a href="https://www.xiaohongshu.com/explore/6a031ca10000000007012d5d" target="_blank" rel="noopener" class="v10-note-link">🔗 [养生食疗] 三伏天的安心是红豆薏米水给的🫶太牛了！</a> <span class="case-meta">件数 419 · <abbr class="term-abbr" data-tip="单笔订单平均成交金额">件单价</abbr> ¥72 · 关键词「买三送一」</span></li><li><a href="https://www.xiaohongshu.com/explore/6842a03c000000002002aa51" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评] 真诚分享‼️连着买了一年的咖啡豆🔥实在是香</a> <span class="case-meta">件数 201 · 件单价 ¥75 · 关键词「凑单」</span></li><li><a href="https://www.xiaohongshu.com/explore/6a0438b5000000003601cac9" target="_blank" rel="noopener" class="v10-note-link">🔗 [美食测评] 你绝对没尝过！十年杏花一年蜜！</a> <span class="case-meta">件数 3 · 件单价 ¥85 · 关键词「2送1」</span></li></ul>
   </details>
 </div><div class="price-mech-card">
   <div class="price-mech-head">
@@ -4636,14 +4618,14 @@ function buildRefPromptText(p) {
 ## 平台 V10 实测方法论（基于本周 1200 篇休食优质笔记差分聚类得出，请严格套用，不要凭空想）
 
 ### ① 算法分阶梯（n=1199 真实分箱数据，不是拟合）
-- 「笔记质量分」Q4(高) 比 Q1(低)：DGMV 19 倍 / 曝光 170 倍 ← 最强放大器
+- 「笔记质量分」Q4(高) 比 Q1(低)：<abbr class="term-abbr" data-tip="笔记直接带来的销售额（不含间接成交，小红书后台同口径）">DGMV</abbr> 19 倍 / 曝光 170 倍 ← 最强放大器
 - 「真诚分享」「营销味淡」「综合算法分」Q4/Q1：DGMV 2-3 倍 / 曝光 2 倍
 - 这是平台算法对笔记的综合评分，商家不能直接改分数，但能通过下面 ②③④⑤ 4 个写法路径间接影响
 
 ### ② CTR1 高 vs 低对照（封面+标题点击）
 **核心机制**：真实剂量+具体钩子 vs 悬念词+上新公告
 - ✅ 抄：封面美学=低（生活感/真实感）跨 7 类目都好，敢用"非精修"封面 / 标题用「」（）【】框关键词 / 具体大数字（799元/21万单/2.8万人喜欢）
-- 🚫 避：满屏 ❗✨ emoji（高组用得反而克制） / "终于来了/原来如此/居然"悬念悬空 / 养生类目"2025顺时姜茶｜立夏喝到三伏"节气倒数公告
+- 🚫 避：满屏 ❗✨ emoji（表现好的笔记用得反而克制） / "终于来了/原来如此/居然"悬念悬空 / 养生类目"2025顺时姜茶｜立夏喝到三伏"节气倒数公告
 
 ### ③ CTR2 三层优先级（商品卡点击）
 **核心机制**：电梯演讲 vs 品鉴文学 → 不是字数本身，是「单位字数的信息密度」
@@ -4683,7 +4665,7 @@ function buildRefPromptText(p) {
 - 正文结构（前 200 字 < 100 字：一句卖点 + 一句证据 → 中段使用决策 SOP → 结尾 CTA）
 - 商品卡文案（具体规格数字）
 - 件单价拉升机制（从 V10 ⑤ 4 机制里选 1-2 个具体落地）
-- 预估表现：CTR1 / CTR2 / CVR / 件单价 各档参考（参考 GMV 总览 Tab 行业 P75）
+- 预估表现：CTR1 / CTR2 / CVR / 件单价 各档参考（参考 GMV 总览 Tab 行业优秀线）
 
 **A 档（日常铺量）**
 - 同结构，更日常化

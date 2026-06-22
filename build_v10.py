@@ -79,6 +79,59 @@ def confidence_badge(c):
     tooltip = {'高': '差距大 + 跨多个类目 + 样本量足', '中': '差距中等或样本偏小，可参考但需结合自身判断', '低': '可能是品类特性或样本噪声，仅供参考'}.get(c, '')
     return f'<abbr class="conf-badge {color}" title="{tooltip}">{label}</abbr>'
 
+
+def pick_balanced_examples(examples, max_per_cat=2, max_total=4):
+    """类目均衡选案例，优先确保 零食/速食/茶酒/滋补 4 大组都有覆盖
+    
+    examples 元素结构（来自 subagent）：
+      "[养生食疗] 标题文字"  或  dict {category, title, ...}
+    """
+    if not examples:
+        return []
+    # 提取类目和原始项
+    items = []
+    for e in examples:
+        if isinstance(e, str):
+            # 从 "[类目] 标题" 提取
+            m = re.match(r'^\[([^\]]+)\]', e)
+            cat = m.group(1) if m else '其他'
+            items.append((cat, e))
+        elif isinstance(e, dict):
+            cat = e.get('category') or e.get('cat') or '其他'
+            items.append((cat, e))
+        else:
+            items.append(('其他', e))
+    
+    # 类目桶
+    buckets = {}
+    for cat, item in items:
+        buckets.setdefault(cat, []).append(item)
+    
+    # 优先级：零食组 > 速食/咖啡组 > 滋补组 > 茶酒组 > 其他
+    PRI = {
+        '美食测评': 1, '美食展示': 1, '美食教程': 1, '美食其他': 1,
+        '坚果': 1, '糕点': 1, '肉干': 1, '速食': 1,
+        '科学科普': 2,
+        '养生食疗': 3, '滋补': 3, '药食同源': 3,
+        '花草茶': 4, '葡萄酒': 4, '洋酒': 4, '酒类': 4,
+    }
+    cats_sorted = sorted(buckets.keys(), key=lambda c: (PRI.get(c, 5), -len(buckets[c])))
+    
+    # 轮询取，每类目最多 max_per_cat
+    picked = []
+    idx_per_cat = {c: 0 for c in cats_sorted}
+    while len(picked) < max_total:
+        before = len(picked)
+        for cat in cats_sorted:
+            if len(picked) >= max_total: break
+            i = idx_per_cat[cat]
+            if i < min(max_per_cat, len(buckets[cat])):
+                picked.append(buckets[cat][i])
+                idx_per_cat[cat] = i + 1
+        if len(picked) == before:
+            break  # 没新加 = 全用完
+    return picked
+
 def render_high_card(p, idx):
     name = escape(p.get('cluster_name', '?'))
     high_n = p.get('high_n', '?')
@@ -95,10 +148,11 @@ def render_high_card(p, idx):
         diff_str += f' <span class="diff-ratio">{escape(ratio)}</span>'
     
     examples = p.get('high_examples', [])
-    contrast = p.get('low_contrast_examples', [])
+    # 砍掉"反例案例"：商家工具不展示低组具体笔记（容易踩到自己/同行笔记，徒增尴尬）
     
-    ex_html = ''.join(example_li(e) for e in examples[:4])
-    co_html = ''.join(example_li(e) for e in contrast[:2])
+    # 类目均衡选案例：每类目最多 2 条，零食/速食/茶酒/滋补尽量都有
+    examples = pick_balanced_examples(examples, max_per_cat=2, max_total=4)
+    ex_html = ''.join(example_li(e) for e in examples)
     
     return f'''<div class="v10-card v10-card-high">
   <div class="v10-card-head">
@@ -115,12 +169,11 @@ def render_high_card(p, idx):
   <div class="v10-card-cat">📊 {cat}</div>
   <div class="v10-card-advice">💡 {advice}</div>
   <details class="v10-card-examples">
-    <summary>看 {len(examples)} 篇真实案例 + {len(contrast)} 篇反例</summary>
+    <summary>看 {len(examples)} 篇真实案例</summary>
     <div class="v10-ex-block">
       <div class="v10-ex-label">🟢 表现好的笔记是这么写的</div>
       <ul class="v10-ex-list">{ex_html}</ul>
     </div>
-    {f'<div class="v10-ex-block"><div class="v10-ex-label v10-ex-label-red">🔴 表现差的笔记反例</div><ul class="v10-ex-list">{co_html}</ul></div>' if co_html else ''}
   </details>
 </div>'''
 
@@ -138,12 +191,7 @@ def render_low_card(p, idx):
     if diff: diff_str = f'<span class="diff-pp diff-pp-red">表现差的多 {abs(diff) if isinstance(diff, (int, float)) else diff}%</span>'
     if ratio: diff_str += f' <span class="diff-ratio">{escape(ratio)}</span>'
     
-    examples = p.get('high_examples', []) or p.get('low_examples', [])
-    contrast = p.get('low_contrast_examples', []) or p.get('high_contrast_examples', [])
-    
-    ex_html = ''.join(example_li(e) for e in examples[:4])
-    co_html = ''.join(example_li(e) for e in contrast[:2])
-    
+    # 陷阱卡：完全不展示具体笔记案例（不点名任何商家），只展示写法描述
     return f'''<div class="v10-card v10-card-low">
   <div class="v10-card-head">
     <span class="v10-card-num v10-card-num-red">{idx+1}</span>
@@ -158,7 +206,6 @@ def render_low_card(p, idx):
   </div>
   <div class="v10-card-cat">📊 {cat}</div>
   <div class="v10-card-advice v10-card-advice-red">🚫 {advice}</div>
-  {f'<details class="v10-card-examples"><summary>看 {len(examples)} 篇真实反例</summary><ul class="v10-ex-list">{ex_html}</ul></details>' if examples else ''}
 </div>'''
 
 def render_price_playbook():
@@ -252,9 +299,9 @@ def render_metric_algo_corr_table():
 
 CTR2_PRIORITY_NOTE = '''<div class="ctr2-priority-note">
   <div class="cpn-title">📐 CTR2 三层优先级 · 字数本身不是因，「信息密度」才是</div>
-  <div class="cpn-tier cpn-tier-1"><b>🔴 首要 · 商品名做减法</b>（差距最大 +14.5pp）<br>≤ 25 字内只放「品类 + 1 个硬指标」。例：✅「韩要强夏威夷果 250g 中大半粒」/ ❌「韩要强 0号特大现烤夏威夷果仁没有额外添加剂250克 1罐*250克【中大半粒】」</div>
-  <div class="cpn-tier cpn-tier-2"><b>🟡 次要 · 正文前 200 字做减法</b>（< 100 字 +14.5pp）<br>一句卖点 + 一句证据，不要把商详顶部写成产品说明书。</div>
-  <div class="cpn-tier cpn-tier-3"><b>🟢 辅助 · 标题做减法</b>（≤ 15 字 +8.3pp）<br>≤ 15 字 + 规格量化数字，让用户在信息流 0.5 秒看懂「是什么 + 多少」。</div>
+  <div class="cpn-tier cpn-tier-1"><b>🔴 首要 · 商品卡里的商品名做减法</b>（差距最大 +14.5 个百分点）<br>≤ 25 字内只放「品类 + 1 个硬指标」。例：✅「韩要强夏威夷果 250g 中大半粒」/ ❌「韩要强 0号特大现烤夏威夷果仁没有额外添加剂250克 1罐*250克【中大半粒】」</div>
+  <div class="cpn-tier cpn-tier-2"><b>🟡 次要 · 笔记正文前 200 字做减法</b>（< 100 字 +14.5 个百分点）<br>一句卖点 + 一句证据，不要把商详顶部写成产品说明书。</div>
+  <div class="cpn-tier cpn-tier-3"><b>🟢 辅助 · 笔记标题做减法</b>（≤ 15 字 +8.3 个百分点）<br>≤ 15 字 + 规格量化数字，让用户在信息流 0.5 秒看懂「是什么 + 多少」。</div>
   <div class="cpn-key">💡 <b>判断依据</b>：不是死磕字数，是看「单位字数的信息密度」——25 字商品名讲清 1 件事 > 50 字商品名塞 7 件事每件都没讲透。</div>
 </div>'''
 
@@ -553,6 +600,14 @@ abbr.conf-badge { text-decoration: none; cursor: help; }
   .v10-card { padding: 10px 12px; }
   .v10-card-name { font-size: 13px; }
 }
+
+/* === V10.3 按钮可见性修复 === */
+/* btn-gen 文字强制白色（V10 body color 全局 override 可能影响） */
+.btn-gen { color: #fff !important; }
+/* Kimi 按钮用绿色区分（更易识别） */
+button.btn-gen:first-child,
+.planner-actions .btn-gen:first-of-type { background: #00b96b !important; }
+/* CTR2 优先级卡 +pp 改成中文描述，不挂术语 */
 '''
 
 # ============ 调用 build_v9.py（它会再调 build_v8_gpm.py）============
@@ -837,6 +892,7 @@ def wrap_terms_in_text(html_text):
       2) 在 tag 内替换（如 <div class="something CTR1 ...">）
       3) 在已有 abbr 内替换
       4) tip 文本含 " 把 attribute 撑爆
+    新增：避免在 tab-btn / mech-hero / nav 类深色容器内挂 abbr（hover tooltip 被遮挡 / 深色背景看不清）
     实现：每次 wrap 完一个术语就把所有新 abbr 整段 stash 成 sentinel，下一术语只扫 sentinel 之外的文本。
     """
     placeholders = {}
@@ -849,21 +905,32 @@ def wrap_terms_in_text(html_text):
     abbr_pat = re.compile(r'<abbr[^>]*>.*?</abbr>', re.DOTALL)
     html_text = abbr_pat.sub(_stash, html_text)
     
+    # 新增 0.5) 把"不应挂 abbr 的深色容器/tab btn"先 stash，wrap 完再还原
+    # 包括：tab-btn / v10-mech-hero / tab-anchor-nav 类整段
+    EXCLUDE_PATTERNS = [
+        # tab 按钮
+        re.compile(r'<button class="tab-btn[^"]*"[^>]*>.*?</button>', re.DOTALL),
+        # 核心机制 hero（深色卡）
+        re.compile(r'<div class="v10-mechanism v10-mech-hero[^"]*">.*?</div>', re.DOTALL),
+        # 算法表的关键洞察 hero（深色）
+        re.compile(r'<div class="mac-key">.*?</div>', re.DOTALL),
+        # tab sticky 锚 nav
+        re.compile(r'<nav class="tab-anchor-nav">.*?</nav>', re.DOTALL),
+    ]
+    for ep in EXCLUDE_PATTERNS:
+        html_text = ep.sub(_stash, html_text)
+    
     PER_TERM_GLOBAL_CAP = 8
     counts = {t: 0 for t in TERM_TOOLTIPS}
     
-    # 按 dict 顺序逐个术语 wrap，每次 wrap 完立刻 stash 新生成的 abbr
     for term, tip in TERM_TOOLTIPS.items():
         if counts[term] >= PER_TERM_GLOBAL_CAP: continue
-        # 1) 把当前 html split 成 tag/text，只在 text 段替换
         parts = re.split(r'(<[^>]+>)', html_text)
         for i, p in enumerate(parts):
             if i % 2 == 1:
-                continue  # tag 不动
+                continue
             if counts[term] >= PER_TERM_GLOBAL_CAP:
                 continue
-            # 边界：左侧不能是字母/数字/下划线/中文（避免误替换"超CTR1"等）
-            # 右侧不能是字母/数字/下划线
             pat = re.compile(r'(?<![A-Za-z0-9_\u4e00-\u9fa5])' + re.escape(term) + r'(?![A-Za-z0-9_])')
             def _rep(m):
                 if counts[term] >= PER_TERM_GLOBAL_CAP:
@@ -873,7 +940,7 @@ def wrap_terms_in_text(html_text):
                 return f'<abbr class="term-abbr" data-tip="{safe}">{term}</abbr>'
             parts[i] = pat.sub(_rep, p)
         html_text = ''.join(parts)
-        # 2) 立刻 stash 本轮生成的 abbr，让下一术语不会再扫到它里面的文本
+        # 立刻 stash 本轮生成的 abbr
         html_text = abbr_pat.sub(_stash, html_text)
     
     # 还原所有 sentinel
