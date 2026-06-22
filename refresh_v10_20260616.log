@@ -45,3 +45,93 @@ V10 mechanism 数量：5（预期 4）
 
 ✅ V10 build 完成，写入 /home/node/.openclaw/workspace/xushi-trends-cron/work/index.html (268,112 chars)
 [3] git push
+[main dc827bc] V10 weekly refresh 2026-06-16
+ 81 files changed, 198985 insertions(+)
+ create mode 100644 ALGO_FIELD_EXPLAINER.md
+ create mode 100644 ALGO_FIELD_EXPLAINER.redoc.md
+ create mode 100644 V9_METHODOLOGY_REVIEW.md
+ create mode 100644 V9_METHODOLOGY_REVIEW.redoc.md
+ create mode 100644 V9_METHODOLOGY_REVIEW_V2.md
+ create mode 100644 V9_METHODOLOGY_REVIEW_V2.redoc.md
+ create mode 100644 cluster_task_template.md
+ create mode 100644 data/goods_map.json
+ create mode 100644 data/step_a_meta.json
+ create mode 100644 data/step_a_raw.json
+ create mode 100644 data/step_b2_raw.json
+ create mode 100644 data/step_b_all_msgs.txt
+ create mode 100644 data/step_b_full_in.txt
+ create mode 100644 data/step_b_goods_in.txt
+ create mode 100644 data/step_b_in_0.txt
+ create mode 100644 data/step_b_in_1.txt
+ create mode 100644 data/step_b_in_2.txt
+ create mode 100644 data/step_b_in_3.txt
+ create mode 100644 data/step_b_in_clauses.json
+ create mode 100644 data/step_b_msgs.txt
+ create mode 100644 data/step_b_msgs_p2.txt
+ create mode 100644 data/step_b_note_ids.txt
+ create mode 100644 data/step_b_results/b1_0.json
+ create mode 100644 data/step_b_results/b1_1.json
+ create mode 100644 data/step_b_results/b1_2.json
+ create mode 100644 data/step_b_results/b1_3.json
+ create mode 100644 data/step_b_results/b4_0.json
+ create mode 100644 data/step_b_results/b4_1.json
+ create mode 100644 data/step_b_results/b4_2.json
+ create mode 100644 data/step_b_results/b4_3.json
+ create mode 100644 data/v10_poc/high_sin_titles.json
+ create mode 100644 data/v10_poc/high_titles.txt
+ create mode 100644 data/v10_poc/low_sin_titles.json
+ create mode 100644 data/v10_poc/low_titles.txt
+ create mode 100644 data/v10_poc/poc_cluster_task.md
+ create mode 100644 data/v10_poc/v10_poc_clusters.json
+ create mode 100644 data/v9_clusters_v3/ctr1_pic.cluster.json
+ create mode 100644 data/v9_clusters_v3/ctr1_vid.cluster.json
+ create mode 100644 data/v9_clusters_v3/ctr2_pic.cluster.json
+ create mode 100644 data/v9_clusters_v3/ctr2_vid.cluster.json
+ create mode 100644 data/v9_clusters_v3/cvr_pic.cluster.json
+ create mode 100644 data/v9_clusters_v3/cvr_vid.cluster.json
+ create mode 100644 data/v9_clusters_v3/price_pic.cluster.json
+ create mode 100644 data/v9_clusters_v3/price_vid.cluster.json
+ create mode 100644 data/v9_pool_merged.csv
+ create mode 100644 data/v9_pool_step_a.csv
+ create mode 100644 data/v9_pools_v2/ctr1_pic.json
+ create mode 100644 data/v9_pools_v2/ctr1_vid.json
+ create mode 100644 data/v9_pools_v2/ctr2_pic.json
+ create mode 100644 data/v9_pools_v2/ctr2_vid.json
+ create mode 100644 data/v9_pools_v2/cvr_pic.json
+ create mode 100644 data/v9_pools_v2/cvr_vid.json
+ create mode 100644 data/v9_pools_v2/price_pic.json
+ create mode 100644 data/v9_pools_v2/price_vid.json
+ create mode 100644 data/v9_pools_v3/ctr1_pic.json
+ create mode 100644 data/v9_pools_v3/ctr1_vid.json
+ create mode 100644 data/v9_pools_v3/ctr2_pic.json
+ create mode 100644 data/v9_pools_v3/ctr2_vid.json
+ create mode 100644 data/v9_pools_v3/cvr_pic.json
+ create mode 100644 data/v9_pools_v3/cvr_vid.json
+ create mode 100644 data/v9_pools_v3/price_pic.json
+ create mode 100644 data/v9_pools_v3/price_vid.json
+ create mode 100644 gen_algo_field_explainer.py
+ create mode 100644 gen_v9_review_doc.py
+ create mode 100644 gen_v9_review_doc_v2.py
+ create mode 100644 index_v8g_backup.html
+ create mode 100644 refresh_v10_20260616.log
+ create mode 100644 refresh_v9_20260616.log
+ create mode 100644 v9_cluster_prompt_template.txt
+ create mode 100644 v9_pool_master_v2.sql
+ create mode 100644 v9_pool_master_v2_full.sql
+ create mode 100644 v9_pool_master_v3.sql
+ create mode 100644 v9_split_pools_v2.py
+ create mode 100644 v9_split_pools_v3.py
+ create mode 100644 v9_step_a.sql
+ create mode 100644 v9_step_b.sql
+ create mode 100644 v9_step_b2.sql
+ create mode 100644 v9_step_b_template.sql
+ create mode 100755 weekly_refresh_v10.sh
+ create mode 100755 weekly_refresh_v9.sh
+To github.com:zhudamen528-code/xushi-trends.git
+   094bdd3..dc827bc  main -> main
+===== V10 周更摘要 2026年 06月 16日 星期二 22:05:14 CST =====
+✅ commit: dc827bc
+✅ index.html: 356515 bytes
+✅ V10 高组卡: 21 / 低组卡: 16
+✅ 看板地址: https://zhudamen528-code.github.io/xushi-trends/
+===== 完成 =====

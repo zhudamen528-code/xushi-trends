@@ -1,0 +1,57 @@
+===== V10 周更开始 2026年 06月 22日 星期一 09:00:04 CST =====
+[1] 当前 MVP：复用 data/v10_clusters/*.diff.json + data.json
+[2] build HTML（build_v10.py 会先调 build_v9.py 再注入 V10 section）
+=== 先跑 build_v9.py 生成基础 HTML ===
+✅ 替换 CTR1_METHODS_T（8169 chars）
+✅ 替换 CTR1_METHODS_V（10066 chars）
+✅ 替换 CTR2_METHODS_T（9646 chars）
+✅ 替换 CTR2_METHODS_V（10331 chars）
+✅ 替换 CVR_METHODS_T（9738 chars）
+✅ 替换 CVR_METHODS_V（8544 chars）
+✅ 替换 PRICE_METHODS_T（8213 chars）
+✅ 替换 PRICE_METHODS_V（8209 chars）
+✅ 重写 Tab 标题:  '👆', '提升 CTR1：封面+标题钩子...
+✅ 重写 Tab 标题:  '🔗', '提升 CTR2：商品卡点击'...
+✅ 重写 Tab 标题:  '💰', '提升 CVR：转化下单'...
+✅ 重写 Tab 标题: ,'💎', '提升件单价：客单优化'...
+index.html written: 259,694 bytes
+<style> 平衡：2/2
+tab-panel 数量：8（预期 8）
+panel ids: ['gpm', 'ctr1', 'ctr2', 'cvr', 'price', 'cat', 'audit', 'tools']
+[V8e] 注入卖点助手 JS
+[V8e] JS injected, new size: 213424
+[V8f] header 时间窗动态化
+[V8f] header → W24 · 05.27 - 06.09
+
+=== V9 build 自检 ===
+tab-panel 数量：8（预期 8）
+V9 method-card 数量：40（预期 40，8 池 × 5 方法）
+two-weapons-banner 数量：5（预期 4）
+未替换的 V9 placeholder：0（预期 0）
+
+✅ V9 build 完成，写入 /home/node/.openclaw/workspace/xushi-trends-cron/work/index.html (222,284 chars)
+
+✅ Tab1 注入 metric-algo-corr 表
+✅ ctr1 Tab 注入 V10 section（hero 后）
+✅ ctr2 Tab 注入 V10 section（hero 后）
+✅ cvr Tab 注入 V10 section（hero 后）
+✅ price Tab 注入 V10 section（hero 后）
+✅ ctr1 Tab V9 老内容已折叠
+✅ ctr2 Tab V9 老内容已折叠
+✅ cvr Tab V9 老内容已折叠
+✅ price Tab V9 老内容已折叠
+✅ Tab1 行业 KPI 8 卡片合并为对照表
+✅ Tab1 sticky 锚目录已添加
+✅ 4 个区块 anchor id 已添加
+✅ 卖点助手 prompt 已替换为 V10 版本
+✅ 业务术语已加 hover tooltip
+
+=== V10 build 自检 ===
+tab-panel 数量：7 + active=0
+V10 section 数量：5（预期 4）
+V10 high card 数量：15
+V10 low card 数量：13
+V10 mechanism 数量：5（预期 4）
+
+✅ V10 build 完成，写入 /home/node/.openclaw/workspace/xushi-trends-cron/work/index.html (296,608 chars)
+[3] git push
