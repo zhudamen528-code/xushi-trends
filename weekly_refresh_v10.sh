@@ -13,17 +13,17 @@ echo "===== V10 周更开始 $(TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S') ===
 
 cd "$WORK"
 
-# ─── 步骤1：fetch 最新 Top 案例数据 ─────────────────────────────────────────
+# ─── 步骤1：fetch 最新数据（P75 + Top 案例 V3）───────────────────────────────
 echo ""
-echo "[1/5] 拉取最新 Top 案例（fetch_data.py）"
-# fetch_data.py 目前只跑 P75，Top 案例 SQL 待接入（V3 SQL 已写好，等接口稳定后补）
-# 当前 MVP：检查 data.json 是否存在，有则跳过 fetch
-if [ -f "$WORK/data.json" ]; then
-    DATA_AGE=$(( ( $(TZ='Asia/Shanghai' date +%s) - $(stat -c %Y "$WORK/data.json") ) / 86400 ))
-    echo "  data.json 存在，已有 ${DATA_AGE} 天，跳过重新 fetch（接入 V3 SQL 后改为每次强制刷新）"
+echo "[1/5] 拉取最新数据（fetch_data.py，P75 + 算法分门槛 Top 50）"
+if python3 fetch_data.py; then
+    echo "  ✅ data.json 已刷新"
 else
-    echo "  data.json 不存在，尝试运行 fetch_data.py"
-    python3 fetch_data.py || echo "  ⚠️ fetch_data.py 失败，继续用现有数据 build"
+    echo "  ⚠️ fetch_data.py 失败，回退使用旧 data.json"
+    if [ ! -f "$WORK/data.json" ]; then
+        echo "  ❌ 旧 data.json 也不存在，无法继续"
+        exit 1
+    fi
 fi
 
 # ─── 步骤2：生成最新 CAT_TRENDS（品类风向文案）────────────────────────────────
