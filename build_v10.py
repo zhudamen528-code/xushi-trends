@@ -402,31 +402,7 @@ body { color: var(--c-text); }
 .cpn-key { background: var(--c-deep); color: #fff; border-radius: 6px; padding: 10px 14px; margin-top: 12px; font-size: 12px; line-height: 1.7; }
 .cpn-key b { color: var(--c-warn); }
 
-/* 指标↔算法相关性表 */
-.metric-algo-corr { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 14px 18px; margin: 16px 0 0; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
-.mac-title { font-size: 14px; font-weight: 700; color: var(--c-deep); margin-bottom: 6px; }
-.mac-sub { font-size: 11px; color: var(--c-text-3); margin-bottom: 12px; line-height: 1.6; }
-.mac-table { width: 100%; border-collapse: collapse; }
-.mac-table th { font-size: 12px; color: var(--c-text-3); text-align: left; padding: 6px 10px; background: #f8f9fa; border-bottom: 1px solid #e5e7eb; }
-.mac-table td { padding: 8px 10px; font-size: 13px; border-bottom: 1px solid #f0f0f0; }
-.mac-metric { font-weight: 600; color: var(--c-text); white-space: nowrap; }
-.mac-feats { color: var(--c-text-2); }
-.corr-pos { color: var(--c-good); background: #e8f5ee; padding: 2px 8px; border-radius: 10px; font-size: 12px; margin-right: 4px; display: inline-block; margin-bottom: 4px; }
-.corr-neg { color: var(--c-bad); background: #fde8e8; padding: 2px 8px; border-radius: 10px; font-size: 12px; margin-right: 4px; display: inline-block; margin-bottom: 4px; }
-.mac-key { background: var(--c-deep); color: #fff; border-radius: 6px; padding: 10px 14px; margin-top: 12px; font-size: 12px; line-height: 1.7; }
-.mac-key b { color: var(--c-warn); }
-.mac-warn { font-size: 11px; color: var(--c-text-4); margin-top: 8px; padding: 8px 12px; background: #f8f9fa; border-radius: 4px; border-left: 2px solid var(--c-border-strong); }
-/* Ladder 表 */
-.mac-ladder td, .mac-ladder th { padding: 8px 10px; text-align: center; font-size: 13px; }
-.mac-ladder th:first-child, .mac-ladder td:first-child { text-align: left; }
-.ladder-feat { font-weight: 600; color: var(--c-text); }
-.ladder-q1 { color: var(--c-text-3); }
-.ladder-q4 { color: var(--c-good); font-weight: 600; }
-.ladder-mult { font-weight: 600; }
-.ladder-x { color: var(--c-good); background: #e8f5ee; padding: 2px 8px; border-radius: 10px; }
-.ladder-x-neg { color: var(--c-bad); background: #fde8e8; padding: 2px 8px; border-radius: 10px; }
-.ladder-neg { background: #fffafa; }
-.ladder-warn { color: var(--c-bad); font-size: 11px; font-weight: 600; }
+/* 指标↔算法相关性表（已移除，CSS 保留备用）*/
 
 /* V9 老内容折叠样式 */
 .v9-legacy-fold { background: #fafbfc; border: 1px solid #e5e7eb; border-radius: 10px; margin: 24px 0 16px; padding: 0; }
@@ -651,21 +627,8 @@ metric_labels = {
 # tab-panel 顺序：gpm, ctr1, ctr2, cvr, price, cat, audit, tools
 # 在 tab-ctr1/ctr2/cvr/price 内部的"行业参考值" 前面注入
 
-# Tab1 注入"指标 ↔ 算法相关性"表
-mac_html = render_metric_algo_corr_table()
-mac_pattern = r'(<div class="formula-tip">.*?</div>)\s*(</div>\s*</div>\s*<div class="section-label">)'
-m = re.search(mac_pattern, html, re.DOTALL)
-if m:
-    html = html[:m.end(1)] + '\n' + mac_html + html[m.end(1):]
-    print('✅ Tab1 注入 metric-algo-corr 表')
-else:
-    print('⚠️ Tab1 metric-algo-corr 注入点未找到，尝试 fallback')
-    # fallback：找 funnel-formula div 末尾
-    fb_pat = r'(<div class="funnel-formula">.*?<div class="formula-tip">.*?</div>)\s*(</div>)'
-    m2 = re.search(fb_pat, html, re.DOTALL)
-    if m2:
-        html = html[:m2.end(1)] + '\n' + mac_html + html[m2.end(1):]
-        print('✅ Tab1 fallback 注入 metric-algo-corr 表')
+# Tab1 算法分阶梯表：已移除（商家理解成本过高，看不到分数也无行动抓手）
+# mac_html = render_metric_algo_corr_table()  # 保留函数定义备用，但不注入
 
 for metric_key in ['ctr1', 'ctr2', 'cvr', 'price']:
     if metric_key == 'price':
@@ -847,7 +810,6 @@ def add_tab1_anchor_nav(html):
     nav = '''
 <nav class="tab-anchor-nav">
   <a href="#anchor-formula">📐 公式</a>
-  <a href="#anchor-algo">🤖 算法分阶梯</a>
   <a href="#anchor-industry">🎯 行业参考</a>
   <a href="#anchor-selfcheck">🧮 GPM 自查</a>
 </nav>'''
@@ -857,17 +819,16 @@ def add_tab1_anchor_nav(html):
 
 html = add_tab1_anchor_nav(html)
 
-# 给 4 个区块加 anchor id：公式 / 算法分 / 行业参考 / 自查
+# 给区块加 anchor id：公式 / 行业参考 / 自查（算法分阶梯已移除，anchor-algo 不再需要）
 def add_block_anchors(html):
     # 1. funnel-formula → anchor-formula
     html = html.replace('<div class="funnel-formula">', '<div class="funnel-formula" id="anchor-formula">', 1)
-    # 2. metric-algo-corr → anchor-algo
-    html = html.replace('<div class="metric-algo-corr">', '<div class="metric-algo-corr" id="anchor-algo">', 1)
+    # 2. metric-algo-corr 已移除，跳过 anchor-algo
     # 3. section-block （行业参考表）→ anchor-industry
     html = html.replace('<div class="section-block">', '<div class="section-block" id="anchor-industry">', 1)
     # 4. GPM 自查 section-label → anchor-selfcheck
     html = re.sub(r'<div class="section-label">🧮', '<div class="section-label" id="anchor-selfcheck">🧮', html, count=1)
-    print('✅ 4 个区块 anchor id 已添加')
+    print('✅ 区块 anchor id 已添加（公式/行业参考/自查）')
     return html
 
 html = add_block_anchors(html)

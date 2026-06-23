@@ -1331,31 +1331,7 @@ body { color: var(--c-text); }
 .cpn-key { background: var(--c-deep); color: #fff; border-radius: 6px; padding: 10px 14px; margin-top: 12px; font-size: 12px; line-height: 1.7; }
 .cpn-key b { color: var(--c-warn); }
 
-/* 指标↔算法相关性表 */
-.metric-algo-corr { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 14px 18px; margin: 16px 0 0; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
-.mac-title { font-size: 14px; font-weight: 700; color: var(--c-deep); margin-bottom: 6px; }
-.mac-sub { font-size: 11px; color: var(--c-text-3); margin-bottom: 12px; line-height: 1.6; }
-.mac-table { width: 100%; border-collapse: collapse; }
-.mac-table th { font-size: 12px; color: var(--c-text-3); text-align: left; padding: 6px 10px; background: #f8f9fa; border-bottom: 1px solid #e5e7eb; }
-.mac-table td { padding: 8px 10px; font-size: 13px; border-bottom: 1px solid #f0f0f0; }
-.mac-metric { font-weight: 600; color: var(--c-text); white-space: nowrap; }
-.mac-feats { color: var(--c-text-2); }
-.corr-pos { color: var(--c-good); background: #e8f5ee; padding: 2px 8px; border-radius: 10px; font-size: 12px; margin-right: 4px; display: inline-block; margin-bottom: 4px; }
-.corr-neg { color: var(--c-bad); background: #fde8e8; padding: 2px 8px; border-radius: 10px; font-size: 12px; margin-right: 4px; display: inline-block; margin-bottom: 4px; }
-.mac-key { background: var(--c-deep); color: #fff; border-radius: 6px; padding: 10px 14px; margin-top: 12px; font-size: 12px; line-height: 1.7; }
-.mac-key b { color: var(--c-warn); }
-.mac-warn { font-size: 11px; color: var(--c-text-4); margin-top: 8px; padding: 8px 12px; background: #f8f9fa; border-radius: 4px; border-left: 2px solid var(--c-border-strong); }
-/* Ladder 表 */
-.mac-ladder td, .mac-ladder th { padding: 8px 10px; text-align: center; font-size: 13px; }
-.mac-ladder th:first-child, .mac-ladder td:first-child { text-align: left; }
-.ladder-feat { font-weight: 600; color: var(--c-text); }
-.ladder-q1 { color: var(--c-text-3); }
-.ladder-q4 { color: var(--c-good); font-weight: 600; }
-.ladder-mult { font-weight: 600; }
-.ladder-x { color: var(--c-good); background: #e8f5ee; padding: 2px 8px; border-radius: 10px; }
-.ladder-x-neg { color: var(--c-bad); background: #fde8e8; padding: 2px 8px; border-radius: 10px; }
-.ladder-neg { background: #fffafa; }
-.ladder-warn { color: var(--c-bad); font-size: 11px; font-weight: 600; }
+/* 指标↔算法相关性表（已移除，CSS 保留备用）*/
 
 /* V9 老内容折叠样式 */
 .v9-legacy-fold { background: #fafbfc; border: 1px solid #e5e7eb; border-radius: 10px; margin: 24px 0 16px; padding: 0; }
@@ -1935,56 +1911,10 @@ button.btn-gen:first-child,
       <div class="formula-line"><strong><abbr class="term-abbr" data-tip="每千次曝光带来的销售额（GMV per Mille）">GPM</abbr> = <abbr class="term-abbr" data-tip="封面点击率，曝光后被点开笔记的比例（小红书后台叫封面点击率）">CTR1</abbr> × <abbr class="term-abbr" data-tip="商品卡点击率，看了笔记后点开商品卡的比例">CTR2</abbr> × <abbr class="term-abbr" data-tip="下单转化率，点开商品卡后实际下单的比例">CVR</abbr> × <abbr class="term-abbr" data-tip="单笔订单平均成交金额">件单价</abbr> × 1000</strong></div>
       <div class="formula-flow">笔记曝光 → <span class="step ctr1">👆 封面点击</span> → <span class="step ctr2">🔗 商品卡点击</span> → <span class="step cvr">💵 下单</span> → <span class="step price">💎 客单价</span></div>
       <div class="formula-tip">📍 <strong><abbr class="term-abbr" data-tip="每千次曝光带来的销售额（GMV per Mille）">GPM</abbr> 是你笔记生意提升的核心</strong>：<abbr class="term-abbr" data-tip="每千次曝光带来的销售额（GMV per Mille）">GPM</abbr> 是商家自己 100% 可控的。<abbr class="term-abbr" data-tip="每千次曝光带来的销售额（GMV per Mille）">GPM</abbr> 提升不仅让每一份曝光能赚到的钱更多，平台也会把流量倾斜给 <abbr class="term-abbr" data-tip="每千次曝光带来的销售额（GMV per Mille）">GPM</abbr> 高的笔记——所以提升 GPM 是「单价 × 流量」双重增长。</div>
-<div class="metric-algo-corr" id="anchor-algo">
-  <div class="mac-title">🤖 平台给你的分 × 实际销售额 真实对比（n=1199 篇笔记）</div>
-  <div class="mac-sub">把池里 1199 篇笔记<b>按算法打分从低到高排队</b>，分成 4 段，看每段笔记<b>典型 <abbr class="term-abbr" data-tip="笔记直接带来的销售额（不含间接成交，小红书后台同口径）">DGMV</abbr> 和曝光</b>是多少。<b>这是实测产出，不是统计模型</b>。</div>
-  <table class="mac-table mac-ladder">
-    <thead><tr>
-      <th>平台打分维度</th>
-      <th><abbr title="把所有笔记按算法分从高到低排队，分数最低的 25%">评分垫底 25%</abbr><br><span class="mac-th-sub">这批笔记典型销售额</span></th>
-      <th><abbr title="把所有笔记按算法分从高到低排队，分数最高的 25%">评分领先 25%</abbr><br><span class="mac-th-sub">这批笔记典型销售额</span></th>
-      <th>多卖多少倍</th>
-      <th>多拿多少倍曝光</th>
-      <th></th>
-    </tr></thead>
-    <tbody><tr class="ladder-pos">
-  <td class="ladder-feat">真诚分享</td>
-  <td class="ladder-q1">¥1,138</td>
-  <td class="ladder-q4">¥3,014</td>
-  <td class="ladder-mult"><b class="ladder-x">2.6x</b></td>
-  <td class="ladder-mult">2.4x</td>
-  <td></td>
-</tr><tr class="ladder-pos">
-  <td class="ladder-feat">营销味淡</td>
-  <td class="ladder-q1">¥1,335</td>
-  <td class="ladder-q4">¥3,679</td>
-  <td class="ladder-mult"><b class="ladder-x">2.8x</b></td>
-  <td class="ladder-mult">2.4x</td>
-  <td></td>
-</tr><tr class="ladder-pos">
-  <td class="ladder-feat">平台综合打分</td>
-  <td class="ladder-q1">¥1,503</td>
-  <td class="ladder-q4">¥3,474</td>
-  <td class="ladder-mult"><b class="ladder-x">2.3x</b></td>
-  <td class="ladder-mult">2.2x</td>
-  <td></td>
-</tr><tr class="ladder-pos">
-  <td class="ladder-feat">内容质量分 🔥</td>
-  <td class="ladder-q1">¥702</td>
-  <td class="ladder-q4">¥13,110</td>
-  <td class="ladder-mult"><b class="ladder-x">18.7x</b></td>
-  <td class="ladder-mult"><b>170x</b></td>
-  <td></td>
-</tr></tbody>
-  </table>
-  <div class="mac-key">💎 <b>关键洞察</b>：算法分高的笔记 DGMV 是算法分低的 <b>2-19 倍</b>，曝光最多大 <b>170 倍</b>。重点追"<b>内容质量分 / 真诚分享 / 营销味淡 / 平台综合打分</b>"这 4 个分。</div>
-  <div class="mac-warn">📌 注：这是把 1199 篇笔记按平台打分排队分 4 段，看销售额和曝光的真实差距，不是统计模型。分数由平台计算，商家不能直接改，但能通过"内容写法"间接影响——具体见下面 4 个指标 Tab。</div>
-</div>
     </div>
   </div>
 <nav class="tab-anchor-nav">
   <a href="#anchor-formula">📐 公式</a>
-  <a href="#anchor-algo">🤖 算法分阶梯</a>
   <a href="#anchor-industry">🎯 行业参考</a>
   <a href="#anchor-selfcheck">🧮 GPM 自查</a>
 </nav>
