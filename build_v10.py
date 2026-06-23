@@ -260,8 +260,8 @@ def render_metric_algo_corr_table():
     ladder = [
         {'feat': '真诚分享',   'q1_dgmv': 1138,  'q4_dgmv': 3014,  'dgmv_x': 2.6,  'imp_x': 2.4,  'positive': True},
         {'feat': '营销味淡',   'q1_dgmv': 1335,  'q4_dgmv': 3679,  'dgmv_x': 2.8,  'imp_x': 2.4,  'positive': True},
-        {'feat': '综合算法分', 'q1_dgmv': 1503,  'q4_dgmv': 3474,  'dgmv_x': 2.3,  'imp_x': 2.2,  'positive': True},
-        {'feat': '笔记质量分', 'q1_dgmv': 702,   'q4_dgmv': 13110, 'dgmv_x': 18.7, 'imp_x': 170,  'positive': True, 'star': True},
+        {'feat': '平台综合打分', 'q1_dgmv': 1503,  'q4_dgmv': 3474,  'dgmv_x': 2.3,  'imp_x': 2.2,  'positive': True},
+        {'feat': '内容质量分',   'q1_dgmv': 702,   'q4_dgmv': 13110, 'dgmv_x': 18.7, 'imp_x': 170,  'positive': True, 'star': True},
     ]
     rows = []
     for r in ladder:
@@ -280,21 +280,21 @@ def render_metric_algo_corr_table():
 </tr>''')
     
     return f'''<div class="metric-algo-corr">
-  <div class="mac-title">🤖 平台算法分 × <abbr title="DGMV = 笔记带来的直接成交金额（小红书后台同口径）">DGMV</abbr> 真实阶梯（n=1199 篇笔记）</div>
+  <div class="mac-title">🤖 平台给你的分 × 实际销售额 真实对比（n=1199 篇笔记）</div>
   <div class="mac-sub">把池里 1199 篇笔记<b>按算法打分从低到高排队</b>，分成 4 段，看每段笔记<b>典型 DGMV 和曝光</b>是多少。<b>这是实测产出，不是统计模型</b>。</div>
   <table class="mac-table mac-ladder">
     <thead><tr>
-      <th>平台给的算法分</th>
-      <th><abbr title="把所有笔记按算法分从高到低排队，分数最低的 25%">算法分倒数 25%</abbr><br><span class="mac-th-sub">这批笔记典型 DGMV</span></th>
-      <th><abbr title="把所有笔记按算法分从高到低排队，分数最高的 25%">算法分 Top 25%</abbr><br><span class="mac-th-sub">这批笔记典型 DGMV</span></th>
+      <th>平台打分维度</th>
+      <th><abbr title="把所有笔记按算法分从高到低排队，分数最低的 25%">评分垫底 25%</abbr><br><span class="mac-th-sub">这批笔记典型销售额</span></th>
+      <th><abbr title="把所有笔记按算法分从高到低排队，分数最高的 25%">评分领先 25%</abbr><br><span class="mac-th-sub">这批笔记典型销售额</span></th>
       <th>多卖多少倍</th>
       <th>多拿多少倍曝光</th>
       <th></th>
     </tr></thead>
     <tbody>{''.join(rows)}</tbody>
   </table>
-  <div class="mac-key">💎 <b>关键洞察</b>：算法分高的笔记 DGMV 是算法分低的 <b>2-19 倍</b>，曝光最多大 <b>170 倍</b>。重点追"<b>笔记质量分 / 真诚分享 / 营销味淡 / 综合算法分</b>"这 4 个分。</div>
-  <div class="mac-warn">📌 注：这是把 1199 篇笔记按算法分排队分 4 段看典型 DGMV/曝光，是实测产出不是统计模型。算法分由平台计算，商家不能直接改，但能通过"内容方向"间接影响——具体怎么写见下面 4 个指标 Tab。</div>
+  <div class="mac-key">💎 <b>关键洞察</b>：算法分高的笔记 DGMV 是算法分低的 <b>2-19 倍</b>，曝光最多大 <b>170 倍</b>。重点追"<b>内容质量分 / 真诚分享 / 营销味淡 / 平台综合打分</b>"这 4 个分。</div>
+  <div class="mac-warn">📌 注：这是把 1199 篇笔记按平台打分排队分 4 段，看销售额和曝光的真实差距，不是统计模型。分数由平台计算，商家不能直接改，但能通过"内容写法"间接影响——具体见下面 4 个指标 Tab。</div>
 </div>'''
 
 CTR2_PRIORITY_NOTE = '''<div class="ctr2-priority-note">
