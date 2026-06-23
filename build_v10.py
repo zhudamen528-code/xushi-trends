@@ -619,8 +619,14 @@ else:
 # 安全检查：CAT_TRENDS 数据是否存在（某些 build 路径会丢失）
 if 'const CAT_TRENDS' not in html:
     import pathlib
+    # 优先读取 gen_cat_trends.py 自动生成的最新数据
+    _generated = pathlib.Path(WORKDIR) / 'cat_trends_generated.js'
     _backup = pathlib.Path(WORKDIR) / 'index_v1_backup.html'
-    if _backup.exists():
+    if _generated.exists():
+        _cat_block = _generated.read_text(encoding='utf-8').strip()
+        html = html.replace('function getFormData()', _cat_block + '\n\n  function getFormData()', 1)
+        print(f'✅ CAT_TRENDS 已从 cat_trends_generated.js 注入（自动生成，{len(_cat_block)} 字符）')
+    elif _backup.exists():
         _bk = _backup.read_text(encoding='utf-8')
         _s = _bk.find('  const CAT_TRENDS = {')
         _tf_start = _bk.find('  const TITLE_FORMULAS = `', _s)
@@ -629,7 +635,7 @@ if 'const CAT_TRENDS' not in html:
         html = html.replace('function getFormData()', _cat_block + '\n\n  function getFormData()', 1)
         print(f'✅ CAT_TRENDS + TITLE_FORMULAS 已从 backup 补注入（{len(_cat_block)} 字符）')
     else:
-        print('⚠️ CAT_TRENDS 缺失且 backup 不存在，提示词预览将报错')
+        print('⚠️ CAT_TRENDS 缺失且 backup/generated 均不存在，提示词预览将报错')
 else:
     print('✅ CAT_TRENDS 已存在，跳过')
 
