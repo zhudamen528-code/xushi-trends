@@ -616,6 +616,23 @@ if 'function getFormData()' not in html:
 else:
     print('✅ getFormData 函数已存在，跳过补注入')
 
+# 安全检查：CAT_TRENDS 数据是否存在（某些 build 路径会丢失）
+if 'const CAT_TRENDS' not in html:
+    import pathlib
+    _backup = pathlib.Path(WORKDIR) / 'index_v1_backup.html'
+    if _backup.exists():
+        _bk = _backup.read_text(encoding='utf-8')
+        _s = _bk.find('  const CAT_TRENDS = {')
+        _tf_start = _bk.find('  const TITLE_FORMULAS = `', _s)
+        _tf_end = _bk.find('`;\n', _tf_start) + 2
+        _cat_block = _bk[_s:_tf_end].strip()
+        html = html.replace('function getFormData()', _cat_block + '\n\n  function getFormData()', 1)
+        print(f'✅ CAT_TRENDS + TITLE_FORMULAS 已从 backup 补注入（{len(_cat_block)} 字符）')
+    else:
+        print('⚠️ CAT_TRENDS 缺失且 backup 不存在，提示词预览将报错')
+else:
+    print('✅ CAT_TRENDS 已存在，跳过')
+
 # 在每个 Tab 里 "🎯 行业参考值" 标签之前注入 V10 section
 metric_labels = {
     'ctr1': 'CTR1（封面+标题点击）',
