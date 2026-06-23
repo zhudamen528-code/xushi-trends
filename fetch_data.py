@@ -180,6 +180,9 @@ def parse_top_cases(rows):
             'highlight':   gen_highlight(title),
             'sincerity':   float(r.get('sincerity_score', 0) or 0),
             'good_click':  float(r.get('good_click_score', 0) or 0),
+            'cover_aesthetic':   r.get('cover_aesthetic', '') or '',
+            'cover_definition':  r.get('cover_definition', '') or '',
+            'cover_quality':     r.get('cover_quality', '') or '',
         })
     # 按 rank 排序
     for m in top_cases:
