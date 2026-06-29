@@ -1,0 +1,153 @@
+===== V10 周更开始 2026-06-29 09:00:04 =====
+
+[1/5] 拉取最新数据（fetch_data.py，P75 + 算法分门槛 Top 50）
+[2026-06-29 09:00:04] 统计窗口：20260601 → 20260628
+[2026-06-29 09:00:04] 算法分窗口：20260621 → 20260628
+[2026-06-29 09:00:04] 发布时间窗口：≥ 2026-06-14
+[2026-06-29 09:00:04] 提交 P75 SQL...
+[2026-06-29 09:00:10] P75 msgId: 9bd0a915-848d-4663-9987-c00ff5622e0f
+[2026-06-29 09:00:10] 提交 Top 案例 V3 SQL（算法分门槛 + Top 50）...
+[2026-06-29 09:00:11] Top 案例 msgId: d68d6982-6be5-4689-b162-e798c58693db
+Traceback (most recent call last):
+  File "/home/node/.openclaw/workspace/xushi-trends-cron/work/fetch_data.py", line 326, in <module>
+    main()
+  File "/home/node/.openclaw/workspace/xushi-trends-cron/work/fetch_data.py", line 239, in main
+    if p75_rows != []:  # 有提交的话才等
+       ^^^^^^^^
+UnboundLocalError: cannot access local variable 'p75_rows' where it is not associated with a value
+  ⚠️ fetch_data.py 失败，回退使用旧 data.json
+
+[2/5] 生成品类风向文案（gen_cat_trends.py）
+[gen_cat_trends] 开始生成 CAT_TRENDS，数据源：/home/node/.openclaw/workspace/xushi-trends-cron/work/data.json
+品类归拢结果：
+  零食: 9 条案例
+  酒类: 6 条案例
+  饮品: 18 条案例
+  速食: 3 条案例
+  滋补: 2 条案例
+  速食: 标题公式使用兜底（样本3条不足）
+  酒类: 标题公式使用兜底（样本6条不足）
+  滋补: 方向文案使用兜底（样本2条不足）
+  滋补: 标题公式使用兜底（样本2条不足）
+[gen_cat_trends] 写出：/home/node/.openclaw/workspace/xushi-trends-cron/work/cat_trends_generated.js (7134 bytes)
+[gen_cat_trends] 品类数：5
+  零食: 9条案例，真实提炼
+  速食: 3条案例，真实提炼
+  饮品: 18条案例，真实提炼
+  酒类: 6条案例，真实提炼
+  滋补: 2条案例，兜底文案
+
+--- CAT_TRENDS 预览 ---
+
+【零食】（9条样本，20260527 ~ 20260609）
+  方向1：缺蛋白质共性」悬念句，钩健身人群
+  方向2：拧→摇→享三步钩，咖啡仪式感拆解
+  方向3：同事一口要链接」社交反应钩烤鹅蛋
+  公式1：「其实缺蛋白质的人都有一个明显共性。。。...」反差对比式
+  公式2：「囤了不下10次…干巴酸奶真的好吃到惊为天...」数字量化式
+  公式3：「减脂期狂喜😁挖到了解馋又健康的零食！！！...」场景绑定式
+  代表案例：6 r一袋！6 r一袋！6 r一袋！喊破喉咙也要说🥹  (茉朵儿零食的店)
+
+【速食】（3条样本，20260527 ~ 20260609）
+  方向1：揭秘+假代购」揭黑悬念间接钩正品
+  方向2：26岁勇气+代购」情感叙事+稀缺品
+  方向3：揭假代购」揭黑信任建立钩正品转化
+  公式1：「X 分钟搞定一顿饭」效率式
+  公式2：「一个人也要好好吃饭」情感式
+  公式3：「比外卖好吃还便宜」对比式
+  代表案例：这份螺蛳粉代购，是我26岁的勇气  (小海螺代GO螺蛳粉的店)
+
+【饮品】（18条样本，20260527 ~ 20260609）
+  方向1：冷泡牛奶茶+测试完成」实验感钩奶系人群
+  方向2：抄袭/玻璃壶」吐槽体，悬念+人群猎奇
+  方向3：9.9元100g精品豆」价格+品类直给
+  公式1：「面包控的周末早餐来了～🥯🥖...」场景绑定式
+  公式2：「3包精品挂耳咖啡6.1，财务还不知道。...」数字量化式
+  公式3：「抹茶柚子乳酪贝果｜回购率头榜凭什么是它？...」问句探索式
+  代表案例：鸿运熟茶已上车。开05版博友301批次七级砖  (利佰年老茶馆的店)
+
+【酒类】（6条样本，20260527 ~ 20260609）
+  方向1：反问句「本来就是」制造认知反差
+  方向2：酒酿馒头+无科技狠活」品质安心承接
+  方向3：产区二把手+史低价」产区专业词+稀缺
+  公式1：「XX 场合必备的 XX」场景强绑定式
+  公式2：「第一次喝酒就选 XX」破圈式
+  公式3：「不懂酒也能喝对的 XX」降门槛式
+  代表案例：产区二把手史低价，革命老区的爱！  (兔总的葡萄酒买手店的店)
+
+【滋补】（2条样本，20260527 ~ 20260609）
+  方向1：功效具体化：用了多久/改善了什么
+  方向2：成分透明+溯源背书
+  方向3：人群精准：熬夜党/职场人/女性养护
+  公式1：「坚持 XX 天的变化」时间线式
+  公式2：「XX 岁开始养 XX」年龄段切入式
+  公式3：「熬夜必备的 XX」人群精准式
+  代表案例：送领导的端午节礼盒🎁💰268被误以为上千块  (小婷婷滋补礼盒批发的店)
+  ✅ cat_trends_generated.js 已更新
+
+[3/5] 生成 index.html（build_v10.py）
+=== 先跑 build_v9.py 生成基础 HTML ===
+✅ 替换 CTR1_METHODS_T（8169 chars）
+✅ 替换 CTR1_METHODS_V（10066 chars）
+✅ 替换 CTR2_METHODS_T（9646 chars）
+✅ 替换 CTR2_METHODS_V（10331 chars）
+✅ 替换 CVR_METHODS_T（9738 chars）
+✅ 替换 CVR_METHODS_V（8544 chars）
+✅ 替换 PRICE_METHODS_T（8213 chars）
+✅ 替换 PRICE_METHODS_V（8209 chars）
+✅ 重写 Tab 标题:  '👆', '提升 CTR1：封面+标题钩子...
+✅ 重写 Tab 标题:  '🔗', '提升 CTR2：商品卡点击'...
+✅ 重写 Tab 标题:  '💰', '提升 CVR：转化下单'...
+✅ 重写 Tab 标题: ,'💎', '提升件单价：客单优化'...
+index.html written: 259,694 bytes
+<style> 平衡：2/2
+tab-panel 数量：8（预期 8）
+panel ids: ['gpm', 'ctr1', 'ctr2', 'cvr', 'price', 'cat', 'audit', 'tools']
+[V8e] 注入卖点助手 JS
+[V8e] JS injected, new size: 213424
+[V8f] header 时间窗动态化
+[V8f] header → W24 · 05.27 - 06.09
+
+=== V9 build 自检 ===
+tab-panel 数量：8（预期 8）
+V9 method-card 数量：40（预期 40，8 池 × 5 方法）
+two-weapons-banner 数量：5（预期 4）
+未替换的 V9 placeholder：0（预期 0）
+
+✅ V9 build 完成，写入 /home/node/.openclaw/workspace/xushi-trends-cron/work/index.html (222,284 chars)
+
+✅ getFormData 函数已补注入（V8/V9 丢失兜底）
+✅ CAT_TRENDS 已从 cat_trends_generated.js 注入（自动生成，4767 字符）
+✅ ctr1 Tab 注入 V10 section（hero 后）
+✅ ctr2 Tab 注入 V10 section（hero 后）
+✅ cvr Tab 注入 V10 section（hero 后）
+✅ price Tab 注入 V10 section（hero 后）
+✅ ctr1 Tab V9 老内容已折叠
+✅ ctr2 Tab V9 老内容已折叠
+✅ cvr Tab V9 老内容已折叠
+✅ price Tab V9 老内容已折叠
+✅ Tab1 行业 KPI 8 卡片合并为对照表
+✅ Tab1 sticky 锚目录已添加
+✅ 区块 anchor id 已添加（公式/行业参考/自查）
+✅ 卖点助手 prompt 已替换为 V10 版本
+✅ 业务术语已加 hover tooltip
+
+=== V10 build 自检 ===
+tab-panel 数量：7 + active=0
+V10 section 数量：5（预期 4）
+V10 high card 数量：15
+V10 low card 数量：13
+V10 mechanism 数量：5（预期 4）
+
+✅ V10 build 完成，写入 /home/node/.openclaw/workspace/xushi-trends-cron/work/index.html (284,233 chars)
+  自检关键函数...
+    ✅ getFormData
+    ✅ CAT_TRENDS
+    ✅ buildPrompt
+    ✅ TITLE_FORMULAS
+
+[4/5] 配色周轮换
+  第 27 周，主题色 #0891b2
+  ℹ️ 未找到 --theme-color 变量，跳过配色轮换
+
+[5/5] git push
