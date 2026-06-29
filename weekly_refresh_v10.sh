@@ -16,14 +16,28 @@ cd "$WORK"
 # ─── 步骤1：fetch 最新数据（P75 + Top 案例 V3）───────────────────────────────
 echo ""
 echo "[1/5] 拉取最新数据（fetch_data.py，P75 + 算法分门槛 Top 50）"
+# 记录 fetch 前的 data.json mtime，用于判断是否真的更新了
+DATA_MTIME_BEFORE=$(stat -c %Y "$WORK/data.json" 2>/dev/null || echo 0)
+
 if python3 fetch_data.py; then
-    echo "  ✅ data.json 已刷新"
-else
-    echo "  ⚠️ fetch_data.py 失败，回退使用旧 data.json"
-    if [ ! -f "$WORK/data.json" ]; then
-        echo "  ❌ 旧 data.json 也不存在，无法继续"
+    DATA_MTIME_AFTER=$(stat -c %Y "$WORK/data.json" 2>/dev/null || echo 0)
+    if [ "$DATA_MTIME_AFTER" -le "$DATA_MTIME_BEFORE" ]; then
+        echo "  ❌ fetch_data.py 返回成功但 data.json 未更新"
         exit 1
     fi
+    # 验证 data.json 里的 window 是本周/上周窗口（end_dtm 应≥7天内）
+    DATA_END=$(python3 -c "import json; d=json.load(open('$WORK/data.json')); w=d.get('window',{}); print(w.get('end_dtm','') if isinstance(w,dict) else (w[1] if w else ''))" 2>/dev/null)
+    DATA_END_TS=$(date -d "${DATA_END:0:4}-${DATA_END:4:2}-${DATA_END:6:2}" +%s 2>/dev/null || echo 0)
+    NOW_TS=$(TZ='Asia/Shanghai' date +%s)
+    AGE_DAYS=$(( (NOW_TS - DATA_END_TS) / 86400 ))
+    if [ "$AGE_DAYS" -gt 7 ]; then
+        echo "  ❌ data.json end_dtm=$DATA_END，超过7天（age=${AGE_DAYS}d），fetch 实际未拿到新数据"
+        exit 1
+    fi
+    echo "  ✅ data.json 已刷新到 $DATA_END（age=${AGE_DAYS}d）"
+else
+    echo "  ❌ fetch_data.py 执行失败，终止本次周更（不要用旧数据假更新）"
+    exit 1
 fi
 
 # ─── 步骤2：生成最新 CAT_TRENDS（品类风向文案）────────────────────────────────

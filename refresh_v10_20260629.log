@@ -151,3 +151,41 @@ V10 mechanism 数量：5（预期 4）
   ℹ️ 未找到 --theme-color 变量，跳过配色轮换
 
 [5/5] git push
+[main a174b73] V10 周更 2026-06-29（主题色 #0891b2，第 27 周）
+ 2 files changed, 284 insertions(+), 86 deletions(-)
+ create mode 100644 refresh_v10_20260629.log
+To github.com:zhudamen528-code/xushi-trends.git
+   27ee94b..a174b73  main -> main
+  ✅ push 完成
+
+===== V10 周更完成 2026-06-29 09:00:16 =====
+  线上：https://zhudamen528-code.github.io/xushi-trends/
+===== V10 周更开始 2026-06-29 13:16:17 =====
+
+[1/5] 拉取最新数据（fetch_data.py，P75 + 算法分门槛 Top 50）
+[2026-06-29 13:16:17] 统计窗口：20260601 → 20260628
+[2026-06-29 13:16:17] 算法分窗口：20260621 → 20260628
+[2026-06-29 13:16:17] 发布时间窗口：≥ 2026-06-14
+[2026-06-29 13:16:17] 提交 P75 SQL...
+[2026-06-29 13:16:22] P75 msgId: 910d7f05-66d8-4a73-b76d-9ac11a6c4cf1
+[2026-06-29 13:16:22] 提交 Top 案例 V3 SQL（算法分门槛 + Top 50）...
+[2026-06-29 13:16:23] Top 案例 msgId: 6392636b-e172-41e1-b5a4-661a3ca47bb7
+[2026-06-29 13:16:23] 等待 P75 SQL 完成...
+Traceback (most recent call last):
+  File "/home/node/.openclaw/workspace/xushi-trends-cron/work/fetch_data.py", line 323, in <module>
+    main()
+  File "/home/node/.openclaw/workspace/xushi-trends-cron/work/fetch_data.py", line 242, in main
+    wait_finish(msg_p75, max_min=25, label='P75')
+  File "/home/node/.openclaw/workspace/xushi-trends-cron/work/fetch_data.py", line 50, in wait_finish
+    raise RuntimeError(f"SQL FAILED [{label}]:\n{out[:500]}")
+RuntimeError: SQL FAILED [P75]:
+执行状态
+  msgId:      910d7f05-66d8-4a73-b76d-9ac11a6c4cf1
+  queryId:    Dragon_ZjM5YzAzNjItYzk2Mi00NDJlLWE3NDYtZmJlMTFhOTJhZDQ1QGh0dHA6Ly8xMC42My4xNjIuMTIxOjEwMDk5
+  查询状态:   RUNNING
+  Cell 状态:  RUNNING
+  进度:       0.0%
+
+提示：使用 --raw 可获取完整原始 JSON（含 progressInfo、eventInfo、adhocErrorInfo 等全部字段）。
+
+  ❌ fetch_data.py 执行失败，终止本次周更（不要用旧数据假更新）

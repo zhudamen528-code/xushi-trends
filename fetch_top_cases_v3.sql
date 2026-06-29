@@ -49,29 +49,14 @@ note_metric AS (
     AND dgmv >= 200
     AND tag_click >= 50
 ),
--- 核心算法分：dim_ecm_algo_note_label_df（sincerity + good_click + quality_level）
-algo_core AS (
+-- 所有算法分统一从 394字段宽表拉取
+-- 注：note_quality_level 在宽表中不存在，改用 creation_level（E>S>A>B>C，C=低劣）
+algo_all AS (
   SELECT
     note_id,
     model_sincerity_score,
     good_click_quality_score,
-    note_quality_level
-  FROM (
-    SELECT
-      note_id,
-      model_sincerity_score,
-      good_click_quality_score,
-      note_quality_level,
-      ROW_NUMBER() OVER (PARTITION BY note_id ORDER BY dtm DESC) AS rn
-    FROM redcdm.dim_ecm_algo_note_label_df
-    WHERE dtm >= '{algo_start_dtm}' AND dtm <= '{end_dtm}'
-  ) t
-  WHERE rn = 1
-),
--- 封面算法分：app_ecm_ark_ai_note_score_base_nd_di（394字段宽表，CTR1 聚类用的4个封面分档）
-algo_cover AS (
-  SELECT
-    note_id,
+    creation_level,
     first_img_aesthetic_level,
     first_img_beauty_level,
     first_img_quality_level,
@@ -79,6 +64,9 @@ algo_cover AS (
   FROM (
     SELECT
       note_id,
+      model_sincerity_score,
+      good_click_quality_score,
+      creation_level,
       first_img_aesthetic_level,
       first_img_beauty_level,
       first_img_quality_level,
@@ -92,28 +80,22 @@ algo_cover AS (
 note_with_algo AS (
   SELECT
     m.*,
-    COALESCE(core.model_sincerity_score, 0) AS sincerity,
-    COALESCE(core.good_click_quality_score, 0) AS good_click,
-    COALESCE(core.note_quality_level, 0) AS quality_lv,
-    COALESCE(cv.first_img_aesthetic_level, '中') AS aesthetic_lv,
-    COALESCE(cv.first_img_beauty_level, '中') AS beauty_lv,
-    COALESCE(cv.first_img_quality_level, '高') AS quality_img_lv,
-    COALESCE(cv.first_img_definition_level, '中') AS definition_lv
+    COALESCE(a.model_sincerity_score, 0) AS sincerity,
+    COALESCE(a.good_click_quality_score, 0) AS good_click,
+    COALESCE(a.creation_level, 'B') AS creation_lv,
+    COALESCE(a.first_img_aesthetic_level, '中') AS aesthetic_lv,
+    COALESCE(a.first_img_quality_level, '高') AS quality_img_lv,
+    COALESCE(a.first_img_definition_level, '中') AS definition_lv
   FROM note_metric m
-  LEFT JOIN algo_core core ON m.note_id = core.note_id
-  LEFT JOIN algo_cover cv ON m.note_id = cv.note_id
+  LEFT JOIN algo_all a ON m.note_id = a.note_id
 ),
--- 核心门槛 + 封面门槛
---  核心：sincerity>=30, good_click>=0.68, quality_lv>=1
---  封面：aesthetic_lv!='低', definition_lv!='低', quality_img_lv!='低'
---  注：beauty_lv 不设门槛（44%为低，过滤太猛会损失有效案例）
---  注：无算法分的笔记置默认值保留（LEFT JOIN），仅过滤明确低质
+-- 门槛：sincerity>=30, good_click>=0.68, creation_level!=C, 封面三项!=低
 quality_filtered AS (
   SELECT *
   FROM note_with_algo
   WHERE sincerity >= 30
     AND good_click >= 0.680
-    AND quality_lv >= 1
+    AND creation_lv != 'C'
     AND aesthetic_lv != '低'
     AND definition_lv != '低'
     AND quality_img_lv != '低'
@@ -161,4 +143,3 @@ SELECT metric_name, note_form, rank, note_id, title, seller_name,
 FROM final_top
 WHERE rank <= 50
 ORDER BY metric_name, note_form, rank
-</｜DSML｜parameter>

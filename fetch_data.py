@@ -44,11 +44,15 @@ def wait_finish(msg_id, max_min=25, label=''):
             capture_output=True, text=True
         )
         out = res.stdout + res.stderr
-        if 'FINISHED' in out or 'SUCCESS' in out.upper():
+        # 精确匹配状态行：查询状态: XXX
+        import re as _re
+        m = _re.search(r'查询状态[:\s]+(\w+)', out)
+        state = m.group(1).upper() if m else ''
+        if state in ('FINISHED', 'SUCCESS', 'SUCCEEDED'):
             return True
-        if 'FAILED' in out or 'ERROR' in out.upper():
-            raise RuntimeError(f"SQL FAILED [{label}]:\n{out[:500]}")
-        log(f"  ... 等待 {label} msgId={msg_id[:10]}")
+        if state in ('FAILED', 'CANCELLED', 'KILLED'):
+            raise RuntimeError(f"SQL FAILED [{label}] state={state}:\n{out[:800]}")
+        log(f"  ... 等待 {label} state={state or '?'} msgId={msg_id[:10]}")
         time.sleep(30)
     raise TimeoutError(f"SQL 超时 {max_min}min [{label}]")
 
@@ -207,10 +211,10 @@ def main():
     log(f"发布时间窗口：≥ {publish_start_date}")
 
     # ── Step 1：P75 基准值 ─────────────────────────────────────────────────
+    msg_p75 = None
     p75_sql_path = os.path.join(WORKDIR, 'fetch_p75.sql')
     if not os.path.exists(p75_sql_path):
         log(f"⚠️ fetch_p75.sql 不存在，跳过 P75 步骤")
-        p75_rows = []
     else:
         with open(p75_sql_path) as f:
             sql_p75 = f.read().format(start_dtm=start_dtm, end_dtm=end_dtm)
@@ -219,10 +223,10 @@ def main():
         log(f"P75 msgId: {msg_p75}")
 
     # ── Step 2：Top 案例 V3 ────────────────────────────────────────────────
+    msg_cases = None
     cases_sql_path = os.path.join(WORKDIR, 'fetch_top_cases_v3.sql')
     if not os.path.exists(cases_sql_path):
         log(f"⚠️ fetch_top_cases_v3.sql 不存在，跳过 Top 案例步骤")
-        cases_rows = []
     else:
         with open(cases_sql_path) as f:
             sql_cases = f.read().format(
@@ -235,12 +239,9 @@ def main():
         msg_cases = submit_sql(sql_cases)
         log(f"Top 案例 msgId: {msg_cases}")
 
-    # ── Step 3：等待两个 SQL 完成（P75 先等，再等 cases）───────────────────
-    if p75_rows != []:  # 有提交的话才等
-        pass  # 下面统一等
-
+    # ── Step 3：等待两个 SQL 完成 ──────────────────────────────────────────
     raw_p75 = '{}'
-    if 'msg_p75' in dir():
+    if msg_p75:
         log("等待 P75 SQL 完成...")
         wait_finish(msg_p75, max_min=25, label='P75')
         raw_p75 = get_result(msg_p75)
@@ -249,7 +250,7 @@ def main():
         log(f"P75 结果 {len(raw_p75)} 字节")
 
     raw_cases = '[]'
-    if 'msg_cases' in dir():
+    if msg_cases:
         log("等待 Top 案例 SQL 完成...")
         wait_finish(msg_cases, max_min=30, label='TopCases')
         raw_cases = get_result(msg_cases)
