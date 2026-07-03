@@ -1347,7 +1347,9 @@
     const name = document.getElementById('product-name').value.trim();
     const feature = document.getElementById('product-feature').value.trim();
     const audience = document.getElementById('product-audience').value.trim();
-    const cat = document.querySelector('input[name="cat"]:checked').value;
+    const catEl = document.querySelector('#tab-tools input[name="cat"]:checked') ||
+                  document.querySelector('input[name="cat"]:checked');
+    const cat = catEl ? catEl.value : '零食';
     return { name, feature, audience, cat };
   }
 
