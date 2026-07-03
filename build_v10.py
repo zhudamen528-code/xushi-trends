@@ -641,6 +641,26 @@ if 'const CAT_TRENDS' not in html:
 else:
     print('✅ CAT_TRENDS 已存在，跳过')
 
+# 独立检查 TITLE_FORMULAS（cat_trends_generated.js 不含此变量，需从 backup 补注入）
+if 'const TITLE_FORMULAS' not in html:
+    import pathlib as _pl2
+    _backup2 = _pl2.Path(WORKDIR) / 'index_v1_backup.html'
+    if _backup2.exists():
+        _bk2 = _backup2.read_text(encoding='utf-8')
+        _tf2_start = _bk2.find('  const TITLE_FORMULAS = `')
+        _tf2_end = _bk2.find('`;\n', _tf2_start) + 3
+        if _tf2_start != -1 and _tf2_end > _tf2_start:
+            _tf2_block = _bk2[_tf2_start:_tf2_end].strip()
+            # 注入到 function buildPrompt 前
+            html = html.replace('  function buildPrompt()', _tf2_block + '\n\n  function buildPrompt()', 1)
+            print(f'✅ TITLE_FORMULAS 已从 backup 补注入（{len(_tf2_block)} 字符）')
+        else:
+            print('⚠️ backup 里找不到 TITLE_FORMULAS 定义')
+    else:
+        print('⚠️ TITLE_FORMULAS 缺失且 backup 不存在，提示词模板将报错')
+else:
+    print('✅ TITLE_FORMULAS 已存在，跳过')
+
 # 在每个 Tab 里 "🎯 行业参考值" 标签之前注入 V10 section
 metric_labels = {
     'ctr1': 'CTR1（封面+标题点击）',
