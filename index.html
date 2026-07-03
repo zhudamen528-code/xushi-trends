@@ -4377,7 +4377,7 @@ button.btn-gen:first-child,
     const { name, feature, audience, cat } = getFormData();
     if (!name) return '请先填写产品名称';
 
-    const trend = CAT_TRENDS[cat];
+    const trend = CAT_TRENDS[cat] || CAT_TRENDS[Object.keys(CAT_TRENDS)[0]] || { directions: ['真实分享场景', '数字卖点前置', '人群精准切入'], cover: '产品实拍+使用场景', formulas: [] };
 
     // 从卖点拆解三个维度
     const featureBlock = feature ? `
@@ -4456,7 +4456,13 @@ ${TITLE_FORMULAS}
 - 三套风格差异明显，不能换汤不换药`;
   }
   function updatePreview() {
-    document.getElementById('prompt-text').textContent = buildPrompt();
+    try {
+      const text = buildPrompt();
+      document.getElementById('prompt-text').textContent = text;
+    } catch(e) {
+      console.error('[updatePreview]', e);
+      document.getElementById('prompt-text').textContent = '生成失败，请刷新页面重试';
+    }
   }
 
   // 实时更新预览
