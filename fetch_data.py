@@ -118,6 +118,10 @@ def gen_highlight(title):
 # ── P75 解析 ─────────────────────────────────────────────────────────────────
 def parse_p75(rows):
     """把 P75 SQL 结果转为嵌套 dict"""
+    def _f(v):
+        if v is None: return None
+        try: return float(v)
+        except (TypeError, ValueError): return None
     p75 = {}
     for r in rows:
         ind = r.get('seller_industry') or r.get('行业') or ''
@@ -126,14 +130,14 @@ def parse_p75(rows):
             continue
         p75.setdefault(ind, {})[form] = {
             'note_cnt':   int(r.get('note_cnt', 0) or 0),
-            'ctr1_p50':   r.get('ctr1_p50'),
-            'ctr1_p75':   r.get('ctr1_p75'),
-            'ctr2_p50':   r.get('ctr2_p50'),
-            'ctr2_p75':   r.get('ctr2_p75'),
-            'cvr_p50':    r.get('cvr_p50'),
-            'cvr_p75':    r.get('cvr_p75'),
-            'price_p50':  r.get('price_p50'),
-            'price_p75':  r.get('price_p75'),
+            'ctr1_p50':   _f(r.get('ctr1_p50')),
+            'ctr1_p75':   _f(r.get('ctr1_p75')),
+            'ctr2_p50':   _f(r.get('ctr2_p50')),
+            'ctr2_p75':   _f(r.get('ctr2_p75')),
+            'cvr_p50':    _f(r.get('cvr_p50')),
+            'cvr_p75':    _f(r.get('cvr_p75')),
+            'price_p50':  _f(r.get('price_p50')),
+            'price_p75':  _f(r.get('price_p75')),
         }
     # 算 KA 快消大盘（6 品类中位）
     import statistics
@@ -142,7 +146,13 @@ def parse_p75(rows):
     for form in ['图文', '视频']:
         ka_avg[form] = {}
         for key in ['ctr1_p50','ctr1_p75','ctr2_p50','ctr2_p75','cvr_p50','cvr_p75','price_p50','price_p75']:
-            vals = [p75[c][form].get(key) for c in KA_CATS if c in p75 and form in p75[c] and p75[c][form].get(key) is not None]
+            vals_raw = [p75[c][form].get(key) for c in KA_CATS if c in p75 and form in p75[c] and p75[c][form].get(key) is not None]
+            vals = []
+            for v in vals_raw:
+                try:
+                    vals.append(float(v))
+                except (TypeError, ValueError):
+                    pass
             ka_avg[form][key] = round(statistics.median(vals), 4) if vals else None
     p75['ka_avg'] = ka_avg
     return p75

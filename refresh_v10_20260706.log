@@ -1,0 +1,102 @@
+===== V10 周更开始 2026-07-06 09:00:06 =====
+
+[1/5] 拉取最新数据（fetch_data.py，P75 + 算法分门槛 Top 50）
+[2026-07-06 09:00:06] 统计窗口：20260608 → 20260705
+[2026-07-06 09:00:06] 算法分窗口：20260628 → 20260705
+[2026-07-06 09:00:06] 发布时间窗口：≥ 2026-06-21
+[2026-07-06 09:00:06] 提交 P75 SQL...
+[2026-07-06 09:00:08] P75 msgId: 9d8eccb8-cce9-4f61-8df7-ce1379ff5418
+[2026-07-06 09:00:08] 提交 Top 案例 V3 SQL（算法分门槛 + Top 50）...
+[2026-07-06 09:00:10] Top 案例 msgId: ee8e0e00-8e8a-4265-af56-0a65b89cea28
+[2026-07-06 09:00:10] 等待 P75 SQL 完成...
+[2026-07-06 09:00:11]   ... 等待 P75 state=RUNNING msgId=9d8eccb8-c
+[2026-07-06 09:00:41]   ... 等待 P75 state=RUNNING msgId=9d8eccb8-c
+[2026-07-06 09:01:12]   ... 等待 P75 state=RUNNING msgId=9d8eccb8-c
+[2026-07-06 09:01:43] P75 结果 3687 字节
+[2026-07-06 09:01:43] 等待 Top 案例 SQL 完成...
+[2026-07-06 09:01:44]   ... 等待 TopCases state=RUNNING msgId=ee8e0e00-8
+[2026-07-06 09:02:14]   ... 等待 TopCases state=RUNNING msgId=ee8e0e00-8
+[2026-07-06 09:02:45]   ... 等待 TopCases state=RUNNING msgId=ee8e0e00-8
+===== V10 周更开始 2026-07-06 09:03:21 =====
+
+[1/5] 拉取最新数据（fetch_data.py，P75 + 算法分门槛 Top 50）
+[2026-07-06 09:03:21] 统计窗口：20260608 → 20260705
+[2026-07-06 09:03:21] 算法分窗口：20260628 → 20260705
+[2026-07-06 09:03:21] 发布时间窗口：≥ 2026-06-21
+[2026-07-06 09:03:21] 提交 P75 SQL...
+[2026-07-06 09:03:23] P75 msgId: a380bd67-824f-4722-bf0c-999eea1bda63
+[2026-07-06 09:03:23] 提交 Top 案例 V3 SQL（算法分门槛 + Top 50）...
+[2026-07-06 09:03:25] Top 案例 msgId: c16e2d25-f461-4446-af92-605138a09247
+[2026-07-06 09:03:25] 等待 P75 SQL 完成...
+[2026-07-06 09:03:25]   ... 等待 P75 state=RUNNING msgId=a380bd67-8
+[2026-07-06 09:03:56]   ... 等待 P75 state=RUNNING msgId=a380bd67-8
+[2026-07-06 09:04:26]   ... 等待 P75 state=RUNNING msgId=a380bd67-8
+[2026-07-06 09:04:57] P75 结果 3727 字节
+[2026-07-06 09:04:57] 等待 Top 案例 SQL 完成...
+[2026-07-06 09:04:58]   ... 等待 TopCases state=RUNNING msgId=c16e2d25-f
+[2026-07-06 09:05:29]   ... 等待 TopCases state=RUNNING msgId=c16e2d25-f
+[2026-07-06 09:05:59]   ... 等待 TopCases state=RUNNING msgId=c16e2d25-f
+[2026-07-06 09:06:30]   ... 等待 TopCases state=RUNNING msgId=c16e2d25-f
+[2026-07-06 09:07:00]   ... 等待 TopCases state=RUNNING msgId=c16e2d25-f
+[2026-07-06 09:07:31]   ... 等待 TopCases state=RUNNING msgId=c16e2d25-f
+[2026-07-06 09:08:02]   ... 等待 TopCases state=RUNNING msgId=c16e2d25-f
+[2026-07-06 09:08:32]   ... 等待 TopCases state=RUNNING msgId=c16e2d25-f
+[2026-07-06 09:09:03]   ... 等待 TopCases state=RUNNING msgId=c16e2d25-f
+[2026-07-06 09:09:33]   ... 等待 TopCases state=RUNNING msgId=c16e2d25-f
+[2026-07-06 09:10:04]   ... 等待 TopCases state=RUNNING msgId=c16e2d25-f
+[2026-07-06 09:10:35]   ... 等待 TopCases state=RUNNING msgId=c16e2d25-f
+[2026-07-06 09:11:06]   ... 等待 TopCases state=RUNNING msgId=c16e2d25-f
+[2026-07-06 09:11:36]   ... 等待 TopCases state=RUNNING msgId=c16e2d25-f
+[2026-07-06 09:12:07]   ... 等待 TopCases state=RUNNING msgId=c16e2d25-f
+[2026-07-06 09:12:37]   ... 等待 TopCases state=RUNNING msgId=c16e2d25-f
+[2026-07-06 09:13:08]   ... 等待 TopCases state=RUNNING msgId=c16e2d25-f
+[2026-07-06 09:13:39]   ... 等待 TopCases state=RUNNING msgId=c16e2d25-f
+[2026-07-06 09:14:10]   ... 等待 TopCases state=RUNNING msgId=c16e2d25-f
+[2026-07-06 09:14:40]   ... 等待 TopCases state=RUNNING msgId=c16e2d25-f
+[2026-07-06 09:15:11]   ... 等待 TopCases state=RUNNING msgId=c16e2d25-f
+[2026-07-06 09:15:41]   ... 等待 TopCases state=RUNNING msgId=c16e2d25-f
+[2026-07-06 09:16:12]   ... 等待 TopCases state=RUNNING msgId=c16e2d25-f
+[2026-07-06 09:16:43]   ... 等待 TopCases state=RUNNING msgId=c16e2d25-f
+[2026-07-06 09:17:13]   ... 等待 TopCases state=RUNNING msgId=c16e2d25-f
+[2026-07-06 09:17:44]   ... 等待 TopCases state=RUNNING msgId=c16e2d25-f
+[2026-07-06 09:18:14]   ... 等待 TopCases state=RUNNING msgId=c16e2d25-f
+[2026-07-06 09:18:45]   ... 等待 TopCases state=RUNNING msgId=c16e2d25-f
+[2026-07-06 09:19:16]   ... 等待 TopCases state=RUNNING msgId=c16e2d25-f
+[2026-07-06 09:19:46]   ... 等待 TopCases state=RUNNING msgId=c16e2d25-f
+[2026-07-06 09:20:17]   ... 等待 TopCases state=RUNNING msgId=c16e2d25-f
+[2026-07-06 09:20:47]   ... 等待 TopCases state=RUNNING msgId=c16e2d25-f
+[2026-07-06 09:21:18]   ... 等待 TopCases state=RUNNING msgId=c16e2d25-f
+[2026-07-06 09:21:49]   ... 等待 TopCases state=RUNNING msgId=c16e2d25-f
+[2026-07-06 09:22:19]   ... 等待 TopCases state=ERROR msgId=c16e2d25-f
+[2026-07-06 09:22:50]   ... 等待 TopCases state=ERROR msgId=c16e2d25-f
+[2026-07-06 09:23:31]   ... 等待 TopCases state=ERROR msgId=c16e2d25-f
+[2026-07-06 09:24:11]   ... 等待 TopCases state=ERROR msgId=c16e2d25-f
+[2026-07-06 09:24:42]   ... 等待 TopCases state=ERROR msgId=c16e2d25-f
+[2026-07-06 09:25:13]   ... 等待 TopCases state=ERROR msgId=c16e2d25-f
+[2026-07-06 09:25:44]   ... 等待 TopCases state=ERROR msgId=c16e2d25-f
+[2026-07-06 09:26:21]   ... 等待 TopCases state=ERROR msgId=c16e2d25-f
+[2026-07-06 09:26:52]   ... 等待 TopCases state=ERROR msgId=c16e2d25-f
+[2026-07-06 09:27:23]   ... 等待 TopCases state=ERROR msgId=c16e2d25-f
+[2026-07-06 09:27:54]   ... 等待 TopCases state=ERROR msgId=c16e2d25-f
+[2026-07-06 09:28:25]   ... 等待 TopCases state=ERROR msgId=c16e2d25-f
+[2026-07-06 09:28:55]   ... 等待 TopCases state=ERROR msgId=c16e2d25-f
+[2026-07-06 09:29:26]   ... 等待 TopCases state=ERROR msgId=c16e2d25-f
+[2026-07-06 09:29:57]   ... 等待 TopCases state=ERROR msgId=c16e2d25-f
+[2026-07-06 09:30:38]   ... 等待 TopCases state=ERROR msgId=c16e2d25-f
+[2026-07-06 09:31:19]   ... 等待 TopCases state=ERROR msgId=c16e2d25-f
+[2026-07-06 09:31:50]   ... 等待 TopCases state=ERROR msgId=c16e2d25-f
+[2026-07-06 09:32:21]   ... 等待 TopCases state=ERROR msgId=c16e2d25-f
+[2026-07-06 09:32:52]   ... 等待 TopCases state=ERROR msgId=c16e2d25-f
+[2026-07-06 09:33:22]   ... 等待 TopCases state=ERROR msgId=c16e2d25-f
+[2026-07-06 09:33:53]   ... 等待 TopCases state=ERROR msgId=c16e2d25-f
+[2026-07-06 09:34:24]   ... 等待 TopCases state=ERROR msgId=c16e2d25-f
+[2026-07-06 09:34:55]   ... 等待 TopCases state=ERROR msgId=c16e2d25-f
+Traceback (most recent call last):
+  File "/home/node/.openclaw/workspace/xushi-trends-cron/work/fetch_data.py", line 327, in <module>
+    main()
+  File "/home/node/.openclaw/workspace/xushi-trends-cron/work/fetch_data.py", line 255, in main
+    wait_finish(msg_cases, max_min=30, label='TopCases')
+  File "/home/node/.openclaw/workspace/xushi-trends-cron/work/fetch_data.py", line 57, in wait_finish
+    raise TimeoutError(f"SQL 超时 {max_min}min [{label}]")
+TimeoutError: SQL 超时 30min [TopCases]
+  ❌ fetch_data.py 执行失败，终止本次周更（不要用旧数据假更新）

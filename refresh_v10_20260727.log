@@ -1,0 +1,31 @@
+===== V10 周更开始 2026-07-27 09:00:08 =====
+
+[1/5] 拉取最新数据（fetch_data.py，P75 + 算法分门槛 Top 50）
+[2026-07-27 09:00:08] 统计窗口：20260629 → 20260726
+[2026-07-27 09:00:08] 算法分窗口：20260719 → 20260726
+[2026-07-27 09:00:08] 发布时间窗口：≥ 2026-07-12
+[2026-07-27 09:00:08] 提交 P75 SQL...
+[2026-07-27 09:00:10] P75 msgId: 35eb0d22-bdc7-4522-860a-fab288adde0d
+[2026-07-27 09:00:10] 提交 Top 案例 V3 SQL（算法分门槛 + Top 50）...
+[2026-07-27 09:00:12] Top 案例 msgId: fe2875be-f6ea-4063-9162-15fbb295073b
+[2026-07-27 09:00:12] 等待 P75 SQL 完成...
+[2026-07-27 09:00:13]   ... 等待 P75 state=RUNNING msgId=35eb0d22-b
+[2026-07-27 09:00:43]   ... 等待 P75 state=RUNNING msgId=35eb0d22-b
+[2026-07-27 09:01:14]   ... 等待 P75 state=RUNNING msgId=35eb0d22-b
+[2026-07-27 09:01:45]   ... 等待 P75 state=RUNNING msgId=35eb0d22-b
+[2026-07-27 09:02:15]   ... 等待 P75 state=RUNNING msgId=35eb0d22-b
+[2026-07-27 09:02:46]   ... 等待 P75 state=RUNNING msgId=35eb0d22-b
+[2026-07-27 09:03:16]   ... 等待 P75 state=RUNNING msgId=35eb0d22-b
+[2026-07-27 09:03:47]   ... 等待 P75 state=RUNNING msgId=35eb0d22-b
+[2026-07-27 09:04:18]   ... 等待 P75 state=RUNNING msgId=35eb0d22-b
+[2026-07-27 09:04:48]   ... 等待 P75 state=RUNNING msgId=35eb0d22-b
+[2026-07-27 09:05:19]   ... 等待 P75 state=RUNNING msgId=35eb0d22-b
+[2026-07-27 09:05:49]   ... 等待 P75 state=RUNNING msgId=35eb0d22-b
+[2026-07-27 09:06:20]   ... 等待 P75 state=RUNNING msgId=35eb0d22-b
+[2026-07-27 09:06:51]   ... 等待 P75 state=RUNNING msgId=35eb0d22-b
+[2026-07-27 09:07:21]   ... 等待 P75 state=RUNNING msgId=35eb0d22-b
+[2026-07-27 09:07:52]   ... 等待 P75 state=RUNNING msgId=35eb0d22-b
+[2026-07-27 09:08:22]   ... 等待 P75 state=RUNNING msgId=35eb0d22-b
+[2026-07-27 09:08:53]   ... 等待 P75 state=RUNNING msgId=35eb0d22-b
+[2026-07-27 09:09:24]   ... 等待 P75 state=RUNNING msgId=35eb0d22-b
+[2026-07-27 09:09:54]   ... 等待 P75 state=RUNNING msgId=35eb0d22-b
