@@ -115,10 +115,16 @@ h2{
   letter-spacing:-.02em; line-height:1.2;
 }
 .sec-sub{margin:0; color:var(--muted); font-size:15px}
+.why h2{font-size:clamp(21px,2.9vw,29px)}
+.why .sec-head{margin-bottom:16px}
+.why .sec-sub{font-size:13.5px}
+.pool h2{font-size:clamp(30px,4.8vw,48px)}
+.pool .sec-sub{font-size:16px}
 
 /* ═══ 01 · 为什么现在做 ═══ */
-.why{background:var(--paper); border-block:1px solid var(--line)}
-.why-verdict{
+.why{background:var(--paper); border-block:1px solid var(--line); padding:clamp(32px,4vw,48px) 0}
+.pool{padding:clamp(44px,6vw,80px) 0}
+.why-verdict{margin-bottom:16px !important;
   background:var(--ink); color:#fff; border-radius:var(--r-lg);
   padding:clamp(22px,3.4vw,34px); margin-bottom:var(--s5);
   position:relative; overflow:hidden;
@@ -127,7 +133,7 @@ h2{
   content:""; position:absolute; top:0; left:0; width:5px; height:100%;
   background:linear-gradient(180deg,var(--sun),var(--lemon));
 }
-.why-verdict p{
+.why-verdict p{font-size:15px !important; line-height:1.68 !important;
   margin:0; font-size:clamp(17px,2.6vw,23px); font-weight:700;
   line-height:1.62; letter-spacing:-.01em;
 }
@@ -135,7 +141,7 @@ h2{
 .why-verdict .em-m{color:#5FE3D6}
 
 .bars{display:grid; gap:14px}
-.bar-row{display:grid; grid-template-columns:7.2em 1fr 5.4em; align-items:center; gap:14px}
+.bar-row{margin-bottom:5px;display:grid; grid-template-columns:7.2em 1fr 5.4em; align-items:center; gap:14px}
 .bar-row .lb{font-size:14px; font-weight:700; text-align:right; letter-spacing:-.01em}
 .bar-track{height:26px; background:var(--sand-2); border-radius:6px; overflow:hidden}
 .bar-fill{
@@ -146,7 +152,7 @@ h2{
 .bar-fill.-ink{background:linear-gradient(90deg,var(--ink-2),#5A7196)}
 .bar-row .vl{font-size:14px; font-weight:800; color:var(--ink); text-align:right}
 .bar-row .vl small{font-weight:600; color:var(--muted); font-size:11px; margin-left:2px}
-.bars-note{margin:var(--s4) 0 0; font-size:12.5px; color:var(--muted)}
+.bars-note{margin:12px 0 0; font-size:12.5px; color:var(--muted)}
 
 .topics{
   display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
@@ -275,8 +281,41 @@ h2{
 .solo-txt .s{font-size:11.5px; color:var(--muted); margin-top:2px}
 .solo-price{flex:none; font-size:15px; font-weight:900; color:var(--sun)}
 
+/* 场景分组 */
+.scene-group{margin-bottom:var(--s6)}
+.scene-hd{
+  display:flex; gap:14px; align-items:center; margin-bottom:18px;
+  padding:16px clamp(14px,2vw,20px); border-radius:var(--r-lg);
+  background:linear-gradient(100deg,#FFF3E7 0%,var(--sand) 70%);
+  border:1px solid var(--line); border-left:5px solid var(--sun);
+}
+.scene-group:nth-child(2) .scene-hd{
+  background:linear-gradient(100deg,#E6F8F5 0%,var(--sand) 70%);
+  border-left-color:var(--mint);
+}
+.scene-ic{
+  flex:none; width:44px; height:44px; border-radius:12px; background:var(--paper);
+  display:grid; place-items:center; font-size:22px; border:1px solid var(--line);
+}
+.scene-tt h3{
+  margin:0 0 3px; font-size:20px; font-weight:900; letter-spacing:-.02em;
+  display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;
+}
+.scene-n{
+  font-size:12px; font-weight:800; color:#fff; background:var(--ink);
+  padding:2px 10px; border-radius:999px; letter-spacing:.02em;
+}
+.scene-tt p{margin:0; font-size:13px; color:var(--muted); line-height:1.5}
+
 /* 商品卡补充元素 */
-.good-thumb{position:relative}
+.good-shop{
+  font-size:11px; font-weight:800; color:var(--sun-deep); letter-spacing:.02em;
+  margin-bottom:4px; text-transform:none;
+}
+.good-thumb{position:relative; overflow:hidden}
+.good-thumb img{position:relative; z-index:1}
+.good-thumb .ph{position:absolute; inset:0; display:grid; place-items:center; z-index:0}
+.good-thumb.-noimg .ph{z-index:2}
 .cmsn{
   position:absolute; right:7px; top:7px; z-index:2;
   background:var(--ink); color:var(--lemon); font-size:11px; font-weight:900;
@@ -291,33 +330,33 @@ h2{
 .good-pt{font-size:11.5px; color:var(--sun-deep); font-weight:700; margin-top:5px; line-height:1.45}
 
 /* ── 双线洞察卡 ── */
-.two-line{display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:var(--s4)}
+.two-line{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:16px}
 .line-card{
   border:1px solid var(--line); border-radius:var(--r-lg);
-  padding:20px clamp(16px,2.4vw,24px); background:var(--sand);
+  padding:15px clamp(13px,1.8vw,18px); background:var(--sand);
 }
 .line-card.-a{background:linear-gradient(165deg,#FFF3E7 0%,var(--sand) 60%)}
 .line-card.-b{background:linear-gradient(165deg,#E6F8F5 0%,var(--sand) 60%)}
-.line-hd{display:flex; gap:13px; margin-bottom:18px}
+.line-hd{display:flex; gap:10px; margin-bottom:12px}
 .line-ic{
-  flex:none; width:40px; height:40px; border-radius:11px; background:var(--paper);
-  display:grid; place-items:center; font-size:20px; border:1px solid var(--line);
+  flex:none; width:32px; height:32px; border-radius:9px; background:var(--paper);
+  display:grid; place-items:center; font-size:16px; border:1px solid var(--line);
 }
-.line-hd h3{margin:0 0 3px; font-size:16.5px; font-weight:900; letter-spacing:-.015em; line-height:1.35}
-.line-hd p{margin:0; font-size:13px; color:var(--muted); line-height:1.55}
+.line-hd h3{margin:0 0 2px; font-size:14.5px; font-weight:900; letter-spacing:-.015em; line-height:1.35}
+.line-hd p{margin:0; font-size:12px; color:var(--muted); line-height:1.55}
 .line-hd p b{color:var(--ink-2); font-weight:700}
 
 /* ── 宝妈洞察强调条 ── */
 .mom-callout{
-  display:flex; gap:clamp(16px,3vw,28px); align-items:center;
-  background:var(--paper); border:1px solid var(--line); border-left:5px solid var(--mint);
-  border-radius:var(--r-lg); padding:clamp(18px,2.8vw,26px); margin-bottom:var(--s4);
+  display:flex; gap:clamp(13px,2.2vw,20px); align-items:center;
+  background:var(--paper); border:1px solid var(--line); border-left:4px solid var(--mint);
+  border-radius:var(--r-lg); padding:clamp(13px,1.9vw,18px); margin-bottom:14px;
 }
 .mc-fig{flex:none; text-align:center; display:flex; flex-direction:column; gap:2px}
-.mc-fig .num{font-size:clamp(30px,5vw,42px); font-weight:900; color:var(--mint-deep); letter-spacing:-.03em; line-height:1}
+.mc-fig .num{font-size:clamp(24px,3.6vw,32px); font-weight:900; color:var(--mint-deep); letter-spacing:-.03em; line-height:1}
 .mc-fig .num small{font-size:.45em; margin-left:2px; font-weight:700}
 .mc-k{font-size:11.5px; color:var(--muted); font-weight:600; letter-spacing:.02em}
-.mom-callout p{margin:0; font-size:14.5px; line-height:1.72; color:var(--ink-2)}
+.mom-callout p{margin:0; font-size:13px; line-height:1.62; color:var(--ink-2)}
 .mom-callout p b{color:var(--ink); font-weight:800}
 
 /* ═══ Tab ═══ */
@@ -540,7 +579,7 @@ footer .fine{
     <div class="sec-head">
       <span class="sec-no">02 / 货盘</span>
       <h2>开学季专项货盘</h2>
-      <p class="sec-sub">主推专场锁定场景线，单坑好品灵活补位，可按类目与场景筛选。</p>
+      <p class="sec-sub">31 家店 · 85 个品，全部含佣金与到手价，可按类目、场景、价格、佣金筛选。</p>
     </div>
 
     <div class="tabs" role="tablist" aria-label="货盘类型">
@@ -587,7 +626,7 @@ footer .fine{
           <li>社区热度：站内笔记基础表，近 90 天新发布有效笔记</li>
           <li>话题匹配为模糊匹配，含同族长尾话题</li>
           <li>货盘信息来自「开学季精选货盘」提报表，共 31 家店 85 个品</li>
-          <li><b>页面版本 v3 · 更新于 2026-08-04 21:02 · 单坑 85 品已上</b></li>
+          <li><b>页面版本 v4 · 更新于 2026-08-04 21:23 · 按场景分组 + 商品图</b></li>
         </ul>
       </div>
       <div>
@@ -662,7 +701,9 @@ const POOL = {
           "cmsn": "0.2",
           "cat": "烘焙糕点",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/65810432d71fa50001cf9688?t=1778309522511&xsec_token=ABNXoOJ3bxll8CAYQdNHuRfvRLRNfS3s-9l4qBYaSTxmk%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/65810432d71fa50001cf9688?t=1778309522511&xsec_token=ABNXoOJ3bxll8CAYQdNHuRfvRLRNfS3s-9l4qBYaSTxmk%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o0316fil70ugo005omorn6gg6a60ukpmko",
+          "shop": "Mamiya"
         },
         {
           "name": "益生元烤鲜奶脆脆",
@@ -674,7 +715,9 @@ const POOL = {
           "cmsn": "0.2",
           "cat": "零食坚果",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/67dec0d329b9f70001f214c9?t=1778309470934&xsec_token=ABXtx55aGCjgeuwMO8wyIBtexQ5OI-8H36sk2TfDAqEo8%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/67dec0d329b9f70001f214c9?t=1778309470934&xsec_token=ABXtx55aGCjgeuwMO8wyIBtexQ5OI-8H36sk2TfDAqEo8%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o031ouumvregu005omorn6gg6a60i5rr1o",
+          "shop": "Mamiya"
         },
         {
           "name": "花生酱全家福",
@@ -686,7 +729,9 @@ const POOL = {
           "cmsn": "0.2",
           "cat": "粮油调味",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/68ea2a0cc753610001cfc4cb?t=1778309522516&xsec_token=ABMnoUqYUHF2C56tIYHu8HNBX73YU6x5cry9Qz8iPrFeQ%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/68ea2a0cc753610001cfc4cb?t=1778309522516&xsec_token=ABMnoUqYUHF2C56tIYHu8HNBX73YU6x5cry9Qz8iPrFeQ%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g3no31s04gmi73s005omorn6gg6a6uh292vg",
+          "shop": "Mamiya"
         },
         {
           "name": "夏日鲜果果酱集",
@@ -699,7 +744,9 @@ const POOL = {
           "cmsn": "0.2",
           "cat": "粮油调味",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/69fbfe67213e270001ff8f1d?t=1778309486344&xsec_token=AB-6l0eVgQ9UcRsowG4PWFZFhQ_tg3N-oaA9ANWi-euR0%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/69fbfe67213e270001ff8f1d?t=1778309486344&xsec_token=AB-6l0eVgQ9UcRsowG4PWFZFhQ_tg3N-oaA9ANWi-euR0%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o031vg6aj9b3m005omorn6gg6a6it1ag58",
+          "shop": "Mamiya"
         },
         {
           "name": "酥脆肉夹馍",
@@ -711,7 +758,9 @@ const POOL = {
           "cmsn": "0.2",
           "cat": "冷冻速食",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/69faa1876bdc380001249c47?t=1778309486347&xsec_token=ABukxHlJfqhOtDxrX-dxviZYN1Fp3tUSBcppkE5itqCHY%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/69faa1876bdc380001249c47?t=1778309486347&xsec_token=ABukxHlJfqhOtDxrX-dxviZYN1Fp3tUSBcppkE5itqCHY%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g3no31vro21huk80g5omorn6gg6a6qnfogj8",
+          "shop": "Mamiya"
         },
         {
           "name": "安格斯牛肉馅饼",
@@ -723,7 +772,9 @@ const POOL = {
           "cmsn": "0.2",
           "cat": "冷冻速食",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/69faa0f681bc01000159f03b?t=1778309486347&xsec_token=ABQqS_oKx4h5S11osqP8Xw7xaYyNLwkEr56HxbfxFOOB8%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/69faa0f681bc01000159f03b?t=1778309486347&xsec_token=ABQqS_oKx4h5S11osqP8Xw7xaYyNLwkEr56HxbfxFOOB8%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g3no31vrnopcu540g5omorn6gg6a6cj1q4i0",
+          "shop": "Mamiya"
         }
       ]
     },
@@ -740,7 +791,9 @@ const POOL = {
           "cmsn": "0.23",
           "cat": "零食坚果",
           "scene": "零食囤货",
-          "url": "https://xhslink.com/m/4GEhNmmciFn"
+          "url": "https://xhslink.com/m/4GEhNmmciFn",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o03234djjnd6s005n8lpf94e6b9broenag",
+          "shop": "食验室"
         },
         {
           "name": "纤脆玉米片",
@@ -751,7 +804,9 @@ const POOL = {
           "cmsn": "0.23",
           "cat": "零食坚果",
           "scene": "零食囤货",
-          "url": "https://xhslink.com/m/QyUF3qbqIL"
+          "url": "https://xhslink.com/m/QyUF3qbqIL",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g3no322rcrq34ms0g5n8lpf94e6b9jnv4h3o",
+          "shop": "食验室"
         },
         {
           "name": "抹茶/巧克力玉米片",
@@ -764,7 +819,9 @@ const POOL = {
           "cmsn": "0.23",
           "cat": "零食坚果",
           "scene": "零食囤货",
-          "url": "https://xhslink.com/m/9icqM6i1RYW"
+          "url": "https://xhslink.com/m/9icqM6i1RYW",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g3no321ojas0u6s0g5n8lpf94e6b9j3fd1g8",
+          "shop": "食验室"
         },
         {
           "name": "十蔬米饼",
@@ -777,7 +834,9 @@ const POOL = {
           "cmsn": "0.23",
           "cat": "零食坚果",
           "scene": "零食囤货",
-          "url": "https://xhslink.com/m/4rrhJ7Frptn"
+          "url": "https://xhslink.com/m/4rrhJ7Frptn",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o031t8fj7qe58005n8lpf94e6b924f8kdo",
+          "shop": "食验室"
         },
         {
           "name": "波浪玉米片",
@@ -788,7 +847,9 @@ const POOL = {
           "cmsn": "0.23",
           "cat": "零食坚果",
           "scene": "零食囤货",
-          "url": "https://xhslink.com/m/ALueTQi2ZH8"
+          "url": "https://xhslink.com/m/ALueTQi2ZH8",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g3no321oiv86a740g5n8lpf94e6b9ncbnfs8",
+          "shop": "食验室"
         },
         {
           "name": "爆品组合礼包",
@@ -799,7 +860,9 @@ const POOL = {
           "cmsn": "0.23",
           "cat": "零食坚果",
           "scene": "零食囤货",
-          "url": "https://xhslink.com/m/3Q2BN30KlRM"
+          "url": "https://xhslink.com/m/3Q2BN30KlRM",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o0321oj2p9972005n8lpf94e6b97hqapj8",
+          "shop": "食验室"
         }
       ]
     },
@@ -816,7 +879,9 @@ const POOL = {
           "cmsn": "0.2",
           "cat": "粮油调味",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/68842d17e019f20001e8f3bf?t=1778310966011&xsec_token=AB0o8W8Xhw0sjfJq5pzGcPl6AxzktI4kr0KFFHwuNwKmo%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/68842d17e019f20001e8f3bf?t=1778310966011&xsec_token=AB0o8W8Xhw0sjfJq5pzGcPl6AxzktI4kr0KFFHwuNwKmo%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o031ujvnov32s005ojhqhk8clkpb9ckor0",
+          "shop": "熊猫猪猪庄园旗舰店"
         },
         {
           "name": "金华两头乌爆汁烤肠",
@@ -828,7 +893,9 @@ const POOL = {
           "cmsn": "0.2",
           "cat": "粮油调味",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/69e712480f549c0001126ae1?t=1778312553295&xsec_token=ABgySUjn5Ir_nCoIDhoTahH4CldvBNO0DQE-H6z5YIX1g%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/69e712480f549c0001126ae1?t=1778312553295&xsec_token=ABgySUjn5Ir_nCoIDhoTahH4CldvBNO0DQE-H6z5YIX1g%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o031ujvnov32s005ojhqhk8clkpb9ckor0",
+          "shop": "熊猫猪猪庄园旗舰店"
         },
         {
           "name": "金华两头乌麦苗米饺",
@@ -840,7 +907,9 @@ const POOL = {
           "cmsn": "0.25",
           "cat": "粮油调味",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/69c629c1d95b5a0001bbbb93?t=1778310966011&xsec_token=AB4UJat5D0_3mzTPTQ9nQP9zm2Hgkgu2REPana_INBVNk%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/69c629c1d95b5a0001bbbb93?t=1778310966011&xsec_token=AB4UJat5D0_3mzTPTQ9nQP9zm2Hgkgu2REPana_INBVNk%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o031u76pe6kis005ojhqhk8clkpa2ubmsg",
+          "shop": "熊猫猪猪庄园旗舰店"
         },
         {
           "name": "金华两头乌午餐肉",
@@ -852,7 +921,9 @@ const POOL = {
           "cmsn": "0.2",
           "cat": "粮油调味",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/682bea13a045210001d8b45d?t=1778310966012&xsec_token=ABlZLfRkHpBBpzydXJ7r1ep3jUP1lISmgBlcHq8vMPPtw%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/682bea13a045210001d8b45d?t=1778310966012&xsec_token=ABlZLfRkHpBBpzydXJ7r1ep3jUP1lISmgBlcHq8vMPPtw%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o03221e5o6fmu005ojhqhk8clkpu499mr8",
+          "shop": "熊猫猪猪庄园旗舰店"
         },
         {
           "name": "金华两头乌薄酥饼",
@@ -865,7 +936,9 @@ const POOL = {
           "cmsn": "0.2",
           "cat": "粮油调味",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/68c7aac739f90c0001f5ea33?t=1778310966013&xsec_token=ABi1g_lS24rA-PG6hjPYd3KBm6Vs2BHGn0r6LkJQPG50w%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/68c7aac739f90c0001f5ea33?t=1778310966013&xsec_token=ABi1g_lS24rA-PG6hjPYd3KBm6Vs2BHGn0r6LkJQPG50w%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o031otbf2bgh2005ojhqhk8clkpe69kdb0",
+          "shop": "熊猫猪猪庄园旗舰店"
         },
         {
           "name": "金华两头乌手工长粽",
@@ -877,7 +950,9 @@ const POOL = {
           "cmsn": "0.2",
           "cat": "粮油调味",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/69f2f7488c2c2300017c18a0?t=1778311068788&xsec_token=ABMvkRj26eDioyqUZqNsGA8--Xx2zviK7oYazLpRTGhYI%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/69f2f7488c2c2300017c18a0?t=1778311068788&xsec_token=ABMvkRj26eDioyqUZqNsGA8--Xx2zviK7oYazLpRTGhYI%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o031visbi7o2s005ojhqhk8clkptgu7320",
+          "shop": "熊猫猪猪庄园旗舰店"
         }
       ]
     },
@@ -893,7 +968,9 @@ const POOL = {
           "cmsn": "0.2",
           "cat": "零食坚果",
           "scene": "零食囤货",
-          "url": "https://www.xiaohongshu.com/goods-detail/5f27c9fc0cf9a114efad9777?t=1770791859277&xsec_token=ABuURxfkLbBRLXBhKfVsnnd1D5BoUL408CztXmTPHksxg%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/5f27c9fc0cf9a114efad9777?t=1770791859277&xsec_token=ABuURxfkLbBRLXBhKfVsnnd1D5BoUL408CztXmTPHksxg%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g3no322uqivq8720g4a0iq50v0s99u1fi618",
+          "shop": "米惦商店旗舰店"
         },
         {
           "name": "碧根果雪球",
@@ -904,7 +981,9 @@ const POOL = {
           "cmsn": "0.2",
           "cat": "零食坚果",
           "scene": "零食囤货",
-          "url": "https://www.xiaohongshu.com/goods-detail/65faa2243b4dcf00018bea41?t=1770791883386&xsec_token=ABLiTk-xOJx8v6xb8a-z5aZAmdRnvFnuG30oLwly9xMiQ%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/65faa2243b4dcf00018bea41?t=1770791883386&xsec_token=ABLiTk-xOJx8v6xb8a-z5aZAmdRnvFnuG30oLwly9xMiQ%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o0322uqaj95n0004a0iq50v0s994l6nek8",
+          "shop": "米惦商店旗舰店"
         },
         {
           "name": "奶奶嫩吐司",
@@ -916,7 +995,9 @@ const POOL = {
           "cmsn": "0.2",
           "cat": "零食坚果",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/68959790f9d7c80001b45260?t=1770791903985&xsec_token=ABhBRn1AIAEpf0Nihw-Yul0QSsZQRLDjb5HEYLBIGPbnA%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/68959790f9d7c80001b45260?t=1770791903985&xsec_token=ABhBRn1AIAEpf0Nihw-Yul0QSsZQRLDjb5HEYLBIGPbnA%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g3no31ktkss2m360g4a0iq50v0s99h841b50",
+          "shop": "米惦商店旗舰店"
         },
         {
           "name": "奶奶小馒头",
@@ -928,7 +1009,9 @@ const POOL = {
           "cmsn": "0.2",
           "cat": "零食坚果",
           "scene": "零食囤货",
-          "url": "https://www.xiaohongshu.com/goods-detail/697dc486b6ceb400018f5f33?t=1770791925383&xsec_token=ABAafGr0fJssdLRVD3B0uO_UVwvQ-ZvAUm6jGXCSaq0Qc%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/697dc486b6ceb400018f5f33?t=1770791925383&xsec_token=ABAafGr0fJssdLRVD3B0uO_UVwvQ-ZvAUm6jGXCSaq0Qc%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o032370hmmlms004a0iq50v0s99sacv058",
+          "shop": "米惦商店旗舰店"
         }
       ]
     },
@@ -946,7 +1029,9 @@ const POOL = {
           "cmsn": "0.2",
           "cat": "零食坚果",
           "scene": "零食囤货",
-          "url": "https://www.xiaohongshu.com/goods-detail/643e443c3db67b0001031b6c?xhsshare=CopyLink&appuid=62bc16d8000000001501b6e4&apptime=1684408853"
+          "url": "https://www.xiaohongshu.com/goods-detail/643e443c3db67b0001031b6c?xhsshare=CopyLink&appuid=62bc16d8000000001501b6e4&apptime=1684408853",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1000g0o02khpe8muim0005ols2rc5bdn45gi4if8",
+          "shop": "脆升升旗舰店"
         },
         {
           "name": "脆升升香脆薯角",
@@ -959,7 +1044,9 @@ const POOL = {
           "cmsn": "0.2",
           "cat": "零食坚果",
           "scene": "零食囤货",
-          "url": "https://www.xiaohongshu.com/goods-detail/682eb4600bed560001035266?xsec_token=XBZfPUFCREClPy3NP5Lq8OXUd-ox8EMksJgWLHh7vzFwI%3D&xsec_source=app_share&instation_link=xhsdiscover%3A%2F%2Fgoods_detail%2F682eb4600bed560001035266%3Ftrade_ext%3DeyJjaGFubmVsSW5mbyI6bnVsbCwiZHNUb2tlbkluZm8iOm51bGwsInNoYXJlTGluayI6Imh0dHBzOi8vd3d3LnhpYW9ob25nc2h1LmNvbS9nb29kcy1kZXRhaWwvNjgyZWI0NjAwYmVkNTYwMDAxMDM1MjY2P2FwcHVpZD01Y2ViYTM4ZjAwMDAwMDAwMTgwMzZlNDEiLCJsaXZlSW5mbyI6bnVsbCwic2hvcEluZm8iOm51bGwsImdvb2RzTm90ZUluZm8iOm51bGwsImNoYXRJbmZvIjpudWxsLCJzZWFyY2hJbmZvIjpudWxsLCJwcmVmZXIiOm51bGx9%26rn%3Dtrue&xhsshare=CopyLink&appuid=5ceba38f0000000018036e41&apptime=1748184140&share_id=a728fb23644b4d1f9d83f258dc5277f3&share_channel=copy_link"
+          "url": "https://www.xiaohongshu.com/goods-detail/682eb4600bed560001035266?xsec_token=XBZfPUFCREClPy3NP5Lq8OXUd-ox8EMksJgWLHh7vzFwI%3D&xsec_source=app_share&instation_link=xhsdiscover%3A%2F%2Fgoods_detail%2F682eb4600bed560001035266%3Ftrade_ext%3DeyJjaGFubmVsSW5mbyI6bnVsbCwiZHNUb2tlbkluZm8iOm51bGwsInNoYXJlTGluayI6Imh0dHBzOi8vd3d3LnhpYW9ob25nc2h1LmNvbS9nb29kcy1kZXRhaWwvNjgyZWI0NjAwYmVkNTYwMDAxMDM1MjY2P2FwcHVpZD01Y2ViYTM4ZjAwMDAwMDAwMTgwMzZlNDEiLCJsaXZlSW5mbyI6bnVsbCwic2hvcEluZm8iOm51bGwsImdvb2RzTm90ZUluZm8iOm51bGwsImNoYXRJbmZvIjpudWxsLCJzZWFyY2hJbmZvIjpudWxsLCJwcmVmZXIiOm51bGx9%26rn%3Dtrue&xhsshare=CopyLink&appuid=5ceba38f0000000018036e41&apptime=1748184140&share_id=a728fb23644b4d1f9d83f258dc5277f3&share_channel=copy_link",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g3no31hpait1e4q0g5ols2rc5bdn42a96vk0",
+          "shop": "脆升升旗舰店"
         },
         {
           "name": "脆升升香脆薯片",
@@ -972,7 +1059,9 @@ const POOL = {
           "cmsn": "0.2",
           "cat": "零食坚果",
           "scene": "零食囤货",
-          "url": "https://www.xiaohongshu.com/goods-detail/67fe3d90abbc830001a8649f?xsec_token=XBSBvdVLuPyy-g6CGd4y4tYoKdDvfGmH_Qi01n1h33Pxs%3D&xsec_source=app_share&instation_link=xhsdiscover%3A%2F%2Fgoods_detail%2F67fe3d90abbc830001a8649f%3Ftrade_ext%3DeyJjaGFubmVsSW5mbyI6bnVsbCwiZHNUb2tlbkluZm8iOm51bGwsInNoYXJlTGluayI6Imh0dHBzOi8vd3d3LnhpYW9ob25nc2h1LmNvbS9nb29kcy1kZXRhaWwvNjdmZTNkOTBhYmJjODMwMDAxYTg2NDlmP2FwcHVpZD01Y2ViYTM4ZjAwMDAwMDAwMTgwMzZlNDEiLCJsaXZlSW5mbyI6bnVsbCwic2hvcEluZm8iOm51bGwsImdvb2RzTm90ZUluZm8iOm51bGwsImNoYXRJbmZvIjpudWxsLCJzZWFyY2hJbmZvIjpudWxsLCJwcmVmZXIiOm51bGx9%26rn%3Dtrue&xhsshare=CopyLink&appuid=5ceba38f0000000018036e41&apptime=1748184589&share_id=5ae163aec80d433ebd17fe6207b8c6e3&share_channel=copy_link"
+          "url": "https://www.xiaohongshu.com/goods-detail/67fe3d90abbc830001a8649f?xsec_token=XBSBvdVLuPyy-g6CGd4y4tYoKdDvfGmH_Qi01n1h33Pxs%3D&xsec_source=app_share&instation_link=xhsdiscover%3A%2F%2Fgoods_detail%2F67fe3d90abbc830001a8649f%3Ftrade_ext%3DeyJjaGFubmVsSW5mbyI6bnVsbCwiZHNUb2tlbkluZm8iOm51bGwsInNoYXJlTGluayI6Imh0dHBzOi8vd3d3LnhpYW9ob25nc2h1LmNvbS9nb29kcy1kZXRhaWwvNjdmZTNkOTBhYmJjODMwMDAxYTg2NDlmP2FwcHVpZD01Y2ViYTM4ZjAwMDAwMDAwMTgwMzZlNDEiLCJsaXZlSW5mbyI6bnVsbCwic2hvcEluZm8iOm51bGwsImdvb2RzTm90ZUluZm8iOm51bGwsImNoYXRJbmZvIjpudWxsLCJzZWFyY2hJbmZvIjpudWxsLCJwcmVmZXIiOm51bGx9%26rn%3Dtrue&xhsshare=CopyLink&appuid=5ceba38f0000000018036e41&apptime=1748184589&share_id=5ae163aec80d433ebd17fe6207b8c6e3&share_channel=copy_link",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o030q33pfkgn8005ols2rc5bdn4jlkd788",
+          "shop": "脆升升旗舰店"
         },
         {
           "name": "脆升升升运礼盒",
@@ -984,7 +1073,9 @@ const POOL = {
           "cmsn": "0.2",
           "cat": "零食坚果",
           "scene": "零食囤货",
-          "url": "https://xhslink.com/m/1pHG8MpGM75"
+          "url": "https://xhslink.com/m/1pHG8MpGM75",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o0320of1fbo5k005ols2rc5bdn47gjk34g",
+          "shop": "脆升升旗舰店"
         }
       ]
     },
@@ -1001,7 +1092,9 @@ const POOL = {
           "cmsn": "0.2",
           "cat": "冷冻速食",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/6960aa3111e595000189df47?t=1773302676330&xsec_token=ABNdZ0gyDKXHyrkxVWjGzl7r1qsMM381Wzix2rhDj6zWo%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/6960aa3111e595000189df47?t=1773302676330&xsec_token=ABNdZ0gyDKXHyrkxVWjGzl7r1qsMM381Wzix2rhDj6zWo%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o0320lnq1776o005ovup5uaag1mdkgc7no",
+          "shop": "蒸笼头"
         },
         {
           "name": "葱花卷+肉花卷",
@@ -1013,7 +1106,9 @@ const POOL = {
           "cmsn": "0.2",
           "cat": "冷冻速食",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/65d4486184d70b0001a1e0dc?t=1773302989828&xsec_token=ABMVwiO-NUB1JyKTLYEY1RzQfDwpnARknCGhbMfrN69Xs%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/65d4486184d70b0001a1e0dc?t=1773302989828&xsec_token=ABMVwiO-NUB1JyKTLYEY1RzQfDwpnARknCGhbMfrN69Xs%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g3no31tl4par9mi0g5ovup5uaag1mt29eb4o",
+          "shop": "蒸笼头"
         },
         {
           "name": "牛肉烧麦组合",
@@ -1025,7 +1120,9 @@ const POOL = {
           "cmsn": "0.2",
           "cat": "冷冻速食",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/6757dac0bdb5900001d15209?t=1773303010847&xsec_token=ABBYowqF9ZT0X_zj3Rmig6y7Otjj6K1wMdUWB1RF-V_kY%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/6757dac0bdb5900001d15209?t=1773303010847&xsec_token=ABBYowqF9ZT0X_zj3Rmig6y7Otjj6K1wMdUWB1RF-V_kY%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g3no31tiddhpg5e105ovup5uaag1mpbtfbh0",
+          "shop": "蒸笼头"
         },
         {
           "name": "黄芽菜肉丝春卷",
@@ -1037,7 +1134,9 @@ const POOL = {
           "cmsn": "0.2",
           "cat": "冷冻速食",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/69290c2cce3eb500013d2eb8?t=1773303089802&xsec_token=ABUrJbfAp56ejr9sBDSodTOhJj7kVLYMWOIEpp8df05K0%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/69290c2cce3eb500013d2eb8?t=1773303089802&xsec_token=ABUrJbfAp56ejr9sBDSodTOhJj7kVLYMWOIEpp8df05K0%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g3no31r42rv0k6u0g5ovup5uaag1mccse52g",
+          "shop": "蒸笼头"
         }
       ]
     },
@@ -1054,7 +1153,9 @@ const POOL = {
           "cmsn": "0.25",
           "cat": "冷冻速食",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/648193ddd171fa000122df28"
+          "url": "https://www.xiaohongshu.com/goods-detail/648193ddd171fa000122df28",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g3no31vgfqh8pkc0g5oincm88d4dq6s65elg",
+          "shop": "馥华"
         },
         {
           "name": "福州肉燕",
@@ -1066,7 +1167,9 @@ const POOL = {
           "cmsn": "0.25",
           "cat": "冷冻速食",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/655424ec44a0ce0001e379ea"
+          "url": "https://www.xiaohongshu.com/goods-detail/655424ec44a0ce0001e379ea",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o03206d490m5k005oincm88d4dq1df147g",
+          "shop": "馥华"
         },
         {
           "name": "福州鱼饺",
@@ -1078,7 +1181,9 @@ const POOL = {
           "cmsn": "0.25",
           "cat": "冷冻速食",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/6528bcb74aa7d60001f8a623"
+          "url": "https://www.xiaohongshu.com/goods-detail/6528bcb74aa7d60001f8a623",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g3no3203q6m1j2s005oincm88d4dqur6odsg",
+          "shop": "馥华"
         },
         {
           "name": "鳕鱼丸",
@@ -1090,7 +1195,9 @@ const POOL = {
           "cmsn": "0.25",
           "cat": "冷冻速食",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/69f1b009294caa000171048a?t=1778309642756"
+          "url": "https://www.xiaohongshu.com/goods-detail/69f1b009294caa000171048a?t=1778309642756",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o031vhmd6rj2s005oincm88d4dq9rdb6b0",
+          "shop": "馥华"
         }
       ]
     },
@@ -1107,7 +1214,9 @@ const POOL = {
           "cmsn": "0.2",
           "cat": "方便速食",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/6969ebde1d37860001d44a95?t=1778320760717&xsec_token=ABobrZWaISqiaox8Bd1292fytbb6VyOlFdX7irQqBP-uo%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/6969ebde1d37860001d44a95?t=1778320760717&xsec_token=ABobrZWaISqiaox8Bd1292fytbb6VyOlFdX7irQqBP-uo%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o031t465b525a005o08v2k08clp7e2trt0",
+          "shop": "小黄象"
         },
         {
           "name": "酥脆伴翅",
@@ -1119,7 +1228,9 @@ const POOL = {
           "cmsn": "0.2",
           "cat": "方便速食",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/69fec63b0283e20001675092?t=1778320833098&xsec_token=ABnf1KWGGWRRi5zcn0IABnVruJ8WFMwqckztpc9JGsH8c%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/69fec63b0283e20001675092?t=1778320833098&xsec_token=ABnf1KWGGWRRi5zcn0IABnVruJ8WFMwqckztpc9JGsH8c%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g3no3236up0kvn00g5o08v2k08clp3jcjpqg",
+          "shop": "小黄象"
         },
         {
           "name": "黄油手抓饼",
@@ -1131,7 +1242,9 @@ const POOL = {
           "cmsn": "0.2",
           "cat": "方便速食",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/62c6bc11970d4e00010f33ea?t=1778321415604&xsec_token=AB4thqtfArEBmE14DyxWIN9xYezgqEPLy6bWm_RROOFtM%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/62c6bc11970d4e00010f33ea?t=1778321415604&xsec_token=AB4thqtfArEBmE14DyxWIN9xYezgqEPLy6bWm_RROOFtM%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o03228upf7u6s005o08v2k08clpqcdpbao",
+          "shop": "小黄象"
         },
         {
           "name": "橄榄油香煎鸡排",
@@ -1143,7 +1256,9 @@ const POOL = {
           "cmsn": "0.2",
           "cat": "方便速食",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/67721305966ebd0001786e72?t=1778321399209&xsec_token=ABqATnhgMNJrq-cbY4x2EJD-EzLdK9A8e8-MpDolfQI0g%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/67721305966ebd0001786e72?t=1778321399209&xsec_token=ABqATnhgMNJrq-cbY4x2EJD-EzLdK9A8e8-MpDolfQI0g%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o031qmvvp1nmu0g5o08v2k08clphi8t5lo",
+          "shop": "小黄象"
         }
       ]
     },
@@ -1159,7 +1274,9 @@ const POOL = {
           "cmsn": "20",
           "cat": "零食坚果",
           "scene": "零食囤货",
-          "url": "https://www.xiaohongshu.com/goods-detail/6461c52436ad1200019f32a0?t=1778901231944&xsec_token=AB05iGQw9j1P9Sm9NvabmnnVD4Pnpt1gn9bLD2VI3lGtc%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/6461c52436ad1200019f32a0?t=1778901231944&xsec_token=AB05iGQw9j1P9Sm9NvabmnnVD4Pnpt1gn9bLD2VI3lGtc%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g3no31ir0snl81i7g5q0mdliji8pn6qe4h18",
+          "shop": "三关六码头旗舰店"
         },
         {
           "name": "手工锅巴",
@@ -1170,7 +1287,9 @@ const POOL = {
           "cmsn": "20",
           "cat": "零食坚果",
           "scene": "零食囤货",
-          "url": "https://www.xiaohongshu.com/goods-detail/66160edbcf0471000192b029?t=1778901241581&xsec_token=ABfGLeLbKk8uq4VcDPYkd3SFJk1N0t8NL7yFjJTDHfs6U%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/66160edbcf0471000192b029?t=1778901241581&xsec_token=ABfGLeLbKk8uq4VcDPYkd3SFJk1N0t8NL7yFjJTDHfs6U%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g3no31pk8e9kq3s0g4a5m6boo45lr85jvm2o",
+          "shop": "三关六码头旗舰店"
         },
         {
           "name": "老醋花生",
@@ -1181,7 +1300,9 @@ const POOL = {
           "cmsn": "20",
           "cat": "零食坚果",
           "scene": "零食囤货",
-          "url": "https://www.xiaohongshu.com/goods-detail/69f98cb764eb410001d05666?t=1778901251805&xsec_token=AB80AoiIveXUZzjPFe7KtXNSOE1-cbdkws7no0bX0KDDs%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/69f98cb764eb410001d05666?t=1778901251805&xsec_token=AB80AoiIveXUZzjPFe7KtXNSOE1-cbdkws7no0bX0KDDs%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o031sv4a5otl6005qbj6tmpn9occpktd8o",
+          "shop": "三关六码头旗舰店"
         },
         {
           "name": "橘子干",
@@ -1192,7 +1313,9 @@ const POOL = {
           "cmsn": "20",
           "cat": "零食坚果",
           "scene": "零食囤货",
-          "url": "https://www.xiaohongshu.com/goods-detail/6461c97b480cc00001b319a7?t=1778901275030&xsec_token=ABFvufsuy_T3vX3XPfgWXa38Xr4LHxRlRlDKHIgcMi1mQ%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/6461c97b480cc00001b319a7?t=1778901275030&xsec_token=ABFvufsuy_T3vX3XPfgWXa38Xr4LHxRlRlDKHIgcMi1mQ%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o031lvfb2v050005q1ilnainj2s6pg5s8g",
+          "shop": "三关六码头旗舰店"
         }
       ]
     },
@@ -1210,7 +1333,9 @@ const POOL = {
           "cmsn": "20",
           "cat": "方便速食",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/68fb301be0f3b20001de0cee?t=1770785911610&xsec_token=AB72VPCvaEp97nih73w37jf8e__zGoPgKFjeuCdvbJ6as%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/68fb301be0f3b20001de0cee?t=1770785911610&xsec_token=AB72VPCvaEp97nih73w37jf8e__zGoPgKFjeuCdvbJ6as%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o03230dbm0b70005nviqnk09eg74q5aotg",
+          "shop": "必品阁BIBIGO旗舰店"
         },
         {
           "name": "必品阁生意面",
@@ -1223,7 +1348,9 @@ const POOL = {
           "cmsn": "20",
           "cat": "方便速食",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/65e6c52c735ada00019ab428?t=1770785978485&xsec_token=ABX9rBmO2FXw5ZR814o8cMrArqBjW-ywKtj5mGfJOTMxM%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/65e6c52c735ada00019ab428?t=1770785978485&xsec_token=ABX9rBmO2FXw5ZR814o8cMrArqBjW-ywKtj5mGfJOTMxM%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o031fepcj4l70005nviqnk09eg7nt3be98",
+          "shop": "必品阁BIBIGO旗舰店"
         },
         {
           "name": "必品阁王水饺",
@@ -1235,7 +1362,9 @@ const POOL = {
           "cmsn": "20",
           "cat": "方便速食",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/67d151af29b9f7000157579e?t=1770785939477&xsec_token=ABvBnmQUWgUJZWGn3nNGvGb2BsV2-FTaz5hxeQKs9nPyg%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/67d151af29b9f7000157579e?t=1770785939477&xsec_token=ABvBnmQUWgUJZWGn3nNGvGb2BsV2-FTaz5hxeQKs9nPyg%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o031k6li77o3q005nviqnk09eg7kf3ch9g",
+          "shop": "必品阁BIBIGO旗舰店"
         }
       ]
     },
@@ -1253,7 +1382,9 @@ const POOL = {
           "cmsn": "20",
           "cat": "方便速食",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/692521f7e8b9d400013af341"
+          "url": "https://www.xiaohongshu.com/goods-detail/692521f7e8b9d400013af341",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o031p9uldobia004afiv3miotfe1espqc8",
+          "shop": "空刻旗舰店"
         },
         {
           "name": "空刻手拍薄饼披萨3盒",
@@ -1265,7 +1396,9 @@ const POOL = {
           "cmsn": "20",
           "cat": "方便速食",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/69dddef05f699000016e4f43"
+          "url": "https://www.xiaohongshu.com/goods-detail/69dddef05f699000016e4f43",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o031v280j691u004afiv3miotfeqbisvn8",
+          "shop": "空刻旗舰店"
         },
         {
           "name": "空刻无抗鸡排3袋装",
@@ -1278,7 +1411,9 @@ const POOL = {
           "cmsn": "20",
           "cat": "方便速食",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/69644d89f7aaae0001d563bb"
+          "url": "https://www.xiaohongshu.com/goods-detail/69644d89f7aaae0001d563bb",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g3no320s7aptvn20g4afiv3miotfee4lj4so",
+          "shop": "空刻旗舰店"
         }
       ]
     },
@@ -1295,7 +1430,9 @@ const POOL = {
           "cmsn": "0.18",
           "cat": "方便速食",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/67b82f64eef1820001dc7413?t=1770795226261&xsec_token=ABJRVunrnohC6QmYlydMD7TSZbV16cCZR_jnyf0vzOsyM%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/67b82f64eef1820001dc7413?t=1770795226261&xsec_token=ABJRVunrnohC6QmYlydMD7TSZbV16cCZR_jnyf0vzOsyM%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o031e5hrrpvge005pra4fml62se633tddg",
+          "shop": "亲食派"
         },
         {
           "name": "大黄米粽子",
@@ -1307,7 +1444,9 @@ const POOL = {
           "cmsn": "0.15",
           "cat": "方便速食",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/6926d46bb70fce0001cef16d?t=1770795226268&xsec_token=ABECsmtO3BFMQFWdWmPEAWE8o-MJJd6jzfFidC_LsQTvc%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/6926d46bb70fce0001cef16d?t=1770795226268&xsec_token=ABECsmtO3BFMQFWdWmPEAWE8o-MJJd6jzfFidC_LsQTvc%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o031o4o0vj04se05pra4fml62seqlmve28",
+          "shop": "亲食派"
         },
         {
           "name": "紫薯球",
@@ -1319,7 +1458,9 @@ const POOL = {
           "cmsn": "0.15",
           "cat": "方便速食",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/6927c9663dc5360001407364?t=1770795226268&xsec_token=ABN5uyh-HfNBP0hFK7gD5wka1X_GK0C0tVarao5o5Ht2Y%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/6927c9663dc5360001407364?t=1770795226268&xsec_token=ABN5uyh-HfNBP0hFK7gD5wka1X_GK0C0tVarao5o5Ht2Y%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o031tp3vkpv6q005pra4fml62se3ugg7h8",
+          "shop": "亲食派"
         }
       ]
     },
@@ -1336,7 +1477,9 @@ const POOL = {
           "cmsn": "0.2",
           "cat": "零食坚果",
           "scene": "零食囤货",
-          "url": "https://www.xiaohongshu.com/goods-detail/6979bad139c8000001780251?t=1773301931241&xsec_token=ABxrXKLv2o9M7SECaBQE11RcLYs7LqsmBbwGYsbMh91FM%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/6979bad139c8000001780251?t=1773301931241&xsec_token=ABxrXKLv2o9M7SECaBQE11RcLYs7LqsmBbwGYsbMh91FM%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o0320isfm825e0049vr74l9ottp1jcgkj0",
+          "shop": "宿咕的铁皮盒旗舰店"
         },
         {
           "name": "海盐生巧酥片",
@@ -1348,7 +1491,9 @@ const POOL = {
           "cmsn": "0.2",
           "cat": "零食坚果",
           "scene": "零食囤货",
-          "url": "https://www.xiaohongshu.com/goods-detail/65fe977c86208c00016249a3?t=1773301931257&xsec_token=AB6f3dH_k_4zVPvIsq87arvFPM-lwlimp-F3btYSnNja0%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/65fe977c86208c00016249a3?t=1773301931257&xsec_token=AB6f3dH_k_4zVPvIsq87arvFPM-lwlimp-F3btYSnNja0%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o0310tjmeo1mm0049vr74l9ottpgc6v7a0",
+          "shop": "宿咕的铁皮盒旗舰店"
         },
         {
           "name": "朗姆酒葡萄饼干",
@@ -1360,7 +1505,9 @@ const POOL = {
           "cmsn": "0.2",
           "cat": "零食坚果",
           "scene": "零食囤货",
-          "url": "https://www.xiaohongshu.com/goods-detail/65fe981996b9a10001346d4d?t=1773301931245&xsec_token=AB5TfhzkQ_kKEAoSyf1OD_lqv2KIAnMJZB2bN7NhvjKvQ%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/65fe981996b9a10001346d4d?t=1773301931245&xsec_token=AB5TfhzkQ_kKEAoSyf1OD_lqv2KIAnMJZB2bN7NhvjKvQ%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g3no31rts5od9240g49vr74l9ottprjjnjqo",
+          "shop": "宿咕的铁皮盒旗舰店"
         }
       ]
     },
@@ -1377,7 +1524,9 @@ const POOL = {
           "gift": "调味醋汁*4 油泼辣子*4 蒸笼纸8张",
           "cmsn": "0.15",
           "cat": "方便速食",
-          "scene": "早餐帮手"
+          "scene": "早餐帮手",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o031odmp6jdkq005o1ngntgblnk8o32uhg",
+          "shop": "锋味派"
         },
         {
           "name": "锋味派盒装午餐肉",
@@ -1387,7 +1536,9 @@ const POOL = {
           "sell": "锋味派创始人、米其林之友谢霆锋，优选原料的诚挚之选，iSEE创新品牌百强榜（KT）； / 坚持单一肉源，只选用品质黑猪肉，不掺杂其他肉类，肉香浓郁醇厚，肉质鲜嫩紧实； / 黑猪肉含量≥90%，大块肉粒看得见，满满肉丝嚼得",
           "cmsn": "0.15",
           "cat": "方便速食",
-          "scene": "早餐帮手"
+          "scene": "早餐帮手",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g3no31vqijdna2s0g5o1ngntgblnk0u97g9o",
+          "shop": "锋味派"
         },
         {
           "name": "锋味派酥皮馅饼",
@@ -1398,7 +1549,9 @@ const POOL = {
           "sell": "皮薄酥脆，馅大肉香：馅含量≥40%，安格斯牛肉/黑猪肉在馅料中占比≥70%，河北硬粒小麦粉搭配俄罗斯进口小麦粉，8层开酥，层层酥脆，口口满足 / 单片独立包装:真正的“一室一厅”，干净卫生不怕串味，内含贴心隔膜，好吃不脏",
           "cmsn": "0.15",
           "cat": "方便速食",
-          "scene": "早餐帮手"
+          "scene": "早餐帮手",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o031lm7asteks005o1ngntgblnkb4mul4g",
+          "shop": "锋味派"
         }
       ]
     },
@@ -1414,7 +1567,9 @@ const POOL = {
           "cmsn": "20",
           "cat": "零食坚果",
           "scene": "零食囤货",
-          "url": "https://www.xiaohongshu.com/goods-detail/68ca893a24f1f8000138210f?t=1778312232401&xsec_token=ABg26QdWfrhU2Tt9D0PiaWLsglnkkpLkNvGbhpOU2j7oo%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/68ca893a24f1f8000138210f?t=1778312232401&xsec_token=ABg26QdWfrhU2Tt9D0PiaWLsglnkkpLkNvGbhpOU2j7oo%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g3no321tnouarn00g5n2dcdjkfu6fpnirh90",
+          "shop": "运康锅巴旗舰店"
         },
         {
           "name": "运康手抓包锅巴",
@@ -1425,7 +1580,9 @@ const POOL = {
           "cmsn": "20",
           "cat": "零食坚果",
           "scene": "零食囤货",
-          "url": "https://www.xiaohongshu.com/goods-detail/670902b58b7cdc00015e2c9a?t=1778312135816&xsec_token=ABvonb6r9_CcQvqDZHxPxktdkHfoLha5pYDkXiHHyj5zk%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/670902b58b7cdc00015e2c9a?t=1778312135816&xsec_token=ABvonb6r9_CcQvqDZHxPxktdkHfoLha5pYDkXiHHyj5zk%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g3no321ba2r4c720g5n2dcdjkfu6fsn0hrc0",
+          "shop": "运康锅巴旗舰店"
         },
         {
           "name": "运康经典88g",
@@ -1436,7 +1593,9 @@ const POOL = {
           "cmsn": "20",
           "cat": "零食坚果",
           "scene": "零食囤货",
-          "url": "https://www.xiaohongshu.com/goods-detail/69bf69f658e9630001b9fe6d?t=1778312271474&xsec_token=ABMc5oKdViz6tWqrDlJr4pM84oMapT8LNo8PwZ5WYOuGs%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/69bf69f658e9630001b9fe6d?t=1778312271474&xsec_token=ABMc5oKdViz6tWqrDlJr4pM84oMapT8LNo8PwZ5WYOuGs%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o031uhila3fjg005n2dcdjkfu6fa5hvsl0",
+          "shop": "运康锅巴旗舰店"
         }
       ]
     },
@@ -1452,7 +1611,9 @@ const POOL = {
           "cmsn": "0.22",
           "cat": "冷冻速食",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/655f5beb3edc980001a39e7e?t=1778310132326&xsec_token=ABRCXTCR-gV31BXFfDhtIWJdbd5lnJf2UDXHhorBeg1F8%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/655f5beb3edc980001a39e7e?t=1778310132326&xsec_token=ABRCXTCR-gV31BXFfDhtIWJdbd5lnJf2UDXHhorBeg1F8%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o030rqnb52kiq005oi09ehk0rtec2elaj0",
+          "shop": "福百道旗舰店"
         },
         {
           "name": "福州肉燕",
@@ -1463,7 +1624,9 @@ const POOL = {
           "cmsn": "0.22",
           "cat": "冷冻速食",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/655c3f873edc980001c21f18?t=1778310132327&xsec_token=ABr3xV6BDLoJE8mBk3Oy7_XmQ8nuDMDcThjwYJZlvEuBo%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/655c3f873edc980001c21f18?t=1778310132327&xsec_token=ABr3xV6BDLoJE8mBk3Oy7_XmQ8nuDMDcThjwYJZlvEuBo%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o030n9c643alk005oi09ehk0rteobvi99o",
+          "shop": "福百道旗舰店"
         },
         {
           "name": "茯苓薏米山药面（无盐线面）",
@@ -1474,7 +1637,9 @@ const POOL = {
           "cmsn": "0.2",
           "cat": "粮油调味",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/67f739742a334f0001cfeb0e?t=1778310132321&xsec_token=ABFudA59O8exAiDC_GilfG9mmPrEejGlr2B9Wpn6H3Q-o%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/67f739742a334f0001cfeb0e?t=1778310132321&xsec_token=ABFudA59O8exAiDC_GilfG9mmPrEejGlr2B9Wpn6H3Q-o%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o031vrrcg4k54005oi09ehk0rtela6virg",
+          "shop": "福百道旗舰店"
         }
       ]
     },
@@ -1491,7 +1656,9 @@ const POOL = {
           "cmsn": "0.2",
           "cat": "粮油调味",
           "scene": "早餐帮手",
-          "url": "https://xhslink.com/m/9FTJiLgWefZ"
+          "url": "https://xhslink.com/m/9FTJiLgWefZ",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g3no31t0hdkaml80049cfv8sslsf7n0nvao8",
+          "shop": "米曰旗舰店"
         },
         {
           "name": "紫菜包饭",
@@ -1503,7 +1670,9 @@ const POOL = {
           "cmsn": "0.2",
           "cat": "粮油调味",
           "scene": "早餐帮手",
-          "url": "https://xhslink.com/m/9CTLi87ZpyJ"
+          "url": "https://xhslink.com/m/9CTLi87ZpyJ",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o031tjjg66u7o0049cfv8sslsf776bir5o",
+          "shop": "米曰旗舰店"
         },
         {
           "name": "三角饭团",
@@ -1515,7 +1684,9 @@ const POOL = {
           "cmsn": "0.2",
           "cat": "粮油调味",
           "scene": "早餐帮手",
-          "url": "https://xhslink.com/m/8bKsxlsEg50"
+          "url": "https://xhslink.com/m/8bKsxlsEg50",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o031838mje70o0049cfv8sslsf7s0bf6kg",
+          "shop": "米曰旗舰店"
         }
       ]
     },
@@ -1532,7 +1703,9 @@ const POOL = {
           "cmsn": "0.18",
           "cat": "零食坚果",
           "scene": "零食囤货",
-          "url": "https://www.xiaohongshu.com/goods-detail/698c2db26d22e70001e75367?t=1770796287385&xsec_token=ABrVky-2V0Sb-ZjBJ5qkuraPQ8s4CE9aKbrfi370SnJ60%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/698c2db26d22e70001e75367?t=1770796287385&xsec_token=ABrVky-2V0Sb-ZjBJ5qkuraPQ8s4CE9aKbrfi370SnJ60%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o031rna66d7240g5ns9bi60886k2v17ocg",
+          "shop": "珍妮曲奇聪明小熊饼干旗舰店"
         },
         {
           "name": "四味奶油曲奇320g",
@@ -1544,7 +1717,9 @@ const POOL = {
           "cmsn": "0.18",
           "cat": "零食坚果",
           "scene": "零食囤货",
-          "url": "https://www.xiaohongshu.com/goods-detail/698c2da6b6ceb40001ff617c?t=1770794501462&xsec_token=ABRKIV-gmoSvhmYVduiowDAfZlDNKen-oBS5XIsxPaZnU%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/698c2da6b6ceb40001ff617c?t=1770794501462&xsec_token=ABRKIV-gmoSvhmYVduiowDAfZlDNKen-oBS5XIsxPaZnU%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o031rkh4q2ri2005ns9bi60886k61vmsk8",
+          "shop": "珍妮曲奇聪明小熊饼干旗舰店"
         }
       ]
     },
@@ -1562,7 +1737,9 @@ const POOL = {
           "cmsn": "0.2",
           "cat": "零食坚果",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/656ec6e58356dc000130d0d2?t=1772427903444&xsec_token=ABIx-aNFOIN4PNevUkheCx1DvYZ6s8-UtnCHqsCbfupgY%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/656ec6e58356dc000130d0d2?t=1772427903444&xsec_token=ABIx-aNFOIN4PNevUkheCx1DvYZ6s8-UtnCHqsCbfupgY%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g3no31tu3ph6s18104a03qn6f23jok4dt7a0",
+          "shop": "满滋屋食品旗舰店"
         },
         {
           "name": "满滋屋 朗姆提子夹心饼干（礼盒）",
@@ -1573,7 +1750,9 @@ const POOL = {
           "cmsn": "0.2",
           "cat": "零食坚果",
           "scene": "零食囤货",
-          "url": "https://www.xiaohongshu.com/goods-detail/673da12e4f0ec70001393e39?t=1772427903449&xsec_token=AB8FsGrTINU9WA36ifEgd0CdwWdk6mvkClZGRdCt8Yrqw%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/673da12e4f0ec70001393e39?t=1772427903449&xsec_token=AB8FsGrTINU9WA36ifEgd0CdwWdk6mvkClZGRdCt8Yrqw%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g3no322i2dq446s004a03qn6f23josq6frng",
+          "shop": "满滋屋食品旗舰店"
         }
       ]
     },
@@ -1590,7 +1769,9 @@ const POOL = {
           "cmsn": "0.15",
           "cat": "方便速食",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/697b02448a6b8a00011bf025?t=1770887432927&xsec_token=ABc6y8Bm_XLv_IHwvez_9BOuHWn_OhapW2Ff9-J14sxdk%3D&xsec_source=app_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/697b02448a6b8a00011bf025?t=1770887432927&xsec_token=ABc6y8Bm_XLv_IHwvez_9BOuHWn_OhapW2Ff9-J14sxdk%3D&xsec_source=app_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o031rsea9edi8005o4lvtng8ehjpbppieo",
+          "shop": "三兔船长"
         },
         {
           "name": "手工青饺",
@@ -1601,7 +1782,9 @@ const POOL = {
           "cmsn": "0.15",
           "cat": "方便速食",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/67dbf174d9b27200019e6b71?t=1772423678417&xsec_token=ABs8LHzJ4kyjqPs3IDxCHPalPOqfjgEgHg6ZCcobKFBwY%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/67dbf174d9b27200019e6b71?t=1772423678417&xsec_token=ABs8LHzJ4kyjqPs3IDxCHPalPOqfjgEgHg6ZCcobKFBwY%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g3no31tl7tib8nu0g5o4lvtng8ehjjhj3j5o",
+          "shop": "三兔船长"
         }
       ]
     },
@@ -1618,7 +1801,9 @@ const POOL = {
           "cmsn": "0.2",
           "cat": "方便速食",
           "scene": "零食囤货",
-          "url": "https://www.xiaohongshu.com/goods-detail/60c2f7c432353c0001abce5a?xsec_token=XB9aaQUe6l33KHcVtp3c0VUG2SC8ixpNDrTmsFAJ1byR0=&xsec_source=app_share&instation_link=xhsdiscover%3A%2F%2Fgoods_detail%2F60c2f7c432353c0001abce5a%3Ftrade_ext%3DeyJjaGFubmVsSW5mbyI6bnVsbCwiZHNUb2tlbkluZm8iOm51bGwsInNoYXJlTGluayI6Imh0dHBzOi8vd3d3LnhpYW9ob25nc2h1LmNvbS9nb29kcy1kZXRhaWwvNjBjMmY3YzQzMjM1M2MwMDAxYWJjZTVhP2FwcHVpZD02NmIwMjNmODAwMDAwMDAwMWQwMzFlZWQiLCJsaXZlSW5mbyI6bnVsbCwic2hvcEluZm8iOm51bGwsImdvb2RzTm90ZUluZm8iOm51bGwsImNoYXRJbmZvIjpudWxsLCJzZWFyY2hJbmZvIjpudWxsLCJwcmVmZXIiOm51bGx9%26rate_limit_meta%3DitemId%253D60c2f62899d8460001c60b59%26source%3D%26back_chain_id%3Dgoods_detail_share%26rn%3Dtrue&xhsshare=CopyLink&appuid=66b023f8000000001d031eed&apptime=1770964473&share_id=d14d2c617611484c8c8b27df9be70eb3"
+          "url": "https://www.xiaohongshu.com/goods-detail/60c2f7c432353c0001abce5a?xsec_token=XB9aaQUe6l33KHcVtp3c0VUG2SC8ixpNDrTmsFAJ1byR0=&xsec_source=app_share&instation_link=xhsdiscover%3A%2F%2Fgoods_detail%2F60c2f7c432353c0001abce5a%3Ftrade_ext%3DeyJjaGFubmVsSW5mbyI6bnVsbCwiZHNUb2tlbkluZm8iOm51bGwsInNoYXJlTGluayI6Imh0dHBzOi8vd3d3LnhpYW9ob25nc2h1LmNvbS9nb29kcy1kZXRhaWwvNjBjMmY3YzQzMjM1M2MwMDAxYWJjZTVhP2FwcHVpZD02NmIwMjNmODAwMDAwMDAwMWQwMzFlZWQiLCJsaXZlSW5mbyI6bnVsbCwic2hvcEluZm8iOm51bGwsImdvb2RzTm90ZUluZm8iOm51bGwsImNoYXRJbmZvIjpudWxsLCJzZWFyY2hJbmZvIjpudWxsLCJwcmVmZXIiOm51bGx9%26rate_limit_meta%3DitemId%253D60c2f62899d8460001c60b59%26source%3D%26back_chain_id%3Dgoods_detail_share%26rn%3Dtrue&xhsshare=CopyLink&appuid=66b023f8000000001d031eed&apptime=1770964473&share_id=d14d2c617611484c8c8b27df9be70eb3",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o031vua9jje2s005nmoe4t0bq074a9n838",
+          "shop": "满小饱旗舰店"
         },
         {
           "name": "满小饱松茸鸡汤米线",
@@ -1630,7 +1815,9 @@ const POOL = {
           "cmsn": "0.2",
           "cat": "方便速食",
           "scene": "零食囤货",
-          "url": "https://www.xiaohongshu.com/goods-detail/68bffc075ad63d00017794bb?xsec_token=XBBX7IFCXOrtIoMs60sBlgJ8FtV-ybOYzgyAYljRwUy3o=&xsec_source=app_share&instation_link=xhsdiscover%3A%2F%2Fgoods_detail%2F68bffc075ad63d00017794bb%3Ftrade_ext%3DeyJjaGFubmVsSW5mbyI6bnVsbCwiZHNUb2tlbkluZm8iOm51bGwsInNoYXJlTGluayI6Imh0dHBzOi8vd3d3LnhpYW9ob25nc2h1LmNvbS9nb29kcy1kZXRhaWwvNjhiZmZjMDc1YWQ2M2QwMDAxNzc5NGJiP2FwcHVpZD02NmIwMjNmODAwMDAwMDAwMWQwMzFlZWQiLCJsaXZlSW5mbyI6bnVsbCwic2hvcEluZm8iOm51bGwsImdvb2RzTm90ZUluZm8iOm51bGwsImNoYXRJbmZvIjpudWxsLCJzZWFyY2hJbmZvIjpudWxsLCJwcmVmZXIiOm51bGx9%26rate_limit_meta%3DitemId%253D68bffc075ad63d00017794b7%26source%3D%26back_chain_id%3Dgoods_detail_share%26rn%3Dtrue&xhsshare=CopyLink&appuid=66b023f8000000001d031eed&apptime=1770965636&share_id=61325fa95a5342ccb8e8a1aab192dc4b"
+          "url": "https://www.xiaohongshu.com/goods-detail/68bffc075ad63d00017794bb?xsec_token=XBBX7IFCXOrtIoMs60sBlgJ8FtV-ybOYzgyAYljRwUy3o=&xsec_source=app_share&instation_link=xhsdiscover%3A%2F%2Fgoods_detail%2F68bffc075ad63d00017794bb%3Ftrade_ext%3DeyJjaGFubmVsSW5mbyI6bnVsbCwiZHNUb2tlbkluZm8iOm51bGwsInNoYXJlTGluayI6Imh0dHBzOi8vd3d3LnhpYW9ob25nc2h1LmNvbS9nb29kcy1kZXRhaWwvNjhiZmZjMDc1YWQ2M2QwMDAxNzc5NGJiP2FwcHVpZD02NmIwMjNmODAwMDAwMDAwMWQwMzFlZWQiLCJsaXZlSW5mbyI6bnVsbCwic2hvcEluZm8iOm51bGwsImdvb2RzTm90ZUluZm8iOm51bGwsImNoYXRJbmZvIjpudWxsLCJzZWFyY2hJbmZvIjpudWxsLCJwcmVmZXIiOm51bGx9%26rate_limit_meta%3DitemId%253D68bffc075ad63d00017794b7%26source%3D%26back_chain_id%3Dgoods_detail_share%26rn%3Dtrue&xhsshare=CopyLink&appuid=66b023f8000000001d031eed&apptime=1770965636&share_id=61325fa95a5342ccb8e8a1aab192dc4b",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g3no31m74ou2d4q0g5nmoe4t0bq07mg226i0",
+          "shop": "满小饱旗舰店"
         }
       ]
     },
@@ -1647,7 +1834,9 @@ const POOL = {
           "cmsn": "0.15",
           "cat": "方便速食",
           "scene": "零食囤货",
-          "url": "https://www.xiaohongshu.com/goods-detail/689c2e3966d44d0001db6100?t=1778314459204&xsec_token=ABQcLLAx4uAM_pSjA3SnQ7AJq4wm_uV_5enAIQCateJ-g%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/689c2e3966d44d0001db6100?t=1778314459204&xsec_token=ABQcLLAx4uAM_pSjA3SnQ7AJq4wm_uV_5enAIQCateJ-g%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o031l4b8m04j6005ob3jjmgj4j0177kepg",
+          "shop": "三养食品旗舰店"
         },
         {
           "name": "三养MEP冷酷辣泡菜凉面",
@@ -1659,7 +1848,9 @@ const POOL = {
           "cmsn": "0.15",
           "cat": "方便速食",
           "scene": "零食囤货",
-          "url": "https://www.xiaohongshu.com/goods-detail/69cde014a122150001d690cd?t=1778314459204&xsec_token=ABEQFeSciqqXcqSAZQCuN-ho0eaF_YFGkUEkGpl1ptEZg%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/69cde014a122150001d690cd?t=1778314459204&xsec_token=ABEQFeSciqqXcqSAZQCuN-ho0eaF_YFGkUEkGpl1ptEZg%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o031uenhr2lhu005ob3jjmgj4j0p3kei00",
+          "shop": "三养食品旗舰店"
         }
       ]
     },
@@ -1675,7 +1866,9 @@ const POOL = {
           "cmsn": "0.15",
           "cat": "零食坚果",
           "scene": "早餐帮手",
-          "url": "https://xhslink.com/m/6oiX3Bon4ur"
+          "url": "https://xhslink.com/m/6oiX3Bon4ur",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g3no320o61slv5i0g5oge4a540st8ccfisug",
+          "shop": "卡卡业旗舰店"
         }
       ]
     },
@@ -1691,7 +1884,9 @@ const POOL = {
           "cmsn": "0.2",
           "cat": "零食坚果",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/67a6f925f4d657000113cf5f?t=1773632467765&xsec_token=ABew1g7rgFIm4gMIg6fumcdc91FNx7QCnTgisYUQDiEZ0%3D&xsec_source=app_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/67a6f925f4d657000113cf5f?t=1773632467765&xsec_token=ABew1g7rgFIm4gMIg6fumcdc91FNx7QCnTgisYUQDiEZ0%3D&xsec_source=app_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o03229fn8r172005p49h1m4mt16p6n6038",
+          "shop": "德芮面包旗舰店"
         }
       ]
     },
@@ -1708,7 +1903,9 @@ const POOL = {
           "cmsn": "15-20%",
           "cat": "方便速食",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/698992a0d5afea00018abc72?t=1770788258270&xsec_token=AByd3dEGoFBrAE6GRyzuoDUmD01cL6XVe1waZSDITjnHo%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/698992a0d5afea00018abc72?t=1770788258270&xsec_token=AByd3dEGoFBrAE6GRyzuoDUmD01cL6XVe1waZSDITjnHo%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g3no31tsru6qcgo0g5nonqds08258tqqbm4o",
+          "shop": "美好食品旗舰店"
         }
       ]
     },
@@ -1726,7 +1923,9 @@ const POOL = {
           "cmsn": "20%-25%",
           "cat": "零食坚果",
           "scene": "零食囤货",
-          "url": "https://xhslink.com/m/4UYG9haVhz9"
+          "url": "https://xhslink.com/m/4UYG9haVhz9",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o03235ics9en0005n4uuei4kn65h4ugp3g",
+          "shop": "辻利茶铺"
         }
       ]
     },
@@ -1743,7 +1942,9 @@ const POOL = {
           "cmsn": "0.25",
           "cat": "零食坚果",
           "scene": "早餐帮手",
-          "url": "https://xhslink.com/m/1j74YsK0B5A"
+          "url": "https://xhslink.com/m/1j74YsK0B5A",
+          "img": "https://sns-img-qc.xhscdn.com/material_space/0e583855-8663-4c5d-b370-af307354f48c",
+          "shop": "不苦造乐"
         }
       ]
     },
@@ -1761,7 +1962,9 @@ const POOL = {
           "cmsn": "0.2",
           "cat": "方便速食",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/6836e26870041c0001a06f98?t=1773302462125&xsec_token=AB_1SofVG_2sW4gTreB78-T20td9q5SZ-Fe0m2mgkmHOE%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/6836e26870041c0001a06f98?t=1773302462125&xsec_token=AB_1SofVG_2sW4gTreB78-T20td9q5SZ-Fe0m2mgkmHOE%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g0o0320ffe10c5c005nqqtug0bos40qhvr8g",
+          "shop": "和苑酒家食品旗舰店"
         }
       ]
     },
@@ -1777,7 +1980,9 @@ const POOL = {
           "cmsn": "0.1",
           "cat": "方便速食",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/67d4fd8052503c00019244d6?xsec_token=XBrybjGWTDX8tgrFYQJjRtMi6VssLzX-cPrkn3rSdvq_E=&xsec_source=app_share&instation_link=xhsdiscover%3A%2F%2Fgoods_detail%2F67d4fd8052503c00019244d6%3Ftrade_ext%3DeyJjaGFubmVsSW5mbyI6bnVsbCwiZHNUb2tlbkluZm8iOm51bGwsInNoYXJlTGluayI6Imh0dHBzOi8vd3d3LnhpYW9ob25nc2h1LmNvbS9nb29kcy1kZXRhaWwvNjdkNGZkODA1MjUwM2MwMDAxOTI0NGQ2P2FwcHVpZD01NzNlZWNlNTUwYzRiNDM2MjlhZmNkMGIiLCJsaXZlSW5mbyI6bnVsbCwic2hvcEluZm8iOm51bGwsImdvb2RzTm90ZUluZm8iOm51bGwsImNoYXRJbmZvIjpudWxsLCJzZWFyY2hJbmZvIjpudWxsLCJwcmVmZXIiOm51bGx9%26rate_limit_meta%3DitemId%253D67ad8b4829b9f70001b0406c%26source%3D%26rn%3Dtrue&share_id=058a73d8b7ef4f5cb0ecd2b24af577c2&share_channel=wechat"
+          "url": "https://www.xiaohongshu.com/goods-detail/67d4fd8052503c00019244d6?xsec_token=XBrybjGWTDX8tgrFYQJjRtMi6VssLzX-cPrkn3rSdvq_E=&xsec_source=app_share&instation_link=xhsdiscover%3A%2F%2Fgoods_detail%2F67d4fd8052503c00019244d6%3Ftrade_ext%3DeyJjaGFubmVsSW5mbyI6bnVsbCwiZHNUb2tlbkluZm8iOm51bGwsInNoYXJlTGluayI6Imh0dHBzOi8vd3d3LnhpYW9ob25nc2h1LmNvbS9nb29kcy1kZXRhaWwvNjdkNGZkODA1MjUwM2MwMDAxOTI0NGQ2P2FwcHVpZD01NzNlZWNlNTUwYzRiNDM2MjlhZmNkMGIiLCJsaXZlSW5mbyI6bnVsbCwic2hvcEluZm8iOm51bGwsImdvb2RzTm90ZUluZm8iOm51bGwsImNoYXRJbmZvIjpudWxsLCJzZWFyY2hJbmZvIjpudWxsLCJwcmVmZXIiOm51bGx9%26rate_limit_meta%3DitemId%253D67ad8b4829b9f70001b0406c%26source%3D%26rn%3Dtrue&share_id=058a73d8b7ef4f5cb0ecd2b24af577c2&share_channel=wechat",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/104103ng31vc52508iq76drkvenhg0000000000co5o4f8",
+          "shop": "温小张"
         }
       ]
     },
@@ -1794,7 +1999,9 @@ const POOL = {
           "cmsn": "0.35",
           "cat": "粮油调味",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/69a01ef6c9f5da0001a56c8c?t=1773381898018&xsec_token=AB8Yo5abMEzlZ918eC4GI215H5rznuHK8G-7c3dFcNIaQ%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/69a01ef6c9f5da0001a56c8c?t=1773381898018&xsec_token=AB8Yo5abMEzlZ918eC4GI215H5rznuHK8G-7c3dFcNIaQ%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g3no3230j01to740g5patu6ogmm6q4pr0940",
+          "shop": "9点9手工馄饨"
         }
       ]
     },
@@ -1811,7 +2018,9 @@ const POOL = {
           "cmsn": "0.2",
           "cat": "冷冻速食",
           "scene": "早餐帮手",
-          "url": "https://www.xiaohongshu.com/goods-detail/68a2904766d44d000119c069?t=1779348995347&xsec_token=ABKYNGonxqNXVnAI7mCIBPQOjThjJaQ-IpZM5Wr3zs998%3D&xsec_source=pc_arkselfshare"
+          "url": "https://www.xiaohongshu.com/goods-detail/68a2904766d44d000119c069?t=1779348995347&xsec_token=ABKYNGonxqNXVnAI7mCIBPQOjThjJaQ-IpZM5Wr3zs998%3D&xsec_source=pc_arkselfshare",
+          "img": "https://sns-img-qc.xhscdn.com/arkgoods/1040g3no321fhlicin00g5o5keofg8ivj1m8o170",
+          "shop": "果子和肉GOODROOT官方旗舰店"
         }
       ]
     }
@@ -1875,9 +2084,10 @@ document.getElementById('topics').innerHTML = TOPICS.map(t=>`
 function goodCard(g){
   const tag = g.url ? 'a' : 'div';
   const href = g.url ? ` href="${esc(g.url)}" target="_blank" rel="noopener"` : '';
+  const ph = `<span class="ph">${esc(g.cat||'商品')}</span>`;
   const thumb = g.img
-    ? `<img src="${esc(g.img)}" alt="" loading="lazy">`
-    : `<span class="ph">${esc((g.cat||'商品'))}</span>`;
+    ? `<img src="${esc(g.img)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.parentNode.classList.add('-noimg')">${ph}`
+    : ph;
   const cm = g.cmsn!=null&&g.cmsn!=='' ? `<span class="cmsn">佣金 ${(Number(g.cmsn)*100).toFixed(0)}%</span>` : '';
   const pt = g.priceTxt && /[^\d.]/.test(String(g.priceTxt).replace(/\s/g,''))
     ? `<div class="good-pt">到手：${esc(g.priceTxt)}</div>` : '';
@@ -1885,12 +2095,13 @@ function goodCard(g){
     ? `<span class="price">¥${esc(g.price)}${g.origPrice?`<s>¥${esc(g.origPrice)}</s>`:''}</span>` : '<span></span>';
   return `<${tag} class="good"${href}>
     <div class="good-thumb">${thumb}${cm}</div>
+    ${g.shop?`<div class="good-shop">${esc(g.shop)}</div>`:''}
     <div class="good-name">${esc(g.name)}</div>
     ${g.spec?`<div class="good-spec">${esc(g.spec)}</div>`:''}
     ${g.sell?`<div class="good-sell">${esc(g.sell)}</div>`:''}
     ${g.gift?`<div class="good-gift">赠 ${esc(g.gift)}</div>`:''}
     ${pt}
-    <div class="good-foot">${price}${g.scene?`<span class="good-stat">${esc(g.scene)}</span>`:''}</div>
+    <div class="good-foot">${price}${g.cat?`<span class="good-stat">${esc(g.cat)}</span>`:''}</div>
   </${tag}>`;
 }
 
@@ -2015,17 +2226,31 @@ document.querySelectorAll('.tab').forEach(btn=>{
       listBox.innerHTML = `<div class="no-hit"><div class="ic">🔍</div><div class="t">没有匹配的商品</div><div class="d">换个关键词，或点「清空筛选」看全部货盘。</div></div>`;
       return;
     }
-    const byShop = new Map();
-    hits.forEach(it=>{ if(!byShop.has(it.shop)) byShop.set(it.shop,[]); byShop.get(it.shop).push(it); });
-    listBox.innerHTML = [...byShop].map(([shop,items])=>`
-      <div class="solo-group">
-        <div class="solo-gh">
-          <div class="dot">${esc(shop.slice(0,1))}</div>
-          <h4>${esc(shop)}</h4>
-          <span class="cnt">${items.length} 个品</span>
+    const SCENE_META = {
+      "早餐帮手":{ic:"🍳", desc:"开学后每天早上要交卷的那一顿——快手、能囤、孩子肯吃"},
+      "零食囤货":{ic:"🎒", desc:"宿舍抽屉 / 书包夹层里的续命补给——分装、耐放、随手能拿"}
+    };
+    const order = ["早餐帮手","零食囤货"];
+    const byScene = new Map();
+    hits.forEach(it=>{ const k=it.scene||"其他"; if(!byScene.has(k)) byScene.set(k,[]); byScene.get(k).push(it); });
+    const keys = [...byScene.keys()].sort((a,b)=>{
+      const ia=order.indexOf(a), ib=order.indexOf(b);
+      return (ia<0?99:ia)-(ib<0?99:ib);
+    });
+    listBox.innerHTML = keys.map(k=>{
+      const items = byScene.get(k);
+      const meta = SCENE_META[k] || {ic:"📦", desc:""};
+      return `<div class="scene-group">
+        <div class="scene-hd">
+          <span class="scene-ic" aria-hidden="true">${meta.ic}</span>
+          <div class="scene-tt">
+            <h3>${esc(k)}<span class="scene-n">${items.length} 个品</span></h3>
+            ${meta.desc?`<p>${esc(meta.desc)}</p>`:''}
+          </div>
         </div>
         <div class="goods">${items.map(goodCard).join('')}</div>
-      </div>`).join('');
+      </div>`;
+    }).join('');
   }
   render();
 })();
