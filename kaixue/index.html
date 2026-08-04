@@ -281,6 +281,57 @@ h2{
 .solo-txt .s{font-size:11.5px; color:var(--muted); margin-top:2px}
 .solo-price{flex:none; font-size:15px; font-weight:900; color:var(--sun)}
 
+/* 专场：按钮组 */
+.show-acts{display:flex; flex-wrap:wrap; gap:9px; margin-bottom:18px}
+.act{
+  appearance:none; font-family:inherit; cursor:pointer; text-decoration:none;
+  display:inline-flex; align-items:center; gap:7px;
+  font-size:13.5px; font-weight:800; letter-spacing:-.01em;
+  padding:9px 15px; border-radius:10px; border:1px solid var(--line);
+  background:var(--paper); color:var(--ink-2); transition:all .16s;
+}
+.act:hover{border-color:var(--sun); color:var(--sun-deep); transform:translateY(-1px)}
+.act:focus-visible{outline:3px solid var(--sun); outline-offset:2px}
+.act.-home{background:var(--ink); border-color:var(--ink); color:#fff}
+.act.-home:hover{background:#24354f; color:var(--lemon)}
+.act.-deck b{color:var(--sun); font-weight:900}
+.act.-deck.is-on{background:var(--sun); border-color:var(--sun); color:#fff}
+.act.-deck.is-on b{color:#fff}
+
+/* 专场：手卡浏览器 */
+.deck{
+  margin-bottom:20px; border:1px solid var(--line); border-radius:var(--r-lg);
+  overflow:hidden; background:var(--ink);
+}
+.deck-stage{position:relative; display:grid; place-items:center; background:#111D2E; min-height:180px}
+.deck-stage img{display:block; width:100%; height:auto; max-height:74vh; object-fit:contain}
+.dk-nav{
+  position:absolute; top:50%; transform:translateY(-50%); z-index:3;
+  appearance:none; cursor:pointer; border:none; font-family:inherit;
+  width:38px; height:56px; font-size:26px; line-height:1; font-weight:700;
+  background:rgba(17,29,46,.62); color:#fff; backdrop-filter:blur(4px);
+  transition:background .16s;
+}
+.dk-nav:hover{background:var(--sun)}
+.dk-nav:focus-visible{outline:3px solid var(--lemon); outline-offset:-3px}
+.dk-nav.-prev{left:0; border-radius:0 10px 10px 0}
+.dk-nav.-next{right:0; border-radius:10px 0 0 10px}
+.deck-bar{
+  display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+  padding:10px 14px; background:var(--ink); border-top:1px solid rgba(255,255,255,.09);
+}
+.dk-pos{font-size:12.5px; color:#AFBCD1; font-weight:700; flex:none}
+.dk-pos b{color:var(--lemon); font-size:14px; font-weight:900}
+.dk-dots{display:flex; flex-wrap:wrap; gap:5px}
+.dk-dot{
+  appearance:none; border:none; cursor:pointer; padding:0;
+  width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,.26);
+  transition:all .16s;
+}
+.dk-dot:hover{background:var(--lemon)}
+.dk-dot:focus-visible{outline:2px solid var(--lemon); outline-offset:2px}
+.dk-dot.is-on{background:var(--sun); width:20px; border-radius:999px}
+
 /* 场景分组 */
 .scene-group{margin-bottom:var(--s6)}
 .scene-hd{
@@ -625,8 +676,9 @@ footer .fine{
         <ul>
           <li>社区热度：站内笔记基础表，近 90 天新发布有效笔记</li>
           <li>话题匹配为模糊匹配，含同族长尾话题</li>
-          <li>货盘信息来自「开学季精选货盘」提报表，共 31 家店 85 个品</li>
-          <li><b>页面版本 v5 · 更新于 2026-08-04 21:33 · 85 品真实商品图</b></li>
+          <li>货盘来自「开学季精选货盘」提报表，31 家店 85 个品</li>
+          <li>品牌手卡由商家提供，共 45 页</li>
+          <li><b>页面版本 v6 · 更新于 2026-08-04 21:45 · 三家专场+品牌手卡内嵌</b></li>
         </ul>
       </div>
       <div>
@@ -666,25 +718,234 @@ footer .fine{
 const POOL = {
   showcase: [
     {
-      name:"小黄象", badge:"象",
-      sub:"宿舍空气炸锅 · 一人食速食",
-      tags:["场景｜宿舍自炊","人群｜大学生","建议定位待确认"],
-      pitch:"鸡排、手抓饼、鸡翅这类「丢进空气炸锅就能吃」的半成品，正对宿舍与租房场景——开学季学生刚添置小家电，是转化窗口最集中的两周。",
-      goods:[]
+      "name": "小黄象",
+      "badge": "象",
+      "sub": "儿童早餐 · 一人食速食",
+      "home": "https://www.xiaohongshu.com/user/profile/6008f8a800000000010032b9?xsec_token=ABkPwr-yAnDD3Lajj4nFfJuMblQN52YPqNC1pwEsVDLH4%3D&xsec_source=pc_search",
+      "deck": {
+        "prefix": "xhx",
+        "pages": 28
+      },
+      "tags": [
+        "中国国家U16-U17篮球队指定产品",
+        "专注孩子早餐",
+        "空气炸锅友好"
+      ],
+      "pitch": "专注孩子早餐的食品科技公司，手抓饼、鸡排、伴翅这类空气炸锅一按就好的半成品，正对开学后早晨只有 20 分钟的场景。妈妈买给孩子、学生买给自己，两条人群线都接得住。",
+      "goods": [
+        {
+          "name": "120s香肠卷边披萨",
+          "spec": "100g/袋",
+          "price": 99.9,
+          "origPrice": 106.9,
+          "priceTxt": "99.9/8袋 79.9/6袋",
+          "sell": "馅料含量60%，采用原制马苏里拉干酪＞ / 5%，10m香肠卷边，拒绝硬边角 / 独立切角包装，一人食不浪费，120s休闲速食",
+          "cmsn": "0.2",
+          "cat": "方便速食",
+          "scene": "早餐帮手",
+          "url": "https://www.xiaohongshu.com/goods-detail/6969ebde1d37860001d44a95?t=1778320760717&xsec_token=ABobrZWaISqiaox8Bd1292fytbb6VyOlFdX7irQqBP-uo%3D&xsec_source=pc_arkselfshare",
+          "img": "img/arkgoods_1040g0o031t465b525a005o08v2k08clp7e2trt0.webp",
+          "shop": "小黄象"
+        },
+        {
+          "name": "酥脆伴翅",
+          "spec": "250g/袋",
+          "price": 69.9,
+          "origPrice": 89.9,
+          "priceTxt": "69.9/4袋",
+          "sell": "无抗好鸡肉，品质看得见，采用养殖全程不使用激素和抗生素的鸡肉 / 坚持每日新油，拒绝反复使用，不使用起酥油、棕榈油，从源头减少反式脂肪和劣质油脂负担，吃得更清爽无负担。 / 干净配料表，吃得明明白白。",
+          "cmsn": "0.2",
+          "cat": "方便速食",
+          "scene": "早餐帮手",
+          "url": "https://www.xiaohongshu.com/goods-detail/69fec63b0283e20001675092?t=1778320833098&xsec_token=ABnf1KWGGWRRi5zcn0IABnVruJ8WFMwqckztpc9JGsH8c%3D&xsec_source=pc_arkselfshare",
+          "img": "img/arkgoods_1040g3no3236up0kvn00g5o08v2k08clp3jcjpqg.webp",
+          "shop": "小黄象"
+        },
+        {
+          "name": "黄油手抓饼",
+          "spec": "1000/袋（10张）",
+          "price": 59.9,
+          "origPrice": 79.9,
+          "priceTxt": "59.9/2袋",
+          "sell": "黄油代替起酥油，0反式脂肪酸，配料表干净 / 新西兰进口安佳黄油，可以当酥皮用，解锁更所网红diy吃饭",
+          "cmsn": "0.2",
+          "cat": "方便速食",
+          "scene": "早餐帮手",
+          "url": "https://www.xiaohongshu.com/goods-detail/62c6bc11970d4e00010f33ea?t=1778321415604&xsec_token=AB4thqtfArEBmE14DyxWIN9xYezgqEPLy6bWm_RROOFtM%3D&xsec_source=pc_arkselfshare",
+          "img": "img/arkgoods_1040g0o03228upf7u6s005o08v2k08clpqcdpbao.webp",
+          "shop": "小黄象"
+        },
+        {
+          "name": "橄榄油香煎鸡排",
+          "spec": "100g/袋",
+          "price": 69.9,
+          "origPrice": 89.99,
+          "priceTxt": "69.9/10袋",
+          "sell": "只选用“无抗生素”认证的鸡肉，整肉原切，配料干净 / 低脂高蛋白无抗认证鸡肉搭配欧丽薇兰初榨橄榄油， / 自己diy减脂餐优选",
+          "cmsn": "0.2",
+          "cat": "方便速食",
+          "scene": "早餐帮手",
+          "url": "https://www.xiaohongshu.com/goods-detail/67721305966ebd0001786e72?t=1778321399209&xsec_token=ABqATnhgMNJrq-cbY4x2EJD-EzLdK9A8e8-MpDolfQI0g%3D&xsec_source=pc_arkselfshare",
+          "img": "img/arkgoods_1040g0o031qmvvp1nmu0g5o08v2k08clphi8t5lo.webp",
+          "shop": "小黄象"
+        }
+      ]
     },
     {
-      name:"锋味派", badge:"锋",
-      sub:"快手正餐 · 家庭与住校通吃",
-      tags:["场景｜快手一餐","人群｜学生+家长","建议定位待确认"],
-      pitch:"意面套装、小笼包这类主食型速食，客单更高、能撑住「一顿正经饭」的心智，适合同时打学生自己做饭和家长囤货两条线。",
-      goods:[]
+      "name": "锋味派",
+      "badge": "锋",
+      "sub": "高蛋白肉制品 · 早餐主食",
+      "home": "https://www.xiaohongshu.com/user/profile/603785fb000000000101d6f4?xsec_token=ABMXMWgbVB7DyEJBcoJZapVr8A61NZo8bca49Ieh3OSbA%3D&xsec_source=pc_search",
+      "tags": [
+        "谢霆锋自创品牌",
+        "黑猪肉原料",
+        "加热即食"
+      ],
+      "pitch": "名人背书自带话题度，黑猪肉小笼包、午餐肉、酥皮馅饼都是蒸一蒸即食的早餐主食，客单价在专场里偏高，适合做直播间的品质锚点。",
+      "goods": [
+        {
+          "name": "锋味派黑猪肉小笼包",
+          "spec": "200g（8只）/袋",
+          "price": 99.0,
+          "origPrice": 139.0,
+          "priceTxt": "99/8袋",
+          "sell": "老面发酵12h，不加酵母，划重点，我们一般自己包的包子都是加酵母的，但我们是真空和面、百道滚择，手艺师傅手工包制。筋道有弹性，皮肉分离，-38℃速冻锁鲜，保留地道传统老味道； / 刚刚上新的川味小笼包：添加成都地道火锅底",
+          "gift": "调味醋汁*4 油泼辣子*4 蒸笼纸8张",
+          "cmsn": "0.15",
+          "cat": "方便速食",
+          "scene": "早餐帮手",
+          "img": "img/arkgoods_1040g0o031odmp6jdkq005o1ngntgblnk8o32uhg.webp",
+          "shop": "锋味派"
+        },
+        {
+          "name": "锋味派盒装午餐肉",
+          "spec": "316g（8*39.5g）/盒",
+          "price": 89.0,
+          "priceTxt": "89/3盒",
+          "sell": "锋味派创始人、米其林之友谢霆锋，优选原料的诚挚之选，iSEE创新品牌百强榜（KT）； / 坚持单一肉源，只选用品质黑猪肉，不掺杂其他肉类，肉香浓郁醇厚，肉质鲜嫩紧实； / 黑猪肉含量≥90%，大块肉粒看得见，满满肉丝嚼得",
+          "cmsn": "0.15",
+          "cat": "方便速食",
+          "scene": "早餐帮手",
+          "img": "img/arkgoods_1040g3no31vqijdna2s0g5o1ngntgblnk0u97g9o.webp",
+          "shop": "锋味派"
+        },
+        {
+          "name": "锋味派酥皮馅饼",
+          "spec": "360g/盒（90g*4片）",
+          "price": 89.0,
+          "origPrice": 139.0,
+          "priceTxt": "89/4袋",
+          "sell": "皮薄酥脆，馅大肉香：馅含量≥40%，安格斯牛肉/黑猪肉在馅料中占比≥70%，河北硬粒小麦粉搭配俄罗斯进口小麦粉，8层开酥，层层酥脆，口口满足 / 单片独立包装:真正的“一室一厅”，干净卫生不怕串味，内含贴心隔膜，好吃不脏",
+          "cmsn": "0.15",
+          "cat": "方便速食",
+          "scene": "早餐帮手",
+          "img": "img/arkgoods_1040g0o031lm7asteks005o1ngntgblnkb4mul4g.webp",
+          "shop": "锋味派"
+        }
+      ]
     },
     {
-      name:"Mamiya", badge:"M",
-      sub:"早餐健康 · 高蛋白轻负担",
-      tags:["场景｜早八早餐","人群｜身材管理","建议定位待确认"],
-      pitch:"吐司、里脊肉串主打「早上来得及、吃了不心虚」，承接开学后重启的作息与身材管理需求，复购基础扎实。",
-      goods:[]
+      "name": "Mamiya",
+      "badge": "M",
+      "sub": "健康早餐 · 吐司酱料",
+      "home": "https://www.xiaohongshu.com/user/profile/62d8ddcd0000000002001946?xsec_token=ABVSdLwnleCvXejetwE8jrwprQ1gCZCyn23cqWLku-qcE%3D&xsec_source=pc_search",
+      "deck": {
+        "prefix": "mmy",
+        "pages": 17
+      },
+      "tags": [
+        "A2奶配方",
+        "0反式脂肪",
+        "早餐一站式"
+      ],
+      "pitch": "吐司 + 果酱 + 肉夹馍 + 馅饼，一家就能配齐一周早餐，19.9 起的价格带最好起量，是专场里承担走量任务的品牌。",
+      "goods": [
+        {
+          "name": "牛乳黄油吐司/超软全麦吐司",
+          "spec": "260g/1盒（5片）",
+          "price": 19.9,
+          "origPrice": 29.9,
+          "priceTxt": "19.9/2盒",
+          "sell": "纯牛奶和面不加一滴水 / 极简配料表，不额外添加白砂糖 / 特别添加A2奶，呵护肠胃",
+          "cmsn": "0.2",
+          "cat": "烘焙糕点",
+          "scene": "早餐帮手",
+          "url": "https://www.xiaohongshu.com/goods-detail/65810432d71fa50001cf9688?t=1778309522511&xsec_token=ABNXoOJ3bxll8CAYQdNHuRfvRLRNfS3s-9l4qBYaSTxmk%3D&xsec_source=pc_arkselfshare",
+          "img": "img/arkgoods_1040g0o0316fil70ugo005omorn6gg6a60ukpmko.webp",
+          "shop": "Mamiya"
+        },
+        {
+          "name": "益生元烤鲜奶脆脆",
+          "spec": "120g/袋",
+          "price": 29.9,
+          "origPrice": 39.9,
+          "priceTxt": "29.9/1袋",
+          "sell": "十斤鲜奶浓缩一斤鲜奶脆脆 / 极简配料表，低聚果糖代替白砂糖 / 高钙高蛋白，一口酥脆，随吃随取",
+          "cmsn": "0.2",
+          "cat": "零食坚果",
+          "scene": "早餐帮手",
+          "url": "https://www.xiaohongshu.com/goods-detail/67dec0d329b9f70001f214c9?t=1778309470934&xsec_token=ABXtx55aGCjgeuwMO8wyIBtexQ5OI-8H36sk2TfDAqEo8%3D&xsec_source=pc_arkselfshare",
+          "img": "img/arkgoods_1040g0o031ouumvregu005omorn6gg6a60i5rr1o.webp",
+          "shop": "Mamiya"
+        },
+        {
+          "name": "花生酱全家福",
+          "spec": "100g/1罐 4罐/组",
+          "price": 29.9,
+          "origPrice": 39.9,
+          "priceTxt": "29.9/4罐",
+          "sell": "名字就是配料表，超干净 / 一周一罐，新鲜度满分 / 原料优秀，选自世界各地的优质原材料",
+          "cmsn": "0.2",
+          "cat": "粮油调味",
+          "scene": "早餐帮手",
+          "url": "https://www.xiaohongshu.com/goods-detail/68ea2a0cc753610001cfc4cb?t=1778309522516&xsec_token=ABMnoUqYUHF2C56tIYHu8HNBX73YU6x5cry9Qz8iPrFeQ%3D&xsec_source=pc_arkselfshare",
+          "img": "img/arkgoods_1040g3no31s04gmi73s005omorn6gg6a6uh292vg.webp",
+          "shop": "Mamiya"
+        },
+        {
+          "name": "夏日鲜果果酱集",
+          "spec": "100g/1罐 4罐/组",
+          "price": 39.9,
+          "origPrice": 49.9,
+          "priceTxt": "39.9/4罐",
+          "sell": "一周一口味，适量不浪费 / 配料表干净，纯鲜果熬煮 / 夏日百搭搭子，拌酸奶/兑气泡水/抹吐司/冻冰棍",
+          "gift": "加赠牛乳吐司*1盒",
+          "cmsn": "0.2",
+          "cat": "粮油调味",
+          "scene": "早餐帮手",
+          "url": "https://www.xiaohongshu.com/goods-detail/69fbfe67213e270001ff8f1d?t=1778309486344&xsec_token=AB-6l0eVgQ9UcRsowG4PWFZFhQ_tg3N-oaA9ANWi-euR0%3D&xsec_source=pc_arkselfshare",
+          "img": "img/arkgoods_1040g0o031vg6aj9b3m005omorn6gg6a6it1ag58.webp",
+          "shop": "Mamiya"
+        },
+        {
+          "name": "酥脆肉夹馍",
+          "spec": "140g/个",
+          "price": 49.9,
+          "origPrice": 59.9,
+          "priceTxt": "49.9/4个 69.9/8个",
+          "sell": "陕西老潼关风味，千层丝丝起酥，一口酥脆 / 腊汁慢熬猪腿肉，四肥六瘦，口感刚刚好 / 独立包装，不用解冻，空气炸锅美食",
+          "cmsn": "0.2",
+          "cat": "冷冻速食",
+          "scene": "早餐帮手",
+          "url": "https://www.xiaohongshu.com/goods-detail/69faa1876bdc380001249c47?t=1778309486347&xsec_token=ABukxHlJfqhOtDxrX-dxviZYN1Fp3tUSBcppkE5itqCHY%3D&xsec_source=pc_arkselfshare",
+          "img": "img/arkgoods_1040g3no31vro21huk80g5omorn6gg6a6qnfogj8.webp",
+          "shop": "Mamiya"
+        },
+        {
+          "name": "安格斯牛肉馅饼",
+          "spec": "100g/个",
+          "price": 49.9,
+          "origPrice": 59.9,
+          "priceTxt": "49.9/4个 69.9/8个",
+          "sell": "安格斯牛肉排配料表第一，安格斯牛肉的完美肉感，皮薄馅大 / 配料表干净，都是厨房常见调味料 / 独立包装，不用解冻，空气炸锅美食",
+          "cmsn": "0.2",
+          "cat": "冷冻速食",
+          "scene": "早餐帮手",
+          "url": "https://www.xiaohongshu.com/goods-detail/69faa0f681bc01000159f03b?t=1778309486347&xsec_token=ABQqS_oKx4h5S11osqP8Xw7xaYyNLwkEr56HxbfxFOOB8%3D&xsec_source=pc_arkselfshare",
+          "img": "img/arkgoods_1040g3no31vrnopcu540g5omorn6gg6a6cj1q4i0.webp",
+          "shop": "Mamiya"
+        }
+      ]
     }
   ],
   solo: [
@@ -2121,27 +2382,72 @@ document.querySelectorAll('.tab').forEach(btn=>{
 /* ── 主推专场 ── */
 (function(){
   const box = document.getElementById('show-list');
-  box.innerHTML = POOL.showcase.map(s=>`
+  box.innerHTML = POOL.showcase.map((sh,idx)=>`
     <article class="show-card">
       <div class="show-hd">
-        <div class="show-badge">${esc(s.badge||s.name.slice(0,1))}</div>
+        <div class="show-badge">${esc(sh.badge||sh.name.slice(0,1))}</div>
         <div class="show-tt">
-          <h3>${esc(s.name)}</h3>
-          ${s.sub?`<div class="sub">${esc(s.sub)}</div>`:''}
+          <h3>${esc(sh.name)}</h3>
+          ${sh.sub?`<div class="sub">${esc(sh.sub)}</div>`:''}
         </div>
-        <div class="show-tags">${(s.tags||[]).map((t,i)=>{
+        <div class="show-tags">${(sh.tags||[]).map((t,i)=>{
           const cls = /待确认|待补充/.test(t) ? '-todo' : (i===0?'-hot':i===1?'-mint':'');
           return `<span class="tag ${cls}">${esc(t)}</span>`;
         }).join('')}</div>
       </div>
       <div class="show-body">
-        ${s.pitch?`<p class="show-pitch">${esc(s.pitch)}</p>`:''}
-        ${(s.goods&&s.goods.length)
-          ? `<div class="goods">${s.goods.map(goodCard).join('')}</div>`
-          : `<div class="empty"><div class="ic">🧺</div><div class="t">${esc(s.name)} 货盘待填充</div><div class="d">把商品名、价格、卖点、链接整理好发我，会直接填进这个位置。</div></div>`}
+        ${sh.pitch?`<p class="show-pitch">${esc(sh.pitch)}</p>`:''}
+        <div class="show-acts">
+          ${sh.home?`<a class="act -home" href="${esc(sh.home)}" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>
+            品牌主页</a>`:''}
+          ${sh.deck?`<button class="act -deck" type="button" data-deck="${idx}">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>
+            品牌手卡 <b>${sh.deck.pages}</b> 页</button>`:''}
+        </div>
+        ${sh.deck?`<div class="deck" id="deck-${idx}" hidden>
+          <div class="deck-stage">
+            <button class="dk-nav -prev" type="button" data-dk="${idx}" data-step="-1" aria-label="上一页">‹</button>
+            <img id="dkimg-${idx}" src="deck/${esc(sh.deck.prefix)}_01.webp" alt="${esc(sh.name)}品牌手卡 第1页" loading="lazy">
+            <button class="dk-nav -next" type="button" data-dk="${idx}" data-step="1" aria-label="下一页">›</button>
+          </div>
+          <div class="deck-bar">
+            <span class="dk-pos"><b id="dkn-${idx}">1</b> / ${sh.deck.pages}</span>
+            <div class="dk-dots" id="dkdots-${idx}"></div>
+          </div>
+        </div>`:''}
+        ${(sh.goods&&sh.goods.length)
+          ? `<div class="goods">${sh.goods.map(goodCard).join('')}</div>`
+          : `<div class="empty"><div class="ic">🧺</div><div class="t">${esc(sh.name)} 货盘待填充</div><div class="d">把商品名、价格、卖点、链接整理好发我，会直接填进这个位置。</div></div>`}
       </div>
     </article>`).join('');
   document.getElementById('n-show').textContent = POOL.showcase.length;
+
+  // 手卡交互
+  const cur = {};
+  POOL.showcase.forEach((sh,idx)=>{
+    if(!sh.deck) return;
+    cur[idx]=1;
+    const dots=document.getElementById('dkdots-'+idx);
+    dots.innerHTML = Array.from({length:sh.deck.pages},(_,i)=>
+      `<button class="dk-dot${i===0?' is-on':''}" type="button" data-dk="${idx}" data-go="${i+1}" aria-label="第${i+1}页"></button>`).join('');
+  });
+  function go(idx,n){
+    const sh=POOL.showcase[idx], max=sh.deck.pages;
+    n=Math.min(Math.max(n,1),max); cur[idx]=n;
+    document.getElementById('dkimg-'+idx).src=`deck/${sh.deck.prefix}_${String(n).padStart(2,'0')}.webp`;
+    document.getElementById('dkn-'+idx).textContent=n;
+    document.querySelectorAll(`.dk-dot[data-dk="${idx}"]`).forEach((d,i)=>d.classList.toggle('is-on',i===n-1));
+  }
+  document.querySelectorAll('.act.-deck').forEach(b=>b.addEventListener('click',()=>{
+    const i=b.dataset.deck, box=document.getElementById('deck-'+i);
+    box.hidden=!box.hidden; b.classList.toggle('is-on',!box.hidden);
+  }));
+  document.querySelectorAll('.dk-nav').forEach(b=>b.addEventListener('click',()=>
+    go(+b.dataset.dk, cur[+b.dataset.dk]+ +b.dataset.step)));
+  document.addEventListener('click',e=>{
+    const d=e.target.closest('.dk-dot'); if(d) go(+d.dataset.dk, +d.dataset.go);
+  });
 })();
 
 /* ── 单坑好品：筛选 + 分组 ── */
