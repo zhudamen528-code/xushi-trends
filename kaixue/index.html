@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>开学季专项货盘 · 休食</title>
+<meta name="description" content="2026 开学季专项货盘 —— 主推专场 × 单坑好品">
+<style>
+:root{
+  --sun:#FF6B35;      /* 骄阳橘：主强调 */
+  --sun-deep:#E8551F;
+  --mint:#00B8A9;     /* 冰薄荷：次强调 */
+  --mint-deep:#00907F;
+  --ink:#132644;      /* 墨板蓝 */
+  --ink-2:#2C3E5C;
+  --sand:#FFF6EC;     /* 晒白沙 */
+  --sand-2:#FFEEDD;
+  --paper:#FFFFFF;
+  --lemon:#FFC93C;    /* 柠檬黄：胶带/荧光 */
+  --muted:#7A8699;
+  --line:#EADFD2;
+
+  --s1:4px; --s2:8px; --s3:12px; --s4:20px; --s5:32px; --s6:56px; --s7:88px;
+  --r:14px; --r-lg:20px;
+  --shadow-paper:0 1px 2px rgba(19,38,68,.06), 0 8px 24px -12px rgba(19,38,68,.18);
+  --shadow-lift:0 2px 4px rgba(19,38,68,.08), 0 18px 40px -16px rgba(19,38,68,.28);
+  --font:-apple-system,BlinkMacSystemFont,"PingFang SC","HarmonyOS Sans SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; font-family:var(--font); color:var(--ink);
+  background:var(--sand); line-height:1.75; font-size:16px;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+.wrap{width:min(1120px,92vw); margin-inline:auto}
+.num{font-variant-numeric:tabular-nums}
+
+/* ── 功能字（标签 / 编号 / 单位） ── */
+.util{
+  font-size:11px; font-weight:700; letter-spacing:.12em;
+  text-transform:uppercase; color:var(--muted);
+}
+
+/* ═══ HERO ═══ */
+.hero{
+  position:relative; overflow:hidden;
+  background:
+    radial-gradient(120% 90% at 88% -10%, #FFD9A8 0%, rgba(255,217,168,0) 58%),
+    radial-gradient(90% 70% at 4% 110%, #BFF0EA 0%, rgba(191,240,234,0) 60%),
+    var(--sand);
+  padding:clamp(48px,8vw,96px) 0 clamp(56px,9vw,104px);
+  border-bottom:1px solid var(--line);
+}
+/* 午后斜射的光 */
+.hero::after{
+  content:""; position:absolute; inset:auto 0 -1px 0; height:64px;
+  background:var(--sand);
+  clip-path:polygon(0 62%,100% 0,100% 100%,0 100%);
+}
+.hero-sun{
+  position:absolute; top:-90px; right:-60px; width:320px; height:320px;
+  border-radius:50%; background:radial-gradient(circle,#FFB067 0%,rgba(255,176,103,.35) 45%,rgba(255,176,103,0) 70%);
+  pointer-events:none;
+}
+.hero-inner{position:relative; z-index:2}
+.eyebrow{
+  display:inline-flex; align-items:center; gap:10px;
+  background:var(--ink); color:#fff; padding:7px 16px 7px 12px;
+  border-radius:999px; font-size:12px; font-weight:700; letter-spacing:.08em;
+  margin-bottom:var(--s4);
+}
+.eyebrow b{color:var(--lemon); font-weight:800}
+h1.title{
+  margin:0 0 var(--s4); font-weight:900; letter-spacing:-.03em; line-height:1.06;
+  font-size:clamp(38px,7.4vw,74px);
+}
+h1.title .hl{
+  position:relative; color:var(--sun); white-space:nowrap;
+}
+h1.title .hl::after{
+  content:""; position:absolute; left:-2px; right:-2px; bottom:.08em; height:.28em;
+  background:var(--lemon); opacity:.5; z-index:-1; border-radius:3px;
+}
+.lede{
+  max-width:44em; font-size:clamp(16px,2.3vw,19px); color:var(--ink-2);
+  margin:0 0 var(--s5);
+}
+.lede strong{color:var(--sun-deep); font-weight:800}
+
+.hero-meta{display:flex; flex-wrap:wrap; gap:var(--s3) var(--s5); align-items:flex-end}
+.metric{display:flex; flex-direction:column; gap:2px}
+.metric .v{font-size:clamp(24px,4vw,34px); font-weight:900; letter-spacing:-.02em; line-height:1.1}
+.metric .v small{font-size:.5em; font-weight:700; margin-left:3px; color:var(--muted)}
+.metric .k{font-size:12px; font-weight:600; color:var(--muted); letter-spacing:.04em}
+.metric.-sun .v{color:var(--sun)}
+.metric.-mint .v{color:var(--mint-deep)}
+.metric.-ink .v{color:var(--ink)}
+.divider-v{width:1px; align-self:stretch; background:var(--line); margin:4px 0}
+
+/* ═══ 通用章节 ═══ */
+section{padding:clamp(48px,7vw,var(--s7)) 0}
+.sec-head{margin-bottom:var(--s5); max-width:52em}
+.sec-no{
+  display:inline-block; font-size:12px; font-weight:800; letter-spacing:.14em;
+  color:var(--sun); border:1.5px solid currentColor; border-radius:999px;
+  padding:2px 11px; margin-bottom:var(--s3);
+}
+h2{
+  margin:0 0 10px; font-size:clamp(24px,4.2vw,36px); font-weight:900;
+  letter-spacing:-.02em; line-height:1.2;
+}
+.sec-sub{margin:0; color:var(--muted); font-size:15px}
+
+/* ═══ 01 · 为什么现在做 ═══ */
+.why{background:var(--paper); border-block:1px solid var(--line)}
+.why-verdict{
+  background:var(--ink); color:#fff; border-radius:var(--r-lg);
+  padding:clamp(22px,3.4vw,34px); margin-bottom:var(--s5);
+  position:relative; overflow:hidden;
+}
+.why-verdict::before{
+  content:""; position:absolute; top:0; left:0; width:5px; height:100%;
+  background:linear-gradient(180deg,var(--sun),var(--lemon));
+}
+.why-verdict p{
+  margin:0; font-size:clamp(17px,2.6vw,23px); font-weight:700;
+  line-height:1.62; letter-spacing:-.01em;
+}
+.why-verdict .em{color:var(--lemon)}
+.why-verdict .em-m{color:#5FE3D6}
+
+.bars{display:grid; gap:14px}
+.bar-row{display:grid; grid-template-columns:7.2em 1fr 5.4em; align-items:center; gap:14px}
+.bar-row .lb{font-size:14px; font-weight:700; text-align:right; letter-spacing:-.01em}
+.bar-track{height:26px; background:var(--sand-2); border-radius:6px; overflow:hidden}
+.bar-fill{
+  height:100%; border-radius:6px;
+}
+.bar-fill.-sun{background:linear-gradient(90deg,var(--sun),#FF9B6A)}
+.bar-fill.-mint{background:linear-gradient(90deg,var(--mint),#54D6C8)}
+.bar-fill.-ink{background:linear-gradient(90deg,var(--ink-2),#5A7196)}
+.bar-row .vl{font-size:14px; font-weight:800; color:var(--ink); text-align:right}
+.bar-row .vl small{font-weight:600; color:var(--muted); font-size:11px; margin-left:2px}
+.bars-note{margin:var(--s4) 0 0; font-size:12.5px; color:var(--muted)}
+
+.topics{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:12px; margin-top:var(--s5);
+}
+.topic{
+  background:var(--sand); border:1px solid var(--line); border-radius:var(--r);
+  padding:14px 16px;
+}
+.topic .t{font-weight:800; font-size:15px; color:var(--ink); letter-spacing:-.01em}
+.topic .d{font-size:12.5px; color:var(--muted); margin-top:3px}
+
+/* ═══ 02 · 主推专场 ═══ */
+.show{position:relative}
+.show-card{
+  background:var(--paper); border:1px solid var(--line); border-radius:var(--r-lg);
+  box-shadow:var(--shadow-paper); overflow:hidden; margin-bottom:var(--s5);
+}
+.show-hd{
+  display:flex; flex-wrap:wrap; align-items:center; gap:14px;
+  padding:20px clamp(18px,3vw,28px);
+  border-bottom:1px solid var(--line);
+  background:linear-gradient(100deg,var(--sand) 0%,var(--paper) 62%);
+}
+.show-badge{
+  flex:none; width:44px; height:44px; border-radius:12px;
+  display:grid; place-items:center; color:#fff; font-weight:900; font-size:17px;
+  background:var(--ink); box-shadow:0 4px 12px -4px rgba(19,38,68,.5);
+}
+.show-card:nth-of-type(1) .show-badge{background:linear-gradient(140deg,var(--sun),#FF9558)}
+.show-card:nth-of-type(2) .show-badge{background:linear-gradient(140deg,var(--mint),#3FD6C6)}
+.show-card:nth-of-type(3) .show-badge{background:linear-gradient(140deg,#7A5CE0,#A78BFA)}
+.show-tt{flex:1 1 200px; min-width:0}
+.show-tt h3{margin:0; font-size:clamp(19px,3vw,25px); font-weight:900; letter-spacing:-.02em}
+.show-tt .sub{font-size:13px; color:var(--muted); margin-top:1px}
+.show-tags{display:flex; flex-wrap:wrap; gap:6px}
+.tag{
+  font-size:11.5px; font-weight:700; letter-spacing:.02em;
+  padding:4px 10px; border-radius:999px;
+  background:var(--sand-2); color:var(--ink-2); border:1px solid var(--line);
+}
+.tag.-hot{background:#FFE9DF; color:var(--sun-deep); border-color:#FFCFB8}
+.tag.-mint{background:#DFF7F4; color:var(--mint-deep); border-color:#B6EBE4}
+.tag.-todo{background:transparent; color:var(--muted); border-style:dashed}
+.show-body{padding:clamp(18px,3vw,28px)}
+.show-pitch{
+  margin:0 0 var(--s4); font-size:15px; color:var(--ink-2);
+  padding-left:14px; border-left:3px solid var(--lemon);
+}
+
+/* ── 商品网格 ── */
+.goods{display:grid; grid-template-columns:repeat(auto-fill,minmax(215px,1fr)); gap:16px}
+.good{
+  position:relative; background:var(--paper);
+  border:1px solid var(--line); border-radius:var(--r);
+  padding:16px 15px 14px; display:flex; flex-direction:column; gap:9px;
+  box-shadow:var(--shadow-paper);
+  transition:transform .22s cubic-bezier(.22,1,.36,1), box-shadow .22s;
+  text-decoration:none; color:inherit;
+}
+/* 储物柜胶带 */
+.good::before{
+  content:""; position:absolute; top:-7px; left:50%;
+  width:56px; height:16px; transform:translateX(-50%) rotate(-2.2deg);
+  background:var(--lemon); opacity:.72; border-radius:2px;
+  box-shadow:0 1px 3px rgba(19,38,68,.14);
+}
+.good:hover,.good:focus-visible{transform:translateY(-4px); box-shadow:var(--shadow-lift)}
+.good:focus-visible{outline:3px solid var(--sun); outline-offset:3px}
+.good-thumb{
+  aspect-ratio:1/1; border-radius:10px; background:var(--sand-2);
+  display:grid; place-items:center; overflow:hidden; margin-top:4px;
+}
+.good-thumb img{width:100%; height:100%; object-fit:cover; display:block}
+.good-thumb .ph{font-size:11px; color:#C3B4A3; font-weight:700; letter-spacing:.06em}
+.good-name{
+  font-size:14.5px; font-weight:700; line-height:1.45; letter-spacing:-.01em;
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+}
+.good-sell{
+  font-size:12.5px; color:var(--muted); line-height:1.5;
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+}
+.good-foot{
+  margin-top:auto; padding-top:9px; border-top:1px dashed var(--line);
+  display:flex; align-items:baseline; justify-content:space-between; gap:8px;
+}
+.price{font-size:19px; font-weight:900; color:var(--sun); letter-spacing:-.02em}
+.price s{font-size:12px; font-weight:600; color:#BDC5D1; margin-left:5px}
+.good-stat{font-size:11.5px; color:var(--muted); font-weight:600}
+
+/* ═══ 03 · 单坑商家 ═══ */
+.solo{background:var(--paper); border-block:1px solid var(--line)}
+.solo-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(268px,1fr)); gap:18px}
+.solo-card{
+  background:var(--sand); border:1px solid var(--line); border-radius:var(--r-lg);
+  padding:18px; display:flex; flex-direction:column; gap:13px;
+}
+.solo-hd{display:flex; align-items:center; gap:10px}
+.solo-dot{
+  flex:none; width:34px; height:34px; border-radius:10px; display:grid; place-items:center;
+  background:var(--ink); color:#fff; font-weight:900; font-size:14px;
+}
+.solo-hd h4{margin:0; font-size:16.5px; font-weight:900; letter-spacing:-.01em; flex:1; min-width:0}
+.solo-hd .cat{font-size:11.5px; color:var(--muted); font-weight:600}
+.solo-items{display:flex; flex-direction:column; gap:9px}
+.solo-item{
+  display:flex; gap:11px; align-items:center;
+  background:var(--paper); border:1px solid var(--line); border-radius:11px;
+  padding:9px 11px; text-decoration:none; color:inherit;
+  transition:border-color .18s, transform .18s;
+}
+.solo-item:hover{border-color:var(--sun); transform:translateX(2px)}
+.solo-item:focus-visible{outline:3px solid var(--sun); outline-offset:2px}
+.solo-thumb{
+  flex:none; width:46px; height:46px; border-radius:8px; background:var(--sand-2);
+  display:grid; place-items:center; overflow:hidden;
+}
+.solo-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.solo-thumb .ph{font-size:9px; color:#C3B4A3; font-weight:700}
+.solo-txt{flex:1; min-width:0}
+.solo-txt .n{
+  font-size:13.5px; font-weight:700; line-height:1.4;
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+}
+.solo-txt .s{font-size:11.5px; color:var(--muted); margin-top:2px}
+.solo-price{flex:none; font-size:15px; font-weight:900; color:var(--sun)}
+
+/* ═══ 空态 ═══ */
+.empty{
+  border:2px dashed var(--line); border-radius:var(--r-lg);
+  padding:clamp(28px,5vw,48px); text-align:center; background:var(--sand);
+}
+.empty .ic{font-size:30px; line-height:1; margin-bottom:10px}
+.empty .t{font-weight:800; font-size:16px; margin-bottom:5px}
+.empty .d{font-size:13.5px; color:var(--muted); max-width:30em; margin-inline:auto}
+
+/* ═══ 页脚 ═══ */
+footer{
+  background:var(--ink); color:#AFBCD1; padding:var(--s6) 0 var(--s5);
+  font-size:13px;
+}
+footer h5{margin:0 0 10px; color:#fff; font-size:15px; font-weight:800; letter-spacing:-.01em}
+.foot-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:var(--s4) var(--s5)}
+footer ul{margin:0; padding-left:1.05em}
+footer li{margin-bottom:5px}
+footer .fine{
+  margin-top:var(--s5); padding-top:var(--s4); border-top:1px solid rgba(255,255,255,.13);
+  font-size:12px; color:#8494AC;
+}
+
+/* ═══ 响应式（按内容断点） ═══ */
+@media (max-width:900px){
+  .bar-row{grid-template-columns:5.8em 1fr 4.6em; gap:10px}
+  .bar-row .lb{font-size:13px}
+}
+@media (max-width:620px){
+  body{font-size:15px}
+  .hero-meta{gap:var(--s4)}
+  .divider-v{display:none}
+  .metric{flex:1 1 40%}
+  .bar-row{grid-template-columns:1fr auto; grid-template-areas:"lb vl" "bar bar"; gap:4px 10px; row-gap:5px}
+  .bar-row .lb{grid-area:lb; text-align:left; font-size:14px}
+  .bar-row .vl{grid-area:vl}
+  .bar-track{grid-area:bar; height:14px}
+  .goods{grid-template-columns:1fr 1fr; gap:12px}
+  .good{padding:13px 12px 12px}
+  .good-name{font-size:13.5px}
+  .price{font-size:17px}
+  .show-hd{padding:16px}
+  .show-body{padding:16px}
+  .solo-grid{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important; transition:none!important}
+  .bar-fill{transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════ HERO ═══════════ -->
+<header class="hero">
+  <div class="hero-sun" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <div class="eyebrow">☀️ 休食行业 · <b>开学季专项</b></div>
+    <h1 class="title">暑气还没退，<br><span class="hl">书包已经打包好了</span></h1>
+    <p class="lede">
+      8 月中到 9 月初是全年少有的<strong>「场景确定 + 人群集中 + 需求刚性」</strong>三重叠加窗口：
+      宿舍要囤、早八要垫、神兽要喂。这一页汇总本次开学季<strong>主推专场货盘</strong>与<strong>单坑好品</strong>，可直接对接。
+    </p>
+    <div class="hero-meta">
+      <div class="metric -sun">
+        <span class="v num" data-count="4063213">406.3<small>万</small></span>
+        <span class="k">「大学生」近 90 天站内笔记</span>
+      </div>
+      <div class="divider-v" aria-hidden="true"></div>
+      <div class="metric -mint">
+        <span class="v num">121.7<small>万</small></span>
+        <span class="k">「宿舍」相关笔记</span>
+      </div>
+      <div class="divider-v" aria-hidden="true"></div>
+      <div class="metric -ink">
+        <span class="v num" id="m-shops">3<small>+N</small></span>
+        <span class="k">专场商家 + 单坑商家</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ═══════════ 01 为什么现在做 ═══════════ -->
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-no">01 / 时机</span>
+      <h2>为什么这个节点必须做开学季</h2>
+      <p class="sec-sub">结论来自站内社区内容的真实存量，不是节日日历上的一个格子。</p>
+    </div>
+
+    <div class="why-verdict">
+      <p>
+        开学不是一个「节日」，而是一次<span class="em">生活方式的集体重启</span>——
+        几千万学生和家长在同一周里重新决定「每天吃什么」。
+        站内围绕这件事的讨论早就常年在跑：<span class="em-m">大学生 406 万篇、学生党 196 万篇、宿舍 122 万篇</span>，
+        而「开学」本身近 90 天有 <span class="em">54 万篇</span>。
+        我们要做的不是造需求，是<span class="em">在需求集中爆发的两周里，把货摆到那条内容河的岸边</span>。
+      </p>
+    </div>
+
+    <div class="bars" id="bars" role="img" aria-label="开学季相关话题近90天站内笔记量对比条形图"></div>
+    <p class="bars-note">
+      口径：站内笔记基础表，近 90 天新发布且有效的笔记，按话题名模糊匹配统计（含同族长尾话题）。
+      数据时间：截至 2026-08-03。
+    </p>
+
+    <div class="topics" id="topics"></div>
+  </div>
+</section>
+
+<!-- ═══════════ 02 主推专场 ═══════════ -->
+<section class="show" id="show">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-no">02 / 主推</span>
+      <h2>主推专场货盘</h2>
+      <p class="sec-sub">三家开学季重点合作商家，各自锁定一条清晰的场景线。</p>
+    </div>
+    <div id="show-list"></div>
+  </div>
+</section>
+
+<!-- ═══════════ 03 单坑商家 ═══════════ -->
+<section class="solo" id="solo">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-no">03 / 补位</span>
+      <h2>单坑商家好品</h2>
+      <p class="sec-sub">零散坑位，按品直接看，适合灵活排期与内容搭配。</p>
+    </div>
+    <div id="solo-list"></div>
+  </div>
+</section>
+</main>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h5>数据口径</h5>
+        <ul>
+          <li>社区热度：站内笔记基础表，近 90 天新发布有效笔记</li>
+          <li>话题匹配为模糊匹配，含同族长尾话题</li>
+          <li>货盘信息由行业侧整理提供</li>
+        </ul>
+      </div>
+      <div>
+        <h5>使用说明</h5>
+        <ul>
+          <li>点击商品卡片可跳转商品详情</li>
+          <li>手机 / 电脑 / 内外网均可直接打开</li>
+          <li>货盘持续更新，以本页最新版本为准</li>
+        </ul>
+      </div>
+      <div>
+        <h5>专项周期</h5>
+        <ul>
+          <li>预热：8 月中旬</li>
+          <li>爆发：8 月下旬 — 9 月初</li>
+          <li>延续：9 月中旬（返校适应期）</li>
+        </ul>
+      </div>
+    </div>
+    <p class="fine">小红书电商 · 休食行业 开学季专项货盘 · 内部使用</p>
+  </div>
+</footer>
+
+<script>
+/* ══════════════════════════════════════════════════════════
+   货盘数据 —— AM 整理好后只需替换 POOL 里的内容
+   ══════════════════════════════════════════════════════════
+   showcase[] 主推专场：
+     { name, sub, badge, tags[], pitch, goods[] }
+   goods[] 商品：
+     { name, sell, price, origPrice, stat, url, img }
+     price/origPrice/stat/url/img 都可省略
+   solo[] 单坑商家：
+     { name, cat, items[] }
+   items[] 同 goods 字段
+   ══════════════════════════════════════════════════════════ */
+const POOL = {
+  showcase: [
+    {
+      name:"小黄象", badge:"象",
+      sub:"宿舍空气炸锅 · 一人食速食",
+      tags:["场景｜宿舍自炊","人群｜大学生","建议定位待确认"],
+      pitch:"鸡排、手抓饼、鸡翅这类「丢进空气炸锅就能吃」的半成品，正对宿舍与租房场景——开学季学生刚添置小家电，是转化窗口最集中的两周。",
+      goods:[]
+    },
+    {
+      name:"锋味派", badge:"锋",
+      sub:"快手正餐 · 家庭与住校通吃",
+      tags:["场景｜快手一餐","人群｜学生+家长","建议定位待确认"],
+      pitch:"意面套装、小笼包这类主食型速食，客单更高、能撑住「一顿正经饭」的心智，适合同时打学生自己做饭和家长囤货两条线。",
+      goods:[]
+    },
+    {
+      name:"Mamiya", badge:"M",
+      sub:"早餐健康 · 高蛋白轻负担",
+      tags:["场景｜早八早餐","人群｜身材管理","建议定位待确认"],
+      pitch:"吐司、里脊肉串主打「早上来得及、吃了不心虚」，承接开学后重启的作息与身材管理需求，复购基础扎实。",
+      goods:[]
+    }
+  ],
+  solo: []
+};
+
+/* ── 社区热度（站内真实数据，近90天） ── */
+const HEAT = [
+  { label:"大学生",   value:4063213, tone:"sun"  },
+  { label:"学生党",   value:1962285, tone:"sun"  },
+  { label:"宿舍",     value:1217075, tone:"sun"  },
+  { label:"开学",     value:543724,  tone:"mint" },
+  { label:"早八",     value:378477,  tone:"mint" },
+  { label:"空气炸锅", value:175093,  tone:"mint" },
+  { label:"带饭",     value:150534,  tone:"ink"  },
+  { label:"开学季",   value:109756,  tone:"ink"  },
+  { label:"快手菜",   value:80391,   tone:"ink"  },
+  { label:"神兽",     value:38911,   tone:"ink"  }
+];
+
+/* ── 开学季定稿话题（可挂载） ── */
+const TOPICS = [
+  { t:"#化悲愤为食欲",   d:"大学生 · 考试失恋加班｜糖巧 咖啡 乳品" },
+  { t:"#宿舍里的邪修美食", d:"大学生 · 住校自嗨｜速食 膨化 肉干" },
+  { t:"#抽屉里的续命零食", d:"大学生 · 早八自习｜饼干 果干 坚果" },
+  { t:"#今天神兽吃什么", d:"妈妈党 · 3-15 岁｜米面粮油 调味 乳品" },
+  { t:"#妈妈的餐桌救兵", d:"妈妈党 · 临时救急｜预制菜 儿童速食" },
+  { t:"#娃吃我也吃",     d:"妈妈党 · 自身健康｜麦片 滋补 坚果" }
+];
+
+/* ══════════════ 渲染 ══════════════ */
+const esc = s => String(s==null?"":s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt = n => n>=10000 ? (n/10000).toFixed(n>=1000000?0:1)+"万" : n.toLocaleString();
+
+/* 社区热度条 */
+(function(){
+  const box = document.getElementById('bars');
+  const max = Math.max(...HEAT.map(h=>h.value));
+  box.innerHTML = HEAT.map(h=>`
+    <div class="bar-row">
+      <span class="lb">${esc(h.label)}</span>
+      <div class="bar-track"><div class="bar-fill -${h.tone}" style="width:${(h.value/max*100).toFixed(1)}%"></div></div>
+      <span class="vl num">${fmt(h.value)}<small>篇</small></span>
+    </div>`).join('');
+})();
+
+/* 话题卡 */
+document.getElementById('topics').innerHTML = TOPICS.map(t=>`
+  <div class="topic"><div class="t">${esc(t.t)}</div><div class="d">${esc(t.d)}</div></div>`).join('');
+
+/* 商品卡 */
+function goodCard(g){
+  const tag = g.url ? 'a' : 'div';
+  const href = g.url ? ` href="${esc(g.url)}" target="_blank" rel="noopener"` : '';
+  const thumb = g.img
+    ? `<img src="${esc(g.img)}" alt="" loading="lazy">`
+    : `<span class="ph">商品图</span>`;
+  const price = g.price!=null
+    ? `<span class="price">¥${esc(g.price)}${g.origPrice?`<s>¥${esc(g.origPrice)}</s>`:''}</span>` : '<span></span>';
+  return `<${tag} class="good"${href}>
+    <div class="good-thumb">${thumb}</div>
+    <div class="good-name">${esc(g.name)}</div>
+    ${g.sell?`<div class="good-sell">${esc(g.sell)}</div>`:''}
+    <div class="good-foot">${price}${g.stat?`<span class="good-stat">${esc(g.stat)}</span>`:''}</div>
+  </${tag}>`;
+}
+
+/* 主推专场 */
+(function(){
+  const box = document.getElementById('show-list');
+  box.innerHTML = POOL.showcase.map(s=>`
+    <article class="show-card">
+      <div class="show-hd">
+        <div class="show-badge">${esc(s.badge||s.name.slice(0,1))}</div>
+        <div class="show-tt">
+          <h3>${esc(s.name)}</h3>
+          ${s.sub?`<div class="sub">${esc(s.sub)}</div>`:''}
+        </div>
+        <div class="show-tags">${(s.tags||[]).map((t,i)=>{
+          const cls = /待确认|待补充/.test(t) ? '-todo' : (i===0?'-hot':i===1?'-mint':'');
+          return `<span class="tag ${cls}">${esc(t)}</span>`;
+        }).join('')}</div>
+      </div>
+      <div class="show-body">
+        ${s.pitch?`<p class="show-pitch">${esc(s.pitch)}</p>`:''}
+        ${(s.goods&&s.goods.length)
+          ? `<div class="goods">${s.goods.map(goodCard).join('')}</div>`
+          : `<div class="empty"><div class="ic">🧺</div><div class="t">${esc(s.name)} 货盘待填充</div><div class="d">把商品名、价格、卖点、链接整理好发我，会直接填进这个位置。</div></div>`}
+      </div>
+    </article>`).join('');
+})();
+
+/* 单坑商家 */
+(function(){
+  const box = document.getElementById('solo-list');
+  if (!POOL.solo.length){
+    box.innerHTML = `<div class="empty"><div class="ic">📦</div><div class="t">单坑商家货盘待填充</div><div class="d">按「商家 — 商品」给我一份清单即可，每家可放任意数量的品，页面会自动排版。</div></div>`;
+    return;
+  }
+  box.innerHTML = `<div class="solo-grid">${POOL.solo.map(s=>`
+    <div class="solo-card">
+      <div class="solo-hd">
+        <div class="solo-dot">${esc(s.name.slice(0,1))}</div>
+        <h4>${esc(s.name)}</h4>
+        ${s.cat?`<span class="cat">${esc(s.cat)}</span>`:''}
+      </div>
+      <div class="solo-items">
+        ${(s.items||[]).map(it=>{
+          const tag = it.url?'a':'div';
+          const href = it.url?` href="${esc(it.url)}" target="_blank" rel="noopener"`:'';
+          return `<${tag} class="solo-item"${href}>
+            <div class="solo-thumb">${it.img?`<img src="${esc(it.img)}" alt="" loading="lazy">`:`<span class="ph">图</span>`}</div>
+            <div class="solo-txt"><div class="n">${esc(it.name)}</div>${it.sell?`<div class="s">${esc(it.sell)}</div>`:''}</div>
+            ${it.price!=null?`<div class="solo-price">¥${esc(it.price)}</div>`:''}
+          </${tag}>`;
+        }).join('')}
+      </div>
+    </div>`).join('')}</div>`;
+})();
+
+/* 商家数量 */
+document.getElementById('m-shops').innerHTML =
+  POOL.showcase.length + (POOL.solo.length ? '<small>+'+POOL.solo.length+'</small>' : '<small>+N</small>');
+</script>
+</body>
+</html>
