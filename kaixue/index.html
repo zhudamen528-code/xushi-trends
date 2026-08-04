@@ -272,6 +272,118 @@ h2{
 .solo-txt .s{font-size:11.5px; color:var(--muted); margin-top:2px}
 .solo-price{flex:none; font-size:15px; font-weight:900; color:var(--sun)}
 
+/* ── 双线洞察卡 ── */
+.two-line{display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:var(--s4)}
+.line-card{
+  border:1px solid var(--line); border-radius:var(--r-lg);
+  padding:20px clamp(16px,2.4vw,24px); background:var(--sand);
+}
+.line-card.-a{background:linear-gradient(165deg,#FFF3E7 0%,var(--sand) 60%)}
+.line-card.-b{background:linear-gradient(165deg,#E6F8F5 0%,var(--sand) 60%)}
+.line-hd{display:flex; gap:13px; margin-bottom:18px}
+.line-ic{
+  flex:none; width:40px; height:40px; border-radius:11px; background:var(--paper);
+  display:grid; place-items:center; font-size:20px; border:1px solid var(--line);
+}
+.line-hd h3{margin:0 0 3px; font-size:16.5px; font-weight:900; letter-spacing:-.015em; line-height:1.35}
+.line-hd p{margin:0; font-size:13px; color:var(--muted); line-height:1.55}
+.line-hd p b{color:var(--ink-2); font-weight:700}
+
+/* ── 宝妈洞察强调条 ── */
+.mom-callout{
+  display:flex; gap:clamp(16px,3vw,28px); align-items:center;
+  background:var(--paper); border:1px solid var(--line); border-left:5px solid var(--mint);
+  border-radius:var(--r-lg); padding:clamp(18px,2.8vw,26px); margin-bottom:var(--s4);
+}
+.mc-fig{flex:none; text-align:center; display:flex; flex-direction:column; gap:2px}
+.mc-fig .num{font-size:clamp(30px,5vw,42px); font-weight:900; color:var(--mint-deep); letter-spacing:-.03em; line-height:1}
+.mc-fig .num small{font-size:.45em; margin-left:2px; font-weight:700}
+.mc-k{font-size:11.5px; color:var(--muted); font-weight:600; letter-spacing:.02em}
+.mom-callout p{margin:0; font-size:14.5px; line-height:1.72; color:var(--ink-2)}
+.mom-callout p b{color:var(--ink); font-weight:800}
+
+/* ═══ Tab ═══ */
+.tabs{
+  display:flex; gap:8px; margin-bottom:var(--s4);
+  border-bottom:2px solid var(--line); padding-bottom:0;
+}
+.tab{
+  appearance:none; border:none; background:none; cursor:pointer;
+  font-family:inherit; font-size:15.5px; font-weight:800; color:var(--muted);
+  padding:11px 18px; border-radius:10px 10px 0 0; position:relative; bottom:-2px;
+  display:inline-flex; align-items:center; gap:8px; letter-spacing:-.01em;
+  border-bottom:3px solid transparent; transition:color .18s, background .18s;
+}
+.tab:hover{color:var(--ink-2); background:var(--sand-2)}
+.tab:focus-visible{outline:3px solid var(--sun); outline-offset:2px}
+.tab.is-on{color:var(--sun); border-bottom-color:var(--sun)}
+.tb-n{
+  font-size:11.5px; font-weight:800; min-width:20px; padding:1px 7px;
+  border-radius:999px; background:var(--sand-2); color:var(--muted);
+}
+.tab.is-on .tb-n{background:var(--sun); color:#fff}
+.panel{display:none}
+.panel.is-on{display:block}
+
+/* ═══ 筛选 ═══ */
+.filters{
+  background:var(--sand); border:1px solid var(--line); border-radius:var(--r-lg);
+  padding:16px clamp(14px,2.2vw,20px); margin-bottom:var(--s4);
+  display:flex; flex-direction:column; gap:12px;
+}
+.f-search{position:relative; display:flex; align-items:center}
+.f-ic{position:absolute; left:13px; display:flex; color:var(--muted); opacity:.7; pointer-events:none}
+#q{
+  width:100%; font-family:inherit; font-size:14.5px; color:var(--ink);
+  padding:11px 14px 11px 38px; border:1px solid var(--line); border-radius:10px;
+  background:var(--paper); transition:border-color .18s;
+}
+#q:focus{outline:none; border-color:var(--sun); box-shadow:0 0 0 3px rgba(255,107,53,.14)}
+.f-row{display:flex; flex-wrap:wrap; gap:7px; align-items:center}
+.f-lb{font-size:11.5px; font-weight:800; color:var(--muted); letter-spacing:.08em; margin-right:3px; min-width:2.6em}
+.chip{
+  appearance:none; font-family:inherit; cursor:pointer;
+  font-size:13px; font-weight:700; color:var(--ink-2);
+  padding:6px 13px; border-radius:999px;
+  background:var(--paper); border:1px solid var(--line);
+  transition:all .16s;
+}
+.chip:hover{border-color:var(--sun); color:var(--sun-deep)}
+.chip:focus-visible{outline:3px solid var(--sun); outline-offset:2px}
+.chip.is-on{background:var(--ink); border-color:var(--ink); color:#fff}
+.f-bar{
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  border-top:1px dashed var(--line); padding-top:11px;
+}
+.f-count{font-size:13px; color:var(--muted); font-weight:600}
+.f-count b{color:var(--sun); font-weight:900; font-size:15px}
+.f-reset{
+  appearance:none; border:none; background:none; cursor:pointer; font-family:inherit;
+  font-size:12.5px; font-weight:700; color:var(--muted); text-decoration:underline;
+  text-underline-offset:3px; padding:4px 2px;
+}
+.f-reset:hover{color:var(--sun)}
+.f-reset:focus-visible{outline:3px solid var(--sun); outline-offset:2px; border-radius:4px}
+
+/* 单坑：商家分组 + 商品网格 */
+.solo-group{margin-bottom:var(--s5)}
+.solo-gh{
+  display:flex; align-items:center; gap:11px; margin-bottom:14px;
+  padding-bottom:10px; border-bottom:1px solid var(--line);
+}
+.solo-gh .dot{
+  flex:none; width:32px; height:32px; border-radius:9px; display:grid; place-items:center;
+  background:var(--ink); color:#fff; font-weight:900; font-size:13px;
+}
+.solo-gh h4{margin:0; font-size:17px; font-weight:900; letter-spacing:-.015em}
+.solo-gh .cnt{font-size:12px; color:var(--muted); font-weight:600}
+
+/* 无匹配 */
+.no-hit{text-align:center; padding:clamp(32px,6vw,56px) 20px; color:var(--muted)}
+.no-hit .ic{font-size:32px; margin-bottom:10px}
+.no-hit .t{font-weight:800; color:var(--ink); font-size:16px; margin-bottom:4px}
+.no-hit .d{font-size:13.5px}
+
 /* ═══ 空态 ═══ */
 .empty{
   border:2px dashed var(--line); border-radius:var(--r-lg);
@@ -299,6 +411,9 @@ footer .fine{
 @media (max-width:900px){
   .bar-row{grid-template-columns:5.8em 1fr 4.6em; gap:10px}
   .bar-row .lb{font-size:13px}
+  .two-line{grid-template-columns:1fr; gap:14px}
+  .mom-callout{flex-direction:column; align-items:flex-start; gap:14px}
+  .mc-fig{flex-direction:row; align-items:baseline; gap:9px; text-align:left}
 }
 @media (max-width:620px){
   body{font-size:15px}
@@ -316,6 +431,10 @@ footer .fine{
   .show-hd{padding:16px}
   .show-body{padding:16px}
   .solo-grid{grid-template-columns:1fr}
+  .tabs{gap:4px}
+  .tab{flex:1; justify-content:center; padding:11px 8px; font-size:14.5px}
+  .f-lb{min-width:100%; margin-bottom:-3px}
+  .line-hd h3{font-size:15.5px}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important; transition:none!important}
@@ -335,22 +454,6 @@ footer .fine{
       8 月中到 9 月初是全年少有的<strong>「场景确定 + 人群集中 + 需求刚性」</strong>三重叠加窗口：
       宿舍要囤、早八要垫、神兽要喂。这一页汇总本次开学季<strong>主推专场货盘</strong>与<strong>单坑好品</strong>，可直接对接。
     </p>
-    <div class="hero-meta">
-      <div class="metric -sun">
-        <span class="v num" data-count="4063213">406.3<small>万</small></span>
-        <span class="k">「大学生」近 90 天站内笔记</span>
-      </div>
-      <div class="divider-v" aria-hidden="true"></div>
-      <div class="metric -mint">
-        <span class="v num">121.7<small>万</small></span>
-        <span class="k">「宿舍」相关笔记</span>
-      </div>
-      <div class="divider-v" aria-hidden="true"></div>
-      <div class="metric -ink">
-        <span class="v num" id="m-shops">3<small>+N</small></span>
-        <span class="k">专场商家 + 单坑商家</span>
-      </div>
-    </div>
   </div>
 </header>
 
@@ -368,43 +471,94 @@ footer .fine{
       <p>
         开学不是一个「节日」，而是一次<span class="em">生活方式的集体重启</span>——
         几千万学生和家长在同一周里重新决定「每天吃什么」。
-        站内围绕这件事的讨论早就常年在跑：<span class="em-m">大学生 406 万篇、学生党 196 万篇、宿舍 122 万篇</span>，
-        而「开学」本身近 90 天有 <span class="em">54 万篇</span>。
-        我们要做的不是造需求，是<span class="em">在需求集中爆发的两周里，把货摆到那条内容河的岸边</span>。
+        这件事在站内有<span class="em">两条常年在跑的内容河</span>：
+        学生自己的<span class="em-m">宿舍与早八</span>，和妈妈们的<span class="em-m">一日三餐</span>。
+        我们要做的不是造需求，是<span class="em">在需求集中爆发的两周里，把货摆到河的岸边</span>。
       </p>
     </div>
 
-    <div class="bars" id="bars" role="img" aria-label="开学季相关话题近90天站内笔记量对比条形图"></div>
+    <div class="two-line">
+      <div class="line-card -a">
+        <div class="line-hd">
+          <span class="line-ic" aria-hidden="true">🎒</span>
+          <div>
+            <h3>学生党：一个人的吃饭问题，第一次自己解决</h3>
+            <p>离家住校、宿舍开小灶、早八来不及——需求是<b>「快、能囤、不用厨房」</b>。</p>
+          </div>
+        </div>
+        <div class="bars" data-group="student" role="img" aria-label="学生党相关话题近90天站内笔记量"></div>
+      </div>
+
+      <div class="line-card -b">
+        <div class="line-hd">
+          <span class="line-ic" aria-hidden="true">🍳</span>
+          <div>
+            <h3>宝妈：早餐从「随便对付」变成每天必须交卷</h3>
+            <p>暑假可以睡到自然醒，开学后早晨只剩 20 分钟——需求是<b>「快手、营养、孩子肯吃」</b>。</p>
+          </div>
+        </div>
+        <div class="bars" data-group="mom" role="img" aria-label="宝妈早餐相关话题近90天站内笔记量"></div>
+      </div>
+    </div>
+
+    <div class="mom-callout">
+      <div class="mc-fig"><span class="num">16.3<small>万</small></span><span class="mc-k">早餐 × 孩子 交叉笔记</span></div>
+      <p>
+        <b>宝妈早餐是被低估的那条线。</b>
+        「早餐」近 90 天有 <b>137 万篇</b>，其中明确带孩子的有 <b>16.3 万篇</b>——
+        比「开学季」话题本身（11 万篇）还大。
+        这批人不搜「开学」，她们搜的是<b>「明天早上给娃吃什么」</b>：
+        所以货要挂在早餐场景上，而不是挂在开学标签上。
+      </p>
+    </div>
+
     <p class="bars-note">
       口径：站内笔记基础表，近 90 天新发布且有效的笔记，按话题名模糊匹配统计（含同族长尾话题）。
-      数据时间：截至 2026-08-03。
+      「早餐 × 孩子」为早餐话题中同时出现孩子/儿童/宝宝/娃/小学生的笔记。数据截至 2026-08-03。
     </p>
 
     <div class="topics" id="topics"></div>
   </div>
 </section>
 
-<!-- ═══════════ 02 主推专场 ═══════════ -->
-<section class="show" id="show">
+<!-- ═══════════ 02 货盘（Tab） ═══════════ -->
+<section class="pool" id="pool">
   <div class="wrap">
     <div class="sec-head">
-      <span class="sec-no">02 / 主推</span>
-      <h2>主推专场货盘</h2>
-      <p class="sec-sub">三家开学季重点合作商家，各自锁定一条清晰的场景线。</p>
+      <span class="sec-no">02 / 货盘</span>
+      <h2>开学季专项货盘</h2>
+      <p class="sec-sub">主推专场锁定场景线，单坑好品灵活补位，可按类目与场景筛选。</p>
     </div>
-    <div id="show-list"></div>
-  </div>
-</section>
 
-<!-- ═══════════ 03 单坑商家 ═══════════ -->
-<section class="solo" id="solo">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="sec-no">03 / 补位</span>
-      <h2>单坑商家好品</h2>
-      <p class="sec-sub">零散坑位，按品直接看，适合灵活排期与内容搭配。</p>
+    <div class="tabs" role="tablist" aria-label="货盘类型">
+      <button class="tab is-on" role="tab" aria-selected="true"  aria-controls="panel-show" id="tab-show" data-tab="show">
+        <span class="tb-t">主推专场</span><span class="tb-n" id="n-show">3</span>
+      </button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="panel-solo" id="tab-solo" data-tab="solo">
+        <span class="tb-t">单坑好品</span><span class="tb-n" id="n-solo">—</span>
+      </button>
     </div>
-    <div id="solo-list"></div>
+
+    <div class="panel is-on" id="panel-show" role="tabpanel" aria-labelledby="tab-show">
+      <div id="show-list"></div>
+    </div>
+
+    <div class="panel" id="panel-solo" role="tabpanel" aria-labelledby="tab-solo" tabindex="0">
+      <div class="filters" id="filters" hidden>
+        <div class="f-search">
+          <span class="f-ic" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></span>
+          <input type="search" id="q" placeholder="搜索商品名 / 商家名 / 卖点" aria-label="搜索货盘">
+        </div>
+        <div class="f-row" id="f-cat"  data-key="cat"   data-label="类目"></div>
+        <div class="f-row" id="f-scene" data-key="scene" data-label="场景"></div>
+        <div class="f-row" id="f-price" data-key="price" data-label="价格带"></div>
+        <div class="f-bar">
+          <span class="f-count" id="f-count"></span>
+          <button class="f-reset" id="f-reset" type="button">清空筛选</button>
+        </div>
+      </div>
+      <div id="solo-list"></div>
+    </div>
   </div>
 </section>
 </main>
@@ -482,19 +636,27 @@ const POOL = {
   solo: []
 };
 
-/* ── 社区热度（站内真实数据，近90天） ── */
-const HEAT = [
-  { label:"大学生",   value:4063213, tone:"sun"  },
-  { label:"学生党",   value:1962285, tone:"sun"  },
-  { label:"宿舍",     value:1217075, tone:"sun"  },
-  { label:"开学",     value:543724,  tone:"mint" },
-  { label:"早八",     value:378477,  tone:"mint" },
-  { label:"空气炸锅", value:175093,  tone:"mint" },
-  { label:"带饭",     value:150534,  tone:"ink"  },
-  { label:"开学季",   value:109756,  tone:"ink"  },
-  { label:"快手菜",   value:80391,   tone:"ink"  },
-  { label:"神兽",     value:38911,   tone:"ink"  }
-];
+/* ── 社区热度：双线（站内真实数据，近90天） ── */
+const HEAT = {
+  student: [
+    { label:"大学生",   value:4063213, tone:"sun"  },
+    { label:"学生党",   value:1962285, tone:"sun"  },
+    { label:"宿舍",     value:1217075, tone:"sun"  },
+    { label:"开学",     value:543724,  tone:"sun"  },
+    { label:"早八",     value:378477,  tone:"ink"  },
+    { label:"空气炸锅", value:175093,  tone:"ink"  },
+    { label:"带饭",     value:150534,  tone:"ink"  }
+  ],
+  mom: [
+    { label:"亲子",       value:2868960, tone:"mint" },
+    { label:"妈妈",       value:2063064, tone:"mint" },
+    { label:"带娃",       value:1582415, tone:"mint" },
+    { label:"早餐",       value:1366416, tone:"mint" },
+    { label:"辅食",       value:667445,  tone:"ink"  },
+    { label:"小学生早餐", value:49354,   tone:"ink"  },
+    { label:"快手早餐",   value:48570,   tone:"ink"  }
+  ]
+};
 
 /* ── 开学季定稿话题（可挂载） ── */
 const TOPICS = [
@@ -510,17 +672,17 @@ const TOPICS = [
 const esc = s => String(s==null?"":s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const fmt = n => n>=10000 ? (n/10000).toFixed(n>=1000000?0:1)+"万" : n.toLocaleString();
 
-/* 社区热度条 */
-(function(){
-  const box = document.getElementById('bars');
-  const max = Math.max(...HEAT.map(h=>h.value));
-  box.innerHTML = HEAT.map(h=>`
+/* 双线社区热度条 */
+document.querySelectorAll('.bars[data-group]').forEach(box=>{
+  const rows = HEAT[box.dataset.group] || [];
+  const max = Math.max(...rows.map(h=>h.value));
+  box.innerHTML = rows.map(h=>`
     <div class="bar-row">
       <span class="lb">${esc(h.label)}</span>
       <div class="bar-track"><div class="bar-fill -${h.tone}" style="width:${(h.value/max*100).toFixed(1)}%"></div></div>
       <span class="vl num">${fmt(h.value)}<small>篇</small></span>
     </div>`).join('');
-})();
+});
 
 /* 话题卡 */
 document.getElementById('topics').innerHTML = TOPICS.map(t=>`
@@ -543,7 +705,20 @@ function goodCard(g){
   </${tag}>`;
 }
 
-/* 主推专场 */
+/* ── Tab 切换 ── */
+document.querySelectorAll('.tab').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(b=>{
+      const on = b===btn;
+      b.classList.toggle('is-on',on);
+      b.setAttribute('aria-selected',on);
+    });
+    document.querySelectorAll('.panel').forEach(p=>
+      p.classList.toggle('is-on', p.id==='panel-'+btn.dataset.tab));
+  });
+});
+
+/* ── 主推专场 ── */
 (function(){
   const box = document.getElementById('show-list');
   box.innerHTML = POOL.showcase.map(s=>`
@@ -566,39 +741,95 @@ function goodCard(g){
           : `<div class="empty"><div class="ic">🧺</div><div class="t">${esc(s.name)} 货盘待填充</div><div class="d">把商品名、价格、卖点、链接整理好发我，会直接填进这个位置。</div></div>`}
       </div>
     </article>`).join('');
+  document.getElementById('n-show').textContent = POOL.showcase.length;
 })();
 
-/* 单坑商家 */
+/* ── 单坑好品：筛选 + 分组 ── */
 (function(){
-  const box = document.getElementById('solo-list');
-  if (!POOL.solo.length){
-    box.innerHTML = `<div class="empty"><div class="ic">📦</div><div class="t">单坑商家货盘待填充</div><div class="d">按「商家 — 商品」给我一份清单即可，每家可放任意数量的品，页面会自动排版。</div></div>`;
+  const listBox = document.getElementById('solo-list');
+  const fBox    = document.getElementById('filters');
+
+  // 拍平成商品级
+  const ITEMS = [];
+  POOL.solo.forEach(s=>(s.items||[]).forEach(it=>ITEMS.push({...it, shop:s.name, cat:it.cat||s.cat||"未分类"})));
+
+  document.getElementById('n-solo').textContent = ITEMS.length || '—';
+
+  if (!ITEMS.length){
+    listBox.innerHTML = `<div class="empty"><div class="ic">📦</div><div class="t">单坑货盘待填充</div><div class="d">把清单发我即可（商家 / 商品名 / 价格 / 卖点 / 链接 / 图片），页面会自动分组并生成筛选项。</div></div>`;
     return;
   }
-  box.innerHTML = `<div class="solo-grid">${POOL.solo.map(s=>`
-    <div class="solo-card">
-      <div class="solo-hd">
-        <div class="solo-dot">${esc(s.name.slice(0,1))}</div>
-        <h4>${esc(s.name)}</h4>
-        ${s.cat?`<span class="cat">${esc(s.cat)}</span>`:''}
-      </div>
-      <div class="solo-items">
-        ${(s.items||[]).map(it=>{
-          const tag = it.url?'a':'div';
-          const href = it.url?` href="${esc(it.url)}" target="_blank" rel="noopener"`:'';
-          return `<${tag} class="solo-item"${href}>
-            <div class="solo-thumb">${it.img?`<img src="${esc(it.img)}" alt="" loading="lazy">`:`<span class="ph">图</span>`}</div>
-            <div class="solo-txt"><div class="n">${esc(it.name)}</div>${it.sell?`<div class="s">${esc(it.sell)}</div>`:''}</div>
-            ${it.price!=null?`<div class="solo-price">¥${esc(it.price)}</div>`:''}
-          </${tag}>`;
-        }).join('')}
-      </div>
-    </div>`).join('')}</div>`;
-})();
+  fBox.hidden = false;
 
-/* 商家数量 */
-document.getElementById('m-shops').innerHTML =
-  POOL.showcase.length + (POOL.solo.length ? '<small>+'+POOL.solo.length+'</small>' : '<small>+N</small>');
+  const PRICE_BANDS = [
+    { key:"0-30",   label:"30 元以下", test:p=>p<30 },
+    { key:"30-60",  label:"30-60 元",  test:p=>p>=30&&p<60 },
+    { key:"60-100", label:"60-100 元", test:p=>p>=60&&p<100 },
+    { key:"100+",   label:"100 元以上", test:p=>p>=100 }
+  ];
+  const uniq = k => [...new Set(ITEMS.map(i=>i[k]).filter(Boolean))];
+  const state = { q:"", cat:null, scene:null, price:null };
+
+  function chips(rowId, values){
+    const row = document.getElementById(rowId);
+    const key = row.dataset.key;
+    row.innerHTML = `<span class="f-lb">${esc(row.dataset.label)}</span>` +
+      values.map(v=>`<button class="chip" type="button" data-k="${key}" data-v="${esc(v.key||v)}">${esc(v.label||v)}</button>`).join('');
+    if (!values.length) row.hidden = true;
+  }
+  chips('f-cat',   uniq('cat'));
+  chips('f-scene', uniq('scene'));
+  chips('f-price', ITEMS.some(i=>i.price!=null) ? PRICE_BANDS : []);
+
+  document.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',()=>{
+    const k=c.dataset.k, v=c.dataset.v;
+    state[k] = state[k]===v ? null : v;
+    document.querySelectorAll(`.chip[data-k="${k}"]`).forEach(x=>x.classList.toggle('is-on', x.dataset.v===state[k]));
+    render();
+  }));
+  document.getElementById('q').addEventListener('input', e=>{ state.q=e.target.value.trim().toLowerCase(); render(); });
+  document.getElementById('f-reset').addEventListener('click', ()=>{
+    state.q=""; state.cat=state.scene=state.price=null;
+    document.getElementById('q').value="";
+    document.querySelectorAll('.chip').forEach(x=>x.classList.remove('is-on'));
+    render();
+  });
+
+  function match(it){
+    if (state.cat   && it.cat   !== state.cat)   return false;
+    if (state.scene && it.scene !== state.scene) return false;
+    if (state.price){
+      const b = PRICE_BANDS.find(b=>b.key===state.price);
+      if (!b || it.price==null || !b.test(Number(it.price))) return false;
+    }
+    if (state.q){
+      const hay = [it.name,it.shop,it.sell,it.cat,it.scene].filter(Boolean).join(' ').toLowerCase();
+      if (!hay.includes(state.q)) return false;
+    }
+    return true;
+  }
+
+  function render(){
+    const hits = ITEMS.filter(match);
+    document.getElementById('f-count').innerHTML = `匹配 <b>${hits.length}</b> 个商品 · 共 ${ITEMS.length} 个`;
+    if (!hits.length){
+      listBox.innerHTML = `<div class="no-hit"><div class="ic">🔍</div><div class="t">没有匹配的商品</div><div class="d">换个关键词，或点「清空筛选」看全部货盘。</div></div>`;
+      return;
+    }
+    const byShop = new Map();
+    hits.forEach(it=>{ if(!byShop.has(it.shop)) byShop.set(it.shop,[]); byShop.get(it.shop).push(it); });
+    listBox.innerHTML = [...byShop].map(([shop,items])=>`
+      <div class="solo-group">
+        <div class="solo-gh">
+          <div class="dot">${esc(shop.slice(0,1))}</div>
+          <h4>${esc(shop)}</h4>
+          <span class="cnt">${items.length} 个品</span>
+        </div>
+        <div class="goods">${items.map(goodCard).join('')}</div>
+      </div>`).join('');
+  }
+  render();
+})();
 </script>
 </body>
 </html>
