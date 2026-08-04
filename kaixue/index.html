@@ -2,7 +2,10 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>开学季专项货盘 · 休食</title>
 <meta name="description" content="2026 开学季专项货盘 —— 主推专场 × 单坑好品">
 <style>
@@ -573,6 +576,7 @@ footer .fine{
           <li>社区热度：站内笔记基础表，近 90 天新发布有效笔记</li>
           <li>话题匹配为模糊匹配，含同族长尾话题</li>
           <li>货盘信息由行业侧整理提供</li>
+          <li><b>页面版本 v2 · 更新于 2026-08-04 20:45</b></li>
         </ul>
       </div>
       <div>
@@ -636,6 +640,7 @@ const POOL = {
   solo: []
 };
 
+try{
 /* ── 社区热度：双线（站内真实数据，近90天） ── */
 const HEAT = {
   student: [
@@ -830,6 +835,12 @@ document.querySelectorAll('.tab').forEach(btn=>{
   }
   render();
 })();
+}catch(err){
+  var w=document.createElement('div');
+  w.style.cssText='margin:24px auto;max-width:760px;padding:18px 20px;border:2px solid #FF6B35;border-radius:14px;background:#FFF3E7;font:14px/1.7 system-ui;color:#1B2A41';
+  w.innerHTML='<b>页面脚本未能完整加载</b><br>请刷新重试；若仍异常，把浏览器与机型告诉我。<br><span style="color:#6B7A8D;font-size:12px">'+String(err&&err.message||err)+'</span>';
+  (document.querySelector('main')||document.body).prepend(w);
+}
 </script>
 </body>
 </html>
