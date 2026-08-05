@@ -154,16 +154,26 @@ h2{
 .bar-row .vl small{font-weight:600; color:var(--muted); font-size:11px; margin-left:2px}
 .bars-note{margin:12px 0 0; font-size:12.5px; color:var(--muted)}
 
-.topics{
-  display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:12px; margin-top:var(--s5);
+.topic-box{
+  margin-top:18px; background:var(--sand); border:1px solid var(--line);
+  border-radius:var(--r-lg); padding:14px clamp(13px,1.8vw,18px);
 }
-.topic{
-  background:var(--sand); border:1px solid var(--line); border-radius:var(--r);
-  padding:14px 16px;
+.tb-hd{display:flex; align-items:baseline; gap:9px; flex-wrap:wrap; margin-bottom:11px}
+.tb-lb{font-size:12px; font-weight:900; color:var(--ink); letter-spacing:.04em}
+.tb-tip{font-size:11.5px; color:var(--muted)}
+.topic-lines{display:flex; flex-direction:column; gap:9px}
+.tp-line{display:flex; align-items:center; gap:8px; flex-wrap:wrap}
+.tp-who{
+  flex:none; font-size:11px; font-weight:900; color:#fff; padding:3px 9px;
+  border-radius:999px; letter-spacing:.02em;
 }
-.topic .t{font-weight:800; font-size:15px; color:var(--ink); letter-spacing:-.01em}
-.topic .d{font-size:12.5px; color:var(--muted); margin-top:3px}
+.tp-who.-a{background:var(--sun)}
+.tp-who.-b{background:var(--mint-deep)}
+.tp-tag{
+  font-size:12.5px; font-weight:800; color:var(--ink-2); letter-spacing:-.01em;
+  background:var(--paper); border:1px solid var(--line); border-radius:999px;
+  padding:4px 11px; white-space:nowrap;
+}
 
 /* ═══ 02 · 主推专场 ═══ */
 .show{position:relative}
@@ -543,6 +553,27 @@ footer .fine{
   .tab{flex:1; justify-content:center; padding:11px 8px; font-size:14.5px}
   .f-lb{min-width:100%; margin-bottom:-3px}
   .line-hd h3{font-size:15.5px}
+
+  /* 手机：热度条改紧凑双列小方块，仅留 Top4 */
+  .bars{grid-template-columns:1fr 1fr; gap:8px}
+  .bar-row{
+    display:flex; flex-direction:column; align-items:flex-start; gap:5px;
+    margin-bottom:0; padding:9px 10px; border-radius:10px;
+    background:var(--paper); border:1px solid var(--line);
+  }
+  .bar-row[data-rank="4"], .bar-row[data-rank="5"], .bar-row[data-rank="6"]{display:none}
+  .bar-row .lb{font-size:12px; text-align:left; font-weight:800; color:var(--ink-2)}
+  .bar-row .vl{font-size:17px; text-align:left; letter-spacing:-.02em; order:2}
+  .bar-row .vl small{font-size:10.5px}
+  .bar-track{height:5px; width:100%; order:3; border-radius:999px}
+  .bar-fill{border-radius:999px}
+  .line-card{padding:13px 12px}
+  .line-hd{margin-bottom:10px}
+  .bars-note{font-size:11.5px}
+
+  /* 话题块 */
+  .tp-tag{font-size:11.5px; padding:3px 9px}
+  .tp-who{font-size:10.5px}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important; transition:none!important}
@@ -620,7 +651,13 @@ footer .fine{
       「早餐 × 孩子」为早餐话题中同时出现孩子/儿童/宝宝/娃/小学生的笔记。数据截至 2026-08-03。
     </p>
 
-    <div class="topics" id="topics"></div>
+    <div class="topic-box">
+      <div class="tb-hd">
+        <span class="tb-lb">可挂载话题</span>
+        <span class="tb-tip">发笔记时带上，进对应话题流量池</span>
+      </div>
+      <div class="topic-lines" id="topics"></div>
+    </div>
   </div>
 </section>
 
@@ -678,7 +715,7 @@ footer .fine{
           <li>话题匹配为模糊匹配，含同族长尾话题</li>
           <li>货盘来自「开学季精选货盘」提报表，31 家店 85 个品</li>
           <li>品牌手卡由商家提供，共 45 页</li>
-          <li><b>页面版本 v6 · 更新于 2026-08-04 21:45 · 三家专场+品牌手卡内嵌</b></li>
+          <li><b>页面版本 v7 · 更新于 2026-08-05 10:36 · 移动端紧凑化</b></li>
         </ul>
       </div>
       <div>
@@ -2329,8 +2366,8 @@ const fmt = n => n>=10000 ? (n/10000).toFixed(n>=1000000?0:1)+"万" : n.toLocale
 document.querySelectorAll('.bars[data-group]').forEach(box=>{
   const rows = HEAT[box.dataset.group] || [];
   const max = Math.max(...rows.map(h=>h.value));
-  box.innerHTML = rows.map(h=>`
-    <div class="bar-row">
+  box.innerHTML = rows.map((h,ri)=>`
+    <div class="bar-row" data-rank="${ri}">
       <span class="lb">${esc(h.label)}</span>
       <div class="bar-track"><div class="bar-fill -${h.tone}" style="width:${(h.value/max*100).toFixed(1)}%"></div></div>
       <span class="vl num">${fmt(h.value)}<small>篇</small></span>
@@ -2338,8 +2375,14 @@ document.querySelectorAll('.bars[data-group]').forEach(box=>{
 });
 
 /* 话题卡 */
-document.getElementById('topics').innerHTML = TOPICS.map(t=>`
-  <div class="topic"><div class="t">${esc(t.t)}</div><div class="d">${esc(t.d)}</div></div>`).join('');
+(function(){
+  const g={ "学生党":[], "妈妈党":[] };
+  TOPICS.forEach(t=>{ (t.d.startsWith('妈妈')?g["妈妈党"]:g["学生党"]).push(t.t); });
+  document.getElementById('topics').innerHTML =
+    [["学生党","-a"],["妈妈党","-b"]].map(([k,c])=>
+      `<div class="tp-line"><span class="tp-who ${c}">${k}</span>${
+        g[k].map(t=>`<span class="tp-tag">${esc(t)}</span>`).join('')}</div>`).join('');
+})();
 
 /* 商品卡 */
 function goodCard(g){
