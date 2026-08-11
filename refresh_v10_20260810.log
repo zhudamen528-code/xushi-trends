@@ -1,0 +1,51 @@
+===== V10 周更开始 2026-08-10 09:00:51 =====
+
+[1/5] 拉取最新数据（fetch_data.py，P75 + 算法分门槛 Top 50）
+[2026-08-10 09:00:51] 统计窗口：20260713 → 20260809
+[2026-08-10 09:00:51] 算法分窗口：20260802 → 20260809
+[2026-08-10 09:00:51] 发布时间窗口：≥ 2026-07-26
+[2026-08-10 09:00:51] 提交 P75 SQL...
+[2026-08-10 09:00:54] P75 msgId: 3ab72f1e-d7b5-4bdf-87dd-4a33d8544206
+[2026-08-10 09:00:54] 提交 Top 案例 V3 SQL（算法分门槛 + Top 50）...
+[2026-08-10 09:00:57] Top 案例 msgId: e7c50166-29c4-47d2-9095-51d4386f0f7e
+[2026-08-10 09:00:57] 等待 P75 SQL 完成...
+[2026-08-10 09:00:57]   ... 等待 P75 state=RUNNING msgId=3ab72f1e-d
+[2026-08-10 09:01:28]   ... 等待 P75 state=RUNNING msgId=3ab72f1e-d
+[2026-08-10 09:01:58]   ... 等待 P75 state=RUNNING msgId=3ab72f1e-d
+[2026-08-10 09:02:30] P75 结果 3719 字节
+[2026-08-10 09:02:30] 等待 Top 案例 SQL 完成...
+[2026-08-10 09:02:30]   ... 等待 TopCases state=RUNNING msgId=e7c50166-2
+[2026-08-10 09:03:01]   ... 等待 TopCases state=RUNNING msgId=e7c50166-2
+[2026-08-10 09:03:31]   ... 等待 TopCases state=RUNNING msgId=e7c50166-2
+===== V10 周更开始 2026-08-10 09:05:13 =====
+
+[1/5] 拉取最新数据（fetch_data.py，P75 + 算法分门槛 Top 50）
+[2026-08-10 09:05:13] 统计窗口：20260713 → 20260809
+[2026-08-10 09:05:13] 算法分窗口：20260802 → 20260809
+[2026-08-10 09:05:13] 发布时间窗口：≥ 2026-07-26
+[2026-08-10 09:05:13] 提交 P75 SQL...
+[2026-08-10 09:05:15] P75 msgId: f994adf4-8922-4748-a1bb-24c8e56b1f32
+[2026-08-10 09:05:15] 提交 Top 案例 V3 SQL（算法分门槛 + Top 50）...
+[2026-08-10 09:05:17] Top 案例 msgId: a31b575c-1362-492f-9b9e-b50f690dcee1
+[2026-08-10 09:05:17] 等待 P75 SQL 完成...
+[2026-08-10 09:05:18]   ... 等待 P75 state=RUNNING msgId=f994adf4-8
+[2026-08-10 09:05:48]   ... 等待 P75 state=RUNNING msgId=f994adf4-8
+[2026-08-10 09:06:19]   ... 等待 P75 state=RUNNING msgId=f994adf4-8
+[2026-08-10 09:06:50] P75 结果 3719 字节
+[2026-08-10 09:06:50] 等待 Top 案例 SQL 完成...
+[2026-08-10 09:06:51]   ... 等待 TopCases state=RUNNING msgId=a31b575c-1
+[2026-08-10 09:07:21]   ... 等待 TopCases state=RUNNING msgId=a31b575c-1
+[2026-08-10 09:07:52]   ... 等待 TopCases state=RUNNING msgId=a31b575c-1
+[2026-08-10 09:08:22]   ... 等待 TopCases state=RUNNING msgId=a31b575c-1
+[2026-08-10 09:08:53]   ... 等待 TopCases state=RUNNING msgId=a31b575c-1
+[2026-08-10 09:09:26]   ... 等待 TopCases state=ERROR msgId=a31b575c-1
+[2026-08-10 09:09:57]   ... 等待 TopCases state=ERROR msgId=a31b575c-1
+[2026-08-10 09:10:28]   ... 等待 TopCases state=ERROR msgId=a31b575c-1
+[2026-08-10 09:10:59]   ... 等待 TopCases state=ERROR msgId=a31b575c-1
+[2026-08-10 09:11:29]   ... 等待 TopCases state=ERROR msgId=a31b575c-1
+[2026-08-10 09:12:05]   ... 等待 TopCases state=ERROR msgId=a31b575c-1
+[2026-08-10 09:12:35]   ... 等待 TopCases state=ERROR msgId=a31b575c-1
+[2026-08-10 09:13:16]   ... 等待 TopCases state=ERROR msgId=a31b575c-1
+[2026-08-10 09:13:47]   ... 等待 TopCases state=ERROR msgId=a31b575c-1
+[2026-08-10 09:14:18]   ... 等待 TopCases state=ERROR msgId=a31b575c-1
+[2026-08-10 09:14:49]   ... 等待 TopCases state=ERROR msgId=a31b575c-1
