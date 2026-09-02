@@ -1,11 +1,12 @@
+<!-- 池子窗口：20260805 ~ 20260901（重跑于 2026-09-02 17:29）-->
 # V10 差分聚类任务：CVR
 
 ## 任务
 休食商笔按"类目内 cvr P75 vs P25"切两组对照（控类目变量），找出**高组独有 / 高组明显多于低组**的写法模式，给商家"想提升 CVR，看标题 + 正文 + ASR 完整内容（ 该怎么写/做"的可执行指导。
 
 ## 输入文件（在 work 目录下）
-- `data/v10_clusters/cvr_high.txt`（286 条）—— CVR 高组
-- `data/v10_clusters/cvr_low.txt`（289 条）—— CVR 低组
+- `data/v10_clusters/cvr_high.txt`（见文件实际行数）—— CVR 高组
+- `data/v10_clusters/cvr_low.txt`（见文件实际行数）—— CVR 低组
 
 行格式：`[note_id|类目|cvr=X|imp=Y] [字段]内容 | [字段]内容 | ...`
 
