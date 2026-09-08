@@ -6,8 +6,8 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>大门的货盘橱窗 · 小红书电商休食</title>
-<meta name="description" content="小红书电商休食行业 AM 货盘橱窗 —— 重点合作品牌 × 单坑好品，含佣金与到手价，看中直接对接">
+<title>小红书速食预制及糖果巧克力货盘橱窗</title>
+<meta name="description" content="小红书速食预制及糖果巧克力货盘橱窗 —— 专场商家货盘、混坑好品、全年带货节奏指南">
 <style>
 :root{
   --sun:#FF6B35;      /* 骄阳橘：主强调 */
@@ -342,6 +342,98 @@ h2{
 .dk-dot:focus-visible{outline:2px solid var(--lemon); outline-offset:2px}
 .dk-dot.is-on{background:var(--sun); width:20px; border-radius:999px}
 
+
+/* ═══ 带货指南 ═══ */
+.guide-lede{
+  margin:0 0 var(--s5); font-size:15px; line-height:1.75; color:var(--ink-2);
+  max-width:74ch;
+}
+.guide-lede b{color:var(--ink); font-weight:800}
+.guide-note{
+  margin:var(--s5) 0 0; font-size:12.5px; color:var(--muted); line-height:1.7;
+}
+.gd{
+  background:var(--paper); border:1px solid var(--line); border-radius:var(--r-lg);
+  box-shadow:var(--shadow-paper); overflow:hidden; margin-bottom:var(--s5);
+}
+.gd-hd{
+  display:flex; align-items:center; gap:13px;
+  padding:clamp(16px,2.2vw,22px) clamp(16px,2.4vw,26px);
+  border-bottom:1px solid var(--line);
+}
+.gd.-sun  .gd-hd{background:linear-gradient(100deg,#FFF1E4,var(--paper) 72%)}
+.gd.-mint .gd-hd{background:linear-gradient(100deg,#E3F7F4,var(--paper) 72%)}
+.gd.-ink  .gd-hd{background:linear-gradient(100deg,#ECEFF5,var(--paper) 72%)}
+.gd-ic{
+  flex:none; width:42px; height:42px; border-radius:12px; display:grid; place-items:center;
+  font-size:22px; background:var(--paper); border:1px solid var(--line);
+}
+.gd-tt h3{margin:0; font-size:clamp(19px,2.5vw,23px); letter-spacing:-.02em; color:var(--ink)}
+.gd-tt p{margin:2px 0 0; font-size:12.5px; color:var(--muted)}
+
+.gd-sec{padding:clamp(15px,2.1vw,20px) clamp(16px,2.4vw,26px); border-bottom:1px dashed var(--line)}
+.gd-sec:last-child{border-bottom:none}
+.gd-lb{
+  font-size:11.5px; font-weight:900; letter-spacing:.06em; color:var(--muted);
+  margin-bottom:12px; text-transform:uppercase;
+}
+
+/* 全年节奏条 */
+.rhy{display:grid; grid-template-columns:repeat(12,1fr); gap:5px; align-items:end}
+.rhy-m{display:flex; flex-direction:column; align-items:center; gap:5px}
+.rhy-bar{
+  width:100%; border-radius:5px 5px 3px 3px; background:var(--sand-2);
+  transition:height .2s;
+}
+.rhy-m[data-lv="0"] .rhy-bar{height:11px}
+.rhy-m[data-lv="1"] .rhy-bar{height:24px}
+.rhy-m[data-lv="2"] .rhy-bar{height:42px}
+.rhy-m[data-lv="3"] .rhy-bar{height:60px}
+.gd.-sun  .rhy-m[data-lv="2"] .rhy-bar{background:#FFB98A}
+.gd.-sun  .rhy-m[data-lv="3"] .rhy-bar{background:var(--sun)}
+.gd.-mint .rhy-m[data-lv="2"] .rhy-bar{background:#7FDCD0}
+.gd.-mint .rhy-m[data-lv="3"] .rhy-bar{background:var(--mint-deep)}
+.gd.-ink  .rhy-m[data-lv="2"] .rhy-bar{background:#8EA1BE}
+.gd.-ink  .rhy-m[data-lv="3"] .rhy-bar{background:var(--ink-2)}
+.rhy-m[data-lv="1"] .rhy-bar{background:#F1E3D4}
+.rhy-mn{font-size:11px; font-weight:700; color:var(--muted)}
+.rhy-m[data-lv="3"] .rhy-mn{color:var(--ink); font-weight:900}
+
+.rhy-legend{display:flex; gap:14px; margin-top:11px; flex-wrap:wrap}
+.rl{display:inline-flex; align-items:center; gap:5px; font-size:11.5px; color:var(--muted)}
+.rl i{width:10px; height:10px; border-radius:3px; background:var(--sand-2)}
+.rl i[data-lv="1"]{background:#F1E3D4}
+.gd.-sun  .rl i[data-lv="2"]{background:#FFB98A} .gd.-sun  .rl i[data-lv="3"]{background:var(--sun)}
+.gd.-mint .rl i[data-lv="2"]{background:#7FDCD0} .gd.-mint .rl i[data-lv="3"]{background:var(--mint-deep)}
+.gd.-ink  .rl i[data-lv="2"]{background:#8EA1BE} .gd.-ink  .rl i[data-lv="3"]{background:var(--ink-2)}
+
+.gd-pk{list-style:none; margin:14px 0 0; padding:0; display:grid; gap:7px}
+.gd-pk li{font-size:13.5px; line-height:1.7; color:var(--ink-2); padding-left:2px}
+.gd-pk b{
+  display:inline-block; font-size:11px; font-weight:900; color:#fff;
+  background:var(--sun); border-radius:5px; padding:2px 7px; margin-right:8px;
+  vertical-align:1px; letter-spacing:.03em;
+}
+.gd-pk li.-low b{background:var(--ink-2)}
+
+/* 核心人群 */
+.who{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:10px}
+.who-c{background:var(--sand); border:1px solid var(--line); border-radius:var(--r); padding:12px 14px}
+.who-c .wt{font-size:14px; font-weight:800; color:var(--ink); letter-spacing:-.01em}
+.who-c .wd{font-size:12.5px; color:var(--muted); margin-top:4px; line-height:1.65}
+
+/* 讲品抓手 */
+.hooks{list-style:none; margin:0; padding:0; display:grid; gap:9px}
+.hooks li{
+  position:relative; padding-left:24px; font-size:13.5px; line-height:1.72; color:var(--ink-2);
+}
+.hooks li::before{
+  content:""; position:absolute; left:7px; top:.62em;
+  width:6px; height:6px; border-radius:50%; background:var(--sun);
+}
+.gd.-mint .hooks li::before{background:var(--mint-deep)}
+.gd.-ink  .hooks li::before{background:var(--ink-2)}
+
 /* 场景分组 */
 .scene-group{margin-bottom:var(--s6)}
 .scene-hd{
@@ -571,6 +663,17 @@ footer .fine{
   .line-hd{margin-bottom:10px}
   .bars-note{font-size:11.5px}
 
+  /* 带货指南 */
+  .rhy{gap:3px}
+  .rhy-mn{font-size:9.5px}
+  .rhy-m[data-lv="3"] .rhy-bar{height:48px}
+  .rhy-m[data-lv="2"] .rhy-bar{height:34px}
+  .gd-hd{gap:10px; padding:14px}
+  .gd-ic{width:36px; height:36px; font-size:19px}
+  .gd-sec{padding:14px}
+  .who{grid-template-columns:1fr; gap:8px}
+  .guide-lede{font-size:14px}
+
   /* 话题块 */
   .tp-tag{font-size:11.5px; padding:3px 9px}
   .tp-who{font-size:10.5px}
@@ -586,12 +689,13 @@ footer .fine{
 <!-- ═══════════ HERO ═══════════ -->
 <header class="hero">
   <div class="wrap hero-inner">
-    <div class="eyebrow">🧺 小红书电商 · 休食行业 · <b>AM 货盘橱窗</b></div>
-    <h1 class="title">大门的<span class="hl">货盘橱窗</span></h1>
+    <div class="eyebrow">🧺 小红书电商 · 货盘橱窗</div>
+    <h1 class="title">小红书<span class="hl">速食预制</span>及<span class="hl-m">糖果巧克力</span><br>货盘橱窗</h1>
     <p class="lede">
-      我是小红书电商休食行业 AM 大门（朱锦程），这一页是我手上<strong>长期维护的商家货盘</strong>：
-      重点合作品牌与单坑好品，全部带<strong>佣金、到手价、商品链接</strong>，可按类目/场景/价格筛选。
-      看中哪个品，<strong>直接联系我对接拿样</strong>。
+      三个类目、一页看全：<strong>速食</strong>（自热拌面、馄饨饺子、锅巴米饼）、
+      <strong>预制</strong>（冷冻半成品、加热即食正餐）、<strong>糖果巧克力</strong>（礼盒装、休闲糖巧）。
+      每个品都带<strong>佣金、到手价、商品链接</strong>，另附一份<strong>全年带货节奏指南</strong>——
+      什么季节推什么、对着哪拨人讲，都写在第三个页签里。
     </p>
   </div>
 </header>
@@ -601,17 +705,20 @@ footer .fine{
 <section class="pool" id="pool">
   <div class="wrap">
     <div class="sec-head">
-      <span class="sec-no">01 / 货盘</span>
-      <h2>手上现成的货</h2>
-      <p class="sec-sub">31 家店 · 85 个品持续更新中，全部含佣金与到手价，可按类目、场景、价格、佣金筛选。</p>
+      <span class="sec-no">01 / 橱窗</span>
+      <h2>货盘与带货节奏</h2>
+      <p class="sec-sub">专场商家整店打包、混坑单品自由组合，配一份速食 / 预制 / 糖巧分开写的全年节奏指南。</p>
     </div>
 
-    <div class="tabs" role="tablist" aria-label="货盘类型">
+    <div class="tabs" role="tablist" aria-label="橱窗页签">
       <button class="tab is-on" role="tab" aria-selected="true"  aria-controls="panel-show" id="tab-show" data-tab="show">
-        <span class="tb-t">重点合作品牌</span><span class="tb-n" id="n-show">3</span>
+        <span class="tb-t">专场商家货盘</span><span class="tb-n" id="n-show">3</span>
       </button>
       <button class="tab" role="tab" aria-selected="false" aria-controls="panel-solo" id="tab-solo" data-tab="solo">
-        <span class="tb-t">单坑好品</span><span class="tb-n" id="n-solo">—</span>
+        <span class="tb-t">混坑好品</span><span class="tb-n" id="n-solo">—</span>
+      </button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="panel-guide" id="tab-guide" data-tab="guide">
+        <span class="tb-t">带货指南</span><span class="tb-n">3 类</span>
       </button>
     </div>
 
@@ -636,6 +743,17 @@ footer .fine{
       </div>
       <div id="solo-list"></div>
     </div>
+
+    <div class="panel" id="panel-guide" role="tabpanel" aria-labelledby="tab-guide" tabindex="0">
+      <p class="guide-lede">
+        三个类目的生意节奏完全不一样：<b>速食</b>吃「天冷 + 宅」，<b>预制</b>吃「节庆聚餐」，<b>糖巧</b>吃「送礼窗口」。
+        下面按类目分开列出全年高峰、核心人群和讲品抓手——排期前扫一眼，别在淡季硬推。
+      </p>
+      <div id="guide-list"></div>
+      <p class="guide-note">
+        节奏判断来自行业经验与往年大盘规律，用于排期参考；具体品的实际表现请结合当期数据。
+      </p>
+    </div>
   </div>
 </section>
 </main>
@@ -645,33 +763,34 @@ footer .fine{
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <h5>数据口径</h5>
+        <h5>货盘口径</h5>
         <ul>
-          <li>社区热度：站内笔记基础表，近 90 天新发布有效笔记</li>
-          <li>话题匹配为模糊匹配，含同族长尾话题</li>
-          <li>货盘持续更新中，当前 31 家店 85 个品；商品信息以商品页实时为准</li>
+          <li>含 19 家在管商家 53 个品，按速食 / 预制 / 糖巧三类归集</li>
+          <li>商家归属按 BI 实时核对（2026-09-06），已划走商家的品不展示</li>
+          <li>价格与佣金为提报时口径，实际以商品页为准</li>
           <li>品牌手卡由商家提供，共 45 页</li>
-          <li><b>页面版本 W1 · 更新于 2026-09-03 · 货盘橱窗首版</b></li>
+          <li><b>页面版本 W2 · 更新于 2026-09-08 · 三类目橱窗 + 带货指南</b></li>
         </ul>
       </div>
       <div>
         <h5>使用说明</h5>
         <ul>
           <li>点击商品卡片可跳转商品详情</li>
+          <li>混坑好品可按类目、场景、价格、佣金筛选</li>
           <li>手机 / 电脑 / 内外网均可直接打开</li>
-          <li>货盘持续更新，以本页最新版本为准</li>
         </ul>
       </div>
       <div>
-        <h5>专项周期</h5>
+        <h5>带货指南</h5>
         <ul>
-          <li>预热：8 月中旬</li>
-          <li>爆发：8 月下旬 — 9 月初</li>
-          <li>延续：9 月中旬（返校适应期）</li>
+          <li>速食：9-11 月、12-1 月双高峰</li>
+          <li>预制：11-2 月为绝对主场</li>
+          <li>糖巧：12-2 月送礼窗口最集中</li>
+          <li>节奏为经验判断，供排期参考</li>
         </ul>
       </div>
     </div>
-    <p class="fine">小红书电商 · 休食行业 · AM 货盘橱窗 · 长期更新</p>
+    <p class="fine">小红书电商 · 速食预制 / 糖果巧克力货盘橱窗 · 长期更新</p>
   </div>
 </footer>
 
@@ -689,7 +808,7 @@ footer .fine{
    items[] 同 goods 字段
    ══════════════════════════════════════════════════════════ */
 const POOL = {
-  showcase: [
+  "showcase": [
     {
       "name": "小黄象",
       "badge": "象",
@@ -718,7 +837,8 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/6969ebde1d37860001d44a95?t=1778320760717&xsec_token=ABobrZWaISqiaox8Bd1292fytbb6VyOlFdX7irQqBP-uo%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g0o031t465b525a005o08v2k08clp7e2trt0.webp",
-          "shop": "小黄象"
+          "shop": "小黄象",
+          "cat2": "速食"
         },
         {
           "name": "酥脆伴翅",
@@ -732,7 +852,8 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/69fec63b0283e20001675092?t=1778320833098&xsec_token=ABnf1KWGGWRRi5zcn0IABnVruJ8WFMwqckztpc9JGsH8c%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g3no3236up0kvn00g5o08v2k08clp3jcjpqg.webp",
-          "shop": "小黄象"
+          "shop": "小黄象",
+          "cat2": "速食"
         },
         {
           "name": "黄油手抓饼",
@@ -746,7 +867,8 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/62c6bc11970d4e00010f33ea?t=1778321415604&xsec_token=AB4thqtfArEBmE14DyxWIN9xYezgqEPLy6bWm_RROOFtM%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g0o03228upf7u6s005o08v2k08clpqcdpbao.webp",
-          "shop": "小黄象"
+          "shop": "小黄象",
+          "cat2": "速食"
         },
         {
           "name": "橄榄油香煎鸡排",
@@ -760,7 +882,8 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/67721305966ebd0001786e72?t=1778321399209&xsec_token=ABqATnhgMNJrq-cbY4x2EJD-EzLdK9A8e8-MpDolfQI0g%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g0o031qmvvp1nmu0g5o08v2k08clphi8t5lo.webp",
-          "shop": "小黄象"
+          "shop": "小黄象",
+          "cat2": "速食"
         }
       ]
     },
@@ -779,8 +902,8 @@ const POOL = {
         {
           "name": "锋味派黑猪肉小笼包",
           "spec": "200g（8只）/袋",
-          "price": 99.0,
-          "origPrice": 139.0,
+          "price": 99,
+          "origPrice": 139,
           "priceTxt": "99/8袋",
           "sell": "老面发酵12h，不加酵母，划重点，我们一般自己包的包子都是加酵母的，但我们是真空和面、百道滚择，手艺师傅手工包制。筋道有弹性，皮肉分离，-38℃速冻锁鲜，保留地道传统老味道； / 刚刚上新的川味小笼包：添加成都地道火锅底",
           "gift": "调味醋汁*4 油泼辣子*4 蒸笼纸8张",
@@ -788,32 +911,35 @@ const POOL = {
           "cat": "方便速食",
           "scene": "早餐帮手",
           "img": "img/arkgoods_1040g0o031odmp6jdkq005o1ngntgblnk8o32uhg.webp",
-          "shop": "锋味派"
+          "shop": "锋味派",
+          "cat2": "速食"
         },
         {
           "name": "锋味派盒装午餐肉",
           "spec": "316g（8*39.5g）/盒",
-          "price": 89.0,
+          "price": 89,
           "priceTxt": "89/3盒",
           "sell": "锋味派创始人、米其林之友谢霆锋，优选原料的诚挚之选，iSEE创新品牌百强榜（KT）； / 坚持单一肉源，只选用品质黑猪肉，不掺杂其他肉类，肉香浓郁醇厚，肉质鲜嫩紧实； / 黑猪肉含量≥90%，大块肉粒看得见，满满肉丝嚼得",
           "cmsn": "0.15",
           "cat": "方便速食",
           "scene": "早餐帮手",
           "img": "img/arkgoods_1040g3no31vqijdna2s0g5o1ngntgblnk0u97g9o.webp",
-          "shop": "锋味派"
+          "shop": "锋味派",
+          "cat2": "速食"
         },
         {
           "name": "锋味派酥皮馅饼",
           "spec": "360g/盒（90g*4片）",
-          "price": 89.0,
-          "origPrice": 139.0,
+          "price": 89,
+          "origPrice": 139,
           "priceTxt": "89/4袋",
           "sell": "皮薄酥脆，馅大肉香：馅含量≥40%，安格斯牛肉/黑猪肉在馅料中占比≥70%，河北硬粒小麦粉搭配俄罗斯进口小麦粉，8层开酥，层层酥脆，口口满足 / 单片独立包装:真正的“一室一厅”，干净卫生不怕串味，内含贴心隔膜，好吃不脏",
           "cmsn": "0.15",
           "cat": "方便速食",
           "scene": "早餐帮手",
           "img": "img/arkgoods_1040g0o031lm7asteks005o1ngntgblnkb4mul4g.webp",
-          "shop": "锋味派"
+          "shop": "锋味派",
+          "cat2": "速食"
         }
       ]
     },
@@ -845,7 +971,8 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/65810432d71fa50001cf9688?t=1778309522511&xsec_token=ABNXoOJ3bxll8CAYQdNHuRfvRLRNfS3s-9l4qBYaSTxmk%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g0o0316fil70ugo005omorn6gg6a60ukpmko.webp",
-          "shop": "Mamiya"
+          "shop": "Mamiya",
+          "cat2": "其他"
         },
         {
           "name": "益生元烤鲜奶脆脆",
@@ -859,7 +986,8 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/67dec0d329b9f70001f214c9?t=1778309470934&xsec_token=ABXtx55aGCjgeuwMO8wyIBtexQ5OI-8H36sk2TfDAqEo8%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g0o031ouumvregu005omorn6gg6a60i5rr1o.webp",
-          "shop": "Mamiya"
+          "shop": "Mamiya",
+          "cat2": "其他"
         },
         {
           "name": "花生酱全家福",
@@ -873,7 +1001,8 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/68ea2a0cc753610001cfc4cb?t=1778309522516&xsec_token=ABMnoUqYUHF2C56tIYHu8HNBX73YU6x5cry9Qz8iPrFeQ%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g3no31s04gmi73s005omorn6gg6a6uh292vg.webp",
-          "shop": "Mamiya"
+          "shop": "Mamiya",
+          "cat2": "其他"
         },
         {
           "name": "夏日鲜果果酱集",
@@ -888,7 +1017,8 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/69fbfe67213e270001ff8f1d?t=1778309486344&xsec_token=AB-6l0eVgQ9UcRsowG4PWFZFhQ_tg3N-oaA9ANWi-euR0%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g0o031vg6aj9b3m005omorn6gg6a6it1ag58.webp",
-          "shop": "Mamiya"
+          "shop": "Mamiya",
+          "cat2": "其他"
         },
         {
           "name": "酥脆肉夹馍",
@@ -902,7 +1032,8 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/69faa1876bdc380001249c47?t=1778309486347&xsec_token=ABukxHlJfqhOtDxrX-dxviZYN1Fp3tUSBcppkE5itqCHY%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g3no31vro21huk80g5omorn6gg6a6qnfogj8.webp",
-          "shop": "Mamiya"
+          "shop": "Mamiya",
+          "cat2": "预制"
         },
         {
           "name": "安格斯牛肉馅饼",
@@ -916,12 +1047,13 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/69faa0f681bc01000159f03b?t=1778309486347&xsec_token=ABQqS_oKx4h5S11osqP8Xw7xaYyNLwkEr56HxbfxFOOB8%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g3no31vrnopcu540g5omorn6gg6a6cj1q4i0.webp",
-          "shop": "Mamiya"
+          "shop": "Mamiya",
+          "cat2": "预制"
         }
       ]
     }
   ],
-  solo: [
+  "solo": [
     {
       "name": "Mamiya",
       "items": [
@@ -937,7 +1069,8 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/65810432d71fa50001cf9688?t=1778309522511&xsec_token=ABNXoOJ3bxll8CAYQdNHuRfvRLRNfS3s-9l4qBYaSTxmk%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g0o0316fil70ugo005omorn6gg6a60ukpmko.webp",
-          "shop": "Mamiya"
+          "shop": "Mamiya",
+          "cat2": "其他"
         },
         {
           "name": "益生元烤鲜奶脆脆",
@@ -951,7 +1084,8 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/67dec0d329b9f70001f214c9?t=1778309470934&xsec_token=ABXtx55aGCjgeuwMO8wyIBtexQ5OI-8H36sk2TfDAqEo8%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g0o031ouumvregu005omorn6gg6a60i5rr1o.webp",
-          "shop": "Mamiya"
+          "shop": "Mamiya",
+          "cat2": "其他"
         },
         {
           "name": "花生酱全家福",
@@ -965,7 +1099,8 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/68ea2a0cc753610001cfc4cb?t=1778309522516&xsec_token=ABMnoUqYUHF2C56tIYHu8HNBX73YU6x5cry9Qz8iPrFeQ%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g3no31s04gmi73s005omorn6gg6a6uh292vg.webp",
-          "shop": "Mamiya"
+          "shop": "Mamiya",
+          "cat2": "其他"
         },
         {
           "name": "夏日鲜果果酱集",
@@ -980,7 +1115,8 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/69fbfe67213e270001ff8f1d?t=1778309486344&xsec_token=AB-6l0eVgQ9UcRsowG4PWFZFhQ_tg3N-oaA9ANWi-euR0%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g0o031vg6aj9b3m005omorn6gg6a6it1ag58.webp",
-          "shop": "Mamiya"
+          "shop": "Mamiya",
+          "cat2": "其他"
         },
         {
           "name": "酥脆肉夹馍",
@@ -994,7 +1130,8 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/69faa1876bdc380001249c47?t=1778309486347&xsec_token=ABukxHlJfqhOtDxrX-dxviZYN1Fp3tUSBcppkE5itqCHY%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g3no31vro21huk80g5omorn6gg6a6qnfogj8.webp",
-          "shop": "Mamiya"
+          "shop": "Mamiya",
+          "cat2": "预制"
         },
         {
           "name": "安格斯牛肉馅饼",
@@ -1008,7 +1145,8 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/69faa0f681bc01000159f03b?t=1778309486347&xsec_token=ABQqS_oKx4h5S11osqP8Xw7xaYyNLwkEr56HxbfxFOOB8%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g3no31vrnopcu540g5omorn6gg6a6cj1q4i0.webp",
-          "shop": "Mamiya"
+          "shop": "Mamiya",
+          "cat2": "预制"
         }
       ]
     },
@@ -1027,7 +1165,8 @@ const POOL = {
           "scene": "零食囤货",
           "url": "https://xhslink.com/m/4GEhNmmciFn",
           "img": "img/arkgoods_1040g0o03234djjnd6s005n8lpf94e6b9broenag.webp",
-          "shop": "食验室"
+          "shop": "食验室",
+          "cat2": "其他"
         },
         {
           "name": "纤脆玉米片",
@@ -1040,7 +1179,8 @@ const POOL = {
           "scene": "零食囤货",
           "url": "https://xhslink.com/m/QyUF3qbqIL",
           "img": "img/arkgoods_1040g3no322rcrq34ms0g5n8lpf94e6b9jnv4h3o.webp",
-          "shop": "食验室"
+          "shop": "食验室",
+          "cat2": "其他"
         },
         {
           "name": "抹茶/巧克力玉米片",
@@ -1055,7 +1195,8 @@ const POOL = {
           "scene": "零食囤货",
           "url": "https://xhslink.com/m/9icqM6i1RYW",
           "img": "img/arkgoods_1040g3no321ojas0u6s0g5n8lpf94e6b9j3fd1g8.webp",
-          "shop": "食验室"
+          "shop": "食验室",
+          "cat2": "糖果巧克力"
         },
         {
           "name": "十蔬米饼",
@@ -1070,7 +1211,8 @@ const POOL = {
           "scene": "零食囤货",
           "url": "https://xhslink.com/m/4rrhJ7Frptn",
           "img": "img/arkgoods_1040g0o031t8fj7qe58005n8lpf94e6b924f8kdo.webp",
-          "shop": "食验室"
+          "shop": "食验室",
+          "cat2": "其他"
         },
         {
           "name": "波浪玉米片",
@@ -1083,7 +1225,8 @@ const POOL = {
           "scene": "零食囤货",
           "url": "https://xhslink.com/m/ALueTQi2ZH8",
           "img": "img/arkgoods_1040g3no321oiv86a740g5n8lpf94e6b9ncbnfs8.webp",
-          "shop": "食验室"
+          "shop": "食验室",
+          "cat2": "其他"
         },
         {
           "name": "爆品组合礼包",
@@ -1096,9 +1239,11 @@ const POOL = {
           "scene": "零食囤货",
           "url": "https://xhslink.com/m/3Q2BN30KlRM",
           "img": "img/arkgoods_1040g0o0321oj2p9972005n8lpf94e6b97hqapj8.webp",
-          "shop": "食验室"
+          "shop": "食验室",
+          "cat2": "其他"
         }
-      ]
+      ],
+      "off": 1
     },
     {
       "name": "熊猫猪猪庄园旗舰店",
@@ -1106,8 +1251,8 @@ const POOL = {
         {
           "name": "金华两头乌土猪小笼包",
           "spec": "200g/袋/8只",
-          "price": 65.0,
-          "origPrice": 79.0,
+          "price": 65,
+          "origPrice": 79,
           "priceTxt": "65/3袋 95/5袋",
           "sell": "①原料优质：只选用自有牧场养殖的金华两头乌土猪肉，养殖全程可视化，真正可溯源 ②工艺传统：地道的嵊州小笼包工艺和非遗美味，12小时老面发酵，坚持手艺师傅传统手工包制，保留了小笼包的原始风味和精致口感，每一口都充满匠心。 ",
           "cmsn": "0.2",
@@ -1115,13 +1260,14 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/68842d17e019f20001e8f3bf?t=1778310966011&xsec_token=AB0o8W8Xhw0sjfJq5pzGcPl6AxzktI4kr0KFFHwuNwKmo%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g0o031ujvnov32s005ojhqhk8clkpb9ckor0.webp",
-          "shop": "熊猫猪猪庄园旗舰店"
+          "shop": "熊猫猪猪庄园旗舰店",
+          "cat2": "预制"
         },
         {
           "name": "金华两头乌爆汁烤肠",
           "spec": "360g/盒/6根 （原味/芝士玉米味）",
-          "price": 98.0,
-          "origPrice": 139.0,
+          "price": 98,
+          "origPrice": 139,
           "priceTxt": "98/2盒 136/3盒",
           "sell": "核心原料：只采用自有牧场养殖的金华两头乌猪肉（不属于黑猪品种，是品质稳定的高端地方名猪） 拥有GI标（是中国地理标识农产品），四大名土猪之一，也是名火腿-正宗金华火腿的原材料； 四季慢养，原粮饲喂365天，精细慢长，吃原",
           "cmsn": "0.2",
@@ -1129,13 +1275,14 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/69e712480f549c0001126ae1?t=1778312553295&xsec_token=ABgySUjn5Ir_nCoIDhoTahH4CldvBNO0DQE-H6z5YIX1g%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g0o031ujvnov32s005ojhqhk8clkpb9ckor0.webp",
-          "shop": "熊猫猪猪庄园旗舰店"
+          "shop": "熊猫猪猪庄园旗舰店",
+          "cat2": "预制"
         },
         {
           "name": "金华两头乌麦苗米饺",
           "spec": "280g/袋/8只",
-          "price": 68.0,
-          "origPrice": 88.0,
+          "price": 68,
+          "origPrice": 88,
           "priceTxt": "68/2袋 98/3袋",
           "sell": "① 天然春味外皮，颜值与健康双在线：用麦苗汁和面，天然翠绿色，自带清新麦苗香，糯米粉 + 小麦粉黄金配比，软糯 Q 弹不粘牙，蒸食不易破，口感比传统清明粿更清爽，无艾草苦涩味 ② 豪华内馅，鲜掉眉毛的三重风味：金华两头乌",
           "cmsn": "0.25",
@@ -1143,13 +1290,14 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/69c629c1d95b5a0001bbbb93?t=1778310966011&xsec_token=AB4UJat5D0_3mzTPTQ9nQP9zm2Hgkgu2REPana_INBVNk%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g0o031u76pe6kis005ojhqhk8clkpa2ubmsg.webp",
-          "shop": "熊猫猪猪庄园旗舰店"
+          "shop": "熊猫猪猪庄园旗舰店",
+          "cat2": "预制"
         },
         {
           "name": "金华两头乌午餐肉",
           "spec": "240g/盒/6片",
-          "price": 75.0,
-          "origPrice": 89.0,
+          "price": 75,
+          "origPrice": 89,
           "priceTxt": "75/2盒 99/3盒",
           "sell": "●金华两头乌土猪肉肉含量≥90%（不掺杂其他肉类，仅含金华两头乌土猪肉） ●配料表更干净：0防腐剂（0山梨酸钾、0双乙酸钠、0亚硝酸钠），减盐配方更健康 ●高蛋白 更营养：蛋白含量＞15%/100g（5倍于同质量全脂牛奶",
           "cmsn": "0.2",
@@ -1157,13 +1305,14 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/682bea13a045210001d8b45d?t=1778310966012&xsec_token=ABlZLfRkHpBBpzydXJ7r1ep3jUP1lISmgBlcHq8vMPPtw%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g0o03221e5o6fmu005ojhqhk8clkpu499mr8.webp",
-          "shop": "熊猫猪猪庄园旗舰店"
+          "shop": "熊猫猪猪庄园旗舰店",
+          "cat2": "预制"
         },
         {
           "name": "金华两头乌薄酥饼",
           "spec": "155g/盒（原味/香辣味）",
-          "price": 62.0,
-          "origPrice": 78.0,
+          "price": 62,
+          "origPrice": 78,
           "priceTxt": "62/2盒 116/4盒",
           "sell": "酥脆掉渣，口感一绝：采用传统多层起酥工艺，饼皮金黄酥脆，轻咬即碎，芝麻香气扑鼻，带来极强的口感满足感。 优质内馅，咸香入味：采用金华两头土猪肥膘肉（中国农产品地理标志、中欧互认地理标志产品），肉质源自 365 天四季慢养",
           "gift": "四盒赠手提礼袋",
@@ -1172,13 +1321,14 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/68c7aac739f90c0001f5ea33?t=1778310966013&xsec_token=ABi1g_lS24rA-PG6hjPYd3KBm6Vs2BHGn0r6LkJQPG50w%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g0o031otbf2bgh2005ojhqhk8clkpe69kdb0.webp",
-          "shop": "熊猫猪猪庄园旗舰店"
+          "shop": "熊猫猪猪庄园旗舰店",
+          "cat2": "预制"
         },
         {
           "name": "金华两头乌手工长粽",
           "spec": "130g/个（大肉粽/梅干菜肉粽/火腿蜜枣粽）",
-          "price": 118.0,
-          "origPrice": 149.0,
+          "price": 118,
+          "origPrice": 149,
           "priceTxt": "118 98 168",
           "sell": "粽子里用的都是自有牧场养殖的金华两头乌土猪肉 猪肉拥有权威的健康养殖认证证书 金华两头乌是正宗金华火腿的原材料 是四大名猪之一 两头乌猪肉要养足365天，时光沉淀出的浓郁肉香，也更营养 喂的是天然原粮，还给猪猪吃酵素和龙",
           "cmsn": "0.2",
@@ -1186,7 +1336,8 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/69f2f7488c2c2300017c18a0?t=1778311068788&xsec_token=ABMvkRj26eDioyqUZqNsGA8--Xx2zviK7oYazLpRTGhYI%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g0o031visbi7o2s005ojhqhk8clkptgu7320.webp",
-          "shop": "熊猫猪猪庄园旗舰店"
+          "shop": "熊猫猪猪庄园旗舰店",
+          "cat2": "预制"
         }
       ]
     },
@@ -1204,7 +1355,8 @@ const POOL = {
           "scene": "零食囤货",
           "url": "https://www.xiaohongshu.com/goods-detail/5f27c9fc0cf9a114efad9777?t=1770791859277&xsec_token=ABuURxfkLbBRLXBhKfVsnnd1D5BoUL408CztXmTPHksxg%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g3no322uqivq8720g4a0iq50v0s99u1fi618.webp",
-          "shop": "米惦商店旗舰店"
+          "shop": "米惦商店旗舰店",
+          "cat2": "其他"
         },
         {
           "name": "碧根果雪球",
@@ -1217,7 +1369,8 @@ const POOL = {
           "scene": "零食囤货",
           "url": "https://www.xiaohongshu.com/goods-detail/65faa2243b4dcf00018bea41?t=1770791883386&xsec_token=ABLiTk-xOJx8v6xb8a-z5aZAmdRnvFnuG30oLwly9xMiQ%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g0o0322uqaj95n0004a0iq50v0s994l6nek8.webp",
-          "shop": "米惦商店旗舰店"
+          "shop": "米惦商店旗舰店",
+          "cat2": "其他"
         },
         {
           "name": "奶奶嫩吐司",
@@ -1231,7 +1384,8 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/68959790f9d7c80001b45260?t=1770791903985&xsec_token=ABhBRn1AIAEpf0Nihw-Yul0QSsZQRLDjb5HEYLBIGPbnA%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g3no31ktkss2m360g4a0iq50v0s99h841b50.webp",
-          "shop": "米惦商店旗舰店"
+          "shop": "米惦商店旗舰店",
+          "cat2": "其他"
         },
         {
           "name": "奶奶小馒头",
@@ -1245,9 +1399,11 @@ const POOL = {
           "scene": "零食囤货",
           "url": "https://www.xiaohongshu.com/goods-detail/697dc486b6ceb400018f5f33?t=1770791925383&xsec_token=ABAafGr0fJssdLRVD3B0uO_UVwvQ-ZvAUm6jGXCSaq0Qc%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g0o032370hmmlms004a0iq50v0s99sacv058.webp",
-          "shop": "米惦商店旗舰店"
+          "shop": "米惦商店旗舰店",
+          "cat2": "其他"
         }
-      ]
+      ],
+      "off": 1
     },
     {
       "name": "脆升升旗舰店",
@@ -1265,7 +1421,8 @@ const POOL = {
           "scene": "零食囤货",
           "url": "https://www.xiaohongshu.com/goods-detail/643e443c3db67b0001031b6c?xhsshare=CopyLink&appuid=62bc16d8000000001501b6e4&apptime=1684408853",
           "img": "img/arkgoods_1000g0o02khpe8muim0005ols2rc5bdn45gi4if8.webp",
-          "shop": "脆升升旗舰店"
+          "shop": "脆升升旗舰店",
+          "cat2": "其他"
         },
         {
           "name": "脆升升香脆薯角",
@@ -1280,7 +1437,8 @@ const POOL = {
           "scene": "零食囤货",
           "url": "https://www.xiaohongshu.com/goods-detail/682eb4600bed560001035266?xsec_token=XBZfPUFCREClPy3NP5Lq8OXUd-ox8EMksJgWLHh7vzFwI%3D&xsec_source=app_share&instation_link=xhsdiscover%3A%2F%2Fgoods_detail%2F682eb4600bed560001035266%3Ftrade_ext%3DeyJjaGFubmVsSW5mbyI6bnVsbCwiZHNUb2tlbkluZm8iOm51bGwsInNoYXJlTGluayI6Imh0dHBzOi8vd3d3LnhpYW9ob25nc2h1LmNvbS9nb29kcy1kZXRhaWwvNjgyZWI0NjAwYmVkNTYwMDAxMDM1MjY2P2FwcHVpZD01Y2ViYTM4ZjAwMDAwMDAwMTgwMzZlNDEiLCJsaXZlSW5mbyI6bnVsbCwic2hvcEluZm8iOm51bGwsImdvb2RzTm90ZUluZm8iOm51bGwsImNoYXRJbmZvIjpudWxsLCJzZWFyY2hJbmZvIjpudWxsLCJwcmVmZXIiOm51bGx9%26rn%3Dtrue&xhsshare=CopyLink&appuid=5ceba38f0000000018036e41&apptime=1748184140&share_id=a728fb23644b4d1f9d83f258dc5277f3&share_channel=copy_link",
           "img": "img/arkgoods_1040g3no31hpait1e4q0g5ols2rc5bdn42a96vk0.webp",
-          "shop": "脆升升旗舰店"
+          "shop": "脆升升旗舰店",
+          "cat2": "其他"
         },
         {
           "name": "脆升升香脆薯片",
@@ -1295,7 +1453,8 @@ const POOL = {
           "scene": "零食囤货",
           "url": "https://www.xiaohongshu.com/goods-detail/67fe3d90abbc830001a8649f?xsec_token=XBSBvdVLuPyy-g6CGd4y4tYoKdDvfGmH_Qi01n1h33Pxs%3D&xsec_source=app_share&instation_link=xhsdiscover%3A%2F%2Fgoods_detail%2F67fe3d90abbc830001a8649f%3Ftrade_ext%3DeyJjaGFubmVsSW5mbyI6bnVsbCwiZHNUb2tlbkluZm8iOm51bGwsInNoYXJlTGluayI6Imh0dHBzOi8vd3d3LnhpYW9ob25nc2h1LmNvbS9nb29kcy1kZXRhaWwvNjdmZTNkOTBhYmJjODMwMDAxYTg2NDlmP2FwcHVpZD01Y2ViYTM4ZjAwMDAwMDAwMTgwMzZlNDEiLCJsaXZlSW5mbyI6bnVsbCwic2hvcEluZm8iOm51bGwsImdvb2RzTm90ZUluZm8iOm51bGwsImNoYXRJbmZvIjpudWxsLCJzZWFyY2hJbmZvIjpudWxsLCJwcmVmZXIiOm51bGx9%26rn%3Dtrue&xhsshare=CopyLink&appuid=5ceba38f0000000018036e41&apptime=1748184589&share_id=5ae163aec80d433ebd17fe6207b8c6e3&share_channel=copy_link",
           "img": "img/arkgoods_1040g0o030q33pfkgn8005ols2rc5bdn4jlkd788.webp",
-          "shop": "脆升升旗舰店"
+          "shop": "脆升升旗舰店",
+          "cat2": "其他"
         },
         {
           "name": "脆升升升运礼盒",
@@ -1309,9 +1468,11 @@ const POOL = {
           "scene": "零食囤货",
           "url": "https://xhslink.com/m/1pHG8MpGM75",
           "img": "img/arkgoods_1040g0o0320of1fbo5k005ols2rc5bdn47gjk34g.webp",
-          "shop": "脆升升旗舰店"
+          "shop": "脆升升旗舰店",
+          "cat2": "其他"
         }
-      ]
+      ],
+      "off": 1
     },
     {
       "name": "蒸笼头",
@@ -1328,7 +1489,8 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/6960aa3111e595000189df47?t=1773302676330&xsec_token=ABNdZ0gyDKXHyrkxVWjGzl7r1qsMM381Wzix2rhDj6zWo%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g0o0320lnq1776o005ovup5uaag1mdkgc7no.webp",
-          "shop": "蒸笼头"
+          "shop": "蒸笼头",
+          "cat2": "预制"
         },
         {
           "name": "葱花卷+肉花卷",
@@ -1342,7 +1504,8 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/65d4486184d70b0001a1e0dc?t=1773302989828&xsec_token=ABMVwiO-NUB1JyKTLYEY1RzQfDwpnARknCGhbMfrN69Xs%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g3no31tl4par9mi0g5ovup5uaag1mt29eb4o.webp",
-          "shop": "蒸笼头"
+          "shop": "蒸笼头",
+          "cat2": "预制"
         },
         {
           "name": "牛肉烧麦组合",
@@ -1356,7 +1519,8 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/6757dac0bdb5900001d15209?t=1773303010847&xsec_token=ABBYowqF9ZT0X_zj3Rmig6y7Otjj6K1wMdUWB1RF-V_kY%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g3no31tiddhpg5e105ovup5uaag1mpbtfbh0.webp",
-          "shop": "蒸笼头"
+          "shop": "蒸笼头",
+          "cat2": "预制"
         },
         {
           "name": "黄芽菜肉丝春卷",
@@ -1370,7 +1534,8 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/69290c2cce3eb500013d2eb8?t=1773303089802&xsec_token=ABUrJbfAp56ejr9sBDSodTOhJj7kVLYMWOIEpp8df05K0%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g3no31r42rv0k6u0g5ovup5uaag1mccse52g.webp",
-          "shop": "蒸笼头"
+          "shop": "蒸笼头",
+          "cat2": "预制"
         }
       ]
     },
@@ -1380,8 +1545,8 @@ const POOL = {
         {
           "name": "福州鱼丸",
           "spec": "240g",
-          "price": 99.0,
-          "origPrice": 159.0,
+          "price": 99,
+          "origPrice": 159,
           "priceTxt": "99/6包",
           "sell": "【非遗美食】传承500多年的非物质文化遗产 / 【纯净配料】好原料 严品控! / 【全网比货】猪肉含量≥78%",
           "cmsn": "0.25",
@@ -1389,13 +1554,14 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/648193ddd171fa000122df28",
           "img": "img/arkgoods_1040g3no31vgfqh8pkc0g5oincm88d4dq6s65elg.webp",
-          "shop": "馥华"
+          "shop": "馥华",
+          "cat2": "预制"
         },
         {
           "name": "福州肉燕",
           "spec": "180g",
-          "price": 99.0,
-          "origPrice": 159.0,
+          "price": 99,
+          "origPrice": 159,
           "priceTxt": "99/6包",
           "sell": "【非遗美食】传承500多年的非物质文化遗产，纯手工制作。 / 【纯净配料】好原料 严品控! / 【全网比货】猪肉含量≥80%",
           "cmsn": "0.25",
@@ -1403,13 +1569,14 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/655424ec44a0ce0001e379ea",
           "img": "img/arkgoods_1040g0o03206d490m5k005oincm88d4dq1df147g.webp",
-          "shop": "馥华"
+          "shop": "馥华",
+          "cat2": "预制"
         },
         {
           "name": "福州鱼饺",
           "spec": "180g",
-          "price": 69.0,
-          "origPrice": 129.0,
+          "price": 69,
+          "origPrice": 129,
           "priceTxt": "69/4包",
           "sell": "【特色美食】福州当地的特色小吃，纯手工制作。 / 【纯净配料】好原料 严品控! / 【市场差异化】匠心手作 与众不同",
           "cmsn": "0.25",
@@ -1417,13 +1584,14 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/6528bcb74aa7d60001f8a623",
           "img": "img/arkgoods_1040g3no3203q6m1j2s005oincm88d4dqur6odsg.webp",
-          "shop": "馥华"
+          "shop": "馥华",
+          "cat2": "预制"
         },
         {
           "name": "鳕鱼丸",
           "spec": "250g",
-          "price": 99.0,
-          "origPrice": 159.0,
+          "price": 99,
+          "origPrice": 159,
           "priceTxt": "99/6包",
           "sell": "减脂健身儿童补充营养首选 / 【纯净配料】好原料 严品控! / 鳕鱼肉量≥85%",
           "cmsn": "0.25",
@@ -1431,7 +1599,8 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/69f1b009294caa000171048a?t=1778309642756",
           "img": "img/arkgoods_1040g0o031vhmd6rj2s005oincm88d4dq9rdb6b0.webp",
-          "shop": "馥华"
+          "shop": "馥华",
+          "cat2": "预制"
         }
       ]
     },
@@ -1450,7 +1619,8 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/6969ebde1d37860001d44a95?t=1778320760717&xsec_token=ABobrZWaISqiaox8Bd1292fytbb6VyOlFdX7irQqBP-uo%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g0o031t465b525a005o08v2k08clp7e2trt0.webp",
-          "shop": "小黄象"
+          "shop": "小黄象",
+          "cat2": "速食"
         },
         {
           "name": "酥脆伴翅",
@@ -1464,7 +1634,8 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/69fec63b0283e20001675092?t=1778320833098&xsec_token=ABnf1KWGGWRRi5zcn0IABnVruJ8WFMwqckztpc9JGsH8c%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g3no3236up0kvn00g5o08v2k08clp3jcjpqg.webp",
-          "shop": "小黄象"
+          "shop": "小黄象",
+          "cat2": "速食"
         },
         {
           "name": "黄油手抓饼",
@@ -1478,7 +1649,8 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/62c6bc11970d4e00010f33ea?t=1778321415604&xsec_token=AB4thqtfArEBmE14DyxWIN9xYezgqEPLy6bWm_RROOFtM%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g0o03228upf7u6s005o08v2k08clpqcdpbao.webp",
-          "shop": "小黄象"
+          "shop": "小黄象",
+          "cat2": "速食"
         },
         {
           "name": "橄榄油香煎鸡排",
@@ -1492,7 +1664,8 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/67721305966ebd0001786e72?t=1778321399209&xsec_token=ABqATnhgMNJrq-cbY4x2EJD-EzLdK9A8e8-MpDolfQI0g%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g0o031qmvvp1nmu0g5o08v2k08clphi8t5lo.webp",
-          "shop": "小黄象"
+          "shop": "小黄象",
+          "cat2": "速食"
         }
       ]
     },
@@ -1510,7 +1683,8 @@ const POOL = {
           "scene": "零食囤货",
           "url": "https://www.xiaohongshu.com/goods-detail/6461c52436ad1200019f32a0?t=1778901231944&xsec_token=AB05iGQw9j1P9Sm9NvabmnnVD4Pnpt1gn9bLD2VI3lGtc%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g3no31ir0snl81i7g5q0mdliji8pn6qe4h18.webp",
-          "shop": "三关六码头旗舰店"
+          "shop": "三关六码头旗舰店",
+          "cat2": "其他"
         },
         {
           "name": "手工锅巴",
@@ -1523,7 +1697,8 @@ const POOL = {
           "scene": "零食囤货",
           "url": "https://www.xiaohongshu.com/goods-detail/66160edbcf0471000192b029?t=1778901241581&xsec_token=ABfGLeLbKk8uq4VcDPYkd3SFJk1N0t8NL7yFjJTDHfs6U%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g3no31pk8e9kq3s0g4a5m6boo45lr85jvm2o.webp",
-          "shop": "三关六码头旗舰店"
+          "shop": "三关六码头旗舰店",
+          "cat2": "其他"
         },
         {
           "name": "老醋花生",
@@ -1536,7 +1711,8 @@ const POOL = {
           "scene": "零食囤货",
           "url": "https://www.xiaohongshu.com/goods-detail/69f98cb764eb410001d05666?t=1778901251805&xsec_token=AB80AoiIveXUZzjPFe7KtXNSOE1-cbdkws7no0bX0KDDs%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g0o031sv4a5otl6005qbj6tmpn9occpktd8o.webp",
-          "shop": "三关六码头旗舰店"
+          "shop": "三关六码头旗舰店",
+          "cat2": "其他"
         },
         {
           "name": "橘子干",
@@ -1549,9 +1725,11 @@ const POOL = {
           "scene": "零食囤货",
           "url": "https://www.xiaohongshu.com/goods-detail/6461c97b480cc00001b319a7?t=1778901275030&xsec_token=ABFvufsuy_T3vX3XPfgWXa38Xr4LHxRlRlDKHIgcMi1mQ%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g0o031lvfb2v050005q1ilnainj2s6pg5s8g.webp",
-          "shop": "三关六码头旗舰店"
+          "shop": "三关六码头旗舰店",
+          "cat2": "其他"
         }
-      ]
+      ],
+      "off": 1
     },
     {
       "name": "必品阁BIBIGO旗舰店",
@@ -1569,7 +1747,8 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/68fb301be0f3b20001de0cee?t=1770785911610&xsec_token=AB72VPCvaEp97nih73w37jf8e__zGoPgKFjeuCdvbJ6as%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g0o03230dbm0b70005nviqnk09eg74q5aotg.webp",
-          "shop": "必品阁BIBIGO旗舰店"
+          "shop": "必品阁BIBIGO旗舰店",
+          "cat2": "速食"
         },
         {
           "name": "必品阁生意面",
@@ -1584,7 +1763,8 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/65e6c52c735ada00019ab428?t=1770785978485&xsec_token=ABX9rBmO2FXw5ZR814o8cMrArqBjW-ywKtj5mGfJOTMxM%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g0o031fepcj4l70005nviqnk09eg7nt3be98.webp",
-          "shop": "必品阁BIBIGO旗舰店"
+          "shop": "必品阁BIBIGO旗舰店",
+          "cat2": "速食"
         },
         {
           "name": "必品阁王水饺",
@@ -1598,7 +1778,8 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/67d151af29b9f7000157579e?t=1770785939477&xsec_token=ABvBnmQUWgUJZWGn3nNGvGb2BsV2-FTaz5hxeQKs9nPyg%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g0o031k6li77o3q005nviqnk09eg7kf3ch9g.webp",
-          "shop": "必品阁BIBIGO旗舰店"
+          "shop": "必品阁BIBIGO旗舰店",
+          "cat2": "速食"
         }
       ]
     },
@@ -1608,8 +1789,8 @@ const POOL = {
         {
           "name": "空刻意面经典6盒",
           "spec": "270g*6",
-          "price": 109.0,
-          "origPrice": 169.0,
+          "price": 109,
+          "origPrice": 169,
           "priceTxt": "109",
           "sell": "15分钟在家制作星级意面",
           "gift": "厨房纸巾",
@@ -1618,7 +1799,8 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/692521f7e8b9d400013af341",
           "img": "img/arkgoods_1040g0o031p9uldobia004afiv3miotfe1espqc8.webp",
-          "shop": "空刻旗舰店"
+          "shop": "空刻旗舰店",
+          "cat2": "速食"
         },
         {
           "name": "空刻手拍薄饼披萨3盒",
@@ -1632,7 +1814,8 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/69dddef05f699000016e4f43",
           "img": "img/arkgoods_1040g0o031v280j691u004afiv3miotfeqbisvn8.webp",
-          "shop": "空刻旗舰店"
+          "shop": "空刻旗舰店",
+          "cat2": "速食"
         },
         {
           "name": "空刻无抗鸡排3袋装",
@@ -1647,7 +1830,8 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/69644d89f7aaae0001d563bb",
           "img": "img/arkgoods_1040g3no320s7aptvn20g4afiv3miotfee4lj4so.webp",
-          "shop": "空刻旗舰店"
+          "shop": "空刻旗舰店",
+          "cat2": "速食"
         }
       ]
     },
@@ -1658,7 +1842,7 @@ const POOL = {
           "name": "黑芝麻流心包",
           "spec": "1袋/5个【单个85g】",
           "price": 23.8,
-          "origPrice": 351.0,
+          "origPrice": 351,
           "priceTxt": "23.8/1袋 34.8/2袋",
           "sell": "一口爆浆黑芝麻流心包",
           "cmsn": "0.18",
@@ -1666,13 +1850,14 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/67b82f64eef1820001dc7413?t=1770795226261&xsec_token=ABJRVunrnohC6QmYlydMD7TSZbV16cCZR_jnyf0vzOsyM%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g0o031e5hrrpvge005pra4fml62se633tddg.webp",
-          "shop": "亲食派"
+          "shop": "亲食派",
+          "cat2": "速食"
         },
         {
           "name": "大黄米粽子",
           "spec": "1袋/5个【单个100g】",
           "price": 27.8,
-          "origPrice": 39.0,
+          "origPrice": 39,
           "priceTxt": "黑芝麻27.8/1袋 豆沙22.8/1袋 藜麦19.8/1袋",
           "sell": "管理期都可以吃的大黄米粽子！糯叽叽没负担",
           "cmsn": "0.15",
@@ -1680,13 +1865,14 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/6926d46bb70fce0001cef16d?t=1770795226268&xsec_token=ABECsmtO3BFMQFWdWmPEAWE8o-MJJd6jzfFidC_LsQTvc%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g0o031o4o0vj04se05pra4fml62seqlmve28.webp",
-          "shop": "亲食派"
+          "shop": "亲食派",
+          "cat2": "速食"
         },
         {
           "name": "紫薯球",
           "spec": "1袋/5个【单个100g】",
           "price": 21.8,
-          "origPrice": 29.0,
+          "origPrice": 29,
           "priceTxt": "21.8/1袋 37.8/2袋",
           "sell": "好吃到跺脚啊啊啊啊！满满膳食纤维！！",
           "cmsn": "0.15",
@@ -1694,7 +1880,8 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/6927c9663dc5360001407364?t=1770795226268&xsec_token=ABN5uyh-HfNBP0hFK7gD5wka1X_GK0C0tVarao5o5Ht2Y%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g0o031tp3vkpv6q005pra4fml62se3ugg7h8.webp",
-          "shop": "亲食派"
+          "shop": "亲食派",
+          "cat2": "速食"
         }
       ]
     },
@@ -1704,8 +1891,8 @@ const POOL = {
         {
           "name": "达克瓦兹",
           "spec": "135g/盒",
-          "price": 38.0,
-          "origPrice": 45.0,
+          "price": 38,
+          "origPrice": 45,
           "priceTxt": "38/盒 69/2盒",
           "sell": "外层都是画着可爱笑脸的杏仁风味达克瓦兹胚体，烘烤后表面形成晶莹薄脆的糖壳，咬下时“咔嚓”轻响，内里则是柔软绵密且带扎实的嚼感，入嘴后在舌尖形成层次分明的味觉体验。 / 黄油红豆味：里面夹的是特调的低糖红豆馅和一整块发酵黄",
           "cmsn": "0.2",
@@ -1713,13 +1900,14 @@ const POOL = {
           "scene": "零食囤货",
           "url": "https://www.xiaohongshu.com/goods-detail/6979bad139c8000001780251?t=1773301931241&xsec_token=ABxrXKLv2o9M7SECaBQE11RcLYs7LqsmBbwGYsbMh91FM%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g0o0320isfm825e0049vr74l9ottp1jcgkj0.webp",
-          "shop": "宿咕的铁皮盒旗舰店"
+          "shop": "宿咕的铁皮盒旗舰店",
+          "cat2": "其他"
         },
         {
           "name": "海盐生巧酥片",
           "spec": "130g/盒",
-          "price": 38.0,
-          "origPrice": 45.0,
+          "price": 38,
+          "origPrice": 45,
           "priceTxt": "38/盒 69/2盒",
           "sell": "用进口伯爵T45小麦粉制作的面团，T后面的数字越小，小麦粉的精制程度就越高。 / 延续传统的手工开酥，酥皮高达144层，需要使用大量的人工和时间。 / 添加些许莫顿海盐，裹上比利时进口的嘉利宝纯脂黑巧克力酱，一口咬下去首",
           "cmsn": "0.2",
@@ -1727,13 +1915,14 @@ const POOL = {
           "scene": "零食囤货",
           "url": "https://www.xiaohongshu.com/goods-detail/65fe977c86208c00016249a3?t=1773301931257&xsec_token=AB6f3dH_k_4zVPvIsq87arvFPM-lwlimp-F3btYSnNja0%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g0o0310tjmeo1mm0049vr74l9ottpgc6v7a0.webp",
-          "shop": "宿咕的铁皮盒旗舰店"
+          "shop": "宿咕的铁皮盒旗舰店",
+          "cat2": "糖果巧克力"
         },
         {
           "name": "朗姆酒葡萄饼干",
           "spec": "235g/盒",
-          "price": 58.0,
-          "origPrice": 68.0,
+          "price": 58,
+          "origPrice": 68,
           "priceTxt": "58/盒 108/2盒",
           "sell": "1双重夹心饼干，一半是奶油奶酪，一半是提子 2外层两片酥松的黄油饼干，中间白巧奶油口感顺滑，裹着超大颗浸泡 过朗姆酒后的提子干，入口即化，低糖配方，一点都不甜腻 3手工制作，每日现烤，配料表干净，无添加。 4 铁皮盒包装",
           "cmsn": "0.2",
@@ -1741,9 +1930,11 @@ const POOL = {
           "scene": "零食囤货",
           "url": "https://www.xiaohongshu.com/goods-detail/65fe981996b9a10001346d4d?t=1773301931245&xsec_token=AB5TfhzkQ_kKEAoSyf1OD_lqv2KIAnMJZB2bN7NhvjKvQ%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g3no31rts5od9240g49vr74l9ottprjjnjqo.webp",
-          "shop": "宿咕的铁皮盒旗舰店"
+          "shop": "宿咕的铁皮盒旗舰店",
+          "cat2": "其他"
         }
-      ]
+      ],
+      "off": 1
     },
     {
       "name": "锋味派",
@@ -1751,8 +1942,8 @@ const POOL = {
         {
           "name": "锋味派黑猪肉小笼包",
           "spec": "200g（8只）/袋",
-          "price": 99.0,
-          "origPrice": 139.0,
+          "price": 99,
+          "origPrice": 139,
           "priceTxt": "99/8袋",
           "sell": "老面发酵12h，不加酵母，划重点，我们一般自己包的包子都是加酵母的，但我们是真空和面、百道滚择，手艺师傅手工包制。筋道有弹性，皮肉分离，-38℃速冻锁鲜，保留地道传统老味道； / 刚刚上新的川味小笼包：添加成都地道火锅底",
           "gift": "调味醋汁*4 油泼辣子*4 蒸笼纸8张",
@@ -1760,32 +1951,35 @@ const POOL = {
           "cat": "方便速食",
           "scene": "早餐帮手",
           "img": "img/arkgoods_1040g0o031odmp6jdkq005o1ngntgblnk8o32uhg.webp",
-          "shop": "锋味派"
+          "shop": "锋味派",
+          "cat2": "速食"
         },
         {
           "name": "锋味派盒装午餐肉",
           "spec": "316g（8*39.5g）/盒",
-          "price": 89.0,
+          "price": 89,
           "priceTxt": "89/3盒",
           "sell": "锋味派创始人、米其林之友谢霆锋，优选原料的诚挚之选，iSEE创新品牌百强榜（KT）； / 坚持单一肉源，只选用品质黑猪肉，不掺杂其他肉类，肉香浓郁醇厚，肉质鲜嫩紧实； / 黑猪肉含量≥90%，大块肉粒看得见，满满肉丝嚼得",
           "cmsn": "0.15",
           "cat": "方便速食",
           "scene": "早餐帮手",
           "img": "img/arkgoods_1040g3no31vqijdna2s0g5o1ngntgblnk0u97g9o.webp",
-          "shop": "锋味派"
+          "shop": "锋味派",
+          "cat2": "速食"
         },
         {
           "name": "锋味派酥皮馅饼",
           "spec": "360g/盒（90g*4片）",
-          "price": 89.0,
-          "origPrice": 139.0,
+          "price": 89,
+          "origPrice": 139,
           "priceTxt": "89/4袋",
           "sell": "皮薄酥脆，馅大肉香：馅含量≥40%，安格斯牛肉/黑猪肉在馅料中占比≥70%，河北硬粒小麦粉搭配俄罗斯进口小麦粉，8层开酥，层层酥脆，口口满足 / 单片独立包装:真正的“一室一厅”，干净卫生不怕串味，内含贴心隔膜，好吃不脏",
           "cmsn": "0.15",
           "cat": "方便速食",
           "scene": "早餐帮手",
           "img": "img/arkgoods_1040g0o031lm7asteks005o1ngntgblnkb4mul4g.webp",
-          "shop": "锋味派"
+          "shop": "锋味派",
+          "cat2": "速食"
         }
       ]
     },
@@ -1803,7 +1997,8 @@ const POOL = {
           "scene": "零食囤货",
           "url": "https://www.xiaohongshu.com/goods-detail/68ca893a24f1f8000138210f?t=1778312232401&xsec_token=ABg26QdWfrhU2Tt9D0PiaWLsglnkkpLkNvGbhpOU2j7oo%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g3no321tnouarn00g5n2dcdjkfu6fpnirh90.webp",
-          "shop": "运康锅巴旗舰店"
+          "shop": "运康锅巴旗舰店",
+          "cat2": "其他"
         },
         {
           "name": "运康手抓包锅巴",
@@ -1816,7 +2011,8 @@ const POOL = {
           "scene": "零食囤货",
           "url": "https://www.xiaohongshu.com/goods-detail/670902b58b7cdc00015e2c9a?t=1778312135816&xsec_token=ABvonb6r9_CcQvqDZHxPxktdkHfoLha5pYDkXiHHyj5zk%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g3no321ba2r4c720g5n2dcdjkfu6fsn0hrc0.webp",
-          "shop": "运康锅巴旗舰店"
+          "shop": "运康锅巴旗舰店",
+          "cat2": "其他"
         },
         {
           "name": "运康经典88g",
@@ -1829,9 +2025,11 @@ const POOL = {
           "scene": "零食囤货",
           "url": "https://www.xiaohongshu.com/goods-detail/69bf69f658e9630001b9fe6d?t=1778312271474&xsec_token=ABMc5oKdViz6tWqrDlJr4pM84oMapT8LNo8PwZ5WYOuGs%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g0o031uhila3fjg005n2dcdjkfu6fa5hvsl0.webp",
-          "shop": "运康锅巴旗舰店"
+          "shop": "运康锅巴旗舰店",
+          "cat2": "其他"
         }
-      ]
+      ],
+      "off": 1
     },
     {
       "name": "福百道旗舰店",
@@ -1839,7 +2037,7 @@ const POOL = {
         {
           "name": "福州鱼丸",
           "spec": "160g/袋",
-          "price": 68.0,
+          "price": 68,
           "priceTxt": "68/7袋",
           "sell": "福州鱼丸历史悠久，采用货真价实的深海鱼肉制作而成； / 内馅鲜爽多汁，通常由甄选新鲜、肥瘦比例恰到好处的猪后腿肉制成； / 鱼丸可煮、可蒸、可炸、可煲、可搭配面食，还可用于火锅、麻辣烫等，是百搭食材。",
           "cmsn": "0.22",
@@ -1847,12 +2045,13 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/655f5beb3edc980001a39e7e?t=1778310132326&xsec_token=ABRCXTCR-gV31BXFfDhtIWJdbd5lnJf2UDXHhorBeg1F8%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g0o030rqnb52kiq005oi09ehk0rtec2elaj0.webp",
-          "shop": "福百道旗舰店"
+          "shop": "福百道旗舰店",
+          "cat2": "预制"
         },
         {
           "name": "福州肉燕",
           "spec": "230g/袋",
-          "price": 88.0,
+          "price": 88,
           "priceTxt": "88/5袋",
           "sell": "福建福州本土正宗品牌，专做福州地方特色美食； / 不添加人工香精，色素，防腐剂，采用真空包装； / 坚持手工制作，馅料加入新鲜马蹄，口感特别劲道爽滑。",
           "cmsn": "0.22",
@@ -1860,7 +2059,8 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/655c3f873edc980001c21f18?t=1778310132327&xsec_token=ABr3xV6BDLoJE8mBk3Oy7_XmQ8nuDMDcThjwYJZlvEuBo%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g0o030n9c643alk005oi09ehk0rteobvi99o.webp",
-          "shop": "福百道旗舰店"
+          "shop": "福百道旗舰店",
+          "cat2": "预制"
         },
         {
           "name": "茯苓薏米山药面（无盐线面）",
@@ -1873,7 +2073,8 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/67f739742a334f0001cfeb0e?t=1778310132321&xsec_token=ABFudA59O8exAiDC_GilfG9mmPrEejGlr2B9Wpn6H3Q-o%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g0o031vrrcg4k54005oi09ehk0rtela6virg.webp",
-          "shop": "福百道旗舰店"
+          "shop": "福百道旗舰店",
+          "cat2": "预制"
         }
       ]
     },
@@ -1883,8 +2084,8 @@ const POOL = {
         {
           "name": "手工艾草青团",
           "spec": "红豆核桃青团320克（80克*4） 春韵鲜笋青团400克(100克*4) 菌蔬素味青团400克(100克*4)",
-          "price": 98.0,
-          "origPrice": 108.0,
+          "price": 98,
+          "origPrice": 108,
           "priceTxt": "98",
           "sell": "甄选江南水磨米粉与天然新鲜艾草，艾草纤维可见，清新自然，艾香十足。纯手工炒制内馅，每个青团都是手工匠心制作。清明时节，日常上班早餐，代餐正食，懒人速食必备",
           "cmsn": "0.2",
@@ -1892,13 +2093,14 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://xhslink.com/m/9FTJiLgWefZ",
           "img": "img/arkgoods_1040g3no31t0hdkaml80049cfv8sslsf7n0nvao8.webp",
-          "shop": "米曰旗舰店"
+          "shop": "米曰旗舰店",
+          "cat2": "预制"
         },
         {
           "name": "紫菜包饭",
           "spec": "400g/盒*4盒40片（四口味）",
-          "price": 138.0,
-          "origPrice": 154.0,
+          "price": 138,
+          "origPrice": 154,
           "priceTxt": "138",
           "sell": "手工制作 配料干净 加热即食 多种口味 馅料满满 营养均衡 好食材轻调味",
           "cmsn": "0.2",
@@ -1906,12 +2108,13 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://xhslink.com/m/9CTLi87ZpyJ",
           "img": "img/arkgoods_1040g0o031tjjg66u7o0049cfv8sslsf776bir5o.webp",
-          "shop": "米曰旗舰店"
+          "shop": "米曰旗舰店",
+          "cat2": "预制"
         },
         {
           "name": "三角饭团",
           "spec": "100g/个*12个（六口味）",
-          "price": 118.0,
+          "price": 118,
           "origPrice": 131.12,
           "priceTxt": "118",
           "sell": "【甄选食材】甄选黑土地越光稻种大米，新鲜脱壳，鲜米现蒸；乐其雅牌黑松露酱、澳洲M9+和牛、淡水鲜活鳗鱼 【创新口味】区别于传统的白米裹馅饭团，米日三角饭团将不同食材与大米相互融合，每一口都丰盈满足 【干净配料】0添加香精",
@@ -1920,7 +2123,8 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://xhslink.com/m/8bKsxlsEg50",
           "img": "img/arkgoods_1040g0o031838mje70o0049cfv8sslsf7s0bf6kg.webp",
-          "shop": "米曰旗舰店"
+          "shop": "米曰旗舰店",
+          "cat2": "预制"
         }
       ]
     },
@@ -1930,8 +2134,8 @@ const POOL = {
         {
           "name": "夏威夷果仁可可脆片255g",
           "spec": "255g/盒",
-          "price": 162.0,
-          "origPrice": 204.0,
+          "price": 162,
+          "origPrice": 204,
           "priceTxt": "162/盒",
           "sell": "原料奢选：进口夏威夷果仁（零防腐剂，配料干净健康）。 / 口感丰富：可可脆片的酥脆+夏威夷果仁碎的酥脆，带来层次丰富的味觉体验。 / 包装吸睛：禁止小熊礼盒包装，辨识度高，香港伴手礼 TOP，自带 “排队王” 话题度，适",
           "cmsn": "0.18",
@@ -1939,13 +2143,14 @@ const POOL = {
           "scene": "零食囤货",
           "url": "https://www.xiaohongshu.com/goods-detail/698c2db26d22e70001e75367?t=1770796287385&xsec_token=ABrVky-2V0Sb-ZjBJ5qkuraPQ8s4CE9aKbrfi370SnJ60%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g0o031rna66d7240g5ns9bi60886k2v17ocg.webp",
-          "shop": "珍妮曲奇聪明小熊饼干旗舰店"
+          "shop": "珍妮曲奇聪明小熊饼干旗舰店",
+          "cat2": "糖果巧克力"
         },
         {
           "name": "四味奶油曲奇320g",
           "spec": "320g/盒",
-          "price": 109.0,
-          "origPrice": 136.0,
+          "price": 109,
+          "origPrice": 136,
           "priceTxt": "109/盒",
           "sell": "经典四味组合：奶油花、咖啡花、脆牛油、提子燕麦，覆盖全年龄段口味需求，不挑人爱吃 / 高端原料加持：选用澳洲进口动物黄油、优选小麦面粉，优质原料成就醇厚风味，无劣质油脂味 / 黄金小盒规格：320g单层小盒装，体积小巧不",
           "cmsn": "0.18",
@@ -1953,9 +2158,11 @@ const POOL = {
           "scene": "零食囤货",
           "url": "https://www.xiaohongshu.com/goods-detail/698c2da6b6ceb40001ff617c?t=1770794501462&xsec_token=ABRKIV-gmoSvhmYVduiowDAfZlDNKen-oBS5XIsxPaZnU%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g0o031rkh4q2ri2005ns9bi60886k61vmsk8.webp",
-          "shop": "珍妮曲奇聪明小熊饼干旗舰店"
+          "shop": "珍妮曲奇聪明小熊饼干旗舰店",
+          "cat2": "其他"
         }
-      ]
+      ],
+      "off": 1
     },
     {
       "name": "满滋屋食品旗舰店",
@@ -1963,7 +2170,7 @@ const POOL = {
         {
           "name": "三明治",
           "spec": "牛奶招牌70g 肉松火腿蛋80g 黑松露75g 草莓起司60g 牛肉起司80g",
-          "price": 2.0,
+          "price": 2,
           "origPrice": 82.9,
           "priceTxt": "包邮+额外赠2枚：牛奶招牌 82.9--牛奶招牌*1+肉松火腿蛋*1+黑松露*1+草莓起司*1+牛肉起司*1 87--牛",
           "sell": "生吐司：采用中种法，三次发酵工艺，日本原山崎吐司专家研发，每条吐司从生产到冷却（可以使用）需要2-3天时间，口感柔软细腻有嚼劲。 / 原料：选用意大利进口的黑松露酱、百年品牌荷美尔定制火腿，新西兰干酪和黄油，法国进口爱乐",
@@ -1973,12 +2180,13 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/656ec6e58356dc000130d0d2?t=1772427903444&xsec_token=ABIx-aNFOIN4PNevUkheCx1DvYZ6s8-UtnCHqsCbfupgY%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g3no31tu3ph6s18104a03qn6f23jok4dt7a0.webp",
-          "shop": "满滋屋食品旗舰店"
+          "shop": "满滋屋食品旗舰店",
+          "cat2": "其他"
         },
         {
           "name": "满滋屋 朗姆提子夹心饼干（礼盒）",
           "spec": "35g*8枚/35g*16枚",
-          "price": 8.0,
+          "price": 8,
           "priceTxt": "8枚装58元 16枚装108元",
           "sell": "风味：成年人的微醺小饼干，双重夹心 一半是奶油 一半是提子，外层两片酥松的黄油饼干 中间白巧奶油口感顺滑，裹着超大颗浸泡过朗姆酒后的提子干，香甜浓郁 / 原料 饼干：安佳动物黄油-甄选优质黄金带奶源，奶香浓郁口感醇厚，0",
           "cmsn": "0.2",
@@ -1986,9 +2194,11 @@ const POOL = {
           "scene": "零食囤货",
           "url": "https://www.xiaohongshu.com/goods-detail/673da12e4f0ec70001393e39?t=1772427903449&xsec_token=AB8FsGrTINU9WA36ifEgd0CdwWdk6mvkClZGRdCt8Yrqw%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g3no322i2dq446s004a03qn6f23josq6frng.webp",
-          "shop": "满滋屋食品旗舰店"
+          "shop": "满滋屋食品旗舰店",
+          "cat2": "其他"
         }
-      ]
+      ],
+      "off": 1
     },
     {
       "name": "三兔船长",
@@ -2005,7 +2215,8 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/697b02448a6b8a00011bf025?t=1770887432927&xsec_token=ABc6y8Bm_XLv_IHwvez_9BOuHWn_OhapW2Ff9-J14sxdk%3D&xsec_source=app_arkselfshare",
           "img": "img/arkgoods_1040g0o031rsea9edi8005o4lvtng8ehjpbppieo.webp",
-          "shop": "三兔船长"
+          "shop": "三兔船长",
+          "cat2": "速食"
         },
         {
           "name": "手工青饺",
@@ -2018,7 +2229,8 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/67dbf174d9b27200019e6b71?t=1772423678417&xsec_token=ABs8LHzJ4kyjqPs3IDxCHPalPOqfjgEgHg6ZCcobKFBwY%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g3no31tl7tib8nu0g5o4lvtng8ehjjhj3j5o.webp",
-          "shop": "三兔船长"
+          "shop": "三兔船长",
+          "cat2": "速食"
         }
       ]
     },
@@ -2037,7 +2249,8 @@ const POOL = {
           "scene": "零食囤货",
           "url": "https://www.xiaohongshu.com/goods-detail/60c2f7c432353c0001abce5a?xsec_token=XB9aaQUe6l33KHcVtp3c0VUG2SC8ixpNDrTmsFAJ1byR0=&xsec_source=app_share&instation_link=xhsdiscover%3A%2F%2Fgoods_detail%2F60c2f7c432353c0001abce5a%3Ftrade_ext%3DeyJjaGFubmVsSW5mbyI6bnVsbCwiZHNUb2tlbkluZm8iOm51bGwsInNoYXJlTGluayI6Imh0dHBzOi8vd3d3LnhpYW9ob25nc2h1LmNvbS9nb29kcy1kZXRhaWwvNjBjMmY3YzQzMjM1M2MwMDAxYWJjZTVhP2FwcHVpZD02NmIwMjNmODAwMDAwMDAwMWQwMzFlZWQiLCJsaXZlSW5mbyI6bnVsbCwic2hvcEluZm8iOm51bGwsImdvb2RzTm90ZUluZm8iOm51bGwsImNoYXRJbmZvIjpudWxsLCJzZWFyY2hJbmZvIjpudWxsLCJwcmVmZXIiOm51bGx9%26rate_limit_meta%3DitemId%253D60c2f62899d8460001c60b59%26source%3D%26back_chain_id%3Dgoods_detail_share%26rn%3Dtrue&xhsshare=CopyLink&appuid=66b023f8000000001d031eed&apptime=1770964473&share_id=d14d2c617611484c8c8b27df9be70eb3",
           "img": "img/arkgoods_1040g0o031vua9jje2s005nmoe4t0bq074a9n838.webp",
-          "shop": "满小饱旗舰店"
+          "shop": "满小饱旗舰店",
+          "cat2": "速食"
         },
         {
           "name": "满小饱松茸鸡汤米线",
@@ -2051,7 +2264,8 @@ const POOL = {
           "scene": "零食囤货",
           "url": "https://www.xiaohongshu.com/goods-detail/68bffc075ad63d00017794bb?xsec_token=XBBX7IFCXOrtIoMs60sBlgJ8FtV-ybOYzgyAYljRwUy3o=&xsec_source=app_share&instation_link=xhsdiscover%3A%2F%2Fgoods_detail%2F68bffc075ad63d00017794bb%3Ftrade_ext%3DeyJjaGFubmVsSW5mbyI6bnVsbCwiZHNUb2tlbkluZm8iOm51bGwsInNoYXJlTGluayI6Imh0dHBzOi8vd3d3LnhpYW9ob25nc2h1LmNvbS9nb29kcy1kZXRhaWwvNjhiZmZjMDc1YWQ2M2QwMDAxNzc5NGJiP2FwcHVpZD02NmIwMjNmODAwMDAwMDAwMWQwMzFlZWQiLCJsaXZlSW5mbyI6bnVsbCwic2hvcEluZm8iOm51bGwsImdvb2RzTm90ZUluZm8iOm51bGwsImNoYXRJbmZvIjpudWxsLCJzZWFyY2hJbmZvIjpudWxsLCJwcmVmZXIiOm51bGx9%26rate_limit_meta%3DitemId%253D68bffc075ad63d00017794b7%26source%3D%26back_chain_id%3Dgoods_detail_share%26rn%3Dtrue&xhsshare=CopyLink&appuid=66b023f8000000001d031eed&apptime=1770965636&share_id=61325fa95a5342ccb8e8a1aab192dc4b",
           "img": "img/arkgoods_1040g3no31m74ou2d4q0g5nmoe4t0bq07mg226i0.webp",
-          "shop": "满小饱旗舰店"
+          "shop": "满小饱旗舰店",
+          "cat2": "速食"
         }
       ]
     },
@@ -2070,7 +2284,8 @@ const POOL = {
           "scene": "零食囤货",
           "url": "https://www.xiaohongshu.com/goods-detail/689c2e3966d44d0001db6100?t=1778314459204&xsec_token=ABQcLLAx4uAM_pSjA3SnQ7AJq4wm_uV_5enAIQCateJ-g%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g0o031l4b8m04j6005ob3jjmgj4j0177kepg.webp",
-          "shop": "三养食品旗舰店"
+          "shop": "三养食品旗舰店",
+          "cat2": "速食"
         },
         {
           "name": "三养MEP冷酷辣泡菜凉面",
@@ -2084,7 +2299,8 @@ const POOL = {
           "scene": "零食囤货",
           "url": "https://www.xiaohongshu.com/goods-detail/69cde014a122150001d690cd?t=1778314459204&xsec_token=ABEQFeSciqqXcqSAZQCuN-ho0eaF_YFGkUEkGpl1ptEZg%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g0o031uenhr2lhu005ob3jjmgj4j0p3kei00.webp",
-          "shop": "三养食品旗舰店"
+          "shop": "三养食品旗舰店",
+          "cat2": "速食"
         }
       ]
     },
@@ -2094,7 +2310,7 @@ const POOL = {
         {
           "name": "【60g全新】全麦面包健身欧包代餐健康好吃早餐美味",
           "spec": "60g/包",
-          "price": 7.0,
+          "price": 7,
           "priceTxt": "7包装49.9 14包装89.9",
           "sell": "24小时低温发酵，高效补充能量，独立包装便于储存，适配家庭分享 0添加防腐剂、0添加蔗糖、油，坚持对消费者的健康负责口味创新(柠檬酸奶、红丝绒芋头肉松、鲜橙南瓜干酪、咸蛋黄焗栗子、抹茶紫薯乳酪、可可黑巧乳酪、黑朗姆金枪鱼",
           "cmsn": "0.15",
@@ -2102,9 +2318,11 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://xhslink.com/m/6oiX3Bon4ur",
           "img": "img/arkgoods_1040g3no320o61slv5i0g5oge4a540st8ccfisug.webp",
-          "shop": "卡卡业旗舰店"
+          "shop": "卡卡业旗舰店",
+          "cat2": "其他"
         }
-      ]
+      ],
+      "off": 1
     },
     {
       "name": "德芮面包旗舰店",
@@ -2112,7 +2330,7 @@ const POOL = {
         {
           "name": "德芮 【布里欧修面包】饭渣神器 极致干净 好吃 速冻保质 发顺丰冷链",
           "spec": "50g*10个",
-          "price": 49.0,
+          "price": 49,
           "priceTxt": "49元/两盒",
           "sell": "专门为学龄儿童研发的面包 干净、营养、好吃、方便、高质价比等五大难题，同时满足，全网唯一 a、配料表极致干净 b、营养&好吃，热销 / 7万单， / 8高分好评，全部真实评价 黄油、鸡蛋含量高（安佳黄油含量≥25%） c",
           "cmsn": "0.2",
@@ -2120,9 +2338,11 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/67a6f925f4d657000113cf5f?t=1773632467765&xsec_token=ABew1g7rgFIm4gMIg6fumcdc91FNx7QCnTgisYUQDiEZ0%3D&xsec_source=app_arkselfshare",
           "img": "img/arkgoods_1040g0o03229fn8r172005p49h1m4mt16p6n6038.webp",
-          "shop": "德芮面包旗舰店"
+          "shop": "德芮面包旗舰店",
+          "cat2": "其他"
         }
-      ]
+      ],
+      "off": 1
     },
     {
       "name": "美好食品旗舰店",
@@ -2139,7 +2359,8 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/698992a0d5afea00018abc72?t=1770788258270&xsec_token=AByd3dEGoFBrAE6GRyzuoDUmD01cL6XVe1waZSDITjnHo%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g3no31tsru6qcgo0g5nonqds08258tqqbm4o.webp",
-          "shop": "美好食品旗舰店"
+          "shop": "美好食品旗舰店",
+          "cat2": "速食"
         }
       ]
     },
@@ -2159,9 +2380,11 @@ const POOL = {
           "scene": "零食囤货",
           "url": "https://xhslink.com/m/4UYG9haVhz9",
           "img": "img/arkgoods_1040g0o03235ics9en0005n4uuei4kn65h4ugp3g.webp",
-          "shop": "辻利茶铺"
+          "shop": "辻利茶铺",
+          "cat2": "其他"
         }
-      ]
+      ],
+      "off": 1
     },
     {
       "name": "不苦造乐",
@@ -2178,9 +2401,11 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://xhslink.com/m/1j74YsK0B5A",
           "img": "img/material_space_0e583855-8663-4c5d-b370-af307354f48c.webp",
-          "shop": "不苦造乐"
+          "shop": "不苦造乐",
+          "cat2": "其他"
         }
-      ]
+      ],
+      "off": 1
     },
     {
       "name": "和苑酒家食品旗舰店",
@@ -2188,8 +2413,8 @@ const POOL = {
         {
           "name": "水晶蔬菜虾饺",
           "spec": "120g*5袋",
-          "price": 1295.0,
-          "origPrice": 1595.0,
+          "price": 1295,
+          "origPrice": 1595,
           "priceTxt": "129元5袋",
           "sell": "四色四味，添加4种蔬菜，整只南美大虾入馅，营养又美味。",
           "gift": "硅胶蒸笼垫一张",
@@ -2198,7 +2423,8 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/6836e26870041c0001a06f98?t=1773302462125&xsec_token=AB_1SofVG_2sW4gTreB78-T20td9q5SZ-Fe0m2mgkmHOE%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g0o0320ffe10c5c005nqqtug0bos40qhvr8g.webp",
-          "shop": "和苑酒家食品旗舰店"
+          "shop": "和苑酒家食品旗舰店",
+          "cat2": "速食"
         }
       ]
     },
@@ -2216,7 +2442,8 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/67d4fd8052503c00019244d6?xsec_token=XBrybjGWTDX8tgrFYQJjRtMi6VssLzX-cPrkn3rSdvq_E=&xsec_source=app_share&instation_link=xhsdiscover%3A%2F%2Fgoods_detail%2F67d4fd8052503c00019244d6%3Ftrade_ext%3DeyJjaGFubmVsSW5mbyI6bnVsbCwiZHNUb2tlbkluZm8iOm51bGwsInNoYXJlTGluayI6Imh0dHBzOi8vd3d3LnhpYW9ob25nc2h1LmNvbS9nb29kcy1kZXRhaWwvNjdkNGZkODA1MjUwM2MwMDAxOTI0NGQ2P2FwcHVpZD01NzNlZWNlNTUwYzRiNDM2MjlhZmNkMGIiLCJsaXZlSW5mbyI6bnVsbCwic2hvcEluZm8iOm51bGwsImdvb2RzTm90ZUluZm8iOm51bGwsImNoYXRJbmZvIjpudWxsLCJzZWFyY2hJbmZvIjpudWxsLCJwcmVmZXIiOm51bGx9%26rate_limit_meta%3DitemId%253D67ad8b4829b9f70001b0406c%26source%3D%26rn%3Dtrue&share_id=058a73d8b7ef4f5cb0ecd2b24af577c2&share_channel=wechat",
           "img": "img/arkgoods_104103ng31vc52508iq76drkvenhg0000000000co5o4f8.webp",
-          "shop": "温小张"
+          "shop": "温小张",
+          "cat2": "速食"
         }
       ]
     },
@@ -2226,8 +2453,8 @@ const POOL = {
         {
           "name": "手工馄饨",
           "spec": "150克/盒",
-          "price": 100.0,
-          "origPrice": 159.0,
+          "price": 100,
+          "origPrice": 159,
           "priceTxt": "100",
           "sell": "手工制作 配料干净 14个口味 营养健康 支持自选口味 包装精美 性价比高",
           "cmsn": "0.35",
@@ -2235,7 +2462,8 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/69a01ef6c9f5da0001a56c8c?t=1773381898018&xsec_token=AB8Yo5abMEzlZ918eC4GI215H5rznuHK8G-7c3dFcNIaQ%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g3no3230j01to740g5patu6ogmm6q4pr0940.webp",
-          "shop": "9点9手工馄饨"
+          "shop": "9点9手工馄饨",
+          "cat2": "预制"
         }
       ]
     },
@@ -2245,8 +2473,8 @@ const POOL = {
         {
           "name": "小方手工意式披萨",
           "spec": "150-210g/张",
-          "price": 129.0,
-          "origPrice": 239.0,
+          "price": 129,
+          "origPrice": 239,
           "priceTxt": "129-139元/3张",
           "sell": "【进口原料】选用全球优质食材（意大利原装进口面粉、西班牙特级初榨橄榄油、意大利火山番茄、菲律宾进口菠萝、比利时土豆） 【饼底】低温发酵30小时以上，饼底比经典版更柔软，更加接近还原意大利佛卡夏 【原制奶酪】每一张披萨都坚",
           "cmsn": "0.2",
@@ -2254,7 +2482,8 @@ const POOL = {
           "scene": "早餐帮手",
           "url": "https://www.xiaohongshu.com/goods-detail/68a2904766d44d000119c069?t=1779348995347&xsec_token=ABKYNGonxqNXVnAI7mCIBPQOjThjJaQ-IpZM5Wr3zs998%3D&xsec_source=pc_arkselfshare",
           "img": "img/arkgoods_1040g3no321fhlicin00g5o5keofg8ivj1m8o170.webp",
-          "shop": "果子和肉GOODROOT官方旗舰店"
+          "shop": "果子和肉GOODROOT官方旗舰店",
+          "cat2": "预制"
         }
       ]
     }
@@ -2262,6 +2491,67 @@ const POOL = {
 };
 
 try{
+
+/* ══════════════ 渲染工具 ══════════════ */
+const esc = s => String(s==null?"":s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt = n => n>=10000 ? (n/10000).toFixed(n>=1000000?0:1)+"万" : Number(n).toLocaleString();
+
+/* ── 带货指南：三类目全年节奏（经验判断，非数据结论） ── */
+const GUIDE = [
+  {
+    key:"速食", ic:"🍜", tone:"sun",
+    sub:"自热米饭 · 拌面泡面 · 馄饨饺子 · 锅巴米饼",
+    // 1-12 月强度：0 淡 / 1 平 / 2 旺 / 3 峰
+    rhythm:[3,2,1,1,1,1,1,2,3,2,3,3],
+    peak:"9-11 月开学返工 + 天冷，12-1 月冬季与囤货季连着走",
+    low:"4-6 月最淡，天热没人吃热食，这段别硬推正价",
+    who:[
+      {t:"学生党 / 住校生", d:"没厨房、图快图便宜，认「宿舍能做」"},
+      {t:"独居上班族", d:"加班宵夜、周末不想做饭，认「一人份不浪费」"},
+      {t:"囤货型宝妈", d:"给家里备应急粮，认「保质期长、孩子能吃」"}
+    ],
+    hooks:[
+      "讲「几分钟能吃上」比讲配料表有效，直播间当场泡给人看",
+      "组合装 / 多口味比单品好卖，客单能拉起来，也解决「吃腻」顾虑",
+      "天冷时把「热」讲透：冒热气的画面就是最强卖点"
+    ]
+  },
+  {
+    key:"预制", ic:"🍲", tone:"mint",
+    sub:"冷冻半成品 · 加热即食正餐 · 空气炸锅友好",
+    rhythm:[3,3,1,1,1,1,1,2,2,2,3,3],
+    peak:"11-2 月是绝对主场：年夜饭、囤年货、冬季聚餐一路连到春节",
+    low:"3-6 月清淡，可转做「工作日快手菜」而不是「宴客大菜」",
+    who:[
+      {t:"双职工家庭", d:"下班没时间做饭又想吃热菜，认「省时不省味」"},
+      {t:"年轻宝妈", d:"给孩子做正餐，认「食材干净、少添加」"},
+      {t:"节庆宴请人群", d:"过年过节要摆一桌，认「有面子、不出错」"}
+    ],
+    hooks:[
+      "旺季讲「一桌菜」，淡季讲「一顿饭」——同一个品，两种叙事",
+      "冷链和保质期一定讲清楚，这是预制最大的信任门槛",
+      "空气炸锅是流量入口，能进炸锅的品都值得单独讲一遍"
+    ]
+  },
+  {
+    key:"糖果巧克力", ic:"🍫", tone:"ink",
+    sub:"礼盒装 · 生巧松露 · 休闲糖巧 · 伴手礼",
+    rhythm:[3,3,1,1,2,1,1,1,2,2,1,3],
+    peak:"12-2 月圣诞元旦春节情人节四连击，是全年最集中的送礼窗口",
+    low:"6-8 月最难卖，天热怕融化，物流成本和退货风险都高",
+    who:[
+      {t:"送礼人群", d:"节点前找伴手礼，认「包装好看、拿得出手」"},
+      {t:"年轻女性自享", d:"下午茶、追剧解压，认「小份、不齁、有格调」"},
+      {t:"礼盒采购", d:"公司节庆福利，认「批量、性价比、能定制」"}
+    ],
+    hooks:[
+      "节点前 3-4 周就要起量，等到节前一周物流已经来不及",
+      "礼盒卖的是「拆开那一刻」，开箱画面比成分表重要得多",
+      "夏季要么停推、要么明确讲冷链和融化保障，别装作没这回事"
+    ]
+  }
+];
+
 /* 商品卡 */
 function goodCard(g){
   const tag = g.url ? 'a' : 'div';
@@ -2287,6 +2577,52 @@ function goodCard(g){
   </${tag}>`;
 }
 
+
+/* ── 带货指南渲染 ── */
+(function(){
+  const MN=["1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"];
+  const LV=["淡","平","旺","峰"];
+  const box=document.getElementById('guide-list');
+  if(!box) return;
+  box.innerHTML = GUIDE.map(g=>`
+    <article class="gd -${g.tone}">
+      <div class="gd-hd">
+        <span class="gd-ic" aria-hidden="true">${g.ic}</span>
+        <div class="gd-tt"><h3>${esc(g.key)}</h3><p>${esc(g.sub)}</p></div>
+      </div>
+
+      <div class="gd-sec">
+        <div class="gd-lb">全年节奏</div>
+        <div class="rhy" role="img" aria-label="${esc(g.key)}全年销售节奏，12个月强度">
+          ${g.rhythm.map((v,i)=>`
+            <div class="rhy-m" data-lv="${v}">
+              <span class="rhy-bar"></span>
+              <span class="rhy-mn">${MN[i].replace('月','')}</span>
+            </div>`).join('')}
+        </div>
+        <div class="rhy-legend">
+          ${LV.map((t,i)=>`<span class="rl"><i data-lv="${i}"></i>${t}</span>`).join('')}
+        </div>
+        <ul class="gd-pk">
+          <li><b>旺季</b>${esc(g.peak)}</li>
+          <li class="-low"><b>淡季</b>${esc(g.low)}</li>
+        </ul>
+      </div>
+
+      <div class="gd-sec">
+        <div class="gd-lb">核心人群</div>
+        <div class="who">
+          ${g.who.map(w=>`<div class="who-c"><div class="wt">${esc(w.t)}</div><div class="wd">${esc(w.d)}</div></div>`).join('')}
+        </div>
+      </div>
+
+      <div class="gd-sec">
+        <div class="gd-lb">讲品抓手</div>
+        <ul class="hooks">${g.hooks.map(h=>`<li>${esc(h)}</li>`).join('')}</ul>
+      </div>
+    </article>`).join('');
+})();
+
 /* ── Tab 切换 ── */
 document.querySelectorAll('.tab').forEach(btn=>{
   btn.addEventListener('click',()=>{
@@ -2303,7 +2639,7 @@ document.querySelectorAll('.tab').forEach(btn=>{
 /* ── 主推专场 ── */
 (function(){
   const box = document.getElementById('show-list');
-  box.innerHTML = POOL.showcase.map((sh,idx)=>`
+  box.innerHTML = POOL.showcase.filter(sh=>!sh.off).map((sh,idx)=>`
     <article class="show-card">
       <div class="show-hd">
         <div class="show-badge">${esc(sh.badge||sh.name.slice(0,1))}</div>
@@ -2342,7 +2678,7 @@ document.querySelectorAll('.tab').forEach(btn=>{
           : `<div class="empty"><div class="ic">🧺</div><div class="t">${esc(sh.name)} 货盘待填充</div><div class="d">把商品名、价格、卖点、链接整理好发我，会直接填进这个位置。</div></div>`}
       </div>
     </article>`).join('');
-  document.getElementById('n-show').textContent = POOL.showcase.length;
+  document.getElementById('n-show').textContent = POOL.showcase.filter(sh=>!sh.off).length;
 
   // 手卡交互
   const cur = {};
@@ -2378,7 +2714,8 @@ document.querySelectorAll('.tab').forEach(btn=>{
 
   // 拍平成商品级
   const ITEMS = [];
-  POOL.solo.forEach(s=>(s.items||[]).forEach(it=>ITEMS.push({...it, shop:s.name, cat:it.cat||s.cat||"未分类"})));
+  POOL.solo.filter(s=>!s.off).forEach(s=>(s.items||[]).forEach(it=>
+    ITEMS.push({...it, shop:s.name, cat:it.cat2||it.cat||"其他", cat0:it.cat||""})));
 
   document.getElementById('n-solo').textContent = ITEMS.length || '—';
 
@@ -2453,20 +2790,22 @@ document.querySelectorAll('.tab').forEach(btn=>{
       listBox.innerHTML = `<div class="no-hit"><div class="ic">🔍</div><div class="t">没有匹配的商品</div><div class="d">换个关键词，或点「清空筛选」看全部货盘。</div></div>`;
       return;
     }
-    const SCENE_META = {
-      "早餐帮手":{ic:"🍳", desc:"每天早上要交卷的那一顿——快手、能囤、孩子肯吃"},
-      "零食囤货":{ic:"🎒", desc:"抽屉 / 书包 / 工位里的续命补给——分装、耐放、随手能拿"}
+    const CAT_META = {
+      "速食":       {ic:"🍜", desc:"自热拌面、馄饨饺子、锅巴米饼——图快、能囤、一人份不浪费"},
+      "预制":       {ic:"🍲", desc:"冷冻半成品与加热即食正餐——省时不省味，空气炸锅友好"},
+      "糖果巧克力": {ic:"🍫", desc:"礼盒与休闲糖巧——送礼窗口的主力，讲开箱比讲成分有效"},
+      "其他":       {ic:"🧺", desc:"零食坚果、烘焙糕点等——适合搭组合装、凑单提客单"}
     };
-    const order = ["早餐帮手","零食囤货"];
-    const byScene = new Map();
-    hits.forEach(it=>{ const k=it.scene||"其他"; if(!byScene.has(k)) byScene.set(k,[]); byScene.get(k).push(it); });
-    const keys = [...byScene.keys()].sort((a,b)=>{
+    const order = ["速食","预制","糖果巧克力","其他"];
+    const byCat = new Map();
+    hits.forEach(it=>{ const k=it.cat||"其他"; if(!byCat.has(k)) byCat.set(k,[]); byCat.get(k).push(it); });
+    const keys = [...byCat.keys()].sort((a,b)=>{
       const ia=order.indexOf(a), ib=order.indexOf(b);
       return (ia<0?99:ia)-(ib<0?99:ib);
     });
     listBox.innerHTML = keys.map(k=>{
-      const items = byScene.get(k);
-      const meta = SCENE_META[k] || {ic:"📦", desc:""};
+      const items = byCat.get(k);
+      const meta = CAT_META[k] || {ic:"📦", desc:""};
       return `<div class="scene-group">
         <div class="scene-hd">
           <span class="scene-ic" aria-hidden="true">${meta.ic}</span>
