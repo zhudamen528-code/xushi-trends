@@ -475,6 +475,23 @@ h2{
   padding:3px 8px; border-radius:999px; letter-spacing:.01em;
   box-shadow:0 2px 8px rgba(27,42,65,.28);
 }
+.hero-cta{
+  display:flex; gap:12px; align-items:flex-start; margin-top:18px;
+  background:var(--paper); border:1px solid var(--line); border-left:4px solid var(--sun);
+  border-radius:var(--r-lg); padding:14px 16px; max-width:760px;
+}
+.hero-cta .cta-ic{flex:none; font-size:19px; line-height:1.3}
+.hero-cta p{margin:0; font-size:13.5px; line-height:1.62; color:var(--ink-2)}
+.hero-cta p b{color:var(--ink); font-weight:800}
+.heat{
+  position:absolute; left:7px; top:7px; z-index:2;
+  font-size:10.5px; font-weight:900; letter-spacing:.01em;
+  padding:3px 7px; border-radius:999px;
+  backdrop-filter:blur(2px);
+}
+.heat.-hot{background:rgba(255,107,53,.94); color:#fff}
+.heat.-ok{background:rgba(255,255,255,.93); color:var(--ink-2); border:1px solid var(--line)}
+.heat.-new{background:rgba(0,184,169,.93); color:#fff}
 .good-spec{font-size:11.5px; color:var(--muted); margin-top:3px; line-height:1.4}
 .good-gift{
   font-size:11.5px; color:var(--mint-deep); font-weight:700; margin-top:5px;
@@ -697,6 +714,11 @@ footer .fine{
       每个品都带<strong>佣金、到手价、商品链接</strong>，另附一份<strong>全年带货节奏指南</strong>——
       什么季节推什么、对着哪拨人讲，都写在第三个页签里。
     </p>
+    <div class="hero-cta">
+      <span class="cta-ic">🤝</span>
+      <p><b>看中哪个品，直接找我</b>——要机制、要样品、问库存，都由我这边统一对接商家。
+      标了 <b>🔥热销</b> 的品近 30 天动销最好，可以优先聊。</p>
+    </div>
   </div>
 </header>
 
@@ -765,11 +787,12 @@ footer .fine{
       <div>
         <h5>货盘口径</h5>
         <ul>
-          <li>含 28 家在管商家 136 个品，按速食 / 预制 / 糖巧三类归集</li>
+          <li>含 28 家在管商家 96 个品，按速食 / 预制 / 糖巧三类归集</li>
           <li>商家归属按 BI 实时核对（2026-09-06），已划走商家的品不展示</li>
           <li>价格与佣金为提报时口径，实际以商品页为准</li>
+          <li>🔥热销 / ✓在卖 / 🌱新品 为近 30 天动销情况，仅作选品参考</li>
           <li>品牌手卡由商家提供，共 45 页</li>
-          <li><b>页面版本 W3 · 更新于 2026-09-08 · 货盘扩至 136 品 · 糖巧上架</b></li>
+          <li><b>页面版本 W4 · 更新于 2026-09-08 · 96 品去重 · 动销标记上线</b></li>
         </ul>
       </div>
       <div>
@@ -1072,7 +1095,8 @@ const POOL = {
         "img": "img/65810432d71fa50001cf9687.webp",
         "shop": "Mamiya",
         "cat2": "其他",
-        "gift": "无"
+        "gift": "无",
+        "heat": "热销"
       },
       {
         "name": "益生元烤鲜奶脆脆",
@@ -1088,7 +1112,8 @@ const POOL = {
         "img": "img/67dec0d329b9f70001f214c8.webp",
         "shop": "Mamiya",
         "cat2": "其他",
-        "gift": "无"
+        "gift": "无",
+        "heat": "在卖"
       },
       {
         "name": "花生酱全家福",
@@ -1104,7 +1129,8 @@ const POOL = {
         "img": "img/67e27916a2a5110001daaf9d.webp",
         "shop": "Mamiya",
         "cat2": "其他",
-        "gift": "无"
+        "gift": "无",
+        "heat": "在卖"
       },
       {
         "name": "夏日鲜果果酱集",
@@ -1120,7 +1146,8 @@ const POOL = {
         "img": "img/69f02ac7eee1ab00018baed0.webp",
         "shop": "Mamiya",
         "cat2": "其他",
-        "gift": "加赠牛乳吐司*1盒"
+        "gift": "加赠牛乳吐司*1盒",
+        "heat": ""
       },
       {
         "name": "酥脆肉夹馍",
@@ -1136,7 +1163,8 @@ const POOL = {
         "img": "img/69faa1876bdc380001249c46.webp",
         "shop": "Mamiya",
         "cat2": "预制",
-        "gift": "无"
+        "gift": "无",
+        "heat": "在卖"
       },
       {
         "name": "安格斯牛肉馅饼",
@@ -1152,103 +1180,8 @@ const POOL = {
         "img": "img/69faa0f681bc01000159f03a.webp",
         "shop": "Mamiya",
         "cat2": "预制",
-        "gift": "无"
-      },
-      {
-        "name": "牛乳黄油吐司/超软全麦吐司",
-        "spec": "260g/1盒（5片）",
-        "price": 19.9,
-        "origPrice": 29.9,
-        "priceTxt": "19.9/2盒",
-        "sell": "1、纯牛奶和面不加一滴水\n2、极简配料表，不额外添加白砂糖\n3、特别添加A2奶，呵护肠胃",
-        "cmsn": "0.2",
-        "cat": "烘焙糕点/吐司",
-        "scene": "",
-        "url": "https://www.xiaohongshu.com/goods-detail/65810432d71fa50001cf9688?t=1778309522511&xsec_token=ABNXoOJ3bxll8CAYQdNHuRfvRLRNfS3s-9l4qBYaSTxmk%3D&xsec_source=pc_arkselfshare",
-        "img": "img/65810432d71fa50001cf9687.webp",
-        "shop": "Mamiya",
-        "cat2": "其他",
-        "gift": "无"
-      },
-      {
-        "name": "益生元烤鲜奶脆脆",
-        "spec": "120g/袋",
-        "price": 29.9,
-        "origPrice": 39.9,
-        "priceTxt": "29.9/1袋",
-        "sell": "1、十斤鲜奶浓缩一斤鲜奶脆脆\n2、极简配料表，低聚果糖代替白砂糖\n3、高钙高蛋白，一口酥脆，随吃随取",
-        "cmsn": "0.2",
-        "cat": "零食/坚果/特产",
-        "scene": "",
-        "url": "https://www.xiaohongshu.com/goods-detail/67dec0d329b9f70001f214c9?t=1778309470934&xsec_token=ABXtx55aGCjgeuwMO8wyIBtexQ5OI-8H36sk2TfDAqEo8%3D&xsec_source=pc_arkselfshare",
-        "img": "img/67dec0d329b9f70001f214c8.webp",
-        "shop": "Mamiya",
-        "cat2": "其他",
-        "gift": "无"
-      },
-      {
-        "name": "花生酱全家福",
-        "spec": "100g/1罐\n4罐/组",
-        "price": 29.9,
-        "origPrice": 39.9,
-        "priceTxt": "29.9/4罐",
-        "sell": "1、名字就是配料表，超干净\n2、一周一罐，新鲜度满分\n3、原料优秀，选自世界各地的优质原材料",
-        "cmsn": "0.2",
-        "cat": "粮油调味/花生酱",
-        "scene": "",
-        "url": "https://www.xiaohongshu.com/goods-detail/68ea2a0cc753610001cfc4cb?t=1778309522516&xsec_token=ABMnoUqYUHF2C56tIYHu8HNBX73YU6x5cry9Qz8iPrFeQ%3D&xsec_source=pc_arkselfshare",
-        "img": "img/67e27916a2a5110001daaf9d.webp",
-        "shop": "Mamiya",
-        "cat2": "其他",
-        "gift": "无"
-      },
-      {
-        "name": "夏日鲜果果酱集",
-        "spec": "100g/1罐\n4罐/组",
-        "price": 39.9,
-        "origPrice": 49.9,
-        "priceTxt": "39.9/4罐",
-        "sell": "1、一周一口味，适量不浪费\n2、配料表干净，纯鲜果熬煮\n3、夏日百搭搭子，拌酸奶/兑气泡水/抹吐司/冻冰棍",
-        "cmsn": "0.2",
-        "cat": "粮油调味/果酱",
-        "scene": "",
-        "url": "https://www.xiaohongshu.com/goods-detail/69fbfe67213e270001ff8f1d?t=1778309486344&xsec_token=AB-6l0eVgQ9UcRsowG4PWFZFhQ_tg3N-oaA9ANWi-euR0%3D&xsec_source=pc_arkselfshare",
-        "img": "img/69f02ac7eee1ab00018baed0.webp",
-        "shop": "Mamiya",
-        "cat2": "其他",
-        "gift": "加赠牛乳吐司*1盒"
-      },
-      {
-        "name": "酥脆肉夹馍",
-        "spec": "140g/个",
-        "price": 49.9,
-        "origPrice": 59.9,
-        "priceTxt": "49.9/4个\n69.9/8个",
-        "sell": "1、陕西老潼关风味，千层丝丝起酥，一口酥脆\n2、腊汁慢熬猪腿肉，四肥六瘦，口感刚刚好\n3、独立包装，不用解冻，空气炸锅美食",
-        "cmsn": "0.2",
-        "cat": "冷冻速食",
-        "scene": "",
-        "url": "https://www.xiaohongshu.com/goods-detail/69faa1876bdc380001249c47?t=1778309486347&xsec_token=ABukxHlJfqhOtDxrX-dxviZYN1Fp3tUSBcppkE5itqCHY%3D&xsec_source=pc_arkselfshare",
-        "img": "img/69faa1876bdc380001249c46.webp",
-        "shop": "Mamiya",
-        "cat2": "预制",
-        "gift": "无"
-      },
-      {
-        "name": "安格斯牛肉馅饼",
-        "spec": "100g/个",
-        "price": 49.9,
-        "origPrice": 59.9,
-        "priceTxt": "49.9/4个\n69.9/8个",
-        "sell": "1、安格斯牛肉排配料表第一，安格斯牛肉的完美肉感，皮薄馅大\n2、配料表干净，都是厨房常见调味料\n3、独立包装，不用解冻，空气炸锅美食",
-        "cmsn": "0.2",
-        "cat": "冷冻速食",
-        "scene": "",
-        "url": "https://www.xiaohongshu.com/goods-detail/69faa0f681bc01000159f03b?t=1778309486347&xsec_token=ABQqS_oKx4h5S11osqP8Xw7xaYyNLwkEr56HxbfxFOOB8%3D&xsec_source=pc_arkselfshare",
-        "img": "img/69faa0f681bc01000159f03a.webp",
-        "shop": "Mamiya",
-        "cat2": "预制",
-        "gift": "无"
+        "gift": "无",
+        "heat": "在卖"
       }
     ]
   },
@@ -1270,7 +1203,8 @@ const POOL = {
         "img": "img/69e712480f549c0001126ad9.webp",
         "shop": "熊猫猪猪庄园旗舰店",
         "cat2": "预制",
-        "gift": "/"
+        "gift": "/",
+        "heat": "在卖"
       },
       {
         "name": "金华两头乌爆汁烤肠",
@@ -1286,7 +1220,8 @@ const POOL = {
         "img": "img/69e712480f549c0001126ad9.webp",
         "shop": "熊猫猪猪庄园旗舰店",
         "cat2": "预制",
-        "gift": "/"
+        "gift": "/",
+        "heat": "在卖"
       },
       {
         "name": "金华两头乌麦苗米饺",
@@ -1302,7 +1237,8 @@ const POOL = {
         "img": "img/69c629c1d95b5a0001bbbb8f.webp",
         "shop": "熊猫猪猪庄园旗舰店",
         "cat2": "预制",
-        "gift": "/"
+        "gift": "/",
+        "heat": "在卖"
       },
       {
         "name": "金华两头乌午餐肉",
@@ -1318,7 +1254,8 @@ const POOL = {
         "img": "img/682bea11a045210001d8b44c.webp",
         "shop": "熊猫猪猪庄园旗舰店",
         "cat2": "预制",
-        "gift": "/"
+        "gift": "/",
+        "heat": "在卖"
       },
       {
         "name": "金华两头乌薄酥饼",
@@ -1334,7 +1271,8 @@ const POOL = {
         "img": "img/68c7aac439f90c0001f5e9f3.webp",
         "shop": "熊猫猪猪庄园旗舰店",
         "cat2": "预制",
-        "gift": "四盒赠手提礼袋"
+        "gift": "四盒赠手提礼袋",
+        "heat": "新品"
       },
       {
         "name": "金华两头乌手工长粽",
@@ -1350,103 +1288,8 @@ const POOL = {
         "img": "img/69f2f7488c2c2300017c1899.webp",
         "shop": "熊猫猪猪庄园旗舰店",
         "cat2": "预制",
-        "gift": "/"
-      },
-      {
-        "name": "金华两头乌土猪小笼包",
-        "spec": "200g/袋/8只",
-        "price": 65.0,
-        "origPrice": 79.0,
-        "priceTxt": "65/3袋\n95/5袋",
-        "sell": "①原料优质：只选用自有牧场养殖的金华两头乌土猪肉，养殖全程可视化，真正可溯源\n②工艺传统：地道的嵊州小笼包工艺和非遗美味，12小时老面发酵，坚持手艺师傅传统手工包制，保留了小笼包的原始风味和精致口感，每一口都充满匠心。\n③口感鲜美：优质的金华两头乌土猪肉，黄金肥瘦比5：5，肉馅颗粒感更强，面皮劲道有弹性，入口更鲜香，口感更丰富，外形饱满，皮薄不破不漏汤汁。",
-        "cmsn": "0.2",
-        "cat": "粮油调味/速食/干货/烘焙",
-        "scene": "",
-        "url": "https://www.xiaohongshu.com/goods-detail/68842d17e019f20001e8f3bf?t=1778310966011&xsec_token=AB0o8W8Xhw0sjfJq5pzGcPl6AxzktI4kr0KFFHwuNwKmo%3D&xsec_source=pc_arkselfshare",
-        "img": "img/69e712480f549c0001126ad9.webp",
-        "shop": "熊猫猪猪庄园旗舰店",
-        "cat2": "预制",
-        "gift": "/"
-      },
-      {
-        "name": "金华两头乌爆汁烤肠",
-        "spec": "360g/盒/6根\n（原味/芝士玉米味）",
-        "price": 98.0,
-        "origPrice": 139.0,
-        "priceTxt": "98/2盒\n136/3盒",
-        "sell": "1、核心原料：只采用自有牧场养殖的金华两头乌猪肉（不属于黑猪品种，是品质稳定的高端地方名猪）\n拥有GI标（是中国地理标识农产品），四大名土猪之一，也是名火腿-正宗金华火腿的原材料；\n四季慢养，原粮饲喂365天，精细慢长，吃原粮、酵素、龙井茶粉、喝山泉水、听音乐、玩玩具；\n养殖周期长，自然肉质口感更好、肉香更浓郁、营养价值更高\n2、纯天然：0色素（保持肉的本色），天然猪肠衣（更有嚼劲），老人、小孩放心食用；\n3、肉感十足：黄金肥瘦配比2.",
-        "cmsn": "0.2",
-        "cat": "粮油调味/速食/干货/烘焙",
-        "scene": "",
-        "url": "https://www.xiaohongshu.com/goods-detail/69e712480f549c0001126ae1?t=1778312553295&xsec_token=ABgySUjn5Ir_nCoIDhoTahH4CldvBNO0DQE-H6z5YIX1g%3D&xsec_source=pc_arkselfshare",
-        "img": "img/69e712480f549c0001126ad9.webp",
-        "shop": "熊猫猪猪庄园旗舰店",
-        "cat2": "预制",
-        "gift": "/"
-      },
-      {
-        "name": "金华两头乌麦苗米饺",
-        "spec": "280g/袋/8只",
-        "price": 68.0,
-        "origPrice": 88.0,
-        "priceTxt": "68/2袋\n98/3袋",
-        "sell": "① 天然春味外皮，颜值与健康双在线：用麦苗汁和面，天然翠绿色，自带清新麦苗香，糯米粉 + 小麦粉黄金配比，软糯 Q 弹不粘牙，蒸食不易破，口感比传统清明粿更清爽，无艾草苦涩味\n② 豪华内馅，鲜掉眉毛的三重风味：金华两头乌猪肉（≥9%）：中国四大名猪，慢养 12 个月 +，肌内脂肪丰富，入口即化，肥而不腻\n笋（≥13%）：脆嫩清甜，解腻提鲜，咬开能吃到饱满笋丁，传统雪菜（≥3.5%）：咸香开胃，中和肉腻，让整体风味更有层次\n③品牌背书，品",
-        "cmsn": "0.25",
-        "cat": "粮油调味/速食/干货/烘焙",
-        "scene": "",
-        "url": "https://www.xiaohongshu.com/goods-detail/69c629c1d95b5a0001bbbb93?t=1778310966011&xsec_token=AB4UJat5D0_3mzTPTQ9nQP9zm2Hgkgu2REPana_INBVNk%3D&xsec_source=pc_arkselfshare",
-        "img": "img/69c629c1d95b5a0001bbbb8f.webp",
-        "shop": "熊猫猪猪庄园旗舰店",
-        "cat2": "预制",
-        "gift": "/"
-      },
-      {
-        "name": "金华两头乌午餐肉",
-        "spec": "240g/盒/6片",
-        "price": 75.0,
-        "origPrice": 89.0,
-        "priceTxt": "75/2盒\n99/3盒",
-        "sell": "●金华两头乌土猪肉肉含量≥90%（不掺杂其他肉类，仅含金华两头乌土猪肉）\n●配料表更干净：0防腐剂（0山梨酸钾、0双乙酸钠、0亚硝酸钠），减盐配方更健康\n●高蛋白 更营养：蛋白含量＞15%/100g（5倍于同质量全脂牛奶）",
-        "cmsn": "0.2",
-        "cat": "粮油调味/速食/干货/烘焙",
-        "scene": "",
-        "url": "https://www.xiaohongshu.com/goods-detail/682bea13a045210001d8b45d?t=1778310966012&xsec_token=ABlZLfRkHpBBpzydXJ7r1ep3jUP1lISmgBlcHq8vMPPtw%3D&xsec_source=pc_arkselfshare",
-        "img": "img/682bea11a045210001d8b44c.webp",
-        "shop": "熊猫猪猪庄园旗舰店",
-        "cat2": "预制",
-        "gift": "/"
-      },
-      {
-        "name": "金华两头乌薄酥饼",
-        "spec": "155g/盒（原味/香辣味）",
-        "price": 62.0,
-        "origPrice": 78.0,
-        "priceTxt": "62/2盒\n116/4盒",
-        "sell": "酥脆掉渣，口感一绝：采用传统多层起酥工艺，饼皮金黄酥脆，轻咬即碎，芝麻香气扑鼻，带来极强的口感满足感。\n优质内馅，咸香入味：采用金华两头土猪肥膘肉（中国农产品地理标志、中欧互认地理标志产品），肉质源自 365 天四季慢养的优质生猪，与传统梅干菜相结合，咸中带甜，油而不腻，令人回味无穷\n传统炭烤，匠心制作：秉承古法工艺，非烘焙以高温炭火烘烤，火候精准，让饼香与炭香充分融合，皮薄酥脆、满口酥香，品质地道。",
-        "cmsn": "0.2",
-        "cat": "粮油调味/速食/干货/烘焙",
-        "scene": "",
-        "url": "https://www.xiaohongshu.com/goods-detail/68c7aac739f90c0001f5ea33?t=1778310966013&xsec_token=ABi1g_lS24rA-PG6hjPYd3KBm6Vs2BHGn0r6LkJQPG50w%3D&xsec_source=pc_arkselfshare",
-        "img": "img/68c7aac439f90c0001f5e9f3.webp",
-        "shop": "熊猫猪猪庄园旗舰店",
-        "cat2": "预制",
-        "gift": "四盒赠手提礼袋"
-      },
-      {
-        "name": "金华两头乌手工长粽",
-        "spec": "130g/个（大肉粽/梅干菜肉粽/火腿蜜枣粽）",
-        "price": 118.0,
-        "origPrice": 149.0,
-        "priceTxt": "118\n98\n168",
-        "sell": "粽子里用的都是自有牧场养殖的金华两头乌土猪肉\n猪肉拥有权威的健康养殖认证证书\n金华两头乌是正宗金华火腿的原材料 是四大名猪之一\n两头乌猪肉要养足365天，时光沉淀出的浓郁肉香，也更营养\n喂的是天然原粮，还给猪猪吃酵素和龙井茶，这样养出来的肉自带清香\n主推口味是两头乌大肉粽：130g粽子肉含量50g，是行业标准的2.5倍",
-        "cmsn": "0.2",
-        "cat": "粮油调味/速食/干货/烘焙",
-        "scene": "",
-        "url": "https://www.xiaohongshu.com/goods-detail/69f2f7488c2c2300017c18a0?t=1778311068788&xsec_token=ABMvkRj26eDioyqUZqNsGA8--Xx2zviK7oYazLpRTGhYI%3D&xsec_source=pc_arkselfshare",
-        "img": "img/69f2f7488c2c2300017c1899.webp",
-        "shop": "熊猫猪猪庄园旗舰店",
-        "cat2": "预制",
-        "gift": "/"
+        "gift": "/",
+        "heat": ""
       }
     ]
   },
@@ -1468,7 +1311,8 @@ const POOL = {
         "img": "img/6773a4a0bc6cbc00018cefa1.webp",
         "shop": "Patchi旗舰店",
         "cat2": "糖果巧克力",
-        "gift": "无赠品"
+        "gift": "无赠品",
+        "heat": ""
       },
       {
         "name": "Patchi芭驰黑巧夹心三味巧克力棒135g",
@@ -1484,7 +1328,8 @@ const POOL = {
         "img": "img/6773a5ca77d41e00012fc026.webp",
         "shop": "Patchi旗舰店",
         "cat2": "糖果巧克力",
-        "gift": "无赠品"
+        "gift": "无赠品",
+        "heat": "新品"
       },
       {
         "name": "Patchi芭驰缤纷巧克力制品礼盒150g",
@@ -1500,7 +1345,8 @@ const POOL = {
         "img": "img/627a20ab8d75e50001215877.webp",
         "shop": "Patchi旗舰店",
         "cat2": "糖果巧克力",
-        "gift": "无赠品"
+        "gift": "无赠品",
+        "heat": "热销"
       },
       {
         "name": "Patchi芭驰缤纷巧克力制品礼盒250g",
@@ -1516,7 +1362,8 @@ const POOL = {
         "img": "img/627a278d8d75e50001221300.webp",
         "shop": "Patchi旗舰店",
         "cat2": "糖果巧克力",
-        "gift": "无赠品"
+        "gift": "无赠品",
+        "heat": "在卖"
       },
       {
         "name": "Patchi芭驰 开心果夹心巧克力制品礼盒 165g",
@@ -1532,7 +1379,8 @@ const POOL = {
         "img": "img/63a2caa03b59c80001970be3.webp",
         "shop": "Patchi旗舰店",
         "cat2": "糖果巧克力",
-        "gift": "无赠品"
+        "gift": "无赠品",
+        "heat": "在卖"
       },
       {
         "name": "Patchi芭驰威化牛奶巧克力制品礼盒 170g",
@@ -1548,7 +1396,8 @@ const POOL = {
         "img": "img/628b4effa88fe900016aef91.webp",
         "shop": "Patchi旗舰店",
         "cat2": "糖果巧克力",
-        "gift": "无赠品"
+        "gift": "无赠品",
+        "heat": "热销"
       },
       {
         "name": "Patchi芭驰榛子酱牛奶金砖巧克力250g",
@@ -1564,7 +1413,8 @@ const POOL = {
         "img": "img/627b14d54345160001d76efe.webp",
         "shop": "Patchi旗舰店",
         "cat2": "糖果巧克力",
-        "gift": "无赠品"
+        "gift": "无赠品",
+        "heat": "新品"
       },
       {
         "name": "Patchi芭驰原味原味黑巧克力棒135g",
@@ -1580,7 +1430,8 @@ const POOL = {
         "img": "img/68da482b4daabe00014f0eaf.webp",
         "shop": "Patchi旗舰店",
         "cat2": "糖果巧克力",
-        "gift": "无赠品"
+        "gift": "无赠品",
+        "heat": "新品"
       },
       {
         "name": "Patchi芭驰法式薄脆巧克力礼盒90g",
@@ -1596,7 +1447,8 @@ const POOL = {
         "img": "img/68d26f77a813a30001ca385f.webp",
         "shop": "Patchi旗舰店",
         "cat2": "糖果巧克力",
-        "gift": "无赠品"
+        "gift": "无赠品",
+        "heat": "新品"
       }
     ]
   },
@@ -1618,7 +1470,8 @@ const POOL = {
         "img": "img/6960aa3111e595000189df46.webp",
         "shop": "蒸笼头",
         "cat2": "预制",
-        "gift": "无"
+        "gift": "无",
+        "heat": "在卖"
       },
       {
         "name": "葱花卷+肉花卷",
@@ -1634,7 +1487,8 @@ const POOL = {
         "img": "img/64ae13c555c3b000010884cd.webp",
         "shop": "蒸笼头",
         "cat2": "预制",
-        "gift": "无"
+        "gift": "无",
+        "heat": ""
       },
       {
         "name": "牛肉烧麦组合",
@@ -1650,7 +1504,8 @@ const POOL = {
         "img": "img/6757dac0bdb5900001d15208.webp",
         "shop": "蒸笼头",
         "cat2": "预制",
-        "gift": "无"
+        "gift": "无",
+        "heat": ""
       },
       {
         "name": "黄芽菜肉丝春卷",
@@ -1666,71 +1521,8 @@ const POOL = {
         "img": "img/69290c2cce3eb500013d2eb7.webp",
         "shop": "蒸笼头",
         "cat2": "预制",
-        "gift": "无"
-      },
-      {
-        "name": "芋泥奶酪馒头",
-        "spec": "200g*3袋",
-        "price": 49.9,
-        "origPrice": 69.9,
-        "priceTxt": "49.9",
-        "sell": "用户场景：早八学生、上班族、甜点党、“芋泥脑袋”的优质健康主食；\n产品核心关键词：荔浦芋头 + 颗粒饱满血糯米 + 白糯米米乳 + 新西兰安佳奶酪+新西兰淡奶油，一口四料，拒绝 “空口吃皮”，连皮都沾着芋泥的粉香。",
-        "cmsn": "0.2",
-        "cat": "冷冻面点",
-        "scene": "",
-        "url": "https://www.xiaohongshu.com/goods-detail/6960aa3111e595000189df47?t=1773302676330&xsec_token=ABNdZ0gyDKXHyrkxVWjGzl7r1qsMM381Wzix2rhDj6zWo%3D&xsec_source=pc_arkselfshare",
-        "img": "img/6960aa3111e595000189df46.webp",
-        "shop": "蒸笼头",
-        "cat2": "预制",
-        "gift": "无"
-      },
-      {
-        "name": "葱花卷+肉花卷",
-        "spec": "葱花卷300g  6只*2袋   肉花卷300g 4只*2袋",
-        "price": 49.9,
-        "origPrice": 69.9,
-        "priceTxt": "49.9",
-        "sell": "用户场景：全家人的美味健康早餐\n产品核心关键词：葱含量≥14%，看得见的葱多，葱香更浓郁；手工制作，层次分明，口感蓬松暄软有嚼劲；当日新鲜小葱“黄金葱段”部分，搭配澳麦麦芯雪花粉；“0”添加，全家放心吃",
-        "cmsn": "0.2",
-        "cat": "冷冻面点",
-        "scene": "",
-        "url": "https://www.xiaohongshu.com/goods-detail/65d4486184d70b0001a1e0dc?t=1773302989828&xsec_token=ABMVwiO-NUB1JyKTLYEY1RzQfDwpnARknCGhbMfrN69Xs%3D&xsec_source=pc_arkselfshare",
-        "img": "img/64ae13c555c3b000010884cd.webp",
-        "shop": "蒸笼头",
-        "cat2": "预制",
-        "gift": "无"
-      },
-      {
-        "name": "牛肉烧麦组合",
-        "spec": "240g*4袋",
-        "price": 59.9,
-        "origPrice": 79.9,
-        "priceTxt": "59.9",
-        "sell": "用户场景：大众早餐\n产品核心关键词：100%原切牛腩肉，秘制黑椒酱调味，个大饱满。",
-        "cmsn": "0.2",
-        "cat": "冷冻面点",
-        "scene": "",
-        "url": "https://www.xiaohongshu.com/goods-detail/6757dac0bdb5900001d15209?t=1773303010847&xsec_token=ABBYowqF9ZT0X_zj3Rmig6y7Otjj6K1wMdUWB1RF-V_kY%3D&xsec_source=pc_arkselfshare",
-        "img": "img/6757dac0bdb5900001d15208.webp",
-        "shop": "蒸笼头",
-        "cat2": "预制",
-        "gift": "无"
-      },
-      {
-        "name": "黄芽菜肉丝春卷",
-        "spec": "240g*3袋",
-        "price": 49.9,
-        "origPrice": 69.9,
-        "priceTxt": "49.9",
-        "sell": "1、使用松林直送冷鲜猪肉 ，当日宰杀配送进厂制作，锁住猪肉鲜味的风味物质。\n2、馅料添加黄芽菜，香菇，猪肉丝，笋丝，小火慢炒，肉丝鲜美加上笋丝的脆嫩爽口，脆嫩鲜香全占了，鲜上加鲜，地道江南风味。\n3、手工卷制，卷得巨扎实，金黄酥脆的薄皮裹着满当当的馅，肉香混着菜香，脆爽又顶饱！。\n\n食用方式：煎 / 炸 至两面金黄即可。",
-        "cmsn": "0.2",
-        "cat": "冷冻面点",
-        "scene": "",
-        "url": "https://www.xiaohongshu.com/goods-detail/69290c2cce3eb500013d2eb8?t=1773303089802&xsec_token=ABUrJbfAp56ejr9sBDSodTOhJj7kVLYMWOIEpp8df05K0%3D&xsec_source=pc_arkselfshare",
-        "img": "img/69290c2cce3eb500013d2eb7.webp",
-        "shop": "蒸笼头",
-        "cat2": "预制",
-        "gift": "无"
+        "gift": "无",
+        "heat": ""
       }
     ]
   },
@@ -1752,7 +1544,8 @@ const POOL = {
         "img": "img/648193dbd171fa000122df13.webp",
         "shop": "馥华",
         "cat2": "预制",
-        "gift": "无赠品"
+        "gift": "无赠品",
+        "heat": "热销"
       },
       {
         "name": "福州肉燕",
@@ -1768,7 +1561,8 @@ const POOL = {
         "img": "img/647e98f851e4af0001fefb49.webp",
         "shop": "馥华",
         "cat2": "预制",
-        "gift": "无赠品"
+        "gift": "无赠品",
+        "heat": "在卖"
       },
       {
         "name": "福州鱼饺",
@@ -1784,7 +1578,8 @@ const POOL = {
         "img": "img/6528bcb74aa7d60001f8a61f.webp",
         "shop": "馥华",
         "cat2": "预制",
-        "gift": "无赠品"
+        "gift": "无赠品",
+        "heat": "在卖"
       },
       {
         "name": "鳕鱼丸",
@@ -1800,71 +1595,8 @@ const POOL = {
         "img": "img/69f1b009294caa0001710489.webp",
         "shop": "馥华",
         "cat2": "预制",
-        "gift": "无赠品"
-      },
-      {
-        "name": "福州鱼丸",
-        "spec": "240g",
-        "price": 99.0,
-        "origPrice": 159.0,
-        "priceTxt": "99/6包",
-        "sell": "1、【非遗美食】传承500多年的非物质文化遗产\n2、【纯净配料】好原料 严品控!\n3、【全网比货】猪肉含量≥78%",
-        "cmsn": "0.25",
-        "cat": "冷冻速食",
-        "scene": "",
-        "url": "https://www.xiaohongshu.com/goods-detail/648193ddd171fa000122df28",
-        "img": "img/648193dbd171fa000122df13.webp",
-        "shop": "馥华",
-        "cat2": "预制",
-        "gift": "无赠品"
-      },
-      {
-        "name": "福州肉燕",
-        "spec": "180g",
-        "price": 99.0,
-        "origPrice": 159.0,
-        "priceTxt": "99/6包",
-        "sell": "1、【非遗美食】传承500多年的非物质文化遗产，纯手工制作。\n2、【纯净配料】好原料 严品控!\n3、【全网比货】猪肉含量≥80%",
-        "cmsn": "0.25",
-        "cat": "冷冻速食",
-        "scene": "",
-        "url": "https://www.xiaohongshu.com/goods-detail/655424ec44a0ce0001e379ea",
-        "img": "img/647e98f851e4af0001fefb49.webp",
-        "shop": "馥华",
-        "cat2": "预制",
-        "gift": "无赠品"
-      },
-      {
-        "name": "福州鱼饺",
-        "spec": "180g",
-        "price": 69.0,
-        "origPrice": 129.0,
-        "priceTxt": "69/4包",
-        "sell": "1、【特色美食】福州当地的特色小吃，纯手工制作。\n2、【纯净配料】好原料 严品控!\n3、【市场差异化】匠心手作 与众不同",
-        "cmsn": "0.25",
-        "cat": "冷冻速食",
-        "scene": "",
-        "url": "https://www.xiaohongshu.com/goods-detail/6528bcb74aa7d60001f8a623",
-        "img": "img/6528bcb74aa7d60001f8a61f.webp",
-        "shop": "馥华",
-        "cat2": "预制",
-        "gift": "无赠品"
-      },
-      {
-        "name": "鳕鱼丸",
-        "spec": "250g",
-        "price": 99.0,
-        "origPrice": 159.0,
-        "priceTxt": "99/6包",
-        "sell": "1、减脂健身儿童补充营养首选\n2、【纯净配料】好原料 严品控!\n3、鳕鱼肉量≥85%",
-        "cmsn": "0.25",
-        "cat": "冷冻速食",
-        "scene": "",
-        "url": "https://www.xiaohongshu.com/goods-detail/69f1b009294caa000171048a?t=1778309642756",
-        "img": "img/69f1b009294caa0001710489.webp",
-        "shop": "馥华",
-        "cat2": "预制",
-        "gift": "无赠品"
+        "gift": "无赠品",
+        "heat": "在卖"
       }
     ]
   },
@@ -1886,7 +1618,8 @@ const POOL = {
         "img": "img/6969ebde1d37860001d44a8e.webp",
         "shop": "小黄象",
         "cat2": "预制",
-        "gift": "/"
+        "gift": "/",
+        "heat": "在卖"
       },
       {
         "name": "酥脆伴翅",
@@ -1902,7 +1635,8 @@ const POOL = {
         "img": "img/69fec63a0283e2000167508d.webp",
         "shop": "小黄象",
         "cat2": "预制",
-        "gift": "/"
+        "gift": "/",
+        "heat": ""
       },
       {
         "name": "黄油手抓饼",
@@ -1918,7 +1652,8 @@ const POOL = {
         "img": "img/62c6bc11c2efe1000117eae6.webp",
         "shop": "小黄象",
         "cat2": "预制",
-        "gift": "/"
+        "gift": "/",
+        "heat": "热销"
       },
       {
         "name": "橄榄油香煎鸡排",
@@ -1934,71 +1669,8 @@ const POOL = {
         "img": "img/6524f1eaebfe220001525e28.webp",
         "shop": "小黄象",
         "cat2": "预制",
-        "gift": "/"
-      },
-      {
-        "name": "120s香肠卷边披萨",
-        "spec": "100g/袋",
-        "price": 99.9,
-        "origPrice": 106.9,
-        "priceTxt": "99.9/8袋\n79.9/6袋",
-        "sell": "1.馅料含量60%，采用原制马苏里拉干酪＞12.5%，10m香肠卷边，拒绝硬边角\n2.独立切角包装，一人食不浪费，120s休闲速食",
-        "cmsn": "0.2",
-        "cat": "速食",
-        "scene": "",
-        "url": "https://www.xiaohongshu.com/goods-detail/6969ebde1d37860001d44a95?t=1778320760717&xsec_token=ABobrZWaISqiaox8Bd1292fytbb6VyOlFdX7irQqBP-uo%3D&xsec_source=pc_arkselfshare",
-        "img": "img/6969ebde1d37860001d44a8e.webp",
-        "shop": "小黄象",
-        "cat2": "预制",
-        "gift": "/"
-      },
-      {
-        "name": "酥脆伴翅",
-        "spec": "250g/袋",
-        "price": 69.9,
-        "origPrice": 89.9,
-        "priceTxt": "69.9/4袋",
-        "sell": "1.无抗好鸡肉，品质看得见，采用养殖全程不使用激素和抗生素的鸡肉\n2.坚持每日新油，拒绝反复使用，不使用起酥油、棕榈油，从源头减少反式脂肪和劣质油脂负担，吃得更清爽无负担。\n3.干净配料表，吃得明明白白。",
-        "cmsn": "0.2",
-        "cat": "速食",
-        "scene": "",
-        "url": "https://www.xiaohongshu.com/goods-detail/69fec63b0283e20001675092?t=1778320833098&xsec_token=ABnf1KWGGWRRi5zcn0IABnVruJ8WFMwqckztpc9JGsH8c%3D&xsec_source=pc_arkselfshare",
-        "img": "img/69fec63a0283e2000167508d.webp",
-        "shop": "小黄象",
-        "cat2": "预制",
-        "gift": "/"
-      },
-      {
-        "name": "黄油手抓饼",
-        "spec": "1000/袋（10张）",
-        "price": 59.9,
-        "origPrice": 79.9,
-        "priceTxt": "59.9/2袋",
-        "sell": "1.黄油代替起酥油，0反式脂肪酸，配料表干净\n2.新西兰进口安佳黄油，可以当酥皮用，解锁更所网红diy吃饭",
-        "cmsn": "0.2",
-        "cat": "速食",
-        "scene": "",
-        "url": "https://www.xiaohongshu.com/goods-detail/62c6bc11970d4e00010f33ea?t=1778321415604&xsec_token=AB4thqtfArEBmE14DyxWIN9xYezgqEPLy6bWm_RROOFtM%3D&xsec_source=pc_arkselfshare",
-        "img": "img/62c6bc11c2efe1000117eae6.webp",
-        "shop": "小黄象",
-        "cat2": "预制",
-        "gift": "/"
-      },
-      {
-        "name": "橄榄油香煎鸡排",
-        "spec": "100g/袋",
-        "price": 69.9,
-        "origPrice": 89.99,
-        "priceTxt": "69.9/10袋",
-        "sell": "1.只选用“无抗生素”认证的鸡肉，整肉原切，配料干净\n2.低脂高蛋白无抗认证鸡肉搭配欧丽薇兰初榨橄榄油，\n3.自己diy减脂餐优选",
-        "cmsn": "0.2",
-        "cat": "速食",
-        "scene": "",
-        "url": "https://www.xiaohongshu.com/goods-detail/67721305966ebd0001786e72?t=1778321399209&xsec_token=ABqATnhgMNJrq-cbY4x2EJD-EzLdK9A8e8-MpDolfQI0g%3D&xsec_source=pc_arkselfshare",
-        "img": "img/6524f1eaebfe220001525e28.webp",
-        "shop": "小黄象",
-        "cat2": "预制",
-        "gift": "/"
+        "gift": "/",
+        "heat": "热销"
       }
     ]
   },
@@ -2020,7 +1692,8 @@ const POOL = {
         "img": "img/69b118ed2be6440001f6fd50.webp",
         "shop": "白象",
         "cat2": "速食",
-        "gift": "无"
+        "gift": "无",
+        "heat": "在卖"
       },
       {
         "name": "羽衣甘蓝轻轻面",
@@ -2036,7 +1709,8 @@ const POOL = {
         "img": "img/69b24c04fbb3a4000174c7a0.webp",
         "shop": "白象",
         "cat2": "速食",
-        "gift": "无"
+        "gift": "无",
+        "heat": "新品"
       },
       {
         "name": "火鸡面迷你杯",
@@ -2052,7 +1726,8 @@ const POOL = {
         "img": "img/69b24ad54cdf2e0001d4ebe5.webp",
         "shop": "白象",
         "cat2": "速食",
-        "gift": "无"
+        "gift": "无",
+        "heat": ""
       },
       {
         "name": "鲜面传非油炸蒸煮面",
@@ -2068,7 +1743,8 @@ const POOL = {
         "img": "img/69b24da5166bc60001244d75.webp",
         "shop": "白象",
         "cat2": "速食",
-        "gift": "无"
+        "gift": "无",
+        "heat": ""
       },
       {
         "name": "白象汤好喝",
@@ -2084,7 +1760,8 @@ const POOL = {
         "img": "img/681dd720a687560001fc3ef8.webp",
         "shop": "白象",
         "cat2": "速食",
-        "gift": "无"
+        "gift": "无",
+        "heat": ""
       },
       {
         "name": "汤好喝迷你杯",
@@ -2100,7 +1777,8 @@ const POOL = {
         "img": "img/69b255b3e175160001f067e5.webp",
         "shop": "白象",
         "cat2": "速食",
-        "gift": "无"
+        "gift": "无",
+        "heat": ""
       },
       {
         "name": "大辣娇盒装拌面",
@@ -2116,7 +1794,8 @@ const POOL = {
         "img": "img/69b2606205ddcd0001bd7416.webp",
         "shop": "白象",
         "cat2": "速食",
-        "gift": "无"
+        "gift": "无",
+        "heat": "新品"
       },
       {
         "name": "香菜拌面",
@@ -2132,7 +1811,8 @@ const POOL = {
         "img": "img/69b26e2a47c2d50001368045.webp",
         "shop": "白象",
         "cat2": "速食",
-        "gift": "无"
+        "gift": "无",
+        "heat": "新品"
       }
     ]
   },
@@ -2154,7 +1834,8 @@ const POOL = {
         "img": "img/63525d54d06d35000153c0c1.webp",
         "shop": "满小饱旗舰店",
         "cat2": "速食",
-        "gift": "赠响铃卷3个/午餐肉3个（2选1）"
+        "gift": "赠响铃卷3个/午餐肉3个（2选1）",
+        "heat": "热销"
       },
       {
         "name": "满小饱松茸鸡汤米线",
@@ -2170,39 +1851,8 @@ const POOL = {
         "img": "img/68bffc075ad63d00017794b7.webp",
         "shop": "满小饱旗舰店",
         "cat2": "速食",
-        "gift": "赠腐竹3个/赠响铃卷3个/午餐肉3个"
-      },
-      {
-        "name": "满小饱肥汁米线",
-        "spec": "310g/袋*3",
-        "price": 39.9,
-        "origPrice": 18.9,
-        "priceTxt": "39.9/3袋",
-        "sell": "1、特浓肥汁：“肥汁”是非常浓郁的炸酱骨汤！以浓郁豚骨高汤打底，加猛火炸酱熬煮，三道功夫，得一口“肥汁”；\n2、激酸酸辣： 9级魔鬼干椒粉，搭配甜醋汁调味，激酸激辣，上头过瘾（独立辣包醋包，根据自己口味调节）；\n3、自带3秒炸响铃：肥汁灵魂伴侣，酥脆蓬松，三秒吸汤，一口爆汁。",
-        "cmsn": "0.2",
-        "cat": "速食",
-        "scene": "",
-        "url": "https://www.xiaohongshu.com/goods-detail/60c2f7c432353c0001abce5a?xsec_token=XB9aaQUe6l33KHcVtp3c0VUG2SC8ixpNDrTmsFAJ1byR0=&xsec_source=app_share&instation_link=xhsdiscover%3A%2F%2Fgoods_detail%2F60c2f7c432353c0001abce5a%3Ftrade_ext%3DeyJjaGFubmVsSW5mbyI6bnVsbCwiZHNUb2tlbkluZm8iOm51bGwsInNoYXJlTGluayI6Imh0dHBzOi8vd3d3LnhpYW9ob25nc2h1LmNvbS9nb29kcy1kZXRhaWwvNjBjMmY3YzQzMjM1M2MwMDAxYWJjZTVhP2FwcHVpZD02NmIwMjNmODAwMDAwMDAwMWQwMzFlZWQiLCJsaXZlSW5mbyI6bnVsbCwic2hvcEluZm8iOm51bGwsImdvb2RzTm90ZUluZm8iOm51bGwsImNoYXRJbmZvIjpudWxsLCJzZWFyY2hJbmZvIjpudWxsLCJwcmVmZXIiOm51bGx9%26rate_limit_meta%3DitemId%253D60c2f62899d8460001c60b59%26source%3D%26back_chain_id%3Dgoods_detail_share%26rn%3Dtrue&xhsshare=CopyLink&appuid=66b023f8000000001d031eed&apptime=1770964473&share_id=d14d2c617611484c8c8b27df9be70eb3",
-        "img": "img/63525d54d06d35000153c0c1.webp",
-        "shop": "满小饱旗舰店",
-        "cat2": "速食",
-        "gift": "赠响铃卷3个/午餐肉3个（2选1）"
-      },
-      {
-        "name": "满小饱松茸鸡汤米线",
-        "spec": "267.5g/袋*3",
-        "price": 39.9,
-        "origPrice": 18.8,
-        "priceTxt": "39.9元/3袋",
-        "sell": "1、9小时慢炖老母鸡汤，加香格里拉松茸熬的好鸡汤，更鲜香浓郁，喝起来干净又舒服。\n2、6种菌菇脆嫩爽滑，用料扎实看得见！甄选黑皮鸡枞菌、鹿茸菌、竹荪、虫草花等六种。\n3、细米线更好吸汁，6分钟速煮，更入味！",
-        "cmsn": "0.2",
-        "cat": "速食",
-        "scene": "",
-        "url": "https://www.xiaohongshu.com/goods-detail/68bffc075ad63d00017794bb?xsec_token=XBBX7IFCXOrtIoMs60sBlgJ8FtV-ybOYzgyAYljRwUy3o=&xsec_source=app_share&instation_link=xhsdiscover%3A%2F%2Fgoods_detail%2F68bffc075ad63d00017794bb%3Ftrade_ext%3DeyJjaGFubmVsSW5mbyI6bnVsbCwiZHNUb2tlbkluZm8iOm51bGwsInNoYXJlTGluayI6Imh0dHBzOi8vd3d3LnhpYW9ob25nc2h1LmNvbS9nb29kcy1kZXRhaWwvNjhiZmZjMDc1YWQ2M2QwMDAxNzc5NGJiP2FwcHVpZD02NmIwMjNmODAwMDAwMDAwMWQwMzFlZWQiLCJsaXZlSW5mbyI6bnVsbCwic2hvcEluZm8iOm51bGwsImdvb2RzTm90ZUluZm8iOm51bGwsImNoYXRJbmZvIjpudWxsLCJzZWFyY2hJbmZvIjpudWxsLCJwcmVmZXIiOm51bGx9%26rate_limit_meta%3DitemId%253D68bffc075ad63d00017794b7%26source%3D%26back_chain_id%3Dgoods_detail_share%26rn%3Dtrue&xhsshare=CopyLink&appuid=66b023f8000000001d031eed&apptime=1770965636&share_id=61325fa95a5342ccb8e8a1aab192dc4b",
-        "img": "img/68bffc075ad63d00017794b7.webp",
-        "shop": "满小饱旗舰店",
-        "cat2": "速食",
-        "gift": "赠腐竹3个/赠响铃卷3个/午餐肉3个"
+        "gift": "赠腐竹3个/赠响铃卷3个/午餐肉3个",
+        "heat": "热销"
       },
       {
         "name": "满小饱肥汁土豆粉",
@@ -2218,7 +1868,8 @@ const POOL = {
         "img": "img/69f1b4e7213e27000115720b.webp",
         "shop": "满小饱旗舰店",
         "cat2": "速食",
-        "gift": "赠响铃卷3个/午餐肉3个（2选1）"
+        "gift": "赠响铃卷3个/午餐肉3个（2选1）",
+        "heat": ""
       },
       {
         "name": "满小饱冲泡肥汁米线",
@@ -2234,7 +1885,8 @@ const POOL = {
         "img": "img/643692c80249360001644d5e.webp",
         "shop": "满小饱旗舰店",
         "cat2": "速食",
-        "gift": "3个炸响铃卷"
+        "gift": "3个炸响铃卷",
+        "heat": ""
       },
       {
         "name": "满小饱冲泡鸡汤米线",
@@ -2250,7 +1902,8 @@ const POOL = {
         "img": "img/694cc8f0bd92f5000186364f.webp",
         "shop": "满小饱旗舰店",
         "cat2": "速食",
-        "gift": "3个炸响铃卷"
+        "gift": "3个炸响铃卷",
+        "heat": ""
       }
     ]
   },
@@ -2272,7 +1925,8 @@ const POOL = {
         "img": "img/692521f4e8b9d400013af2ff.webp",
         "shop": "空刻旗舰店",
         "cat2": "速食",
-        "gift": "厨房纸巾"
+        "gift": "厨房纸巾",
+        "heat": ""
       },
       {
         "name": "空刻手拍薄饼披萨3盒",
@@ -2288,7 +1942,8 @@ const POOL = {
         "img": "img/69dddef05f699000016e4f36.webp",
         "shop": "空刻旗舰店",
         "cat2": "预制",
-        "gift": "无赠品"
+        "gift": "无赠品",
+        "heat": "在卖"
       },
       {
         "name": "空刻无抗鸡排3袋装",
@@ -2304,55 +1959,8 @@ const POOL = {
         "img": "img/69644d89f7aaae0001d5639f.webp",
         "shop": "空刻旗舰店",
         "cat2": "预制",
-        "gift": "鸡排*2"
-      },
-      {
-        "name": "空刻意面经典6盒",
-        "spec": "270g*6",
-        "price": 109.0,
-        "origPrice": 169.0,
-        "priceTxt": "109",
-        "sell": "15分钟在家制作星级意面",
-        "cmsn": "0.2",
-        "cat": "速食",
-        "scene": "",
-        "url": "https://www.xiaohongshu.com/goods-detail/692521f7e8b9d400013af341",
-        "img": "img/692521f4e8b9d400013af2ff.webp",
-        "shop": "空刻旗舰店",
-        "cat2": "速食",
-        "gift": "厨房纸巾"
-      },
-      {
-        "name": "空刻手拍薄饼披萨3盒",
-        "spec": "3盒",
-        "price": 69.9,
-        "origPrice": 169.9,
-        "priceTxt": "69.9",
-        "sell": "意式手拍薄饼3mm",
-        "cmsn": "0.2",
-        "cat": "速食",
-        "scene": "",
-        "url": "https://www.xiaohongshu.com/goods-detail/69dddef05f699000016e4f43",
-        "img": "img/69dddef05f699000016e4f36.webp",
-        "shop": "空刻旗舰店",
-        "cat2": "预制",
-        "gift": "无赠品"
-      },
-      {
-        "name": "空刻无抗鸡排3袋装",
-        "spec": "5片*3袋",
-        "price": 89.9,
-        "origPrice": 189.9,
-        "priceTxt": "89.9",
-        "sell": "无抗鸡排，营养更放心",
-        "cmsn": "0.2",
-        "cat": "速食",
-        "scene": "",
-        "url": "https://www.xiaohongshu.com/goods-detail/696eee9419260d0001a2a224",
-        "img": "img/696eee9419260d0001a2a1f6.webp",
-        "shop": "空刻旗舰店",
-        "cat2": "预制",
-        "gift": "鸡排*2"
+        "gift": "鸡排*2",
+        "heat": ""
       }
     ]
   },
@@ -2374,7 +1982,8 @@ const POOL = {
         "img": "img/67b82f64eef1820001dc7412.webp",
         "shop": "亲食派",
         "cat2": "预制",
-        "gift": "无赠品"
+        "gift": "无赠品",
+        "heat": "热销"
       },
       {
         "name": "大黄米粽子",
@@ -2390,7 +1999,8 @@ const POOL = {
         "img": "img/68ff0b05c074c5000144d2fd.webp",
         "shop": "亲食派",
         "cat2": "预制",
-        "gift": "无赠品"
+        "gift": "无赠品",
+        "heat": "新品"
       },
       {
         "name": "紫薯球",
@@ -2406,55 +2016,8 @@ const POOL = {
         "img": "img/6927c9663dc5360001407363.webp",
         "shop": "亲食派",
         "cat2": "预制",
-        "gift": "无赠品"
-      },
-      {
-        "name": "黑芝麻流心包",
-        "spec": "1袋/5个【单个85g】",
-        "price": 23.8,
-        "origPrice": 351.0,
-        "priceTxt": "23.8/1袋\n34.8/2袋",
-        "sell": "一口爆浆黑芝麻流心包",
-        "cmsn": "0.18",
-        "cat": "干货速食",
-        "scene": "",
-        "url": "https://www.xiaohongshu.com/goods-detail/67b82f64eef1820001dc7413?t=1770795226261&xsec_token=ABJRVunrnohC6QmYlydMD7TSZbV16cCZR_jnyf0vzOsyM%3D&xsec_source=pc_arkselfshare",
-        "img": "img/67b82f64eef1820001dc7412.webp",
-        "shop": "亲食派",
-        "cat2": "预制",
-        "gift": "无赠品"
-      },
-      {
-        "name": "大黄米粽子",
-        "spec": "1袋/5个【单个100g】",
-        "price": 27.8,
-        "origPrice": 39.0,
-        "priceTxt": "黑芝麻27.8/1袋\n豆沙22.8/1袋\n藜麦19.8/1袋",
-        "sell": "管理期都可以吃的大黄米粽子！糯叽叽没负担",
-        "cmsn": "0.15",
-        "cat": "干货速食",
-        "scene": "",
-        "url": "https://www.xiaohongshu.com/goods-detail/6926d46bb70fce0001cef16d?t=1770795226268&xsec_token=ABECsmtO3BFMQFWdWmPEAWE8o-MJJd6jzfFidC_LsQTvc%3D&xsec_source=pc_arkselfshare",
-        "img": "img/68ff0b05c074c5000144d2fd.webp",
-        "shop": "亲食派",
-        "cat2": "预制",
-        "gift": "无赠品"
-      },
-      {
-        "name": "紫薯球",
-        "spec": "1袋/5个【单个100g】",
-        "price": 21.8,
-        "origPrice": 29.0,
-        "priceTxt": "21.8/1袋\n37.8/2袋",
-        "sell": "好吃到跺脚啊啊啊啊！满满膳食纤维！！",
-        "cmsn": "0.15",
-        "cat": "干货速食",
-        "scene": "",
-        "url": "https://www.xiaohongshu.com/goods-detail/6927c9663dc5360001407364?t=1770795226268&xsec_token=ABN5uyh-HfNBP0hFK7gD5wka1X_GK0C0tVarao5o5Ht2Y%3D&xsec_source=pc_arkselfshare",
-        "img": "img/6927c9663dc5360001407363.webp",
-        "shop": "亲食派",
-        "cat2": "预制",
-        "gift": "无赠品"
+        "gift": "无赠品",
+        "heat": "在卖"
       }
     ]
   },
@@ -2476,7 +2039,8 @@ const POOL = {
         "img": "img/66125c84cca4850001c0c5e9.webp",
         "shop": "锋味派",
         "cat2": "预制",
-        "gift": "调味醋汁*4    油泼辣子*4    蒸笼纸8张"
+        "gift": "调味醋汁*4    油泼辣子*4    蒸笼纸8张",
+        "heat": ""
       },
       {
         "name": "锋味派盒装午餐肉",
@@ -2492,7 +2056,8 @@ const POOL = {
         "img": "img/6614fbe796376d00017fefd0.webp",
         "shop": "锋味派",
         "cat2": "预制",
-        "gift": "无赠品"
+        "gift": "无赠品",
+        "heat": ""
       },
       {
         "name": "锋味派酥皮馅饼",
@@ -2508,55 +2073,8 @@ const POOL = {
         "img": "img/67d8f605d9b11700015d0eb4.webp",
         "shop": "锋味派",
         "cat2": "预制",
-        "gift": "无赠品"
-      },
-      {
-        "name": "锋味派黑猪肉小笼包",
-        "spec": "200g（8只）/袋",
-        "price": 99.0,
-        "origPrice": 139.0,
-        "priceTxt": "99/8袋",
-        "sell": "1.老面发酵12h，不加酵母，划重点，我们一般自己包的包子都是加酵母的，但我们是真空和面、百道滚择，手艺师傅手工包制。筋道有弹性，皮肉分离，-38℃速冻锁鲜，保留地道传统老味道；  \n2.刚刚上新的川味小笼包：添加成都地道火锅底料调味（精选清油，避免牛油带来的油腻感，鲜香微辣更适合小笼包；特别精选四川青花椒，清香扑鼻，麻味纯正；使用十余种天然香辛料）；   \n3.配方干净：不添加防腐剂、泡打粉、配方干净放心",
-        "cmsn": "0.15",
-        "cat": "速食",
-        "scene": "",
-        "url": "",
-        "img": "img/66125c84cca4850001c0c5e9.webp",
-        "shop": "锋味派",
-        "cat2": "预制",
-        "gift": "调味醋汁*4    油泼辣子*4    蒸笼纸8张"
-      },
-      {
-        "name": "锋味派盒装午餐肉",
-        "spec": "316g（8*39.5g）/盒",
-        "price": 89.0,
-        "origPrice": 49.9,
-        "priceTxt": "89/3盒",
-        "sell": "1、锋味派创始人、米其林之友谢霆锋，优选原料的诚挚之选，iSEE创新品牌百强榜（KT）；\n2、坚持单一肉源，只选用品质黑猪肉，不掺杂其他肉类，肉香浓郁醇厚，肉质鲜嫩紧实；\n3、黑猪肉含量≥90%，大块肉粒看得见，满满肉丝嚼得到 。掰开都能看到肉丝和纹理，每一片都是肉感十足的。\n黑胡椒味有一点微辣；\n清淡版比原味黑猪午餐肉降低了25%以上的盐度，适合追求饮食健康的宝妈等人群，减盐配方。\n4、4大不添加：拒绝色素，拒绝味精，拒绝红曲红，拒绝",
-        "cmsn": "0.15",
-        "cat": "速食",
-        "scene": "",
-        "url": "",
-        "img": "img/6614fbe796376d00017fefd0.webp",
-        "shop": "锋味派",
-        "cat2": "预制",
-        "gift": "无赠品"
-      },
-      {
-        "name": "锋味派酥皮馅饼",
-        "spec": "360g/盒（90g*4片）",
-        "price": 89.0,
-        "origPrice": 139.0,
-        "priceTxt": "89/4袋",
-        "sell": "1、皮薄酥脆，馅大肉香：馅含量≥40%，安格斯牛肉/黑猪肉在馅料中占比≥70%，河北硬粒小麦粉搭配俄罗斯进口小麦粉，8层开酥，层层酥脆，口口满足\n2、单片独立包装:真正的“一室一厅”，干净卫生不怕串味，内含贴心隔膜，好吃不脏手\n3、肉源优质-澳洲本地：自然无催熟谷物喂养的安格斯牛，臀部大块整肉，筋膜少，肉香浓郁口感紧实；精选得利斯冷鲜黒猪肉，营养价值高，采用腿部肉，整块原切，肉质细腻有弹性，冷链运输2小时直达工厂\n4、肉原单一：牛肉馅饼",
-        "cmsn": "0.15",
-        "cat": "速食",
-        "scene": "",
-        "url": "",
-        "img": "img/67d8f605d9b11700015d0eb4.webp",
-        "shop": "锋味派",
-        "cat2": "预制",
-        "gift": "无赠品"
+        "gift": "无赠品",
+        "heat": ""
       }
     ]
   },
@@ -2578,7 +2096,8 @@ const POOL = {
         "img": "img/666807ac0f78be0001e4dc98.webp",
         "shop": "PIERRE MARCOLINI旗舰店",
         "cat2": "糖果巧克力",
-        "gift": "无"
+        "gift": "无",
+        "heat": "在卖"
       },
       {
         "name": "小金罐原粒榛果巧克力",
@@ -2594,7 +2113,8 @@ const POOL = {
         "img": "img/640f003de8e4fa0001131c86.webp",
         "shop": "PIERRE MARCOLINI旗舰店",
         "cat2": "糖果巧克力",
-        "gift": "小确幸榛果巧克力2颗装*1"
+        "gift": "小确幸榛果巧克力2颗装*1",
+        "heat": ""
       },
       {
         "name": "小金罐黑巧克力片/牛奶巧克力片",
@@ -2610,7 +2130,8 @@ const POOL = {
         "img": "img/6447563651b4d50001fa939e.webp",
         "shop": "PIERRE MARCOLINI旗舰店",
         "cat2": "糖果巧克力",
-        "gift": "无"
+        "gift": "无",
+        "heat": "新品"
       },
       {
         "name": "小金罐扁桃仁黑/牛奶巧克力",
@@ -2626,7 +2147,8 @@ const POOL = {
         "img": "img/640f003de8e4fa0001131c86.webp",
         "shop": "PIERRE MARCOLINI旗舰店",
         "cat2": "糖果巧克力",
-        "gift": "小确幸榛果巧克力2颗装*1"
+        "gift": "小确幸榛果巧克力2颗装*1",
+        "heat": ""
       },
       {
         "name": "混合小零嘴巧克力礼盒",
@@ -2642,7 +2164,8 @@ const POOL = {
         "img": "img/66680ba5f7984c000103e311.webp",
         "shop": "PIERRE MARCOLINI旗舰店",
         "cat2": "糖果巧克力",
-        "gift": "无"
+        "gift": "无",
+        "heat": ""
       },
       {
         "name": "小确幸巧克力礼盒10颗装",
@@ -2658,7 +2181,8 @@ const POOL = {
         "img": "img/6482d742db9efc00012d91d3.webp",
         "shop": "PIERRE MARCOLINI旗舰店",
         "cat2": "糖果巧克力",
-        "gift": "无"
+        "gift": "无",
+        "heat": "新品"
       }
     ]
   },
@@ -2680,7 +2204,8 @@ const POOL = {
         "img": "img/66b37d900c3ce9000100fabf.webp",
         "shop": "疆之隅",
         "cat2": "预制",
-        "gift": "无"
+        "gift": "无",
+        "heat": ""
       },
       {
         "name": "新疆大盘鸡",
@@ -2696,7 +2221,8 @@ const POOL = {
         "img": "img/68e8b2308aa5760001b8946b.webp",
         "shop": "疆之隅",
         "cat2": "预制",
-        "gift": "每只送两份皮带面"
+        "gift": "每只送两份皮带面",
+        "heat": ""
       },
       {
         "name": "新疆一把抓",
@@ -2712,7 +2238,8 @@ const POOL = {
         "img": "img/6969f0ff1d37860001d54db1.webp",
         "shop": "疆之隅",
         "cat2": "预制",
-        "gift": "无"
+        "gift": "无",
+        "heat": "在卖"
       },
       {
         "name": "新疆馕坑烤羊排",
@@ -2728,7 +2255,8 @@ const POOL = {
         "img": "img/6973926c1cd3a60001e5a8d8.webp",
         "shop": "疆之隅",
         "cat2": "预制",
-        "gift": "无"
+        "gift": "无",
+        "heat": "在卖"
       },
       {
         "name": "新疆辣皮子牛肉酱",
@@ -2744,7 +2272,8 @@ const POOL = {
         "img": "img/68482b28fab3990001bdaa46.webp",
         "shop": "疆之隅",
         "cat2": "其他",
-        "gift": "无"
+        "gift": "无",
+        "heat": ""
       }
     ]
   },
@@ -2766,7 +2295,8 @@ const POOL = {
         "img": "img/65fc1c5ae21a000001d2ca28.webp",
         "shop": "遂香记",
         "cat2": "预制",
-        "gift": "无"
+        "gift": "无",
+        "heat": "热销"
       },
       {
         "name": "乌米粽",
@@ -2782,7 +2312,8 @@ const POOL = {
         "img": "img/65f91872fcf75d000150912e.webp",
         "shop": "遂香记",
         "cat2": "预制",
-        "gift": "无"
+        "gift": "无",
+        "heat": ""
       },
       {
         "name": "无糖红豆粽",
@@ -2798,7 +2329,8 @@ const POOL = {
         "img": "img/663afb525f22db0001863003.webp",
         "shop": "遂香记",
         "cat2": "预制",
-        "gift": "无"
+        "gift": "无",
+        "heat": "在卖"
       },
       {
         "name": "血糯米豆沙粽",
@@ -2814,7 +2346,8 @@ const POOL = {
         "img": "img/6635f5f571d59800019db3af.webp",
         "shop": "遂香记",
         "cat2": "预制",
-        "gift": "无"
+        "gift": "无",
+        "heat": "热销"
       },
       {
         "name": "低糖绿豆粽",
@@ -2830,7 +2363,8 @@ const POOL = {
         "img": "img/65ed3c3eebd7dc0001ef310e.webp",
         "shop": "遂香记",
         "cat2": "预制",
-        "gift": "无"
+        "gift": "无",
+        "heat": "在卖"
       }
     ]
   },
@@ -2852,7 +2386,8 @@ const POOL = {
         "img": "img/697b02448a6b8a00011bf024.webp",
         "shop": "三兔船长",
         "cat2": "预制",
-        "gift": "多送一包蚂蚁岛生晒虾皮15G"
+        "gift": "多送一包蚂蚁岛生晒虾皮15G",
+        "heat": "热销"
       },
       {
         "name": "手工青饺",
@@ -2868,39 +2403,8 @@ const POOL = {
         "img": "img/67dbf174d9b27200019e6b70.webp",
         "shop": "三兔船长",
         "cat2": "预制",
-        "gift": "/"
-      },
-      {
-        "name": "沈家门渔港·鲜鱼丸（米鱼）",
-        "spec": "200g/袋*2\n200g/袋*4",
-        "price": 49.9,
-        "origPrice": 49.9,
-        "priceTxt": "49.9元-200g/袋*2\n79.9元-200g/袋*4",
-        "sell": "☑️可做减脂餐，新鲜现做的鲜鱼丸\n☑️选用1.5-2斤舟山野生鮸鱼，鱼肉含量≥80%\n☑️老师傅还原90年代风味，0添加0防腐剂，连味精都不放\n☑️鱼丸奶白弹嫩，口感松软爽滑，真正吃到鱼丸的鲜",
-        "cmsn": "0.15",
-        "cat": "速食",
-        "scene": "",
-        "url": "https://www.xiaohongshu.com/goods-detail/697b02448a6b8a00011bf025?t=1770887432927&xsec_token=ABc6y8Bm_XLv_IHwvez_9BOuHWn_OhapW2Ff9-J14sxdk%3D&xsec_source=app_arkselfshare",
-        "img": "img/697b02448a6b8a00011bf024.webp",
-        "shop": "三兔船长",
-        "cat2": "预制",
-        "gift": "多送一包蚂蚁岛生晒虾皮15G"
-      },
-      {
-        "name": "手工青饺",
-        "spec": "6个装\n12个装\n\n3个口味：荠菜香干、酸菜笋丁鲜肉（不辣）、酸菜笋丁鲜肉（微辣）",
-        "price": 39.9,
-        "origPrice": 39.9,
-        "priceTxt": "39.9元-6个装\n69.9元-12个装",
-        "sell": "✔️ 春季必备的时令鲜货，每日现做，口感更新鲜\n✔️ 不是艾草粉/麦苗粉勾兑，只用新鲜艾草手工做皮\n✔️ 不是冷冻预制、拒绝隔夜料，每日小锅现炒馅料",
-        "cmsn": "0.15",
-        "cat": "速食",
-        "scene": "",
-        "url": "https://www.xiaohongshu.com/goods-detail/67dbf174d9b27200019e6b71?t=1772423678417&xsec_token=ABs8LHzJ4kyjqPs3IDxCHPalPOqfjgEgHg6ZCcobKFBwY%3D&xsec_source=pc_arkselfshare",
-        "img": "img/67dbf174d9b27200019e6b70.webp",
-        "shop": "三兔船长",
-        "cat2": "预制",
-        "gift": "/"
+        "gift": "/",
+        "heat": "在卖"
       }
     ]
   },
@@ -2922,7 +2426,8 @@ const POOL = {
         "img": "img/689c2e3966d44d0001db60ff.webp",
         "shop": "三养食品旗舰店",
         "cat2": "速食",
-        "gift": "/"
+        "gift": "/",
+        "heat": "热销"
       },
       {
         "name": "三养MEP冷酷辣泡菜凉面",
@@ -2938,39 +2443,8 @@ const POOL = {
         "img": "img/69cde014a122150001d690cc.webp",
         "shop": "三养食品旗舰店",
         "cat2": "速食",
-        "gift": "/"
-      },
-      {
-        "name": "三养MEP-5感辣拉面",
-        "spec": "sku1:葱香青阳辣椒味126g*5袋\nsku2:蒜香辣蛤蜊味）102g*5袋\nsku3：黑胡椒辣牛肉味拉面102g*5袋\nsku4：黑椒鸡肉味100g*5袋\nsku5：蒜香辣虾味）100g*5袋\nsku6：葱香青阳辣椒味126g*1袋+蒜香辣蛤蜊味102g*1袋+黑胡椒辣牛肉味102g*1袋+黑椒鸡肉味100g*1袋+蒜香辣虾味100g*1袋",
-        "price": 25.9,
-        "origPrice": 28.9,
-        "priceTxt": "25.9-32.9元",
-        "sell": "1.“五感辣”味觉系统，每款MEP产品风味均含有复合辣味配方，一种很「新」的辣，\n五维辣味融于一包\n2.全球潮流风味：风味灵感来自全球著名辣味料理\n3.潮酷场景体验，韩国进口原料造就浓郁风味，韩式面条Q弹筋道，宵夜时刻最佳解馋利器",
-        "cmsn": "0.15",
-        "cat": "速食",
-        "scene": "",
-        "url": "https://www.xiaohongshu.com/goods-detail/689c2e3966d44d0001db6100?t=1778314459204&xsec_token=ABQcLLAx4uAM_pSjA3SnQ7AJq4wm_uV_5enAIQCateJ-g%3D&xsec_source=pc_arkselfshare",
-        "img": "img/689c2e3966d44d0001db60ff.webp",
-        "shop": "三养食品旗舰店",
-        "cat2": "速食",
-        "gift": "/"
-      },
-      {
-        "name": "三养MEP冷酷辣泡菜凉面",
-        "spec": "134g*4袋",
-        "price": 29.9,
-        "origPrice": 32.8,
-        "priceTxt": "29.9元",
-        "sell": "甄选小麦粉面、韩式工艺 筋道耐煮、顺滑爽口；每一根面条都能裹满100%韩国进口特调韩式凉面辣酱！再搭配爽口泡菜及特别添加的毕澄茄油，独特劲凉口感 越吃越凉爽~！一秒体验大脑“开空调”的凉爽感~!\n前调Q弹韩式凉面：甄选小麦粉面 每一根面条都裹满酱汁，顺滑爽口，劲道弹牙\n中调匠心韩式辣酱：精妙酱料配比+100%韩国进口特调韩式凉面辣酱\n后调劲爽薄荷凉感：3.5x凉感升级凉上加凉！创新添加【荜澄茄油】，带来独特清凉麻感~越吃越凉爽!(荜澄茄",
-        "cmsn": "0.15",
-        "cat": "速食",
-        "scene": "",
-        "url": "https://www.xiaohongshu.com/goods-detail/69cde014a122150001d690cd?t=1778314459204&xsec_token=ABEQFeSciqqXcqSAZQCuN-ho0eaF_YFGkUEkGpl1ptEZg%3D&xsec_source=pc_arkselfshare",
-        "img": "img/69cde014a122150001d690cc.webp",
-        "shop": "三养食品旗舰店",
-        "cat2": "速食",
-        "gift": "/"
+        "gift": "/",
+        "heat": "在卖"
       }
     ]
   },
@@ -2992,7 +2466,8 @@ const POOL = {
         "img": "img/68fb301be0f3b20001de0ced.webp",
         "shop": "必品阁BIBIGO旗舰店",
         "cat2": "预制",
-        "gift": "脆皮煎饺250g*1"
+        "gift": "脆皮煎饺250g*1",
+        "heat": "新品"
       },
       {
         "name": "必品阁生意面",
@@ -3008,7 +2483,8 @@ const POOL = {
         "img": "img/65e6c52c735ada00019ab427.webp",
         "shop": "必品阁BIBIGO旗舰店",
         "cat2": "速食",
-        "gift": "赠番茄罗勒250g*1"
+        "gift": "赠番茄罗勒250g*1",
+        "heat": "新品"
       },
       {
         "name": "必品阁王水饺",
@@ -3024,7 +2500,8 @@ const POOL = {
         "img": "img/67d151af29b9f7000157579d.webp",
         "shop": "必品阁BIBIGO旗舰店",
         "cat2": "预制",
-        "gift": "/"
+        "gift": "/",
+        "heat": ""
       }
     ]
   },
@@ -3046,7 +2523,8 @@ const POOL = {
         "img": "img/64cd0fbb702ca40001c408eb.webp",
         "shop": "福百道旗舰店",
         "cat2": "预制",
-        "gift": "无赠品"
+        "gift": "无赠品",
+        "heat": "热销"
       },
       {
         "name": "福州肉燕",
@@ -3062,7 +2540,8 @@ const POOL = {
         "img": "img/64ca7573368aa60001171862.webp",
         "shop": "福百道旗舰店",
         "cat2": "预制",
-        "gift": "无赠品"
+        "gift": "无赠品",
+        "heat": "在卖"
       },
       {
         "name": "茯苓薏米山药面（无盐线面）",
@@ -3078,7 +2557,8 @@ const POOL = {
         "img": "img/66767365c19f1f0001cefb01.webp",
         "shop": "福百道旗舰店",
         "cat2": "预制",
-        "gift": "无赠品"
+        "gift": "无赠品",
+        "heat": "新品"
       }
     ]
   },
@@ -3100,7 +2580,8 @@ const POOL = {
         "img": "img/67b52a50fb962200015f2d94.webp",
         "shop": "米曰旗舰店",
         "cat2": "预制",
-        "gift": "无"
+        "gift": "无",
+        "heat": ""
       },
       {
         "name": "紫菜包饭",
@@ -3116,7 +2597,8 @@ const POOL = {
         "img": "img/69b0c68aac2e190001277ebe.webp",
         "shop": "米曰旗舰店",
         "cat2": "预制",
-        "gift": "无"
+        "gift": "无",
+        "heat": ""
       },
       {
         "name": "三角饭团",
@@ -3132,7 +2614,8 @@ const POOL = {
         "img": "img/66f13b90f17df900017de032.webp",
         "shop": "米曰旗舰店",
         "cat2": "预制",
-        "gift": "无"
+        "gift": "无",
+        "heat": ""
       }
     ]
   },
@@ -3154,23 +2637,8 @@ const POOL = {
         "img": "img/67ad8b4829b9f70001b0406c.webp",
         "shop": "温小张",
         "cat2": "预制",
-        "gift": "无"
-      },
-      {
-        "name": "荤拼全家福（卤味）",
-        "spec": "1盒650g-670g",
-        "price": 109.8,
-        "origPrice": 109.8,
-        "priceTxt": "109.8",
-        "sell": "一盒卤味拼盘内有六样荤菜，搭配丰富，地道的温州风味，清爽不腻人，卤香十足。\n猪蹄软糯Q弹，鸡爪软耙肉嘟嘟，鸭掌有嚼劲，牛腱子肉纹理分明，香肠甜而不腻，鸡尖丝丝入味。\n口味干净清爽，搭配温州本土风味酱油醋和辣椒面，非常好吃。\n\n食用方法：整包卤味（不拆，提前完全解冻）浸泡在70度左右的热水里8分钟，温热即可",
-        "cmsn": "0.1",
-        "cat": "速食",
-        "scene": "",
-        "url": "https://www.xiaohongshu.com/goods-detail/67d4fd8052503c00019244d6?xsec_token=XBrybjGWTDX8tgrFYQJjRtMi6VssLzX-cPrkn3rSdvq_E=&xsec_source=app_share&instation_link=xhsdiscover%3A%2F%2Fgoods_detail%2F67d4fd8052503c00019244d6%3Ftrade_ext%3DeyJjaGFubmVsSW5mbyI6bnVsbCwiZHNUb2tlbkluZm8iOm51bGwsInNoYXJlTGluayI6Imh0dHBzOi8vd3d3LnhpYW9ob25nc2h1LmNvbS9nb29kcy1kZXRhaWwvNjdkNGZkODA1MjUwM2MwMDAxOTI0NGQ2P2FwcHVpZD01NzNlZWNlNTUwYzRiNDM2MjlhZmNkMGIiLCJsaXZlSW5mbyI6bnVsbCwic2hvcEluZm8iOm51bGwsImdvb2RzTm90ZUluZm8iOm51bGwsImNoYXRJbmZvIjpudWxsLCJzZWFyY2hJbmZvIjpudWxsLCJwcmVmZXIiOm51bGx9%26rate_limit_meta%3DitemId%253D67ad8b4829b9f70001b0406c%26source%3D%26rn%3Dtrue&share_id=058a73d8b7ef4f5cb0ecd2b24af577c2&share_channel=wechat",
-        "img": "img/67ad8b4829b9f70001b0406c.webp",
-        "shop": "温小张",
-        "cat2": "预制",
-        "gift": "无"
+        "gift": "无",
+        "heat": ""
       }
     ]
   },
@@ -3192,7 +2660,8 @@ const POOL = {
         "img": "img/6434c74b682e68000158248f.webp",
         "shop": "BENNS旗舰店",
         "cat2": "糖果巧克力",
-        "gift": "2包以上送30g"
+        "gift": "2包以上送30g",
+        "heat": ""
       },
       {
         "name": "贝纳丝至醇风味黑巧克力",
@@ -3208,7 +2677,8 @@ const POOL = {
         "img": "img/62f481aa2f5db90001165df3.webp",
         "shop": "BENNS旗舰店",
         "cat2": "糖果巧克力",
-        "gift": "2包以上送30g"
+        "gift": "2包以上送30g",
+        "heat": "热销"
       }
     ]
   },
@@ -3230,7 +2700,8 @@ const POOL = {
         "img": "img/69894cff880da20001b26680.webp",
         "shop": "有你一面旗舰店",
         "cat2": "速食",
-        "gift": "无"
+        "gift": "无",
+        "heat": "在卖"
       },
       {
         "name": "有你一面烧椒牛肉拌面",
@@ -3246,7 +2717,8 @@ const POOL = {
         "img": "img/69251aa1dbfbf50001121f08.webp",
         "shop": "有你一面旗舰店",
         "cat2": "速食",
-        "gift": "赠葱油拌面118g*1"
+        "gift": "赠葱油拌面118g*1",
+        "heat": ""
       }
     ]
   },
@@ -3268,7 +2740,8 @@ const POOL = {
         "img": "img/695c9be1cf93e20001a2010b.webp",
         "shop": "美好食品",
         "cat2": "预制",
-        "gift": "/"
+        "gift": "/",
+        "heat": "新品"
       },
       {
         "name": "小酥肉",
@@ -3284,7 +2757,8 @@ const POOL = {
         "img": "img/69ce093ba4db7c00014ea1d7.webp",
         "shop": "美好食品",
         "cat2": "预制",
-        "gift": "/"
+        "gift": "/",
+        "heat": ""
       }
     ]
   },
@@ -3306,7 +2780,8 @@ const POOL = {
         "img": "img/688207e779bc4700016d9928.webp",
         "shop": "美好食品旗舰店",
         "cat2": "预制",
-        "gift": "68.8"
+        "gift": "68.8",
+        "heat": "在卖"
       }
     ]
   },
@@ -3328,7 +2803,8 @@ const POOL = {
         "img": "img/6836e26870041c0001a06f91.webp",
         "shop": "和苑酒家食品旗舰店",
         "cat2": "预制",
-        "gift": "硅胶蒸笼垫一张"
+        "gift": "硅胶蒸笼垫一张",
+        "heat": "在卖"
       }
     ]
   },
@@ -3350,7 +2826,8 @@ const POOL = {
         "img": "img/69a01ef6c9f5da0001a56c8b.webp",
         "shop": "9点9手工馄饨",
         "cat2": "预制",
-        "gift": "无"
+        "gift": "无",
+        "heat": "热销"
       }
     ]
   },
@@ -3372,7 +2849,8 @@ const POOL = {
         "img": "img/682ec0edddb9e700012e9df4.webp",
         "shop": "果子和肉GOODROOT官方旗舰店",
         "cat2": "预制",
-        "gift": "/"
+        "gift": "/",
+        "heat": ""
       }
     ]
   },
@@ -3394,7 +2872,8 @@ const POOL = {
         "img": "img/6620ce32f76c18000114f687.webp",
         "shop": "臭宝",
         "cat2": "速食",
-        "gift": "无"
+        "gift": "无",
+        "heat": "在卖"
       }
     ]
   }
@@ -3472,12 +2951,14 @@ function goodCard(g){
     ? `<img src="${esc(g.img)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.parentNode.classList.add('-noimg')">${ph}`
     : ph;
   const cm = g.cmsn!=null&&g.cmsn!=='' ? `<span class="cmsn">佣金 ${(Number(g.cmsn)*100).toFixed(0)}%</span>` : '';
+  const HEAT_IC = {'热销':'🔥','在卖':'✓','新品':'🌱'};
+  const heat = g.heat ? `<span class="heat -${g.heat==='热销'?'hot':g.heat==='在卖'?'ok':'new'}">${HEAT_IC[g.heat]||''} ${esc(g.heat)}</span>` : '';
   const pt = g.priceTxt && /[^\d.]/.test(String(g.priceTxt).replace(/\s/g,''))
     ? `<div class="good-pt">到手：${esc(g.priceTxt)}</div>` : '';
   const price = g.price!=null
     ? `<span class="price">¥${esc(g.price)}${g.origPrice?`<s>¥${esc(g.origPrice)}</s>`:''}</span>` : '<span></span>';
   return `<${tag} class="good"${href}>
-    <div class="good-thumb">${thumb}${cm}</div>
+    <div class="good-thumb">${thumb}${cm}${heat}</div>
     ${g.shop?`<div class="good-shop">${esc(g.shop)}</div>`:''}
     <div class="good-name">${esc(g.name)}</div>
     ${g.spec?`<div class="good-spec">${esc(g.spec)}</div>`:''}
