@@ -730,25 +730,61 @@ footer .fine{
   *{animation:none!important; transition:none!important}
   .bar-fill{transition:none!important}
 }
+
+/* ═══ W6 · 冬日编辑式视觉系统 ═══ */
+:root{--sun:#B84039;--sun-deep:#963831;--mint:#254B3C;--mint-deep:#153A30;--ink:#1D2B27;--ink-2:#35473D;--sand:#F5F1E9;--sand-2:#ECE6D9;--paper:#FFFCF5;--lemon:#D9B871;--muted:#66746C;--line:#D9D4C9;--r:10px;--r-lg:16px;--shadow-paper:none;--shadow-lift:0 14px 28px rgba(20,47,40,.1)}
+body{background:var(--sand);color:var(--ink)}
+.wrap{width:min(1200px,calc(100% - 56px))}
+.hero{padding:0;background:#102F29;color:#FFFCF5;border:0;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.45;background-image:radial-gradient(circle at 8% 17%,#D9B871 1px,transparent 2px),radial-gradient(circle at 34% 72%,#D9B871 1px,transparent 2px),radial-gradient(circle at 71% 14%,#D9B871 1px,transparent 2px),radial-gradient(circle at 92% 80%,#D9B871 1px,transparent 2px);background-size:340px 290px}
+.hero::after{display:none}.hero-inner{display:grid;grid-template-columns:minmax(0,1.32fr) minmax(310px,.68fr);min-height:560px;gap:60px;align-items:stretch}
+.hero-copy{padding:76px 0 86px;display:flex;flex-direction:column;align-items:flex-start}
+.eyebrow{background:none;border:1px solid rgba(217,184,113,.52);color:#F6EAD6;border-radius:2px;padding:7px 13px;letter-spacing:.12em;font-size:12px;margin:0 0 36px}
+.edition-dot{font-size:16px;color:var(--lemon);line-height:1}.edition-sep{color:#BAAD8F;padding:0 3px}
+h1.title{margin:0;color:#FFFCF5;line-height:1;letter-spacing:-.045em;font-size:inherit;width:100%}
+.hero-overline{display:block;font-size:clamp(18px,1.85vw,24px);font-weight:500;color:#C8D7CD;letter-spacing:.11em;margin-bottom:26px}
+.title-line{display:flex;gap:18px;align-items:baseline;white-space:nowrap;margin:12px 0}
+.title-line em{font-size:clamp(38px,4.4vw,64px);font-style:normal;line-height:1.2;color:#F5F1E8;font-weight:900;position:relative;display:inline-block}
+.title-line em::after{content:"";position:absolute;bottom:0;left:0;width:100%;height:5px;background:var(--lemon);transform:skew(-20deg)}
+.title-line:nth-of-type(3) em::after{background:#D88871}.title-line small{font-size:clamp(12px,1.05vw,14px);letter-spacing:.07em;color:#C9D4CD;font-weight:500;white-space:normal;max-width:8em;line-height:1.45}
+.hero-end{display:flex;align-items:flex-start;gap:18px;margin:35px 0 18px;color:#E8EAE2}.hero-rule{width:40px;height:1px;background:var(--lemon);flex:none;margin-top:13px}.hero-end p{font-size:14px;line-height:1.8;margin:0;letter-spacing:.015em}
+.hero-explore{color:#F5F1E9;text-decoration:none;border-bottom:1px solid var(--lemon);padding:6px 0;letter-spacing:.1em;font-size:13px;font-weight:800}.hero-explore span{color:var(--lemon);margin-left:12px}.hero-explore:hover{color:var(--lemon)}
+.hero-aside{align-self:stretch;position:relative;border-left:1px solid rgba(255,252,245,.17);padding:45px 0 48px 42px;display:flex;flex-direction:column;justify-content:flex-end;min-width:0;isolation:isolate}
+.hero-aside::before{content:"";position:absolute;z-index:-1;inset:0 -100vw 0 0;background:radial-gradient(circle at 45% 36%,rgba(184,64,57,.29),transparent 47%),radial-gradient(circle at 72% 90%,rgba(217,184,113,.12),transparent 47%)}
+.festive-mark{position:absolute;right:8%;top:14%;width:220px;height:220px;border:1px solid rgba(217,184,113,.5);border-radius:50%;display:grid;place-items:center;color:var(--lemon)}
+.festive-mark::before{content:"";position:absolute;inset:13px;border:1px dashed rgba(217,184,113,.45);border-radius:50%}.festive-mark span{font-size:95px;font-weight:200;line-height:1}.festive-mark i{position:absolute;right:-22px;top:24px;font-size:32px;font-style:normal}.festive-mark b{position:absolute;left:-30px;bottom:22px;font-size:20px;font-weight:400}
+.hero-aside-copy{margin-bottom:24px}.aside-eyebrow{font-size:11px;letter-spacing:.18em;color:var(--lemon);font-weight:700}.hero-aside-copy strong{display:block;font-size:clamp(28px,3vw,42px);line-height:1.22;margin:12px 0;color:#FFF8EC;letter-spacing:-.03em}.hero-aside-copy p{font-size:13px;color:#D3E1D5;letter-spacing:.04em;margin:0}
+.qr-btn{width:100%;border:1px solid var(--lemon);border-radius:3px;background:var(--lemon);color:#183B30;flex-direction:row;justify-content:space-between;padding:14px 18px;font-size:14px;font-weight:800;letter-spacing:.05em}.qr-btn span{color:#183B30;font-size:18px}.qr-btn:hover{background:#E7C985;box-shadow:none}.qr-btn:focus-visible,.hero-explore:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.hero-ribbon{text-align:center;background:var(--lemon);color:#19392F;letter-spacing:.24em;font-size:10px;font-weight:900;padding:10px;white-space:nowrap}
+.pool{background:var(--sand);padding-top:65px}.sec-head{max-width:none;margin-bottom:34px}.sec-no{font-size:11px;color:var(--sun);border:0;padding:0;letter-spacing:.18em}.pool h2{font-size:clamp(28px,3.3vw,43px);font-weight:900;letter-spacing:-.045em}.section-spark{font-size:.55em;color:var(--sun);vertical-align:top;margin-left:12px}.pool .sec-sub{color:var(--muted);font-size:14px;margin-top:7px}
+.tabs{border-bottom:1px solid var(--line);gap:30px;margin-bottom:30px}.tab{border-radius:0;padding:14px 4px;font-weight:800;font-size:15px}.tab:hover{background:transparent;color:var(--mint-deep)}.tab.is-on{color:var(--mint-deep);border-bottom-color:var(--mint-deep)}.tab.is-on .tb-n{background:var(--mint-deep)}
+.show-card{border:1px solid var(--line);border-radius:8px;box-shadow:none;background:var(--paper)}.show-hd{background:#EEECE3;border-bottom:1px solid var(--line)}.show-badge{background:var(--mint-deep)!important;box-shadow:none;border-radius:4px}.tag{border-radius:3px;background:#F4F0E8}.tag.-hot{background:#F6E7DF;color:var(--sun-deep)}.tag.-mint{background:#E8EDE6;color:var(--mint-deep)}
+.goods{grid-template-columns:repeat(auto-fill,minmax(205px,1fr));gap:14px}.good{padding:0 0 14px;gap:6px;border-radius:8px;box-shadow:none;background:#FFFDF7;overflow:hidden;transition:border-color .2s,transform .2s}.good::before{display:none}.good:hover,.good:focus-visible{box-shadow:none;border-color:#8BA397;transform:translateY(-2px)}.good-thumb{margin:0;border-radius:0;aspect-ratio:1/1;background:#F3F0E8}.good-thumb img{object-fit:contain}.good-thumb.is-lowres{background:radial-gradient(circle at center,#FFFCF5 0,#ECE7DD 75%)}.good-thumb.is-lowres img{width:min(56%,120px);height:min(56%,120px);object-fit:contain;filter:none}.good-shop,.good-name,.good-spec,.good-sell,.good-pt,.good-gift,.good-foot{margin-left:14px;margin-right:14px}.good-shop{margin-top:11px;color:var(--mint-deep)}.good-name{font-weight:800}.price{color:var(--sun-deep)}.price s{color:#8B948D}.cmsn{background:var(--mint-deep);color:#F5E6C7;border-radius:3px;box-shadow:none}.heat{border-radius:3px}.heat.-hot{background:var(--sun)}.heat.-new{background:var(--mint)}
+.scene-hd{background:transparent!important;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:9px 0 17px;margin-bottom:18px}.scene-group:nth-child(2) .scene-hd{border-left:0}.scene-ic{border-radius:50%;background:#E9E7DE}.scene-n{border-radius:3px;background:var(--mint-deep)}.filters{background:#EEECE4;border-radius:6px}.act{border-radius:4px}.act.-home{background:var(--mint-deep);border-color:var(--mint-deep)}.act.-home:hover{background:#22604B}.deck-stage{background:#17372E}.deck{background:#17372E}.dk-nav{background:rgba(16,47,41,.7)}.qr-dialog{background:var(--paper)}
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr 260px;gap:25px;min-height:500px}.hero-aside{padding-left:24px}.festive-mark{width:145px;height:145px;right:10%;top:15%}.festive-mark span{font-size:60px}.hero-copy{padding:65px 0}.title-line em{font-size:clamp(35px,4vw,55px)}.title-line small{font-size:11px}}
+@media(max-width:760px){.hero-inner{display:flex;flex-direction:column;gap:0}.hero-copy{padding:48px 0 34px}.eyebrow{margin-bottom:26px}.title-line{margin:9px 0}.title-line em{font-size:clamp(37px,7.5vw,58px)}.title-line small{max-width:7em}.hero-end{margin-top:24px}.hero-aside{border-left:0;border-top:1px solid rgba(255,252,245,.2);padding:26px 0 34px;display:grid;grid-template-columns:1fr auto;gap:14px;align-items:end}.festive-mark{width:75px;height:75px;top:15px;right:2px}.festive-mark span{font-size:33px}.festive-mark i,.festive-mark b{display:none}.hero-aside-copy{margin:0}.hero-aside-copy strong{font-size:23px;margin:7px 0}.hero-aside-copy strong br{display:none}.hero-aside-copy p{font-size:11px}.qr-btn{grid-column:1/-1}.hero-ribbon{font-size:8px;letter-spacing:.12em}.wrap{width:min(100% - 32px,1200px)}}
+@media(max-width:620px){.pool{padding-top:45px}.tabs{gap:8px}.tab{flex:1;justify-content:center;font-size:12px;padding:12px 0;gap:3px}.tb-n{padding:1px 4px;font-size:10px}.goods{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.good-thumb.is-lowres img{width:min(63%,105px);height:min(63%,105px)}.good{padding-bottom:12px}.good-shop,.good-name,.good-spec,.good-sell,.good-pt,.good-gift,.good-foot{margin-left:10px;margin-right:10px}.good-name{font-size:12.5px}.price{font-size:17px}.hero-overline{font-size:15px}.title-line{display:block}.title-line small{display:block;max-width:none;margin:8px 0 13px;font-size:11px;letter-spacing:.1em}.title-line em{font-size:clamp(38px,10vw,54px)}.hero-end p{font-size:12px}}
+@media(max-width:380px){.title-line em{font-size:34px}.tab{font-size:11px}.hero-aside-copy strong{font-size:21px}}
 </style>
 </head>
 <body>
 
-<!-- ═══════════ HERO ═══════════ -->
-<header class="hero">
+<!-- ═══════════ 冬日货盘封面 ═══════════ -->
+<header class="hero" id="top">
   <div class="wrap hero-inner">
-    <div class="eyebrow">🧺 小红书电商 · 货盘橱窗</div>
-    <h1 class="title">小红书速食预制及<br><span class="hl">糖果巧克力</span>·货盘橱窗</h1>
-    <div class="hero-cta">
-      <span class="cta-ic">🤝</span>
-      <p><b>看中哪个品，直接找我</b>——要机制、要样品、问库存，都由我这边统一对接商家。
-      标了 <b>🔥热销</b> 的品近 30 天动销最好，可以优先聊。</p>
-      <button class="qr-btn" id="qrBtn" type="button" aria-label="扫码加我企微">
-        <img src="img/qr_damen.png" alt="">
-        <span>扫码加我</span>
-      </button>
+    <div class="hero-copy">
+      <div class="eyebrow"><span class="edition-dot" aria-hidden="true">✦</span> 大门的选品橱窗 <span class="edition-sep">/</span> 冬日特辑</div>
+      <h1 class="title"><span class="hero-overline">小红书电商 · 休食精选货盘</span><span class="title-line"><em>速食 · 预制</em><small>好做又好吃的日常</small></span><span class="title-line"><em>糖果 · 巧克力</em><small>值得分享的甜蜜</small></span></h1>
+      <div class="hero-end"><span class="hero-rule"></span><p>从冬日热餐，到圣诞与年货好礼。<br>为你的下一场带货，挑刚刚好的品。</p></div>
+      <a class="hero-explore" href="#pool">进入货盘 <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="hero-aside">
+      <div class="festive-mark" aria-hidden="true"><span>✳</span><i>✦</i><b>✳</b></div>
+      <div class="hero-aside-copy"><span class="aside-eyebrow">THE WINTER EDIT / 2026</span><strong>好品，<br>值得被看见。</strong><p>专场合作 · 混坑好品 · 选品指南</p></div>
+      <button class="qr-btn" id="qrBtn" type="button" aria-label="打开大门的企微二维码">和大门聊选品 <span aria-hidden="true">↗</span></button>
     </div>
   </div>
+  <div class="hero-ribbon" aria-hidden="true">✦ WINTER EDITION · 精选好物 · WINTER EDITION ✦</div>
 </header>
 
 <!-- 二维码弹窗 -->
@@ -766,8 +802,8 @@ footer .fine{
   <div class="wrap">
     <div class="sec-head">
       <span class="sec-no">01 / 橱窗</span>
-      <h2>货盘与带货节奏</h2>
-      <p class="sec-sub">专场商家整店打包、混坑单品自由组合，配一份速食 / 预制 / 糖巧分开写的全年节奏指南。</p>
+      <h2>来挑今天的好品<span class="section-spark" aria-hidden="true">✳</span></h2>
+      <p class="sec-sub">先按合作方式进入，再按场景筛选；具体机制和样品，随时找大门聊。</p>
     </div>
 
     <div class="tabs" role="tablist" aria-label="橱窗页签">
@@ -828,7 +864,7 @@ footer .fine{
           <li>含 42 家商家 175 个品（专场 11 品 + 混坑 175 品），按五个场景归集</li>
           <li>价格与佣金为提报时口径，实际以商品页为准</li>
           <li>品牌手卡由商家提供</li>
-          <li><b>页面版本 W5 · 更新于 2026-11-05 · 冬季改版 · 货盘全量更新</b></li>
+          <li><b>页面版本 W6 · 更新于 2026-11-05 · 冬季改版 · 货盘全量更新</b></li>
         </ul>
       </div>
       <div>
@@ -4094,6 +4130,9 @@ const GUIDE = [
   }
 ];
 
+/* 图片低清名单：原表嵌图尺寸不足，维持原生展示，避免放大失真 */
+const LOW_RES_IMAGES = new Set(["img/p5_row113.webp", "img/p5_row46.webp", "img/p5_6a7d2c5d09b4f200012683ed.webp", "img/p5_row134.webp", "img/p5_row3.webp", "img/p5_row85.webp", "img/p5_row84.webp", "img/p5_row170.webp", "img/p5_row174.webp", "img/p5_row99.webp", "img/p5_row100.webp", "img/p5_row47.webp", "img/p5_row87.webp", "img/p5_row133.webp", "img/p5_row112.webp", "img/p5_row19.webp", "img/p5_row89.webp", "img/p5_row175.webp", "img/p5_row136.webp", "img/p5_row135.webp", "img/p5_row29.webp", "img/p5_69169bc960f597000148dfed.webp", "img/p5_row88.webp", "img/p5_row86.webp", "img/p5_row176.webp", "img/p5_row48.webp", "img/p5_row98.webp"]);
+
 /* 商品卡 */
 function goodCard(g){
   const tag = g.url ? 'a' : 'div';
@@ -4110,7 +4149,7 @@ function goodCard(g){
   const price = g.price!=null
     ? `<span class="price">¥${esc(g.price)}${g.origPrice?`<s>¥${esc(g.origPrice)}</s>`:''}</span>` : '<span></span>';
   return `<${tag} class="good"${href}>
-    <div class="good-thumb">${thumb}${cm}${heat}</div>
+    <div class="good-thumb${LOW_RES_IMAGES.has(g.img)?" is-lowres":""}">${thumb}${cm}${heat}</div>
     ${g.shop?`<div class="good-shop">${esc(g.shop)}</div>`:''}
     <div class="good-name">${esc(g.name)}</div>
     ${g.spec?`<div class="good-spec">${esc(g.spec)}</div>`:''}
