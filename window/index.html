@@ -927,6 +927,11 @@ const POOL = {
           "img": "img/p5_6a7d2c5d09b4f200012683ed.webp"
         },
         {
+          "name": "小黄象 · 咔嚓轻脆南瓜蛋挞160g/袋空气炸锅半成品 · 蛋挞*2袋（到手8个）",
+          "url": "https://www.xiaohongshu.com/goods-detail/6a9f7aefd1a36f0001383eb6",
+          "img": "img/p5_6a9f7aefd1a36f0001383eb6.webp"
+        },
+        {
           "name": "小黄象 【官方】橄榄油香煎鸡排半成品空气炸锅轻食健身餐三明治100g/袋 【专场】奥尔良鸡排*20片+赠原味鸡排*2片",
           "url": "https://www.xiaohongshu.com/goods-detail/69169bc960f597000148dfed",
           "img": "img/p5_69169bc960f597000148dfed.webp"
@@ -965,7 +970,11 @@ const POOL = {
           "url": "https://www.xiaohongshu.com/goods-detail/6a9edda9baea3b00019f2013",
           "img": "img/p5_6a9edda9baea3b00019f2013.webp"
         }
-      ]
+      ],
+      "deck": {
+        "prefix": "hy",
+        "pages": 20
+      }
     },
     {
       "sub": "高蛋白肉制品 · 早餐主食",
@@ -4222,7 +4231,7 @@ document.querySelectorAll('.tab').forEach(btn=>{
 /* ── 主推专场 ── */
 (function(){
   const box = document.getElementById('show-list');
-  box.innerHTML = POOL.showcase.filter(sh=>!sh.off).map((sh,idx)=>`
+  box.innerHTML = POOL.showcase.map((sh,idx)=>`
     <article class="show-card">
       <div class="show-hd">
         <div class="show-badge">${esc(sh.badge||sh.name.slice(0,1))}</div>
@@ -4261,7 +4270,7 @@ document.querySelectorAll('.tab').forEach(btn=>{
           : `<div class="empty"><div class="ic">🧺</div><div class="t">${esc(sh.name)} 货盘待填充</div><div class="d">把商品名、价格、卖点、链接整理好发我，会直接填进这个位置。</div></div>`}
       </div>
     </article>`).join('');
-  document.getElementById('n-show').textContent = POOL.showcase.filter(sh=>!sh.off).length;
+  document.getElementById('n-show').textContent = POOL.showcase.length;
 
   // 手卡交互
   const cur = {};
@@ -4275,13 +4284,17 @@ document.querySelectorAll('.tab').forEach(btn=>{
   function go(idx,n){
     const sh=POOL.showcase[idx], max=sh.deck.pages;
     n=Math.min(Math.max(n,1),max); cur[idx]=n;
-    document.getElementById('dkimg-'+idx).src=`deck/${sh.deck.prefix}_${String(n).padStart(2,'0')}.webp`;
+    const img=document.getElementById('dkimg-'+idx);
+    img.src=`deck/${sh.deck.prefix}_${String(n).padStart(2,'0')}.webp`;
+    img.alt=`${sh.name}品牌手卡 第${n}页`;
     document.getElementById('dkn-'+idx).textContent=n;
     document.querySelectorAll(`.dk-dot[data-dk="${idx}"]`).forEach((d,i)=>d.classList.toggle('is-on',i===n-1));
   }
   document.querySelectorAll('.act.-deck').forEach(b=>b.addEventListener('click',()=>{
     const i=b.dataset.deck, box=document.getElementById('deck-'+i);
     box.hidden=!box.hidden; b.classList.toggle('is-on',!box.hidden);
+    b.setAttribute('aria-expanded',String(!box.hidden));
+    if(!box.hidden){document.getElementById('dkimg-'+i).loading='eager';}
   }));
   document.querySelectorAll('.dk-nav').forEach(b=>b.addEventListener('click',()=>
     go(+b.dataset.dk, cur[+b.dataset.dk]+ +b.dataset.step)));
