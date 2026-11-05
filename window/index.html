@@ -10,18 +10,18 @@
 <meta name="description" content="小红书速食预制及糖果巧克力货盘橱窗 —— 专场商家货盘、混坑好品、全年带货节奏指南">
 <style>
 :root{
-  --sun:#FF6B35;      /* 骄阳橘：主强调 */
-  --sun-deep:#E8551F;
-  --mint:#00B8A9;     /* 冰薄荷：次强调 */
-  --mint-deep:#00907F;
-  --ink:#132644;      /* 墨板蓝 */
-  --ink-2:#2C3E5C;
-  --sand:#FFF6EC;     /* 晒白沙 */
-  --sand-2:#FFEEDD;
+  --sun:#C0392B;      /* 圣诞红：主强调 */
+  --sun-deep:#9C2B1F;
+  --mint:#1F6E43;     /* 冬青绿：次强调 */
+  --mint-deep:#155833;
+  --ink:#2B1A1A;      /* 暖墨褐 */
+  --ink-2:#4A3436;
+  --sand:#FBF5EF;     /* 暖雪白 */
+  --sand-2:#F6E8DC;
   --paper:#FFFFFF;
-  --lemon:#FFC93C;    /* 柠檬黄：胶带/荧光 */
-  --muted:#7A8699;
-  --line:#EADFD2;
+  --lemon:#E8B84B;    /* 鎏金：胶带/高光 */
+  --muted:#8A7A72;
+  --line:#E8DBCE;
 
   --s1:4px; --s2:8px; --s3:12px; --s4:20px; --s5:32px; --s6:56px; --s7:88px;
   --r:14px; --r-lg:20px;
@@ -50,13 +50,13 @@ body{
 .hero{
   position:relative; overflow:hidden;
   background:
-    radial-gradient(120% 90% at 88% -10%, #FFD9A8 0%, rgba(255,217,168,0) 58%),
-    radial-gradient(90% 70% at 4% 110%, #BFF0EA 0%, rgba(191,240,234,0) 60%),
+    radial-gradient(120% 90% at 88% -10%, #F3D9C8 0%, rgba(243,217,200,0) 58%),
+    radial-gradient(90% 70% at 4% 110%, #E9EFE4 0%, rgba(233,239,228,0) 60%),
     var(--sand);
   padding:clamp(48px,8vw,96px) 0 clamp(56px,9vw,104px);
   border-bottom:1px solid var(--line);
 }
-/* 午后斜射的光 */
+/* 落雪地平线 */
 .hero::after{
   content:""; position:absolute; inset:auto 0 -1px 0; height:64px;
   background:var(--sand);
@@ -64,7 +64,7 @@ body{
 }
 .hero-sun{
   position:absolute; top:-90px; right:-60px; width:320px; height:320px;
-  border-radius:50%; background:radial-gradient(circle,#FFB067 0%,rgba(255,176,103,.35) 45%,rgba(255,176,103,0) 70%);
+  border-radius:50%; background:radial-gradient(circle,#E8B84B 0%,rgba(232,184,75,.28) 45%,rgba(232,184,75,0) 70%);
   pointer-events:none;
 }
 .hero-inner{position:relative; z-index:2}
@@ -138,7 +138,7 @@ h2{
   line-height:1.62; letter-spacing:-.01em;
 }
 .why-verdict .em{color:var(--lemon)}
-.why-verdict .em-m{color:#5FE3D6}
+.why-verdict .em-m{color:#7ED9A8}
 
 .bars{display:grid; gap:14px}
 .bar-row{margin-bottom:5px;display:grid; grid-template-columns:7.2em 1fr 5.4em; align-items:center; gap:14px}
@@ -147,9 +147,9 @@ h2{
 .bar-fill{
   height:100%; border-radius:6px;
 }
-.bar-fill.-sun{background:linear-gradient(90deg,var(--sun),#FF9B6A)}
-.bar-fill.-mint{background:linear-gradient(90deg,var(--mint),#54D6C8)}
-.bar-fill.-ink{background:linear-gradient(90deg,var(--ink-2),#5A7196)}
+.bar-fill.-sun{background:linear-gradient(90deg,var(--sun),#E06B54)}
+.bar-fill.-mint{background:linear-gradient(90deg,var(--mint),#5FAF8B)}
+.bar-fill.-ink{background:linear-gradient(90deg,var(--ink-2),#7A6260)}
 .bar-row .vl{font-size:14px; font-weight:800; color:var(--ink); text-align:right}
 .bar-row .vl small{font-weight:600; color:var(--muted); font-size:11px; margin-left:2px}
 .bars-note{margin:12px 0 0; font-size:12.5px; color:var(--muted)}
@@ -192,7 +192,7 @@ h2{
   display:grid; place-items:center; color:#fff; font-weight:900; font-size:17px;
   background:var(--ink); box-shadow:0 4px 12px -4px rgba(19,38,68,.5);
 }
-.show-card:nth-of-type(1) .show-badge{background:linear-gradient(140deg,var(--sun),#FF9558)}
+.show-card:nth-of-type(1) .show-badge{background:linear-gradient(140deg,var(--sun),#D96A50)}
 .show-card:nth-of-type(2) .show-badge{background:linear-gradient(140deg,var(--mint),#3FD6C6)}
 .show-card:nth-of-type(3) .show-badge{background:linear-gradient(140deg,#7A5CE0,#A78BFA)}
 .show-tt{flex:1 1 200px; min-width:0}
@@ -204,8 +204,8 @@ h2{
   padding:4px 10px; border-radius:999px;
   background:var(--sand-2); color:var(--ink-2); border:1px solid var(--line);
 }
-.tag.-hot{background:#FFE9DF; color:var(--sun-deep); border-color:#FFCFB8}
-.tag.-mint{background:#DFF7F4; color:var(--mint-deep); border-color:#B6EBE4}
+.tag.-hot{background:#F9E4DE; color:var(--sun-deep); border-color:#EBC4B8}
+.tag.-mint{background:#E7F0E4; color:var(--mint-deep); border-color:#C4DCC2}
 .tag.-todo{background:transparent; color:var(--muted); border-style:dashed}
 .show-body{padding:clamp(18px,3vw,28px)}
 .show-pitch{
@@ -362,7 +362,7 @@ h2{
   border-bottom:1px solid var(--line);
 }
 .gd.-sun  .gd-hd{background:linear-gradient(100deg,#FFF1E4,var(--paper) 72%)}
-.gd.-mint .gd-hd{background:linear-gradient(100deg,#E3F7F4,var(--paper) 72%)}
+.gd.-mint .gd-hd{background:linear-gradient(100deg,#E9F3EA,var(--paper) 72%)}
 .gd.-ink  .gd-hd{background:linear-gradient(100deg,#ECEFF5,var(--paper) 72%)}
 .gd-ic{
   flex:none; width:42px; height:42px; border-radius:12px; display:grid; place-items:center;
@@ -389,9 +389,9 @@ h2{
 .rhy-m[data-lv="1"] .rhy-bar{height:24px}
 .rhy-m[data-lv="2"] .rhy-bar{height:42px}
 .rhy-m[data-lv="3"] .rhy-bar{height:60px}
-.gd.-sun  .rhy-m[data-lv="2"] .rhy-bar{background:#FFB98A}
+.gd.-sun  .rhy-m[data-lv="2"] .rhy-bar{background:#E09A7E}
 .gd.-sun  .rhy-m[data-lv="3"] .rhy-bar{background:var(--sun)}
-.gd.-mint .rhy-m[data-lv="2"] .rhy-bar{background:#7FDCD0}
+.gd.-mint .rhy-m[data-lv="2"] .rhy-bar{background:#8FCFA8}
 .gd.-mint .rhy-m[data-lv="3"] .rhy-bar{background:var(--mint-deep)}
 .gd.-ink  .rhy-m[data-lv="2"] .rhy-bar{background:#8EA1BE}
 .gd.-ink  .rhy-m[data-lv="3"] .rhy-bar{background:var(--ink-2)}
@@ -403,8 +403,8 @@ h2{
 .rl{display:inline-flex; align-items:center; gap:5px; font-size:11.5px; color:var(--muted)}
 .rl i{width:10px; height:10px; border-radius:3px; background:var(--sand-2)}
 .rl i[data-lv="1"]{background:#F1E3D4}
-.gd.-sun  .rl i[data-lv="2"]{background:#FFB98A} .gd.-sun  .rl i[data-lv="3"]{background:var(--sun)}
-.gd.-mint .rl i[data-lv="2"]{background:#7FDCD0} .gd.-mint .rl i[data-lv="3"]{background:var(--mint-deep)}
+.gd.-sun  .rl i[data-lv="2"]{background:#E09A7E} .gd.-sun  .rl i[data-lv="3"]{background:var(--sun)}
+.gd.-mint .rl i[data-lv="2"]{background:#8FCFA8} .gd.-mint .rl i[data-lv="3"]{background:var(--mint-deep)}
 .gd.-ink  .rl i[data-lv="2"]{background:#8EA1BE} .gd.-ink  .rl i[data-lv="3"]{background:var(--ink-2)}
 
 .gd-pk{list-style:none; margin:14px 0 0; padding:0; display:grid; gap:7px}
@@ -439,11 +439,11 @@ h2{
 .scene-hd{
   display:flex; gap:14px; align-items:center; margin-bottom:18px;
   padding:16px clamp(14px,2vw,20px); border-radius:var(--r-lg);
-  background:linear-gradient(100deg,#FFF3E7 0%,var(--sand) 70%);
+  background:linear-gradient(100deg,#FBEEE6 0%,var(--sand) 70%);
   border:1px solid var(--line); border-left:5px solid var(--sun);
 }
 .scene-group:nth-child(2) .scene-hd{
-  background:linear-gradient(100deg,#E6F8F5 0%,var(--sand) 70%);
+  background:linear-gradient(100deg,#E9F3EA 0%,var(--sand) 70%);
   border-left-color:var(--mint);
 }
 .scene-ic{
@@ -476,10 +476,41 @@ h2{
   box-shadow:0 2px 8px rgba(27,42,65,.28);
 }
 .hero-cta{
-  display:flex; gap:12px; align-items:flex-start; margin-top:18px;
+  display:flex; gap:16px; align-items:center; margin-top:18px;
   background:var(--paper); border:1px solid var(--line); border-left:4px solid var(--sun);
   border-radius:var(--r-lg); padding:14px 16px; max-width:760px;
 }
+.hero-cta .cta-ic{display:none}
+.hero-cta p{flex:1; margin:0; font-size:13.5px; line-height:1.62; color:var(--ink-2)}
+.qr-btn{
+  flex:none; display:flex; flex-direction:column; align-items:center; gap:4px;
+  background:var(--sand-2); border:1px solid var(--line); border-radius:var(--r);
+  padding:7px 10px; cursor:pointer; font:inherit;
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.qr-btn:hover{transform:translateY(-2px); box-shadow:var(--shadow-paper)}
+.qr-btn img{width:52px; height:52px; border-radius:8px; display:block}
+.qr-btn span{font-size:11px; font-weight:800; color:var(--sun-deep); letter-spacing:.02em}
+.qr-mask{
+  position:fixed; inset:0; z-index:999;
+  background:rgba(43,26,26,.55); backdrop-filter:blur(3px);
+  display:grid; place-items:center; padding:20px;
+}
+.qr-mask[hidden]{display:none}
+.qr-dialog{
+  position:relative; background:var(--paper); border-radius:var(--r-lg);
+  padding:22px 22px 18px; text-align:center; max-width:320px; width:100%;
+  box-shadow:var(--shadow-lift);
+}
+.qr-dialog img{width:min(240px,70vw); height:auto; border-radius:12px; display:block; margin:0 auto}
+.qr-dialog p{margin:14px 0 0; font-size:13.5px; line-height:1.65; color:var(--ink-2)}
+.qr-dialog p b{color:var(--ink); font-size:15px}
+.qr-x{
+  position:absolute; top:8px; right:10px; width:32px; height:32px;
+  border:none; background:var(--sand-2); border-radius:50%;
+  font-size:20px; line-height:1; color:var(--muted); cursor:pointer;
+}
+.qr-x:hover{background:var(--line); color:var(--ink)}
 .hero-cta .cta-ic{flex:none; font-size:19px; line-height:1.3}
 .hero-cta p{margin:0; font-size:13.5px; line-height:1.62; color:var(--ink-2)}
 .hero-cta p b{color:var(--ink); font-weight:800}
@@ -495,7 +526,7 @@ h2{
 .good-spec{font-size:11.5px; color:var(--muted); margin-top:3px; line-height:1.4}
 .good-gift{
   font-size:11.5px; color:var(--mint-deep); font-weight:700; margin-top:5px;
-  background:#E6F8F5; border-radius:6px; padding:3px 7px; display:inline-block;
+  background:#E9F3EA; border-radius:6px; padding:3px 7px; display:inline-block;
 }
 .good-pt{font-size:11.5px; color:var(--sun-deep); font-weight:700; margin-top:5px; line-height:1.45}
 
@@ -505,8 +536,8 @@ h2{
   border:1px solid var(--line); border-radius:var(--r-lg);
   padding:15px clamp(13px,1.8vw,18px); background:var(--sand);
 }
-.line-card.-a{background:linear-gradient(165deg,#FFF3E7 0%,var(--sand) 60%)}
-.line-card.-b{background:linear-gradient(165deg,#E6F8F5 0%,var(--sand) 60%)}
+.line-card.-a{background:linear-gradient(165deg,#FBEEE6 0%,var(--sand) 60%)}
+.line-card.-b{background:linear-gradient(165deg,#E9F3EA 0%,var(--sand) 60%)}
 .line-hd{display:flex; gap:10px; margin-bottom:12px}
 .line-ic{
   flex:none; width:32px; height:32px; border-radius:9px; background:var(--paper);
@@ -707,20 +738,27 @@ footer .fine{
 <header class="hero">
   <div class="wrap hero-inner">
     <div class="eyebrow">🧺 小红书电商 · 货盘橱窗</div>
-    <h1 class="title">小红书<span class="hl">速食预制</span>及<span class="hl-m">糖果巧克力</span><br>货盘橱窗</h1>
-    <p class="lede">
-      三个类目、一页看全：<strong>速食</strong>（自热拌面、馄饨饺子、锅巴米饼）、
-      <strong>预制</strong>（冷冻半成品、加热即食正餐）、<strong>糖果巧克力</strong>（礼盒装、休闲糖巧）。
-      每个品都带<strong>佣金、到手价、商品链接</strong>，另附一份<strong>全年带货节奏指南</strong>——
-      什么季节推什么、对着哪拨人讲，都写在第三个页签里。
-    </p>
+    <h1 class="title">小红书速食预制及<br><span class="hl">糖果巧克力</span>·货盘橱窗</h1>
     <div class="hero-cta">
       <span class="cta-ic">🤝</span>
       <p><b>看中哪个品，直接找我</b>——要机制、要样品、问库存，都由我这边统一对接商家。
       标了 <b>🔥热销</b> 的品近 30 天动销最好，可以优先聊。</p>
+      <button class="qr-btn" id="qrBtn" type="button" aria-label="扫码加我企微">
+        <img src="img/qr_damen.png" alt="">
+        <span>扫码加我</span>
+      </button>
     </div>
   </div>
 </header>
+
+<!-- 二维码弹窗 -->
+<div class="qr-mask" id="qrMask" hidden>
+  <div class="qr-dialog" role="dialog" aria-modal="true" aria-label="我的企微二维码">
+    <button class="qr-x" id="qrClose" type="button" aria-label="关闭">×</button>
+    <img src="img/qr_damen.png" alt="大门的企微二维码">
+    <p><b>扫码加我企微</b><br>看中的品、要的机制和样品，直接聊</p>
+  </div>
+</div>
 
 <main>
 <!-- ═══════════ 01 货盘橱窗 ═══════════ -->
@@ -2886,6 +2924,18 @@ try{
 const esc = s => String(s==null?"":s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const fmt = n => n>=10000 ? (n/10000).toFixed(n>=1000000?0:1)+"万" : Number(n).toLocaleString();
 
+/* ── 二维码弹窗 ── */
+(function(){
+  const mask=document.getElementById('qrMask');
+  if(!mask) return;
+  const open=()=>{mask.hidden=false; document.body.style.overflow='hidden'};
+  const close=()=>{mask.hidden=true; document.body.style.overflow=''};
+  document.getElementById('qrBtn').addEventListener('click',open);
+  document.getElementById('qrClose').addEventListener('click',close);
+  mask.addEventListener('click',e=>{ if(e.target===mask) close(); });
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&!mask.hidden) close(); });
+})();
+
 /* ── 带货指南：三类目全年节奏（经验判断，非数据结论） ── */
 const GUIDE = [
   {
@@ -3214,7 +3264,7 @@ document.querySelectorAll('.tab').forEach(btn=>{
 })();
 }catch(err){
   var w=document.createElement('div');
-  w.style.cssText='margin:24px auto;max-width:760px;padding:18px 20px;border:2px solid #FF6B35;border-radius:14px;background:#FFF3E7;font:14px/1.7 system-ui;color:#1B2A41';
+  w.style.cssText='margin:24px auto;max-width:760px;padding:18px 20px;border:2px solid #C0392B;border-radius:14px;background:#FBEEE6;font:14px/1.7 system-ui;color:#1B2A41';
   w.innerHTML='<b>页面脚本未能完整加载</b><br>请刷新重试；若仍异常，把浏览器与机型告诉我。<br><span style="color:#6B7A8D;font-size:12px">'+String(err&&err.message||err)+'</span>';
   (document.querySelector('main')||document.body).prepend(w);
 }
