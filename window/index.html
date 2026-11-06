@@ -4143,10 +4143,13 @@ const GUIDE = [
 ];
 
 /* 图片低清名单：原表嵌图尺寸不足，维持原生展示，避免放大失真 */
-const LOW_RES_IMAGES = new Set(["img/p5_row113.webp", "img/p5_row46.webp", "img/p5_row134.webp", "img/p5_row3.webp", "img/p5_row85.webp", "img/p5_row84.webp", "img/p5_row170.webp", "img/p5_row174.webp", "img/p5_row99.webp", "img/p5_row100.webp", "img/p5_row47.webp", "img/p5_row87.webp", "img/p5_row133.webp", "img/p5_row112.webp", "img/p5_row19.webp", "img/p5_row89.webp", "img/p5_row175.webp", "img/p5_row136.webp", "img/p5_row135.webp", "img/p5_row29.webp", "img/p5_row88.webp", "img/p5_row86.webp", "img/p5_row176.webp", "img/p5_row48.webp", "img/p5_row98.webp"]);
+const LOW_RES_IMAGES = new Set(["img/p5_row46.webp", "img/p5_row47.webp", "img/p5_row48.webp", "img/p5_row135.webp", "img/p5_row19.webp"]);
 
 /* 竖版包装图：保留完整纵向画幅，不能按低清方图缩成小贴片 */
 const PORTRAIT_IMAGES = new Set(["img/p5_6a7d2c5d09b4f200012683ed.webp", "img/p5_69169bc960f597000148dfed.webp"]);
+
+/* 混坑竖版商品图：完整展示包装信息 */
+const SOLO_PORTRAIT_IMAGES = new Set(["img/p5_row115.webp", "img/p5_row116.webp", "img/p5_row117.webp", "img/p5_row118.webp", "img/p5_row119.webp", "img/p5_row120.webp", "img/p5_row121.webp", "img/p5_row122.webp", "img/p5_row123.webp", "img/p5_row124.webp", "img/p5_row125.webp", "img/p5_row126.webp", "img/p5_row127.webp", "img/p5_row128.webp", "img/p5_row129.webp", "img/p5_row130.webp", "img/p5_row131.webp", "img/p5_row132.webp", "img/p5_row162.webp", "img/p5_row163.webp", "img/p5_row164.webp", "img/p5_row167.webp", "img/p5_row168.webp", "img/p5_row50.webp", "img/p5_row92.webp", "img/p5_row93.webp", "img/p5_row94.webp", "img/p5_row95.webp", "img/p5_row98.webp", "img/p5_row99.webp"]);
 
 /* 商品卡 */
 function goodCard(g){
@@ -4164,7 +4167,7 @@ function goodCard(g){
   const price = g.price!=null
     ? `<span class="price">¥${esc(g.price)}${g.origPrice?`<s>¥${esc(g.origPrice)}</s>`:''}</span>` : '<span></span>';
   return `<${tag} class="good"${href}>
-    <div class="good-thumb${LOW_RES_IMAGES.has(g.img)?" is-lowres":""}${PORTRAIT_IMAGES.has(g.img)?" is-portrait":""}">${thumb}${cm}${heat}</div>
+    <div class="good-thumb${LOW_RES_IMAGES.has(g.img)?" is-lowres":""}${PORTRAIT_IMAGES.has(g.img)||SOLO_PORTRAIT_IMAGES.has(g.img)?" is-portrait":""}">${thumb}${cm}${heat}</div>
     ${g.shop?`<div class="good-shop">${esc(g.shop)}</div>`:''}
     <div class="good-name">${esc(g.name)}</div>
     ${g.spec?`<div class="good-spec">${esc(g.spec)}</div>`:''}
